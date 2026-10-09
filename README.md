@@ -54,7 +54,7 @@ Studio владеет Workspace/Terrain/Lighting. Rojo синхронизиру�
 - ServerScriptService/GameServer ← src/server
 - StarterPlayer/StarterPlayerScripts/GameClient ← src/client
 
-Сохраняй локальную копию мира как place/dev-world.rbxl. Не подменяй её build/code-foundation.rbxlx: это пустой по окружению проверочный артефакт кода.
+Рабочая сцена сохранена как place/Children_of_corn.rbxl. Все 8 скриптов в сохранённой сцене сверены с src; запуск Test и Output ещё предстоит проверить. Не подменяй её build/code-foundation.rbxlx: это пустой по окружению проверочный артефакт кода.
 
 Публикация, DataStore, магазины и мультиплеер в этот этап не входят. Подключение Studio и Play Test отмечаются отдельно после фактической проверки.
 

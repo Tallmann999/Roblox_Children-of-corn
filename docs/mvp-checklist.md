@@ -15,7 +15,8 @@
 - [x] StyLua check, Selene и Rojo build/sourcemap пройдены; линтер: 0 errors, 0 warnings, 0 parse errors.
 - [x] Запущен localhost Rojo на 34872; HTTP 200, project ChildrenOfCorn и версия 7.7.0 подтверждены.
 - [x] Созданы technical-plan.md, architecture.md, команды setup/check/serve и инструкция запуска.
-- [ ] Плагин Rojo подключён к конкретному открытому миру.
+- [x] Три контейнера кода в открытой Studio подтверждены скриншотом пользователя.
+- [x] Сцена place/Children_of_corn.rbxl сохранена; все 8 скриптов сверены с src, обе Bootstrap включены; структура Workspace/Lighting прежняя.
 - [ ] Прочитан живой DataModel и подтверждена сохранность Workspace/Terrain/Lighting.
 - [ ] Studio Output показывает старт 2 services / 0 controllers без новых ошибок.
 - [ ] Play Test основы выполнен в Studio.
@@ -50,13 +51,21 @@
 | Persistence | Disabled; player-data/economy не установлены |
 | Plugin | Файл RojoManagedPlugin.rbxm существует; установка CLI завершена |
 | Serve | localhost:34872, ответ API 200 и идентичность ChildrenOfCorn/7.7.0 подтверждены |
-| Studio / gameplay | Не выполнено: нет доступного Studio MCP и подключённой сцены |
+| Сохранённая сцена | 09.10.2026 13:43:12, 80 231 байт; 3 контейнера, 8/8 источников совпадают с src, обе Bootstrap включены |
+| Studio / gameplay | Test/Output не выполнены; живой DataModel не прочитан, доступного Studio MCP нет |
 
-## Ручное подключение Studio
+## Сохранённая сцена и ближайший ручной шаг
 
-1. Открой нужный локальный мир или Baseplate в Roblox Studio.
-2. Сохрани копию в place/dev-world.rbxl.
-3. В Plugins открой Rojo и подключись к 127.0.0.1:34872.
-4. Проверь в Explorer GameShared, GameServer, GameClient, а также сохранность своего мира; затем Play/Output.
+Рабочий snapshot: place/Children_of_corn.rbxl. Первая версия файла, сохранённая в 13:33:31, содержала только исходную сцену без скриптов. После сообщения пользователя «сохранил сцену» повторное чтение файла, сохранённого в 13:43:12, подтвердило подключённую основу. SHA-256: e5b3c90d6ea34000c96cbaa57bc8651785f5e6f77cae06620f1366673ef46f4c. Файл не изменялся проверкой.
 
-Если текущий локальный сервер остановлен, сначала запусти из корня проекта scripts/serve.ps1. После подключения ответь «готово», чтобы перейти к чтению сцены и следующему slice. Для автоматического чтения и Play Test потребуется также подключить [Studio MCP](https://create.roblox.com/docs/studio/mcp).
+В Workspace: Camera, Baseplate с Texture, Terrain и SpawnLocation с Decal. В Lighting: Sky, SunRays, Atmosphere, Bloom и DepthOfField. Эта структура прежняя; содержимое Terrain отдельно не проверено. Непустых сохранённых тегов нет. Кукурузное поле, ворота, слоты ключа и монстр ещё не созданы.
+
+**Нужен ручной шаг: проверить запуск основы в Studio.**
+
+1. В открытой Children_of_corn.rbxl открой Window → Output (либо Output на вкладке Script). Показывай сообщения клиента и сервера.
+2. Нажми F5 (Test). Ожидаются `[ServerBootstrap] Started 2 services` и `[ClientBootstrap] Started 0 controllers` без новых ошибок основы. Ноль контроллеров ожидаем: игровой слой пока не реализован.
+3. Останови тест через Shift+F5. Если появились ошибки, передай их текст.
+
+Когда увидишь оба сообщения без ошибок, ответь `готово`, и я продолжу с первым игровым этапом «старт → ключ → ворота → выход → повтор».
+
+Если текущий локальный сервер остановлен, запусти из корня проекта scripts/serve.ps1 и заново подключи Rojo к 127.0.0.1:34872. Для автоматического чтения живой сцены и Test потребуется также подключить [Studio MCP](https://create.roblox.com/docs/studio/mcp). [Test и клавиши управления](https://create.roblox.com/docs/studio/testing-modes), [окно Output](https://create.roblox.com/docs/studio/output).

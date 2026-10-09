@@ -11,7 +11,7 @@
 | ServerScriptService/GameServer | Rojo → src/server | Серверный bootstrap и Services; игровые механики отдельно в Game |
 | StarterPlayer/StarterPlayerScripts/GameClient | Rojo → src/client | Клиентский bootstrap и Controllers; игровые представления отдельно в Game |
 | ReplicatedStorage/GameRemotes | NetworkService во время теста | Пока только папка; endpoints появятся при реализации нужных команд |
-| place/dev-world.rbxl | Локальный snapshot | Резервная копия визуальной сцены, не источник синхронизируемого кода |
+| place/Children_of_corn.rbxl | Локальный snapshot | Резервная копия визуальной сцены, не источник синхронизируемого кода |
 | build/ | Файловая проверка | Code-only сборка и sourcemap, исключены из Git |
 
 `default.project.json` не содержит Workspace/Lighting mapping и явно сохраняет неизвестные объекты DataModel. У существующих контейнеров также включено сохранение неизвестных instances. Вложенные файлы кода редактировать в `src/`; сцена остаётся в Studio. [Формат проекта Rojo](https://rojo.space/docs/v7/project-format/).
@@ -90,4 +90,4 @@ TagService.Destroy отключает все его подписки. Перед
 
 ## Состояние интеграции
 
-CLI-конфигурация, format/lint, сборка и sourcemap проверены. Plugin-файл установлен; локальный сервер отвечает на 34872. DataModel конкретной сцены, подключение Studio plugin и Play Test ещё не проверены. Это отдельные пункты чеклиста, а не подтверждённые результаты установки.
+CLI-конфигурация, format/lint, сборка и sourcemap проверены. Plugin-файл установлен; локальный сервер отвечает на 34872. Скриншот пользователя подтверждает три контейнера кода в открытой Studio. После сохранения 09.10.2026 в 13:43:12 бинарная сцена place/Children_of_corn.rbxl прочитана без изменений: все 8 скриптов совпадают с src при нормализации CRLF → LF, обе Bootstrap включены. Структура Workspace и Lighting совпадает с чтением до сохранения кода. Это проверка сохранённого DataModel; живой DataModel, Test и Output ещё не проверены.
