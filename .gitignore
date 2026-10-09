@@ -10,3 +10,4 @@ place/*.rbxlx.lock
 build/
 __pycache__/
 *.pyc
+.artifacts/connection/

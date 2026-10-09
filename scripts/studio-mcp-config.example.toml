@@ -1,0 +1,5 @@
+# Example only: merge into the existing Codex config; do not replace it.
+# Roblox Studio must have "Enable Studio as MCP server" turned on.
+[mcp_servers.Roblox_Studio]
+command = "cmd.exe"
+args = ["/c", '%LOCALAPPDATA%\Roblox\mcp.bat']

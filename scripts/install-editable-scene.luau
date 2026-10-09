@@ -3017,7 +3017,8 @@ function MapAuthoring.RebuildOverview(map: Model): number
 	assert(prepared, problem or "Cannot prepare overview art")
 	assert(prepared:IsA("MeshPart"), "Whole-field overview requires the imported single-mesh corn")
 	local stride = 16
-	prepared.Size = Vector3.new(prepared.Size.X * 6, prepared.Size.Y, prepared.Size.Z * 6)
+	-- Preserve plant proportions. This sparse layer is an approximate field overview,
+	-- while EditorPreview and the client renderer provide dense, life-size plants.
 	local _, preparedSize = Layout.Bounds(prepared)
 	local half = preparedSize / 2
 	local folder = Instance.new("Folder")
@@ -3025,6 +3026,8 @@ function MapAuthoring.RebuildOverview(map: Model): number
 	folder:SetAttribute("CornEditorOverview", true)
 	folder:SetAttribute("corn_project_id", "children_of_corn")
 	folder:SetAttribute("OverviewSpacing", stride)
+	folder:SetAttribute("OverviewApproximation", true)
+	folder:SetAttribute("OverviewPlantScale", 1)
 	local exclusions = Layout.ReadExclusions(map, field)
 	local _, yaw = field.CFrame:ToOrientation()
 	local count = 0
@@ -3077,7 +3080,11 @@ function MapAuthoring.RebuildOverview(map: Model): number
 	end
 	folder:SetAttribute("PlantCount", count)
 	folder.Parent = map
-	print("CornMap whole-field overview:", count, "coarse meshes; fine corn uses 3-stud spacing")
+	print(
+		"CornMap whole-field overview:",
+		count,
+		"upright sparse overview meshes; fine corn uses 3-stud spacing"
+	)
 	return count
 end
 

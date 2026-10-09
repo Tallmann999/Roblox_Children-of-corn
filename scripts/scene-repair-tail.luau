@@ -1,12 +1,16 @@
 local prior = {}
 for _, entry in baseline do prior[entry.path] = entry end
+local previous = {}
+for _, entry in previousRepair do previous[entry.path] = entry end
 local objects = {}
 for _, entry in updates do
     local item = resolve(entry.path)
     assert(item and item.ClassName == entry.class, "Missing code object: " .. entry.path .. "; nothing changed")
     assert(editor:FindScriptDocument(item) == nil, "Close script tab: " .. entry.path .. "; nothing changed")
     local old = prior[entry.path]
-    assert(normalized(item.Source) == normalized(old.source) or normalized(item.Source) == normalized(entry.source),
+    assert(normalized(item.Source) == normalized(old.source)
+        or normalized(item.Source) == normalized(previous[entry.path].source)
+        or normalized(item.Source) == normalized(entry.source),
         "Unrecognized manual Source edit: " .. entry.path .. "; nothing changed")
     if freshPaths[entry.path] then
         assert(#item:GetChildren() == 0, "Authoring module contains extra objects: " .. entry.path .. "; nothing changed")

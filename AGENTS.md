@@ -27,3 +27,5 @@
 - User reported the Speed Monkey cleanup complete and resumed Children_of_corn work. Live Rojo remains stopped; protected file/Command Bar installation is preferred until the correct Studio target is verified.
 
 - Current repair scope: four authored corner SpawnLocations, server-selected start and full-field overview plus dense nearby corn. Preserve existing map geometry and source asset. The saved lower Workspace/SpawnLocation may be disabled only by the guarded Corn repair with rollback. Use scripts/repair-corn-scene.luau for installed maps; actual Studio acceptance remains pending.
+
+- The saved corner-spawn repair is installed. Preserve the author’s current CornMap/baseplate coordinates. Correct flat EditorFieldOverview only with guarded scripts/fix-corn-proportions.luau: normal aspect ratio, owned Size changes in place, one MapAuthoring leaf update, rollback. Dense local Preview/runtime and sparse whole-field overview are distinct; do not stretch X/Z to claim dense distant corn. Studio MCP is configured in Codex but manual Studio enable/client restart/verified studio_id are still required.
