@@ -1,0 +1,27 @@
+{
+  "kitVersion": "0.1.0",
+  "modules": [
+    {
+      "id": "core",
+      "version": "0.1.0"
+    },
+    {
+      "id": "network",
+      "version": "0.1.0"
+    },
+    {
+      "id": "tags",
+      "version": "0.1.0"
+    }
+  ],
+  "source": {
+    "repository": "https://github.com/Tallmann999/RobloxGameKit_v0.1.0",
+    "revision": "960e068352e187fc1d2129305f8fcfb07faf2782"
+  },
+  "localOverrides": [
+    {
+      "path": "src/shared/Config/GameConfig.luau",
+      "reason": "Project identity and agreed local-MVP balance; persistence remains disabled"
+    }
+  ]
+}
