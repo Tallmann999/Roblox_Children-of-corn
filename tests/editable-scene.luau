@@ -71,7 +71,7 @@ local function runner(place, openScript)
     local function moduleRequire(module)
         if loaded[module] ~= nil then return loaded[module] end
         local env = setmetatable({game=gameProxy, script=module, Instance=I, CFrame=CF,
-            Vector3=V3, Vector2=r.Vector2, Color3=r.Color3, Enum=r.Enum}, {__index=getfenv()})
+            Vector3=V3, Vector2=r.Vector2, Color3=r.Color3, Enum=r.Enum, task={wait=function() end}}, {__index=getfenv()})
         env.require = moduleRequire
         local moduleSource = module.Source
         if module.Name == "MapAuthoring" then
@@ -79,6 +79,13 @@ local function runner(place, openScript)
             local count
             moduleSource, count = moduleSource:gsub("item%.Position = position", "item.Position = position\nitem.CFrame = CFrame.new(position)")
             assert(count == 1)
+        end
+        if module.Name == "CornLayout" then
+            moduleSource = moduleSource:gsub("item%.Position", "item.CFrame.Position")
+        end
+        if module.Name == "MapAuthoring" then
+            moduleSource = moduleSource:gsub("selected%.Position", "selected.CFrame.Position")
+            moduleSource = moduleSource:gsub("spawn%.Position", "spawn.CFrame.Position")
         end
         local fn = assert(loadstring(moduleSource, module:GetFullName()))
         setfenv(fn, env)
@@ -106,7 +113,7 @@ local map = place:GetService("Workspace").CornMap
 assert(map.Ground.Size.X == 1200 and map.Ground.Size.Z == 1200)
 assert(map.FieldZone.Size.X == 1200 and map.FieldZone.Position.Y == 85)
 assert(#map.KeySlots:GetChildren() == 15)
-assert(map.EditorPreview:GetAttribute("PlantCount") > 300 and map.EditorPreview:GetAttribute("PlantCount") < 1000)
+assert(map.EditorPreview:GetAttribute("PlantCount") > 300 and map.EditorPreview:GetAttribute("PlantCount") < 1400)
 assert(mesh.Size == initialSize and mesh.CFrame == initialFrame)
 assert(mesh.MeshContent.Uri == meshUri and mesh.TextureContent.Uri == textureUri)
 assert(source.Parent == place:GetService("ServerStorage"))
@@ -130,7 +137,7 @@ local back = binding.Gate.CFrame:PointToWorldSpace(V3.new(0, 0, 6))
 assert(binding:IsGateFront(front) and not binding:IsGateFront(back))
 assert(binding:IsInExit(binding.Exit.Position))
 assert(not binding:IsInExit(binding.Exit.CFrame:PointToWorldSpace(V3.new(7, 0, 0))))
-map.RoundSpawn.CFrame = CF.new(125, 80.075, -410) * CF.Angles(0, math.pi / 2, 0)
+binding.Spawn.CFrame = CF.new(125, 80.075, -410) * CF.Angles(0, math.pi / 2, 0)
 assert(math.abs(binding:GetSpawnCFrame().Position.X - 125) < 0.001)
 assert(binding:IsOnPlayground(binding:GetSpawnCFrame().Position))
 print("PASS: key cleanup retains map; rotated gate/exit and moved spawn use authored coordinates")
@@ -192,6 +199,7 @@ print("PASS: art preparation failure rolls back code and leaves original map unt
 
 
 local client = place:GetService("StarterPlayer").StarterPlayerScripts.GameClient
+for _, item in map.EditorFieldOverview:GetChildren() do item.LocalTransparencyModifier = 0 end
 local Renderer = loadModule(client.Controllers.CornController)
 local renderRoot = I.new("Part")
 renderRoot.CFrame = CF.new(125, 83.65, -410)
@@ -204,12 +212,13 @@ for _ = 1, 140 do
 end
 local chunks = 0
 for _ in Renderer._chunks do chunks += 1 end
-assert(chunks <= 28 and Renderer._plantCount > 0 and Renderer._plantCount <= 1792)
+assert(chunks <= 28 and Renderer._plantCount > 0 and Renderer._plantCount <= 4032)
 local artFolder = place:GetService("ReplicatedStorage").CornRuntimeArt
 local artTemplate = artFolder.CornPlantTemplate
 local _, artSize = loadModule(place:GetService("ReplicatedStorage").GameShared.Game.CornLayout).Bounds(artTemplate)
 assert(math.abs(artSize.Y - 8) < 0.001)
-local preparedMesh = artTemplate.SM_Prop_Plant_Corn_01_L
+local preparedMesh = artTemplate
+assert(preparedMesh:IsA("MeshPart"), "Static corn should contain one mesh without import metadata")
 assert(preparedMesh.DoubleSided and not mesh.DoubleSided)
 assert(preparedMesh.MeshContent.Uri == meshUri and preparedMesh.TextureContent.Uri == textureUri)
 renderRoot.CFrame = CF.new(5000, 83.65, 5000)

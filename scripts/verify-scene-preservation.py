@@ -156,13 +156,32 @@ def owned(path):
     return any(path == prefix or path.startswith(prefix + '/') for prefix in OWNED)
 
 
-def compare(original, candidate):
+def corn_metadata(path):
+    result = subprocess.run([str(LUNE), 'run', str(HERE/'read-corn-metadata.luau'), str(path)], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return json.loads(result.stdout)
+
+
+def compare(original, candidate, corn_repair=False):
     before, before_warnings = known_dom(original)
     after, after_warnings = known_dom(candidate)
     problems = []
+    allowed_changes = []
+    before_meta = corn_metadata(original) if corn_repair else None
+    after_meta = corn_metadata(candidate) if corn_repair else None
+    if corn_repair:
+        identity = {'type': 'string', 'value': 'children_of_corn'}
+        assert before_meta['map_attrs'].get('corn_project_id') == identity
+        assert after_meta['map_attrs'].get('corn_project_id') == identity
+        assert after_meta['corners_valid'] and after_meta['overview_owned'] and after_meta['preview_owned']
+        assert after_meta['map_attrs'].get('map_version') == {'type': 'number', 'value': '2'}
+        before_attrs = {k:v for k,v in before_meta['map_attrs'].items() if k != 'map_version'}
+        after_attrs = {k:v for k,v in after_meta['map_attrs'].items() if k != 'map_version'}
+        assert before_attrs == after_attrs, 'Unexpected CornMap attribute changes'
     compared = 0
     for path, item in before.items():
         if owned(path):
+            continue
+        if corn_repair and any(path == prefix or path.startswith(prefix+'/') for prefix in ('Workspace/CornMap/EditorPreview', 'Workspace/CornMap/EditorFieldOverview')):
             continue
         compared += 1
         other = after.get(path)
@@ -173,7 +192,12 @@ def compare(original, candidate):
             problems.append({'path': path, 'problem': 'class_changed'})
         for prop, value in item['properties'].items():
             if other['properties'].get(prop) != value:
-                problems.append({'path': path, 'property': prop, 'problem': 'property_changed_or_missing'})
+                expected_version = corn_repair and path == 'Workspace/CornMap' and prop == 'AttributesSerialize'
+                expected_spawn = corn_repair and path == 'Workspace/SpawnLocation' and prop == 'Enabled' and before_meta['lower_is_spawn'] and before_meta['lower_enabled'] and before_meta['lower_below_field'] and not after_meta['lower_enabled']
+                if expected_version or expected_spawn:
+                    allowed_changes.append({'path': path, 'property': prop, 'reason': 'explicit_corn_repair'})
+                else:
+                    problems.append({'path': path, 'property': prop, 'problem': 'property_changed_or_missing'})
     unknown_before = unknown_properties(original)
     unknown_after = unknown_properties(candidate)
     unknown_check = unknown_before['supported'] and unknown_after['supported']
@@ -193,7 +217,7 @@ def compare(original, candidate):
         'known_dom_preserved': not any(p['problem'] != 'unknown_raw_property_changed_or_missing' for p in problems),
         'unknown_original_properties': unknown_before,
         'unknown_candidate_properties': unknown_after,
-        'problems': problems,
+        'problems': problems, 'allowed_changes': allowed_changes, 'corn_repair_mode': corn_repair,
         'warnings': {'original': before_warnings, 'candidate': after_warnings},
         'scope': 'Read-only comparison of Lune-known original properties and exact unknown PROP payloads; not a Studio runtime test.',
         'passed': not problems,
@@ -205,8 +229,9 @@ if __name__ == '__main__':
     parser.add_argument('original', type=pathlib.Path)
     parser.add_argument('candidate', type=pathlib.Path)
     parser.add_argument('--lune', type=pathlib.Path, default=LUNE, help='Lune executable; default: project .tools/lune/lune.exe')
+    parser.add_argument('--corn-repair', action='store_true', help='Allow only owned corn layers, map_version=2 and disabling the saved below-map SpawnLocation; retain all other original objects.')
     args = parser.parse_args()
     LUNE = args.lune.resolve()
-    answer = compare(args.original.resolve(), args.candidate.resolve())
+    answer = compare(args.original.resolve(), args.candidate.resolve(), args.corn_repair)
     print(json.dumps(answer, ensure_ascii=False, indent=2))
     sys.exit(0 if answer['passed'] else 1)

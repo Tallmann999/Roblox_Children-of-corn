@@ -2,9 +2,9 @@
 
 local CornLayout = {
 	Height = 8,
-	Spacing = 4.5,
+	Spacing = 3,
 	Seed = 817,
-	ChunkCells = 8,
+	ChunkCells = 12,
 	RenderRadius = 85,
 }
 
@@ -85,6 +85,24 @@ function CornLayout.PrepareTemplate(source: Instance, height: number?): (Plant?,
 				end
 			end
 		end
+		-- The imported plant has one mesh plus import poses/animation metadata.
+		-- Keep only that normalized mesh on decorative copies; the source is untouched.
+		if prepared:IsA("Model") and partCount == 1 then
+			local mesh = prepared:FindFirstChildWhichIsA("MeshPart", true)
+			if mesh and mesh:IsA("MeshPart") then
+				mesh.Parent = nil
+				prepared:Destroy()
+				prepared = mesh
+			end
+		end
+		for _, item in prepared:GetDescendants() do
+			if
+				item:IsA("AnimationController")
+				or (item:IsA("Folder") and item.Name == "InitialPoses")
+			then
+				item:Destroy()
+			end
+		end
 		local clones = prepared:GetDescendants()
 		table.insert(clones, prepared)
 		for _, item in clones do
@@ -129,8 +147,16 @@ function CornLayout.GetCellBounds(field: BasePart): (number, number, number, num
 end
 
 function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
+	local half = field.Size / 2
+	local hashX = (column * 92837111 + row * 689287499 + CornLayout.Seed) % 104729
+	local hashZ = (column * 19349663 + row * 83492791 + CornLayout.Seed) % 104729
+	local stagger = if row % 2 == 0 then -CornLayout.Spacing * 0.15 else CornLayout.Spacing * 0.15
+	local x = column * CornLayout.Spacing
+		+ stagger
+		+ (hashX / 104729 - 0.5) * CornLayout.Spacing * 0.12
+	local z = row * CornLayout.Spacing + (hashZ / 104729 - 0.5) * CornLayout.Spacing * 0.12
 	return field.CFrame:PointToWorldSpace(
-		Vector3.new(column * CornLayout.Spacing, -field.Size.Y / 2, row * CornLayout.Spacing)
+		Vector3.new(math.clamp(x, -half.X, half.X), -half.Y, math.clamp(z, -half.Z, half.Z))
 	)
 end
 
@@ -164,6 +190,7 @@ local function authorDescendants(map: Model): { Instance }
 		local decoration = owned
 			and (
 				(item.Name == "EditorPreview" and item:GetAttribute("CornEditorPreview") == true)
+				or (item.Name == "EditorFieldOverview" and item:GetAttribute("CornEditorOverview") == true)
 				or (item.Name == "CornClientPlants" and item:GetAttribute("CornClientRendererOwned") == true)
 				or item.Name == "CornRoundRuntime"
 			)

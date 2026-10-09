@@ -44,13 +44,107 @@ local function inBox(part: BasePart, position: Vector3): boolean
 		and math.abs(point.Z) <= half.Z
 end
 
+local function validateSpawn(root: Model, spawn: BasePart, bounds: BasePart)
+	assert(spawn:IsDescendantOf(root), "Spawn must belong to CornMap")
+	assert(hasTag(spawn, "corn_spawn"), "Missing corn_spawn tag: " .. spawn.Name)
+	local id = spawn:GetAttribute("spawn_id")
+	assert(type(id) == "string" and id ~= "", "Spawn id must be a nonempty string: " .. spawn.Name)
+	assert(spawn.Anchored, "Spawn must be Anchored: " .. spawn.Name)
+	assert(
+		spawn.CFrame.UpVector:Dot(Vector3.yAxis) > 0.999,
+		"Spawn must remain horizontal: " .. spawn.Name
+	)
+	if spawn:IsA("SpawnLocation") then
+		assert(
+			spawn.Enabled and spawn.Neutral,
+			"Corner spawn must be enabled and neutral: " .. spawn.Name
+		)
+	end
+	local position = (spawn.CFrame * CFrame.new(0, spawn.Size.Y / 2 + 3.5, 0)).Position
+	assert(inBox(bounds, position), "Spawn is outside PlayBounds: " .. spawn.Name)
+end
+
+function AuthoredWorld.IsSafeSpawn(root: Model, spawn: BasePart): boolean
+	local bounds = root:FindFirstChild("PlayBounds")
+	return bounds ~= nil and bounds:IsA("BasePart") and pcall(validateSpawn, root, spawn, bounds)
+end
+
+function AuthoredWorld.ReadSpawns(root: Model): { BasePart }
+	local bounds = namedPart(root, "PlayBounds")
+	local corners = root:FindFirstChild("CornerSpawns")
+	local spawns: { BasePart } = {}
+	if corners then
+		assert(
+			corners:IsA("Folder")
+				and corners:GetAttribute("CornCornerSpawnsOwned") == true
+				and corners:GetAttribute("corn_project_id") == "children_of_corn",
+			"Unrecognized CornerSpawns"
+		)
+		local seen: { [string]: boolean } = {}
+		for _, item in corners:GetChildren() do
+			assert(item:IsA("SpawnLocation"), "CornerSpawns must contain only SpawnLocations")
+			validateSpawn(root, item, bounds)
+			local id = item:GetAttribute("spawn_id") :: string
+			assert(not seen[id], "Corner spawn ids must be unique")
+			seen[id] = true
+			table.insert(spawns, item)
+		end
+		assert(#spawns == 4, "CornMap must have four corner spawns")
+		table.sort(spawns, function(a, b)
+			return tostring(a:GetAttribute("spawn_id")) < tostring(b:GetAttribute("spawn_id"))
+		end)
+	else
+		local legacy = namedPart(root, "RoundSpawn")
+		validateSpawn(root, legacy, bounds)
+		table.insert(spawns, legacy)
+	end
+	return spawns
+end
+
+-- A broken gate or slot must not leave the menu character underneath the map.
+function AuthoredWorld.FindSafeSpawn(root: Model): BasePart?
+	local bounds = root:FindFirstChild("PlayBounds")
+	if not bounds or not bounds:IsA("BasePart") then
+		return nil
+	end
+	local candidates: { BasePart } = {}
+	local corners = root:FindFirstChild("CornerSpawns")
+	if
+		corners
+		and corners:IsA("Folder")
+		and corners:GetAttribute("CornCornerSpawnsOwned") == true
+		and corners:GetAttribute("corn_project_id") == "children_of_corn"
+	then
+		for _, item in corners:GetChildren() do
+			if item:IsA("SpawnLocation") and pcall(validateSpawn, root, item, bounds) then
+				table.insert(candidates, item)
+			end
+		end
+	end
+	table.sort(candidates, function(a, b)
+		return tostring(a:GetAttribute("spawn_id")) < tostring(b:GetAttribute("spawn_id"))
+	end)
+	if candidates[1] then
+		return candidates[1]
+	end
+	local legacy = root:FindFirstChild("RoundSpawn")
+	if legacy and legacy:IsA("BasePart") and pcall(validateSpawn, root, legacy, bounds) then
+		return legacy
+	end
+	return nil
+end
+
+function AuthoredWorld.SpawnCFrame(spawn: BasePart): CFrame
+	return spawn.CFrame * CFrame.new(0, spawn.Size.Y / 2 + 3.5, 0)
+end
+
 function AuthoredWorld.new(radius: number, expectedSlots: number)
 	local root = Workspace:FindFirstChild("CornMap")
 	assert(
 		root and root:IsA("Model") and root:GetAttribute("corn_project_id") == "children_of_corn",
 		"Install the editable CornMap in Children_of_corn before Test"
 	)
-	local spawn = namedPart(root, "RoundSpawn")
+	local spawns = AuthoredWorld.ReadSpawns(root)
 	local field = namedPart(root, "FieldZone")
 	local bounds = namedPart(root, "PlayBounds")
 	local gateModel = root:FindFirstChild("EscapeGate")
@@ -61,11 +155,10 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 	local gate = namedPart(gateModel, "Door")
 	local anchor = namedPart(gateModel, "InteractionAnchor")
 	local exit = namedPart(gateModel, "ExitZone")
-	assert(hasTag(spawn, "corn_spawn") and hasTag(exit, "corn_exit"), "Missing spawn/exit tags")
-	assert(
-		exit:GetAttribute("gate_id") == gateModel:GetAttribute("gate_id"),
-		"Gate/exit identity mismatch"
-	)
+	assert(hasTag(exit, "corn_exit"), "Missing corn_exit tag")
+	local gateId = gateModel:GetAttribute("gate_id")
+	assert(type(gateId) == "string" and gateId ~= "", "Gate id must be a nonempty string")
+	assert(exit:GetAttribute("gate_id") == gateId, "Gate/exit identity mismatch")
 	local slots: { BasePart } = {}
 	local seen: { [string]: boolean } = {}
 	for _, item in root:GetDescendants() do
@@ -99,7 +192,8 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 		Root = root,
 		Radius = radius,
 		Slots = slots,
-		Spawn = spawn,
+		Spawns = spawns,
+		Spawn = spawns[1],
 		Field = field,
 		Bounds = bounds,
 		GateModel = gateModel,
@@ -117,8 +211,17 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 	return self
 end
 
+function AuthoredWorld:SelectSpawn(index: number): BasePart
+	assert(index % 1 == 0 and index >= 1 and index <= #self.Spawns, "Invalid spawn index")
+	local spawn = self.Spawns[index]
+	validateSpawn(self.Root, spawn, self.Bounds)
+	self.Spawn = spawn
+	return spawn
+end
+
 function AuthoredWorld:GetSpawnCFrame(): CFrame
-	return self.Spawn.CFrame * CFrame.new(0, self.Spawn.Size.Y / 2 + 3.5, 0)
+	validateSpawn(self.Root, self.Spawn, self.Bounds)
+	return AuthoredWorld.SpawnCFrame(self.Spawn)
 end
 
 function AuthoredWorld:ClearKey()
@@ -191,6 +294,21 @@ function AuthoredWorld:IsValid(): boolean
 		or not self.GatePrompt:IsDescendantOf(self.GateAnchor)
 		or #self.Slots ~= 15
 	then
+		return false
+	end
+	local spawnIds: { [string]: boolean } = {}
+	for _, spawn in self.Spawns do
+		if not pcall(validateSpawn, self.Root, spawn, self.Bounds) then
+			return false
+		end
+		local id = spawn:GetAttribute("spawn_id") :: string
+		if spawnIds[id] then
+			return false
+		end
+		spawnIds[id] = true
+	end
+	local gateId = self.GateModel:GetAttribute("gate_id")
+	if type(gateId) ~= "string" or gateId == "" or gateId ~= self.Exit:GetAttribute("gate_id") then
 		return false
 	end
 	for _, slot in self.Slots do

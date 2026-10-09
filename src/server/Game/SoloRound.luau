@@ -19,6 +19,7 @@ function SoloRound.new(context: any)
 		action = context.Services.NetworkService:GetEvent(Endpoints.RequestRoundAction),
 		snapshot = context.Services.NetworkService:GetEvent(Endpoints.RoundSnapshot),
 		world = nil :: any,
+		selectedSpawn = nil :: BasePart?,
 		player = nil :: Player?,
 		phase = "ready",
 		epoch = 0,
@@ -98,11 +99,63 @@ function SoloRound:_controls(enabled: boolean)
 	humanoid.AutoRotate = enabled and self.autoRotate
 end
 
-function SoloRound:_moveToStart(character: Model)
-	if not self.world then
+function SoloRound:_fallbackSpawn(): BasePart?
+	local map = Workspace:FindFirstChild("CornMap")
+	if
+		not map
+		or not map:IsA("Model")
+		or map:GetAttribute("corn_project_id") ~= "children_of_corn"
+	then
+		return nil
+	end
+	local ok, result = pcall(AuthoredWorld.FindSafeSpawn, map)
+	if not ok then
+		self.context.Log:Warn("Cannot find a safe CornMap spawn:", result)
+		return nil
+	end
+	return result
+end
+
+function SoloRound:_setRespawnLocation()
+	local player = self.player
+	if not player then
 		return
 	end
-	character:PivotTo(self.world:GetSpawnCFrame())
+	local spawn = self.selectedSpawn
+	player.RespawnLocation = if spawn
+			and spawn:IsA("SpawnLocation")
+			and spawn:IsDescendantOf(Workspace)
+		then spawn
+		else nil
+end
+
+function SoloRound:_chooseSpawn()
+	if self.world and self.world:IsValid() then
+		self.selectedSpawn = self.world:SelectSpawn(self.random:NextInteger(1, #self.world.Spawns))
+	else
+		self.selectedSpawn = self:_fallbackSpawn()
+	end
+	self:_setRespawnLocation()
+end
+
+function SoloRound:_moveToStart(character: Model)
+	local spawn = self.selectedSpawn
+	local map = Workspace:FindFirstChild("CornMap")
+	if
+		not spawn
+		or not map
+		or not map:IsA("Model")
+		or not AuthoredWorld.IsSafeSpawn(map, spawn)
+	then
+		spawn = self:_fallbackSpawn()
+		self.selectedSpawn = spawn
+	end
+	if not spawn then
+		self.context.Log:Warn("No valid CornMap start; install or repair CornerSpawns")
+		return
+	end
+	self:_setRespawnLocation()
+	character:PivotTo(AuthoredWorld.SpawnCFrame(spawn))
 	local root = character:FindFirstChild("HumanoidRootPart")
 	if root and root:IsA("BasePart") then
 		root.AssemblyLinearVelocity = Vector3.zero
@@ -209,6 +262,9 @@ function SoloRound:_ensureWorld(): boolean
 		return false
 	end
 	self.world = result
+	if self.selectedSpawn and table.find(self.world.Spawns, self.selectedSpawn) then
+		self.world.Spawn = self.selectedSpawn
+	end
 	table.insert(
 		self.connections,
 		self.world.GatePrompt.Triggered:Connect(function(player: Player)
@@ -236,9 +292,15 @@ function SoloRound:_startRound()
 	self:_controls(false)
 	self:_send()
 	if not self:_ensureWorld() then
+		self:_chooseSpawn()
+		local character = self:_livingCharacter()
+		if character then
+			self:_moveToStart(character)
+		end
 		self:_finish("aborted", "corn_loop_setup_error")
 		return
 	end
+	self:_chooseSpawn()
 	self.world:SetGateOpen(false)
 	self.world:SetInteractionEnabled(false, false)
 
@@ -394,6 +456,7 @@ function SoloRound:_addPlayer(player: Player)
 		return -- One owner, no multiplayer matchmaking in this prototype.
 	end
 	self.player = player
+	self:_setRespawnLocation()
 	self.requestTokens = 2
 	self.requestAt = os.clock()
 	self.characterConnection = player.CharacterAdded:Connect(function(character: Model)
@@ -478,6 +541,7 @@ end
 
 function SoloRound:Start()
 	self:_ensureWorld()
+	self:_chooseSpawn()
 	table.insert(
 		self.connections,
 		self.action.OnServerEvent:Connect(function(player: Player, action: any)

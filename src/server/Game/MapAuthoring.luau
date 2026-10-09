@@ -106,6 +106,115 @@ local function house(parent: Instance, name: string, origin: Vector3)
 	end
 end
 
+function MapAuthoring.EnsureCornerSpawns(map: Model): Folder
+	guard()
+	assert(
+		map.Parent == Workspace and map:GetAttribute("corn_project_id") == "children_of_corn",
+		"Corner spawns require the correct editable CornMap"
+	)
+	local field = map:FindFirstChild("FieldZone")
+	local bounds = map:FindFirstChild("PlayBounds")
+	assert(
+		field and field:IsA("BasePart") and bounds and bounds:IsA("BasePart"),
+		"FieldZone/PlayBounds missing"
+	)
+	assert(field.CFrame.UpVector:Dot(Vector3.yAxis) > 0.999, "FieldZone must remain horizontal")
+	assert(field.Size.X > 100 and field.Size.Z > 100, "FieldZone is too small for corner starts")
+	local entries = {
+		{ Name = "SW", Id = "solo_corner_sw", X = -1, Z = -1 },
+		{ Name = "SE", Id = "solo_corner_se", X = 1, Z = -1 },
+		{ Name = "NW", Id = "solo_corner_nw", X = -1, Z = 1 },
+		{ Name = "NE", Id = "solo_corner_ne", X = 1, Z = 1 },
+	}
+	local old = map:FindFirstChild("CornerSpawns")
+	if old then
+		assert(
+			old:IsA("Folder")
+				and old:GetAttribute("CornCornerSpawnsOwned") == true
+				and old:GetAttribute("corn_project_id") == "children_of_corn",
+			"Unrecognized CornerSpawns; not replaced"
+		)
+		assert(#old:GetChildren() == 4, "CornerSpawns must contain exactly four owned starts")
+		for _, entry in entries do
+			local item = old:FindFirstChild(entry.Name)
+			assert(
+				item
+					and item:IsA("SpawnLocation")
+					and item:GetAttribute("spawn_id") == entry.Id
+					and item:GetAttribute("CornCornerSpawnOwned") == true
+					and item:GetAttribute("corn_project_id") == "children_of_corn"
+					and CollectionService:HasTag(item, "corn_spawn")
+					and item.Enabled
+					and item.Neutral,
+				"Unknown or invalid corner start: " .. entry.Name
+			)
+			local position = bounds.CFrame:PointToObjectSpace(
+				(item.CFrame * CFrame.new(0, item.Size.Y / 2 + 3.5, 0)).Position
+			)
+			local half = bounds.Size / 2
+			assert(
+				math.abs(position.X) <= half.X
+					and math.abs(position.Y) <= half.Y
+					and math.abs(position.Z) <= half.Z
+					and item.Anchored
+					and item.CFrame.UpVector:Dot(Vector3.yAxis) > 0.999,
+				"Corner start is unsafe: " .. entry.Name
+			)
+		end
+		return old
+	end
+	local folder = Instance.new("Folder")
+	folder.Name = "CornerSpawns"
+	folder:SetAttribute("CornCornerSpawnsOwned", true)
+	folder:SetAttribute("corn_project_id", "children_of_corn")
+	local ok, problem = pcall(function()
+		for _, entry in entries do
+			local localPosition = Vector3.new(
+				entry.X * (field.Size.X / 2 - 50),
+				-field.Size.Y / 2 + 0.075,
+				entry.Z * (field.Size.Z / 2 - 50)
+			)
+			local position = field.CFrame:PointToWorldSpace(localPosition)
+			local center = Vector3.new(field.Position.X, position.Y, field.Position.Z)
+			local item = Instance.new("SpawnLocation")
+			item.Parent = folder
+			item.Name = entry.Name
+			item.Size = Vector3.new(6, 0.15, 6)
+			item.CFrame = CFrame.lookAt(position, center)
+			item.Anchored = true
+			item.CanCollide = false
+			item.CanTouch = false
+			item.CanQuery = false
+			item.Neutral = true
+			item.Enabled = true
+			item.AllowTeamChangeOnTouch = false
+			item.Duration = 0
+			item.Color = Color3.fromRGB(158, 176, 150)
+			item:SetAttribute("spawn_id", entry.Id)
+			item:SetAttribute("CornCornerSpawnOwned", true)
+			item:SetAttribute("corn_project_id", "children_of_corn")
+			CollectionService:AddTag(item, "corn_spawn")
+			local candidate = bounds.CFrame:PointToObjectSpace(
+				(item.CFrame * CFrame.new(0, item.Size.Y / 2 + 3.5, 0)).Position
+			)
+			local half = bounds.Size / 2
+			assert(
+				math.abs(candidate.X) <= half.X
+					and math.abs(candidate.Y) <= half.Y
+					and math.abs(candidate.Z) <= half.Z,
+				"Corner start is outside PlayBounds"
+			)
+			item.Parent = folder
+		end
+	end)
+	if not ok then
+		folder:Destroy()
+		error(tostring(problem))
+	end
+	folder.Parent = map
+	return folder
+end
+
 function MapAuthoring.Preview(map: Model, center: Vector3, radius: number?): number
 	guard()
 	local field = map:FindFirstChild("FieldZone")
@@ -174,6 +283,101 @@ function MapAuthoring.Preview(map: Model, center: Vector3, radius: number?): num
 	return count
 end
 
+-- Whole-map coarse corn for authoring and distant view; fine plants stay local.
+function MapAuthoring.RebuildOverview(map: Model): number
+	guard()
+	assert(
+		map.Parent == Workspace and map:GetAttribute("corn_project_id") == "children_of_corn",
+		"CornMap missing"
+	)
+	local field = map:FindFirstChild("FieldZone")
+	assert(field and field:IsA("BasePart"), "FieldZone missing")
+	assert(field.CFrame.UpVector:Dot(Vector3.yAxis) > 0.9999, "FieldZone must stay horizontal")
+	local old = map:FindFirstChild("EditorFieldOverview")
+	if old then
+		assert(
+			old:IsA("Folder")
+				and old:GetAttribute("CornEditorOverview") == true
+				and old:GetAttribute("corn_project_id") == "children_of_corn",
+			"Unrecognized overview; retained"
+		)
+		for _, item in old:GetChildren() do
+			assert(
+				item:IsA("BasePart")
+					and item:GetAttribute("CornEditorOverview") == true
+					and item:GetAttribute("corn_project_id") == "children_of_corn",
+				"Overview contains manual objects; retained"
+			)
+		end
+	end
+	local prepared, problem = Layout.PrepareTemplate(artSource())
+	assert(prepared, problem or "Cannot prepare overview art")
+	assert(prepared:IsA("MeshPart"), "Whole-field overview requires the imported single-mesh corn")
+	local stride = 16
+	prepared.Size = Vector3.new(prepared.Size.X * 6, prepared.Size.Y, prepared.Size.Z * 6)
+	local _, preparedSize = Layout.Bounds(prepared)
+	local half = preparedSize / 2
+	local folder = Instance.new("Folder")
+	folder.Name = "EditorFieldOverview"
+	folder:SetAttribute("CornEditorOverview", true)
+	folder:SetAttribute("corn_project_id", "children_of_corn")
+	folder:SetAttribute("OverviewSpacing", stride)
+	local exclusions = Layout.ReadExclusions(map, field)
+	local _, yaw = field.CFrame:ToOrientation()
+	local count = 0
+	local ok, err = pcall(function()
+		for row = math.ceil(-field.Size.Z / 2 / stride), math.floor(field.Size.Z / 2 / stride) do
+			for column = math.ceil(-field.Size.X / 2 / stride), math.floor(field.Size.X / 2 / stride) do
+				local ground = field.CFrame:PointToWorldSpace(
+					Vector3.new(column * stride, -field.Size.Y / 2, row * stride)
+				)
+				local excluded = false
+				for _, x in { -1, 0, 1 } do
+					for _, z in { -1, 0, 1 } do
+						local sample = ground
+							+ field.CFrame:VectorToWorldSpace(
+								Vector3.new(x * half.X, 0, z * half.Z)
+							)
+						if Layout.IsExcluded(sample, exclusions) then
+							excluded = true
+							break
+						end
+					end
+					if excluded then
+						break
+					end
+				end
+				if excluded then
+					continue
+				end
+				local clone = prepared:Clone()
+				assert(clone, "Overview clone failed")
+				clone.Name = "DistantCorn"
+				clone:SetAttribute("CornEditorOverview", true)
+				clone:SetAttribute("corn_project_id", "children_of_corn")
+				clone:PivotTo(Layout.PivotForPlant(prepared, ground, yaw))
+				clone.Parent = folder
+				count += 1
+				if count % 128 == 0 then
+					task.wait()
+				end
+			end
+		end
+	end)
+	prepared:Destroy()
+	if not ok then
+		folder:Destroy()
+		error(tostring(err))
+	end
+	if old then
+		old:Destroy()
+	end
+	folder:SetAttribute("PlantCount", count)
+	folder.Parent = map
+	print("CornMap whole-field overview:", count, "coarse meshes; fine corn uses 3-stud spacing")
+	return count
+end
+
 function MapAuthoring.PreviewAtSelection(): number
 	guard()
 	local map = Workspace:FindFirstChild("CornMap")
@@ -181,8 +385,12 @@ function MapAuthoring.PreviewAtSelection(): number
 		map and map:IsA("Model") and map:GetAttribute("corn_project_id") == "children_of_corn",
 		"CornMap missing"
 	)
-	local spawn = map:FindFirstChild("RoundSpawn")
-	assert(spawn and spawn:IsA("BasePart"), "RoundSpawn missing")
+	local spawn: Instance? = map:FindFirstChild("RoundSpawn")
+	if not spawn then
+		local corners = map:FindFirstChild("CornerSpawns")
+		spawn = corners and corners:FindFirstChild("SW")
+	end
+	assert(spawn and spawn:IsA("BasePart"), "CornMap has no preview start")
 	local center = spawn.Position
 	local selected = Selection:Get()[1]
 	if selected and (selected:IsA("Model") or selected:IsA("BasePart")) then
@@ -344,6 +552,8 @@ function MapAuthoring.Install(): Model
 		apron.Material = Enum.Material.Ground
 		gate.PrimaryPart = gate.Door :: BasePart
 		root.Parent = Workspace
+		MapAuthoring.EnsureCornerSpawns(root)
+		MapAuthoring.RebuildOverview(root)
 		local count = MapAuthoring.Preview(root, spawn.Position)
 		root:SetAttribute("EditorCornCount", count)
 		Selection:Set({ spawn })

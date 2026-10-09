@@ -23,6 +23,15 @@ type Chunk = {
 	Done: boolean,
 }
 
+type OverviewItem = {
+	Part: BasePart,
+	PreviousModifier: number,
+	Frame: CFrame,
+	Size: Vector3,
+	Keys: { string },
+	Hidden: boolean,
+}
+
 local CornController = {
 	Name = "CornController",
 	Order = 50,
@@ -40,6 +49,12 @@ local CornController = {
 	_pollElapsed = math.huge,
 	_plantCount = 0,
 	_lastWarning = "",
+	_overviewFolder = nil :: Folder?,
+	_overviewParts = {} :: { [BasePart]: OverviewItem },
+	_overviewByChunk = {} :: { [string]: { OverviewItem } },
+	_overviewDirty = {} :: { [OverviewItem]: boolean },
+	_overviewFieldFrame = CFrame.identity,
+	_overviewFieldSize = Vector3.zero,
 }
 
 local PROJECT_ID = "children_of_corn"
@@ -56,7 +71,182 @@ function CornController:_warn(message: string)
 	end
 end
 
+local function overviewKeys(field: BasePart, part: BasePart): { string }
+	local relative = field.CFrame:ToObjectSpace(part.CFrame)
+	local half = part.Size / 2
+	-- Require completed fine groups across the entire rotated coarse footprint.
+	-- The margin also covers the small deterministic cell stagger.
+	local padding = CornLayout.Spacing * 0.75
+	local halfX = math.abs(relative.RightVector.X) * half.X
+		+ math.abs(relative.UpVector.X) * half.Y
+		+ math.abs(relative.LookVector.X) * half.Z
+		+ padding
+	local halfZ = math.abs(relative.RightVector.Z) * half.X
+		+ math.abs(relative.UpVector.Z) * half.Y
+		+ math.abs(relative.LookVector.Z) * half.Z
+		+ padding
+	local fieldHalf = field.Size / 2
+	local minX = math.max(relative.Position.X - halfX, -fieldHalf.X)
+	local maxX = math.min(relative.Position.X + halfX, fieldHalf.X)
+	local minZ = math.max(relative.Position.Z - halfZ, -fieldHalf.Z)
+	local maxZ = math.min(relative.Position.Z + halfZ, fieldHalf.Z)
+	local keys: { string } = {}
+	if minX > maxX or minZ > maxZ then
+		return keys
+	end
+	local width = CornLayout.Spacing * CornLayout.ChunkCells
+	local offset = CornLayout.Spacing / 2
+	for column = math.floor((minX + offset) / width), math.floor((maxX + offset) / width) do
+		for row = math.floor((minZ + offset) / width), math.floor((maxZ + offset) / width) do
+			table.insert(keys, column .. ":" .. row)
+		end
+	end
+	return keys
+end
+
+function CornController:_showOverview()
+	for _, entry in self._overviewParts do
+		if entry.Hidden then
+			if entry.Part.Parent then
+				entry.Part.LocalTransparencyModifier = entry.PreviousModifier
+			end
+			entry.Hidden = false
+		end
+	end
+	self._overviewDirty = {}
+end
+
+function CornController:_restoreOverview()
+	self:_showOverview()
+	self._overviewFolder = nil
+	self._overviewParts = {}
+	self._overviewByChunk = {}
+end
+
+function CornController:_markOverviewChunk(key: string)
+	for _, entry in self._overviewByChunk[key] or {} do
+		self._overviewDirty[entry] = true
+	end
+end
+
+function CornController:_bindOverview()
+	local map = self._map
+	local field = self._field
+	local folder = if map then map:FindFirstChild("EditorFieldOverview") else nil
+	if not folder then
+		self:_restoreOverview()
+		return
+	end
+	if
+		not field
+		or not folder:IsA("Folder")
+		or folder:GetAttribute("CornEditorOverview") ~= true
+		or folder:GetAttribute("corn_project_id") ~= PROJECT_ID
+	then
+		self:_restoreOverview()
+		self:_warn("Unrecognized EditorFieldOverview is preserved")
+		return
+	end
+	local children = folder:GetChildren()
+	local cachedCount = 0
+	for _ in self._overviewParts do
+		cachedCount += 1
+	end
+	local reusable = self._overviewFolder == folder
+		and self._overviewFieldFrame == field.CFrame
+		and self._overviewFieldSize == field.Size
+		and cachedCount == #children
+	-- Validate the whole container before any local visibility changes.
+	for _, item in children do
+		if
+			not item:IsA("BasePart")
+			or item:GetAttribute("CornEditorOverview") ~= true
+			or item:GetAttribute("corn_project_id") ~= PROJECT_ID
+		then
+			self:_restoreOverview()
+			self:_warn("EditorFieldOverview contains unowned objects; all were preserved")
+			return
+		end
+		local previous = self._overviewParts[item]
+		if not previous or previous.Frame ~= item.CFrame or previous.Size ~= item.Size then
+			reusable = false
+		end
+	end
+	if reusable then
+		return
+	end
+	self:_restoreOverview()
+	self._overviewFolder = folder
+	self._overviewFieldFrame = field.CFrame
+	self._overviewFieldSize = field.Size
+	for _, item in children do
+		local part = item :: BasePart
+		local entry: OverviewItem = {
+			Part = part,
+			PreviousModifier = part.LocalTransparencyModifier,
+			Frame = part.CFrame,
+			Size = part.Size,
+			Keys = overviewKeys(field, part),
+			Hidden = false,
+		}
+		self._overviewParts[part] = entry
+		for _, key in entry.Keys do
+			local items = self._overviewByChunk[key]
+			if not items then
+				items = {}
+				self._overviewByChunk[key] = items
+			end
+			table.insert(items, entry)
+		end
+	end
+	for key, chunk in self._chunks do
+		if chunk.Done then
+			self:_markOverviewChunk(key)
+		end
+	end
+end
+
+function CornController:_updateOverview()
+	local folder = self._overviewFolder
+	if not folder then
+		return
+	end
+	if
+		folder:GetAttribute("CornEditorOverview") ~= true
+		or folder:GetAttribute("corn_project_id") ~= PROJECT_ID
+	then
+		self:_restoreOverview()
+		return
+	end
+	for entry in self._overviewDirty do
+		local part = entry.Part
+		if
+			part.Parent ~= folder
+			or part:GetAttribute("CornEditorOverview") ~= true
+			or part:GetAttribute("corn_project_id") ~= PROJECT_ID
+		then
+			self:_restoreOverview()
+			self:_warn("Overview ownership changed; its visibility was restored")
+			return
+		end
+		local covered = #entry.Keys > 0
+		for _, key in entry.Keys do
+			local chunk = self._chunks[key]
+			if not chunk or not chunk.Done then
+				covered = false
+				break
+			end
+		end
+		if covered ~= entry.Hidden then
+			part.LocalTransparencyModifier = if covered then 1 else entry.PreviousModifier
+			entry.Hidden = covered
+		end
+	end
+	self._overviewDirty = {}
+end
+
 function CornController:_clearChunks()
+	self:_showOverview()
 	for _, chunk in self._chunks do
 		chunk.Alive = false
 		chunk.Folder:Destroy()
@@ -71,6 +261,7 @@ end
 
 function CornController:_clearInputs()
 	self:_clearChunks()
+	self:_restoreOverview()
 	if self._folder then
 		self._folder:Destroy()
 	end
@@ -168,6 +359,7 @@ function CornController:_reconcile(root: BasePart)
 	local map = self._map :: Model
 	local field = self._field :: BasePart
 	local folder = self._folder :: Folder
+	self:_bindOverview()
 	local exclusions = CornLayout.ReadExclusions(map, field)
 	if self._exclusions and self._exclusions.Signature ~= exclusions.Signature then
 		self:_clearChunks()
@@ -237,6 +429,7 @@ function CornController:_reconcile(root: BasePart)
 	end
 	for key, chunk in self._chunks do
 		if not wanted[key] then
+			self:_markOverviewChunk(key)
 			chunk.Alive = false
 			self._plantCount -= chunk.Count
 			chunk.Folder:Destroy()
@@ -252,6 +445,7 @@ function CornController:_reconcile(root: BasePart)
 	table.sort(self._queue, function(a, b)
 		return if a.Distance == b.Distance then a.Key < b.Key else a.Distance < b.Distance
 	end)
+	self:_updateOverview()
 end
 
 function CornController:_createBatch()
@@ -262,6 +456,7 @@ function CornController:_createBatch()
 		return
 	end
 	local began = os.clock()
+	local _, fieldYaw = field.CFrame:ToOrientation()
 	local examined = 0
 	local created = 0
 	while
@@ -284,6 +479,7 @@ function CornController:_createBatch()
 		end
 		if chunk.Row > chunk.MaxRow then
 			chunk.Done = true
+			self:_markOverviewChunk(chunk.Key)
 			table.remove(self._queue, 1)
 		end
 		examined += 1
@@ -300,13 +496,8 @@ function CornController:_createBatch()
 		local plant = clone :: CornLayout.Plant
 		plant.Name = "Corn"
 		plant:PivotTo(
-			field.CFrame
-				* CFrame.new(
-					column * CornLayout.Spacing,
-					-field.Size.Y / 2 + self._height / 2,
-					row * CornLayout.Spacing
-				)
-				* CFrame.Angles(0, CornLayout.CellYaw(column, row), 0)
+			CFrame.new(position + Vector3.new(0, self._height / 2, 0))
+				* CFrame.Angles(0, CornLayout.CellYaw(column, row) + fieldYaw, 0)
 				* self._pivotOffset
 		)
 		plant.Parent = chunk.Folder
@@ -317,6 +508,7 @@ function CornController:_createBatch()
 	if self._folder then
 		self._folder:SetAttribute("LoadedPlants", self._plantCount)
 	end
+	self:_updateOverview()
 end
 
 function CornController:_step(delta: number)
