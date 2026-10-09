@@ -7,7 +7,7 @@ local Workspace = game:GetService("Workspace")
 
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
-local GreyboxWorld = require(script.Parent:WaitForChild("GreyboxWorld"))
+local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
 
 local SoloRound = {}
 SoloRound.__index = SoloRound
@@ -102,7 +102,7 @@ function SoloRound:_moveToStart(character: Model)
 	if not self.world then
 		return
 	end
-	character:PivotTo(self.world.SpawnCFrame)
+	character:PivotTo(self.world:GetSpawnCFrame())
 	local root = character:FindFirstChild("HumanoidRootPart")
 	if root and root:IsA("BasePart") then
 		root.AssemblyLinearVelocity = Vector3.zero
@@ -203,9 +203,9 @@ function SoloRound:_ensureWorld(): boolean
 		return self.world:IsValid()
 	end
 	local ok, result =
-		pcall(GreyboxWorld.new, self.balance.interaction_radius, self.balance.key_slot_count)
+		pcall(AuthoredWorld.new, self.balance.interaction_radius, self.balance.key_slot_count)
 	if not ok then
-		self.context.Log:Warn("Cannot prepare prototype world:", result)
+		self.context.Log:Warn("Cannot bind editable CornMap:", result)
 		return false
 	end
 	self.world = result

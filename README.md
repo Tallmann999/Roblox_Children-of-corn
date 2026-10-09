@@ -1,65 +1,56 @@
 # Дети кукурузы
 
-Одиночный психологический хоррор для Roblox: найти ключ в густом поле и сбежать от ожившего чучела. Первый MVP рассчитан на локальный тест Roblox Studio на ПК.
+Одиночный хоррор для Roblox Studio на ПК. Найти ключ в густом поле, открыть ворота и сбежать. Полный MVP также включает первое лицо, ограниченный спринт, монстра и две попытки; эти механики идут следующими фичами.
 
-**Текущий результат — проверенная основа и код первого ключевого цикла.** Установлены core/network/tags из RobloxGameKit 0.1.0; подготовлены временная площадка, ключ/ворота/выход, интерфейс, повтор и временная награда. Кукурузу нужно импортировать в Studio, игровой этап ещё не прошёл Test. Камера, спринт, охота и звук — следующие этапы.
+Текущий этап — постоянная карта **1200 × 1200 studs** и цикл ключ → ворота → выход → повтор. Подготовлены 15 мест ключа, три бочки, три дома из Parts и ограниченный предпросмотр предоставленной кукурузы. Дома — декорации и препятствия. Кукуруза подгружается около игрока; полное поле не создаёт одновременно 71 тысячу растений.
 
-## Документы
+## Установка в правильную сцену
 
-- [Концепт](docs/project-concept.md)
-- [MVP и отложенные фичи](docs/feature-index.md)
-- [Правила основного цикла](docs/2026-10-09_core-loop_gd-spec.md)
-- [Технический план](docs/technical-plan.md)
-- [Архитектура и контракты мира](docs/architecture.md)
-- [Чеклист и фактические проверки](docs/mvp-checklist.md)
+Рабочий файл: `place/Children_of_corn.rbxl`. Резервная копия перед установкой: `place/Children_of_corn.before-editable.rbxl`.
+
+1. Открыть **Children_of_corn.rbxl**, остановить Play и закрыть вкладки скриптов в редакторе Studio.
+2. Выполнить весь `scripts/install-editable-scene.luau` в Command Bar. Он проверяет исходные Sources, отказывается в Speed Monkey и не перезаписывает существующий CornMap. Rojo для этой установки не нужен; live sync остаётся отключённым.
+3. Увидеть `ChildrenOfCorn editable scene installed`, нажать F на уже выделенном RoundSpawn для обзора старта и сохранить сцену Ctrl+S. Карта находится на высоте Y=80; если выделение потерялось, выбрать Workspace/CornMap/RoundSpawn в Explorer и нажать F.
+4. Запустить F5 и пройти [проверку первого этапа](docs/first-slice-playtest.md).
+
+Если Output просит закрыть вкладку скрипта, закрой её и повтори весь установщик: до этого отказа Sources и мир не меняются. Если прежний GreyboxWorld содержит добавленные объекты, установщик также остановится, сохранив их.
+
+Статус: format/lint/Rojo build и файловая проверка установщика пройдены. Установка в живую Studio, визуальная проверка и Play Test пока требуют выполнения этих шагов. Из внешнего CLI исходная .rbxl не перезаписывалась.
+
+## Редактирование и передача тестировщику
+
+[Как двигать дома/ворота/слоты, обновлять предпросмотр и передать .rbxl](docs/map-editing-and-sharing.md). После Stop карта остаётся в Workspace. При новом раунде ручная расстановка сохраняется. Тестировщик открывает сохранённый .rbxl в Roblox Studio и запускает F5; Rojo ему не требуется. Mesh/texture — облачные ассеты, им нужны доступ и загрузка.
+
+## Документы и порядок фич
+
+- [Концепт](docs/project-concept.md), [индекс фич](docs/feature-index.md), [правила цикла](docs/2026-10-09_core-loop_gd-spec.md).
+- [Технический план](docs/technical-plan.md), [архитектура](docs/architecture.md), [чеклист](docs/mvp-checklist.md).
+- Этапы: карта/ключ/ворота/повтор → первое лицо/спринт → охота/две попытки → звук/атмосфера → полный плейтест.
+
+Магазин, покупки, постоянное сохранение и мультиплеер отложены.
 
 ## Команды из корня проекта
 
-PowerShell; установка закреплённых инструментов и Studio plugin:
-
 ```powershell
 .\scripts\setup.ps1
-```
-
-Проверка форматирования, lint, Rojo build и sourcemap:
-
-```powershell
 .\scripts\check.ps1
 ```
 
-Запуск локального сервера синхронизации:
+Закреплены Rokit 1.2.0, Rojo 7.7.0, StyLua 2.5.2, Selene 0.31.0. Portable Lune 0.10.5 установлен в .tools/lune с проверкой официального SHA-256; он используется только для файловых проверок. Исходники синхронизируемого кода находятся в src/shared, src/server, src/client; Rojo не управляет Workspace/Lighting.
+
+После изменения src и check.ps1 установщик пересобирается:
 
 ```powershell
-.\scripts\serve.ps1
+C:\Python314\python.exe scripts\build-editable-installer.py
+.\.tools\lune\lune.exe run tests\editable-scene.luau
 ```
 
-Сейчас сервер уже запущен на 127.0.0.1:34872. В Roblox Studio открой мир и Plugins → Rojo → Connect. После перезапуска компьютера/остановки сервера команда serve запускает его снова. Останавливать foreground-сервер можно Ctrl+C.
-
-Для прямых команд в текущем терминале:
+Тест использует ограниченный адаптер геометрии Lune и не заменяет движок/Play Test. После установки и сохранения проверить сохранность первоначальной сцены:
 
 ```powershell
-. .\scripts\use-project-tools.ps1
-rojo --version
-stylua --check src
-selene src
+C:\Python314\python.exe scripts\verify-scene-preservation.py place\Children_of_corn.before-editable.rbxl place\Children_of_corn.rbxl
 ```
 
-Инструменты находятся в игнорируемой .tools/, версии закреплены в rokit.toml; настройки системного PATH и PowerShell profile не менялись. Rokit 1.2.0 скачивается из официального релиза с проверкой SHA-256. Для новой установки нужен доступ к GitHub.
+build/code-foundation.rbxlx — только проверочная сборка кода; не открывать её вместо рабочей карты. live Rojo намеренно остановлен после ошибочного подключения к другой сцене. Перед будущим serve сначала проверить правильный файл Studio.
 
-## Мир и код
-
-Studio владеет Workspace/Terrain/Lighting. Rojo синхронизирует только:
-
-- ReplicatedStorage/GameShared ← src/shared
-- ServerScriptService/GameServer ← src/server
-- StarterPlayer/StarterPlayerScripts/GameClient ← src/client
-
-Рабочая сцена основы сохранена как place/Children_of_corn.rbxl; её 8 исходных скриптов и запуск основы проверены. Новый игровой код синхронизируется через Rojo и пока не проверен в Test. После импорта кукурузы сохрани обновлённую сцену. Не подменяй её build/code-foundation.rbxlx: это пустой по окружению проверочный артефакт кода.
-
-Публикация, DataStore, магазины и мультиплеер в этот этап не входят. Подключение Studio и Play Test отмечаются отдельно после фактической проверки.
-
-Источник основы: [RobloxGameKit_v0.1.0](https://github.com/Tallmann999/RobloxGameKit_v0.1.0), revision 960e068352e187fc1d2129305f8fcfb07faf2782. [Установленные модули](robloxgamekit.lock.json).
-
-## Первый игровой этап
-
-Импортируй assets/corn/SM_Prop_Plant_Corn_01_L_textured.fbx в ServerStorage/CornPlantTemplate. Во время Test появится временное поле из этого шаблона; исходный мир кодом не изменяется. [Точные шаги и игровой тест](docs/first-slice-playtest.md), [описание ассета](assets/corn/README.md).
+Источник основы: [RobloxGameKit_v0.1.0](https://github.com/Tallmann999/RobloxGameKit_v0.1.0), revision 960e068352e187fc1d2129305f8fcfb07faf2782; установлен минимум core/network/tags. [Lock](robloxgamekit.lock.json).

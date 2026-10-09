@@ -1,0 +1,257 @@
+--!strict
+
+local CornLayout = {
+	Height = 8,
+	Spacing = 4.5,
+	Seed = 817,
+	ChunkCells = 8,
+	RenderRadius = 85,
+}
+
+export type Plant = Model | BasePart
+export type Box = { Frame: CFrame, HalfSize: Vector2 }
+export type Circle = { Center: Vector3, Radius: number }
+export type Exclusions = { Boxes: { Box }, Circles: { Circle }, Signature: string }
+
+local SLOT_RADIUS = 6
+local BOX_PADDING = 1.5
+
+local function finite(value: number): boolean
+	return value == value and value > -math.huge and value < math.huge
+end
+
+function CornLayout.Bounds(plant: Plant): (CFrame, Vector3)
+	if plant:IsA("Model") then
+		return plant:GetBoundingBox()
+	end
+	return plant.CFrame, plant.Size
+end
+
+function CornLayout.PrepareTemplate(source: Instance, height: number?): (Plant?, string?)
+	if not source:IsA("Model") and not source:IsA("BasePart") then
+		return nil, "Corn source must be a Model or BasePart"
+	end
+	local targetHeight = height or CornLayout.Height
+	if not finite(targetHeight) or targetHeight <= 0 then
+		return nil, "Corn height must be positive and finite"
+	end
+	local items = source:GetDescendants()
+	table.insert(items, source)
+	local partCount = 0
+	for _, item in items do
+		if item:IsA("LuaSourceContainer") then
+			return nil, "Corn source contains code"
+		end
+		if
+			item:IsA("Sound")
+			or item:IsA("ParticleEmitter")
+			or item:IsA("Beam")
+			or item:IsA("Trail")
+			or item:IsA("ProximityPrompt")
+			or item:IsA("ClickDetector")
+			or item:IsA("RemoteEvent")
+			or item:IsA("RemoteFunction")
+		then
+			return nil, "Corn source must contain only static art"
+		end
+		if not item.Archivable then
+			return nil, "Corn source has non-Archivable contents"
+		end
+		if item:IsA("BasePart") then
+			partCount += 1
+		end
+	end
+	if partCount == 0 then
+		return nil, "Corn source has no BaseParts"
+	end
+
+	local prepared = source:Clone() :: Plant?
+	if not prepared then
+		return nil, "Corn source could not be cloned"
+	end
+	local ok, problem = pcall(function()
+		local _, size = CornLayout.Bounds(prepared :: Plant)
+		if not finite(size.Y) or size.Y <= 0 then
+			error("Corn source has no usable height")
+		end
+		local ratio = targetHeight / size.Y
+		if prepared:IsA("Model") then
+			prepared:ScaleTo(prepared:GetScale() * ratio)
+		else
+			prepared.Size *= ratio
+			for _, item in prepared:GetChildren() do
+				if item:IsA("SpecialMesh") then
+					item.Scale *= ratio
+				end
+			end
+		end
+		local clones = prepared:GetDescendants()
+		table.insert(clones, prepared)
+		for _, item in clones do
+			-- Art tags must not become gameplay bindings on every decorative clone.
+			for _, tag in item:GetTags() do
+				item:RemoveTag(tag)
+			end
+			if item:IsA("BasePart") then
+				item.Anchored = true
+				item.CanCollide = false
+				item.CanTouch = false
+				item.CanQuery = false
+				item.CastShadow = false
+				if item:IsA("MeshPart") then
+					item.DoubleSided = true
+				end
+			end
+		end
+		prepared:PivotTo(CornLayout.PivotForPlant(prepared, Vector3.zero, 0))
+	end)
+	if not ok then
+		prepared:Destroy()
+		return nil, tostring(problem)
+	end
+	return prepared, nil
+end
+
+function CornLayout.PivotForPlant(plant: Plant, groundPosition: Vector3, yaw: number): CFrame
+	local bounds, size = CornLayout.Bounds(plant)
+	local boundsFromPivot = plant:GetPivot():ToObjectSpace(bounds)
+	return CFrame.new(groundPosition + Vector3.new(0, size.Y / 2, 0))
+		* CFrame.Angles(0, yaw, 0)
+		* boundsFromPivot:Inverse()
+end
+
+function CornLayout.GetCellBounds(field: BasePart): (number, number, number, number)
+	local half = field.Size / 2
+	return math.ceil(-half.X / CornLayout.Spacing),
+		math.floor(half.X / CornLayout.Spacing),
+		math.ceil(-half.Z / CornLayout.Spacing),
+		math.floor(half.Z / CornLayout.Spacing)
+end
+
+function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
+	return field.CFrame:PointToWorldSpace(
+		Vector3.new(column * CornLayout.Spacing, -field.Size.Y / 2, row * CornLayout.Spacing)
+	)
+end
+
+function CornLayout.CellYaw(column: number, row: number): number
+	local hash = (column * 73856093 + row * 19349663 + CornLayout.Seed * 83492791) % 104729
+	return hash / 104729 * math.pi * 2
+end
+
+local function footprint(frame: CFrame, size: Vector3, padding: number): Box
+	local look = frame.LookVector
+	local yaw = math.atan2(-look.X, -look.Z)
+	local flat = CFrame.new(frame.Position) * CFrame.Angles(0, yaw, 0)
+	local half = size / 2
+	local right = flat.RightVector
+	local forward = flat.LookVector
+	local width = math.abs(right:Dot(frame.RightVector)) * half.X
+		+ math.abs(right:Dot(frame.UpVector)) * half.Y
+		+ math.abs(right:Dot(frame.LookVector)) * half.Z
+	local depth = math.abs(forward:Dot(frame.RightVector)) * half.X
+		+ math.abs(forward:Dot(frame.UpVector)) * half.Y
+		+ math.abs(forward:Dot(frame.LookVector)) * half.Z
+	return { Frame = flat, HalfSize = Vector2.new(width + padding, depth + padding) }
+end
+
+local function authorDescendants(map: Model): { Instance }
+	local result: { Instance } = {}
+	local stack = map:GetChildren()
+	while #stack > 0 do
+		local item = table.remove(stack)
+		local owned = item:GetAttribute("corn_project_id") == "children_of_corn"
+		local decoration = owned
+			and (
+				(item.Name == "EditorPreview" and item:GetAttribute("CornEditorPreview") == true)
+				or (item.Name == "CornClientPlants" and item:GetAttribute("CornClientRendererOwned") == true)
+				or item.Name == "CornRoundRuntime"
+			)
+		if decoration then
+			continue
+		end
+		table.insert(result, item)
+		for _, child in item:GetChildren() do
+			table.insert(stack, child)
+		end
+	end
+	return result
+end
+function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
+	local boxes: { Box } = {}
+	local circles: { Circle } = {}
+	local signatures: { string } = { tostring(field.CFrame) .. "/" .. tostring(field.Size) }
+	local included: { [Instance]: boolean } = {}
+	local function addBox(part: BasePart, padding: number)
+		if included[part] then
+			return
+		end
+		included[part] = true
+		table.insert(boxes, footprint(part.CFrame, part.Size, padding))
+		table.insert(
+			signatures,
+			part:GetFullName()
+				.. "/box/"
+				.. tostring(part.CFrame)
+				.. "/"
+				.. tostring(part.Size)
+				.. "/"
+				.. padding
+		)
+	end
+	for _, folderName in { "NoCornZones", "Props" } do
+		local folder = map:FindFirstChild(folderName)
+		if folder then
+			for _, item in folder:GetDescendants() do
+				if item:IsA("BasePart") then
+					addBox(item, BOX_PADDING)
+				end
+			end
+		end
+	end
+	for _, item in authorDescendants(map) do
+		if item:IsA("BasePart") then
+			if item:HasTag("corn_no_corn_zone") then
+				addBox(item, BOX_PADDING)
+			end
+			if item:HasTag("corn_key_slot") then
+				table.insert(circles, { Center = item.Position, Radius = SLOT_RADIUS })
+				table.insert(signatures, item:GetFullName() .. "/slot/" .. tostring(item.Position))
+			elseif item:HasTag("corn_spawn") then
+				addBox(item, 4)
+				table.insert(circles, { Center = item.Position, Radius = 10 })
+				table.insert(signatures, item:GetFullName() .. "/spawn/" .. tostring(item.Position))
+			end
+		end
+	end
+	local gate = map:FindFirstChild("EscapeGate")
+	if gate then
+		local door = gate:FindFirstChild("Door", true)
+		if door and door:IsA("BasePart") then
+			addBox(door, 6)
+		end
+	end
+	table.sort(signatures)
+	return { Boxes = boxes, Circles = circles, Signature = table.concat(signatures, "|") }
+end
+
+function CornLayout.IsExcluded(position: Vector3, exclusions: Exclusions): boolean
+	for _, circle in exclusions.Circles do
+		local delta = position - circle.Center
+		if delta.X * delta.X + delta.Z * delta.Z <= circle.Radius * circle.Radius then
+			return true
+		end
+	end
+	for _, box in exclusions.Boxes do
+		local localPosition = box.Frame:PointToObjectSpace(position)
+		if
+			math.abs(localPosition.X) <= box.HalfSize.X
+			and math.abs(localPosition.Z) <= box.HalfSize.Y
+		then
+			return true
+		end
+	end
+	return false
+end
+
+return CornLayout

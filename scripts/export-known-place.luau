@@ -1,0 +1,7 @@
+local fs = require("@lune/fs")
+local roblox = require("@lune/roblox")
+local process = require("@lune/process")
+local stdio = require("@lune/stdio")
+assert(#process.args == 1, "Usage: export-known-place <place.rbxl>")
+local place = roblox.deserializePlace(fs.readFile(process.args[1]))
+stdio.write(roblox.serializePlace(place, true))

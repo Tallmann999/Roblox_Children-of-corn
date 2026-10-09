@@ -4,6 +4,17 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Config = require(GameShared:WaitForChild("Config"):WaitForChild("GameConfig"))
+local Workspace = game:GetService("Workspace")
+local map = Workspace:WaitForChild("CornMap", 10)
+if
+	not map
+	or map:GetAttribute("corn_project_id") ~= "children_of_corn"
+	or Workspace:FindFirstChild("Asmr_Base")
+	or Workspace:FindFirstChild("ASMR_Models")
+then
+	warn("[ChildrenOfCorn] Inactive: editable CornMap missing or another game detected")
+	return
+end
 local Logger = require(GameShared:WaitForChild("Core"):WaitForChild("Logger"))
 local log = Logger.new("ServerBootstrap", Config.Debug)
 

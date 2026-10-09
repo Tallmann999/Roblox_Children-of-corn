@@ -1,7 +1,7 @@
 --!strict
 
 -- Baseline from docs/2026-10-09_core-loop_gd-spec.md, sections 11-12.
--- Map dimensions and visibility heights remain undefined until a Studio playtest.
+-- Field size is confirmed at 1200 x 1200; corn visibility still needs a Studio playtest.
 return {
 	target_round_min_sec = 420,
 	target_round_max_sec = 600,
