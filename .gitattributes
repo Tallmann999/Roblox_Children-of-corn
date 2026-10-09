@@ -9,3 +9,5 @@
 *.rbxm binary
 *.rbxlx text eol=lf
 *.rbxmx text eol=lf
+*.fbx binary
+*.png binary

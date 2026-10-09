@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-09",
+  "original_fbx_sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+  "texture_sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4",
+  "derived_fbx": "SM_Prop_Plant_Corn_01_L_textured.fbx",
+  "derived_fbx_sha256": "30dfe4f3261089e6d8475373d57db2e124679f8a47ca3a1dfb615cbf03df1708",
+  "derived_bytes": 2211804,
+  "fbx_version": 7500,
+  "original_object_structural_sha256": {
+    "Geometry:2358462362240": "cdb976677caa4af21e9f2b54ae8ad62423802547104fc17ee800c64763ffffb5",
+    "Model:2358216367824": "31ffde491156569bc494568e34c33eaaf2deb64190289e62f4cdbe50b9143a0f",
+    "Material:2358404555424": "5a9a41499a1bb7be31eca48e3c2b6168842125d97781f779982bb96de4db3c90",
+    "AnimationStack:2360029053712": "21229e48bbdb8d968bd56392163c98a175ddea897bdfe5494af22f1d10fcbf79",
+    "AnimationLayer:2358562286160": "21d5cd520356fa6c84bb574cd663fd0f6b377cdf78ac816dd1a6b659a3bb7469"
+  },
+  "geometry_vertices_structural_sha256": "55e318cd6faa43bf5332403e03e330cc4294a2314a5fa63d9852e88459c414b6",
+  "geometry_uv_structural_sha256": "bee864283b3814615e85f7a0c22e877ebff0f66b740fe83f28fba9f42f19bb2b",
+  "original_objects_preserved": true,
+  "global_settings_preserved": true,
+  "original_connections_preserved": true,
+  "texture_id": 2360029053713,
+  "video_id": 2360029053714,
+  "material_id": 2358404555424,
+  "added_texture_connection_property": "DiffuseColor",
+  "relative_texture_path": "01_roblax_style.png",
+  "embedded_texture_sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4",
+  "studio_import_verified": false,
+  "notes": "Only Definitions/Objects/Connections add texture metadata; original node properties, including all compressed array payloads, are byte-identical. FBX offsets/footer alignment recomputed."
+}

@@ -12,7 +12,7 @@
 
 ## Children of Corn scope
 
-- Current milestone: technical foundation; gameplay features remain planned until tested in Studio.
+- Current milestone: first key/gate/escape/retry slice on an owned temporary runtime greybox. Foundation startup verified by user screenshot; gameplay is unverified until tested in Studio. Never edit the saved .rbxl or original world content for this runtime slice.
 - Source of truth: docs/project-concept.md and docs/2026-10-09_core-loop_gd-spec.md.
 - Local solo PC prototype. No persistence, purchases, lobby, public publishing or multiplayer in this milestone.
 - Use scripts/use-project-tools.ps1 for the project-local toolchain. Run scripts/check.ps1 after code changes.

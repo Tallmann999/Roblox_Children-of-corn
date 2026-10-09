@@ -1,4 +1,6 @@
 --!strict
 
--- Add game endpoint names here or in a game-specific sibling module.
-return {}
+return {
+	RequestRoundAction = "request_round_action",
+	RoundSnapshot = "round_snapshot",
+}
