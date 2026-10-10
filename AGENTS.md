@@ -12,7 +12,7 @@
 
 ## Children of Corn scope
 
-- Current milestone: persistent editable CornMap 1200 x 1200 studs and key/gate/escape/retry. User explicitly authorized authoring this map in Children_of_corn only. Preserve imported art and unrelated scene content; use a backed-up guarded installer or verified new file. Studio gameplay acceptance remains pending.
+- Current milestone: persistent editable CornMap 1200 x 1200 studs and key/gate/escape/retry. User explicitly authorized authoring this map in Children_of_corn only. Preserve imported art and unrelated scene content; use a backed-up guarded installer or verified new file. Key/gate/escape/retry received live Studio acceptance on 2026-10-10; distant overview quality and long-run performance remain pending; the tested scene is saved.
 - Source of truth: docs/project-concept.md and docs/2026-10-09_core-loop_gd-spec.md.
 - Local solo PC prototype. No persistence, purchases, lobby, public publishing or multiplayer in this milestone.
 - Use scripts/use-project-tools.ps1 for the project-local toolchain. Run scripts/check.ps1 after code changes.
@@ -26,6 +26,14 @@
 
 - User reported the Speed Monkey cleanup complete and resumed Children_of_corn work. Live Rojo remains stopped; protected file/Command Bar installation is preferred until the correct Studio target is verified.
 
-- Current repair scope: four authored corner SpawnLocations, server-selected start and full-field overview plus dense nearby corn. Preserve existing map geometry and source asset. The saved lower Workspace/SpawnLocation may be disabled only by the guarded Corn repair with rollback. Use scripts/repair-corn-scene.luau for installed maps; actual Studio acceptance remains pending.
+- Repair scope: four authored corner SpawnLocations, server-selected start and full-field overview plus dense nearby corn. Preserve existing map geometry and source asset. The saved lower Workspace/SpawnLocation may be disabled only by the guarded Corn repair with rollback. Use scripts/repair-corn-scene.luau for installed maps; live spawn/key-loop acceptance passed on 2026-10-10. Distant overview quality remains open.
 
-- The saved corner-spawn repair is installed. Preserve the author’s current CornMap/baseplate coordinates. Correct flat EditorFieldOverview only with guarded scripts/fix-corn-proportions.luau: normal aspect ratio, owned Size changes in place, one MapAuthoring leaf update, rollback. Dense local Preview/runtime and sparse whole-field overview are distinct; do not stretch X/Z to claim dense distant corn. Studio MCP is configured in Codex but manual Studio enable/client restart/verified studio_id are still required.
+- The saved corner-spawn repair is installed. Preserve the author’s current CornMap/baseplate coordinates. Correct flat EditorFieldOverview only with guarded scripts/fix-corn-proportions.luau: normal aspect ratio, owned Size changes in place, one MapAuthoring leaf update, rollback. Dense local Preview/runtime and sparse whole-field overview are distinct; do not stretch X/Z to claim dense distant corn. Studio MCP is live through the official STDIO interface. Verified Children_of_corn studio_id on 2026-10-10: 2aca50b7-fc16-4a1c-aac0-299372b05b92; re-list after any Studio restart.
+
+
+## Autonomous follow-up 2026-10-10
+
+- User authorized completing/testing the current feature and immediately implementing the next without confirmation while away. Key/gate/escape/retry and first_person_movement are now installed and tested in the verified Children_of_corn window. See docs/2026-10-10_studio-playtest.md.
+- Server-authoritative stamina: sprint 4 seconds/refill 6; first-person client camera and HUD. Twenty live Sources match src. New guarded code-only installer: scripts/install-movement.luau; regenerate with scripts/check.ps1 then build-movement-installer.py. Historical owned Source versions are explicitly fingerprinted; refuse unknown manual edits.
+- Preserve current map/baseplate/art. Rojo remains stopped. No monster, captures, sounds, persistence, purchases, lobby, publishing or multiplayer were implemented in this follow-up.
+- The tested .rbxl is now saved: the engine-generated AutoRecovery 13:20:08 was strictly verified and atomically copied over the original after checking both the working-file and baseline-backup hashes. No Lune reserialization. SHA-256 c4d027d34540118cb1c037f00bb4efd0dbb3d673a0a4194c03968ea28d577cb8, 141703 bytes. All original props/art/CFrames and raw Terrain preserved; only approved overview sizes/annotations, code and editor camera pose differ. Exact pre-edit backup: place/Children_of_corn.before-live-proportion-fix-20261010.rbxl. Revalidate any future recovery candidate with scripts/verify-tested-corn-copy.py before file replacement.

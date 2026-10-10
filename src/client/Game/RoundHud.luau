@@ -13,6 +13,11 @@ export type Snapshot = {
 	reward_diamonds: number,
 	elapsed_sec: number,
 	notice: string,
+	stamina: number,
+	stamina_capacity: number,
+	is_sprinting: boolean,
+	sprint_exhausted: boolean,
+	start_look: Vector3,
 }
 
 local RoundHud = {}
@@ -79,6 +84,7 @@ local function button(
 	result.TextSize = 17
 	result.TextColor3 = TEXT_COLOR
 	result.Text = text(key)
+	result.Modal = parent.Name == "RoundCard"
 	result.Parent = parent
 	local corner = Instance.new("UICorner")
 	corner.CornerRadius = UDim.new(0, 6)

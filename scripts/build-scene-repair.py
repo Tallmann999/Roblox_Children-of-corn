@@ -28,8 +28,13 @@ def table(rows):
 old = entries(original)
 previous_repair = entries(installed)
 new = entries(updated)
-assert len(old) == len(previous_repair) == len(new) == 18
-assert {p for p,_,_ in old} == {p for p,_,_ in previous_repair} == {p for p,_,_ in new}
+assert len(old) == len(previous_repair) == 18 and len(new) == 20
+old_paths = {p for p,_,_ in old}
+assert old_paths == {p for p,_,_ in previous_repair}
+assert {p for p,_,_ in new} - old_paths == {
+    'ReplicatedStorage/GameShared/Game/Stamina',
+    'StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController',
+}
 head = (ROOT/'scripts/scene-repair-head.luau').read_text(encoding='utf-8')
 tail = (ROOT/'scripts/scene-repair-tail.luau').read_text(encoding='utf-8')
 output = head+'\nlocal baseline = '+table(old)+'\nlocal previousRepair = '+table(previous_repair)+'\nlocal updates = '+table(new)+'\n'+tail

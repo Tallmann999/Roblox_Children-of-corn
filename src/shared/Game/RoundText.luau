@@ -1,6 +1,6 @@
 --!strict
 
--- Keep player-facing strings in the GD namespace; this slice has no hunt/stamina UI.
+-- Player-facing strings shared by the round and movement HUDs.
 return table.freeze({
 	corn_loop_title = "Дети кукурузы",
 	corn_loop_start = "Начать",
@@ -19,4 +19,8 @@ return table.freeze({
 	corn_loop_leave = "Завершить раунд",
 	corn_loop_setup_error = "Не удалось подготовить раунд. Попробуй снова",
 	corn_loop_connection_error = "Не удалось подключить интерфейс. Перезапусти тест Studio",
+	corn_movement_stamina = "Выносливость {percent}%",
+	corn_movement_controls = "Shift — спринт · Space — прыжок · Alt — курсор",
+	corn_movement_exhausted = "Отпусти Shift, чтобы снова бежать",
+	corn_movement_cursor = "Alt — вернуться к игре",
 })

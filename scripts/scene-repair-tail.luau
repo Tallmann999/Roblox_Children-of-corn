@@ -5,11 +5,17 @@ for _, entry in previousRepair do previous[entry.path] = entry end
 local objects = {}
 for _, entry in updates do
     local item = resolve(entry.path)
-    assert(item and item.ClassName == entry.class, "Missing code object: " .. entry.path .. "; nothing changed")
-    assert(editor:FindScriptDocument(item) == nil, "Close script tab: " .. entry.path .. "; nothing changed")
     local old = prior[entry.path]
-    assert(normalized(item.Source) == normalized(old.source)
-        or normalized(item.Source) == normalized(previous[entry.path].source)
+    if not item then
+        assert(not old and entry.class == "ModuleScript", "Missing code object: " .. entry.path .. "; nothing changed")
+        local parentPath = string.match(entry.path, "^(.*)/[^/]+$")
+        assert(resolve(parentPath), "Missing code parent: " .. entry.path .. "; nothing changed")
+        continue
+    end
+    assert(item.ClassName == entry.class, "Code class collision: " .. entry.path .. "; nothing changed")
+    assert(editor:FindScriptDocument(item) == nil, "Close script tab: " .. entry.path .. "; nothing changed")
+    assert((old and normalized(item.Source) == normalized(old.source))
+        or (previous[entry.path] and normalized(item.Source) == normalized(previous[entry.path].source))
         or normalized(item.Source) == normalized(entry.source),
         "Unrecognized manual Source edit: " .. entry.path .. "; nothing changed")
     if freshPaths[entry.path] then
@@ -58,13 +64,22 @@ local oldCorners = map:FindFirstChild("CornerSpawns")
 local lowerSpawn = world:FindFirstChild("SpawnLocation")
 local lowerWasEnabled = if lowerSpawn and lowerSpawn:IsA("SpawnLocation") then lowerSpawn.Enabled else nil
 local previousVersion = map:GetAttribute("map_version")
-local changed, swapped = {}, {}
+local changed, swapped, created = {}, {}, {}
 local layersDetached = false
 local history = game:GetService("ChangeHistoryService")
 history:SetWaypoint("Before Corn spawn and field repair")
 local ok, problem = pcall(function()
     for _, entry in updates do
         local item = objects[entry.path]
+        if not item then
+            local parentPath, name = string.match(entry.path, "^(.*)/([^/]+)$")
+            item = Instance.new(entry.class)
+            item.Name = name
+            table.insert(created, item)
+            item.Source = entry.source
+            item.Parent = resolve(parentPath)
+            objects[entry.path] = item
+        end
         if freshPaths[entry.path] then
             -- New instances avoid edit-mode require() caches from the original install.
             local replacement = item:Clone()
@@ -112,6 +127,7 @@ if not ok then
     if lowerWasEnabled ~= nil then lowerSpawn.Enabled = lowerWasEnabled end
     map:SetAttribute("map_version", previousVersion)
     for _, entry in changed do entry.item.Source = entry.source end
+    for index = #created, 1, -1 do created[index]:Destroy() end
     for index = #swapped, 1, -1 do
         local entry = swapped[index]
         entry.new:Destroy()

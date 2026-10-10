@@ -1,0 +1,44 @@
+{
+  "corners": {
+    "-550,550": true,
+    "-550,-550": true,
+    "550,-550": true,
+    "550,550": true
+  },
+  "samples": [
+    {
+      "first_person": true,
+      "inward_dot": 1,
+      "corner": "550,550",
+      "root_y": 17.398006439208984
+    },
+    {
+      "first_person": true,
+      "inward_dot": 1,
+      "corner": "-550,-550",
+      "root_y": 17.398006439208984
+    },
+    {
+      "first_person": true,
+      "inward_dot": 1,
+      "corner": "550,-550",
+      "root_y": 17.398006439208984
+    },
+    {
+      "first_person": true,
+      "inward_dot": 1,
+      "corner": "-550,-550",
+      "root_y": 17.398006439208984
+    },
+    {
+      "first_person": true,
+      "inward_dot": 1,
+      "corner": "-550,550",
+      "root_y": 17.398006439208984
+    }
+  ],
+  "test": "natural server-selected round starts and retries",
+  "studio_id": "2aca50b7-fc16-4a1c-aac0-299372b05b92",
+  "passed": true,
+  "camera_manually_set_by_test": false
+}

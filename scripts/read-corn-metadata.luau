@@ -26,7 +26,7 @@ for _, item in if corners then corners:GetChildren() else {} do
 end
 local preview = if map then map:FindFirstChild("EditorPreview") else nil
 local overview = if map then map:FindFirstChild("EditorFieldOverview") else nil
-print(serde.encode("json", {map_attrs=attrs(map), corner_count=count, corners_valid=valid and count == 4,
+print(serde.encode("json", {map_attrs=attrs(map), overview_attrs=attrs(overview), corner_count=count, corners_valid=valid and count == 4,
     preview_owned=preview ~= nil and preview:GetAttribute("CornEditorPreview") == true
         and preview:GetAttribute("corn_project_id") == "children_of_corn",
     overview_owned=overview ~= nil and overview:GetAttribute("CornEditorOverview") == true

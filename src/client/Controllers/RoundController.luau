@@ -49,6 +49,16 @@ local function validSnapshot(value: any): boolean
 		and nonnegativeNumber(value.reward_diamonds)
 		and nonnegativeNumber(value.elapsed_sec)
 		and typeof(value.notice) == "string"
+		and nonnegativeNumber(value.stamina)
+		and nonnegativeNumber(value.stamina_capacity)
+		and value.stamina_capacity > 0
+		and value.stamina <= value.stamina_capacity
+		and typeof(value.is_sprinting) == "boolean"
+		and typeof(value.sprint_exhausted) == "boolean"
+		and typeof(value.start_look) == "Vector3"
+		and value.start_look.Magnitude > 0.99
+		and value.start_look.Magnitude < 1.01
+		and math.abs(value.start_look.Y) < 0.001
 end
 
 local function getRemote(folder: Instance, name: string): RemoteEvent?
@@ -105,7 +115,7 @@ function RoundController:_request(action: string)
 	end)
 end
 
-function RoundController:Start(_context: any)
+function RoundController:Start(context: any)
 	local hud = self._hud
 	if not hud then
 		return
@@ -130,6 +140,7 @@ function RoundController:Start(_context: any)
 		end
 		self._snapshot = payload :: Snapshot
 		hud:Render(payload :: Snapshot)
+		context.Controllers.MovementController:SetSnapshot(payload)
 	end)
 
 	-- Subscribe first: initial server messages may precede the client controller.

@@ -8,6 +8,7 @@ local Workspace = game:GetService("Workspace")
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
 local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
+local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
 
 local SoloRound = {}
 SoloRound.__index = SoloRound
@@ -18,6 +19,8 @@ function SoloRound.new(context: any)
 		balance = context.Config.CoreLoop,
 		action = context.Services.NetworkService:GetEvent(Endpoints.RequestRoundAction),
 		snapshot = context.Services.NetworkService:GetEvent(Endpoints.RoundSnapshot),
+		sprintIntent = context.Services.NetworkService:GetEvent(Endpoints.RequestSprintIntent),
+		stamina = Stamina.new(context.Config.CoreLoop.stamina_capacity, os.clock()),
 		world = nil :: any,
 		selectedSpawn = nil :: BasePart?,
 		player = nil :: Player?,
@@ -55,6 +58,11 @@ function SoloRound:_send()
 	if not player or player.Parent ~= Players then
 		return
 	end
+	local facing = if self.selectedSpawn
+		then self.selectedSpawn.CFrame.LookVector
+		else Vector3.new(0, 0, -1)
+	local horizontal = Vector3.new(facing.X, 0, facing.Z)
+	local startLook = if horizontal.Magnitude > 0 then horizontal.Unit else Vector3.new(0, 0, -1)
 	self.snapshot:FireClient(player, {
 		phase = self.phase,
 		has_key = self.hasKey,
@@ -65,6 +73,11 @@ function SoloRound:_send()
 			then os.clock() - self.startedAt
 			else self.elapsed,
 		notice = self.notice,
+		stamina = self.stamina.value,
+		stamina_capacity = self.balance.stamina_capacity,
+		is_sprinting = self.stamina.sprinting,
+		sprint_exhausted = self.stamina.exhausted,
+		start_look = startLook,
 	})
 end
 
@@ -83,6 +96,9 @@ function SoloRound:_livingCharacter(): (Model?, Humanoid?, BasePart?)
 end
 
 function SoloRound:_controls(enabled: boolean)
+	if not enabled then
+		Stamina.Request(self.stamina, false, os.clock(), false)
+	end
 	local character, humanoid = self:_livingCharacter()
 	if not character or not humanoid then
 		return
@@ -279,6 +295,7 @@ function SoloRound:_startRound()
 		return
 	end
 	self.epoch += 1
+	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	local epoch = self.epoch
 	self.phase = "preparing"
 	self.startedAt = nil
@@ -495,6 +512,7 @@ function SoloRound:_removePlayer(player: Player)
 		self.characterRemovingConnection = nil
 	end
 	self.player = nil
+	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self.phase = "ready"
 	self.hasKey = false
 	self.gateOpen = false
@@ -533,15 +551,51 @@ function SoloRound:_poll(now: number)
 		self:_finish("escaped", "")
 		return
 	end
-	if now - self.snapshotAt >= 1 then
+	if now - self.snapshotAt >= 0.25 then
 		self.snapshotAt = now
 		self:_send()
+	end
+end
+
+function SoloRound:_sprintRequest(player: Player, value: any)
+	if player ~= self.player then
+		return
+	end
+	local character = self:_livingCharacter()
+	Stamina.Request(
+		self.stamina,
+		value,
+		os.clock(),
+		self.phase == "active" and character ~= nil and character == self.roundCharacter
+	)
+end
+
+function SoloRound:_movement(dt: number)
+	local character, humanoid, root = self:_livingCharacter()
+	local active = self.phase == "active" and character ~= nil and character == self.roundCharacter
+	local velocity = if root then root.AssemblyLinearVelocity else Vector3.zero
+	local moving = Vector3.new(velocity.X, 0, velocity.Z).Magnitude > 0.5
+	Stamina.Step(self.stamina, dt, moving, active, self.balance)
+	if humanoid then
+		humanoid.WalkSpeed = if not active
+			then 0
+			elseif self.stamina.sprinting then self.balance.sprint_speed
+			else self.balance.walk_speed
+		humanoid:SetAttribute("corn_stamina", self.stamina.value)
+		humanoid:SetAttribute("corn_sprinting", self.stamina.sprinting)
+		humanoid:SetAttribute("corn_sprint_exhausted", self.stamina.exhausted)
 	end
 end
 
 function SoloRound:Start()
 	self:_ensureWorld()
 	self:_chooseSpawn()
+	table.insert(
+		self.connections,
+		self.sprintIntent.OnServerEvent:Connect(function(player: Player, value: any)
+			self:_sprintRequest(player, value)
+		end)
+	)
 	table.insert(
 		self.connections,
 		self.action.OnServerEvent:Connect(function(player: Player, action: any)
@@ -562,7 +616,8 @@ function SoloRound:Start()
 	)
 	table.insert(
 		self.connections,
-		RunService.Heartbeat:Connect(function()
+		RunService.Heartbeat:Connect(function(dt: number)
+			self:_movement(dt)
 			local now = os.clock()
 			if now - self.pollAt >= 0.1 then
 				self.pollAt = now

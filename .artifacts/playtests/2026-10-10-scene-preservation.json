@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "original_sha256": "e11accd30c6be71aa0c01ca753a05e15b3c60ed44860b069bb135cb9674aa804",
+  "candidate_sha256": "c4d027d34540118cb1c037f00bb4efd0dbb3d673a0a4194c03968ea28d577cb8",
+  "original_instances": 6701,
+  "candidate_instances": 6703,
+  "compared_original_instances": 6672,
+  "matching_tested_sources": 20,
+  "scope": "All author instances/properties preserved exactly, except 5524 verified Size normalizations, exact overview annotations and editor Camera pose; all 20 sources match src; raw Terrain exact.",
+  "allowed_changes_count": 5527,
+  "unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "source": "Roblox Studio AutoRecovery saved at 2026-10-10 13:20:08; copied without reserialization",
+  "saved_path": "place/Children_of_corn.rbxl",
+  "saved_bytes": 141703
+}
