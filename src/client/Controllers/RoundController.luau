@@ -5,6 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local EndpointNames = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
+local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
 local RoundHud = require(script.Parent.Parent:WaitForChild("Game"):WaitForChild("RoundHud"))
 
 type Snapshot = RoundHud.Snapshot
@@ -43,6 +44,7 @@ end
 
 local function validSnapshot(value: any): boolean
 	return typeof(value) == "table"
+		and LightingModes.IsValid(value.lighting_mode)
 		and typeof(value.phase) == "string"
 		and PHASES[value.phase] == true
 		and typeof(value.has_key) == "boolean"
@@ -97,15 +99,18 @@ function RoundController:Init(_context: any)
 		return
 	end
 	self._hud = RoundHud.new(playerGui)
-	self._hud:SetOnAction(function(action: string)
-		self:_request(action)
+	self._hud:SetOnAction(function(action: string, mode: string?)
+		self:_request(action, mode)
 	end)
 end
 
-function RoundController:_request(action: string)
+function RoundController:_request(action: string, mode: string?)
 	local remote = self._requestRemote
 	local hud = self._hud
 	if not remote or not hud or not self._snapshot or ACTIONS[action] ~= true then
+		return
+	end
+	if (action == "start" or action == "retry") and not LightingModes.IsValid(mode) then
 		return
 	end
 	local now = os.clock()
@@ -114,7 +119,7 @@ function RoundController:_request(action: string)
 	end
 	self._lastRequest = now
 	hud:SetBusy(true)
-	remote:FireServer(action)
+	remote:FireServer(action, mode)
 	-- Only the server changes the view. A rejected request must not leave buttons stuck.
 	task.delay(DEBOUNCE_SEC, function()
 		if self._hud == hud then
@@ -149,6 +154,9 @@ function RoundController:Start(context: any)
 		self._snapshot = payload :: Snapshot
 		hud:Render(payload :: Snapshot)
 		context.Controllers.MovementController:SetSnapshot(payload)
+		context.Controllers.CornController:SetLightingMode(
+			if payload.phase == "ready" then nil else payload.lighting_mode
+		)
 	end)
 
 	-- Subscribe first: initial server messages may precede the client controller.

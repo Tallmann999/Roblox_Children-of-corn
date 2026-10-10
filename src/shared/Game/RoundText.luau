@@ -2,6 +2,18 @@
 
 -- Player-facing strings shared by the round and movement HUDs.
 return table.freeze({
+	corn_modes_choose = "Выбери освещение и начни поиск",
+	corn_modes_hint = "Охота и правила одинаковы во всех режимах",
+	corn_modes_easy = "Легко",
+	corn_modes_medium = "Средне",
+	corn_modes_hard = "Сложно",
+	corn_modes_easy_desc = "День · дальний обзор",
+	corn_modes_medium_desc = "Сумерки · горят факелы",
+	corn_modes_hard_desc = "Ночь · лёгкий туман",
+	corn_modes_selected = "Выбрано: {mode}",
+	corn_modes_select = "Выбрать",
+	corn_modes_selected_button = "Выбрано",
+	corn_modes_active = "Режим: {mode}",
 	corn_hunt_awakened = "Чучело ожило. Оно ищет тебя",
 	corn_hunt_first_catch = "Тебя поймали. Осталась одна попытка",
 	corn_hunt_key_dropped = "Тебя поймали. Ключ остался на месте поимки",

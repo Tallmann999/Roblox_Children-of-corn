@@ -552,12 +552,14 @@ function CornController:_step(delta: number)
 						local distance = (torch:GetPivot().Position - root.Position).Magnitude
 						for _, effect in torch:GetDescendants() do
 							if effect:IsA("Fire") then
-								effect.Enabled = distance < 220
+								effect.Enabled = self._torchesEnabled ~= false and distance < 220
 							elseif effect:IsA("PointLight") then
-								effect.Enabled = distance < 90
+								effect.Enabled = self._torchesEnabled ~= false and distance < 90
 							elseif effect:IsA("BasePart") and effect.Name == "Flame" then
-								effect.LocalTransparencyModifier =
-									math.clamp((distance - 240) / 80, 0, 1)
+								effect.LocalTransparencyModifier = if self._torchesEnabled
+										== false
+									then 1
+									else math.clamp((distance - 240) / 80, 0, 1)
 							end
 						end
 					end
@@ -570,7 +572,16 @@ function CornController:_step(delta: number)
 	self:_createBatch()
 end
 
+function CornController:SetLightingMode(mode: string?)
+	local enabled = mode ~= "easy"
+	if self._torchesEnabled ~= enabled then
+		self._torchesEnabled = enabled
+		self._pollElapsed = POLL_SEC
+	end
+end
+
 function CornController:Init(context: any)
+	self._torchesEnabled = true
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
 		and context.Config.Game.SessionMode == "solo_local"

@@ -1,0 +1,115 @@
+{
+  "target": "Children_of_corn.rbxl",
+  "studio_id": "2aca50b7-fc16-4a1c-aac0-299372b05b92",
+  "installed_sources": 23,
+  "world_unchanged_during_install": true,
+  "ui_mouse": {
+    "three_cards": true,
+    "ready_size": [
+      780,
+      510
+    ],
+    "view": [
+      1914,
+      801
+    ],
+    "easy_start": true,
+    "easy_to_medium_retry": true,
+    "medium_to_hard_retry": true,
+    "final_medium_start": true
+  },
+  "profiles": {
+    "easy": {
+      "clock": 13.5,
+      "brightness": 2.5,
+      "density": 0.08,
+      "haze": 0,
+      "enabled_fire": 0,
+      "enabled_lights": 0
+    },
+    "medium": {
+      "clock": 17.9,
+      "brightness": 1.6,
+      "density": 0.18,
+      "haze": 0.4,
+      "fire_seen": true
+    },
+    "hard": {
+      "clock": 20.5,
+      "brightness": 1,
+      "density": 0.27,
+      "haze": 0.8,
+      "fog_end": 320
+    }
+  },
+  "network": {
+    "missing_unknown_table_number_boolean_rejected": true,
+    "active_mode_change_rejected": true,
+    "method": "Actual Client RemoteEvent into running server, confirmed round_snapshot and Lighting"
+  },
+  "hunt": {
+    "first_catch_mode_kept": true,
+    "remaining_after_first": 1,
+    "protection_observed_sec": 3.283,
+    "second_catch_mode_kept": true,
+    "phase_after_second": "caught_out",
+    "reward": 0,
+    "method": "Diagnostic NPC relocation in actual live round; server catch logic and client snapshots"
+  },
+  "menu_restore": {
+    "clock": 20.5,
+    "density": 0.3,
+    "haze": 0,
+    "original_color_and_decay": true,
+    "monster_cleared": true
+  },
+  "regressions": {
+    "invalid_local_mode_does_not_lock_ui": true,
+    "valid_action_unlocks": true,
+    "repeated_mode_preserves_renderer_poll_budget": true,
+    "method": "isolated Edit engine fixture"
+  },
+  "installer_fixture": {
+    "adds_one_module": true,
+    "repeat_preserves_geometry": true,
+    "wrong_game": true,
+    "manual_source": true,
+    "open_tab": true,
+    "name_collision": true,
+    "rollback_on_injected_failure": true
+  },
+  "project_checks": {
+    "stylua": true,
+    "selene_errors": 0,
+    "selene_warnings": 0,
+    "code_build": true,
+    "safe_mapping": true,
+    "persistence": false
+  },
+  "minimap": "Documentation only; no UI/world zones or gameplay implementation",
+  "pending": [
+    "full ordinary 7–10 minute search",
+    "sound/fear acceptance",
+    "long route FPS",
+    "subjective final light tuning"
+  ],
+  "saved": {
+    "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+    "sha256": "6fa3c8f2bc14481bfd5122101b421d205e5122d07ca2f508eb8eb792722f7df4",
+    "bytes": 231503,
+    "engine_copy": "C:\\Users\\User\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Children_of_corn_AutoRecovery_0.rbxl",
+    "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-lighting-modes-20261010.rbxl",
+    "backup_sha256": "c2a58d56a1adf964dd617e5eca81fb6e83707b79a9244adae4f45739aa27e5e1",
+    "field_side": 840,
+    "torches": 21,
+    "sources": 23,
+    "raw_terrain_preserved": true,
+    "method": "Verified exact engine bytes; atomic replacement, no Lune serialization"
+  },
+  "preservation": {
+    "original_instances": 6453,
+    "candidate_instances": 6454,
+    "matching_sources": 23,
+    "world_and_lighting_exact": true
+  }
+}

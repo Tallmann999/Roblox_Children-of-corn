@@ -1,5 +1,6 @@
 --!strict
 
+local Lighting = game:GetService("Lighting")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -10,6 +11,8 @@ local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("Endpo
 local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
 local MonsterHunt = require(script.Parent:WaitForChild("MonsterHunt"))
 local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
+
+local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
 
 local SoloRound = {}
 SoloRound.__index = SoloRound
@@ -26,6 +29,8 @@ function SoloRound.new(context: any)
 		selectedSpawn = nil :: BasePart?,
 		player = nil :: Player?,
 		phase = "ready",
+		lightingMode = LightingModes.Default,
+		lightingState = nil :: any,
 		epoch = 0,
 		hasKey = false,
 		gateOpen = false,
@@ -70,6 +75,7 @@ function SoloRound:_send()
 	local startLook = if horizontal.Magnitude > 0 then horizontal.Unit else Vector3.new(0, 0, -1)
 	self.snapshot:FireClient(player, {
 		phase = self.phase,
+		lighting_mode = self.lightingMode,
 		has_key = self.hasKey,
 		gate_open = self.gateOpen,
 		session_diamonds = self.diamonds,
@@ -378,7 +384,14 @@ function SoloRound:_caught(root: BasePart)
 	end)
 end
 
-function SoloRound:_startRound()
+function SoloRound:_restoreLighting()
+	if self.lightingState then
+		LightingModes.Restore(Lighting, self.lightingState)
+		self.lightingState = nil
+	end
+end
+
+function SoloRound:_startRound(mode: string)
 	if
 		self.phase ~= "ready"
 		and self.phase ~= "escaped"
@@ -387,6 +400,14 @@ function SoloRound:_startRound()
 	then
 		return
 	end
+	if not LightingModes.IsValid(mode) then
+		return
+	end
+	self.lightingMode = mode
+	if not self.lightingState then
+		self.lightingState = LightingModes.Capture(Lighting)
+	end
+	LightingModes.Apply(Lighting, mode)
 	self.epoch += 1
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self:_stopHunt()
@@ -471,6 +492,7 @@ function SoloRound:_menu()
 	end
 	self.epoch += 1
 	self.phase = "ready"
+	self:_restoreLighting()
 	self.reward = 0
 	self.elapsed = 0
 	self.startedAt = nil
@@ -490,7 +512,7 @@ function SoloRound:_menu()
 	self:_send()
 end
 
-function SoloRound:_request(player: Player, action: any)
+function SoloRound:_request(player: Player, action: any, mode: any)
 	if player ~= self.player then
 		return
 	end
@@ -513,7 +535,9 @@ function SoloRound:_request(player: Player, action: any)
 			and (self.phase == "escaped" or self.phase == "aborted" or self.phase == "caught_out")
 		)
 	then
-		self:_startRound()
+		if LightingModes.IsValid(mode) then
+			self:_startRound(mode)
+		end
 	elseif action == "abort" then
 		self:_finish("aborted", "corn_loop_result_aborted")
 	elseif action == "menu" then
@@ -605,6 +629,8 @@ function SoloRound:_removePlayer(player: Player)
 		self.characterRemovingConnection = nil
 	end
 	self.player = nil
+	self:_restoreLighting()
+	self.lightingMode = LightingModes.Default
 	self:_stopHunt()
 	self.catches = 0
 	self.protectedUntil = 0
@@ -706,8 +732,8 @@ function SoloRound:Start()
 	)
 	table.insert(
 		self.connections,
-		self.action.OnServerEvent:Connect(function(player: Player, action: any)
-			self:_request(player, action)
+		self.action.OnServerEvent:Connect(function(player: Player, action: any, mode: any)
+			self:_request(player, action, mode)
 		end)
 	)
 	table.insert(
