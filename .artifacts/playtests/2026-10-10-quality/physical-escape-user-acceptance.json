@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "method": "Physical key acceptance reported directly by human author",
+  "scenario": "M expand -> physical Esc -> Resume -> M expand",
+  "response": "Да, Esc закрывает и M работает",
+  "date": "2026-10-10",
+  "automated_physical_input": false
+}

@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "original_sha256": "ccf9eabe433f68f4d4a3f9455da2c759de44003c179f25ac4234241b574c0679",
+  "candidate_sha256": "38714df503f02abce02d5555533d7f4949f384690a1a75d9135cfe655015e1fa",
+  "original_instances": 6454,
+  "candidate_instances": 6458,
+  "matching_sources": 27,
+  "world_and_lighting_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "allowed_changes": [
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "property": "Source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController",
+      "property": "Source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud",
+      "property": "Source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/RoundText",
+      "property": "Source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/SoloRound",
+      "property": "Source"
+    }
+  ],
+  "warnings": {
+    "original": "0.133409300s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.202824500s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  }
+}

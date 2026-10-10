@@ -1,0 +1,76 @@
+{
+  "observed_seconds": 892.7474191000001,
+  "sampled_walk_studs_without_server_return": 3296.4392856400686,
+  "sampled_moving_seconds": 303.4383358999985,
+  "sampled_idle_seconds": 588.0995456000019,
+  "server_return_discontinuities": [
+    {
+      "t": 209.9531749000016,
+      "distance": 501.44168189788365
+    }
+  ],
+  "visits": 15,
+  "events": [
+    {
+      "monster": "dormant",
+      "deaths": 0,
+      "phase": "active",
+      "t": 8.482427099999768,
+      "key": false,
+      "gate": false,
+      "stamina": 100,
+      "visited": 0,
+      "notice": ""
+    },
+    {
+      "monster": "patrol",
+      "deaths": 0,
+      "phase": "active",
+      "t": 15.134729500001413,
+      "key": false,
+      "gate": false,
+      "stamina": 100,
+      "visited": 0,
+      "notice": ""
+    },
+    {
+      "monster": "chase",
+      "deaths": 0,
+      "phase": "active",
+      "t": 212.45824459999858,
+      "key": false,
+      "gate": false,
+      "stamina": 100,
+      "visited": 8,
+      "notice": "Чучело ожило. Оно ищет тебя"
+    },
+    {
+      "monster": "chase",
+      "deaths": 1,
+      "phase": "caught",
+      "t": 216.52414380000118,
+      "key": false,
+      "gate": false,
+      "stamina": 100,
+      "visited": 8,
+      "notice": "Тебя заметили — беги!"
+    },
+    {
+      "monster": "patrol",
+      "deaths": 1,
+      "phase": "active",
+      "t": 217.5410211999988,
+      "key": false,
+      "gate": false,
+      "stamina": 100,
+      "visited": 8,
+      "notice": ""
+    }
+  ],
+  "focus": [
+    {
+      "focused": false,
+      "t": 691.8554869
+    }
+  ]
+}

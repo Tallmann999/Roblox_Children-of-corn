@@ -56,6 +56,9 @@ local CornController = {
 	_overviewDirty = {} :: { [OverviewItem]: boolean },
 	_overviewFieldFrame = CFrame.identity,
 	_overviewFieldSize = Vector3.zero,
+	_overviewInvalid = true,
+	_overviewRuntime = false,
+	_overviewConnections = {} :: { RBXScriptConnection },
 }
 
 local PROJECT_ID = "children_of_corn"
@@ -65,6 +68,9 @@ local CELL_BUDGET = 100
 local TIME_BUDGET_SEC = 0.003
 local MAX_CHUNKS = 100
 local MAX_PLANTS = 4032
+local LOD_HYSTERESIS = 12
+local RETAIN_MARGIN = 18
+local ELEVATED_MEDIUM_RADIUS = 144
 
 function CornController:_warn(message: string)
 	if self._lastWarning ~= message then
@@ -118,9 +124,25 @@ function CornController:_showOverview()
 	self._overviewDirty = {}
 end
 
+function CornController:_invalidateOverview()
+	if self._overviewInvalid then
+		return
+	end
+	self._overviewInvalid = true
+	-- A changed footprint or ownership must never keep an old local coverage mask.
+	self:_showOverview()
+	self._pollElapsed = POLL_SEC
+end
+
 function CornController:_restoreOverview()
+	for _, connection in self._overviewConnections do
+		connection:Disconnect()
+	end
+	table.clear(self._overviewConnections)
+	self._overviewInvalid = true
 	self:_showOverview()
 	self._overviewFolder = nil
+	self._overviewRuntime = false
 	self._overviewParts = {}
 	self._overviewByChunk = {}
 end
@@ -131,10 +153,43 @@ function CornController:_markOverviewChunk(key: string)
 	end
 end
 
+local function ownedBackdrop(folder: Instance?, map: Model?): boolean
+	return folder ~= nil
+		and map ~= nil
+		and folder:IsA("Folder")
+		and folder.Name == "CornClientBackdrop"
+		and folder.Parent == map
+		and folder:GetAttribute("CornClientBackdropOwned") == true
+		and folder:GetAttribute("CornEditorOverview") == true
+		and folder:GetAttribute("corn_project_id") == PROJECT_ID
+end
+
+function CornController:UseBackdropReady(folder: Folder): boolean
+	local map = Workspace:FindFirstChild("CornMap")
+	if
+		not map
+		or not map:IsA("Model")
+		or map:GetAttribute("corn_project_id") ~= PROJECT_ID
+		or not ownedBackdrop(folder, map)
+	then
+		return false
+	end
+	-- The backdrop calls this before capturing authored visibility and publishing Ready.
+	-- It also calls it before releasing the runtime layer, while ownership is intact.
+	self:_restoreOverview()
+	self._pollElapsed = POLL_SEC
+	return true
+end
+
 function CornController:_bindOverview()
 	local map = self._map
 	local field = self._field
 	local folder = if map then map:FindFirstChild("EditorFieldOverview") else nil
+	local backdrop = if map then map:FindFirstChild("CornClientBackdrop") else nil
+	local runtime = ownedBackdrop(backdrop, map) and backdrop:GetAttribute("Ready") == true
+	if runtime then
+		folder = backdrop
+	end
 	if not folder then
 		self:_restoreOverview()
 		return
@@ -149,16 +204,16 @@ function CornController:_bindOverview()
 		self:_warn("Unrecognized EditorFieldOverview is preserved")
 		return
 	end
-	local children = folder:GetChildren()
-	local cachedCount = 0
-	for _ in self._overviewParts do
-		cachedCount += 1
-	end
-	local reusable = self._overviewFolder == folder
+	if
+		not self._overviewInvalid
+		and self._overviewFolder == folder
 		and self._overviewFieldFrame == field.CFrame
 		and self._overviewFieldSize == field.Size
-		and cachedCount == #children
-	-- Validate the whole container before any local visibility changes.
+	then
+		return -- Signals invalidate the index instead of scanning every saved plant every poll.
+	end
+	local children = folder:GetChildren()
+	-- This pass does not yield or change visibility. The whole container must be owned.
 	for _, item in children do
 		if
 			not item:IsA("BasePart")
@@ -169,18 +224,32 @@ function CornController:_bindOverview()
 			self:_warn("EditorFieldOverview contains unowned objects; all were preserved")
 			return
 		end
-		local previous = self._overviewParts[item]
-		if not previous or previous.Frame ~= item.CFrame or previous.Size ~= item.Size then
-			reusable = false
-		end
-	end
-	if reusable then
-		return
 	end
 	self:_restoreOverview()
 	self._overviewFolder = folder
+	self._overviewRuntime = runtime
 	self._overviewFieldFrame = field.CFrame
 	self._overviewFieldSize = field.Size
+	local function invalidate()
+		self:_invalidateOverview()
+	end
+	local function watch(signal: RBXScriptSignal)
+		table.insert(self._overviewConnections, signal:Connect(invalidate))
+	end
+	watch(folder.ChildAdded)
+	watch(folder.ChildRemoved)
+	watch(folder.AncestryChanged)
+	watch(folder:GetPropertyChangedSignal("Name"))
+	watch(folder:GetAttributeChangedSignal("CornEditorOverview"))
+	watch(folder:GetAttributeChangedSignal("corn_project_id"))
+	if runtime then
+		watch(folder.DescendantAdded)
+		watch(folder.DescendantRemoving)
+		watch(folder:GetAttributeChangedSignal("CornClientBackdropOwned"))
+		watch(folder:GetAttributeChangedSignal("Ready"))
+	end
+	watch(field:GetPropertyChangedSignal("CFrame"))
+	watch(field:GetPropertyChangedSignal("Size"))
 	for _, item in children do
 		local part = item :: BasePart
 		local entry: OverviewItem = {
@@ -200,7 +269,15 @@ function CornController:_bindOverview()
 			end
 			table.insert(items, entry)
 		end
+		-- The backdrop owns immutable client-only copies; authored overview stays editable.
+		if not runtime then
+			watch(part:GetPropertyChangedSignal("CFrame"))
+			watch(part:GetPropertyChangedSignal("Size"))
+			watch(part:GetAttributeChangedSignal("CornEditorOverview"))
+			watch(part:GetAttributeChangedSignal("corn_project_id"))
+		end
 	end
+	self._overviewInvalid = false
 	for key, chunk in self._chunks do
 		if chunk.Done then
 			self:_markOverviewChunk(key)
@@ -210,12 +287,16 @@ end
 
 function CornController:_updateOverview()
 	local folder = self._overviewFolder
-	if not folder then
+	if not folder or self._overviewInvalid then
 		return
 	end
 	if
 		folder:GetAttribute("CornEditorOverview") ~= true
 		or folder:GetAttribute("corn_project_id") ~= PROJECT_ID
+		or (
+			self._overviewRuntime
+			and (not ownedBackdrop(folder, self._map) or folder:GetAttribute("Ready") ~= true)
+		)
 	then
 		self:_restoreOverview()
 		return
@@ -234,7 +315,7 @@ function CornController:_updateOverview()
 		local covered = #entry.Keys > 0
 		for _, key in entry.Keys do
 			local chunk = self._chunks[key]
-			if not chunk or not chunk.Done then
+			if not chunk or not chunk.Done or (self._overviewRuntime and chunk.Lod > 2) then
 				covered = false
 				break
 			end
@@ -272,6 +353,7 @@ function CornController:_clearInputs()
 	self._field = nil
 	self._template = nil
 	self._exclusions = nil
+	self._elevatedUntil = nil
 end
 
 function CornController:_resolveInputs(): boolean
@@ -354,6 +436,44 @@ function CornController:_resolveInputs(): boolean
 	return true
 end
 
+function CornController:_lodForDistance(
+	distance: number,
+	previous: number?,
+	mediumRadius: number
+): number
+	local dense = CornLayout.DenseRadius
+	if previous == 1 then
+		if distance <= (dense + LOD_HYSTERESIS) ^ 2 then
+			return 1
+		end
+		return if distance <= (mediumRadius + LOD_HYSTERESIS) ^ 2 then 2 else 3
+	elseif previous == 2 then
+		if distance <= (dense - LOD_HYSTERESIS) ^ 2 then
+			return 1
+		end
+		return if distance <= (mediumRadius + LOD_HYSTERESIS) ^ 2 then 2 else 3
+	elseif previous == 3 then
+		if distance <= (dense - LOD_HYSTERESIS) ^ 2 then
+			return 1
+		end
+		return if distance <= (mediumRadius - LOD_HYSTERESIS) ^ 2 then 2 else 3
+	end
+	return if distance <= dense ^ 2 then 1 elseif distance <= mediumRadius ^ 2 then 2 else 3
+end
+
+function CornController:_elevatedView(root: BasePart, now: number): boolean
+	local field = self._field :: BasePart
+	local rootHeight = field.CFrame:PointToObjectSpace(root.Position).Y + field.Size.Y / 2
+	local camera = Workspace.CurrentCamera
+	local cameraHeight = if camera
+		then field.CFrame:PointToObjectSpace(camera.CFrame.Position).Y + field.Size.Y / 2
+		else 0
+	if math.max(rootHeight, cameraHeight) > 6 then
+		self._elevatedUntil = now + 2
+	end
+	return now < (self._elevatedUntil or 0)
+end
+
 function CornController:_reconcile(root: BasePart)
 	if not self:_resolveInputs() then
 		return
@@ -370,17 +490,21 @@ function CornController:_reconcile(root: BasePart)
 	local minColumn, maxColumn, minRow, maxRow = CornLayout.GetCellBounds(field)
 	local localRoot = field.CFrame:PointToObjectSpace(root.Position)
 	local width = CornLayout.Spacing * CornLayout.ChunkCells
-	local groundHeight = localRoot.Y + field.Size.Y / 2
-	if groundHeight > 6 then
-		self._elevatedUntil = os.clock() + 2
-	end
-	local radius = if os.clock() < (self._elevatedUntil or 0)
-		then CornLayout.ElevatedRadius
-		else CornLayout.RenderRadius
+	local elevated = self:_elevatedView(root, os.clock())
+	local radius = if elevated then CornLayout.ElevatedRadius else CornLayout.RenderRadius
+	local mediumRadius = if elevated then ELEVATED_MEDIUM_RADIUS else CornLayout.MediumRadius
+	local retainRadius = radius + RETAIN_MARGIN
+	local backdrop = self._overviewFolder
+	local backdropStride = if self._overviewRuntime and backdrop
+		then backdrop:GetAttribute("DetailStride")
+		else nil
+	local backdropCoversSparse = typeof(backdropStride) == "number"
+		and backdropStride <= CornLayout.Spacing * 2
 	folder:SetAttribute("ViewRadius", radius)
+	folder:SetAttribute("ElevatedDetail", elevated)
 	local desired: { any } = {}
-	for chunkColumn = math.floor((localRoot.X - radius) / width), math.floor((localRoot.X + radius) / width) do
-		for chunkRow = math.floor((localRoot.Z - radius) / width), math.floor((localRoot.Z + radius) / width) do
+	for chunkColumn = math.floor((localRoot.X - retainRadius) / width), math.floor((localRoot.X + retainRadius) / width) do
+		for chunkRow = math.floor((localRoot.Z - retainRadius) / width), math.floor((localRoot.Z + retainRadius) / width) do
 			local firstColumn = math.max(minColumn, chunkColumn * CornLayout.ChunkCells)
 			local lastColumn = math.min(maxColumn, (chunkColumn + 1) * CornLayout.ChunkCells - 1)
 			local firstRow = math.max(minRow, chunkRow * CornLayout.ChunkCells)
@@ -391,13 +515,23 @@ function CornController:_reconcile(root: BasePart)
 			local centerX = (firstColumn + lastColumn) * CornLayout.Spacing / 2
 			local centerZ = (firstRow + lastRow) * CornLayout.Spacing / 2
 			local distance = (centerX - localRoot.X) ^ 2 + (centerZ - localRoot.Z) ^ 2
-			if distance <= radius * radius then
+			local key = chunkColumn .. ":" .. chunkRow
+			local previous = self._chunks[key]
+			if
+				distance <= radius * radius
+				or (previous and distance <= retainRadius * retainRadius)
+			then
+				local lod = self:_lodForDistance(
+					distance,
+					if previous then previous.Lod else nil,
+					mediumRadius
+				)
+				if backdropCoversSparse and lod == 3 then
+					continue -- Whole-field stride6 is already denser than sparse stride9.
+				end
 				table.insert(desired, {
-					Key = chunkColumn .. ":" .. chunkRow,
-					Lod = if distance <= CornLayout.DenseRadius ^ 2
-						then 1
-						elseif distance <= CornLayout.MediumRadius ^ 2 then 2
-						else 3,
+					Key = key,
+					Lod = lod,
 					MinColumn = firstColumn,
 					MaxColumn = lastColumn,
 					MinRow = firstRow,
@@ -522,6 +656,15 @@ function CornController:_createBatch()
 		end
 		local plant = clone :: CornLayout.Plant
 		plant.Name = "Corn"
+		if chunk.Lod == 3 then
+			local items = plant:GetDescendants()
+			table.insert(items, plant)
+			for _, item in items do
+				if item:IsA("MeshPart") then
+					item.CastShadow = false
+				end
+			end
+		end
 		CornLayout.ApplyVariation(plant, column, row)
 		plant:PivotTo(
 			CornLayout.PivotForPlant(plant, position, CornLayout.CellYaw(column, row) + fieldYaw)

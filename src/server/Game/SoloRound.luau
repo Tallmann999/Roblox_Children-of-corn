@@ -10,6 +10,7 @@ local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
 local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
 local MonsterHunt = require(script.Parent:WaitForChild("MonsterHunt"))
+local MinimapState = require(script.Parent:WaitForChild("MinimapState"))
 local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
 
 local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
@@ -25,6 +26,7 @@ function SoloRound.new(context: any)
 		snapshot = context.Services.NetworkService:GetEvent(Endpoints.RoundSnapshot),
 		sprintIntent = context.Services.NetworkService:GetEvent(Endpoints.RequestSprintIntent),
 		stamina = Stamina.new(context.Config.CoreLoop.stamina_capacity, os.clock()),
+		minimap = MinimapState.new(),
 		world = nil :: any,
 		selectedSpawn = nil :: BasePart?,
 		player = nil :: Player?,
@@ -76,6 +78,7 @@ function SoloRound:_send()
 	self.snapshot:FireClient(player, {
 		phase = self.phase,
 		lighting_mode = self.lightingMode,
+		minimap = self.minimap:Snapshot(),
 		has_key = self.hasKey,
 		gate_open = self.gateOpen,
 		session_diamonds = self.diamonds,
@@ -107,6 +110,21 @@ function SoloRound:_livingCharacter(): (Model?, Humanoid?, BasePart?)
 		return nil, nil, nil
 	end
 	return character, humanoid, root
+end
+
+function SoloRound:_recordCharacterDeath(character: Model?)
+	if
+		not character
+		or character ~= self.roundCharacter
+		or (self.phase ~= "active" and self.phase ~= "caught")
+	then
+		return
+	end
+	-- Died runs after Health reaches zero, so _livingCharacter cannot supply this root.
+	local root = character:FindFirstChild("HumanoidRootPart")
+	if root and root:IsA("BasePart") then
+		self.minimap:RecordDeath(character, root.Position)
+	end
 end
 
 function SoloRound:_controls(enabled: boolean)
@@ -342,6 +360,7 @@ function SoloRound:_caught(root: BasePart)
 	if self.phase ~= "active" then
 		return
 	end
+	self.minimap:RecordCaught(root.Position)
 	self.catches += 1
 	if self.catches >= self.balance.max_catches then
 		self:_finish("caught_out", "corn_hunt_defeat_notice")
@@ -403,6 +422,7 @@ function SoloRound:_startRound(mode: string)
 	if not LightingModes.IsValid(mode) then
 		return
 	end
+	self.minimap:ResetHistory()
 	self.lightingMode = mode
 	if not self.lightingState then
 		self.lightingState = LightingModes.Capture(Lighting)
@@ -559,6 +579,7 @@ function SoloRound:_bindCharacter(character: Model)
 		or self.phase == "caught"
 		or (self.phase == "preparing" and self.roundCharacter ~= nil)
 	then
+		self:_recordCharacterDeath(self.roundCharacter)
 		self:_finish("aborted", "corn_loop_result_aborted")
 	end
 	task.spawn(function()
@@ -574,6 +595,7 @@ function SoloRound:_bindCharacter(character: Model)
 		end
 		self.deathConnection = humanoid.Died:Connect(function()
 			if self.player and self.player.Character == character then
+				self:_recordCharacterDeath(character)
 				self:_finish("aborted", "corn_loop_result_aborted")
 			end
 		end)
@@ -601,6 +623,7 @@ function SoloRound:_addPlayer(player: Player)
 			player == self.player
 			and (character == self.boundCharacter or character == player.Character)
 		then
+			self:_recordCharacterDeath(character)
 			self:_finish("aborted", "corn_loop_result_aborted")
 		end
 	end)
@@ -629,6 +652,7 @@ function SoloRound:_removePlayer(player: Player)
 		self.characterRemovingConnection = nil
 	end
 	self.player = nil
+	self.minimap:ClearHistory()
 	self:_restoreLighting()
 	self.lightingMode = LightingModes.Default
 	self:_stopHunt()
@@ -658,6 +682,13 @@ function SoloRound:_poll(now: number)
 	end
 	local character, _, root = self:_livingCharacter()
 	if not character or character ~= self.roundCharacter or not root then
+		local roundCharacter = self.roundCharacter
+		local humanoid = if roundCharacter
+			then roundCharacter:FindFirstChildOfClass("Humanoid")
+			else nil
+		if humanoid and humanoid.Health <= 0 then
+			self:_recordCharacterDeath(roundCharacter)
+		end
 		self:_finish("aborted", "corn_loop_result_aborted")
 		return
 	end
@@ -669,6 +700,8 @@ function SoloRound:_poll(now: number)
 		self:_finish("aborted", "corn_loop_setup_error")
 		return
 	end
+	-- A visit and capture in the same tick both belong to this pre-teleport position.
+	self.minimap:Poll(self.world, root.Position)
 	if self.hunt then
 		local caught, awakened =
 			self.hunt:Step(now - self.huntAt, now, root, now < self.protectedUntil)
@@ -753,7 +786,7 @@ function SoloRound:Start()
 		RunService.Heartbeat:Connect(function(dt: number)
 			self:_movement(dt)
 			local now = os.clock()
-			if now - self.pollAt >= 0.1 then
+			if now - self.pollAt >= MinimapState.PollInterval then
 				self.pollAt = now
 				self:_poll(now)
 			end

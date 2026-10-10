@@ -1,0 +1,13 @@
+{
+  "author_save_changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame"
+    },
+    {
+      "path": "Workspace/Camera",
+      "property": "Focus"
+    }
+  ],
+  "raw_terrain_equal": true
+}

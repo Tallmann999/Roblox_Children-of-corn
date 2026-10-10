@@ -7,7 +7,10 @@ local RoundText: { [string]: string } = require(
 
 local LightingModes = require(ReplicatedStorage.GameShared.Game.LightingModes)
 
+local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometry)
+
 export type Snapshot = {
+	minimap: MinimapGeometry.History,
 	lighting_mode: string,
 	phase: string,
 	has_key: boolean,
@@ -34,6 +37,8 @@ local TEXT_COLOR = Color3.fromRGB(239, 242, 233)
 local MUTED_COLOR = Color3.fromRGB(190, 199, 186)
 local BUTTON_COLOR = Color3.fromRGB(84, 109, 67)
 local DISABLED_COLOR = Color3.fromRGB(63, 69, 61)
+local NOTICE_COLOR = Color3.fromRGB(233, 209, 142)
+local CHASE_COLOR = Color3.fromRGB(233, 94, 83)
 
 local function text(key: string, values: { [string]: string | number }?): string
 	local template = RoundText[key] or ""
@@ -252,7 +257,7 @@ function RoundHud.new(playerGui: PlayerGui)
 	local balance = label(card, "Balance", UDim2.new(1, -48, 0, 26), UDim2.fromOffset(24, 154), 16)
 	balance.TextColor3 = MUTED_COLOR
 	local notice = label(card, "Notice", UDim2.new(1, -48, 0, 46), UDim2.fromOffset(24, 186), 16)
-	notice.TextColor3 = Color3.fromRGB(233, 209, 142)
+	notice.TextColor3 = NOTICE_COLOR
 	local start = button(
 		card,
 		"Start",
@@ -528,6 +533,10 @@ function RoundHud:_render()
 		self._time.Text = text("corn_loop_round_time", { time = elapsedText(snapshot.elapsed_sec) })
 	end
 
+	-- Clear inactive/stale warning styling before rendering this confirmed state.
+	self._activeNotice.Text = ""
+	self._activeNotice.TextColor3 = NOTICE_COLOR
+	self._activeNotice.Font = Enum.Font.Gotham
 	if snapshot and isActive then
 		local objectiveKey = if snapshot.gate_open
 			then "corn_loop_objective_exit"
@@ -542,9 +551,13 @@ function RoundHud:_render()
 			{ mode = text("corn_modes_" .. snapshot.lighting_mode) }
 		)
 		self._activeBalance.Text = self._balance.Text
+		local chasing = snapshot.protection_sec <= 0 and snapshot.monster_state == "chase"
 		self._activeNotice.Text = if snapshot.protection_sec > 0
 			then text("corn_hunt_protected", { seconds = math.ceil(snapshot.protection_sec) })
+			elseif chasing then text("corn_hunt_chase")
 			else text(snapshot.notice)
+		self._activeNotice.TextColor3 = if chasing then CHASE_COLOR else NOTICE_COLOR
+		self._activeNotice.Font = if chasing then Enum.Font.GothamBold else Enum.Font.Gotham
 		self._activeBalance.Text ..= " · " .. text(
 			"corn_hunt_attempts",
 			{ count = snapshot.catches_remaining }

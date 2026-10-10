@@ -1,0 +1,13 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "38714df503f02abce02d5555533d7f4949f384690a1a75d9135cfe655015e1fa",
+  "bytes": 236519,
+  "engine_copy": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\build\\minimap-engine-snapshot.rbxl",
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-minimap-20261010.rbxl",
+  "backup_sha256": "ccf9eabe433f68f4d4a3f9455da2c759de44003c179f25ac4234241b574c0679",
+  "field_side": 840,
+  "torches": 21,
+  "sources": 27,
+  "raw_terrain_preserved": true,
+  "method": "Verified exact engine bytes; atomic replacement, no Lune serialization"
+}

@@ -15,6 +15,7 @@ return table.freeze({
 	corn_modes_selected_button = "Выбрано",
 	corn_modes_active = "Режим: {mode}",
 	corn_hunt_awakened = "Чучело ожило. Оно ищет тебя",
+	corn_hunt_chase = "Тебя заметили — беги!",
 	corn_hunt_first_catch = "Тебя поймали. Осталась одна попытка",
 	corn_hunt_key_dropped = "Тебя поймали. Ключ остался на месте поимки",
 	corn_hunt_defeat = "Тебя настигли",
@@ -43,4 +44,5 @@ return table.freeze({
 	corn_movement_controls = "Shift — спринт · Space — прыжок · Alt — курсор",
 	corn_movement_exhausted = "Отпусти Shift, чтобы снова бежать",
 	corn_movement_cursor = "Alt — вернуться к игре",
+	corn_minimap_controls = "M — закрыть карту · охота продолжается",
 })

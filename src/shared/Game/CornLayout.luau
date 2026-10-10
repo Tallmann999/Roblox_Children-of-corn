@@ -233,6 +233,9 @@ local function authorDescendants(map: Model): { Instance }
 				(item.Name == "EditorPreview" and item:GetAttribute("CornEditorPreview") == true)
 				or (item.Name == "EditorFieldOverview" and item:GetAttribute("CornEditorOverview") == true)
 				or (item.Name == "CornClientPlants" and item:GetAttribute("CornClientRendererOwned") == true)
+				or (item.Name == "CornClientBackdrop" and item:GetAttribute(
+					"CornClientBackdropOwned"
+				) == true)
 				or item.Name == "CornRoundRuntime"
 			)
 		if decoration then

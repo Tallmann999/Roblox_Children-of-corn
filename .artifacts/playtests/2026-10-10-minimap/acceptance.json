@@ -1,0 +1,16 @@
+{
+  "status": "tested (engine/Studio; saved); physical Esc manual pending",
+  "scene_sha256": "38714df503f02abce02d5555533d7f4949f384690a1a75d9135cfe655015e1fa",
+  "sources": 27,
+  "clearings_visited": 15,
+  "houses_visited": 3,
+  "live_catches": 2,
+  "death_dedup": true,
+  "reset_dedup": true,
+  "actual_four_corners_and_headings": true,
+  "mouse_alt_m": true,
+  "input_escape_handler_engine": true,
+  "physical_escape": "manual pending: CoreGUI protected VirtualInput",
+  "world_preserved": true,
+  "sounds": "deferred: author collecting assets"
+}

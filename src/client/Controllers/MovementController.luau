@@ -47,10 +47,12 @@ function MovementController:_camera()
 end
 
 function MovementController:_render()
-	self._gui.Enabled = self._active
-	self._cursorGuard.Visible = self._active and self._cursorOpen
+	local cursorFree = self._cursorOpen or self._mapOpen
+	self._gui.Enabled = self._active or self._mapOpen
+	self._staminaPanel.Visible = self._active
+	self._cursorGuard.Visible = self._mapOpen or (self._active and cursorFree)
 	if self._roundLeave then
-		self._roundLeave.Modal = self._active and self._cursorOpen
+		self._roundLeave.Modal = self._active and cursorFree
 	end
 	local s = self._snapshot
 	if not s then
@@ -66,8 +68,9 @@ function MovementController:_render()
 		"{percent}",
 		tostring(math.floor(ratio * 100 + 0.5))
 	)
-	self._hint.Text = if self._cursorOpen
-		then Text.corn_movement_cursor
+	self._hint.Text = if self._mapOpen
+		then Text.corn_minimap_controls
+		elseif cursorFree then Text.corn_movement_cursor
 		elseif s.sprint_exhausted then Text.corn_movement_exhausted
 		else Text.corn_movement_controls
 end
@@ -75,6 +78,7 @@ end
 function MovementController:Init(_context: any)
 	self._active = false
 	self._cursorOpen = false
+	self._mapOpen = false
 	self._intentValue = false
 	self._shifts = {}
 	self._connections = {}
@@ -106,6 +110,7 @@ function MovementController:Init(_context: any)
 	panel.BackgroundTransparency = 0.12
 	panel.BorderSizePixel = 0
 	panel.Parent = gui
+	self._staminaPanel = panel
 	local function label(name: string, y: number, size: number): TextLabel
 		local l = Instance.new("TextLabel")
 		l.Name = name
@@ -134,6 +139,15 @@ function MovementController:Init(_context: any)
 	fill.BorderSizePixel = 0
 	fill.Parent = track
 	self._fill = fill
+end
+
+function MovementController:SetMapOpen(open: boolean)
+	if self._mapOpen == open then
+		return
+	end
+	self._mapOpen = open
+	self:_release()
+	self:_render()
 end
 
 function MovementController:SetSnapshot(snapshot: any)
@@ -165,6 +179,7 @@ function MovementController:Start(_context: any)
 				if
 					self._active
 					and not self._cursorOpen
+					and not self._mapOpen
 					and not UserInputService:GetFocusedTextBox()
 				then
 					self._shifts[input.KeyCode] = true
@@ -172,7 +187,12 @@ function MovementController:Start(_context: any)
 			elseif state == Enum.UserInputState.End or state == Enum.UserInputState.Cancel then
 				self._shifts[input.KeyCode] = nil
 			end
-			self:_intent(self._active and not self._cursorOpen and next(self._shifts) ~= nil)
+			self:_intent(
+				self._active
+					and not self._cursorOpen
+					and not self._mapOpen
+					and next(self._shifts) ~= nil
+			)
 			return Enum.ContextActionResult.Sink
 		end,
 		false,
@@ -181,6 +201,9 @@ function MovementController:Start(_context: any)
 		Enum.KeyCode.RightShift
 	)
 	ContextActionService:BindActionAtPriority(CURSOR_ACTION, function(_, state: Enum.UserInputState)
+		if self._mapOpen then
+			return Enum.ContextActionResult.Sink
+		end
 		if not self._active then
 			return Enum.ContextActionResult.Pass
 		end
@@ -210,7 +233,11 @@ end
 
 function MovementController:Destroy()
 	self:_release()
+	self._mapOpen = false
 	self._active = false
+	if self._roundLeave then
+		self._roundLeave.Modal = false
+	end
 	self:_camera()
 	ContextActionService:UnbindAction(SPRINT_ACTION)
 	ContextActionService:UnbindAction(CURSOR_ACTION)

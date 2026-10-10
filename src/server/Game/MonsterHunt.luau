@@ -69,7 +69,9 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 		home = origin,
 		state = "dormant",
 		lostSince = nil,
+		lastSeenPosition = nil,
 		patrolSlot = nil,
+		patrolIndex = nil,
 		goal = nil,
 		route = nil,
 		routeIndex = 2,
@@ -83,6 +85,16 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 end
 
 function MonsterHunt:_state(state: string)
+	if self.state == state then
+		return
+	end
+	-- A completed path belongs to the state that requested it. Cancel stale work
+	-- only on transitions; visible chase polls must preserve a current path.
+	self.generation += 1
+	self.route = nil
+	self.routeIndex = 2
+	self.pathBusy = false
+	self.pathAt = -math.huge
 	self.state = state
 	self.model:SetAttribute("HuntState", state)
 end
@@ -97,14 +109,7 @@ function MonsterHunt:_params(character: Model?): RaycastParams
 	return params
 end
 
-function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
-	local delta = playerRoot.Position - self.root.Position
-	if
-		Vector3.new(delta.X, 0, delta.Z).Magnitude > self.balance.monster_capture_radius
-		or math.abs(delta.Y) > 7
-	then
-		return false
-	end
+function MonsterHunt:CanSee(playerRoot: BasePart): boolean
 	local start = self.root.Position + Vector3.new(0, 1, 0)
 	return workspace:Raycast(
 		start,
@@ -113,16 +118,36 @@ function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
 	) == nil
 end
 
-function MonsterHunt:_patrol(playerPosition: Vector3): Vector3
-	local nearest, distance = nil, math.huge
-	for _, slot in self.world.Slots do
-		local d = (slot.Position - playerPosition).Magnitude
-		if slot ~= self.patrolSlot and d < distance then
-			nearest = slot
-			distance = d
+function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
+	local delta = playerRoot.Position - self.root.Position
+	if
+		Vector3.new(delta.X, 0, delta.Z).Magnitude > self.balance.monster_capture_radius
+		or math.abs(delta.Y) > 7
+	then
+		return false
+	end
+	return self:CanSee(playerRoot)
+end
+
+function MonsterHunt:_patrol(_playerPosition: Vector3): Vector3
+	local slots = self.world.Slots
+	local index = self.patrolIndex
+	if index then
+		index = (index - 1 + 7) % #slots + 1
+	else
+		local distance = math.huge
+		for candidateIndex, slot in slots do
+			local d = (slot.Position - self.root.Position).Magnitude
+			if d < distance then
+				index = candidateIndex
+				distance = d
+			end
 		end
 	end
-	self.patrolSlot = nearest or self.world.Slots[1]
+	-- AuthoredWorld sorts the fifteen available slots by their unique slot_id.
+	-- A stride of seven visits every slot once without using the player's position.
+	self.patrolIndex = index or 1
+	self.patrolSlot = slots[self.patrolIndex]
 	return self.patrolSlot.Position
 end
 
@@ -163,6 +188,9 @@ function MonsterHunt:ResetHome()
 	self.route = nil
 	self.goal = nil
 	self.lostSince = nil
+	self.lastSeenPosition = nil
+	self.patrolSlot = nil
+	self.patrolIndex = nil
 	self.blockedSince = nil
 	self.model:PivotTo(CFrame.new(self.home))
 	self:_state("patrol")
@@ -196,30 +224,40 @@ function MonsterHunt:Step(
 	end
 	local delta = playerRoot.Position - self.root.Position
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
-	if not protected and distance <= self.balance.monster_detect_radius then
+	local canSee = not protected and self:CanSee(playerRoot)
+	if canSee and distance <= self.balance.monster_detect_radius then
 		self:_state("chase")
 		self.lostSince = nil
+		self.lastSeenPosition = playerRoot.Position
 	end
 	if self.state == "chase" then
 		if protected then
 			self:_state("patrol")
 			self.goal = nil
-		elseif distance > self.balance.monster_lose_radius then
-			self.lostSince = self.lostSince or now
-			if now - self.lostSince >= self.balance.monster_lose_delay_sec then
-				self:_state("patrol")
-				self.goal = nil
+			self.lostSince = nil
+			self.lastSeenPosition = nil
+		else
+			if canSee then
+				self.lastSeenPosition = playerRoot.Position
+			end
+			if distance > self.balance.monster_lose_radius or not canSee then
+				self.lostSince = self.lostSince or now
+				if now - self.lostSince >= self.balance.monster_lose_delay_sec then
+					self:_state("patrol")
+					self.goal = nil
+					self.lostSince = nil
+					self.lastSeenPosition = nil
+				end
+			else
 				self.lostSince = nil
 			end
-		else
-			self.lostSince = nil
 		end
 	end
 	if not protected and self:CanCapture(playerRoot) then
 		return true, awakened
 	end
 	if self.state == "chase" then
-		self.goal = playerRoot.Position
+		self.goal = self.lastSeenPosition or self.root.Position
 	elseif
 		not self.goal
 		or (Vector3.new(self.goal.X, self.root.Position.Y, self.goal.Z) - self.root.Position).Magnitude
