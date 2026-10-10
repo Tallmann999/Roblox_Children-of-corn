@@ -8,6 +8,7 @@ local Workspace = game:GetService("Workspace")
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
 local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
+local MonsterHunt = require(script.Parent:WaitForChild("MonsterHunt"))
 local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
 
 local SoloRound = {}
@@ -31,6 +32,10 @@ function SoloRound.new(context: any)
 		diamonds = 0,
 		reward = 0,
 		startedAt = nil :: number?,
+		hunt = nil :: any,
+		catches = 0,
+		protectedUntil = 0,
+		huntAt = 0,
 		elapsed = 0,
 		notice = "",
 		random = Random.new(),
@@ -78,6 +83,9 @@ function SoloRound:_send()
 		is_sprinting = self.stamina.sprinting,
 		sprint_exhausted = self.stamina.exhausted,
 		start_look = startLook,
+		catches_remaining = math.max(0, self.balance.max_catches - self.catches),
+		monster_state = if self.hunt then self.hunt.state else "stopped",
+		protection_sec = math.max(0, self.protectedUntil - os.clock()),
 	})
 end
 
@@ -190,7 +198,7 @@ function SoloRound:_clearKey()
 end
 
 function SoloRound:_finish(phase: string, notice: string)
-	if self.phase ~= "active" and self.phase ~= "preparing" then
+	if self.phase ~= "active" and self.phase ~= "preparing" and self.phase ~= "caught" then
 		return
 	end
 	-- Fix the terminal state before rewarding or notifying any client.
@@ -205,6 +213,7 @@ function SoloRound:_finish(phase: string, notice: string)
 	if self.world then
 		self.world:SetInteractionEnabled(false, self.gateOpen)
 	end
+	self:_stopHunt()
 	self:_controls(false)
 	self:_send()
 	self.context.Log:Info("Round finished:", phase, "reward:", self.reward)
@@ -290,12 +299,99 @@ function SoloRound:_ensureWorld(): boolean
 	return true
 end
 
+function SoloRound:_stopHunt()
+	if self.hunt then
+		self.hunt:Destroy()
+		self.hunt = nil
+	end
+end
+
+function SoloRound:_bindKey(keyPrompt: ProximityPrompt)
+	if self.keyConnection then
+		self.keyConnection:Disconnect()
+	end
+	local epoch = self.epoch
+	self.keyConnection = keyPrompt.Triggered:Connect(function(player: Player)
+		local key = self.world.Key
+		if
+			self.epoch ~= epoch
+			or self.hasKey
+			or self.gateOpen
+			or not key
+			or keyPrompt ~= self.world.KeyPrompt
+		then
+			return
+		end
+		if not self:_canInteract(player, key, keyPrompt) then
+			return
+		end
+		self.hasKey = true
+		self.notice = ""
+		self:_clearKey()
+		self:_send()
+	end)
+end
+
+function SoloRound:_caught(root: BasePart)
+	if self.phase ~= "active" then
+		return
+	end
+	self.catches += 1
+	if self.catches >= self.balance.max_catches then
+		self:_finish("caught_out", "corn_hunt_defeat_notice")
+		return
+	end
+	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
+	self.phase = "caught"
+	self.notice = if self.hasKey then "corn_hunt_key_dropped" else "corn_hunt_first_catch"
+	local epoch = self.epoch
+	if self.hasKey then
+		self.hasKey = false
+		local prompt = self.world:DropKey(root.Position, self.balance.key_drop_adjust_radius)
+		if not prompt then
+			self:_finish("aborted", "corn_hunt_drop_error")
+			return
+		end
+		self:_bindKey(prompt)
+	end
+	self.world:SetInteractionEnabled(false, self.gateOpen)
+	self:_controls(false)
+	self:_send()
+	task.delay(self.balance.capture_transition_sec, function()
+		if self.epoch ~= epoch or self.phase ~= "caught" then
+			return
+		end
+		local character = self:_livingCharacter()
+		if not character or character ~= self.roundCharacter then
+			self:_finish("aborted", "corn_loop_result_aborted")
+			return
+		end
+		self:_moveToStart(character)
+		self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
+		self.protectedUntil = os.clock() + self.balance.respawn_protection_sec
+		self.hunt:ResetHome()
+		self.huntAt = os.clock()
+		self.phase = "active"
+		self.world:SetInteractionEnabled(true, self.gateOpen)
+		self:_controls(true)
+		self:_send()
+	end)
+end
+
 function SoloRound:_startRound()
-	if self.phase ~= "ready" and self.phase ~= "escaped" and self.phase ~= "aborted" then
+	if
+		self.phase ~= "ready"
+		and self.phase ~= "escaped"
+		and self.phase ~= "aborted"
+		and self.phase ~= "caught_out"
+	then
 		return
 	end
 	self.epoch += 1
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
+	self:_stopHunt()
+	self.catches = 0
+	self.protectedUntil = 0
 	local epoch = self.epoch
 	self.phase = "preparing"
 	self.startedAt = nil
@@ -351,26 +447,16 @@ function SoloRound:_startRound()
 		self.roundCharacter = character
 		local slot = self.world.Slots[self.random:NextInteger(1, #self.world.Slots)]
 		local keyPrompt = self.world:SpawnKey(slot)
-		self.keyConnection = keyPrompt.Triggered:Connect(function(player: Player)
-			local key = self.world.Key
-			if
-				self.epoch ~= epoch
-				or self.hasKey
-				or self.gateOpen
-				or not key
-				or keyPrompt ~= self.world.KeyPrompt
-			then
-				return
-			end
-			if not self:_canInteract(player, key, keyPrompt) then
-				return
-			end
-			self.hasKey = true
-			self.notice = ""
-			self:_clearKey()
-			self:_send()
-		end)
+		self:_bindKey(keyPrompt)
 		self.startedAt = os.clock()
+		local ok, hunt = pcall(MonsterHunt.new, self.world, self.balance, self.startedAt)
+		if not ok then
+			self.context.Log:Warn("Cannot start hunt:", hunt)
+			self:_finish("aborted", "corn_loop_setup_error")
+			return
+		end
+		self.hunt = hunt
+		self.huntAt = self.startedAt
 		self.phase = "active"
 		self.world:SetInteractionEnabled(true, false)
 		self:_controls(true)
@@ -380,7 +466,7 @@ function SoloRound:_startRound()
 end
 
 function SoloRound:_menu()
-	if self.phase ~= "escaped" and self.phase ~= "aborted" then
+	if self.phase ~= "escaped" and self.phase ~= "aborted" and self.phase ~= "caught_out" then
 		return
 	end
 	self.epoch += 1
@@ -422,7 +508,10 @@ function SoloRound:_request(player: Player, action: any)
 		self:_send()
 	elseif
 		(action == "start" and self.phase == "ready")
-		or (action == "retry" and (self.phase == "escaped" or self.phase == "aborted"))
+		or (
+			action == "retry"
+			and (self.phase == "escaped" or self.phase == "aborted" or self.phase == "caught_out")
+		)
 	then
 		self:_startRound()
 	elseif action == "abort" then
@@ -441,7 +530,11 @@ function SoloRound:_bindCharacter(character: Model)
 		self.deathConnection:Disconnect()
 		self.deathConnection = nil
 	end
-	if self.phase == "active" or (self.phase == "preparing" and self.roundCharacter ~= nil) then
+	if
+		self.phase == "active"
+		or self.phase == "caught"
+		or (self.phase == "preparing" and self.roundCharacter ~= nil)
+	then
 		self:_finish("aborted", "corn_loop_result_aborted")
 	end
 	task.spawn(function()
@@ -512,6 +605,9 @@ function SoloRound:_removePlayer(player: Player)
 		self.characterRemovingConnection = nil
 	end
 	self.player = nil
+	self:_stopHunt()
+	self.catches = 0
+	self.protectedUntil = 0
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self.phase = "ready"
 	self.hasKey = false
@@ -546,6 +642,18 @@ function SoloRound:_poll(now: number)
 	then
 		self:_finish("aborted", "corn_loop_setup_error")
 		return
+	end
+	if self.hunt then
+		local caught, awakened =
+			self.hunt:Step(now - self.huntAt, now, root, now < self.protectedUntil)
+		self.huntAt = now
+		if awakened then
+			self.notice = "corn_hunt_awakened"
+		end
+		if caught then
+			self:_caught(root)
+			return
+		end
 	end
 	if self.gateOpen and self.world:IsInExit(root.Position) then
 		self:_finish("escaped", "")

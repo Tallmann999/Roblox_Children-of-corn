@@ -10,6 +10,7 @@ local CornLayout = require(GameShared:WaitForChild("Game"):WaitForChild("CornLay
 
 type Chunk = {
 	Key: string,
+	Lod: number,
 	Folder: Folder,
 	MinColumn: number,
 	MaxColumn: number,
@@ -62,7 +63,8 @@ local POLL_SEC = 0.3
 local CREATE_BUDGET = 18
 local CELL_BUDGET = 100
 local TIME_BUDGET_SEC = 0.003
-local MAX_CHUNKS = 28
+local MAX_CHUNKS = 100
+local MAX_PLANTS = 4032
 
 function CornController:_warn(message: string)
 	if self._lastWarning ~= message then
@@ -368,7 +370,14 @@ function CornController:_reconcile(root: BasePart)
 	local minColumn, maxColumn, minRow, maxRow = CornLayout.GetCellBounds(field)
 	local localRoot = field.CFrame:PointToObjectSpace(root.Position)
 	local width = CornLayout.Spacing * CornLayout.ChunkCells
-	local radius = CornLayout.RenderRadius
+	local groundHeight = localRoot.Y + field.Size.Y / 2
+	if groundHeight > 6 then
+		self._elevatedUntil = os.clock() + 2
+	end
+	local radius = if os.clock() < (self._elevatedUntil or 0)
+		then CornLayout.ElevatedRadius
+		else CornLayout.RenderRadius
+	folder:SetAttribute("ViewRadius", radius)
 	local desired: { any } = {}
 	for chunkColumn = math.floor((localRoot.X - radius) / width), math.floor((localRoot.X + radius) / width) do
 		for chunkRow = math.floor((localRoot.Z - radius) / width), math.floor((localRoot.Z + radius) / width) do
@@ -385,6 +394,10 @@ function CornController:_reconcile(root: BasePart)
 			if distance <= radius * radius then
 				table.insert(desired, {
 					Key = chunkColumn .. ":" .. chunkRow,
+					Lod = if distance <= CornLayout.DenseRadius ^ 2
+						then 1
+						elseif distance <= CornLayout.MediumRadius ^ 2 then 2
+						else 3,
 					MinColumn = firstColumn,
 					MaxColumn = lastColumn,
 					MinRow = firstRow,
@@ -404,14 +417,24 @@ function CornController:_reconcile(root: BasePart)
 		end
 		wanted[candidate.Key] = true
 		local chunk = self._chunks[candidate.Key]
+		if chunk and chunk.Lod ~= candidate.Lod then
+			self:_markOverviewChunk(chunk.Key)
+			chunk.Alive = false
+			self._plantCount -= chunk.Count
+			chunk.Folder:Destroy()
+			self._chunks[candidate.Key] = nil
+			chunk = nil
+		end
 		if chunk then
 			chunk.Distance = candidate.Distance
 		else
 			local chunkFolder = Instance.new("Folder")
 			chunkFolder.Name = "Chunk_" .. candidate.Key
+			chunkFolder:SetAttribute("DetailStride", candidate.Lod * CornLayout.Spacing)
 			chunkFolder.Parent = folder
 			chunk = {
 				Key = candidate.Key,
+				Lod = candidate.Lod,
 				Folder = chunkFolder,
 				MinColumn = candidate.MinColumn,
 				MaxColumn = candidate.MaxColumn,
@@ -463,6 +486,7 @@ function CornController:_createBatch()
 		#self._queue > 0
 		and examined < CELL_BUDGET
 		and created < CREATE_BUDGET
+		and self._plantCount < MAX_PLANTS
 		and os.clock() - began < TIME_BUDGET_SEC
 	do
 		local chunk = self._queue[1]
@@ -483,6 +507,9 @@ function CornController:_createBatch()
 			table.remove(self._queue, 1)
 		end
 		examined += 1
+		if column % chunk.Lod ~= 0 or row % chunk.Lod ~= 0 then
+			continue
+		end
 		local position = CornLayout.CellPosition(field, column, row)
 		if CornLayout.IsExcluded(position, exclusions) then
 			continue
@@ -495,10 +522,9 @@ function CornController:_createBatch()
 		end
 		local plant = clone :: CornLayout.Plant
 		plant.Name = "Corn"
+		CornLayout.ApplyVariation(plant, column, row)
 		plant:PivotTo(
-			CFrame.new(position + Vector3.new(0, self._height / 2, 0))
-				* CFrame.Angles(0, CornLayout.CellYaw(column, row) + fieldYaw, 0)
-				* self._pivotOffset
+			CornLayout.PivotForPlant(plant, position, CornLayout.CellYaw(column, row) + fieldYaw)
 		)
 		plant.Parent = chunk.Folder
 		chunk.Count += 1
@@ -519,6 +545,24 @@ function CornController:_step(delta: number)
 		local root = if character then character:FindFirstChild("HumanoidRootPart") else nil
 		if root and root:IsA("BasePart") then
 			self:_reconcile(root)
+			local torches = self._map and self._map:FindFirstChild("TorchMarkers")
+			if torches then
+				for _, torch in torches:GetChildren() do
+					if torch:IsA("Model") and torch:GetAttribute("CornTorchOwned") == true then
+						local distance = (torch:GetPivot().Position - root.Position).Magnitude
+						for _, effect in torch:GetDescendants() do
+							if effect:IsA("Fire") then
+								effect.Enabled = distance < 220
+							elseif effect:IsA("PointLight") then
+								effect.Enabled = distance < 90
+							elseif effect:IsA("BasePart") and effect.Name == "Flame" then
+								effect.LocalTransparencyModifier =
+									math.clamp((distance - 240) / 80, 0, 1)
+							end
+						end
+					end
+				end
+			end
 		else
 			self:_clearChunks()
 		end

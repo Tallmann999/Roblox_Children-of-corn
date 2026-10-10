@@ -29,12 +29,12 @@ function MovementController:_release()
 end
 
 function MovementController:_camera()
-	if self._active then
+	if self._active or (self._snapshot and self._snapshot.phase == "caught") then
 		player.CameraMode = Enum.CameraMode.LockFirstPerson
 		player.CameraMinZoomDistance = 0.5
 		player.CameraMaxZoomDistance = 0.5
 		local camera = workspace.CurrentCamera
-		if camera and self._snapshot then
+		if camera and self._snapshot and self._active then
 			local position = camera.CFrame.Position
 			camera.CFrame = CFrame.lookAt(position, position + self._snapshot.start_look)
 		end
@@ -138,11 +138,14 @@ end
 
 function MovementController:SetSnapshot(snapshot: any)
 	local active = snapshot.phase == "active"
+	local previousPhase = if self._snapshot then self._snapshot.phase else ""
 	self._snapshot = snapshot
 	if active ~= self._active then
 		self:_release()
 		self._cursorOpen = false
 		self._active = active
+		self:_camera()
+	elseif snapshot.phase ~= previousPhase then
 		self:_camera()
 	end
 	self:_render()

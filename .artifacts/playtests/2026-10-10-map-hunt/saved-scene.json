@@ -1,0 +1,13 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "c2a58d56a1adf964dd617e5eca81fb6e83707b79a9244adae4f45739aa27e5e1",
+  "bytes": 228018,
+  "engine_copy": "C:\\Users\\User\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Children_of_corn_AutoRecovery_0.rbxl",
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-map-tuning-author-save-20261010.rbxl",
+  "backup_sha256": "bfb43cbf826d567f5376ff06dd5eaa590b49062fd98c40b4a538c7707c9d06b2",
+  "field_side": 840,
+  "torches": 21,
+  "sources": 22,
+  "raw_terrain_preserved": true,
+  "method": "Verified exact engine bytes; atomic replacement, no Lune serialization"
+}

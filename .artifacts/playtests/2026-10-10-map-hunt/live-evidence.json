@@ -1,0 +1,95 @@
+{
+  "activation-evidence": [
+    {
+      "state": "dormant",
+      "remaining": 2,
+      "monster_position": "8.399999618530273, 17.399986267089844, 8.399999618530273",
+      "elapsed": 0.6671709000002011,
+      "phase": "active"
+    },
+    {
+      "state": "patrol",
+      "remaining": 2,
+      "monster_position": "8.816570281982422, 17.399986267089844, 6.551215648651123",
+      "elapsed": 15.31663849999859,
+      "phase": "active"
+    }
+  ],
+  "first-catch-observed": [
+    {
+      "state": "patrol",
+      "remaining": 1,
+      "key_position": "-0.7071067690849304, 14.899986267089844, 2.707106828689575",
+      "position": "-385, 17.398006439208984, 385",
+      "phase": "active",
+      "has_key": false,
+      "protection": 0,
+      "elapsed": 41.650089599999774
+    }
+  ],
+  "jump-evidence": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"method\":\"Humanoid Jumping with live physics\",\"max_loaded\":1760,\"jump_radius\":200,\"jump_height\":10.52691486364746}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "lod-torch-evidence": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"lights\":0,\"radius\":150,\"max_loaded\":1393,\"flames\":1,\"fully_faded_far_markers\":17}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "center-lod-evidence": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"cap\":4032,\"max_loaded\":3607,\"elevated_center_radius\":200,\"chunks\":92}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "camera-abort-evidence": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"diamonds\":0,\"caught_camera_locked\":true,\"abort_cancelled_delayed_respawn\":true,\"terminal\":\"aborted\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "hunt-priority-evidence": {
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"escape_reward_once\":10,\"method\":\"isolated server engine fixture\",\"capture_reward\":0,\"first_capture_elapsed_preserved\":true,\"capture_before_escape\":true}"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

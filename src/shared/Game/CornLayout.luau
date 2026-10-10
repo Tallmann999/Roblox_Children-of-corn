@@ -5,7 +5,10 @@ local CornLayout = {
 	Spacing = 3,
 	Seed = 817,
 	ChunkCells = 12,
-	RenderRadius = 85,
+	RenderRadius = 150,
+	ElevatedRadius = 200,
+	DenseRadius = 60,
+	MediumRadius = 130,
 }
 
 export type Plant = Model | BasePart
@@ -146,7 +149,7 @@ function CornLayout.GetCellBounds(field: BasePart): (number, number, number, num
 		math.floor(half.Z / CornLayout.Spacing)
 end
 
-function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
+function CornLayout.BaseCellPosition(field: BasePart, column: number, row: number): Vector3
 	local half = field.Size / 2
 	local hashX = (column * 92837111 + row * 689287499 + CornLayout.Seed) % 104729
 	local hashZ = (column * 19349663 + row * 83492791 + CornLayout.Seed) % 104729
@@ -160,9 +163,47 @@ function CornLayout.CellPosition(field: BasePart, column: number, row: number): 
 	)
 end
 
+local function hash(column: number, row: number, salt: number): number
+	return ((column * 73856093 + row * 19349663 + CornLayout.Seed * salt) % 104729) / 104729
+end
+
+function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
+	local point = field.CFrame:PointToObjectSpace(CornLayout.BaseCellPosition(field, column, row))
+	local half = field.Size / 2
+	return field.CFrame:PointToWorldSpace(
+		Vector3.new(
+			math.clamp(
+				point.X + (hash(column, row, 17) * 2 - 1) * CornLayout.Spacing * 0.1,
+				-half.X,
+				half.X
+			),
+			point.Y,
+			math.clamp(
+				point.Z + (hash(column, row, 31) * 2 - 1) * CornLayout.Spacing * 0.1,
+				-half.Z,
+				half.Z
+			)
+		)
+	)
+end
+
 function CornLayout.CellYaw(column: number, row: number): number
-	local hash = (column * 73856093 + row * 19349663 + CornLayout.Seed * 83492791) % 104729
-	return hash / 104729 * math.pi * 2
+	local sign = if hash(column, row, 47) < 0.5 then -1 else 1
+	return math.rad(10 + hash(column, row, 61) * 20) * sign
+end
+
+function CornLayout.HeightFactor(column: number, row: number): number
+	local sign = if hash(column, row, 79) < 0.5 then -1 else 1
+	return 1 + sign * (0.1 + hash(column, row, 97) * 0.05)
+end
+
+function CornLayout.ApplyVariation(plant: Plant, column: number, row: number)
+	local factor = CornLayout.HeightFactor(column, row)
+	if plant:IsA("BasePart") then
+		plant.Size = Vector3.new(plant.Size.X, plant.Size.Y * factor, plant.Size.Z)
+	else
+		plant:ScaleTo(plant:GetScale() * factor)
+	end
 end
 
 local function footprint(frame: CFrame, size: Vector3, padding: number): Box

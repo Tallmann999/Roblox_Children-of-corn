@@ -146,6 +146,9 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 	)
 	local spawns = AuthoredWorld.ReadSpawns(root)
 	local field = namedPart(root, "FieldZone")
+	local ground = namedPart(root, "Ground")
+	local home = root.Props:FindFirstChild("ScarecrowMarker")
+	assert(home and home:IsA("Model") and home:HasTag("corn_monster_home"), "Monster home missing")
 	local bounds = namedPart(root, "PlayBounds")
 	local gateModel = root:FindFirstChild("EscapeGate")
 	assert(
@@ -195,6 +198,8 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 		Spawns = spawns,
 		Spawn = spawns[1],
 		Field = field,
+		Ground = ground,
+		Home = home,
 		Bounds = bounds,
 		GateModel = gateModel,
 		Gate = gate,
@@ -232,13 +237,12 @@ function AuthoredWorld:ClearKey()
 	self.KeyPrompt = nil
 end
 
-function AuthoredWorld:SpawnKey(slot: BasePart): ProximityPrompt
-	assert(slot:IsDescendantOf(self.Root), "Key slot must belong to CornMap")
+function AuthoredWorld:SpawnKeyAt(frame: CFrame): ProximityPrompt
 	self:ClearKey()
 	local key = Instance.new("Part")
 	key.Name = "GateKey"
 	key.Size = Vector3.new(1.5, 0.4, 3)
-	key.CFrame = slot.CFrame * CFrame.new(0, slot.Size.Y / 2 + 0.3, 0)
+	key.CFrame = frame
 	key.Anchored = true
 	key.Color = Color3.fromRGB(240, 198, 69)
 	key.Material = Enum.Material.Metal
@@ -249,6 +253,47 @@ function AuthoredWorld:SpawnKey(slot: BasePart): ProximityPrompt
 	self.KeyPrompt =
 		prompt(key, "CornKeyPrompt", "Подобрать", "Ключ от ворот", self.Radius)
 	return self.KeyPrompt
+end
+
+function AuthoredWorld:SpawnKey(slot: BasePart): ProximityPrompt
+	assert(slot:IsDescendantOf(self.Root), "Key slot must belong to CornMap")
+	return self:SpawnKeyAt(slot.CFrame * CFrame.new(0, slot.Size.Y / 2 + 0.3, 0))
+end
+
+function AuthoredWorld:DropKey(position: Vector3, radius: number): ProximityPrompt?
+	local ray = RaycastParams.new()
+	ray.FilterType = Enum.RaycastFilterType.Exclude
+	ray.FilterDescendantsInstances = { self.Runtime }
+	ray.RespectCanCollide = true
+	local overlap = OverlapParams.new()
+	overlap.FilterType = Enum.RaycastFilterType.Include
+	overlap.FilterDescendantsInstances = { self.Root.Props, self.Root.Boundaries, self.Gate }
+	overlap.RespectCanCollide = true
+	for ring = 0, radius do
+		for angle = 0, if ring == 0 then 0 else 7 do
+			local offset = Vector3.new(
+				math.cos(angle * math.pi / 4),
+				0,
+				math.sin(angle * math.pi / 4)
+			) * ring
+			local at = position + offset
+			local hit = workspace:Raycast(at + Vector3.new(0, 10, 0), Vector3.new(0, -40, 0), ray)
+			if
+				hit and (hit.Instance == self.Ground or hit.Instance == self.GateModel.ExitGround)
+			then
+				local place = hit.Position + Vector3.new(0, 0.5, 0)
+				local obstacles = workspace:GetPartBoundsInBox(
+					CFrame.new(place + Vector3.new(0, 1, 0)),
+					Vector3.new(3, 2, 3),
+					overlap
+				)
+				if #obstacles == 0 and self:IsOnPlayground(place) then
+					return self:SpawnKeyAt(CFrame.new(place))
+				end
+			end
+		end
+	end
+	return nil
 end
 
 function AuthoredWorld:SetGateOpen(open: boolean)

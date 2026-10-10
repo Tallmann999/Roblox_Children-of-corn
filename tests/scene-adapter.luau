@@ -18,6 +18,7 @@ r.implementMethod("Model", "GetPivot", function(m)
     local p = m.PrimaryPart or parts(m)[1]
     return if p then p:GetPivot() else CF.identity
 end)
+-- Lune lacks the optional editor WorldPivot default; geometry is checked separately.
 r.implementMethod("Model", "PivotTo", function(m, frame)
     local delta = frame * m:GetPivot():Inverse()
     for _, p in parts(m) do p.CFrame = delta * p.CFrame; p.Position = p.CFrame.Position end
@@ -66,14 +67,16 @@ local function runner(place, openScript, installerPath)
     local editor = { FindScriptDocument = function(_, item)
         return if item == openScript then {} else nil
     end }
+    local lightingProxy = {ClockTime=12.1, Brightness=0.5, Ambient=r.Color3.new(), OutdoorAmbient=r.Color3.new(), FogStart=0, FogEnd=1000, FogColor=r.Color3.new()}
     local gameProxy = { GetService = function(_, name)
+        if name == "Lighting" then return lightingProxy end
         if name == "CollectionService" then return collection end
         if name == "ScriptEditorService" then return editor end
         return place:GetService(name)
     end, FindFirstChild = function(_, name) return place:FindFirstChild(name) end }
     local function moduleRequire(module)
         if loaded[module] ~= nil then return loaded[module] end
-        local env = setmetatable({game=gameProxy, script=module, Instance=I, CFrame=CF,
+        local env = setmetatable({game=gameProxy, workspace=place:GetService("Workspace"), script=module, Instance=I, CFrame=CF,
             Vector3=V3, Vector2=r.Vector2, Color3=r.Color3, Enum=r.Enum, task={wait=function() end, spawn=function(fn) fn() end}, Random={new=function() return {NextInteger=function(_, low) return low end} end}}, {__index=getfenv()})
         env.require = moduleRequire
         local moduleSource = module.Source
@@ -90,6 +93,15 @@ local function runner(place, openScript, installerPath)
             moduleSource = moduleSource:gsub("field%.Position", "field.CFrame.Position")
             moduleSource = moduleSource:gsub("selected%.Position", "selected.CFrame.Position")
             moduleSource = moduleSource:gsub("spawn%.Position", "spawn.CFrame.Position")
+        end
+        if module.Name == "MapTuning" then
+            for _, name in {"ground", "slot", "item", "p", "gateDoor", "map.CornerSpawns.SW"} do
+                local pattern = name:gsub("%.", "%%.") .. "%.Position"
+                moduleSource = moduleSource:gsub(pattern, name .. ".CFrame.Position")
+            end
+            -- The adapter checks restored part geometry, not the editor's optional pivot metadata.
+            moduleSource = moduleSource:gsub("pivot = item%.WorldPivot", "pivot = item:GetPivot()")
+            moduleSource = moduleSource:gsub("entry%.item%.WorldPivot = entry%.pivot", "-- optional editor pivot metadata is not emulated")
         end
         local fn = assert(loadstring(moduleSource, module:GetFullName()))
         setfenv(fn, env)

@@ -25,6 +25,8 @@ local PHASES: { [string]: boolean } = {
 	active = true,
 	escaped = true,
 	aborted = true,
+	caught = true,
+	caught_out = true,
 }
 local ACTIONS: { [string]: boolean } = {
 	start = true,
@@ -55,6 +57,12 @@ local function validSnapshot(value: any): boolean
 		and value.stamina <= value.stamina_capacity
 		and typeof(value.is_sprinting) == "boolean"
 		and typeof(value.sprint_exhausted) == "boolean"
+		and nonnegativeNumber(value.catches_remaining)
+		and value.catches_remaining <= 2
+		and value.catches_remaining % 1 == 0
+		and typeof(value.monster_state) == "string"
+		and ({ dormant = true, patrol = true, chase = true, stopped = true })[value.monster_state] == true
+		and nonnegativeNumber(value.protection_sec)
 		and typeof(value.start_look) == "Vector3"
 		and value.start_look.Magnitude > 0.99
 		and value.start_look.Magnitude < 1.01

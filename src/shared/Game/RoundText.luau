@@ -2,6 +2,14 @@
 
 -- Player-facing strings shared by the round and movement HUDs.
 return table.freeze({
+	corn_hunt_awakened = "Чучело ожило. Оно ищет тебя",
+	corn_hunt_first_catch = "Тебя поймали. Осталась одна попытка",
+	corn_hunt_key_dropped = "Тебя поймали. Ключ остался на месте поимки",
+	corn_hunt_defeat = "Тебя настигли",
+	corn_hunt_defeat_notice = "Попытки закончились. Попробуй ещё раз",
+	corn_hunt_protected = "Защита после возврата: {seconds} с",
+	corn_hunt_attempts = "Попытки: {count}",
+	corn_hunt_drop_error = "Не удалось положить ключ на доступную землю. Начни новый раунд",
 	corn_loop_title = "Дети кукурузы",
 	corn_loop_start = "Начать",
 	corn_loop_loading = "Подготовка раунда…",

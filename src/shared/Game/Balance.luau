@@ -1,7 +1,7 @@
 --!strict
 
 -- Baseline from docs/2026-10-09_core-loop_gd-spec.md, sections 11-12.
--- Field size is confirmed at 1200 x 1200; corn visibility still needs a Studio playtest.
+-- Current authored field is 840 x 840; the 7-10 minute search target needs a full playtest.
 return {
 	target_round_min_sec = 420,
 	target_round_max_sec = 600,

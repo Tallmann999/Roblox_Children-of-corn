@@ -18,6 +18,9 @@ export type Snapshot = {
 	is_sprinting: boolean,
 	sprint_exhausted: boolean,
 	start_look: Vector3,
+	catches_remaining: number,
+	monster_state: string,
+	protection_sec: number,
 }
 
 local RoundHud = {}
@@ -232,14 +235,14 @@ function RoundHud:_render()
 	local snapshot = self._snapshot
 	local phase = if snapshot then snapshot.phase else "loading"
 	local isActive = phase == "active"
-	local isResult = phase == "escaped" or phase == "aborted"
+	local isResult = phase == "escaped" or phase == "aborted" or phase == "caught_out"
 	self._card.Visible = not isActive
 	self._active.Visible = isActive
 	self._activeLeave.Visible = isActive
 	self._start.Visible = phase == "ready" or phase == "loading"
 	self._retry.Visible = isResult
 	self._menu.Visible = isResult
-	self._preparingLeave.Visible = phase == "preparing"
+	self._preparingLeave.Visible = phase == "preparing" or phase == "caught"
 	for _, control in self._buttons do
 		local enabled = snapshot ~= nil and not self._busy and not self._unavailable
 		control.Active = enabled
@@ -258,13 +261,18 @@ function RoundHud:_render()
 	)
 	if self._unavailable then
 		self._message.Text = text("corn_loop_connection_error")
-	elseif phase == "loading" or phase == "preparing" then
-		self._message.Text = text("corn_loop_loading")
+	elseif phase == "loading" or phase == "preparing" or phase == "caught" then
+		self._message.Text = if phase == "caught"
+			then text(snapshot and snapshot.notice or "corn_hunt_first_catch")
+			else text("corn_loop_loading")
 	elseif phase == "ready" then
 		self._message.Text = text("corn_loop_objective_search")
 	elseif snapshot and isResult then
 		self._title.Text = text(
-			if phase == "escaped" then "corn_loop_result_escape" else "corn_loop_result_aborted"
+			if phase == "escaped"
+				then "corn_loop_result_escape"
+				elseif phase == "caught_out" then "corn_hunt_defeat"
+				else "corn_loop_result_aborted"
 		)
 		self._message.Text = if phase == "escaped"
 			then text("corn_loop_reward", { count = snapshot.reward_diamonds })
@@ -281,7 +289,13 @@ function RoundHud:_render()
 		self._activeTime.Text =
 			text("corn_loop_round_time", { time = elapsedText(snapshot.elapsed_sec) })
 		self._activeBalance.Text = self._balance.Text
-		self._activeNotice.Text = text(snapshot.notice)
+		self._activeNotice.Text = if snapshot.protection_sec > 0
+			then text("corn_hunt_protected", { seconds = math.ceil(snapshot.protection_sec) })
+			else text(snapshot.notice)
+		self._activeBalance.Text ..= " · " .. text(
+			"corn_hunt_attempts",
+			{ count = snapshot.catches_remaining }
+		)
 	end
 end
 

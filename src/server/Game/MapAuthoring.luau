@@ -257,9 +257,10 @@ function MapAuthoring.Preview(map: Model, center: Vector3, radius: number?): num
 					local clone = prepared:Clone()
 					assert(clone, "Corn clone is not Archivable")
 					clone.Name = "Corn"
+					Layout.ApplyVariation(clone, column, row)
 					clone:PivotTo(
 						Layout.PivotForPlant(
-							prepared,
+							clone,
 							position,
 							Layout.CellYaw(column, row) + fieldYaw
 						)
@@ -280,6 +281,7 @@ function MapAuthoring.Preview(map: Model, center: Vector3, radius: number?): num
 	end
 	folder.Parent = map
 	folder:SetAttribute("PlantCount", count)
+	map:SetAttribute("EditorCornCount", count)
 	return count
 end
 
@@ -313,7 +315,7 @@ function MapAuthoring.RebuildOverview(map: Model): number
 	local prepared, problem = Layout.PrepareTemplate(artSource())
 	assert(prepared, problem or "Cannot prepare overview art")
 	assert(prepared:IsA("MeshPart"), "Whole-field overview requires the imported single-mesh corn")
-	local stride = 16
+	local stride = 12
 	-- Preserve plant proportions. This sparse layer is an approximate field overview,
 	-- while EditorPreview and the client renderer provide dense, life-size plants.
 	local _, preparedSize = Layout.Bounds(prepared)
@@ -358,7 +360,12 @@ function MapAuthoring.RebuildOverview(map: Model): number
 				clone.Name = "DistantCorn"
 				clone:SetAttribute("CornEditorOverview", true)
 				clone:SetAttribute("corn_project_id", "children_of_corn")
-				clone:PivotTo(Layout.PivotForPlant(prepared, ground, yaw))
+				local cellColumn = math.round(column * stride / Layout.Spacing)
+				local cellRow = math.round(row * stride / Layout.Spacing)
+				Layout.ApplyVariation(clone, cellColumn, cellRow)
+				clone:PivotTo(
+					Layout.PivotForPlant(clone, ground, yaw + Layout.CellYaw(cellColumn, cellRow))
+				)
 				clone.Parent = folder
 				count += 1
 				if count % 128 == 0 then
