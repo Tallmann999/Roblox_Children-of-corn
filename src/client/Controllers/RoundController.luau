@@ -8,6 +8,7 @@ local EndpointNames = require(GameShared:WaitForChild("Network"):WaitForChild("E
 local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
 local MinimapGeometry = require(GameShared:WaitForChild("Game"):WaitForChild("MinimapGeometry"))
 local Inventory = require(GameShared:WaitForChild("Game"):WaitForChild("Inventory"))
+local Capture = require(GameShared:WaitForChild("Game"):WaitForChild("CapturePresentation"))
 local RoundHud = require(script.Parent.Parent:WaitForChild("Game"):WaitForChild("RoundHud"))
 
 type Snapshot = RoundHud.Snapshot
@@ -49,8 +50,10 @@ local function validSnapshot(value: any): boolean
 		and LightingModes.IsValid(value.lighting_mode)
 		and MinimapGeometry.IsValid(value.minimap)
 		and Inventory.IsValidSnapshot(value.inventory)
+		and Capture.IsValidSnapshot(value.capture)
 		and typeof(value.phase) == "string"
 		and PHASES[value.phase] == true
+		and (value.phase == "caught" or value.capture.remaining == 0)
 		and typeof(value.has_key) == "boolean"
 		and typeof(value.gate_open) == "boolean"
 		and nonnegativeNumber(value.session_diamonds)
@@ -67,7 +70,14 @@ local function validSnapshot(value: any): boolean
 		and value.catches_remaining <= 2
 		and value.catches_remaining % 1 == 0
 		and typeof(value.monster_state) == "string"
-		and ({ dormant = true, patrol = true, chase = true, stopped = true, trapped = true })[value.monster_state] == true
+		and ({
+			dormant = true,
+			patrol = true,
+			chase = true,
+			stopped = true,
+			trapped = true,
+			capturing = true,
+		})[value.monster_state] == true
 		and nonnegativeNumber(value.protection_sec)
 		and typeof(value.start_look) == "Vector3"
 		and value.start_look.Magnitude > 0.99
@@ -152,14 +162,18 @@ function RoundController:Start(context: any)
 	self._requestRemote = requestRemote
 	self._snapshotConnection = snapshotRemote.OnClientEvent:Connect(function(payload: any)
 		if not validSnapshot(payload) then
+			context.Controllers.CaptureController:Cancel("malformed snapshot")
+			context.Controllers.HandheldController:Clear("malformed snapshot")
 			warn("[RoundController] Ignored a malformed round_snapshot")
 			return
 		end
 		self._snapshot = payload :: Snapshot
+		context.Controllers.CaptureController:SetSnapshot(payload)
 		hud:Render(payload :: Snapshot)
 		context.Controllers.MovementController:SetSnapshot(payload)
 		context.Controllers.MinimapController:SetSnapshot(payload)
 		context.Controllers.InventoryController:SetSnapshot(payload)
+		context.Controllers.HandheldController:SetSnapshot(payload)
 		context.Controllers.CornController:SetLightingMode(
 			if payload.phase == "ready" then nil else payload.lighting_mode
 		)

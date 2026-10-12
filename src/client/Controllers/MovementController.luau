@@ -29,6 +29,9 @@ function MovementController:_release()
 end
 
 function MovementController:_camera()
+	if self._captureActive then
+		return
+	end
 	if self._active or (self._snapshot and self._snapshot.phase == "caught") then
 		player.CameraMode = Enum.CameraMode.LockFirstPerson
 		player.CameraMinZoomDistance = 0.5
@@ -48,11 +51,12 @@ end
 
 function MovementController:_render()
 	local cursorFree = self._cursorOpen or self._mapOpen
-	self._gui.Enabled = self._active or self._mapOpen
-	self._staminaPanel.Visible = self._active
-	self._cursorGuard.Visible = self._mapOpen or (self._active and cursorFree)
+	local controllable = self._active and not self._captureActive
+	self._gui.Enabled = controllable or self._mapOpen
+	self._staminaPanel.Visible = controllable
+	self._cursorGuard.Visible = self._mapOpen or (controllable and cursorFree)
 	if self._roundLeave then
-		self._roundLeave.Modal = self._active and cursorFree
+		self._roundLeave.Modal = controllable and cursorFree
 	end
 	local s = self._snapshot
 	if not s then
@@ -76,6 +80,7 @@ function MovementController:_render()
 end
 
 function MovementController:Init(_context: any)
+	self._captureActive = false
 	self._active = false
 	self._cursorOpen = false
 	self._mapOpen = false
@@ -142,11 +147,26 @@ function MovementController:Init(_context: any)
 end
 
 function MovementController:SetMapOpen(open: boolean)
+	open = open and not self._captureActive
 	if self._mapOpen == open then
 		return
 	end
 	self._mapOpen = open
 	self:_release()
+	self:_render()
+end
+
+function MovementController:SetCaptureActive(active: boolean)
+	if self._captureActive == active then
+		return
+	end
+	self._captureActive = active
+	self._cursorOpen = false
+	self._mapOpen = false
+	self:_release()
+	if not active then
+		self:_camera()
+	end
 	self:_render()
 end
 
@@ -178,6 +198,7 @@ function MovementController:Start(_context: any)
 			if state == Enum.UserInputState.Begin then
 				if
 					self._active
+					and not self._captureActive
 					and not self._cursorOpen
 					and not self._mapOpen
 					and not UserInputService:GetFocusedTextBox()
@@ -189,6 +210,7 @@ function MovementController:Start(_context: any)
 			end
 			self:_intent(
 				self._active
+					and not self._captureActive
 					and not self._cursorOpen
 					and not self._mapOpen
 					and next(self._shifts) ~= nil
@@ -201,7 +223,7 @@ function MovementController:Start(_context: any)
 		Enum.KeyCode.RightShift
 	)
 	ContextActionService:BindActionAtPriority(CURSOR_ACTION, function(_, state: Enum.UserInputState)
-		if self._mapOpen then
+		if self._mapOpen or self._captureActive then
 			return Enum.ContextActionResult.Sink
 		end
 		if not self._active then
@@ -232,6 +254,7 @@ function MovementController:Start(_context: any)
 end
 
 function MovementController:Destroy()
+	self._captureActive = false
 	self:_release()
 	self._mapOpen = false
 	self._active = false

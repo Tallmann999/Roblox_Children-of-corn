@@ -1,6 +1,12 @@
 local Inventory = require("../src/shared/Game/Inventory")
 local state = Inventory.new(0)
 assert(Inventory.IsValidSnapshot(Inventory.Snapshot(state, 0)))
+assert(Inventory.Snapshot(state, 0).use.id==0 and Inventory.Snapshot(state,0).use.kind=="none")
+state.useId=1;state.useKind="energy";assert(Inventory.IsValidSnapshot(Inventory.Snapshot(state,0)))
+local useSnapshot=Inventory.Snapshot(state,0);useSnapshot.use.id=99;assert(state.useId==1)
+for _, bad in { {id=0,kind="energy"},{id=1,kind="none"},{id=1.5,kind="trap"},{id=-1,kind="energy"},{id=0/0,kind="energy"},{id=math.huge,kind="trap"},{id=1,kind="key"} } do
+ local shot=Inventory.Snapshot(state,0);shot.use=bad;assert(not Inventory.IsValidSnapshot(shot))
+end
 for _, kind in { "energy", "trap", "key", "energy", "trap" } do assert(Inventory.Add(state, kind)) end
 assert(not Inventory.Add(state, "energy"))
 assert(not Inventory.Request(state, "use", 2, 0), "Unselected use")

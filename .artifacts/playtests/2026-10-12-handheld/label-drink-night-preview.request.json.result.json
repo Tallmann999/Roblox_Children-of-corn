@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"using\":true,\"kind\":\"energy\",\"camera_state_untouched\":true,\"parts\":6,\"duration_sec\":10,\"preview\":true,\"automatic_cleanup\":true,\"real_use\":false}"}], "isError": false}}

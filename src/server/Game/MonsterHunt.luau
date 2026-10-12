@@ -10,6 +10,8 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 	local model = Instance.new("Model")
 	model.Name = "Monster"
 	model:SetAttribute("CornMonsterOwned", true)
+	model:SetAttribute("corn_project_id", "children_of_corn")
+	model:SetAttribute("MonsterRigVersion", 1)
 	model:SetAttribute("HuntState", "dormant")
 	local origin = Vector3.new(home.Position.X, floor + 3, home.Position.Z)
 	local visuals = {}
@@ -39,18 +41,19 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 	local root = part("Root", Vector3.new(3, 6, 2), Vector3.zero, Color3.new(), true)
 	part("Coat", Vector3.new(4, 7, 2), Vector3.new(0, 1.5, 0), Color3.fromRGB(35, 32, 28)).Material =
 		Enum.Material.Fabric
-	part("Arms", Vector3.new(10, 1.4, 1.4), Vector3.new(0, 3, 0), Color3.fromRGB(54, 43, 30))
+	part("LeftArm", Vector3.new(4, 1.4, 1.4), Vector3.new(-3.5, 3, 0), Color3.fromRGB(54, 43, 30))
+	part("RightArm", Vector3.new(4, 1.4, 1.4), Vector3.new(3.5, 3, 0), Color3.fromRGB(54, 43, 30))
 	part("Head", Vector3.new(2.5, 2.5, 2.5), Vector3.new(0, 6, 0), Color3.fromRGB(101, 76, 45))
 	part("Hat", Vector3.new(5, 0.6, 4), Vector3.new(0, 7.5, 0), Color3.fromRGB(24, 23, 21))
 	for _, side in { -1, 1 } do
 		part(
-			"Leg",
+			if side == -1 then "LeftLeg" else "RightLeg",
 			Vector3.new(1.1, 3, 1.1),
 			Vector3.new(side, -1.5, 0),
 			Color3.fromRGB(32, 29, 25)
 		)
 		local eye = part(
-			"Eye",
+			if side == -1 then "LeftEye" else "RightEye",
 			Vector3.new(0.3, 0.3, 0.1),
 			Vector3.new(side * 0.55, 6.2, -1.3),
 			Color3.fromRGB(235, 138, 49)
@@ -120,7 +123,7 @@ function MonsterHunt:CanSee(playerRoot: BasePart): boolean
 end
 
 function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
-	if self.destroyed or self.state == "trapped" then
+	if self.destroyed or self.state == "trapped" or self.state == "capturing" then
 		return false
 	end
 	local delta = playerRoot.Position - self.root.Position
@@ -131,6 +134,19 @@ function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
 		return false
 	end
 	return self:CanSee(playerRoot)
+end
+
+function MonsterHunt:BeginCapture(playerPosition: Vector3): CFrame
+	local at = self.root.Position
+	local facing = Vector3.new(playerPosition.X - at.X, 0, playerPosition.Z - at.Z)
+	if facing.Magnitude > 0.001 then
+		self.model:PivotTo(CFrame.lookAt(at, at + facing))
+	end
+	self.goal = nil
+	self.lostSince = nil
+	self.lastSeenPosition = nil
+	self:_state("capturing")
+	return self.root.CFrame
 end
 
 function MonsterHunt:GetPosition(): Vector3?
@@ -240,7 +256,7 @@ function MonsterHunt:Step(
 	playerRoot: BasePart,
 	protected: boolean
 ): (boolean, boolean)
-	if self.destroyed then
+	if self.destroyed or self.state == "capturing" then
 		return false, false
 	end
 	if self.state == "trapped" then

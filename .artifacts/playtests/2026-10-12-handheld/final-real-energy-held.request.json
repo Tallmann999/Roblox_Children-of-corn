@@ -1,0 +1,1 @@
+{"name": "execute_luau", "arguments": {"datamodel_type": "Client", "code": "local m=workspace.CurrentCamera:FindFirstChild(\"CornHandheld\");return {held=m and m:GetAttribute(\"ItemKind\"),parts=m and #m:GetChildren(),label=m and m.Can:FindFirstChild(\"EnergyLabel\")~=nil,camera=workspace.CurrentCamera.CameraType.Name}", "studio_id": "28de7d0d-d3bd-4063-9fe7-5d5b2beacfce"}}

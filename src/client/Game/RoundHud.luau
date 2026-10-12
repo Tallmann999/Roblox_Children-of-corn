@@ -12,7 +12,13 @@ local ModePreviewImages = require(ReplicatedStorage.GameShared.Game.ModePreviewI
 local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometry)
 
 export type Snapshot = {
-	inventory: { slots: { string }, selected: number, energy_remaining: number },
+	capture: { id: number, remaining: number, frame: CFrame },
+	inventory: {
+		slots: { string },
+		selected: number,
+		energy_remaining: number,
+		use: { id: number, kind: string },
+	},
 	minimap: MinimapGeometry.History,
 	lighting_mode: string,
 	phase: string,
@@ -286,6 +292,7 @@ function RoundHud.new(playerGui: PlayerGui)
 		_connections = {} :: { RBXScriptConnection },
 		_snapshot = nil :: Snapshot?,
 		_busy = false,
+		_captureActive = false,
 		_unavailable = false,
 	}, RoundHud)
 	for mode, select in modeButtons do
@@ -390,7 +397,7 @@ function RoundHud:_render()
 		self._modeStrokes[mode].Transparency = if selected then 0 else 0.6
 	end
 	self:_fitCard()
-	self._card.Visible = not isActive
+	self._card.Visible = not isActive and not (phase == "caught" and self._captureActive)
 	self._active.Visible = isActive
 	self._activeLeave.Visible = isActive
 	self._start.Visible = phase == "ready" or phase == "loading"
@@ -478,6 +485,11 @@ end
 
 function RoundHud:SetBusy(busy: boolean)
 	self._busy = busy
+	self:_render()
+end
+
+function RoundHud:SetCaptureActive(active: boolean)
+	self._captureActive = active
 	self:_render()
 end
 

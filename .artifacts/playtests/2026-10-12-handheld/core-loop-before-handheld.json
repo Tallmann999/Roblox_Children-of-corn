@@ -1,0 +1,21 @@
+{
+  "code_version": 69,
+  "ordinary_blind_search": false,
+  "diagnostic_relocations": true,
+  "actual_E_key_pickup": true,
+  "actual_E_gate_open": true,
+  "actual_humanoid_walk_exit": true,
+  "escape_position": [
+    0,
+    17.5924,
+    429.74347
+  ],
+  "hud_result": "Ты сбежал",
+  "reward": 10,
+  "key_consumed": true,
+  "retry_actual_GUI": true,
+  "retry_closed_gate": true,
+  "retry_new_key": true,
+  "retry_new_consumable_pickups": 4,
+  "method": "MCP real E plus temporary regular LocalScript aim3sec to show floorkey; controlled relocations, server-authoritative interactions and real walking exit"
+}

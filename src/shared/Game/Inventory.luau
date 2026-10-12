@@ -20,11 +20,19 @@ function Inventory.IsValidSnapshot(value: any): boolean
 		count += 1
 	end
 	local remaining = value.energy_remaining
+	local use = value.use
 	return count == Inventory.Capacity
 		and type(remaining) == "number"
 		and remaining == remaining
 		and remaining >= 0
 		and remaining <= Inventory.EnergyDuration
+		and type(use) == "table"
+		and type(use.id) == "number"
+		and use.id >= 0
+		and use.id < math.huge
+		and use.id % 1 == 0
+		and (use.kind == "none" or use.kind == "energy" or use.kind == "trap")
+		and ((use.id == 0 and use.kind == "none") or (use.id > 0 and use.kind ~= "none"))
 end
 function Inventory.new(now: number): any
 	return {
@@ -33,6 +41,8 @@ function Inventory.new(now: number): any
 		energyUntil = 0,
 		tokens = 10,
 		requestAt = now,
+		useId = 0,
+		useKind = "none",
 	}
 end
 function Inventory.Add(state: any, kind: string): boolean
@@ -78,6 +88,7 @@ function Inventory.Snapshot(state: any, now: number): any
 		slots = table.clone(state.slots),
 		selected = state.selected,
 		energy_remaining = math.clamp(state.energyUntil - now, 0, Inventory.EnergyDuration),
+		use = { id = state.useId, kind = state.useKind },
 	}
 end
 function Inventory.Multiplier(state: any, now: number): number

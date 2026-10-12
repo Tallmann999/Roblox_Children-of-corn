@@ -1,0 +1,11 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "bytes": 995413,
+  "sha256": "66997087e67a05e0095448c8c1fb91b51d61f6acf1de865a78df3b376fb87d93",
+  "sources": 69,
+  "new_modules": 4,
+  "world_lighting_art_raw_terrain_preserved": true,
+  "backup": "place/Children_of_corn.before-scarecrow-20261012.rbxl",
+  "backup_sha256": "95d87061a83808a139da4c98c7552b65b3c8e86137dff5f472c362c7fd984d5d",
+  "method": "Saved working engine file observed after reconnect; strict read-only verification; no promotion or Lune scene serialization"
+}

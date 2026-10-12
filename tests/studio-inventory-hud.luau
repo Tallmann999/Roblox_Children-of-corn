@@ -8,7 +8,7 @@ local Inventory = require(game.ReplicatedStorage.GameShared.Game.Inventory)
 local gui = Hud.new(player.PlayerGui, true)
 gui._root.Name = "InventoryAcceptance"
 local state =
-	{ slots = { "key", "energy", "trap", "energy", "trap" }, selected = 2, energy_remaining = 30 }
+	{ slots = { "key", "energy", "trap", "energy", "trap" }, selected = 2, energy_remaining = 30, use = { id = 0, kind = "none" } }
 local checks = {}
 local function expect(condition, message)
 	assert(condition, message or "Inventory actual-GUI assertion failed")

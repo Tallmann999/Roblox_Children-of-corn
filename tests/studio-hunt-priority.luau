@@ -29,7 +29,7 @@ local ok,problem=pcall(function()
     local now=os.clock()
     local first=Round.new(context)
     first.player=p; first.roundCharacter=p.Character; first.phase="active"
-    first.world=world; first.startedAt=now-16
+    first.world=world; first.startedAt=now-16; first.hunt=Hunt.new(world,balance,now-16)
     first:_caught(root)
     assert(snapshots[#snapshots].phase=="caught" and snapshots[#snapshots].elapsed_sec>=16)
     first:_finish("aborted", "")  -- Cancels this fixture's delayed return.
@@ -40,6 +40,8 @@ local ok,problem=pcall(function()
     caught.hunt=hunt
     hunt.root.CFrame=CFrame.new(root.Position+Vector3.new(1.5,0,0))
     caught:_poll(now)
+    assert(caught.phase=="caught" and caught.catches==2 and caught.reward==0 and caught.hunt.state=="capturing")
+    task.wait(balance.capture_transition_sec+.1)
     assert(caught.phase=="caught_out" and caught.reward==0 and caught.diamonds==0)
     assert(caught.hunt==nil and not scratch:FindFirstChild("Monster"))
     local escaped=Round.new(context)

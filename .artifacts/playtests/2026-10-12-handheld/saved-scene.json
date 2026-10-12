@@ -1,0 +1,18 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "681f433cd71240e0d682f829649f5ff0ae36ec9ea1892ee4aefcbbb23088fa6a",
+  "bytes": 999458,
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-handheld-20261012.rbxl",
+  "backup_sha256": "66997087e67a05e0095448c8c1fb91b51d61f6acf1de865a78df3b376fb87d93",
+  "backup_bytes": 995413,
+  "sources": 71,
+  "instances": 6835,
+  "new_code_instances": 2,
+  "engine_save": "Author Ctrl+S 2026-10-12 16:04:22 Europe/Moscow",
+  "method": "Read-only strict verification of author engine save; exact-byte snapshot only, no scene serialization/replacement",
+  "world_and_lighting_exact": true,
+  "original_art_preserved": true,
+  "raw_terrain_preserved": true,
+  "studio_state": "Edit",
+  "rojo_stopped": true
+}

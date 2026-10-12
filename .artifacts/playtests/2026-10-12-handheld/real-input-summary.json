@@ -1,0 +1,74 @@
+{
+  "energy": {
+    "observer_only": true,
+    "finished": true,
+    "frames": 240,
+    "held_frames": 35,
+    "held_span_sec": 1.1367374999972526,
+    "held_relative_poses": 18,
+    "uses": [
+      [
+        0,
+        "none"
+      ],
+      [
+        1,
+        "energy"
+      ]
+    ],
+    "speeds": [
+      12,
+      24
+    ],
+    "end_kind": "none",
+    "max_parts": 6,
+    "camera_types": [
+      "Custom"
+    ]
+  },
+  "trap": {
+    "observer_only": true,
+    "finished": true,
+    "frames": 240,
+    "held_frames": 24,
+    "held_span_sec": 0.7674286000001302,
+    "held_relative_poses": 18,
+    "uses": [
+      [
+        2,
+        "trap"
+      ]
+    ],
+    "speeds": [
+      12
+    ],
+    "end_kind": "none",
+    "max_parts": 17,
+    "camera_types": [
+      "Custom"
+    ]
+  },
+  "key": {
+    "observer_only": true,
+    "finished": true,
+    "frames": 239,
+    "held_frames": 202,
+    "held_span_sec": 6.753975300001912,
+    "held_relative_poses": 5,
+    "uses": [
+      [
+        2,
+        "trap"
+      ]
+    ],
+    "speeds": [
+      12
+    ],
+    "end_kind": "none",
+    "max_parts": 18,
+    "camera_types": [
+      "Custom"
+    ]
+  },
+  "method": "Actual Studio E picks/uses, diagnostic avatar relocation and temporary camera aim; observation only. Key E passive, real gate E consumes key, Humanoid MoveTo exits +10."
+}

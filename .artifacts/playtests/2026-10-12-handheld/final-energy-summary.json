@@ -1,0 +1,23 @@
+{
+  "finished": true,
+  "frames": 161,
+  "energy_frames": 33,
+  "end_kind": "none",
+  "max_parts": 6,
+  "uses": [
+    [
+      0,
+      "none"
+    ],
+    [
+      1,
+      "energy"
+    ]
+  ],
+  "speeds": [
+    12,
+    24
+  ],
+  "actual_E": true,
+  "label_final_version": true
+}

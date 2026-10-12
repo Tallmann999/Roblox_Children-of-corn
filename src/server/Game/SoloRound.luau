@@ -48,6 +48,8 @@ function SoloRound.new(context: any)
 		startedAt = nil :: number?,
 		hunt = nil :: any,
 		catches = 0,
+		captureFrame = CFrame.identity,
+		captureUntil = 0,
 		protectedUntil = 0,
 		huntAt = 0,
 		elapsed = 0,
@@ -101,6 +103,11 @@ function SoloRound:_send()
 		sprint_exhausted = self.stamina.exhausted,
 		start_look = startLook,
 		catches_remaining = math.max(0, self.balance.max_catches - self.catches),
+		capture = {
+			id = self.catches,
+			remaining = math.clamp(self.captureUntil - os.clock(), 0, 1),
+			frame = self.captureFrame,
+		},
 		monster_state = if self.hunt then self.hunt.state else "stopped",
 		protection_sec = math.max(0, self.protectedUntil - os.clock()),
 	})
@@ -304,6 +311,8 @@ function SoloRound:_inventoryRequest(player: Player, action: any, slot: any)
 		return
 	end
 	self.inventory.slots[slot] = "empty"
+	self.inventory.useId += 1
+	self.inventory.useKind = kind
 	self.interactionAt = now
 	self.notice = ""
 	self:_send()
@@ -316,6 +325,7 @@ function SoloRound:_finish(phase: string, notice: string)
 	-- Fix the terminal state before rewarding or notifying any client.
 	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
 	self.phase = phase
+	self.captureUntil = 0
 	self.epoch += 1
 	self.notice = notice
 	self.reward = if phase == "escaped" then self.balance.escape_reward_diamonds else 0
@@ -457,19 +467,21 @@ function SoloRound:_caught(root: BasePart)
 	end
 	self.minimap:RecordCaught(root.Position)
 	self.catches += 1
-	if self.catches >= self.balance.max_catches then
-		self:_finish("caught_out", "corn_hunt_defeat_notice")
-		return
-	end
+	self.captureFrame = self.hunt:BeginCapture(root.Position)
+	self.captureUntil = os.clock() + self.balance.capture_transition_sec
 	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
 	self.phase = "caught"
 	self.inventory.energyUntil = 0
 	if self.items then
 		self.items:SetEnabled(false)
 	end
-	self.notice = if self.hasKey then "corn_hunt_key_dropped" else "corn_hunt_first_catch"
+	local finalCatch = self.catches >= self.balance.max_catches
+	self.notice = if finalCatch
+		then "corn_hunt_defeat_notice"
+		elseif self.hasKey then "corn_hunt_key_dropped"
+		else "corn_hunt_first_catch"
 	local epoch = self.epoch
-	if self.hasKey then
+	if self.hasKey and not finalCatch then
 		self.hasKey = false
 		Inventory.Remove(self.inventory, "key")
 		local prompt = self.world:DropKey(root.Position, self.balance.key_drop_adjust_radius)
@@ -491,6 +503,11 @@ function SoloRound:_caught(root: BasePart)
 			self:_finish("aborted", "corn_loop_result_aborted")
 			return
 		end
+		if finalCatch then
+			self:_finish("caught_out", "corn_hunt_defeat_notice")
+			return
+		end
+		self.captureUntil = 0
 		self:_moveToStart(character)
 		self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 		self.protectedUntil = os.clock() + self.balance.respawn_protection_sec
@@ -536,6 +553,8 @@ function SoloRound:_startRound(mode: string)
 	self:_stopHunt()
 	self:_clearInventory()
 	self.catches = 0
+	self.captureFrame = CFrame.identity
+	self.captureUntil = 0
 	self.protectedUntil = 0
 	local epoch = self.epoch
 	self.phase = "preparing"
@@ -781,6 +800,8 @@ function SoloRound:_removePlayer(player: Player)
 	self.lightingMode = LightingModes.Default
 	self:_stopHunt()
 	self.catches = 0
+	self.captureUntil = 0
+	self.captureFrame = CFrame.identity
 	self.protectedUntil = 0
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self.phase = "ready"

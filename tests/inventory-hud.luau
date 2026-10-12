@@ -134,7 +134,7 @@ hud:SetOnAction(function(action, slot)
 	table.insert(requests, { action, slot })
 end)
 local state =
-	{ slots = { "key", "energy", "trap", "energy", "trap" }, selected = 2, energy_remaining = 30 }
+	{ slots = { "key", "energy", "trap", "energy", "trap" }, selected = 2, energy_remaining = 30, use = { id = 0, kind = "none" } }
 hud:Render(state, "active", 100)
 assert(hud._root.Enabled and #hud._buttons == 5)
 assert(
