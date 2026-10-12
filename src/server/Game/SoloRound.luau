@@ -12,6 +12,8 @@ local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
 local MonsterHunt = require(script.Parent:WaitForChild("MonsterHunt"))
 local MinimapState = require(script.Parent:WaitForChild("MinimapState"))
 local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
+local Inventory = require(GameShared:WaitForChild("Game"):WaitForChild("Inventory"))
+local InventoryWorld = require(script.Parent:WaitForChild("InventoryWorld"))
 
 local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
 
@@ -25,6 +27,11 @@ function SoloRound.new(context: any)
 		action = context.Services.NetworkService:GetEvent(Endpoints.RequestRoundAction),
 		snapshot = context.Services.NetworkService:GetEvent(Endpoints.RoundSnapshot),
 		sprintIntent = context.Services.NetworkService:GetEvent(Endpoints.RequestSprintIntent),
+		inventoryAction = context.Services.NetworkService:GetEvent(
+			Endpoints.RequestInventoryAction
+		),
+		inventory = Inventory.new(os.clock()),
+		items = nil :: any,
 		stamina = Stamina.new(context.Config.CoreLoop.stamina_capacity, os.clock()),
 		minimap = MinimapState.new(),
 		world = nil :: any,
@@ -79,6 +86,7 @@ function SoloRound:_send()
 		phase = self.phase,
 		lighting_mode = self.lightingMode,
 		minimap = self.minimap:Snapshot(),
+		inventory = Inventory.Snapshot(self.inventory, os.clock()),
 		has_key = self.hasKey,
 		gate_open = self.gateOpen,
 		session_diamonds = self.diamonds,
@@ -221,6 +229,86 @@ function SoloRound:_clearKey()
 	end
 end
 
+function SoloRound:_clearInventory()
+	if self.items then
+		self.items:Destroy()
+		self.items = nil
+	end
+	self.inventory = Inventory.new(os.clock())
+end
+
+function SoloRound:_promptNearby(
+	root: BasePart,
+	character: Model,
+	item: BasePart?,
+	itemPrompt: ProximityPrompt?
+): boolean
+	if not item or not itemPrompt or not itemPrompt.Enabled then
+		return false
+	end
+	local direction = item.Position - root.Position
+	if direction.Magnitude > self.balance.interaction_radius then
+		return false
+	end
+	local params = RaycastParams.new()
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = { character }
+	params.RespectCanCollide = true
+	local hit = Workspace:Raycast(root.Position, direction, params)
+	return not hit or hit.Instance == item
+end
+
+function SoloRound:_inventoryRequest(player: Player, action: any, slot: any)
+	if player ~= self.player or self.phase ~= "active" then
+		return
+	end
+	local character, _, root = self:_livingCharacter()
+	if not character or character ~= self.roundCharacter or not root then
+		return
+	end
+	local now = os.clock()
+	if not Inventory.Request(self.inventory, action, slot, now) then
+		return
+	end
+	if action == "select" then
+		self:_send()
+		return
+	end
+	if not self.world or not self.world:IsValid() or now - self.interactionAt < 0.35 then
+		return
+	end
+	if
+		self:_promptNearby(root, character, self.world.Key, self.world.KeyPrompt)
+		or self:_promptNearby(root, character, self.world.GateAnchor, self.world.GatePrompt)
+	then
+		return
+	end
+	if self.items then
+		for _, entry in self.items.pickups do
+			if
+				entry.model.Parent
+				and self:_promptNearby(root, character, entry.anchor, entry.prompt)
+			then
+				return
+			end
+		end
+	end
+	local kind = self.inventory.slots[slot]
+	if kind == "energy" then
+		self.inventory.energyUntil = now + Inventory.EnergyDuration
+	elseif kind == "trap" then
+		if not self.items or not self.items:Place(root, character) then
+			return
+		end
+	else
+		return
+	end
+	self.inventory.slots[slot] = "empty"
+	self.interactionAt = now
+	self.notice = ""
+	self:_send()
+end
+
 function SoloRound:_finish(phase: string, notice: string)
 	if self.phase ~= "active" and self.phase ~= "preparing" and self.phase ~= "caught" then
 		return
@@ -233,6 +321,7 @@ function SoloRound:_finish(phase: string, notice: string)
 	self.reward = if phase == "escaped" then self.balance.escape_reward_diamonds else 0
 	self.diamonds += self.reward
 	self.hasKey = false
+	self:_clearInventory()
 	self:_clearKey()
 	if self.world then
 		self.world:SetInteractionEnabled(false, self.gateOpen)
@@ -295,6 +384,7 @@ function SoloRound:_openGate(player: Player)
 	end
 	self.hasKey = false
 	self.gateOpen = true
+	Inventory.Remove(self.inventory, "key")
 	self.notice = ""
 	world:SetGateOpen(true)
 	self:_send()
@@ -349,6 +439,11 @@ function SoloRound:_bindKey(keyPrompt: ProximityPrompt)
 		if not self:_canInteract(player, key, keyPrompt) then
 			return
 		end
+		if not Inventory.Add(self.inventory, "key") then
+			self.notice = "corn_inventory_full"
+			self:_send()
+			return
+		end
 		self.hasKey = true
 		self.notice = ""
 		self:_clearKey()
@@ -368,10 +463,15 @@ function SoloRound:_caught(root: BasePart)
 	end
 	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
 	self.phase = "caught"
+	self.inventory.energyUntil = 0
+	if self.items then
+		self.items:SetEnabled(false)
+	end
 	self.notice = if self.hasKey then "corn_hunt_key_dropped" else "corn_hunt_first_catch"
 	local epoch = self.epoch
 	if self.hasKey then
 		self.hasKey = false
+		Inventory.Remove(self.inventory, "key")
 		local prompt = self.world:DropKey(root.Position, self.balance.key_drop_adjust_radius)
 		if not prompt then
 			self:_finish("aborted", "corn_hunt_drop_error")
@@ -397,6 +497,9 @@ function SoloRound:_caught(root: BasePart)
 		self.hunt:ResetHome()
 		self.huntAt = os.clock()
 		self.phase = "active"
+		if self.items then
+			self.items:SetEnabled(true)
+		end
 		self.world:SetInteractionEnabled(true, self.gateOpen)
 		self:_controls(true)
 		self:_send()
@@ -431,6 +534,7 @@ function SoloRound:_startRound(mode: string)
 	self.epoch += 1
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self:_stopHunt()
+	self:_clearInventory()
 	self.catches = 0
 	self.protectedUntil = 0
 	local epoch = self.epoch
@@ -489,6 +593,24 @@ function SoloRound:_startRound(mode: string)
 		local slot = self.world.Slots[self.random:NextInteger(1, #self.world.Slots)]
 		local keyPrompt = self.world:SpawnKey(slot)
 		self:_bindKey(keyPrompt)
+		self.items = InventoryWorld.new(self.world, self.random, slot, function(player, entry)
+			if
+				self.epoch ~= epoch
+				or not self.items
+				or entry.model.Parent ~= self.items.folder
+				or not self:_canInteract(player, entry.anchor, entry.prompt)
+			then
+				return
+			end
+			if not Inventory.Add(self.inventory, entry.kind) then
+				self.notice = "corn_inventory_full"
+				self:_send()
+				return
+			end
+			assert(self.items:Take(entry), "Pickup invalidated during server transaction")
+			self.notice = ""
+			self:_send()
+		end)
 		self.startedAt = os.clock()
 		local ok, hunt = pcall(MonsterHunt.new, self.world, self.balance, self.startedAt)
 		if not ok then
@@ -520,6 +642,7 @@ function SoloRound:_menu()
 	self.hasKey = false
 	self.gateOpen = false
 	self:_clearKey()
+	self:_clearInventory()
 	if self.world then
 		self.world:SetGateOpen(false)
 		self.world:SetInteractionEnabled(false, false)
@@ -639,6 +762,7 @@ function SoloRound:_removePlayer(player: Player)
 	end
 	self.epoch += 1
 	self:_clearKey()
+	self:_clearInventory()
 	if self.characterConnection then
 		self.characterConnection:Disconnect()
 		self.characterConnection = nil
@@ -703,9 +827,16 @@ function SoloRound:_poll(now: number)
 	-- A visit and capture in the same tick both belong to this pre-teleport position.
 	self.minimap:Poll(self.world, root.Position)
 	if self.hunt then
+		local previous = self.hunt:GetPosition()
+		if self.items then
+			self.items:CheckTraps(self.hunt, previous, now)
+		end
 		local caught, awakened =
 			self.hunt:Step(now - self.huntAt, now, root, now < self.protectedUntil)
 		self.huntAt = now
+		if self.items and self.items:CheckTraps(self.hunt, previous, now) then
+			caught = false
+		end
 		if awakened then
 			self.notice = "corn_hunt_awakened"
 		end
@@ -746,8 +877,15 @@ function SoloRound:_movement(dt: number)
 	if humanoid then
 		humanoid.WalkSpeed = if not active
 			then 0
-			elseif self.stamina.sprinting then self.balance.sprint_speed
-			else self.balance.walk_speed
+			elseif self.stamina.sprinting then self.balance.sprint_speed * Inventory.Multiplier(
+				self.inventory,
+				os.clock()
+			)
+			else self.balance.walk_speed * Inventory.Multiplier(self.inventory, os.clock())
+		humanoid:SetAttribute(
+			"corn_energy_remaining",
+			Inventory.Snapshot(self.inventory, os.clock()).energy_remaining
+		)
 		humanoid:SetAttribute("corn_stamina", self.stamina.value)
 		humanoid:SetAttribute("corn_sprinting", self.stamina.sprinting)
 		humanoid:SetAttribute("corn_sprint_exhausted", self.stamina.exhausted)
@@ -757,6 +895,12 @@ end
 function SoloRound:Start()
 	self:_ensureWorld()
 	self:_chooseSpawn()
+	table.insert(
+		self.connections,
+		self.inventoryAction.OnServerEvent:Connect(function(player: Player, action: any, slot: any)
+			self:_inventoryRequest(player, action, slot)
+		end)
+	)
 	table.insert(
 		self.connections,
 		self.sprintIntent.OnServerEvent:Connect(function(player: Player, value: any)

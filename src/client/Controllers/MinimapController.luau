@@ -63,6 +63,24 @@ function MinimapController:SetSnapshot(snapshot: any)
 	self._hud:SetSnapshot(snapshot)
 end
 
+function MinimapController:_gatePosition(field: BasePart): Vector3?
+	local map = workspace:FindFirstChild("CornMap")
+	if
+		not map
+		or not map:IsA("Model")
+		or map:GetAttribute("corn_project_id") ~= "children_of_corn"
+		or not field:IsDescendantOf(map)
+	then
+		return nil
+	end
+	local gate = map:FindFirstChild("EscapeGate")
+	if not gate or not gate:IsA("Model") or not gate:HasTag("corn_gate") then
+		return nil
+	end
+	local anchor = gate:FindFirstChild("InteractionAnchor")
+	return if anchor and anchor:IsA("BasePart") then anchor.Position else nil
+end
+
 function MinimapController:_update()
 	if not self._visible then
 		return
@@ -101,7 +119,7 @@ function MinimapController:_update()
 		local topLeft, bottomRight = GuiService:GetGuiInset()
 		self._hud:SetViewport(camera.ViewportSize - topLeft - bottomRight)
 	end
-	self._hud:Update(field.CFrame, field.Size, position, direction)
+	self._hud:Update(field.CFrame, field.Size, position, direction, self:_gatePosition(field))
 end
 
 function MinimapController:_input(input: InputObject, processed: boolean)

@@ -1,0 +1,1 @@
+{"name": "execute_luau", "arguments": {"datamodel_type": "Client", "studio_id": "28de7d0d-d3bd-4063-9fe7-5d5b2beacfce", "code": "local pg=game.Players.LocalPlayer.PlayerGui\nlocal s=pg:FindFirstChild(\"CornFarmAcceptanceCamera\");if s then s:Destroy() end\nreturn \"Acceptance camera restored\"\n"}}

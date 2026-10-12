@@ -1,0 +1,1 @@
+{"name": "execute_luau", "arguments": {"datamodel_type": "Client", "studio_id": "28de7d0d-d3bd-4063-9fe7-5d5b2beacfce", "code": "game.ReplicatedStorage.GameRemotes.request_round_action:FireServer(\"start\",\"easy\")\ntask.wait(2)\nreturn {phase=game.Players.LocalPlayer.PlayerGui.CornRoundHud.ActiveStatus.Meta.Text,sky=game.Lighting.ClockTime}\n"}}

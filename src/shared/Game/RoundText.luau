@@ -2,6 +2,7 @@
 
 -- Player-facing strings shared by the round and movement HUDs.
 return table.freeze({
+	corn_inventory_full = "Все пять слотов заняты",
 	corn_modes_choose = "Выбери освещение и начни поиск",
 	corn_modes_hint = "Охота и правила одинаковы во всех режимах",
 	corn_modes_easy = "Легко",

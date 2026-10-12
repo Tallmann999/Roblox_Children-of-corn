@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "audited_engine_sha256": "e29658f1c1a839bc55c0d0d22b51fde6e1035881c1a5fae9fe489c4356422ca2",
+  "baseline_sha256": "0e8a382fcd5b3e61f696e5e40ffa7a33a45436058aa9544ec2b409e4de89e410",
+  "independent_installer_world_signatures": 331,
+  "original_deltas": 223,
+  "added_instances": 364,
+  "moves": [
+    {
+      "from": "Workspace/CornMap/Props/HouseWest",
+      "to": "ServerStorage/CornFarmSceneArchive/HouseWest"
+    },
+    {
+      "from": "Workspace/CornMap/Props/HouseEast",
+      "to": "ServerStorage/CornFarmSceneArchive/HouseEast"
+    },
+    {
+      "from": "Workspace/CornMap/Props/HouseNorthWest",
+      "to": "ServerStorage/CornFarmSceneArchive/HouseNorthWest"
+    }
+  ],
+  "raw_terrain_equal": true,
+  "live_geometry_evidence": "farm-installed-geometry.request.json.result.json",
+  "method": "Audit exact approved scope/typed installer ownership/geometry before recording full canonical signatures. Code text comes from trusted src; older engine code cannot pass final check."
+}

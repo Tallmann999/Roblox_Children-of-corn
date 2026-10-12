@@ -1,0 +1,1 @@
+{"name": "user_mouse_input", "arguments": {"datamodel_type": "Client", "actions": [{"action": "mouseButtonClick", "instance_path": "LocalPlayer.PlayerGui.CornRoundHud.RoundCard.Start", "mouse_button": "left"}], "studio_id": "28de7d0d-d3bd-4063-9fe7-5d5b2beacfce"}}

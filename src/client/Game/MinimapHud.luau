@@ -17,6 +17,8 @@ local CREAM = Color3.fromRGB(239, 242, 218)
 local MUTED = Color3.fromRGB(185, 195, 173)
 local RED = Color3.fromRGB(233, 94, 83)
 local DARK = Color3.fromRGB(35, 25, 24)
+local PLAYER = Color3.fromRGB(94, 220, 255)
+local GATE = Color3.fromRGB(61, 121, 255)
 
 local function round(parent: Instance, radius: number)
 	local corner = Instance.new("UICorner")
@@ -143,27 +145,82 @@ local function mapView(
 		if expanded then 14 else 11
 	)
 	north.TextColor3 = MUTED
-	local arrow = label(
+	local scale = if expanded then 1.25 else 1
+	local arrow = frame(
 		field,
 		"PlayerArrow",
-		UDim2.fromOffset(24, 24),
+		UDim2.fromOffset(16 * scale, 30 * scale),
 		UDim2.fromScale(0.5, 0.5),
-		"▲",
-		if expanded then 25 else 22
+		PLAYER
 	)
+	arrow.BackgroundTransparency = 1
 	arrow.AnchorPoint = Vector2.new(0.5, 0.5)
-	arrow.Font = Enum.Font.GothamBold
-	arrow.TextStrokeColor3 = PANEL
-	arrow.TextStrokeTransparency = 0.3
 	arrow.ZIndex = 7
 	arrow.Visible = false
-	return { Field = field, Arrow = arrow, Visited = {}, Deaths = {}, Expanded = expanded }
+	local shaft = frame(
+		arrow,
+		"Shaft",
+		UDim2.fromOffset(7 * scale, 20 * scale),
+		UDim2.fromOffset(4.5 * scale, 8 * scale),
+		PLAYER
+	)
+	shaft.ZIndex = 8
+	local shaftBorder = Instance.new("UIStroke")
+	shaftBorder.Color = PANEL
+	shaftBorder.Thickness = 1
+	shaftBorder.Parent = shaft
+	-- Solid GUI rows keep the direction tip triangular at every arrow Rotation.
+	local tip = frame(
+		arrow,
+		"Tip",
+		UDim2.fromOffset(16 * scale, 10 * scale),
+		UDim2.fromOffset(0, 0),
+		PLAYER
+	)
+	tip.BackgroundTransparency = 1
+	tip.ZIndex = 9
+	for row = 1, 7 do
+		local slice = frame(
+			tip,
+			"Slice" .. row,
+			UDim2.fromOffset(row * 2 * scale, 1.25 * scale),
+			UDim2.new(0.5, 0, 0, (row + 1) * scale),
+			PLAYER
+		)
+		slice.AnchorPoint = Vector2.new(0.5, 0)
+		slice.ZIndex = 9
+	end
+	local gateSide = if expanded then 15 else 10
+	local gate = frame(
+		field,
+		"ExitGate",
+		UDim2.fromOffset(gateSide, gateSide),
+		UDim2.fromScale(0.5, 0.5),
+		GATE
+	)
+	gate.AnchorPoint = Vector2.new(0.5, 0.5)
+	gate.ZIndex = 3
+	gate.Visible = false
+	local gateBorder = Instance.new("UIStroke")
+	gateBorder.Color = CREAM
+	gateBorder.Transparency = 0.2
+	gateBorder.Thickness = 1
+	gateBorder.Parent = gate
+	return {
+		Field = field,
+		Arrow = arrow,
+		Gate = gate,
+		Visited = {},
+		Deaths = {},
+		Expanded = expanded,
+	}
 end
 
-local function place(marker: GuiObject, field: Frame, point: Vector2)
+local function place(marker: GuiObject, field: Frame, point: Vector2, padding: number?)
 	local dimensions = field.AbsoluteSize
-	local padX = math.min(0.49, 13 / math.max(1, dimensions.X))
-	local padY = math.min(0.49, 13 / math.max(1, dimensions.Y))
+	local inset = padding or 13
+	local padX = math.min(0.49, inset / math.max(1, dimensions.X))
+	local padY = math.min(0.49, inset / math.max(1, dimensions.Y))
 	marker.Position =
 		UDim2.fromScale(math.clamp(point.X, padX, 1 - padX), math.clamp(point.Y, padY, 1 - padY))
 end
@@ -255,7 +312,7 @@ function MinimapHud.new(playerGui: PlayerGui)
 		"Legend",
 		UDim2.fromOffset(590, 20),
 		UDim2.fromOffset(25, 666),
-		"▲ Вы · × Проверено · красный череп — поимка / смерть",
+		"Голубая стрелка — вы · синий квадрат — выход · × проверено · череп — смерть",
 		13
 	)
 	legend.TextColor3 = MUTED
@@ -367,7 +424,8 @@ function MinimapHud:Update(
 	fieldFrame: CFrame,
 	fieldSize: Vector3,
 	playerPosition: Vector3?,
-	direction: Vector3?
+	direction: Vector3?,
+	gatePosition: Vector3?
 )
 	local ratio = fieldSize.X / math.max(0.001, fieldSize.Z)
 	for _, view in self._views do
@@ -386,9 +444,23 @@ function MinimapHud:Update(
 				Geometry.Project(fieldFrame, fieldSize, entry.position)
 			)
 		end
+		view.Gate.Visible = gatePosition ~= nil
+		if gatePosition then
+			place(
+				view.Gate,
+				view.Field,
+				Geometry.Project(fieldFrame, fieldSize, gatePosition),
+				if view.Expanded then 10 else 7
+			)
+		end
 		view.Arrow.Visible = playerPosition ~= nil and direction ~= nil
 		if playerPosition and direction then
-			place(view.Arrow, view.Field, Geometry.Project(fieldFrame, fieldSize, playerPosition))
+			place(
+				view.Arrow,
+				view.Field,
+				Geometry.Project(fieldFrame, fieldSize, playerPosition),
+				if view.Expanded then 22 else 18
+			)
 			view.Arrow.Rotation = Geometry.Heading(fieldFrame, direction)
 		end
 	end

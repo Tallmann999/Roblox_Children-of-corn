@@ -2,6 +2,7 @@
 local CollectionService = game:GetService("CollectionService")
 local Workspace = game:GetService("Workspace")
 local CornField = require(script.Parent:WaitForChild("CornField"))
+local ItemModels = require(script.Parent:WaitForChild("ItemModels"))
 local AuthoredWorld = {}
 AuthoredWorld.__index = AuthoredWorld
 
@@ -211,6 +212,7 @@ function AuthoredWorld.new(radius: number, expectedSlots: number)
 		ClosedCollision = gate.CanCollide,
 		ClosedQuery = gate.CanQuery,
 		Key = nil :: Part?,
+		KeyModel = nil :: Model?,
 		KeyPrompt = nil :: ProximityPrompt?,
 	}, AuthoredWorld)
 	return self
@@ -230,25 +232,22 @@ function AuthoredWorld:GetSpawnCFrame(): CFrame
 end
 
 function AuthoredWorld:ClearKey()
-	if self.Key then
+	if self.KeyModel then
+		self.KeyModel:Destroy()
+	elseif self.Key then
 		self.Key:Destroy()
 	end
 	self.Key = nil
+	self.KeyModel = nil
 	self.KeyPrompt = nil
 end
 
 function AuthoredWorld:SpawnKeyAt(frame: CFrame): ProximityPrompt
 	self:ClearKey()
-	local key = Instance.new("Part")
+	local object, key = ItemModels.Key(frame)
 	key.Name = "GateKey"
-	key.Size = Vector3.new(1.5, 0.4, 3)
-	key.CFrame = frame
-	key.Anchored = true
-	key.Color = Color3.fromRGB(240, 198, 69)
-	key.Material = Enum.Material.Metal
-	key.CanCollide = false
-	key.CanTouch = false
-	key.Parent = self.Runtime
+	object.Parent = self.Runtime
+	self.KeyModel = object
 	self.Key = key
 	self.KeyPrompt =
 		prompt(key, "CornKeyPrompt", "Подобрать", "Ключ от ворот", self.Radius)

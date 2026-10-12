@@ -1,0 +1,16 @@
+{
+  "physical_slots_1_5": true,
+  "hard_severe_lag_resolved_author_report": true,
+  "author_saved_ctrl_s": true,
+  "author_reply": "1–5 работают, лагов нет",
+  "mixed_focus_sample": {
+    "seconds": 50.0164348,
+    "frames": 1242,
+    "fps": 24.83183787,
+    "p95ms": 68.6253011,
+    "max_animated": 2,
+    "frames_with_reaction": 305,
+    "mode_at_end": "medium"
+  },
+  "clean_hard_fps_benchmark": false
+}

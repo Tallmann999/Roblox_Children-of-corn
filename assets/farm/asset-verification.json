@@ -1,0 +1,1976 @@
+{
+  "date": "2026-10-12",
+  "scope": "Original FBX copied byte-for-byte, existing Texture/Video metadata only changed in derived copies; no Studio or scene changes.",
+  "texture_source": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\assets\\farm\\PolygonFarm_Texture_01_A.png",
+  "texture_sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+  "texture_layout": "Original PolygonFarm_Texture_01_A_2k PSD references confirmed on all four; the exact supplied original PolygonFarm_Texture_01_A PNG is embedded, retaining intended barn/rust palette.",
+  "assets": [
+    {
+      "original": "SM_Bld_Barn_03.fbx",
+      "source_path": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\Сарай серый\\SM_Bld_Barn_03.fbx",
+      "original_bytes": 232688,
+      "original_sha256": "7fd177843110adaf726860156886da76651fd393956647c3c7ece299711ecc37",
+      "derived": "SM_Bld_Barn_03_textured.fbx",
+      "derived_bytes": 583696,
+      "derived_sha256": "5003d1d7fe44b8082197cb22ba2a4292b735ed06df71fd7c49889e9b91fb7796",
+      "fbx_version": 7400,
+      "original_object_count": 19,
+      "original_objects_except_texture_video_preserved": true,
+      "original_object_structural_sha256": {
+        "Geometry:1599281200": "85103cbac86204f6f6ad4839274052000aec2c83e3112f44c1108ebbf87373a8",
+        "Geometry:1599284784": "81ff1cdeaadc31655c44e9bfbc7167a0fa4701fdb29c2de80d6f30231e8a38f2",
+        "Geometry:1599289392": "c43247f682bc4d79000bbe12d7f9840d2c17c7ebb49e93a3cb9861bd84797ac6",
+        "Geometry:1088714400": "9354fb074368e3759fed3932a8045be51bf9348ade7dbec4a94ef386f404e3d2",
+        "Geometry:1088711840": "d10f83ce03b04e9431e02ef7d9c4f9a98e9c2b396612c43ca1f17765dbc5a989",
+        "Geometry:1088721056": "771d81f9a60fca6125a2e72dc790d541a218bcebaaa1456e4486faa5d7e99209",
+        "Geometry:1088712864": "9ef9df8b9ab25c2c73ca688d0a5d5faceb19b75aef65a812d060b6e7debec5eb",
+        "Model:592690576": "4595775b78745abf0cf745b3a558182a47260fbace0bbd273f6e02aa8deb18f7",
+        "Model:592665056": "f7c325c5954622a5e026df3de012b579feed1138f47de7d6f8d7f46c45243045",
+        "Model:1567812272": "ed565bfbaba8d86ca92b0a455c23a802a550e2501804ce187b0eeeb9ca63fbb8",
+        "Model:1567814592": "9c7c8f0966762528193b8577be71c7c9c964f04385e24fd9546d6edc3d81de18",
+        "Model:1567816912": "918d586c6e30ceb0a8c0d41c66067417d7d3512d8f83522a96587634905557ad",
+        "Model:1567819232": "1c2e366064085e56a31de2364975849b18280351f1d8ab4c065f9248626609c6",
+        "Model:1567821552": "75a965536dbade0542dfffc12ba5face0a5f5efe63c891c423112638dffcddea",
+        "Material:1151524272": "fc501f44a6284bfad613b09a1b156f838c6d73e8faedc7db46ab1f7e12dc0106",
+        "AnimationStack:1239545296": "30e91ead2dfe0b1f967582079612930c3d71c61ad63b357bb8ccb55583be3f21",
+        "AnimationLayer:1159380576": "058acc1b477f151dce9634ddb8105264e7b5c632bbf24c0365bca102ffe60f56"
+      },
+      "all_other_top_level_nodes_preserved": true,
+      "top_level_structural_sha256": {
+        "FBXHeaderExtension": "5c60c77ae109f3b8b7cf3d7e0c8350778e50762de5f6335b54ad383a6abcc4dd",
+        "FileId": "312dba7a13d16b3e2dbddc3475a2a6c6ce1c6ddf9f44f864a709ca74d3744140",
+        "CreationTime": "0047e8ddc0498716730017112368206b05b7aecb83976455594dd89c52d44459",
+        "Creator": "372ec166e497ca6c18f45fe12e5ecd9242ced23007d91d9c6767d6b3bdd19da3",
+        "GlobalSettings": "946923363100d8c58011ab28b8df5c85f432373db8cce666eb9ce6ee895a2827",
+        "Documents": "9d093d67ed58ab7b837f8ccbcdaed9430cb162af317b33a7faed82e62aeb16d5",
+        "References": "6cb7a787ac67d95ddf0e771946ae59e14442e4572e83908494cffe973dcd3422",
+        "Definitions": "e4ae79389a8f1c6c8729086c4c2bc94a467cc133b5183aeabf3a0a949fce2fa7",
+        "Connections": "8c937848eabe282f21bcb8664c0d7162543d534fb42a9170af5538dde205c9a2",
+        "Takes": "5b816f6b01a3c63e9c11a79d5fdb2d922b649f65b846c01eabf33fef57b29578"
+      },
+      "geometry_compressed_arrays_preserved": true,
+      "original_connections_preserved": true,
+      "original_global_settings_preserved": true,
+      "changed_metadata_paths": [
+        "Video/Filename",
+        "Video/RelativeFilename",
+        "Video/Properties70/Path",
+        "Video/Content(add)",
+        "Texture/FileName",
+        "Texture/RelativeFilename"
+      ],
+      "embedded_png_sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+      "embedded_png_bytes": 351202,
+      "external_psd_reference_replaced": true,
+      "parse_verified": true,
+      "studio_import_verified": false
+    },
+    {
+      "original": "SM_Prop_Rubbish_Pile_05.fbx",
+      "source_path": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\Сарай серый\\SM_Prop_Rubbish_Pile_05.fbx",
+      "original_bytes": 36288,
+      "original_sha256": "9a8b1a775cd24dbb9ee89fdefc7402222163890c51f8282491d563e67830555b",
+      "derived": "SM_Prop_Rubbish_Pile_05_textured.fbx",
+      "derived_bytes": 387296,
+      "derived_sha256": "8dc68514c2c2cbe1e6674f8ecbfa50da859c1621145751de0b7b2b20ccc54025",
+      "fbx_version": 7400,
+      "original_object_count": 7,
+      "original_objects_except_texture_video_preserved": true,
+      "original_object_structural_sha256": {
+        "Geometry:985965168": "d3b7a0e44aa1aa68850f57e2f66ee3044d485584fd3c54ebf5e736b497a4551a",
+        "Model:1419041392": "fbb11a1dcd8d28f20b80e33f88a8d93dae040a4ca3c659dcd0c9d5522a2e678b",
+        "Material:1236515584": "130235a963588285329ca1741f6ddf4f61d6972d7ef6a572a6e9855764d64a6a",
+        "AnimationStack:1728727888": "205c7121561dc65fc2c6d01766f7f1dd48bc405bcdc626af55490c16399c4918",
+        "AnimationLayer:770315424": "bb0581f689992145c277a0680b2abb912ffd895d68d69dade0fc1a52525ecdeb"
+      },
+      "all_other_top_level_nodes_preserved": true,
+      "top_level_structural_sha256": {
+        "FBXHeaderExtension": "224dfca2b055349f76598ea378b31e25480339714f126424e8f41bdc5712e19e",
+        "FileId": "adf8123840094591354b9952e2acc93cebd3470e0bdb62c75a548c46434dd441",
+        "CreationTime": "c2eff142cf5de5dea38035ff489441c4917607c36aaffa2d528919398eba15ac",
+        "Creator": "372ec166e497ca6c18f45fe12e5ecd9242ced23007d91d9c6767d6b3bdd19da3",
+        "GlobalSettings": "946923363100d8c58011ab28b8df5c85f432373db8cce666eb9ce6ee895a2827",
+        "Documents": "80ab6970323e7dfb5edee924e5c9b6afc456d033d256c22dc4fe8385c5c68dfb",
+        "References": "6cb7a787ac67d95ddf0e771946ae59e14442e4572e83908494cffe973dcd3422",
+        "Definitions": "2a4ea85203b9e95d65472eef17dbc5ef8c05edbac5aeef8d25626abc301be940",
+        "Connections": "d8a44e918eb839a9552273f6869543a155775c04ec3fdd46da002172fcd69ea0",
+        "Takes": "5b816f6b01a3c63e9c11a79d5fdb2d922b649f65b846c01eabf33fef57b29578"
+      },
+      "geometry_compressed_arrays_preserved": true,
+      "original_connections_preserved": true,
+      "original_global_settings_preserved": true,
+      "changed_metadata_paths": [
+        "Video/Filename",
+        "Video/RelativeFilename",
+        "Video/Properties70/Path",
+        "Video/Content(add)",
+        "Texture/FileName",
+        "Texture/RelativeFilename"
+      ],
+      "embedded_png_sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+      "embedded_png_bytes": 351202,
+      "external_psd_reference_replaced": true,
+      "parse_verified": true,
+      "studio_import_verified": false
+    },
+    {
+      "original": "SM_Prop_Truck_Rusted_01.fbx",
+      "source_path": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\Сарай серый\\SM_Prop_Truck_Rusted_01.fbx",
+      "original_bytes": 156624,
+      "original_sha256": "83b77ec628f7f3b35d71658560d995adbf0c946ec96d5f94eae54ec8b84b5b06",
+      "derived": "SM_Prop_Truck_Rusted_01_textured.fbx",
+      "derived_bytes": 507632,
+      "derived_sha256": "b75353ecb503d816c6da01222c8526f185ae3cfc98d2483a5986843176c18b05",
+      "fbx_version": 7400,
+      "original_object_count": 7,
+      "original_objects_except_texture_video_preserved": true,
+      "original_object_structural_sha256": {
+        "Geometry:1371542160": "73b7b2f1d86d7680f3d5220928423316f38a6663ca06f64a5fd5724435cd96c2",
+        "Model:1419069232": "baa8d12cc05306c9f039b3ad0735c1f8ef4a13f812a96b09c5f1bbc388f4d023",
+        "Material:1261007280": "eac9b9345e4c416097790635077c27e48fa291304827cf6c108fc595797d6a85",
+        "AnimationStack:1258119456": "05da639f890bb546054be432c6c39aad63ec9facbc0a763e09105290a13bd3a6",
+        "AnimationLayer:770288976": "02c5fab31a47fedd90ec8b14014572656eb085c82f2c6e0cf4173a500c51e1c4"
+      },
+      "all_other_top_level_nodes_preserved": true,
+      "top_level_structural_sha256": {
+        "FBXHeaderExtension": "88bad042115ceefb3304e906461c2ec53328263ad24715fca5f5a6cba10ca4bc",
+        "FileId": "9e6e3e3249a452155e5f635320490790228929313607f63959756160f8e606f6",
+        "CreationTime": "154ba2dd3f7d27a008eba44f725cf890ee35ad6a8b6613565fd04b4e3127d116",
+        "Creator": "372ec166e497ca6c18f45fe12e5ecd9242ced23007d91d9c6767d6b3bdd19da3",
+        "GlobalSettings": "946923363100d8c58011ab28b8df5c85f432373db8cce666eb9ce6ee895a2827",
+        "Documents": "ca99b9ec7918db5c4429bebb2c596998c4628a19c625e9988c7ce95550843271",
+        "References": "6cb7a787ac67d95ddf0e771946ae59e14442e4572e83908494cffe973dcd3422",
+        "Definitions": "2a4ea85203b9e95d65472eef17dbc5ef8c05edbac5aeef8d25626abc301be940",
+        "Connections": "56b023282c8e33836697ef368d0dfc74af2ecf801f0f68aa5ddf56063f3a6142",
+        "Takes": "5b816f6b01a3c63e9c11a79d5fdb2d922b649f65b846c01eabf33fef57b29578"
+      },
+      "geometry_compressed_arrays_preserved": true,
+      "original_connections_preserved": true,
+      "original_global_settings_preserved": true,
+      "changed_metadata_paths": [
+        "Video/Filename",
+        "Video/RelativeFilename",
+        "Video/Properties70/Path",
+        "Video/Content(add)",
+        "Texture/FileName",
+        "Texture/RelativeFilename"
+      ],
+      "embedded_png_sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+      "embedded_png_bytes": 351202,
+      "external_psd_reference_replaced": true,
+      "parse_verified": true,
+      "studio_import_verified": false
+    },
+    {
+      "original": "SM_Prop_Tyre_01.fbx",
+      "source_path": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\Сарай серый\\SM_Prop_Tyre_01.fbx",
+      "original_bytes": 59952,
+      "original_sha256": "2b415712537b09de5d97e66388df6f0ccb284f7f5d2a60eb1da991a64078f284",
+      "derived": "SM_Prop_Tyre_01_textured.fbx",
+      "derived_bytes": 410960,
+      "derived_sha256": "161c1fdeb21472bd37c70a6b3781a5c503c02ff89c2ad54674ef9aa1a9465d02",
+      "fbx_version": 7400,
+      "original_object_count": 7,
+      "original_objects_except_texture_video_preserved": true,
+      "original_object_structural_sha256": {
+        "Geometry:1371542160": "e3c319f252372373bd59c4a486f5525dd9b65ea861d7322eab0de1907fefb9a4",
+        "Model:1419050672": "925037d9b38675d914f640c335286601de93567dcb945dd2f6d6fade5e44f5a4",
+        "Material:890899536": "fb89dfe7a803edfcb42524430a26af0e1b29d0416cb0ca0b8e6e39f7bef15dc1",
+        "AnimationStack:881530256": "ebb5d7f87494d6808e2469f0dee4838f787d58246e8fdc306ad93fa73aac3160",
+        "AnimationLayer:770289280": "44389aee30c8d840b2f342335c1316d21b64bc636ba11889feb31f8098865b79"
+      },
+      "all_other_top_level_nodes_preserved": true,
+      "top_level_structural_sha256": {
+        "FBXHeaderExtension": "a5cd068741a4bdc52fa3f5df0300fd24f447a49ff026ab2f4c5c4f1bf407c4e2",
+        "FileId": "708680574406ccc1d741ac96c3c4bcd737c833c8a509cc6f91af0d9952487dba",
+        "CreationTime": "568719c02cf557f16a5a3b6ec448de836d4e8476d201f91cd3d013e7937f8ef5",
+        "Creator": "372ec166e497ca6c18f45fe12e5ecd9242ced23007d91d9c6767d6b3bdd19da3",
+        "GlobalSettings": "946923363100d8c58011ab28b8df5c85f432373db8cce666eb9ce6ee895a2827",
+        "Documents": "0f1d81cec88915b74522d59220835320e6ea65714fd082135135f2409e138654",
+        "References": "6cb7a787ac67d95ddf0e771946ae59e14442e4572e83908494cffe973dcd3422",
+        "Definitions": "2a4ea85203b9e95d65472eef17dbc5ef8c05edbac5aeef8d25626abc301be940",
+        "Connections": "960c2ea66c9586efb423e9b9c43e17482e5f73e2c524943c3c243461465b17d9",
+        "Takes": "5b816f6b01a3c63e9c11a79d5fdb2d922b649f65b846c01eabf33fef57b29578"
+      },
+      "geometry_compressed_arrays_preserved": true,
+      "original_connections_preserved": true,
+      "original_global_settings_preserved": true,
+      "changed_metadata_paths": [
+        "Video/Filename",
+        "Video/RelativeFilename",
+        "Video/Properties70/Path",
+        "Video/Content(add)",
+        "Texture/FileName",
+        "Texture/RelativeFilename"
+      ],
+      "embedded_png_sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+      "embedded_png_bytes": 351202,
+      "external_psd_reference_replaced": true,
+      "parse_verified": true,
+      "studio_import_verified": false
+    }
+  ],
+  "fbx_metadata": [
+    {
+      "name": "SM_Bld_Barn_03.fbx",
+      "bytes": 232688,
+      "sha256": "7fd177843110adaf726860156886da76651fd393956647c3c7ece299711ecc37",
+      "version": 7400,
+      "objects": {
+        "Geometry": 7,
+        "Model": 7,
+        "Material": 1,
+        "Video": 1,
+        "Texture": 1,
+        "AnimationStack": 1,
+        "AnimationLayer": 1
+      },
+      "settings": {
+        "UpAxis": [
+          1
+        ],
+        "UpAxisSign": [
+          1
+        ],
+        "FrontAxis": [
+          2
+        ],
+        "FrontAxisSign": [
+          1
+        ],
+        "CoordAxis": [
+          0
+        ],
+        "CoordAxisSign": [
+          1
+        ],
+        "OriginalUpAxis": [
+          1
+        ],
+        "OriginalUpAxisSign": [
+          1
+        ],
+        "UnitScaleFactor": [
+          1.0
+        ],
+        "OriginalUnitScaleFactor": [
+          1.0
+        ],
+        "AmbientColor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "DefaultCamera": [
+          "Producer Perspective"
+        ],
+        "TimeMode": [
+          11
+        ],
+        "TimeProtocol": [
+          2
+        ],
+        "SnapOnFrameMode": [
+          0
+        ],
+        "TimeSpanStart": [
+          1924423250
+        ],
+        "TimeSpanStop": [
+          384884650000
+        ],
+        "CustomFrameRate": [
+          -1.0
+        ],
+        "TimeMarker": [],
+        "CurrentTimeMarker": [
+          -1
+        ]
+      },
+      "materials": [
+        {
+          "id": 1151524272,
+          "name": "Farm5::Material",
+          "properties": {
+            "AmbientColor": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DiffuseColor": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "DiffuseFactor": [
+              0.800000011920929
+            ],
+            "TransparencyFactor": [
+              1.0
+            ],
+            "Emissive": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Ambient": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Diffuse": [
+              0.800000011920929,
+              0.800000011920929,
+              0.800000011920929
+            ],
+            "Opacity": [
+              1.0
+            ]
+          },
+          "children": {
+            "Version": [
+              102
+            ],
+            "ShadingModel": [
+              "lambert"
+            ],
+            "MultiLayer": [
+              0
+            ],
+            "Properties70": []
+          }
+        }
+      ],
+      "models": [
+        {
+          "id": 592690576,
+          "name": "SM_Bld_Barn_03::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 592665056,
+          "name": "SM_Bld_Barn_03_Shutter_01::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              -387.3275527954101,
+              517.9362796783452,
+              70.61584854125977
+            ],
+            "ScalingPivot": [
+              -387.3275527954101,
+              517.9362796783452,
+              70.61584854125977
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 1567812272,
+          "name": "SM_Bld_Barn_03_Shutter_02::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              387.51465759277346,
+              517.9362796783452,
+              -68.53930435180663
+            ],
+            "ScalingPivot": [
+              387.51465759277346,
+              517.9362796783452,
+              -68.53930435180663
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 1567814592,
+          "name": "SM_Bld_Barn_03_Door_04::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              392.8837343155149,
+              -0.0011608123774192853,
+              -94.50820895023645
+            ],
+            "ScalingPivot": [
+              392.8837343155149,
+              -0.0011608123774192853,
+              -94.50820895023645
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 1567816912,
+          "name": "SM_Bld_Barn_03_Door_03::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              392.8837343155149,
+              -0.0011608123774192853,
+              94.91312245540321
+            ],
+            "ScalingPivot": [
+              392.8837343155149,
+              -0.0011608123774192853,
+              94.91312245540321
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 1567819232,
+          "name": "SM_Bld_Barn_03_Door_02::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              -396.8145540527852,
+              -0.0011608123774192853,
+              -94.50820895023645
+            ],
+            "ScalingPivot": [
+              -396.8145540527852,
+              -0.0011608123774192853,
+              -94.50820895023645
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        },
+        {
+          "id": 1567821552,
+          "name": "SM_Bld_Barn_03_Door_01::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationPivot": [
+              -396.8145540527852,
+              -0.0011608123774192853,
+              94.91312245540321
+            ],
+            "ScalingPivot": [
+              -396.8145540527852,
+              -0.0011608123774192853,
+              94.91312245540321
+            ],
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        }
+      ],
+      "texture_nodes": [
+        {
+          "type": "Video",
+          "id": 1151544672,
+          "name": "file1129::Video",
+          "children": {
+            "Type": [
+              "Clip"
+            ],
+            "Properties70": [],
+            "UseMipMap": [
+              0
+            ],
+            "Filename": [
+              "U:\\Dropbox\\SyntyStudios\\PolygonFarm\\_Working\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ]
+          }
+        },
+        {
+          "type": "Texture",
+          "id": 290199776,
+          "name": "file1129::Texture",
+          "children": {
+            "Type": [
+              "TextureVideoClip"
+            ],
+            "Version": [
+              202
+            ],
+            "TextureName": [
+              "file1129\u0000\u0001Texture"
+            ],
+            "Properties70": [],
+            "Media": [
+              "file1129\u0000\u0001Video"
+            ],
+            "FileName": [
+              "U:\\Dropbox\\SyntyStudios\\PolygonFarm\\_Working\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "ModelUVTranslation": [
+              0.0,
+              0.0
+            ],
+            "ModelUVScaling": [
+              1.0,
+              1.0
+            ],
+            "Texture_Alpha_Source": [
+              "None"
+            ],
+            "Cropping": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "id": 1599281200,
+          "name": "::Geometry",
+          "vertices": 3866,
+          "polygons": 3120,
+          "polygon_sizes": {
+            "3": 506,
+            "4": 2312,
+            "8": 4,
+            "5": 254,
+            "16": 2,
+            "6": 42
+          },
+          "triangulated_estimate": 6112,
+          "bounds": {
+            "min": [
+              -488.4591979980469,
+              -0.00116729736328125,
+              -371.755615234375
+            ],
+            "max": [
+              488.4607238769531,
+              910.53759765625,
+              371.755615234375
+            ],
+            "size": [
+              976.919921875,
+              910.5387649536133,
+              743.51123046875
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 6024,
+              "u_range": [
+                0.10308676958084106,
+                0.9904307723045349
+              ],
+              "v_range": [
+                0.2579182982444763,
+                0.9824447631835938
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1599284784,
+          "name": "::Geometry",
+          "vertices": 156,
+          "polygons": 142,
+          "polygon_sizes": {
+            "4": 90,
+            "3": 42,
+            "5": 10
+          },
+          "triangulated_estimate": 252,
+          "bounds": {
+            "min": [
+              -390.65960693359375,
+              417.05804443359375,
+              -70.63691711425781
+            ],
+            "max": [
+              -371.9535827636719,
+              618.8145141601562,
+              72.71340942382812
+            ],
+            "size": [
+              18.706024169921875,
+              201.7564697265625,
+              143.35032653808594
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 196,
+              "u_range": [
+                0.2498343139886856,
+                0.9856994152069092
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.8714386224746704
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1599289392,
+          "name": "::Geometry",
+          "vertices": 156,
+          "polygons": 142,
+          "polygon_sizes": {
+            "4": 90,
+            "3": 42,
+            "5": 10
+          },
+          "triangulated_estimate": 252,
+          "bounds": {
+            "min": [
+              372.04229736328125,
+              417.05804443359375,
+              -70.63691711425781
+            ],
+            "max": [
+              390.74835205078125,
+              618.8145141601562,
+              72.71340942382812
+            ],
+            "size": [
+              18.7060546875,
+              201.7564697265625,
+              143.35032653808594
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 196,
+              "u_range": [
+                0.2498343139886856,
+                0.9856994152069092
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.8714386224746704
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1088714400,
+          "name": "::Geometry",
+          "vertices": 258,
+          "polygons": 220,
+          "polygon_sizes": {
+            "4": 138,
+            "3": 70,
+            "6": 4,
+            "5": 8
+          },
+          "triangulated_estimate": 386,
+          "bounds": {
+            "min": [
+              382.75958251953125,
+              -0.0011608123313635588,
+              -189.2188720703125
+            ],
+            "max": [
+              403.0079040527344,
+              351.6269226074219,
+              0.20245873928070068
+            ],
+            "size": [
+              20.248321533203125,
+              351.62808341975324,
+              189.4213308095932
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 320,
+              "u_range": [
+                0.2498343139886856,
+                0.9904307723045349
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.9318917393684387
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1088711840,
+          "name": "::Geometry",
+          "vertices": 258,
+          "polygons": 220,
+          "polygon_sizes": {
+            "4": 138,
+            "3": 70,
+            "6": 4,
+            "5": 8
+          },
+          "triangulated_estimate": 386,
+          "bounds": {
+            "min": [
+              382.75958251953125,
+              -0.00115966796875,
+              0.20244577527046204
+            ],
+            "max": [
+              403.0079040527344,
+              351.6269226074219,
+              189.62380981445312
+            ],
+            "size": [
+              20.248321533203125,
+              351.6280822753906,
+              189.42136403918266
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 320,
+              "u_range": [
+                0.2498343139886856,
+                0.9904307723045349
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.9318917393684387
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1088721056,
+          "name": "::Geometry",
+          "vertices": 258,
+          "polygons": 220,
+          "polygon_sizes": {
+            "4": 138,
+            "3": 70,
+            "6": 4,
+            "5": 8
+          },
+          "triangulated_estimate": 386,
+          "bounds": {
+            "min": [
+              -406.93865966796875,
+              -0.0011608123313635588,
+              -189.2188720703125
+            ],
+            "max": [
+              -386.6904296875,
+              351.6269226074219,
+              0.20245873928070068
+            ],
+            "size": [
+              20.24822998046875,
+              351.62808341975324,
+              189.4213308095932
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 320,
+              "u_range": [
+                0.2498343139886856,
+                0.9904307723045349
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.9318917393684387
+              ]
+            }
+          ],
+          "vertex_colors": false
+        },
+        {
+          "id": 1088712864,
+          "name": "::Geometry",
+          "vertices": 258,
+          "polygons": 220,
+          "polygon_sizes": {
+            "4": 138,
+            "3": 70,
+            "6": 4,
+            "5": 8
+          },
+          "triangulated_estimate": 386,
+          "bounds": {
+            "min": [
+              -406.93865966796875,
+              -0.00115966796875,
+              0.20244577527046204
+            ],
+            "max": [
+              -386.6904296875,
+              351.6269226074219,
+              189.62380981445312
+            ],
+            "size": [
+              20.24822998046875,
+              351.6280822753906,
+              189.42136403918266
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 320,
+              "u_range": [
+                0.2498343139886856,
+                0.9904307723045349
+              ],
+              "v_range": [
+                0.3257507085800171,
+                0.9318917393684387
+              ]
+            }
+          ],
+          "vertex_colors": false
+        }
+      ],
+      "connections": [
+        [
+          "OO",
+          592690576,
+          0
+        ],
+        [
+          "OO",
+          1159380576,
+          1239545296
+        ],
+        [
+          "OP",
+          290199776,
+          1151524272,
+          "DiffuseColor"
+        ],
+        [
+          "OO",
+          1151544672,
+          290199776
+        ],
+        [
+          "OO",
+          1599281200,
+          592690576
+        ],
+        [
+          "OO",
+          1151524272,
+          592690576
+        ],
+        [
+          "OO",
+          592665056,
+          592690576
+        ],
+        [
+          "OO",
+          1567812272,
+          592690576
+        ],
+        [
+          "OO",
+          1567814592,
+          592690576
+        ],
+        [
+          "OO",
+          1567816912,
+          592690576
+        ],
+        [
+          "OO",
+          1567819232,
+          592690576
+        ],
+        [
+          "OO",
+          1567821552,
+          592690576
+        ],
+        [
+          "OO",
+          1599284784,
+          592665056
+        ],
+        [
+          "OO",
+          1151524272,
+          592665056
+        ],
+        [
+          "OO",
+          1599289392,
+          1567812272
+        ],
+        [
+          "OO",
+          1151524272,
+          1567812272
+        ],
+        [
+          "OO",
+          1088714400,
+          1567814592
+        ],
+        [
+          "OO",
+          1151524272,
+          1567814592
+        ],
+        [
+          "OO",
+          1088711840,
+          1567816912
+        ],
+        [
+          "OO",
+          1151524272,
+          1567816912
+        ],
+        [
+          "OO",
+          1088721056,
+          1567819232
+        ],
+        [
+          "OO",
+          1151524272,
+          1567819232
+        ],
+        [
+          "OO",
+          1088712864,
+          1567821552
+        ],
+        [
+          "OO",
+          1151524272,
+          1567821552
+        ]
+      ]
+    },
+    {
+      "name": "SM_Prop_Rubbish_Pile_05.fbx",
+      "bytes": 36288,
+      "sha256": "9a8b1a775cd24dbb9ee89fdefc7402222163890c51f8282491d563e67830555b",
+      "version": 7400,
+      "objects": {
+        "Geometry": 1,
+        "Model": 1,
+        "Material": 1,
+        "Video": 1,
+        "Texture": 1,
+        "AnimationStack": 1,
+        "AnimationLayer": 1
+      },
+      "settings": {
+        "UpAxis": [
+          1
+        ],
+        "UpAxisSign": [
+          1
+        ],
+        "FrontAxis": [
+          2
+        ],
+        "FrontAxisSign": [
+          1
+        ],
+        "CoordAxis": [
+          0
+        ],
+        "CoordAxisSign": [
+          1
+        ],
+        "OriginalUpAxis": [
+          1
+        ],
+        "OriginalUpAxisSign": [
+          1
+        ],
+        "UnitScaleFactor": [
+          1.0
+        ],
+        "OriginalUnitScaleFactor": [
+          1.0
+        ],
+        "AmbientColor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "DefaultCamera": [
+          "Producer Perspective"
+        ],
+        "TimeMode": [
+          11
+        ],
+        "TimeProtocol": [
+          2
+        ],
+        "SnapOnFrameMode": [
+          0
+        ],
+        "TimeSpanStart": [
+          1924423250
+        ],
+        "TimeSpanStop": [
+          384884650000
+        ],
+        "CustomFrameRate": [
+          -1.0
+        ],
+        "TimeMarker": [],
+        "CurrentTimeMarker": [
+          -1
+        ]
+      },
+      "materials": [
+        {
+          "id": 1236515584,
+          "name": "Farm::Material",
+          "properties": {
+            "AmbientColor": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DiffuseColor": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "DiffuseFactor": [
+              0.800000011920929
+            ],
+            "TransparencyFactor": [
+              1.0
+            ],
+            "Emissive": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Ambient": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Diffuse": [
+              0.800000011920929,
+              0.800000011920929,
+              0.800000011920929
+            ],
+            "Opacity": [
+              1.0
+            ]
+          },
+          "children": {
+            "Version": [
+              102
+            ],
+            "ShadingModel": [
+              "lambert"
+            ],
+            "MultiLayer": [
+              0
+            ],
+            "Properties70": []
+          }
+        }
+      ],
+      "models": [
+        {
+          "id": 1419041392,
+          "name": "SM_Prop_Rubbish_Pile_05::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        }
+      ],
+      "texture_nodes": [
+        {
+          "type": "Video",
+          "id": 1878920640,
+          "name": "file1115::Video",
+          "children": {
+            "Type": [
+              "Clip"
+            ],
+            "Properties70": [],
+            "UseMipMap": [
+              0
+            ],
+            "Filename": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ]
+          }
+        },
+        {
+          "type": "Texture",
+          "id": 1840012912,
+          "name": "file1115::Texture",
+          "children": {
+            "Type": [
+              "TextureVideoClip"
+            ],
+            "Version": [
+              202
+            ],
+            "TextureName": [
+              "file1115\u0000\u0001Texture"
+            ],
+            "Properties70": [],
+            "Media": [
+              "file1115\u0000\u0001Video"
+            ],
+            "FileName": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "ModelUVTranslation": [
+              0.0,
+              0.0
+            ],
+            "ModelUVScaling": [
+              1.0,
+              1.0
+            ],
+            "Texture_Alpha_Source": [
+              "None"
+            ],
+            "Cropping": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "id": 985965168,
+          "name": "::Geometry",
+          "vertices": 336,
+          "polygons": 287,
+          "polygon_sizes": {
+            "3": 33,
+            "5": 47,
+            "6": 10,
+            "4": 197
+          },
+          "triangulated_estimate": 608,
+          "bounds": {
+            "min": [
+              -118.8671875,
+              -1.88262939453125,
+              -96.941162109375
+            ],
+            "max": [
+              118.8671875,
+              85.05567932128906,
+              96.94140625
+            ],
+            "size": [
+              237.734375,
+              86.93830871582031,
+              193.882568359375
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 552,
+              "u_range": [
+                0.10472234338521957,
+                0.4872894287109375
+              ],
+              "v_range": [
+                0.22756336629390717,
+                0.38455110788345337
+              ]
+            }
+          ],
+          "vertex_colors": false
+        }
+      ],
+      "connections": [
+        [
+          "OO",
+          1419041392,
+          0
+        ],
+        [
+          "OO",
+          770315424,
+          1728727888
+        ],
+        [
+          "OP",
+          1840012912,
+          1236515584,
+          "DiffuseColor"
+        ],
+        [
+          "OO",
+          1878920640,
+          1840012912
+        ],
+        [
+          "OO",
+          985965168,
+          1419041392
+        ],
+        [
+          "OO",
+          1236515584,
+          1419041392
+        ]
+      ]
+    },
+    {
+      "name": "SM_Prop_Truck_Rusted_01.fbx",
+      "bytes": 156624,
+      "sha256": "83b77ec628f7f3b35d71658560d995adbf0c946ec96d5f94eae54ec8b84b5b06",
+      "version": 7400,
+      "objects": {
+        "Geometry": 1,
+        "Model": 1,
+        "Material": 1,
+        "Video": 1,
+        "Texture": 1,
+        "AnimationStack": 1,
+        "AnimationLayer": 1
+      },
+      "settings": {
+        "UpAxis": [
+          1
+        ],
+        "UpAxisSign": [
+          1
+        ],
+        "FrontAxis": [
+          2
+        ],
+        "FrontAxisSign": [
+          1
+        ],
+        "CoordAxis": [
+          0
+        ],
+        "CoordAxisSign": [
+          1
+        ],
+        "OriginalUpAxis": [
+          1
+        ],
+        "OriginalUpAxisSign": [
+          1
+        ],
+        "UnitScaleFactor": [
+          1.0
+        ],
+        "OriginalUnitScaleFactor": [
+          1.0
+        ],
+        "AmbientColor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "DefaultCamera": [
+          "Producer Perspective"
+        ],
+        "TimeMode": [
+          11
+        ],
+        "TimeProtocol": [
+          2
+        ],
+        "SnapOnFrameMode": [
+          0
+        ],
+        "TimeSpanStart": [
+          1924423250
+        ],
+        "TimeSpanStop": [
+          384884650000
+        ],
+        "CustomFrameRate": [
+          -1.0
+        ],
+        "TimeMarker": [],
+        "CurrentTimeMarker": [
+          -1
+        ]
+      },
+      "materials": [
+        {
+          "id": 1261007280,
+          "name": "Farm::Material",
+          "properties": {
+            "AmbientColor": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DiffuseColor": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "DiffuseFactor": [
+              0.800000011920929
+            ],
+            "TransparencyFactor": [
+              1.0
+            ],
+            "Emissive": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Ambient": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Diffuse": [
+              0.800000011920929,
+              0.800000011920929,
+              0.800000011920929
+            ],
+            "Opacity": [
+              1.0
+            ]
+          },
+          "children": {
+            "Version": [
+              102
+            ],
+            "ShadingModel": [
+              "lambert"
+            ],
+            "MultiLayer": [
+              0
+            ],
+            "Properties70": []
+          }
+        }
+      ],
+      "models": [
+        {
+          "id": 1419069232,
+          "name": "SM_Prop_Truck_Rusted_01::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        }
+      ],
+      "texture_nodes": [
+        {
+          "type": "Video",
+          "id": 1261008080,
+          "name": "file1115::Video",
+          "children": {
+            "Type": [
+              "Clip"
+            ],
+            "Properties70": [],
+            "UseMipMap": [
+              0
+            ],
+            "Filename": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ]
+          }
+        },
+        {
+          "type": "Texture",
+          "id": 1242208640,
+          "name": "file1115::Texture",
+          "children": {
+            "Type": [
+              "TextureVideoClip"
+            ],
+            "Version": [
+              202
+            ],
+            "TextureName": [
+              "file1115\u0000\u0001Texture"
+            ],
+            "Properties70": [],
+            "Media": [
+              "file1115\u0000\u0001Video"
+            ],
+            "FileName": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "ModelUVTranslation": [
+              0.0,
+              0.0
+            ],
+            "ModelUVScaling": [
+              1.0,
+              1.0
+            ],
+            "Texture_Alpha_Source": [
+              "None"
+            ],
+            "Cropping": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "id": 1371542160,
+          "name": "::Geometry",
+          "vertices": 3243,
+          "polygons": 3212,
+          "polygon_sizes": {
+            "4": 2724,
+            "3": 488
+          },
+          "triangulated_estimate": 5936,
+          "bounds": {
+            "min": [
+              -121.337890625,
+              0.0,
+              -331.17523193359375
+            ],
+            "max": [
+              121.337890625,
+              244.06956481933594,
+              331.17523193359375
+            ],
+            "size": [
+              242.67578125,
+              244.06956481933594,
+              662.3504638671875
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 6593,
+              "u_range": [
+                0.01611328125,
+                0.9955813884735107
+              ],
+              "v_range": [
+                0.006129910238087177,
+                0.30406367778778076
+              ]
+            }
+          ],
+          "vertex_colors": false
+        }
+      ],
+      "connections": [
+        [
+          "OO",
+          1419069232,
+          0
+        ],
+        [
+          "OO",
+          770288976,
+          1258119456
+        ],
+        [
+          "OP",
+          1242208640,
+          1261007280,
+          "DiffuseColor"
+        ],
+        [
+          "OO",
+          1261008080,
+          1242208640
+        ],
+        [
+          "OO",
+          1371542160,
+          1419069232
+        ],
+        [
+          "OO",
+          1261007280,
+          1419069232
+        ]
+      ]
+    },
+    {
+      "name": "SM_Prop_Tyre_01.fbx",
+      "bytes": 59952,
+      "sha256": "2b415712537b09de5d97e66388df6f0ccb284f7f5d2a60eb1da991a64078f284",
+      "version": 7400,
+      "objects": {
+        "Geometry": 1,
+        "Model": 1,
+        "Material": 1,
+        "Video": 1,
+        "Texture": 1,
+        "AnimationStack": 1,
+        "AnimationLayer": 1
+      },
+      "settings": {
+        "UpAxis": [
+          1
+        ],
+        "UpAxisSign": [
+          1
+        ],
+        "FrontAxis": [
+          2
+        ],
+        "FrontAxisSign": [
+          1
+        ],
+        "CoordAxis": [
+          0
+        ],
+        "CoordAxisSign": [
+          1
+        ],
+        "OriginalUpAxis": [
+          1
+        ],
+        "OriginalUpAxisSign": [
+          1
+        ],
+        "UnitScaleFactor": [
+          1.0
+        ],
+        "OriginalUnitScaleFactor": [
+          1.0
+        ],
+        "AmbientColor": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "DefaultCamera": [
+          "Producer Perspective"
+        ],
+        "TimeMode": [
+          11
+        ],
+        "TimeProtocol": [
+          2
+        ],
+        "SnapOnFrameMode": [
+          0
+        ],
+        "TimeSpanStart": [
+          1924423250
+        ],
+        "TimeSpanStop": [
+          384884650000
+        ],
+        "CustomFrameRate": [
+          -1.0
+        ],
+        "TimeMarker": [],
+        "CurrentTimeMarker": [
+          -1
+        ]
+      },
+      "materials": [
+        {
+          "id": 890899536,
+          "name": "Farm::Material",
+          "properties": {
+            "AmbientColor": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DiffuseColor": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "DiffuseFactor": [
+              0.800000011920929
+            ],
+            "TransparencyFactor": [
+              1.0
+            ],
+            "Emissive": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Ambient": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Diffuse": [
+              0.800000011920929,
+              0.800000011920929,
+              0.800000011920929
+            ],
+            "Opacity": [
+              1.0
+            ]
+          },
+          "children": {
+            "Version": [
+              102
+            ],
+            "ShadingModel": [
+              "lambert"
+            ],
+            "MultiLayer": [
+              0
+            ],
+            "Properties70": []
+          }
+        }
+      ],
+      "models": [
+        {
+          "id": 1419050672,
+          "name": "SM_Prop_Tyre_01::Model",
+          "kind": "Mesh",
+          "properties": {
+            "RotationActive": [
+              1
+            ],
+            "InheritType": [
+              1
+            ],
+            "ScalingMax": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "DefaultAttributeIndex": [
+              0
+            ]
+          }
+        }
+      ],
+      "texture_nodes": [
+        {
+          "type": "Video",
+          "id": 890900336,
+          "name": "file1115::Video",
+          "children": {
+            "Type": [
+              "Clip"
+            ],
+            "Properties70": [],
+            "UseMipMap": [
+              0
+            ],
+            "Filename": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ]
+          }
+        },
+        {
+          "type": "Texture",
+          "id": 1388494960,
+          "name": "file1115::Texture",
+          "children": {
+            "Type": [
+              "TextureVideoClip"
+            ],
+            "Version": [
+              202
+            ],
+            "TextureName": [
+              "file1115\u0000\u0001Texture"
+            ],
+            "Properties70": [],
+            "Media": [
+              "file1115\u0000\u0001Video"
+            ],
+            "FileName": [
+              "U:/Dropbox/SyntyStudios/PolygonFarm/_Working/_Textures/PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\_Textures\\PolygonFarm_Texture_01_A_2k.psd"
+            ],
+            "ModelUVTranslation": [
+              0.0,
+              0.0
+            ],
+            "ModelUVScaling": [
+              1.0,
+              1.0
+            ],
+            "Texture_Alpha_Source": [
+              "None"
+            ],
+            "Cropping": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "geometry": [
+        {
+          "id": 1371542160,
+          "name": "::Geometry",
+          "vertices": 945,
+          "polygons": 788,
+          "polygon_sizes": {
+            "4": 698,
+            "3": 72,
+            "5": 18
+          },
+          "triangulated_estimate": 1522,
+          "bounds": {
+            "min": [
+              -86.21412658691406,
+              -7.62939453125e-06,
+              -86.2142333984375
+            ],
+            "max": [
+              86.21414184570312,
+              52.50422668457031,
+              86.2139892578125
+            ],
+            "size": [
+              172.4282684326172,
+              52.504234313964844,
+              172.42822265625
+            ]
+          },
+          "uv": [
+            {
+              "name": [
+                "map1"
+              ],
+              "count": 2283,
+              "u_range": [
+                0.08262443542480469,
+                0.08405685424804688
+              ],
+              "v_range": [
+                0.041194915771484375,
+                0.04203459620475769
+              ]
+            }
+          ],
+          "vertex_colors": false
+        }
+      ],
+      "connections": [
+        [
+          "OO",
+          1419050672,
+          0
+        ],
+        [
+          "OO",
+          770289280,
+          881530256
+        ],
+        [
+          "OP",
+          1388494960,
+          890899536,
+          "DiffuseColor"
+        ],
+        [
+          "OO",
+          890900336,
+          1388494960
+        ],
+        [
+          "OO",
+          1371542160,
+          1419050672
+        ],
+        [
+          "OO",
+          890899536,
+          1419050672
+        ]
+      ]
+    }
+  ],
+  "verified": true,
+  "studio_import_verified": false
+}

@@ -7,9 +7,12 @@ local RoundText: { [string]: string } = require(
 
 local LightingModes = require(ReplicatedStorage.GameShared.Game.LightingModes)
 
+local ModePreviewImages = require(ReplicatedStorage.GameShared.Game.ModePreviewImages)
+
 local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometry)
 
 export type Snapshot = {
+	inventory: { slots: { string }, selected: number, energy_remaining: number },
 	minimap: MinimapGeometry.History,
 	lighting_mode: string,
 	phase: string,
@@ -119,121 +122,19 @@ local function panel(parent: Instance, name: string, size: UDim2, position: UDim
 end
 
 local function modePreview(parent: Instance, mode: string)
-	local profile = (LightingModes.Profiles :: any)[mode]
-	local sky = Instance.new("Frame")
-	sky.Name = "LightingPreview"
-	sky.Size = UDim2.new(1, -20, 0, 112)
-	sky.Position = UDim2.fromOffset(10, 10)
-	sky.BorderSizePixel = 0
-	sky.BackgroundColor3 = Color3.new(1, 1, 1)
-	sky.ClipsDescendants = true
-	sky.Parent = parent
-	local gradient = Instance.new("UIGradient")
-	gradient.Color = ColorSequence.new(profile.SkyTop, profile.SkyBottom)
-	gradient.Rotation = 90
-	gradient.Parent = sky
-	local sun = Instance.new("Frame")
-	sun.Name = if mode == "hard" then "Moon" else "Sun"
-	sun.Size =
-		UDim2.fromOffset(if mode == "hard" then 12 else 22, if mode == "hard" then 12 else 22)
-	sun.Position = UDim2.fromScale(0.76, if mode == "medium" then 0.46 else 0.16)
-	sun.BackgroundColor3 = if mode == "hard"
-		then Color3.fromRGB(185, 203, 220)
-		else Color3.fromRGB(255, 224, 158)
-	sun.BorderSizePixel = 0
-	sun.Parent = sky
-	local circle = Instance.new("UICorner")
-	circle.CornerRadius = UDim.new(1, 0)
-	circle.Parent = sun
-	local view = Instance.new("ViewportFrame")
-	view.Name = "FieldImage"
-	view.Size = UDim2.fromScale(1, 1)
-	view.BackgroundTransparency = 1
-	view.Ambient = profile.Ambient
-	view.LightColor = if mode == "easy"
-		then Color3.fromRGB(255, 244, 204)
-		elseif mode == "medium" then Color3.fromRGB(182, 126, 90)
-		else Color3.fromRGB(65, 80, 110)
-	view.LightDirection = Vector3.new(-0.5, -1, -0.3)
-	view.Parent = sky
-	local world = Instance.new("WorldModel")
-	world.Parent = view
-	local function part(
-		name: string,
-		size: Vector3,
-		frame: CFrame,
-		color: Color3,
-		neon: boolean?
-	): Part
-		local item = Instance.new("Part")
-		item.Name = name
-		item.Size = size
-		item.CFrame = frame
-		item.Color = color
-		item.Anchored = true
-		item.CanCollide = false
-		item.CastShadow = false
-		item.Material = if neon then Enum.Material.Neon else Enum.Material.SmoothPlastic
-		item.Parent = world
-		return item
-	end
-	part("Ground", Vector3.new(28, 0.4, 28), CFrame.new(0, -0.2, 0), Color3.fromRGB(74, 70, 39))
-	for row = 1, 4 do
-		for column = 1, 6 do
-			local x, z = (column - 3.5) * 3.4, (row - 2.5) * 3.4
-			if math.abs(x) > 2.5 or row > 2 then
-				local height = 4.5 + ((row + column) % 3) * 0.35
-				part(
-					"Stalk",
-					Vector3.new(0.15, height, 0.15),
-					CFrame.new(x, height / 2, z),
-					Color3.fromRGB(120, 126, 53)
-				)
-				for _, side in { -1, 1 } do
-					part(
-						"Leaf",
-						Vector3.new(2, 0.25, 0.7),
-						CFrame.new(x + side * 0.65, height * 0.6, z)
-							* CFrame.Angles(0, row * 0.4, side * 0.4),
-						Color3.fromRGB(99, 119, 43)
-					)
-				end
-			end
-		end
-	end
-	part("House", Vector3.new(5, 4, 4), CFrame.new(-8, 2, -9), Color3.fromRGB(84, 60, 46))
-	part("Roof", Vector3.new(6, 0.5, 5), CFrame.new(-8, 4.2, -9), Color3.fromRGB(51, 42, 40))
-	part("TorchPole", Vector3.new(0.3, 7, 0.3), CFrame.new(2.4, 3.5, 1), Color3.fromRGB(86, 60, 38))
-	if profile.Torches then
-		part(
-			"TorchFlame",
-			Vector3.new(0.7, 1.2, 0.7),
-			CFrame.new(2.4, 7.3, 1),
-			Color3.fromRGB(255, 154, 51),
-			true
-		)
-	end
-	local camera = Instance.new("Camera")
-	camera.FieldOfView = 48
-	camera.CFrame = CFrame.lookAt(Vector3.new(16, 12, 23), Vector3.new(0, 2.4, 0))
-	camera.Parent = view
-	view.CurrentCamera = camera
-	if mode == "hard" then
-		local fog = Instance.new("Frame")
-		fog.Name = "Mist"
-		fog.Size = UDim2.fromScale(1, 1)
-		fog.BorderSizePixel = 0
-		fog.BackgroundColor3 = profile.FogColor
-		fog.BackgroundTransparency = 0.65
-		fog.Parent = sky
-		local fade = Instance.new("UIGradient")
-		fade.Transparency = NumberSequence.new({
-			NumberSequenceKeypoint.new(0, 0.2),
-			NumberSequenceKeypoint.new(0.65, 0.7),
-			NumberSequenceKeypoint.new(1, 0),
-		})
-		fade.Parent = fog
-	end
+	local photo = Instance.new("ImageLabel")
+	photo.Name = "LightingPreview"
+	photo.Size = UDim2.new(1, -20, 0, 128)
+	photo.Position = UDim2.fromOffset(10, 10)
+	photo.BackgroundColor3 = PANEL_COLOR
+	photo.BorderSizePixel = 0
+	photo.Image = ModePreviewImages[mode]
+	photo.ScaleType = Enum.ScaleType.Crop
+	photo.ClipsDescendants = true
+	photo.Parent = parent
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(0, 5)
+	corner.Parent = photo
 end
 
 function RoundHud.new(playerGui: PlayerGui)
@@ -290,14 +191,14 @@ function RoundHud.new(playerGui: PlayerGui)
 	local modeCards = Instance.new("Frame")
 	modeCards.Name = "ModeCards"
 	modeCards.BackgroundTransparency = 1
-	modeCards.Size = UDim2.new(1, -48, 0, 242)
+	modeCards.Size = UDim2.new(1, -48, 0, 254)
 	modeCards.Position = UDim2.fromOffset(24, 142)
 	modeCards.Parent = card
 	local choose =
 		label(card, "ChooseMode", UDim2.new(1, -48, 0, 24), UDim2.fromOffset(24, 110), 16)
 	choose.TextColor3 = MUTED_COLOR
 	local modeHint =
-		label(card, "ModeHint", UDim2.new(1, -48, 0, 24), UDim2.fromOffset(24, 392), 15)
+		label(card, "ModeHint", UDim2.new(1, -48, 0, 24), UDim2.fromOffset(24, 406), 15)
 	modeHint.TextColor3 = MUTED_COLOR
 	local modeButtons, modeStrokes = {}, {}
 	for index, mode in LightingModes.Order do
@@ -313,11 +214,11 @@ function RoundHud.new(playerGui: PlayerGui)
 		stroke.Parent = option
 		modeStrokes[mode] = stroke
 		modePreview(option, mode)
-		local name = label(option, "Name", UDim2.new(1, -20, 0, 28), UDim2.fromOffset(10, 128), 21)
+		local name = label(option, "Name", UDim2.new(1, -20, 0, 28), UDim2.fromOffset(10, 144), 21)
 		name.Font = Enum.Font.GothamBold
 		name.Text = text("corn_modes_" .. mode)
 		local description =
-			label(option, "Description", UDim2.new(1, -20, 0, 30), UDim2.fromOffset(10, 160), 15)
+			label(option, "Description", UDim2.new(1, -20, 0, 30), UDim2.fromOffset(10, 176), 15)
 		description.TextColor3 = MUTED_COLOR
 		description.Text = text("corn_modes_" .. mode .. "_desc")
 		local select = button(
@@ -325,7 +226,7 @@ function RoundHud.new(playerGui: PlayerGui)
 			"Select",
 			"corn_modes_select",
 			UDim2.new(1, -20, 0, 32),
-			UDim2.fromOffset(10, 200)
+			UDim2.fromOffset(10, 212)
 		)
 		select.Modal = true
 		modeButtons[mode] = select
@@ -450,7 +351,7 @@ function RoundHud:_render()
 	local isActive = phase == "active"
 	local isResult = phase == "escaped" or phase == "aborted" or phase == "caught_out"
 	local expanded = phase == "ready" or isResult
-	self._card.Size = if expanded then UDim2.fromOffset(780, 510) else UDim2.fromOffset(460, 320)
+	self._card.Size = if expanded then UDim2.fromOffset(780, 530) else UDim2.fromOffset(460, 320)
 	self._modeCards.Visible = expanded
 	self._chooseMode.Visible = expanded
 	self._modeHint.Visible = expanded
@@ -463,7 +364,7 @@ function RoundHud:_render()
 	self._time.Visible = not expanded or isResult
 	self._time.Size = UDim2.new(1, -48, 0, if expanded then 22 else 26)
 	self._chooseMode.Position = UDim2.fromOffset(24, if isResult then 118 else 110)
-	self._balance.Position = UDim2.fromOffset(24, if expanded then 420 else 154)
+	self._balance.Position = UDim2.fromOffset(24, if expanded then 440 else 154)
 	self._notice.Position = UDim2.fromOffset(24, if expanded then 392 else 186)
 	self._notice.Visible = not expanded
 	for _, control in { self._start, self._retry, self._menu, self._preparingLeave } do
@@ -471,7 +372,7 @@ function RoundHud:_render()
 			control.Position.X.Scale,
 			control.Position.X.Offset,
 			0,
-			if expanded then 456 else 250
+			if expanded then 476 else 250
 		)
 	end
 	for mode, control in self._modeButtons do

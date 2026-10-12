@@ -1,0 +1,9 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "95d87061a83808a139da4c98c7552b65b3c8e86137dff5f472c362c7fd984d5d",
+  "bytes": 989746,
+  "sources": 65,
+  "backup": "place/Children_of_corn.before-inventory-20261012.rbxl",
+  "backup_sha256": "6f9a95e624a96ab6c318a4a1912db0c5aae7b6d6e1dfa0d92f70dcc97638e03a",
+  "method": "Author Ctrl+S exact engine bytes; read-only strict verification; no promotion or Lune serialization"
+}

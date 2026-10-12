@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"sameCreator\":true,\"placeId\":0,\"fetch\":\"Enum.AssetFetchStatus.Success\",\"creatorType\":\"User\"}"}], "isError": false}}

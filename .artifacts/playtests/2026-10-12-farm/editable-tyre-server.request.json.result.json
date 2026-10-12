@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"vertices\":945,\"meshContentSource\":\"Enum.ContentSourceType.Object\",\"size\":\"1.7999787330627441, 0.5480917096138, 1.799978256225586\",\"meshId\":\"\",\"realMeshPart\":\"MeshPart\",\"triangles\":1522}"}], "isError": false}}

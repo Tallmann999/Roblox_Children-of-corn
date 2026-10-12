@@ -68,6 +68,7 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 		visuals = visuals,
 		home = origin,
 		state = "dormant",
+		stunnedUntil = nil,
 		lostSince = nil,
 		lastSeenPosition = nil,
 		patrolSlot = nil,
@@ -119,6 +120,9 @@ function MonsterHunt:CanSee(playerRoot: BasePart): boolean
 end
 
 function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
+	if self.destroyed or self.state == "trapped" then
+		return false
+	end
 	local delta = playerRoot.Position - self.root.Position
 	if
 		Vector3.new(delta.X, 0, delta.Z).Magnitude > self.balance.monster_capture_radius
@@ -127,6 +131,39 @@ function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
 		return false
 	end
 	return self:CanSee(playerRoot)
+end
+
+function MonsterHunt:GetPosition(): Vector3?
+	if self.destroyed or self.state == "dormant" or self.state == "stopped" then
+		return nil
+	end
+	return self.root.Position
+end
+
+function MonsterHunt:Stun(now: number, duration: number): boolean
+	if
+		self.destroyed
+		or (self.state ~= "patrol" and self.state ~= "chase")
+		or typeof(now) ~= "number"
+		or typeof(duration) ~= "number"
+		or now ~= now
+		or duration ~= duration
+		or math.abs(now) == math.huge
+		or duration <= 0
+		or duration == math.huge
+		or math.abs(now + duration) == math.huge
+	then
+		return false
+	end
+	self.stunnedUntil = now + duration
+	self.goal = nil
+	self.lostSince = nil
+	self.lastSeenPosition = nil
+	self.blockedSince = nil
+	-- _state invalidates pending ComputeAsync jobs before they can restore a
+	-- route for the chase that stepped into the trap.
+	self:_state("trapped")
+	return true
 end
 
 function MonsterHunt:_patrol(_playerPosition: Vector3): Vector3
@@ -183,6 +220,7 @@ function MonsterHunt:_path(goal: Vector3, now: number)
 end
 
 function MonsterHunt:ResetHome()
+	self.stunnedUntil = nil
 	self.generation += 1
 	self.pathBusy = false
 	self.route = nil
@@ -204,6 +242,13 @@ function MonsterHunt:Step(
 ): (boolean, boolean)
 	if self.destroyed then
 		return false, false
+	end
+	if self.state == "trapped" then
+		if now < self.stunnedUntil then
+			return false, false
+		end
+		self.stunnedUntil = nil
+		self:_state("patrol")
 	end
 	local awakened = false
 	if self.state == "dormant" then
@@ -324,6 +369,7 @@ end
 
 function MonsterHunt:Destroy()
 	self.destroyed = true
+	self.stunnedUntil = nil
 	self.generation += 1
 	for p, transparency in self.originalMarker do
 		if p.Parent then

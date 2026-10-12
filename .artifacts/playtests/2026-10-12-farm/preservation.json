@@ -1,0 +1,1430 @@
+{
+  "allowed_changes": [
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/Body",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/Body",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/Body",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/Body",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/Body",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/DecorativeDoor",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/DecorativeDoor",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/DecorativeDoor",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/DecorativeDoor",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseWest/DecorativeDoor",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/Body",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/Body",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/Body",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/Body",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/Body",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/DecorativeDoor",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/DecorativeDoor",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/DecorativeDoor",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/DecorativeDoor",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseEast/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseEast/DecorativeDoor",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/Body",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/Body",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/Body",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/Body",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/Body",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/Body",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/DecorativeDoor",
+      "property": "CanCollide",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/DecorativeDoor",
+      "property": "CanQuery",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/DecorativeDoor",
+      "property": "CanTouch",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/DecorativeDoor",
+      "property": "CastShadow",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/Props/HouseNorthWest/DecorativeDoor",
+      "target": "ServerStorage/CornFarmSceneArchive/HouseNorthWest/DecorativeDoor",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#35",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#35",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#36",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#36",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#37",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#37",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#106",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#106",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#107",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#107",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#108",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#108",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#176",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#176",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#177",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#177",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#178",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#178",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#244",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#244",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#245",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#245",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#246",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#246",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#313",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#313",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#314",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#314",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#315",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#315",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#520",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#520",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#521",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#521",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#522",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#522",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#591",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#591",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#592",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#592",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#593",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#593",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#662",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#662",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#663",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#663",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#664",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#664",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#733",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#733",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#734",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#734",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#735",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#735",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#804",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#804",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#805",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#805",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#806",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#806",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#875",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#875",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#876",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#876",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#877",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#877",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#946",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#946",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#947",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#947",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#948",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#948",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1016",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1016",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1017",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1017",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1085",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1085",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1086",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1086",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1087",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1087",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1156",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1156",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1157",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1157",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1158",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1158",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1227",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1227",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1228",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1228",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1229",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1229",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1298",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1298",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1299",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1299",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1300",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1300",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1369",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1369",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1370",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1370",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1371",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1371",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1440",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1440",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1441",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1441",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1442",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1442",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1511",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1511",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1512",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1512",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1513",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1513",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1582",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1582",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1583",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1583",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1584",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1584",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1651",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1651",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1652",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1652",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1653",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1653",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1719",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1719",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1720",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1720",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1785",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1785",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1786",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1786",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1854",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1854",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1855",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1855",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1856",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1856",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1925",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1925",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1926",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1926",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1927",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1927",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1996",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1996",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1997",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1997",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1998",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#1998",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2067",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2067",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2068",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2068",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2069",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2069",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2138",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2138",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2139",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2139",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2140",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2140",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2209",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2209",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2210",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2210",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2211",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2211",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2280",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2280",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2281",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2281",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2282",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2282",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2351",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2351",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2352",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2352",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2353",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2353",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2422",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2422",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2423",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2423",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2424",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2424",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2492",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2492",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2493",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2493",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2561",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2561",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2562",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2562",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2631",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2631",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2632",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2632",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2633",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2633",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2702",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2702",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2703",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2703",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2704",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2704",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2773",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2773",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2774",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2774",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2775",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2775",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2844",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2844",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2845",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2845",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2846",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2846",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2915",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2915",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2916",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2916",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2917",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2917",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2984",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2984",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2985",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2985",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2986",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#2986",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3053",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3053",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3054",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3054",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3055",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3055",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3122",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3122",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3123",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3123",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3124",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3124",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3192",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3192",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3193",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3193",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3260",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3260",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3261",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3261",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3329",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3329",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3330",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3330",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3331",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3331",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3398",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3398",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3399",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3399",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3400",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3400",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3467",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3467",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3468",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3468",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3469",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3469",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3536",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3536",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3537",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3537",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3538",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3538",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3607",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3607",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3608",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3608",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3609",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3609",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3678",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3678",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3679",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3679",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3680",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3680",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3749",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3749",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3750",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3750",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3751",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3751",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3820",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3820",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3821",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3821",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3822",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3822",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3891",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3891",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3892",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3892",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3893",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3893",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3961",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3961",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3962",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#3962",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4030",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4030",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4031",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4031",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4032",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4032",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4101",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4101",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4102",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4102",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4103",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4103",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4172",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4172",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4173",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4173",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4174",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4174",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4243",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4243",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4244",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4244",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4245",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4245",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4314",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4314",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4315",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4315",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4316",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4316",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4385",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4385",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4386",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4386",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4387",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4387",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4456",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4456",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4457",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4457",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4458",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4458",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4527",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4527",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4528",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4528",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4529",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4529",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4598",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4598",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4599",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4599",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4600",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4600",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4669",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4669",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4670",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4670",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4671",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4671",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4738",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4738",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4739",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4739",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4740",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4740",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4806",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4806",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4807",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4807",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4808",
+      "target": "Workspace/CornMap/EditorFieldOverview/DistantCorn#4808",
+      "property": "Transparency",
+      "reason": "approved_world_delta"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Bootstrap",
+      "target": "StarterPlayer/StarterPlayerScripts/GameClient/Bootstrap",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "target": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MinimapController",
+      "target": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MinimapController",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud",
+      "target": "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/MinimapHud",
+      "target": "StarterPlayer/StarterPlayerScripts/GameClient/Game/MinimapHud",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MonsterHunt",
+      "target": "ServerScriptService/GameServer/Game/MonsterHunt",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "FilteredSelection",
+      "target": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "target": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "target": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "target": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    }
+  ],
+  "new_instances": 364,
+  "archived_original_instances": 15,
+  "matching_sources": 60,
+  "passed": true,
+  "original_sha256": "0e8a382fcd5b3e61f696e5e40ffa7a33a45436058aa9544ec2b409e4de89e410",
+  "candidate_sha256": "6f9a95e624a96ab6c318a4a1912db0c5aae7b6d6e1dfa0d92f70dcc97638e03a",
+  "original_instances": 6459,
+  "candidate_instances": 6823,
+  "allowlist_sha256": "32279703cb33a822d9273787920579e6e0dd74e08d949b6f126e108a9189d530",
+  "original_world_preserved_except_explicit_deltas": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.145568900s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.176906700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "typed": "0.163172700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Read-only engine copy validation against independently audited canonical signatures; no promotion or scene write."
+}

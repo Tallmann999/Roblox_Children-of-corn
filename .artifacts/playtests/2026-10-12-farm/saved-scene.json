@@ -1,0 +1,13 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "6f9a95e624a96ab6c318a4a1912db0c5aae7b6d6e1dfa0d92f70dcc97638e03a",
+  "bytes": 981060,
+  "engine_copy": "C:\\Users\\User\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Children_of_corn_AutoRecovery_0.rbxl",
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-autumn-20261012.rbxl",
+  "backup_sha256": "0e8a382fcd5b3e61f696e5e40ffa7a33a45436058aa9544ec2b409e4de89e410",
+  "field_side": 840,
+  "torches": 31,
+  "sources": 60,
+  "raw_terrain_preserved": true,
+  "method": "Verified exact engine bytes; atomic replacement, no Lune serialization"
+}

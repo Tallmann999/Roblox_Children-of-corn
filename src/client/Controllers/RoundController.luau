@@ -7,6 +7,7 @@ local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local EndpointNames = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
 local LightingModes = require(GameShared:WaitForChild("Game"):WaitForChild("LightingModes"))
 local MinimapGeometry = require(GameShared:WaitForChild("Game"):WaitForChild("MinimapGeometry"))
+local Inventory = require(GameShared:WaitForChild("Game"):WaitForChild("Inventory"))
 local RoundHud = require(script.Parent.Parent:WaitForChild("Game"):WaitForChild("RoundHud"))
 
 type Snapshot = RoundHud.Snapshot
@@ -47,6 +48,7 @@ local function validSnapshot(value: any): boolean
 	return typeof(value) == "table"
 		and LightingModes.IsValid(value.lighting_mode)
 		and MinimapGeometry.IsValid(value.minimap)
+		and Inventory.IsValidSnapshot(value.inventory)
 		and typeof(value.phase) == "string"
 		and PHASES[value.phase] == true
 		and typeof(value.has_key) == "boolean"
@@ -65,7 +67,7 @@ local function validSnapshot(value: any): boolean
 		and value.catches_remaining <= 2
 		and value.catches_remaining % 1 == 0
 		and typeof(value.monster_state) == "string"
-		and ({ dormant = true, patrol = true, chase = true, stopped = true })[value.monster_state] == true
+		and ({ dormant = true, patrol = true, chase = true, stopped = true, trapped = true })[value.monster_state] == true
 		and nonnegativeNumber(value.protection_sec)
 		and typeof(value.start_look) == "Vector3"
 		and value.start_look.Magnitude > 0.99
@@ -157,9 +159,14 @@ function RoundController:Start(context: any)
 		hud:Render(payload :: Snapshot)
 		context.Controllers.MovementController:SetSnapshot(payload)
 		context.Controllers.MinimapController:SetSnapshot(payload)
+		context.Controllers.InventoryController:SetSnapshot(payload)
 		context.Controllers.CornController:SetLightingMode(
 			if payload.phase == "ready" then nil else payload.lighting_mode
 		)
+		local cornMode = if payload.phase == "ready" then nil else payload.lighting_mode
+		context.Controllers.CornAppearanceController:SetMode(cornMode)
+		context.Controllers.CornWindController:SetMode(cornMode)
+		context.Controllers.GateHintController:SetSnapshot(payload)
 	end)
 
 	-- Subscribe first: initial server messages may precede the client controller.
