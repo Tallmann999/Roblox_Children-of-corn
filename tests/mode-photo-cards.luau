@@ -167,6 +167,7 @@ local function load(path, env)
 	return fn()
 end
 local modules = {
+	Balance = load("src/shared/Game/Balance.luau", {}),
 	LightingModes = load("src/shared/Game/LightingModes.luau", { Color3 = r.Color3 }),
 	RoundText = load("src/shared/Game/RoundText.luau", {}),
 	ModePreviewImages = load("src/shared/Game/ModePreviewImages.luau", {}),
@@ -191,8 +192,7 @@ end
 local Hud = load("src/client/Game/RoundHud.luau", {
 	game = {
 		GetService = function(_, name)
-			assert(name == "ReplicatedStorage")
-			return storage
+			return if name == "GuiService" then {} else storage
 		end,
 	},
 	require = function(item)

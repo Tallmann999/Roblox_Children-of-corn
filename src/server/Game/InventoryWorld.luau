@@ -9,6 +9,11 @@ function InventoryWorld.new(world: any, random: Random, keySlot: BasePart, onPic
 	folder:SetAttribute("corn_inventory_owned", true)
 	folder:SetAttribute("corn_project_id", "children_of_corn")
 	folder.Parent = world.Runtime
+	local lookouts = Instance.new("Folder")
+	lookouts.Name = "LookoutStumps"
+	lookouts:SetAttribute("corn_inventory_owned", true)
+	lookouts:SetAttribute("corn_project_id", "children_of_corn")
+	lookouts.Parent = folder
 	local self = setmetatable(
 		{ world = world, folder = folder, pickups = {}, traps = {}, connections = {} },
 		InventoryWorld
@@ -30,8 +35,10 @@ function InventoryWorld.new(world: any, random: Random, keySlot: BasePart, onPic
 			world.Ground.Position.Y + world.Ground.Size.Y / 2,
 			slot.Position.Z
 		)
-		local frame =
-			CFrame.new(position + Vector3.new(0, if kind == "energy" then 3.08 else 0.22, 0))
+		local frame = CFrame.new(
+			position
+				+ Vector3.new(0, if kind == "energy" then Models.StumpHeight + 0.68 else 0.22, 0)
+		)
 		local object, anchor
 		if kind == "energy" then
 			object, anchor = Models.Energy(frame)
@@ -43,7 +50,17 @@ function InventoryWorld.new(world: any, random: Random, keySlot: BasePart, onPic
 		object:SetAttribute("item_id", tostring(used))
 		object:AddTag("corn_item_pickup")
 		if kind == "energy" then
-			Models.Stump(object, CFrame.new(position + Vector3.new(0, 1.2, 0)))
+			local lookout = Instance.new("Model")
+			lookout.Name = "Lookout" .. used
+			lookout:SetAttribute("corn_inventory_owned", true)
+			lookout:SetAttribute("corn_project_id", "children_of_corn")
+			lookout:SetAttribute("LookoutVersion", 1)
+			lookout:AddTag("corn_lookout_stump")
+			lookout.PrimaryPart = Models.Stump(
+				lookout,
+				CFrame.new(position + Vector3.new(0, Models.StumpHeight / 2, 0))
+			)
+			lookout.Parent = lookouts
 		end
 		local prompt = Instance.new("ProximityPrompt")
 		prompt.Name = "CornItemPrompt"
@@ -89,7 +106,9 @@ function InventoryWorld:Place(root: BasePart, character: Model): boolean
 	end
 	local params = RaycastParams.new()
 	params.FilterType = Enum.RaycastFilterType.Exclude
-	params.FilterDescendantsInstances = { character, self.world.Runtime }
+	-- Runtime lookouts are real collision surfaces. Do not place through their
+	-- wood; other owned items/NPC are noncollidable and are skipped by the ray.
+	params.FilterDescendantsInstances = { character }
 	params.RespectCanCollide = true
 	local hit = Workspace:Raycast(root.Position, Vector3.new(0, -9, 0), params)
 	local props = self.world.Root:FindFirstChild("Props")

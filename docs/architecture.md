@@ -1,5 +1,17 @@
 # Дети кукурузы — архитектура
 
+## Реакция на монстра и обзор —2026-10-13
+
+[Контракт](2026-10-13_hunt-readability.md): сервер detect16, awakening20сек, chase grace2сек до ускорения/захвата. Состояния и remotes прежние; клиентский objective modal подтверждает прежний start/retry, awakening5→1 использует elapsed_sec. Рост visual NPC×1.3/pose/capture при прежнем Root; runtime пеньки/ступени/энергетики выше. Новый одноразовый owned spatial awakening scream у исходной точки, обычные голоса не перекрывают его. Все additions runtime/code-only; сохранённый мир/Lighting/art/Terrain точные.
+
+Runtime InventoryItems/LookoutStumps содержит два отдельно от pickup owned Model с tag corn_lookout_stump и corn_inventory_owned/corn_project_id/LookoutVersion=1. Подбор банка удаляет только прежний pickup; lookout остаётся до terminal/retry cleanup того же inventory folder. Дополнительных скрытых loot/minimap markers нет.
+
+## Звук —2026-10-13
+
+По уточнению автора штатный footsteps Sound Running/Climbing локально приглушается по точной идентичности/asset URI; character lifecycle подписки и guarded restore, без удаления чужих объектов или нового remote. Corn rustle учащается только при серверно подтверждённом движении, cadence ограничен независимо от длины длинного клипа.
+
+[Звуковая фича](2026-10-13_audio.md): runtime server spatial Sounds для движения в кукурузе, chase голосов, пяти15/15 cricket emitters и распознанных факелов; client personal фон2/Enemy Hunt и подтверждённые use sounds. Новый runtime tag corn_audio_emitter, attributes CornAudioOwned/corn_project_id/audio_role; создаются только owned эмиттеры/звуки текущего раунда, cleanup сохраняет оригинальные объекты. Monster.ChaseTargetUserId задаётся сервером:0 вне chase, ID цели при chase. Прежние round_snapshot/inventory.use contracts, новых remotes или непроверенных клиентских координат нет. Только solo local Studio; публичное прохождение/мультиплеер не реализуются этой фичей. Регуляторы категорий вынесены в AudioRules/SoundGroups для будущего меню.
+
 ## Предметы в руках —2026-10-12
 
 Автор выбрал [локальныепредметы/жесты](2026-10-12_handheld-items.md). Сервер расширяет inventory.use={id>=0,kind:none|energy|trap}, увеличиваетidтолькопослеуспешнойtransaction; remotes прежние. Клиентпоказываетвыбранныйпредмет иоднократныйподтверждённыйжест поround_id/use.id, не проигрываетисториюприизначальномsync. Одинownedлокальныйviewmodel ≤24Parts, одинPivotTo/кадр, безWorld/Root/gameplaywrites. Захват/меню/карта/смерть/чужаякамера очищаютпредставление. На банке SurfaceGui этикетка без AlwaysOnTop и влияния мирового света; новых источников света нет.71Sources установлены, проверены и сохранены; постояннаясцена/артнеизменны; звукипозже.

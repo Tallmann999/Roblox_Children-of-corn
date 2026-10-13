@@ -1,0 +1,1 @@
+{"name": "execute_luau", "arguments": {"datamodel_type": "Server", "code": "local p=game.Players:GetPlayers()[1];local at=workspace.CornMap.CornRoundRuntime.InventoryItems.Pickup1.Anchor.Position;p.Character:PivotTo(CFrame.new(at+Vector3.new(0,3,-2)));return {diagnostic_relocation=true}", "studio_id": "05a6e04c-e81c-4f4e-838b-f4d9ded833a4"}}

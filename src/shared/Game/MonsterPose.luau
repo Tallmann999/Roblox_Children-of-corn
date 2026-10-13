@@ -2,6 +2,18 @@
 
 local MonsterPose = {}
 local cf, v3 = CFrame.new, Vector3.new
+MonsterPose.HeightScale = 1.3
+MonsterPose.FeetY = -3
+function MonsterPose.ScalePosition(position: Vector3): Vector3
+	return v3(
+		position.X,
+		(position.Y - MonsterPose.FeetY) * MonsterPose.HeightScale + MonsterPose.FeetY,
+		position.Z
+	)
+end
+local function rest(x: number, y: number, z: number): CFrame
+	return cf(MonsterPose.ScalePosition(v3(x, y, z)))
+end
 local cloth = Color3.fromRGB(54, 43, 30)
 local head = Color3.fromRGB(101, 76, 45)
 local eye = Color3.fromRGB(235, 138, 49)
@@ -37,22 +49,25 @@ local definitions = {
 	{ Name = "RightEye", Size = v3(0.3, 0.3, 0.1), Color = eye, Material = Enum.Material.Neon },
 }
 for _, definition in definitions do
+	definition.Size =
+		v3(definition.Size.X, definition.Size.Y * MonsterPose.HeightScale, definition.Size.Z)
 	table.freeze(definition)
 end
 MonsterPose.Parts = table.freeze(definitions)
 MonsterPose.Rest = table.freeze({
-	Coat = cf(0, 1.5, 0),
-	LeftArm = cf(-3.5, 3, 0),
-	RightArm = cf(3.5, 3, 0),
-	LeftLeg = cf(-1, -1.5, 0),
-	RightLeg = cf(1, -1.5, 0),
-	Head = cf(0, 6, 0),
-	Hat = cf(0, 7.5, 0),
-	LeftEye = cf(-0.55, 6.2, -1.3),
-	RightEye = cf(0.55, 6.2, -1.3),
+	Coat = rest(0, 1.5, 0),
+	LeftArm = rest(-3.5, 3, 0),
+	RightArm = rest(3.5, 3, 0),
+	LeftLeg = rest(-1, -1.5, 0),
+	RightLeg = rest(1, -1.5, 0),
+	Head = rest(0, 6, 0),
+	Hat = rest(0, 7.5, 0),
+	LeftEye = rest(-0.55, 6.2, -1.3),
+	RightEye = rest(0.55, 6.2, -1.3),
 })
 
 local function around(pivot: Vector3, x: number, y: number, z: number): CFrame
+	pivot = MonsterPose.ScalePosition(pivot)
 	return cf(pivot) * CFrame.Angles(x, y, z) * cf(-pivot)
 end
 

@@ -1,0 +1,36 @@
+{
+  "playback_and_behavior_passed": true,
+  "all_assets_passed": false,
+  "loaded_assets": 14,
+  "pending_asset": {
+    "key": "COC_Fire",
+    "id": "105538100476464",
+    "reason": "Roblox: Asset is not approved for the requester"
+  },
+  "real_inputs": {
+    "energy": true,
+    "trap": true
+  },
+  "player_rustle_start_intervals_sec": [
+    0.46618279999893275,
+    0.550140499999543,
+    0.5326300000015181,
+    0.4507157999996707,
+    0.5661321999996289
+  ],
+  "player_rustle_average_sec": 0.5131602599998587,
+  "stationary_and_road_silent": true,
+  "default_steps_muted": true,
+  "all_three_actual_voices_decoded_and_played": true,
+  "max_simultaneous_monster_voices": 1,
+  "actual_target_user_id": 11644801627,
+  "personal_hunt_fade_peak_to_stop_sec": 2.383454000000711,
+  "cricket_observation_sec": 119.97959530000117,
+  "cricket_cycle_segment_range_sec": [
+    14.865611600000193,
+    15.134143499999482
+  ],
+  "terminal_runtime_and_personal_cleanup": true,
+  "sources_equal": 75,
+  "method": "Real E and server movement/detection/catches with diagnostic character relocations; actual client Sound IsLoaded/TimePosition/PlaybackLoudness observation. No ordinary blind route, subjective speaker mix, FPS benchmark, public game or multiplayer acceptance."
+}

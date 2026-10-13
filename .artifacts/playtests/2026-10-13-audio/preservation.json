@@ -1,0 +1,65 @@
+{
+  "matching_sources": 75,
+  "new_instances": 4,
+  "allowed_changes": [
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/SoloRound",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MonsterHunt",
+      "property": "Source",
+      "reason": "source"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    }
+  ],
+  "world_and_lighting_exact": true,
+  "original_art_preserved": true,
+  "passed": true,
+  "original_sha256": "bdebd256fb5d2ad74a9ed5dc51b93f254e592b0d510a0d2b8b797d63847811e6",
+  "candidate_sha256": "4ee103b95110e2a2a1a691d58a7bb5cdc34d0dc466d3c5265b47eb5823986546",
+  "original_instances": 6835,
+  "candidate_instances": 6839,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.111002200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.154975600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Read-only exact engine copy validation; four new ModuleScripts and exact 75 Sources, all author world/art/Lighting/raw Terrain preserved. No scene write."
+}

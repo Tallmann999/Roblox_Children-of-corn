@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"applied\":40,\"built\":10,\"scope\":\"server\",\"pending\":0,\"targets\":40}"}], "isError": false}}

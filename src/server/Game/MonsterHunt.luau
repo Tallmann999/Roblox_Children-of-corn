@@ -1,9 +1,15 @@
 --!strict
 local PathfindingService = game:GetService("PathfindingService")
+local Pose = require(
+	game:GetService("ReplicatedStorage")
+		:WaitForChild("GameShared")
+		:WaitForChild("Game")
+		:WaitForChild("MonsterPose")
+)
 local MonsterHunt = {}
 MonsterHunt.__index = MonsterHunt
 
-function MonsterHunt.new(world: any, balance: any, startedAt: number)
+function MonsterHunt.new(world: any, balance: any, startedAt: number, targetUserId: number?)
 	local home = world.Home:FindFirstChild("Body") :: BasePart
 	assert(home and home:IsA("BasePart"), "Scarecrow home body missing")
 	local floor = world.Ground.Position.Y + world.Ground.Size.Y / 2
@@ -13,6 +19,7 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 	model:SetAttribute("corn_project_id", "children_of_corn")
 	model:SetAttribute("MonsterRigVersion", 1)
 	model:SetAttribute("HuntState", "dormant")
+	model:SetAttribute("ChaseTargetUserId", 0)
 	local origin = Vector3.new(home.Position.X, floor + 3, home.Position.Z)
 	local visuals = {}
 	local function part(
@@ -39,27 +46,16 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 		return p
 	end
 	local root = part("Root", Vector3.new(3, 6, 2), Vector3.zero, Color3.new(), true)
-	part("Coat", Vector3.new(4, 7, 2), Vector3.new(0, 1.5, 0), Color3.fromRGB(35, 32, 28)).Material =
-		Enum.Material.Fabric
-	part("LeftArm", Vector3.new(4, 1.4, 1.4), Vector3.new(-3.5, 3, 0), Color3.fromRGB(54, 43, 30))
-	part("RightArm", Vector3.new(4, 1.4, 1.4), Vector3.new(3.5, 3, 0), Color3.fromRGB(54, 43, 30))
-	part("Head", Vector3.new(2.5, 2.5, 2.5), Vector3.new(0, 6, 0), Color3.fromRGB(101, 76, 45))
-	part("Hat", Vector3.new(5, 0.6, 4), Vector3.new(0, 7.5, 0), Color3.fromRGB(24, 23, 21))
-	for _, side in { -1, 1 } do
-		part(
-			if side == -1 then "LeftLeg" else "RightLeg",
-			Vector3.new(1.1, 3, 1.1),
-			Vector3.new(side, -1.5, 0),
-			Color3.fromRGB(32, 29, 25)
+	for _, definition in Pose.Parts do
+		local visual = part(
+			definition.Name,
+			definition.Size,
+			Pose.Rest[definition.Name].Position,
+			definition.Color
 		)
-		local eye = part(
-			if side == -1 then "LeftEye" else "RightEye",
-			Vector3.new(0.3, 0.3, 0.1),
-			Vector3.new(side * 0.55, 6.2, -1.3),
-			Color3.fromRGB(235, 138, 49)
-		)
-		eye.Material = Enum.Material.Neon
+		visual.Material = definition.Material
 	end
+	model:SetAttribute("MonsterHeightScale", Pose.HeightScale)
 	model.PrimaryPart = root
 	model.Parent = world.Runtime
 	return setmetatable({
@@ -71,6 +67,12 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 		visuals = visuals,
 		home = origin,
 		state = "dormant",
+		chaseStartedAt = nil,
+		targetUserId = if targetUserId
+				and targetUserId > 0
+				and targetUserId % 1 == 0
+			then targetUserId
+			else 0,
 		stunnedUntil = nil,
 		lostSince = nil,
 		lastSeenPosition = nil,
@@ -88,7 +90,7 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number)
 	}, MonsterHunt)
 end
 
-function MonsterHunt:_state(state: string)
+function MonsterHunt:_state(state: string, now: number?)
 	if self.state == state then
 		return
 	end
@@ -100,7 +102,9 @@ function MonsterHunt:_state(state: string)
 	self.pathBusy = false
 	self.pathAt = -math.huge
 	self.state = state
+	self.chaseStartedAt = if state == "chase" then now or os.clock() else nil
 	self.model:SetAttribute("HuntState", state)
+	self.model:SetAttribute("ChaseTargetUserId", if state == "chase" then self.targetUserId else 0)
 end
 
 function MonsterHunt:_params(character: Model?): RaycastParams
@@ -122,8 +126,13 @@ function MonsterHunt:CanSee(playerRoot: BasePart): boolean
 	) == nil
 end
 
-function MonsterHunt:CanCapture(playerRoot: BasePart): boolean
-	if self.destroyed or self.state == "trapped" or self.state == "capturing" then
+function MonsterHunt:CanCapture(playerRoot: BasePart, now: number?): boolean
+	if
+		self.destroyed
+		or self.state ~= "chase"
+		or not self.chaseStartedAt
+		or (now or os.clock()) - self.chaseStartedAt < self.balance.monster_chase_windup_sec
+	then
 		return false
 	end
 	local delta = playerRoot.Position - self.root.Position
@@ -287,7 +296,7 @@ function MonsterHunt:Step(
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
 	local canSee = not protected and self:CanSee(playerRoot)
 	if canSee and distance <= self.balance.monster_detect_radius then
-		self:_state("chase")
+		self:_state("chase", now)
 		self.lostSince = nil
 		self.lastSeenPosition = playerRoot.Position
 	end
@@ -314,7 +323,7 @@ function MonsterHunt:Step(
 			end
 		end
 	end
-	if not protected and self:CanCapture(playerRoot) then
+	if not protected and self:CanCapture(playerRoot, now) then
 		return true, awakened
 	end
 	if self.state == "chase" then
@@ -356,6 +365,8 @@ function MonsterHunt:Step(
 	end
 	local direction = target - self.root.Position
 	local speed = if self.state == "chase"
+			and self.chaseStartedAt
+			and now - self.chaseStartedAt >= self.balance.monster_chase_windup_sec
 		then self.balance.monster_chase_speed
 		else self.balance.monster_patrol_speed
 	if direction.Magnitude > 0.05 then
@@ -380,7 +391,7 @@ function MonsterHunt:Step(
 		end
 	end
 	self.model:SetAttribute("TargetDistance", distance)
-	return not protected and self:CanCapture(playerRoot), awakened
+	return not protected and self:CanCapture(playerRoot, now), awakened
 end
 
 function MonsterHunt:Destroy()

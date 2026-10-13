@@ -68,16 +68,36 @@ for _, name in { "world.Ground", "home", "self.root", "playerRoot", "slot", "sel
 	local pattern = name:gsub("%.", "%%.") .. "%.Position"
 	source = source:gsub(pattern, name .. ".CFrame.Position")
 end
+local poseFn = assert(loadstring(fs.readFile("src/shared/Game/MonsterPose.luau")))
+setfenv(
+	poseFn,
+	setmetatable(
+		{ CFrame = CF, Vector3 = V3, Color3 = r.Color3, Enum = r.Enum },
+		{ __index = getfenv() }
+	)
+)
+local pose = poseFn()
+local rsProxy = {
+	WaitForChild = function(self)
+		return self
+	end,
+}
 local fn = assert(loadstring(source))
 setfenv(
 	fn,
 	setmetatable({
 		game = {
 			GetService = function(_, name)
+				if name == "ReplicatedStorage" then
+					return rsProxy
+				end
 				assert(name == "PathfindingService")
 				return pathfindingProxy
 			end,
 		},
+		require = function()
+			return pose
+		end,
 		workspace = workspaceProxy,
 		Instance = I,
 		Vector3 = V3,
@@ -130,7 +150,7 @@ local character = I.new("Model")
 character.Parent = scene
 local root = I.new("Part")
 root.Name = "HumanoidRootPart"
-root.CFrame = CF.new(20, 3, 0)
+root.CFrame = CF.new(16, 3, 0)
 root.Parent = character
 local wall = I.new("Part")
 wall.CFrame = CF.new(10, 4, 0)
@@ -140,48 +160,49 @@ wall.Parent = scene
 table.insert(walls, wall)
 local hunt = Hunt.new(world, Balance, 0)
 local origin = hunt.root.CFrame.Position
-hunt:Step(0, 14.999, root, false)
+hunt:Step(0, 19.999000000000002, root, false)
 assert(hunt.state == "dormant" and hunt.root.CFrame.Position == origin)
-hunt:Step(0, 15, root, false)
+hunt:Step(0, 20.0, root, false)
 assert(hunt.state == "patrol" and not hunt:CanSee(root), "Collidable wall allowed detection")
 wall.CanCollide = false
-hunt:Step(0, 15.1, root, false)
+hunt:Step(0, 20.1, root, false)
 assert(hunt.state == "chase" and hunt:CanSee(root), "Noncollidable corn blocked detection")
 local seen = root.CFrame.Position
 wall.CanCollide = true
 root.CFrame = CF.new(25, 3, 5)
-hunt:Step(0, 15.2, root, false)
+hunt:Step(0, 20.2, root, false)
 assert(hunt.goal == seen and hunt.lastSeenPosition == seen, "Hidden player updated chase goal")
-hunt:Step(0, 16.449, root, false)
+hunt:Step(0, 21.449, root, false)
 assert(hunt.state == "chase")
-hunt:Step(0, 16.451, root, false)
+hunt:Step(0, 21.451, root, false)
 assert(hunt.state == "patrol" and hunt.lastSeenPosition == nil, "Blocked LOS did not expire")
 wall.CanCollide = false
-root.CFrame = CF.new(20, 3, 0)
-hunt:Step(0, 17, root, false)
+root.CFrame = CF.new(16, 3, 0)
+hunt:Step(0, 22.0, root, false)
 wall.CanCollide = true
-hunt:Step(0, 17.1, root, false)
+hunt:Step(0, 22.1, root, false)
 wall.CanCollide = false
 root.CFrame = CF.new(24, 3, 1)
-hunt:Step(0, 18, root, false)
+hunt:Step(0, 23.0, root, false)
 assert(
 	hunt.lostSince == nil and hunt.lastSeenPosition == root.CFrame.Position,
 	"Visible reacquisition retained loss timer"
 )
 root.CFrame = CF.new(43, 3, 0)
-hunt:Step(0, 19, root, false)
-hunt:Step(0, 20.249, root, false)
+hunt:Step(0, 24.0, root, false)
+hunt:Step(0, 25.249, root, false)
 assert(hunt.state == "chase")
-hunt:Step(0, 20.251, root, false)
+hunt:Step(0, 25.251, root, false)
 assert(hunt.state == "patrol", "Distance loss did not expire")
 wall.CFrame = CF.new(1, 4, 0)
 wall.Size = V3.new(0.3, 8, 8)
 wall.CanCollide = true
 root.CFrame = CF.new(2, 3, 0)
-assert(not hunt:CanCapture(root), "Capture crossed collidable wall")
+hunt:_state("chase", 26)
+assert(not hunt:CanCapture(root, 28), "Capture crossed collidable wall")
 wall.CanCollide = false
-assert(hunt:CanCapture(root))
-assert(not hunt:Step(0, 21, root, true), "Protection allowed capture")
+assert(not hunt:CanCapture(root, 27.999) and hunt:CanCapture(root, 28))
+assert(not hunt:Step(0, 28, root, true), "Protection allowed capture")
 assert(hunt.state == "patrol" and hunt.lastSeenPosition == nil)
 hunt:ResetHome()
 local firstSequence = {}
@@ -267,32 +288,65 @@ deferPaths = false
 -- Integrate the real Stamina rule and actual MonsterHunt movement on a free line.
 wall.CanCollide = false
 hunt = Hunt.new(world, Balance, 0)
-root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(32, 0, 0))
-hunt:Step(0, 15, root, false)
+root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(16, 0, 0))
+hunt:Step(0, 20.0, root, false)
 assert(hunt.state == "chase")
-local stamina = Stamina.new(100, 15)
-assert(Stamina.Request(stamina, true, 15, true))
+local stamina = Stamina.new(100, 20)
+assert(Stamina.Request(stamina, true, 20, true))
 local lostAt = nil
 for index = 1, 100 do
 	local dt = 0.05
 	Stamina.Step(stamina, dt, true, true, Balance)
 	local speed = if stamina.sprinting then Balance.sprint_speed else Balance.walk_speed
 	root.CFrame = CF.new(root.CFrame.Position + V3.new(speed * dt, 0, 0))
-	assert(not hunt:Step(dt, 15 + index * dt, root, false), "Full sprint was captured")
+	assert(not hunt:Step(dt, 20 + index * dt, root, false), "Full sprint was captured")
 	if hunt.state == "patrol" then
 		lostAt = index * dt
 		break
 	end
 end
+assert(not lostAt and stamina.exhausted, "Preserved42stud loss rule changed unexpectedly")
 assert(
-	lostAt and lostAt <= 3.5 and stamina.value > 0,
-	"Full sprint could not disengage within its budget"
+	(root.CFrame.Position - hunt.root.CFrame.Position).Magnitude > Balance.monster_capture_radius,
+	"Reaction plus full sprint provided no separation"
 )
-assert((root.CFrame.Position - hunt.root.CFrame.Position).Magnitude > Balance.monster_lose_radius)
+hunt:Destroy()
+hunt = Hunt.new(world, Balance, 0)
+assert(
+	Balance.hunt_start_delay_sec == 20
+		and Balance.monster_detect_radius == 16
+		and Balance.monster_chase_windup_sec == 2
+)
+assert(hunt.root.Size == V3.new(3, 6, 2) and hunt.model:GetAttribute("MonsterHeightScale") == 1.3)
+root.CFrame = CF.new(hunt.home + V3.new(16.001, 0, 0))
+assert(not hunt:Step(0, 19.999, root, false) and hunt.state == "dormant")
+local captured, awakened = hunt:Step(0, 20, root, false)
+assert(not captured and awakened and hunt.state == "patrol")
+root.CFrame = CF.new(hunt.home + V3.new(16, 0, 0))
+hunt:Step(0, 20.1, root, false)
+assert(hunt.state == "chase" and hunt.chaseStartedAt == 20.1)
+for _, entry in { { 20.2, 1 }, { 22.099, 1 }, { 22.1, 1.3 } } do
+	root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(30, 0, 0))
+	local before = hunt.root.CFrame.Position
+	assert(not hunt:Step(0.1, entry[1], root, false))
+	assert(
+		math.abs((hunt.root.CFrame.Position - before).Magnitude - entry[2]) < 0.0001,
+		"Windup speed10 then13"
+	)
+end
+root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(2, 0, 0))
+assert(not hunt:CanCapture(root, 22.099) and hunt:CanCapture(root, 22.1))
+hunt:Step(0, 22.2, root, true)
+assert(hunt.state == "patrol" and hunt.chaseStartedAt == nil)
+hunt:Step(0, 22.3, root, false)
+assert(hunt.chaseStartedAt == 22.3 and not hunt:CanCapture(root, 24.299))
+assert(hunt:Stun(22.4, 10) and hunt.chaseStartedAt == nil)
+hunt:ResetHome()
+assert(hunt.chaseStartedAt == nil)
 hunt:Destroy()
 scene:Destroy()
 print(
-	"PASS: physical-wall adapter/transparent corn; hidden last-seen goal; reacquisition/distance/LOS loss timers; capture/protection; deferred paths reject stale state results without cancelling repeated chase; player-independent 15-slot cycle; actual Stamina full-sprint escape at "
+	"PASS: physical-wall adapter/transparent corn; hidden last-seen goal; reacquisition/distance/LOS loss timers; capture/protection; deferred paths reject stale state results without cancelling repeated chase; player-independent 15-slot cycle; actual Stamina full sprint survives (straightline escape is not guaranteed with16detect/42loss), lostAt="
 		.. tostring(lostAt)
 		.. "s"
 )

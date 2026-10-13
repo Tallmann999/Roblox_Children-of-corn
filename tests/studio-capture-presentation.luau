@@ -49,7 +49,7 @@ local root = assert(character:FindFirstChild("HumanoidRootPart"))
 local frame = root.CFrame * CFrame.new(0, 0, -8)
 local checks, replacement = {}, nil
 local function expect(condition, message)
-	assert(condition, message or "Actual capture presentation fixture failed")
+	assert(condition, (message or "Actual capture presentation fixture failed") .. "\n" .. debug.traceback("Expectation location", 2))
 end
 local function snapshot(roundId, id, remaining, phase)
 	return {
@@ -89,6 +89,7 @@ local ok, problem = pcall(function()
 		local part = assert(model:FindFirstChild(definition.Name))
 		expect(
 			part:IsA("Part")
+					and part.Size == definition.Size
 				and part.Anchored
 				and not part.CanCollide
 				and not part.CanTouch

@@ -31,44 +31,49 @@ wall.Size = Vector3.new(1, 12, 12)
 wall.Parent = scratch
 local checks = {}
 local ok, problem = pcall(function()
-	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(20, 0, 0))
+	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(16, 0, 0))
 	wall.CFrame = CFrame.new(hunt.root.Position + Vector3.new(10, 1, 0))
-	hunt:Step(0, 14.999, root, false)
+	hunt:Step(0, 19.999000000000002, root, false)
 	assert(hunt.state == "dormant")
-	hunt:Step(0, 15, root, false)
+	hunt:Step(0, 20.0, root, false)
 	assert(not hunt:CanSee(root) and hunt.state == "patrol")
 	checks.collidable_wall_blocks_detection = true
 	wall.CanCollide = false
-	hunt:Step(0, 15.1, root, false)
+	hunt:Step(0, 20.1, root, false)
 	assert(hunt:CanSee(root) and hunt.state == "chase")
 	checks.noncollidable_corn_does_not_block = true
 	local seen = root.Position
 	wall.CanCollide = true
 	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(25, 0, 5))
-	hunt:Step(0, 15.2, root, false)
+	hunt:Step(0, 20.2, root, false)
 	assert(hunt.goal == seen and hunt.lastSeenPosition == seen)
-	hunt:Step(0, 16.449, root, false)
+	hunt:Step(0, 21.449, root, false)
 	assert(hunt.state == "chase")
-	hunt:Step(0, 16.451, root, false)
+	hunt:Step(0, 21.451, root, false)
 	assert(hunt.state == "patrol")
 	checks.hidden_goal_frozen_and_lost_after_1_25 = true
 	wall.CanCollide = false
-	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(20, 0, 0))
-	hunt:Step(0, 17, root, false)
+	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(16, 0, 0))
+	hunt:Step(0, 22.0, root, false)
 	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(43, 0, 0))
-	hunt:Step(0, 17.1, root, false)
-	hunt:Step(0, 18.349, root, false)
+	hunt:Step(0, 22.1, root, false)
+	hunt:Step(0, 23.349, root, false)
 	assert(hunt.state == "chase")
-	hunt:Step(0, 18.351, root, false)
+	hunt:Step(0, 23.351, root, false)
 	assert(hunt.state == "patrol")
 	checks.distance_loss_42_after_1_25 = true
 	root.CFrame = CFrame.new(hunt.root.Position + Vector3.new(2, 0, 0))
 	wall.Size = Vector3.new(0.3, 8, 8)
 	wall.CFrame = CFrame.new(hunt.root.Position + Vector3.new(1, 1, 0))
 	wall.CanCollide = true
-	assert(not hunt:CanCapture(root))
+	hunt:_state("chase", 26)
+	assert(not hunt:CanCapture(root, 28))
 	wall.CanCollide = false
-	assert(hunt:CanCapture(root) and not hunt:Step(0, 19, root, true))
+	assert(
+		not hunt:CanCapture(root, 27.999)
+			and hunt:CanCapture(root, 28)
+			and not hunt:Step(0, 28, root, true)
+	)
 	checks.capture_wall_and_protection = true
 	hunt:ResetHome()
 	local sequence, seenSlots = {}, {}

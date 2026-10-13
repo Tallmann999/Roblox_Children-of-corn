@@ -10,6 +10,7 @@ local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
 local AuthoredWorld = require(script.Parent:WaitForChild("AuthoredWorld"))
 local MonsterHunt = require(script.Parent:WaitForChild("MonsterHunt"))
+local RoundAudio = require(script.Parent:WaitForChild("RoundAudio"))
 local MinimapState = require(script.Parent:WaitForChild("MinimapState"))
 local Stamina = require(GameShared:WaitForChild("Game"):WaitForChild("Stamina"))
 local Inventory = require(GameShared:WaitForChild("Game"):WaitForChild("Inventory"))
@@ -47,6 +48,7 @@ function SoloRound.new(context: any)
 		reward = 0,
 		startedAt = nil :: number?,
 		hunt = nil :: any,
+		audio = nil :: any,
 		catches = 0,
 		captureFrame = CFrame.identity,
 		captureUntil = 0,
@@ -424,6 +426,10 @@ function SoloRound:_ensureWorld(): boolean
 end
 
 function SoloRound:_stopHunt()
+	if self.audio then
+		self.audio:Destroy()
+		self.audio = nil
+	end
 	if self.hunt then
 		self.hunt:Destroy()
 		self.hunt = nil
@@ -471,6 +477,9 @@ function SoloRound:_caught(root: BasePart)
 	self.captureUntil = os.clock() + self.balance.capture_transition_sec
 	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
 	self.phase = "caught"
+	if self.audio then
+		self.audio:Step(os.clock(), self.phase, self.lightingMode, self.hunt)
+	end
 	self.inventory.energyUntil = 0
 	if self.items then
 		self.items:SetEnabled(false)
@@ -631,13 +640,25 @@ function SoloRound:_startRound(mode: string)
 			self:_send()
 		end)
 		self.startedAt = os.clock()
-		local ok, hunt = pcall(MonsterHunt.new, self.world, self.balance, self.startedAt)
+		local ok, hunt = pcall(
+			MonsterHunt.new,
+			self.world,
+			self.balance,
+			self.startedAt,
+			if self.player then self.player.UserId else 0
+		)
 		if not ok then
 			self.context.Log:Warn("Cannot start hunt:", hunt)
 			self:_finish("aborted", "corn_loop_setup_error")
 			return
 		end
 		self.hunt = hunt
+		local audioOk, audio = pcall(RoundAudio.new, self.world, self.player, hunt, self.random)
+		if audioOk then
+			self.audio = audio
+		else
+			self.context.Log:Warn("Cannot prepare round audio:", audio)
+		end
 		self.huntAt = self.startedAt
 		self.phase = "active"
 		self.world:SetInteractionEnabled(true, false)
@@ -823,6 +844,9 @@ end
 
 function SoloRound:_poll(now: number)
 	if self.phase ~= "active" then
+		if self.phase == "caught" and self.audio then
+			self.audio:Step(now, self.phase, self.lightingMode, self.hunt)
+		end
 		return
 	end
 	local character, _, root = self:_livingCharacter()
@@ -865,6 +889,9 @@ function SoloRound:_poll(now: number)
 			self:_caught(root)
 			return
 		end
+	end
+	if self.audio then
+		self.audio:Step(now, self.phase, self.lightingMode, self.hunt)
 	end
 	if self.gateOpen and self.world:IsInExit(root.Position) then
 		self:_finish("escaped", "")

@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"playing\":false,\"volume\":0,\"walk\":24,\"slot\":\"\",\"timer\":true,\"loaded\":true,\"footsteps\":0,\"pos\":0}"}], "isError": false}}

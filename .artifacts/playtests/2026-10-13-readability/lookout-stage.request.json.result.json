@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"stump\":\"3.5999999046325684, 18.399986267089844, 252\",\"step1\":\"-3.4000000953674316, 15.649986267089844, 252\",\"lookout\":\"Lookout1\",\"diagnostic_relocation\":true}"}], "isError": false}}

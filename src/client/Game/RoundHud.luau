@@ -1,6 +1,7 @@
 --!strict
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local GuiService = game:GetService("GuiService")
 local RoundText: { [string]: string } = require(
 	ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("Game"):WaitForChild("RoundText")
 )
@@ -10,6 +11,7 @@ local LightingModes = require(ReplicatedStorage.GameShared.Game.LightingModes)
 local ModePreviewImages = require(ReplicatedStorage.GameShared.Game.ModePreviewImages)
 
 local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometry)
+local Balance = require(ReplicatedStorage.GameShared.Game.Balance)
 
 export type Snapshot = {
 	capture: { id: number, remaining: number, frame: CFrame },
@@ -261,6 +263,74 @@ function RoundHud.new(playerGui: PlayerGui)
 		UDim2.fromOffset(185, 40),
 		UDim2.new(1, -205, 0, 16)
 	)
+	local waking =
+		panel(root, "AwakeningWarning", UDim2.fromOffset(600, 120), UDim2.new(0.5, 0, 0, 150))
+	waking.AnchorPoint = Vector2.new(0.5, 0)
+	waking.Active = false
+	local wakingMessage =
+		label(waking, "Message", UDim2.new(1, -32, 0, 56), UDim2.fromOffset(16, 8), 21)
+	wakingMessage.TextColor3 = NOTICE_COLOR
+	wakingMessage.TextXAlignment = Enum.TextXAlignment.Center
+	local wakingSeconds =
+		label(waking, "Seconds", UDim2.new(1, -32, 0, 42), UDim2.fromOffset(16, 68), 36)
+	wakingSeconds.Font = Enum.Font.GothamBold
+	wakingSeconds.TextColor3 = NOTICE_COLOR
+	wakingSeconds.TextXAlignment = Enum.TextXAlignment.Center
+	local introRoot = Instance.new("ScreenGui")
+	introRoot.Name = "CornRoundIntro"
+	introRoot.ResetOnSpawn = false
+	introRoot.IgnoreGuiInset = true
+	introRoot.ScreenInsets = Enum.ScreenInsets.None
+	introRoot.ClipToDeviceSafeArea = false
+	introRoot.DisplayOrder = 60
+	introRoot.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	introRoot.Enabled = false
+	introRoot.Parent = playerGui
+	local shade = Instance.new("Frame")
+	shade.Name = "Backdrop"
+	shade.Size = UDim2.fromScale(1, 1)
+	shade.BackgroundColor3 = Color3.fromRGB(13, 19, 15)
+	shade.BorderSizePixel = 0
+	shade.Active = true
+	shade.Parent = introRoot
+	local introPanel = Instance.new("Frame")
+	introPanel.Name = "ObjectivePanel"
+	introPanel.AnchorPoint = Vector2.new(0.5, 0.5)
+	introPanel.Position = UDim2.fromScale(0.5, 0.5)
+	introPanel.Size = UDim2.fromOffset(640, 390)
+	introPanel.BackgroundTransparency = 1
+	introPanel.Parent = introRoot
+	local introTitle =
+		label(introPanel, "Title", UDim2.new(1, -32, 0, 32), UDim2.fromOffset(16, 18), 24)
+	introTitle.Text = text("corn_loop_intro_title")
+	introTitle.TextColor3 = MUTED_COLOR
+	introTitle.TextXAlignment = Enum.TextXAlignment.Center
+	local introMessage =
+		label(introPanel, "Objective", UDim2.new(1, -32, 0, 168), UDim2.fromOffset(16, 70), 32)
+	introMessage.Text = text("corn_loop_intro_objective")
+	introMessage.Font = Enum.Font.GothamBold
+	introMessage.TextXAlignment = Enum.TextXAlignment.Center
+	local introMode =
+		label(introPanel, "Mode", UDim2.new(1, -32, 0, 28), UDim2.fromOffset(16, 244), 17)
+	introMode.TextColor3 = MUTED_COLOR
+	introMode.TextXAlignment = Enum.TextXAlignment.Center
+	local introConfirm = button(
+		introPanel,
+		"Confirm",
+		"corn_loop_intro_confirm",
+		UDim2.new(1, -32, 0, 48),
+		UDim2.fromOffset(16, 278)
+	)
+	local introBack = button(
+		introPanel,
+		"Back",
+		"corn_loop_intro_back",
+		UDim2.new(1, -32, 0, 36),
+		UDim2.fromOffset(16, 336)
+	)
+	introConfirm.Modal, introBack.Modal = true, true
+	introConfirm.SelectionOrder, introBack.SelectionOrder = 0, 1
+	introConfirm.NextSelectionDown, introBack.NextSelectionUp = introBack, introConfirm
 
 	local self = setmetatable({
 		_root = root,
@@ -288,6 +358,21 @@ function RoundHud.new(playerGui: PlayerGui)
 		_menu = menu,
 		_preparingLeave = preparingLeave,
 		_activeLeave = activeLeave,
+		_waking = waking,
+		_wakingMessage = wakingMessage,
+		_wakingSeconds = wakingSeconds,
+		_introRoot = introRoot,
+		_introPanel = introPanel,
+		_introMessage = introMessage,
+		_introMode = introMode,
+		_introConfirm = introConfirm,
+		_introBack = introBack,
+		_introPending = nil,
+		_introVisible = false,
+		_savedSelection = nil,
+		_onAction = nil,
+		_actionBound = false,
+		_destroyed = false,
 		_buttons = { start, retry, menu, preparingLeave, activeLeave },
 		_connections = {} :: { RBXScriptConnection },
 		_snapshot = nil :: Snapshot?,
@@ -299,7 +384,13 @@ function RoundHud.new(playerGui: PlayerGui)
 		table.insert(
 			self._connections,
 			select.Activated:Connect(function()
-				if not self._busy and not self._unavailable and self._snapshot then
+				if
+					not self._busy
+					and not self._unavailable
+					and not self._introPending
+					and not self._destroyed
+					and self._snapshot
+				then
 					self._selectedMode = mode
 					self:_render()
 				end
@@ -310,6 +401,13 @@ function RoundHud.new(playerGui: PlayerGui)
 		self._connections,
 		root:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
 			self:_fitCard()
+			self:_fitOverlays()
+		end)
+	)
+	table.insert(
+		self._connections,
+		introRoot:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+			self:_fitOverlays()
 		end)
 	)
 	self:_render()
@@ -317,6 +415,9 @@ function RoundHud.new(playerGui: PlayerGui)
 end
 
 function RoundHud:_fitCard()
+	if self._destroyed then
+		return
+	end
 	local viewport = self._root.AbsoluteSize
 	if viewport.X > 0 and viewport.Y > 0 then
 		self._cardScale.Scale = math.min(
@@ -327,7 +428,121 @@ function RoundHud:_fitCard()
 	end
 end
 
+function RoundHud:_fitOverlays()
+	if self._destroyed then
+		return
+	end
+	local viewport = self._introRoot.AbsoluteSize
+	if viewport.X > 0 and viewport.Y > 0 then
+		local width, height = math.min(640, viewport.X - 36), math.min(390, viewport.Y - 36)
+		self._introPanel.Size = UDim2.fromOffset(math.max(1, width), math.max(1, height))
+		local bodyHeight = math.max(40, height - 222)
+		self._introMessage.Size = UDim2.new(1, -32, 0, bodyHeight)
+		self._introMessage.TextSize =
+			math.min(if width < 390 then 24 else 32, math.max(18, bodyHeight / 3))
+		self._introMode.Position = UDim2.fromOffset(16, height - 146)
+		self._introConfirm.Position = UDim2.fromOffset(16, height - 112)
+		self._introBack.Position = UDim2.fromOffset(16, height - 54)
+	end
+	local hudViewport = self._root.AbsoluteSize
+	if hudViewport.X > 0 and hudViewport.Y > 0 then
+		local width = math.min(600, math.max(1, hudViewport.X - 36))
+		self._waking.Size = UDim2.fromOffset(width, 120)
+		self._waking.Position =
+			UDim2.new(0.5, 0, 0, math.max(0, math.min(150, hudViewport.Y - 144)))
+		self._wakingMessage.TextSize = if width < 390 then 17 else 21
+	end
+end
+
+function RoundHud:_canAct(): boolean
+	return not self._destroyed
+		and not self._busy
+		and not self._unavailable
+		and self._snapshot ~= nil
+end
+
+function RoundHud:_introValid(): boolean
+	local pending, snapshot = self._introPending, self._snapshot
+	return pending ~= nil
+		and snapshot ~= nil
+		and snapshot.phase == pending.phase
+		and snapshot.minimap.round_id == pending.roundId
+		and LightingModes.IsValid(pending.mode)
+end
+
+function RoundHud:_introVisibility(visible: boolean)
+	self._introRoot.Enabled = visible
+	if visible == self._introVisible then
+		return
+	end
+	self._introVisible = visible
+	if visible then
+		self._savedSelection = GuiService.SelectedObject
+		GuiService.SelectedObject = self._introConfirm
+	elseif
+		GuiService.SelectedObject == self._introConfirm
+		or GuiService.SelectedObject == self._introBack
+	then
+		local saved = self._savedSelection
+		GuiService.SelectedObject = if saved and saved.Parent and saved.Visible then saved else nil
+	end
+	if not visible then
+		self._savedSelection = nil
+	end
+end
+
+function RoundHud:ShowObjective(action: string)
+	local snapshot = self._snapshot
+	if not self:_canAct() or not snapshot or self._captureActive or self._introPending then
+		return
+	end
+	local allowed = (action == "start" and snapshot.phase == "ready")
+		or (
+			action == "retry"
+			and (
+				snapshot.phase == "escaped"
+				or snapshot.phase == "aborted"
+				or snapshot.phase == "caught_out"
+			)
+		)
+	if not allowed or not LightingModes.IsValid(self._selectedMode) then
+		return
+	end
+	self._introPending = {
+		action = action,
+		mode = self._selectedMode,
+		phase = snapshot.phase,
+		roundId = snapshot.minimap.round_id,
+	}
+	self:_render()
+end
+
+function RoundHud:CloseObjective()
+	self._introPending = nil
+	self:_render()
+end
+
+function RoundHud:ConfirmObjective()
+	if
+		not self:_canAct()
+		or self._captureActive
+		or not self:_introValid()
+		or not self._onAction
+	then
+		return
+	end
+	local pending = self._introPending
+	self._introPending = nil
+	self:_render()
+	self._onAction(pending.action, pending.mode)
+end
+
 function RoundHud:SetOnAction(callback: (string, string?) -> ())
+	self._onAction = callback
+	if self._actionBound then
+		return
+	end
+	self._actionBound = true
 	local bindings = {
 		{ button = self._start, action = "start" },
 		{ button = self._retry, action = "retry" },
@@ -339,20 +554,40 @@ function RoundHud:SetOnAction(callback: (string, string?) -> ())
 		table.insert(
 			self._connections,
 			binding.button.Activated:Connect(function()
-				if not self._busy and not self._unavailable and self._snapshot ~= nil then
-					callback(
-						binding.action,
-						if binding.action == "start" or binding.action == "retry"
-							then self._selectedMode
-							else nil
-					)
+				if self:_canAct() and not self._introPending and self._onAction then
+					if binding.action == "start" or binding.action == "retry" then
+						self:ShowObjective(binding.action)
+					else
+						self._onAction(binding.action, nil)
+					end
 				end
 			end)
 		)
 	end
+	table.insert(
+		self._connections,
+		self._introConfirm.Activated:Connect(function()
+			self:ConfirmObjective()
+		end)
+	)
+	table.insert(
+		self._connections,
+		self._introBack.Activated:Connect(function()
+			if self:_canAct() then
+				self:CloseObjective()
+			end
+		end)
+	)
 end
 
 function RoundHud:_render()
+	if self._destroyed then
+		return
+	end
+	if not self:_introValid() or self._unavailable or self._captureActive then
+		self._introPending = nil
+	end
+	local intro = self._introPending ~= nil
 	local snapshot = self._snapshot
 	local phase = if snapshot then snapshot.phase else "loading"
 	local isActive = phase == "active"
@@ -383,7 +618,11 @@ function RoundHud:_render()
 		)
 	end
 	for mode, control in self._modeButtons do
-		local enabled = expanded and snapshot ~= nil and not self._busy and not self._unavailable
+		local enabled = expanded
+			and snapshot ~= nil
+			and not self._busy
+			and not self._unavailable
+			and not intro
 		control.Active = enabled
 		control.AutoButtonColor = enabled
 		local selected = mode == self._selectedMode
@@ -397,7 +636,9 @@ function RoundHud:_render()
 		self._modeStrokes[mode].Transparency = if selected then 0 else 0.6
 	end
 	self:_fitCard()
-	self._card.Visible = not isActive and not (phase == "caught" and self._captureActive)
+	self._card.Visible = not intro
+		and not isActive
+		and not (phase == "caught" and self._captureActive)
 	self._active.Visible = isActive
 	self._activeLeave.Visible = isActive
 	self._start.Visible = phase == "ready" or phase == "loading"
@@ -405,11 +646,23 @@ function RoundHud:_render()
 	self._menu.Visible = isResult
 	self._preparingLeave.Visible = phase == "preparing" or phase == "caught"
 	for _, control in self._buttons do
-		local enabled = snapshot ~= nil and not self._busy and not self._unavailable
+		local enabled = snapshot ~= nil and not self._busy and not self._unavailable and not intro
 		control.Active = enabled
 		control.AutoButtonColor = enabled
 		control.BackgroundColor3 = if enabled then BUTTON_COLOR else DISABLED_COLOR
 		control.TextTransparency = if enabled then 0 else 0.35
+	end
+	for _, control in { self._introConfirm, self._introBack } do
+		control.Active = intro and self:_canAct()
+		control.AutoButtonColor = control.Active
+		control.BackgroundColor3 = if control.Active then BUTTON_COLOR else DISABLED_COLOR
+		control.Modal = intro
+	end
+	if self._introPending then
+		self._introMode.Text =
+			text("corn_modes_selected", { mode = text("corn_modes_" .. self._introPending.mode) })
+	else
+		self._introMode.Text = ""
 	end
 
 	self._title.Text = text("corn_loop_title")
@@ -471,6 +724,24 @@ function RoundHud:_render()
 			{ count = snapshot.catches_remaining }
 		)
 	end
+	local remaining = if snapshot
+		then math.ceil(Balance.hunt_start_delay_sec - snapshot.elapsed_sec)
+		else 0
+	local waking = snapshot ~= nil
+		and isActive
+		and not self._unavailable
+		and not self._captureActive
+		and snapshot.monster_state == "dormant"
+		and remaining >= 1
+		and remaining <= 5
+		and snapshot.elapsed_sec < Balance.hunt_start_delay_sec
+	self._waking.Visible = waking
+	self._wakingMessage.Text = if waking then text("corn_hunt_waking_warning") else ""
+	self._wakingSeconds.Text = if waking
+		then text("corn_hunt_waking_seconds", { seconds = remaining })
+		else ""
+	self:_fitOverlays()
+	self:_introVisibility(intro)
 end
 
 function RoundHud:Render(snapshot: Snapshot)
@@ -499,11 +770,16 @@ function RoundHud:ShowUnavailable()
 end
 
 function RoundHud:Destroy()
+	self._introPending = nil
+	self:_introVisibility(false)
+	self._destroyed = true
+	self._snapshot, self._onAction = nil, nil
 	for _, connection in self._connections do
 		connection:Disconnect()
 	end
 	table.clear(self._connections)
 	self._root:Destroy()
+	self._introRoot:Destroy()
 end
 
 return RoundHud

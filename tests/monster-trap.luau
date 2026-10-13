@@ -29,12 +29,29 @@ else
 	for _, name in { "world.Ground", "home", "self.root", "playerRoot", "slot", "self.patrolSlot" } do
 		source = source:gsub(name:gsub("%.", "%%.") .. "%.Position", name .. ".CFrame.Position")
 	end
+	local poseFn = assert(loadstring(fs.readFile("src/shared/Game/MonsterPose.luau")))
+	setfenv(
+		poseFn,
+		setmetatable(
+			{ CFrame = CF, Vector3 = V3, Color3 = r.Color3, Enum = r.Enum },
+			{ __index = getfenv() }
+		)
+	)
+	local pose = poseFn()
+	local rsProxy = {
+		WaitForChild = function(self)
+			return self
+		end,
+	}
 	local fn = assert(loadstring(source))
 	setfenv(
 		fn,
 		setmetatable({
 			game = {
 				GetService = function(_, name)
+					if name == "ReplicatedStorage" then
+						return rsProxy
+					end
 					assert(name == "PathfindingService")
 					return {
 						CreatePath = function()
@@ -52,6 +69,9 @@ else
 					}
 				end,
 			},
+			require = function()
+				return pose
+			end,
 			workspace = {
 				Raycast = function()
 					return nil
@@ -154,7 +174,8 @@ local ok, problem = pcall(function()
 	end
 	assert(not hunt:Stun(25, 10) and hunt.stunnedUntil == 30)
 	checks.freeze_no_capture_no_extension = true
-	assert(hunt:Step(0, 30, root, false))
+	assert(not hunt:Step(0, 30, root, false))
+	assert(not hunt:CanCapture(root, 31.999) and hunt:CanCapture(root, 32))
 	assert(hunt.state == "chase" and hunt.stunnedUntil == nil)
 	checks.exact_ten_second_release_and_visible_reacquisition = true
 

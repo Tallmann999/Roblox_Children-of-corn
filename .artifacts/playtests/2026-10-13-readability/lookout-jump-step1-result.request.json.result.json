@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"rootHeight\":2.9978790283203127,\"support\":\"Workspace.CornMap.Ground\",\"root\":\"-5.929818153381348, 17.397865295410156, 251.214599609375\",\"keyboardSpace\":true,\"diagnostic_initial_relocation_only\":true}"}], "isError": false}}

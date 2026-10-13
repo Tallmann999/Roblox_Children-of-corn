@@ -1,0 +1,82 @@
+{
+  "creator_id": "11644801627",
+  "creator_name": "Tallmann_Niderlands",
+  "uploaded_by": "author",
+  "files": [
+    {
+      "key": "COC_Hunt",
+      "asset_id": "112733609126247",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Fire",
+      "asset_id": "105538100476464",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_10",
+      "asset_id": "136100994535896",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Background_02",
+      "asset_id": "134619170853693",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Monster_03",
+      "asset_id": "128947814251611",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_13",
+      "asset_id": "128248535752141",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Energy_Open",
+      "asset_id": "117691782180305",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Trap_Place",
+      "asset_id": "113868187938008",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_18",
+      "asset_id": "101463611520693",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Monster_01",
+      "asset_id": "100872584572146",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Monster_02",
+      "asset_id": "92691373477671",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_11",
+      "asset_id": "82316318861323",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_20",
+      "asset_id": "80980555958242",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Corn_02",
+      "asset_id": "70577970161798",
+      "source": "inventory"
+    },
+    {
+      "key": "COC_Crickets_15s",
+      "asset_id": "135204357018646",
+      "source": "inventory"
+    }
+  ]
+}

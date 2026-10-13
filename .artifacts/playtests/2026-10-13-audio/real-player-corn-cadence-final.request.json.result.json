@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "result": {"content": [{"type": "text", "text": "{\"position\":\"-300, 17.5927734375, -265.8583984375\",\"diagnostic_relocation\":true,\"stationaryRequested\":false,\"actual_walk\":true,\"walk\":12}"}], "isError": false}}

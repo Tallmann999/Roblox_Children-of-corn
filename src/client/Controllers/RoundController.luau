@@ -127,6 +127,17 @@ function RoundController:_request(action: string, mode: string?)
 	if (action == "start" or action == "retry") and not LightingModes.IsValid(mode) then
 		return
 	end
+	if action == "start" and self._snapshot.phase ~= "ready" then
+		return
+	end
+	if
+		action == "retry"
+		and self._snapshot.phase ~= "escaped"
+		and self._snapshot.phase ~= "aborted"
+		and self._snapshot.phase ~= "caught_out"
+	then
+		return
+	end
 	local now = os.clock()
 	if now - self._lastRequest < DEBOUNCE_SEC then
 		return
@@ -162,8 +173,10 @@ function RoundController:Start(context: any)
 	self._requestRemote = requestRemote
 	self._snapshotConnection = snapshotRemote.OnClientEvent:Connect(function(payload: any)
 		if not validSnapshot(payload) then
+			hud:CloseObjective()
 			context.Controllers.CaptureController:Cancel("malformed snapshot")
 			context.Controllers.HandheldController:Clear("malformed snapshot")
+			context.Controllers.AudioController:Clear("malformed snapshot")
 			warn("[RoundController] Ignored a malformed round_snapshot")
 			return
 		end
@@ -174,6 +187,7 @@ function RoundController:Start(context: any)
 		context.Controllers.MinimapController:SetSnapshot(payload)
 		context.Controllers.InventoryController:SetSnapshot(payload)
 		context.Controllers.HandheldController:SetSnapshot(payload)
+		context.Controllers.AudioController:SetSnapshot(payload)
 		context.Controllers.CornController:SetLightingMode(
 			if payload.phase == "ready" then nil else payload.lighting_mode
 		)
@@ -208,6 +222,7 @@ function RoundController:Destroy()
 		self._hud = nil
 	end
 	self._requestRemote = nil
+	self._snapshot = nil
 end
 
 return RoundController

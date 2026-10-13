@@ -13,6 +13,20 @@ setfenv(
 )
 local Pose = poseFn()
 assert(#Pose.Parts == 9 and table.isfrozen(Pose.Rest) and table.isfrozen(Pose.Parts))
+assert(Pose.HeightScale == 1.3 and Pose.FeetY == -3)
+local definitions = {}
+for _, definition in Pose.Parts do
+	definitions[definition.Name] = definition
+end
+assert(math.abs(Pose.Rest.LeftLeg.Position.Y - definitions.LeftLeg.Size.Y / 2 + 3) < 0.000001)
+assert(
+	math.abs((Pose.Rest.Hat.Position.Y + definitions.Hat.Size.Y / 2 + 3) - 10.8 * 1.3) < 0.000001
+)
+assert(
+	definitions.Coat.Size.X == 4
+		and definitions.Coat.Size.Z == 2
+		and math.abs(definitions.Coat.Size.Y - 9.1) < 0.000001
+)
 local function close(a, b, message)
 	local aValues, bValues = { a:GetComponents() }, { b:GetComponents() }
 	for index, value in aValues do
@@ -52,6 +66,7 @@ for _, state in { "patrol", "chase", "trapped", "capturing" } do
 					local pivot = if kind == "Arm"
 						then V3.new(side * 1.5, 3, 0)
 						else V3.new(side, 0, 0)
+					pivot = Pose.ScalePosition(pivot)
 					local localPivot = Pose.Rest[name]:PointToObjectSpace(pivot)
 					assert(
 						(pose[name]:PointToWorldSpace(localPivot) - pivot).Magnitude < 0.00001,

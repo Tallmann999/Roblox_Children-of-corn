@@ -10,6 +10,10 @@ local Pose = require(
 local Controller = { Name = "MonsterAnimationController", Order = 80 }
 local PROJECT = "children_of_corn"
 local UPDATE_SEC, RESOLVE_SEC = 1 / 30, 0.5
+local sizes = {}
+for _, definition in Pose.Parts do
+	sizes[definition.Name] = definition.Size
+end
 
 local function disconnect(connections: { RBXScriptConnection })
 	for _, connection in connections do
@@ -69,7 +73,12 @@ function Controller:_valid(): boolean
 		return false
 	end
 	for name, part in self._parts do
-		if part.Parent ~= model or part.Name ~= name or not decorative(part) then
+		if
+			part.Parent ~= model
+			or part.Name ~= name
+			or part.Size ~= sizes[name]
+			or not decorative(part)
+		then
 			return false
 		end
 	end
@@ -98,7 +107,12 @@ function Controller:_resolveMonster()
 	local parts, count = {}, 0
 	for _, item in model:GetChildren() do
 		if item ~= root then
-			if not Pose.Rest[item.Name] or parts[item.Name] or not decorative(item) then
+			if
+				not Pose.Rest[item.Name]
+				or parts[item.Name]
+				or item.Size ~= sizes[item.Name]
+				or not decorative(item)
+			then
 				return
 			end
 			parts[item.Name], count = item, count + 1

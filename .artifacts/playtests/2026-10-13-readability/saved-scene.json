@@ -1,0 +1,16 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "bytes": 1009332,
+  "sha256": "ef0731f3235a26e4aa76dd26a7853be4d67e9ccc934f4f054428e5cbd6d146f0",
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-readability-20261013.rbxl",
+  "backup_bytes": 1007172,
+  "backup_sha256": "4ee103b95110e2a2a1a691d58a7bb5cdc34d0dc466d3c5265b47eb5823986546",
+  "sources": 75,
+  "instances": 6839,
+  "changed_sources": 12,
+  "new_instances": 0,
+  "world_lighting_art_raw_terrain_exact": true,
+  "method": "Author Ctrl+S exact engine bytes; strict read-only validation, no file replacement or Lune scene serialization",
+  "current_audio_status": "all fifteen previous IDs denied by Roblox; audible awakening remains pending",
+  "studio_state": "Saved after verified Edit; user logged out; former Studio MCP ID disconnected, re-list required after login/reopen"
+}

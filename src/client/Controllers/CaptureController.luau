@@ -128,6 +128,7 @@ function Controller:_buildVisual(frame: CFrame): boolean
 	model:SetAttribute("CornCaptureOwned", true)
 	model:SetAttribute("corn_project_id", PROJECT)
 	model:SetAttribute("CaptureRigVersion", 1)
+	model:SetAttribute("MonsterHeightScale", Pose.HeightScale)
 	local parts = {}
 	for _, definition in Pose.Parts do
 		assert(

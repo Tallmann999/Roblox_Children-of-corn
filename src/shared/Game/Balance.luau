@@ -5,7 +5,7 @@
 return {
 	target_round_min_sec = 420,
 	target_round_max_sec = 600,
-	hunt_start_delay_sec = 15,
+	hunt_start_delay_sec = 20,
 	key_slot_count = 15,
 	barrel_count = 3,
 	max_catches = 2,
@@ -16,7 +16,8 @@ return {
 	sprint_speed = 18,
 	monster_patrol_speed = 10,
 	monster_chase_speed = 13,
-	monster_detect_radius = 32,
+	monster_detect_radius = 16,
+	monster_chase_windup_sec = 2,
 	monster_lose_radius = 42,
 	monster_lose_delay_sec = 1.25,
 	monster_growl_radius = 72,

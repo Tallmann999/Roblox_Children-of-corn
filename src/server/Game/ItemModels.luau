@@ -1,5 +1,7 @@
 --!strict
 local ItemModels = {}
+ItemModels.StumpHeight = 8
+ItemModels.StumpDiameter = 6
 local function part(
 	parent: Instance,
 	name: string,
@@ -132,26 +134,39 @@ function ItemModels.Trap(frame: CFrame, closed: boolean?): (Model, Part)
 	return object, anchor
 end
 function ItemModels.Stump(parent: Instance, frame: CFrame): Part
-	local stump = part(
-		parent,
-		"Stump",
-		Vector3.new(2.4, 3, 3),
-		frame * CFrame.Angles(0, 0, math.pi / 2),
-		Color3.fromRGB(94, 70, 43),
-		Enum.Material.Wood
-	)
-	stump.Shape = Enum.PartType.Cylinder
-	stump.CanCollide = true
-	stump.CanQuery = true
-	local top = part(
-		parent,
-		"CutWood",
-		Vector3.new(0.12, 2.85, 2.85),
-		frame * CFrame.new(0, 1.21, 0) * CFrame.Angles(0, 0, math.pi / 2),
-		Color3.fromRGB(171, 143, 95),
-		Enum.Material.Wood
-	)
-	top.Shape = Enum.PartType.Cylinder
+	local function log(
+		name: string,
+		capName: string,
+		center: CFrame,
+		height: number,
+		diameter: number
+	): Part
+		local body = part(
+			parent,
+			name,
+			Vector3.new(height, diameter, diameter),
+			center * CFrame.Angles(0, 0, math.pi / 2),
+			Color3.fromRGB(94, 70, 43),
+			Enum.Material.Wood
+		)
+		body.Shape = Enum.PartType.Cylinder
+		body.CanCollide = true
+		body.CanQuery = true
+		local cap = part(
+			parent,
+			capName,
+			Vector3.new(0.12, diameter - 0.15, diameter - 0.15),
+			center * CFrame.new(0, height / 2 + 0.01, 0) * CFrame.Angles(0, 0, math.pi / 2),
+			Color3.fromRGB(171, 143, 95),
+			Enum.Material.Wood
+		)
+		cap.Shape = Enum.PartType.Cylinder
+		return body
+	end
+	local stump = log("Stump", "CutWood", frame, ItemModels.StumpHeight, ItemModels.StumpDiameter)
+	local ground = frame * CFrame.new(0, -ItemModels.StumpHeight / 2, 0)
+	log("Step1", "Step1Top", ground * CFrame.new(-7, 1.25, 0), 2.5, 3.2)
+	log("Step2", "Step2Top", ground * CFrame.new(-4, 2.5, 0), 5, 3.2)
 	return stump
 end
 return ItemModels
