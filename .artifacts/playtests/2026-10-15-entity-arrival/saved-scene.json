@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "path": "place/Children_of_corn.rbxl",
+  "saved_by": "author native Ctrl+S",
+  "local_saved_at": "2026-10-15 14:52:11 Europe/Moscow",
+  "bytes": 997184,
+  "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+  "strict_report": "preservation.json",
+  "baseline_path": "place/Children_of_corn.before-entity-arrival-20261015.rbxl",
+  "baseline_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "project_sources": 75,
+  "fog_sources": 3,
+  "instances": 4160,
+  "source_changes": [
+    "Balance",
+    "SoloRound",
+    "RoundAudio"
+  ],
+  "world_lighting_art_identities_parents_raw_terrain_exact": true,
+  "promotion": false,
+  "scene_reserialization": false,
+  "studio_id": "1712610d-6d4d-441b-99a7-3b0598e8a566",
+  "studio_mode": "stopped Edit",
+  "source_installer_repeat": {
+    "changed": 0,
+    "created": 0
+  },
+  "camera": "Fixed",
+  "farm_repeat": {
+    "targets": 40,
+    "applied": 0,
+    "built": 0,
+    "pending": 0
+  },
+  "runtime_present": false
+}

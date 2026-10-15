@@ -1,0 +1,681 @@
+{
+  "first_arrival_at": 0.4811020999986795,
+  "chunks": [],
+  "method": "Read-only production Client Sound replication/decoding/cursor/loudness; no Sound writes, synthetic cues or preload. Native gate input and server Play counts are separate evidence.",
+  "client_playback_accepted": true,
+  "sound_count": 2,
+  "done": true,
+  "sounds": [
+    {
+      "initial": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root.CornAudio_reinforcement_arrival_2",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_2",
+        "key": "COC_Monster_01",
+        "volume": 0.949999988079071,
+        "speed": 1,
+        "uri": "rbxassetid://100872584572146",
+        "playing": true,
+        "group_binding": true,
+        "time_length": 2.34,
+        "listener_root_distance": 124.4860610961914,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "latest": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root.CornAudio_reinforcement_arrival_2",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_2",
+        "key": "COC_Monster_01",
+        "volume": 0.949999988079071,
+        "speed": 1,
+        "uri": "rbxassetid://100872584572146",
+        "playing": false,
+        "group_binding": true,
+        "time_length": 2.34,
+        "listener_root_distance": 223.59921264648438,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "attached_at": 0.4811020999986795,
+      "positive_loudness_samples": 69,
+      "max_forward_cursor_delta": 0.04300000000000015,
+      "role": "reinforcement_arrival_2",
+      "last_present": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root.CornAudio_reinforcement_arrival_2",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_2",
+        "key": "COC_Monster_01",
+        "volume": 0.949999988079071,
+        "speed": 1,
+        "uri": "rbxassetid://100872584572146",
+        "playing": false,
+        "group_binding": true,
+        "time_length": 2.34,
+        "listener_root_distance": 223.59921264648438,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster2.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "expected": {
+        "key": "COC_Monster_01",
+        "uri": "rbxassetid://100872584572146",
+        "index": 2,
+        "volume": 0.95
+      },
+      "playing_property_mismatch_samples": 0,
+      "max_loudness": 91.25859290361404,
+      "initial_playing": true,
+      "max_time_length": 2.34,
+      "playing_samples": 71,
+      "samples": 360,
+      "expected_properties_observed": true,
+      "decoded_playback_observed": true,
+      "events": {
+        "Loaded": 0,
+        "Played": 0,
+        "Stopped": 0,
+        "Ended": 1
+      },
+      "matching_property_samples": 360,
+      "event_trace": [
+        {
+          "at": 2.828746699997282,
+          "kind": "Ended",
+          "cursor": 0,
+          "length": 2.34
+        }
+      ],
+      "cursor_advances": 70,
+      "traces": [
+        {
+          "at": 0.4811020999986795,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": true
+        },
+        {
+          "at": 0.7619697999980417,
+          "loudness": 55.88221177458763,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.277,
+          "playing": true
+        },
+        {
+          "at": 1.02881509999861,
+          "loudness": 91.25859290361404,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.555,
+          "playing": true
+        },
+        {
+          "at": 1.2961063999973703,
+          "loudness": 79.64242249727249,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.832,
+          "playing": true
+        },
+        {
+          "at": 1.5623728999999003,
+          "loudness": 78.60925793647766,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.088,
+          "playing": true
+        },
+        {
+          "at": 1.8302030999984709,
+          "loudness": 79.53688502311707,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.344,
+          "playing": true
+        },
+        {
+          "at": 2.0965273000001616,
+          "loudness": 82.77441561222076,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.621,
+          "playing": true
+        },
+        {
+          "at": 2.3627763999975286,
+          "loudness": 78.0700370669365,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.877,
+          "playing": true
+        },
+        {
+          "at": 2.6326217999994697,
+          "loudness": 60.77498570084572,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 2.154,
+          "playing": true
+        },
+        {
+          "at": 2.8287482999985514,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "Ended",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 2.8290167999984988,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.0962332999988575,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.3636783999972977,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.6286710999993375,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.8811520999988716,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.147866899998917,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.413444099998742,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.678861999997025,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.945916799999395,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.21228599999813,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.478661799999827,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.745937699997739,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 6.012793099998817,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 6.278762099998858,
+          "loudness": 0,
+          "length": 2.34,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        }
+      ],
+      "max_time_position": 2.325
+    },
+    {
+      "initial": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root.CornAudio_reinforcement_arrival_3",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_3",
+        "key": "COC_Monster_02",
+        "volume": 0.9489065408706665,
+        "speed": 1,
+        "uri": "rbxassetid://92691373477671",
+        "playing": true,
+        "group_binding": true,
+        "time_length": 3.03,
+        "listener_root_distance": 216.24359130859375,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "latest": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root.CornAudio_reinforcement_arrival_3",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_3",
+        "key": "COC_Monster_02",
+        "volume": 0.9489065408706665,
+        "speed": 1,
+        "uri": "rbxassetid://92691373477671",
+        "playing": false,
+        "group_binding": true,
+        "time_length": 3.03,
+        "listener_root_distance": 180.059326171875,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "attached_at": 0.48129469999912544,
+      "positive_loudness_samples": 90,
+      "max_forward_cursor_delta": 0.04300000000000015,
+      "role": "reinforcement_arrival_3",
+      "last_present": {
+        "path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root.CornAudio_reinforcement_arrival_3",
+        "present": true,
+        "owned": true,
+        "max_distance": 1400,
+        "root_binding": true,
+        "rolloff": "Linear",
+        "role": "reinforcement_arrival_3",
+        "key": "COC_Monster_02",
+        "volume": 0.9489065408706665,
+        "speed": 1,
+        "uri": "rbxassetid://92691373477671",
+        "playing": false,
+        "group_binding": true,
+        "time_length": 3.03,
+        "listener_root_distance": 180.059326171875,
+        "loudness": 0,
+        "root_path": "Workspace.CornMap.CornRoundRuntime.Monster3.Root",
+        "group": "SoundService.CornRoundAudio_5bbf6cbe-d2f7-4cb8-8c78-263d4b3b99be.Effects",
+        "min_distance": 20,
+        "looped": false,
+        "time_position": 0,
+        "loaded": true,
+        "group_volume": 0.800000011920929
+      },
+      "expected": {
+        "key": "COC_Monster_02",
+        "uri": "rbxassetid://92691373477671",
+        "index": 3,
+        "volume": 0.9489065499999999
+      },
+      "playing_property_mismatch_samples": 0,
+      "max_loudness": 94.49172019958496,
+      "initial_playing": true,
+      "max_time_length": 3.03,
+      "playing_samples": 91,
+      "samples": 360,
+      "expected_properties_observed": true,
+      "decoded_playback_observed": true,
+      "events": {
+        "Loaded": 0,
+        "Played": 0,
+        "Stopped": 0,
+        "Ended": 1
+      },
+      "matching_property_samples": 360,
+      "event_trace": [
+        {
+          "at": 3.4964339999969525,
+          "kind": "Ended",
+          "cursor": 0,
+          "length": 3.03
+        }
+      ],
+      "cursor_advances": 90,
+      "traces": [
+        {
+          "at": 0.48129469999912544,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": true
+        },
+        {
+          "at": 0.7619697999980417,
+          "loudness": 90.87710827589035,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.277,
+          "playing": true
+        },
+        {
+          "at": 1.02881509999861,
+          "loudness": 64.98246639966965,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.555,
+          "playing": true
+        },
+        {
+          "at": 1.2961063999973703,
+          "loudness": 60.61241403222084,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0.832,
+          "playing": true
+        },
+        {
+          "at": 1.5623728999999003,
+          "loudness": 76.0645717382431,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.088,
+          "playing": true
+        },
+        {
+          "at": 1.8302030999984709,
+          "loudness": 71.07997685670853,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.344,
+          "playing": true
+        },
+        {
+          "at": 2.0965273000001616,
+          "loudness": 81.7272886633873,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.622,
+          "playing": true
+        },
+        {
+          "at": 2.3627763999975286,
+          "loudness": 75.96177607774734,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 1.878,
+          "playing": true
+        },
+        {
+          "at": 2.6326217999994697,
+          "loudness": 88.18937093019485,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 2.155,
+          "playing": true
+        },
+        {
+          "at": 2.8973473999976704,
+          "loudness": 73.87833297252655,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 2.432,
+          "playing": true
+        },
+        {
+          "at": 3.162185799999861,
+          "loudness": 72.86026328802109,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 2.688,
+          "playing": true
+        },
+        {
+          "at": 3.4286409999986063,
+          "loudness": 7.641753647476435,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 2.944,
+          "playing": true
+        },
+        {
+          "at": 3.4964357999997446,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "Ended",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.4967781999985164,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 3.7789802999977837,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.0458300999998755,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.312120799997501,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.581608399999823,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 4.845706500000233,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.112134699997114,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.379295399998227,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.646099199999298,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 5.912593699998979,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        },
+        {
+          "at": 6.179384799997933,
+          "loudness": 0,
+          "length": 3.03,
+          "loaded": true,
+          "kind": "sample",
+          "cursor": 0,
+          "playing": false
+        }
+      ],
+      "max_time_position": 2.987
+    }
+  ],
+  "reason": "after_first_complete",
+  "connections_disconnected": true,
+  "dropped_sounds": 0,
+  "role_counts": {
+    "reinforcement_arrival_3": 1,
+    "reinforcement_arrival_2": 1
+  },
+  "observer_ok": true,
+  "sample_interval": 0.03,
+  "after_first_observed": 12.016254199999821,
+  "duration": 12.497355899999093
+}

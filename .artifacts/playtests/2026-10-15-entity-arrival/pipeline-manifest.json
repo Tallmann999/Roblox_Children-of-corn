@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "files": {
+    "scripts/build-entity-arrival-installer.py": {
+      "bytes": 9888,
+      "sha256": "75f153fb607054a9c94609849feec8fd5fdea868ac9f3ad7baa7dc85962bcefb"
+    },
+    "scripts/install-entity-arrival.luau": {
+      "bytes": 101404,
+      "sha256": "f212a592fce57e44b72a1139a56fb8783ba3afd0afe91285300f0a9b0a045023"
+    },
+    "scripts/verify-entity-arrival-copy.py": {
+      "bytes": 8093,
+      "sha256": "af4e072f8311390c1dbd6290afa46daa42a81b9d909930f88097c6b4c4e7235d"
+    },
+    "scripts/promote-tested-entity-arrival-copy.py": {
+      "bytes": 5964,
+      "sha256": "5954774ae12bacf4e499347207be4edcf171a1b98013d4b009113269c32bfe3f"
+    },
+    "tests/entity-arrival-installer.luau": {
+      "bytes": 8203,
+      "sha256": "dd05d1b40ab88435f27f20f3c15389807eccaabf27ad53402176fa8bc4c55e28"
+    },
+    "tests/entity-arrival-copy-verifier.py": {
+      "bytes": 10545,
+      "sha256": "3ed4fcc9563faa349b51601d5df0433c102667e0437d4e2ed9335f50b7eb69d0"
+    },
+    "tests/entity-arrival-promoter-guards.py": {
+      "bytes": 6887,
+      "sha256": "e6488126173d3537b0aaf336050a78f2bcdc291d92afecec76f29269290d08b5"
+    },
+    "place/Children_of_corn.before-entity-arrival-20261015.rbxl": {
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68"
+    }
+  },
+  "allowed_existing_source_changes": [
+    "ReplicatedStorage/GameShared/Game/Balance",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Game/SoloRound"
+  ],
+  "new_instances": 0,
+  "instances": 4160,
+  "project_sources": 75,
+  "fog_sources": 3,
+  "fixture_report": "pipeline-fixtures.json",
+  "scope": "Guarded solo feature pipeline only; immutable exact-byte before-entity-arrival backup, no scene serialization or live Studio mutation by this worker."
+}

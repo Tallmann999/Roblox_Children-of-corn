@@ -15,6 +15,7 @@ RoundAudio.__index = RoundAudio
 local PROJECT = "children_of_corn"
 local LOOP_KEY = "COC_Corn_Continuous_02"
 local VOICE_KEYS = Rules.VoiceKeys
+local ARRIVAL_KEYS = { [2] = "COC_Monster_01", [3] = "COC_Monster_02" }
 
 local function finite(value: number): boolean
 	return value == value and value > -math.huge and value < math.huge
@@ -109,6 +110,158 @@ function RoundAudio:_sound(
 	sound.SoundGroup = self.groups[category]
 	sound.Parent = parent
 	return sound
+end
+
+function RoundAudio:_reinforcementIndex(hunt: any): number?
+	if type(hunt) ~= "table" or hunt.destroyed ~= false or hunt.world ~= self.world then
+		return nil
+	end
+	local model, root = hunt.model, hunt.root
+	if
+		typeof(model) ~= "Instance"
+		or not model:IsA("Model")
+		or typeof(root) ~= "Instance"
+		or not root:IsA("BasePart")
+		or typeof(self.world.Runtime) ~= "Instance"
+		or self.world.Runtime.Parent ~= self.world.Root
+		or self.world.Runtime:GetAttribute("corn_project_id") ~= PROJECT
+		or model.Parent ~= self.world.Runtime
+		or model:GetAttribute("CornMonsterOwned") ~= true
+		or model:GetAttribute("corn_project_id") ~= PROJECT
+		or model:GetAttribute("MonsterRigVersion") ~= 1
+		or root.Parent ~= model
+		or root.Name ~= "Root"
+		or model.PrimaryPart ~= root
+	then
+		return nil
+	end
+	local index = model:GetAttribute("MonsterIndex")
+	if
+		(index ~= 2 and index ~= 3)
+		or model.Name ~= "Monster" .. tostring(index)
+		or not ({ patrol = true, chase = true, trapped = true, capturing = true })[hunt.state]
+	then
+		return nil
+	end
+	return index
+end
+
+function RoundAudio:_arrivalGroupOwned(group: any): boolean
+	return typeof(group) == "Instance"
+		and group:IsA("SoundGroup")
+		and self.groups.Effects == group
+		and group.Parent == self.arrivalGroupsFolder
+		and group.Name == "Effects"
+		and owned(group)
+		and group:GetAttribute("audio_role") == "group_Effects"
+		and self.arrivalGroupsFolder.Parent == SoundService
+		and owned(self.arrivalGroupsFolder)
+		and self.arrivalGroupsFolder:GetAttribute("audio_role") == "groups"
+end
+
+function RoundAudio:_arrivalOwned(entry: any): boolean
+	local sound, group = entry.sound, entry.group
+	return self:_reinforcementIndex(entry.hunt) == entry.index
+		and entry.hunt.root == entry.root
+		and entry.hunt.model == entry.model
+		and sound.Parent == entry.root
+		and owned(sound)
+		and sound.Name == "CornAudio_" .. entry.role
+		and sound:GetAttribute("audio_role") == entry.role
+		and sound:GetAttribute("AudioAssetKey") == entry.key
+		and sound.SoundId == entry.id
+		and not sound.Looped
+		and sound.SoundGroup == group
+		and self:_arrivalGroupOwned(group)
+end
+
+-- Only SoloRound's successful authoritative two-NPC spawn calls this method.
+-- Binding or synchronizing an existing hunt in Step never emits an arrival.
+function RoundAudio:ReinforcementsSpawned(hunts: any): number
+	if self.destroyed or type(hunts) ~= "table" or #hunts ~= 2 then
+		return 0
+	end
+	for key in hunts do
+		if key ~= 1 and key ~= 2 then
+			return 0
+		end
+	end
+	local byIndex = {}
+	for _, hunt in hunts do
+		local index = self:_reinforcementIndex(hunt)
+		if not index or byIndex[index] then
+			return 0
+		end
+		byIndex[index] = hunt
+	end
+	if not byIndex[2] or not byIndex[3] then
+		return 0
+	end
+	local pending = {}
+	for index = 2, 3 do
+		if not self.arrivalSeen[index] then
+			-- Consume both appearances before any playback can notify observers.
+			self.arrivalSeen[index] = true
+			pending[index] = true
+		end
+	end
+	local requested = 0
+	for index = 2, 3 do
+		-- Replaced roots, handoffs and revival cannot replay a round's appearance.
+		if not pending[index] or not self:_arrivalGroupOwned(self.groups.Effects) then
+			continue
+		end
+		local hunt, key = byIndex[index], ARRIVAL_KEYS[index]
+		local role = "reinforcement_arrival_" .. tostring(index)
+		local sound = self:_sound(
+			hunt.root,
+			key,
+			role,
+			Rules.Volume.Awakening,
+			"Effects",
+			Rules.Ranges.Awakening,
+			false
+		)
+		-- These sounds have a stricter ownership lifecycle than legacy voices.
+		-- Keep them outside generic cleanup so a foreign takeover is preserved.
+		local createdIndex = table.find(self.created, sound)
+		if createdIndex then
+			table.remove(self.created, createdIndex)
+		end
+		sound.RollOffMode = Enum.RollOffMode.Linear
+		local entry = {
+			hunt = hunt,
+			index = index,
+			model = hunt.model,
+			root = hunt.root,
+			sound = sound,
+			group = self.groups.Effects,
+			key = key,
+			role = role,
+			id = Assets.Get(key).Id,
+		}
+		if self:_arrivalOwned(entry) then
+			self.arrivals[index] = entry
+			request(sound, true)
+			requested += 1
+		end
+	end
+	return requested
+end
+
+function RoundAudio:_stepArrivals(caught: boolean, removing: boolean?)
+	for index, entry in self.arrivals do
+		if not self:_arrivalOwned(entry) then
+			-- Foreign identity, parent, URI or group: relinquish without any writes.
+			self.arrivals[index] = nil
+		elseif removing then
+			stop(entry.sound)
+			destroyOwned(entry.sound)
+			self.arrivals[index] = nil
+		elseif caught then
+			stop(entry.sound)
+		end
+	end
 end
 
 function RoundAudio:_stepCricket(entry: any, now: number)
@@ -206,6 +359,8 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 		wakePlayed = false,
 		wakePrimaryRoot = nil :: BasePart?,
 		wakeUntil = 0,
+		arrivals = {},
+		arrivalSeen = {},
 		startedAt = nil :: number?,
 		pollAt = -math.huge,
 		destroyed = false,
@@ -234,6 +389,7 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 	groupsFolder.Name = "CornRoundAudio_" .. id
 	self:_remember(groupsFolder, "groups")
 	groupsFolder.Parent = SoundService
+	self.arrivalGroupsFolder = groupsFolder
 	for _, category in { "Music", "Ambience", "Effects" } do
 		local group = Instance.new("SoundGroup")
 		group.Name = category
@@ -597,6 +753,7 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hu
 		self:Destroy()
 		return
 	end
+	self:_stepArrivals(phase == "caught")
 	if not self.startedAt then
 		self.startedAt = now
 	end
@@ -667,6 +824,7 @@ function RoundAudio:Destroy()
 		return
 	end
 	self.destroyed = true
+	self:_stepArrivals(false, true)
 	for index = #self.created, 1, -1 do
 		local item = self.created[index]
 		if item:IsA("Sound") then

@@ -1,0 +1,88 @@
+{
+  "matching_sources": 75,
+  "matching_asset_sources": 3,
+  "total_sources": 78,
+  "new_instances": 0,
+  "removed_instances": 0,
+  "field_side": 630,
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/Balance",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Game/SoloRound"
+  ],
+  "source_change_count": 3,
+  "declared_source_paths": [
+    "ReplicatedStorage/GameShared/Game/Balance",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Game/SoloRound"
+  ],
+  "reindexed_exporter_paths": 0,
+  "world_and_lighting_exact": true,
+  "original_art_preserved": true,
+  "retained_identities_names_classes_parents_exact": true,
+  "allowed_changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/Balance",
+      "property": "Source",
+      "reason": "declared_entity_arrival_source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/SoloRound",
+      "property": "Source",
+      "reason": "declared_entity_arrival_source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/RoundAudio",
+      "property": "Source",
+      "reason": "declared_entity_arrival_source"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor_metadata"
+    }
+  ],
+  "passed": true,
+  "original_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "candidate_sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+  "original_instances": 4160,
+  "candidate_instances": 4160,
+  "bytes": 997184,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.086627000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.090372200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Read-only exact engine bytes. All 75 src and three fog Sources match declared files; only three approved Source contents may change. Zero instance/world/Lighting/art/raw Terrain deltas, exact retained identities/classes/names/parents; existing narrow camera/selection editor metadata only. No scene serialization."
+}

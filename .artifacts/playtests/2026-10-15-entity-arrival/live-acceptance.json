@@ -1,0 +1,214 @@
+{
+  "passed": true,
+  "studio_id": "1712610d-6d4d-441b-99a7-3b0598e8a566",
+  "scene": "Children_of_corn.rbxl",
+  "scope": "Installed and tested clean solo feature only. Native Start/Confirm/E-key/E-gate with diagnostic teleport and temporary camera aiming; not blind search, human mix, fear or long FPS/multiplayer acceptance.",
+  "source_install": {
+    "changed": 3,
+    "created": 0,
+    "project_sources": 75,
+    "total_sources": 78,
+    "repeat": {
+      "created": 0,
+      "repeated": true,
+      "totalSources": 78,
+      "changed": 0,
+      "sources": 75
+    }
+  },
+  "detection": {
+    "base_radius": 48,
+    "scratch_removed": true,
+    "checks": {
+      "1": {
+        "state": "chase",
+        "radius": 48,
+        "tested_distance": 47.99,
+        "index": 1
+      },
+      "2": {
+        "state": "patrol",
+        "radius": 48,
+        "tested_distance": 48.01,
+        "index": 1
+      },
+      "3": {
+        "state": "chase",
+        "radius": 96,
+        "tested_distance": 95.99,
+        "index": 1
+      },
+      "4": {
+        "state": "patrol",
+        "radius": 96,
+        "tested_distance": 96.01,
+        "index": 1
+      },
+      "5": {
+        "state": "chase",
+        "radius": 96,
+        "tested_distance": 95.99,
+        "index": 2
+      },
+      "6": {
+        "state": "patrol",
+        "radius": 96,
+        "tested_distance": 96.01,
+        "index": 2
+      },
+      "7": {
+        "state": "chase",
+        "radius": 96,
+        "tested_distance": 95.99,
+        "index": 3
+      },
+      "8": {
+        "state": "patrol",
+        "radius": 96,
+        "tested_distance": 96.01,
+        "index": 3
+      },
+      "9": {
+        "physical_los": true,
+        "visible_at_40": true,
+        "protection": true
+      }
+    },
+    "scope": "Actual production NPC methods and real engine LOS; isolated actors, no player or author-world changes",
+    "passed": true,
+    "finale_radius": 96
+  },
+  "gate": {
+    "native_E": true,
+    "reinforcements": 2,
+    "all_three_detection_radius": 96
+  },
+  "client_trials": [
+    {
+      "path": "live-client-first.json",
+      "passed": true,
+      "elapsed": 13.83103669999764,
+      "after_first": 12.030487300002278,
+      "sound_count": 2,
+      "sounds": [
+        {
+          "role": "reinforcement_arrival_2",
+          "uri": "rbxassetid://100872584572146",
+          "length": 2.34,
+          "initial_playing": true,
+          "events": {
+            "Loaded": 0,
+            "Played": 0,
+            "Stopped": 0,
+            "Ended": 1
+          },
+          "max_loudness": 89.9139940738678,
+          "positive_loudness_samples": 68,
+          "cursor_advances": 68,
+          "all_properties_match": true
+        },
+        {
+          "role": "reinforcement_arrival_3",
+          "uri": "rbxassetid://92691373477671",
+          "length": 3.03,
+          "initial_playing": true,
+          "events": {
+            "Loaded": 0,
+            "Played": 0,
+            "Stopped": 0,
+            "Ended": 1
+          },
+          "max_loudness": 94.48686242103577,
+          "positive_loudness_samples": 89,
+          "cursor_advances": 89,
+          "all_properties_match": true
+        }
+      ]
+    },
+    {
+      "path": "live-client-final.json",
+      "passed": true,
+      "elapsed": 12.497355899999093,
+      "after_first": 12.016254199999821,
+      "sound_count": 2,
+      "sounds": [
+        {
+          "role": "reinforcement_arrival_2",
+          "uri": "rbxassetid://100872584572146",
+          "length": 2.34,
+          "initial_playing": true,
+          "events": {
+            "Loaded": 0,
+            "Played": 0,
+            "Stopped": 0,
+            "Ended": 1
+          },
+          "max_loudness": 91.25859290361404,
+          "positive_loudness_samples": 69,
+          "cursor_advances": 70,
+          "all_properties_match": true
+        },
+        {
+          "role": "reinforcement_arrival_3",
+          "uri": "rbxassetid://92691373477671",
+          "length": 3.03,
+          "initial_playing": true,
+          "events": {
+            "Loaded": 0,
+            "Played": 0,
+            "Stopped": 0,
+            "Ended": 1
+          },
+          "max_loudness": 94.49172019958496,
+          "positive_loudness_samples": 90,
+          "cursor_advances": 90,
+          "all_properties_match": true
+        }
+      ]
+    }
+  ],
+  "observer_limitations": [
+    "DescendantAdded attached after production Play, so Played=0 is incomplete and not a valid once-call predicate. InitialPlaying/decoded cursor/Ended/Stopped data accepted; exact-once call counts are covered by the production adapter.",
+    "Temporary MCP-context _sound wrapper saw zero production calls; module/context boundary is suspected, not established. Hook restored exact at watchdog; its Play-count predicate is invalid. Neither failed diagnostic changes production Sources."
+  ],
+  "cleanup": {
+    "native_Alt_Leave": true,
+    "server": {
+      "monsters": {
+        "1": "Monster"
+      },
+      "arrival_sounds": [],
+      "runtime_present": true
+    },
+    "client": {
+      "foreign_gui": false,
+      "player_anchored": false,
+      "arrival_sounds": []
+    },
+    "note": "Immediate server query still saw the primary Monster, so this trace only accepts removal of both reinforcement arrival Sounds, not all NPC cleanup."
+  },
+  "final_edit": {
+    "runtime": false,
+    "camera": "Fixed",
+    "farm": {
+      "applied": 0,
+      "built": 0,
+      "scope": "server",
+      "pending": 0,
+      "targets": 40
+    },
+    "owned_runtime_audio": [],
+    "instances": 5973
+  },
+  "disk_save": {
+    "status": "author Ctrl+S 2026-10-15 14:52:11; strict verifier PASS and independent disk SHA256 matches",
+    "baseline_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+    "bytes": 997184,
+    "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+    "preservation_report": "preservation.json",
+    "only_three_source_changes": true,
+    "world_art_lighting_identities_parents_raw_terrain_exact": true,
+    "promotion_or_scene_serialization": false
+  },
+  "known_external_audio_failure": "Fire rbxassetid://105538100476464 not approved; existing issue, not changed. Initial preload warnings for other IDs do not invalidate later actual decoded accepted arrival sounds."
+}

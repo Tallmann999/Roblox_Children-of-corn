@@ -4,11 +4,12 @@ D:\ROBLOX\My_Projects\Roblox_Children of Corn
 Это передача контекста после чата 15 октября 2026. Сначала прочитай этот файл, AGENTS.md и перечисленные актуальные документы. Новую задачу я дам следующим сообщением; не повторяй исторические установки и не начинай новую фичу сам.
 
 АКТУАЛЬНЫЙ ПРОВЕРЕННЫЙ ФАЙЛ
-place/Children_of_corn.rbxl, сохранён автором Ctrl+S 15.10.2026 в 12:48:01 UTC+3.
-995988 байт; SHA256:
-493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68
+place/Children_of_corn.rbxl, сохранён автором Ctrl+S 15.10.2026 в 14:52:11 UTC+3.
+997184 байт; SHA256:
+b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8
 78 Sources = 75 проектных + 3 импортированного CornfieldFog; 4160 экземпляров.
-Strict read-only audit PASS; последние изменения — только 4 Source: AudioAssets, AudioRules, RoundAudio, AudioController. MovementController возвращён точно к версии принятого поля630. Весь мир, Lighting, арт, identity/parents и raw Terrain сохранены. Нет пересериализации сцены или публикации.
+Strict verify-entity-arrival-copy.py PASS против immutable before-entity-arrival: изменены ровно3Source — Balance, SoloRound, RoundAudio. Добавлений/удалений экземпляров нет; весь мир, Lighting, арт, identity/parents и raw Terrain точные. Независимый SHA256 совпал. Файл уже сохранён и проверен, пересериализации сцены или публикации нет.
+Предыдущий принятый continuous-rustle checkpoint 12:48:01 — ИСТОРИЯ:995988байт/hash493bc1f9…; он сохранён как immutable baseline новой фичи. Его4Source-дельты относительно поля630 и точный MovementController остаются принятыми историческими результатами, не перечнем последних изменений.
 
 ТЕКУЩИЙ MVP
 Локальный solo PC прототип в Studio. Только hard/ночь20:30, без выбора лёгкого/среднего. Нет persistence, покупок, lobby, multiplayer или публичного publishing.
@@ -16,9 +17,9 @@ Strict read-only audit PASS; последние изменения — толь�
 Кукуруза с самого появления жёлтая: saved растения и unparented runtime template имеют dryTexture103653296385119. Цвет земли НЕ менялся; исходная зелёная модель ServerStorage сохранена.
 Ключ,2энергетика,2капкана появляются на отдельных server-selected slots. Инвентарь5слотов, предметы в руках/use-анимации; энергетик даёт boost30сек, капкан держит NPC10сек. Исправлен баг скрытых в трёх старых бочках капканов: trapX−3.6 от slot, energyX+3.6 на пеньке. Подборы E проверены.
 Первое лицо, серверные спринт4сек/восстановление6сек. Мини-карта с посещениями/смертями, M/Alt.
-Монстр оживает через20сек; последние5сек предупреждение. Только первое обнаружение: скорость игрока10сек, затем теряет след/патрулирует; дальнейшая погоня прежняя, detection16/LOS и задержка ускорения2сек.
+Монстр оживает через20сек; последние5сек предупреждение. Только первое обнаружение: скорость игрока10сек, затем теряет след/патрулирует; дальнейшая погоня прежняя, detection48/LOS и задержка ускорения2сек. Прежний радиус16 относится к checkpoint до новой фичи.
 При поимке — локальная сцена большого рта/тряска головы и камеры/брызги краски. «Возрождение»: после первой поимки тот же раунд, после второй новый; «Выход из игры» возвращает к стартовому меню.
-Ключ/E-ворота запускают финал120секунд: всего3монстра с обнаружением32. Время идёт и во время окна возрождения. Победа после физического выхода за ворота; награда20тестовых алмазов. По истечении срока невыбравшийся проигрывает.
+Ключ/E-ворота запускают финал120секунд: всего3монстра с обнаружением96 у каждого; появление Monster2/3 сопровождается двумя отдельными одноразовыми криками. Время идёт и во время окна возрождения. Победа после физического выхода за ворота; награда20тестовых алмазов. По истечении срока невыбравшийся проигрывает. Прежний финальный радиус32 — исторический.
 Вывеска выхода увеличена×3 и мигает физическим неоном; дымка CornfieldFog адаптирована. Bloom автора0.85/32 сохранён.
 
 ОКОНЧАТЕЛЬНЫЙ ВЫБОР ЗВУКА
@@ -31,13 +32,23 @@ Server CornAudio_corn_rustle — ТИХИЙ metadata Sound новогоURI/Volum
 Actual native W/stop/resume/Shift/wrap и три настоящих NPC/пространственные loops/реальный капкан/cleanup прошли. Курсоры не сбрасываются. Были диагностические переносы игрока/NPC и временный anchor игрока; это не обычный слепой раунд. Чужие Source/Sound изменения защищены.
 Fire105538100476464 по-прежнему внешний not-approved asset; разрешения/перезагрузку/публикацию наугад НЕ менять. Не заявлять слышимость всех16исторических assets или принятие человеческого микса.
 
+ПОСЛЕДНЯЯ СОХРАНЁННАЯ ФИЧА — КРИКИ И ОБНАРУЖЕНИЕ
+Автор подтвердил16→48 до ворот и32→96 у всех3NPC после ворот. LOS, скорости, поимки, капкан, награда и120сек остаются прежними. Только после успешного создания двух подкреплений SoloRound вызывает RoundAudio:ReinforcementsSpawned: Monster2 получает существующий COC_Monster_01/100872584572146, Monster3 — COC_Monster_02/92691373477671. Два отдельных Root-bound Sound, Effects, Volume0.95, Linear20..1400, Loopedfalse. Каждый индекс запускается один раз за раунд; sync/Step/смена lead/root/revive/капкан не повторяют крик. Caught/terminal прекращают соответствующее аудио; новые preload ID/remotes не добавлены, rustleURI и cursors не меняются.
+Native Start/Confirm, E-ключ и E-ворота прошли в двух свежих диагностических раундах. Клиент действительно декодировал2.34/3.03сек, cursor и положительный PlaybackLoudness подтверждены, по Ended1/Stopped0 на каждый звук, без повтора12.030/12.016сек. Это не утверждение native Played1: поздние/неудачные серверные listeners для подсчёта Play не приняты. Actual server engine detection:47.99chase/48.01patrol; у всех3 —95.99chase/96.01patrol; LOS-преграда и защита блокируют обнаружение. Данные и ограничения: docs/2026-10-15_entity-arrival.md.
+14актуальных локальных fixtures и scripts/check.ps1 PASS. Отдельные arrival adapter проверки:45невалидных batch/11foreign takeover, latches до Play, natural tails и cleanup; это отдельно от native воспроизведения. Installer/save pipeline fixtures также PASS.
+
+ВОССТАНОВЛЕНИЕ ПОСЛЕ ЧУЖОГО SYNC И СТАТУС MULTIPLAYER
+Cooking/Rhythm подмена удалена из рабочего Corn файла через проверенное восстановление точных чистых engine-байтов, без scene serialization. Перед восстановлением сохранён immutable place/Children_of_corn.before-foreign-cleanup-20261015.rbxl; мир/Lighting/арт/identity/parents/raw Terrain были точными и сохранены. После reopen Sources сверены; RhythmService/RhythmController/DanceClip и другой чужой код в текущей solo сцене отсутствуют. Подробности: docs/2026-10-15_foreign-cleanup.md.
+Незавершённый multiplayer сохранён отдельно в .artifacts/wip/2026-10-15-multiplayer-src.zip с manifest и исходным diff; архив прочитан обратно с точным совпадением. Его77-source WIP больше не находится в src и не установлен в текущую сцену. Текущий src —75проектных Sources/solo_local. Общий ключ команды был выбран для будущего multiplayer, но успешной native multiplayer приёмки нет. Сохранённые multiplayer документы/fixtures — история WIP, не действующий workflow.
+
 КАК ПРОДОЛЖАТЬ БЕЗОПАСНО
 Работать ТОЛЬКО с Children_of_corn, не трогать соседние сцены Cooking_Cheff/Speed Monkey/Moon_Test.
-Последний Studio ID:23ea8e48-309b-41f3-8083-cef1a81600b2. После рестарта заново list_roblox_studios и проверить имя/сцену. Последнее состояние stopped Edit, CameraTypeFixed, runtime отсутствует. Source installer repeat created0/changed0/75; FarmEnsure40/applied0/built0/pending0. Rojo live выключен.
+Последний Studio ID:1712610d-6d4d-441b-99a7-3b0598e8a566. После рестарта заново list_roblox_studios и проверить имя/сцену. Последнее состояние stopped Edit, CameraTypeFixed, runtime/owned runtime audio отсутствуют;78Sources без чужого кода. Source installer repeat created0/changed0/75; FarmEnsure40/applied0/built0/pending0. Прежний ID23ea8e48… относится к прошлому окну; его не переиспользовать вслепую. Rojo live выключен.
 После reopen farm EditableMesh требует guarded Edit Ensure/restore; Play восстанавливает автоматически. Сначала сверить Sources/ownership, не запускать исторические world installers.
-После кода scripts/check.ps1, затем scripts/build-readability-installer.py --compact и защищённый scripts/install-readability.luau только в правильном stopped Edit. Не запускать старые map/torch/cluster/840/1200 installers поверх630. Unknown Source/open-tab/topology guards сохранять.
-Точный engine save проверять scripts/verify-rustle-comparison-copy.py против immutable place/Children_of_corn.before-rustle-comparison-20261015.rbxl (996617байт/hash489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d). Историческое имя checker подходит итоговому непрерывному звуку; он разрешает только5объявленных Source paths, фактически изменены4. Отдельные engine candidates — только guarded promoter с обоими хэшами. Никакой Lune scene serialization.
+После кода scripts/check.ps1, затем scripts/build-entity-arrival-installer.py --compact и защищённый scripts/install-entity-arrival.luau только в правильном stopped Edit. Этот workflow заменяет прежний rustle/readability-only. Не применять multiplayer WIP или старые map/torch/cluster/840/1200 installers поверх текущего solo630. Unknown Source/open-tab/topology guards сохранять.
+Точный engine save проверять scripts/verify-entity-arrival-copy.py против immutable place/Children_of_corn.before-entity-arrival-20261015.rbxl (995988байт/SHA256493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68). Допустимы ровно3Source-дельты Balance/SoloRound/RoundAudio,78Sources/4160instances и точный мир/Lighting/арт/identity/parents/raw Terrain. Отдельные engine candidates — только scripts/promote-tested-entity-arrival-copy.py с обоими хэшами. Никакой Lune scene serialization.
 Studio MCP не сохраняет локальный rbxl: при необходимых новых правках после теста точные шаги Ctrl+S, затем read-only audit. Не повторять просьбу о сохранении нынешнего файла — он уже сохранён и проверен.
+ИСТОРИЧЕСКИЙ rustle-only save workflow: verify-rustle-comparison-copy.py сравнивал с before-rustle-comparison-20261015.rbxl (996617байт/hash489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d), разрешал5Source paths при фактических4дельтах. Это доказательство предыдущего checkpoint, а не verifier нынешних Balance/SoloRound изменений.
 
 ЧТО ЕЩЁ ОТКРЫТО
 Обычный blind full round после уменьшения поля, страх/микс нового игрока, баланс высокого безопасного пенька, длительный FPS с3NPC и reopen acceptance. Не подменять их диагностическими перемещениями или прежним FPS до финала.
@@ -51,8 +62,14 @@ docs/feature-index.md
 docs/2026-10-15_resize-yellow.md
 docs/2026-10-15_continuous-rustle.md
 docs/2026-10-15_rustle-comparison-save-pipeline.md
+docs/2026-10-15_entity-arrival.md
+docs/2026-10-15_foreign-cleanup.md
+.artifacts/playtests/2026-10-15-entity-arrival/live-acceptance.json
+.artifacts/playtests/2026-10-15-entity-arrival/preservation.json
+.artifacts/playtests/2026-10-15-entity-arrival/live-client-final.json
+.artifacts/playtests/2026-10-15-entity-arrival/live-detection.json
 .artifacts/playtests/2026-10-15-continuous-rustle/live-acceptance.json
 .artifacts/playtests/2026-10-15-continuous-rustle/preservation.json
 .artifacts/playtests/2026-10-15-continuous-rustle/saved-scene.json
 
-Предыдущие документы про режимы840/1200, A/B кнопки и save pending — ИСТОРИЯ. Актуальное состояние выше и в верхнем override AGENTS.md.
+Предыдущие документы про режимы840/1200, A/B кнопки, save pending и незавершённый multiplayer — ИСТОРИЯ. Проверки continuous-rustle/поля630 остаются принятыми в своих пределах; актуальный сохранённый checkpoint — entity-arrival997184/hashb5ef0471… выше и в верхнем override AGENTS.md.

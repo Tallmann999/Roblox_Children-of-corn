@@ -1,0 +1,72 @@
+[
+  {
+    "test": "audio-controller",
+    "exit_code": 0,
+    "output": "PASS: three fixed indexed NPCs/nearest actual own-target/foreign+fourth guards; background/own-target-only quiet hunt fades and distance mute; authoritative use first-sync/duplicate/stale/terminal/retry guards; caught/menu/death/reset stop; exact default Running/Climbing existing/late-ID/new-player/late-Root/respawn mute, volume rewrites, unknown duplicates/custom IDs and jump/death/corn preservation, guarded restoration; bounded resolver/all15unique-valid-clips asynchronous preload/missing-ID/failure/8s timeout; transient failure later-loaded recovery without effect history replay/stale failure after loaded; category groups/ownership/foreign preservation; zero gameplay/world/camera writes and cleanup"
+  },
+  {
+    "test": "audio-assets",
+    "exit_code": 0,
+    "output": "PASS:15 preserved author clips plus 1 continuous comparison clip; finite durations/gains, role headroom, walk1/sprint1.5; configured Roblox IDs=16"
+  },
+  {
+    "test": "audio-rules",
+    "exit_code": 0,
+    "output": "PASS: five staggered 15/15 cycles, 1-second cricket start/end envelopes including shorter decoded clips and invalid inputs; existing hunt fades/intensity and bounded pools"
+  },
+  {
+    "test": "rustle-continuous",
+    "exit_code": 0,
+    "output": "PASS continuous corn client adapter: one persistent owner loop plus ten bounded spatial loops for7other players/3NPC, fourthNPC refused; automatic sound2/noAB; stableURI/rolloff; Pause/Resume at11 and independentNPC cursor; walk/sprint/energy speeds; naturalwrap; menu/capture/caught/terminal/retry/actualRoot replacement; missing/failed/late decode; foreign personal identity preservation; cleanup/no gameplay writes. No audible claim."
+  },
+  {
+    "test": "rustle-continuous-server",
+    "exit_code": 0,
+    "output": "PASS continuous corn server adapter: only silent loop metadata; initial/change-only active+speed; walk12/sprint18/energy24 clamps; physical movement/ground/corn/stop/air/road/teleport/caught validation; all3NPC independent measured/quantized speed and trapped/capture pause; stable patrol10/chase getter13 override poll noise; no server Play/Stop/URI changes before cleanup. No audible claim."
+  },
+  {
+    "test": "rustle-continuous-ui",
+    "exit_code": 0,
+    "output": "PASS continuous corn UI adapter: A/B buttons/state/APIs/attrs absent; existing Alt cursor release, map/capture guards and GUI/input cleanup retained. Physical input requires Studio."
+  },
+  {
+    "test": "corn-appearance",
+    "exit_code": 0,
+    "output": "PASS: asset whitelist, ready/hard yellow, DEV Start, duplicate registration and 384/2ms batch guards\nPASS: dry-template clone inheritance, actual near flags, far/overview guards, foreign mesh/URI/physics/SurfaceAppearance preservation, ownership loss and removal\nPASS: Destroy disconnects actual registered Heartbeat and restores managed copies without overwriting manual unknown edits"
+  },
+  {
+    "test": "corn-backdrop",
+    "exit_code": 0,
+    "output": "PASS: clone18/time2ms budget, exact source aspect/height, exclusions, handoff, same-session reuse, input cancellation and connection cleanup\n[WARN]\n[CornBackdropController] Full-field grid exceeds the 20000 plant cap; saved overview preserved\n[WARN]\n[CornBackdropController] Existing CornMap/CornClientBackdrop was preserved; no replacement attempted\n[WARN]\n[CornBackdropController] Near-field backdrop bridge unavailable; saved overview preserved\n[WARN]\n[CornBackdropController] Changed ownership or foreign backdrop content was preserved; saved overview restored\nPASS: oversized-grid fallback, unknown name/content preservation, unavailable bridge and exact author LTM restoration\n[WARN]\n[CornBackdropController] Backdrop needs a prepared BasePart template compatible with near-field coverage; saved overview preserved\nPASS: unsupported Model template refuses backdrop publication and restores exact authored overview visibility"
+  },
+  {
+    "test": "corn-controller-quality",
+    "exit_code": 0,
+    "output": "PASS: LOD hysteresis/no threshold churn; root/camera elevation+2s; overview cache/event invalidation/ownership restore/disconnect; Ready fallback+visibility handoff; runtime immutable cache/dirty guard; far6 no sparse9 hole/fine-only loaded counts;18stud retention;100groups/4032plants; inherited fidelity/aspect/source preservation"
+  },
+  {
+    "test": "corn-yellow-startup",
+    "exit_code": 0,
+    "output": "PASS: production prepare publishes dry before Parent, clones inherit dry, repeat and exact original import preserved\nPASS: unknown mesh/texture/SurfaceAppearance and 9 ownership/session/duplicate guards publish nothing and preserve existing art"
+  },
+  {
+    "test": "inventory-barrel-clearance",
+    "exit_code": 0,
+    "output": "   0.183695100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n{\"actual_saved_legacy_cylinders\":3,\"all15_slot_bindings_preserved\":true,\"before_and_after_resize_rounds\":30,\"checked_trap_parts\":450,\"counts_and_key_exclusion_preserved\":true,\"minimum_trap_to_barrel_x_gap\":3.699987769126892,\"passed\":true,\"proved_former_inside_barrel_cases\":6,\"scope\":\"Production InventoryWorld/ItemModels and actual saved cylinder geometry in bounded Lune adapter; analytical separation/footprint, no engine raycast/native E/scene write claim\"}"
+  },
+  {
+    "test": "resize-layout",
+    "exit_code": 0,
+    "output": "   0.792150100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  11.395373100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  13.093247000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  14.923769400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  16.630105900s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  18.654489400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  20.651986600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  22.342574300s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  24.129443600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  26.026530800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  29.100568700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  31.808824200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  34.600358700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  37.140107700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  39.453896400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  41.038295000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  42.685904800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  44.804540700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  47.620068400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  51.841852300s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  55.265329100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  58.398444200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\n  60.184855200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\nPASS: actual generated resize630/27torches/15slots/904preview/2576overview, dry-before-visible, fullrepeat0; 16refusals; same-name barrel ordering; rollbackfirst/middle/plant; exact immutablebytes. Lune adapter only."
+  },
+  {
+    "test": "entity-arrival-audio",
+    "exit_code": 0,
+    "output": "PASS production explicit reinforcement arrival audio: first sync/Step silent, exact pair validation (45 rejects), two independently bound Monster_01/02 one-shots, pre-Play/reentrant per-round latches, no replacement/rebind/lead/trap/revive replay, natural tails, immediate caught stop and terminal cleanup, 11 foreign takeover guards, owned child preservation and unchanged continuous rustle URI/playback. Adapter only; native decoding/audibility separate."
+  },
+  {
+    "test": "entity-detection",
+    "exit_code": 0,
+    "output": "PASS entity-detection: production48/96 boundaries for all three finale NPCs, physical LOS, protection and real acquisition at40; geometry adapter, not native physics"
+  }
+]

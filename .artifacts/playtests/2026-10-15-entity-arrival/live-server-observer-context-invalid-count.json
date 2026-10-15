@@ -1,0 +1,11 @@
+{
+  "observer_version": 2,
+  "elapsed": 60.00567559999763,
+  "rows": [],
+  "passed": false,
+  "factory_restored_exact": true,
+  "connections_disconnected": true,
+  "observer_ok": true,
+  "scope": "Diagnostic loaded-module _sound wrapper attaches listeners synchronously before caller Play. No Source/Sound/gameplay writes; exact factory restored after two roles or watchdog. Separate client observer measures decoding and loudness",
+  "errors": []
+}
