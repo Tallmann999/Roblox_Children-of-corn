@@ -1,0 +1,71 @@
+{
+  "matching_sources": 75,
+  "matching_asset_sources": 3,
+  "total_sources": 78,
+  "new_instances": 0,
+  "removed_instances": 0,
+  "field_side": 630,
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/AudioAssets",
+    "ReplicatedStorage/GameShared/Game/AudioRules",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController"
+  ],
+  "source_change_count": 4,
+  "declared_source_paths": [
+    "ReplicatedStorage/GameShared/Game/AudioAssets",
+    "ReplicatedStorage/GameShared/Game/AudioRules",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController"
+  ],
+  "reindexed_exporter_paths": 0,
+  "world_and_lighting_exact": true,
+  "original_art_preserved": true,
+  "retained_identities_names_classes_parents_exact": true,
+  "allowed_changes": [
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController",
+      "property": "Source",
+      "reason": "declared_audio_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/AudioAssets",
+      "property": "Source",
+      "reason": "declared_audio_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/AudioRules",
+      "property": "Source",
+      "reason": "declared_audio_source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/RoundAudio",
+      "property": "Source",
+      "reason": "declared_audio_source"
+    }
+  ],
+  "passed": true,
+  "original_sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d",
+  "candidate_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "original_instances": 4160,
+  "candidate_instances": 4160,
+  "bytes": 995988,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.091866600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.150703000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Read-only exact engine bytes. All 75 src and three fog Sources match declared files; only five approved Source contents may change. Zero instance/world/Lighting/art/raw Terrain deltas, exact retained identities/classes/names/parents; existing narrow camera/selection editor metadata only. No scene serialization."
+}

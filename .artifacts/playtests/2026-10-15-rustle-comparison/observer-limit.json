@@ -1,0 +1,10 @@
+{
+  "first_trace_accepted": false,
+  "failure": "Observer JSON was 280302 bytes, exceeding the StringValue limit of 200000; connections were disconnected before publication failed",
+  "production_changed_for_observer_failure": false,
+  "correction": "200 samples per bounded StringValue child; publish metadata only after all chunks",
+  "repeat_samples": 1632,
+  "repeat_chunks": 9,
+  "repeat_completed": true,
+  "readback_note": "Read individual chunks; returning all escaped JSON through one Studio tool result exceeded its text output limit"
+}

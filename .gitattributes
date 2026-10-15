@@ -11,3 +11,7 @@
 *.rbxmx text eol=lf
 *.fbx binary
 *.png binary
+*.mp3 binary
+
+# Frozen resize manifest: its SHA-256 covers the original CRLF bytes.
+scripts/resize-layout.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

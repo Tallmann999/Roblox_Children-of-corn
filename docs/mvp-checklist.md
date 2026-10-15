@@ -1,10 +1,14 @@
 # Дети кукурузы — MVP checklist
 
-## Текущий follow-up — 2026-10-15
+Последний сохранённый override: второй непрерывный шелест автоматически для игрока и3NPC, временные A/Bкнопки удалены. Actual W/stop/resume/sprint/wrap и3spatialNPC/realtrap/cleanup PASS с диагностической постановкой; [точный отчёт](2026-10-15_continuous-rustle.md). StrictSave995988байт/hash493bc1f9…/78Sources/4160instances/4Source-onlyдельты, весь мир630/Lighting/art/rawTerrain сохранён. Fire остаётся внешним not-approved. Обычный blindround/человеческий страх и микс/длительный3NPC FPS/safe-perch/reopen остаются открытыми. Ниже — история сохранённых этапов.
+
+История принятого поля до нового аудио15октября: поле630×630, кукуруза изначально жёлтая, Ground color прежний. Предметы2energy/2traps/1key и15torch-linkedслотов сохранены; исправлен trap pickup внутри legacybarrels. Actual E обоих расходников каждого вида/ключа, speed24, gate120/3NPC, Wexit20/retry пройдены с диагностической постановкой, не blind поиск. Strict engine save996617байт/hash489af64f…/78Sources/4160instances PASS; [аудит](2026-10-15_resize-yellow.md). Полный обычный раунд, страх/микс, длительный3NPC FPS, safe-perch и reopen остаются открытыми. Последующее Alt-сравнение завершено; MP3 импортирован и принят автоматически для всех actors в итоговой версии выше.
+
+## История дымки и кластеров до уменьшения поля — 2026-10-15
 
 Единственный игровой режим — ночь/hard, награда20; лёгкий и средний удалены из интерфейса и server whitelist. Три импортированных Sources дымки плюс75 code Sources дают78. [Дымка и связанные группы](2026-10-15_haze-clusters.md) сохранены: E-подборы предмета/ключа, E-ворота/W-выход20 и native hard Retry PASS с диагностическим позиционированием. Двадцать invalid-mode guards и gate/3NPC/radius32/reward20once прошли настоящую server fixture. Шелест: controlled36vs18/12сек,40naturalEnds; native ходьба16/16naturalEnds,0Stops/URIcuts. Пары факелов сараев сохранены. **Strict save PASS**:1028519байт/6844instances/78Sources, hash c7015e55…; source equality/world/Lighting/art/rawTerrain кроме явных28CF/5Fog/2Bloom изменений. [Полная приёмка и ограничения](2026-10-15_haze-night-playtest.md). Прежние a897/modes записи ниже — история.
 
-## Сохранённая finale до текущего follow-up — 2026-10-15
+## История сохранённой finale до дымки и кластеров — 2026-10-15
 
 Локальный solo PC, карта 840 × 840, 75 Sources. Установлены 13 Source правок и два дополнительных исправления неона/анимации; новые Sources и remotes не добавлены. [Контракт](2026-10-15_finale.md), [точная приёмка и артефакты](2026-10-15_finale-playtest.md). **Сохранение и strict preservation PASS**: 1019419 байт, hash a897bb52…; reopen отдельно. Новый follow-up дымки/кластеров ещё не входит в этот save.
 

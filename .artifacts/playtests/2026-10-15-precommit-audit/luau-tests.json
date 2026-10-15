@@ -1,0 +1,62 @@
+[
+  {
+    "test": "tests/audio-controller.luau",
+    "exit_code": 0,
+    "output": "PASS: three fixed indexed NPCs/nearest actual own-target/foreign+fourth guards; background/own-target-only quiet hunt fades and distance mute; authoritative use first-sync/duplicate/stale/terminal/retry guards; caught/menu/death/reset stop; exact default Running/Climbing existing/late-ID/new-player/late-Root/respawn mute, volume rewrites, unknown duplicates/custom IDs and jump/death/corn preservation, guarded restoration; bounded resolver/all15unique-valid-clips asynchronous preload/missing-ID/failure/8s timeout; transient failure later-loaded recovery without effect history replay/stale failure after loaded; category groups/ownership/foreign preservation; zero gameplay/world/camera writes and cleanup\r\n"
+  },
+  {
+    "test": "tests/audio-assets.luau",
+    "exit_code": 0,
+    "output": "PASS:15 preserved author clips plus 1 continuous comparison clip; finite durations/gains, role headroom, walk1/sprint1.5; configured Roblox IDs=16\r\n"
+  },
+  {
+    "test": "tests/audio-rules.luau",
+    "exit_code": 0,
+    "output": "PASS: five staggered 15/15 cycles, 1-second cricket start/end envelopes including shorter decoded clips and invalid inputs; existing hunt fades/intensity and bounded pools\r\n"
+  },
+  {
+    "test": "tests/rustle-continuous.luau",
+    "exit_code": 0,
+    "output": "PASS continuous corn client adapter: one persistent owner loop plus ten bounded spatial loops for7other players/3NPC, fourthNPC refused; automatic sound2/noAB; stableURI/rolloff; Pause/Resume at11 and independentNPC cursor; walk/sprint/energy speeds; naturalwrap; menu/capture/caught/terminal/retry/actualRoot replacement; missing/failed/late decode; foreign personal identity preservation; cleanup/no gameplay writes. No audible claim.\r\n"
+  },
+  {
+    "test": "tests/rustle-continuous-server.luau",
+    "exit_code": 0,
+    "output": "PASS continuous corn server adapter: only silent loop metadata; initial/change-only active+speed; walk12/sprint18/energy24 clamps; physical movement/ground/corn/stop/air/road/teleport/caught validation; all3NPC independent measured/quantized speed and trapped/capture pause; stable patrol10/chase getter13 override poll noise; no server Play/Stop/URI changes before cleanup. No audible claim.\r\n"
+  },
+  {
+    "test": "tests/rustle-continuous-ui.luau",
+    "exit_code": 0,
+    "output": "PASS continuous corn UI adapter: A/B buttons/state/APIs/attrs absent; existing Alt cursor release, map/capture guards and GUI/input cleanup retained. Physical input requires Studio.\r\n"
+  },
+  {
+    "test": "tests/corn-appearance.luau",
+    "exit_code": 0,
+    "output": "PASS: asset whitelist, ready/hard yellow, DEV Start, duplicate registration and 384/2ms batch guards\r\nPASS: dry-template clone inheritance, actual near flags, far/overview guards, foreign mesh/URI/physics/SurfaceAppearance preservation, ownership loss and removal\r\nPASS: Destroy disconnects actual registered Heartbeat and restores managed copies without overwriting manual unknown edits\r\n"
+  },
+  {
+    "test": "tests/corn-backdrop.luau",
+    "exit_code": 0,
+    "output": "PASS: clone18/time2ms budget, exact source aspect/height, exclusions, handoff, same-session reuse, input cancellation and connection cleanup\r\n[WARN]\r\n[CornBackdropController] Full-field grid exceeds the 20000 plant cap; saved overview preserved\r\n[WARN]\r\n[CornBackdropController] Existing CornMap/CornClientBackdrop was preserved; no replacement attempted\r\n[WARN]\r\n[CornBackdropController] Near-field backdrop bridge unavailable; saved overview preserved\r\n[WARN]\r\n[CornBackdropController] Changed ownership or foreign backdrop content was preserved; saved overview restored\r\nPASS: oversized-grid fallback, unknown name/content preservation, unavailable bridge and exact author LTM restoration\r\n[WARN]\r\n[CornBackdropController] Backdrop needs a prepared BasePart template compatible with near-field coverage; saved overview preserved\r\nPASS: unsupported Model template refuses backdrop publication and restores exact authored overview visibility\r\n"
+  },
+  {
+    "test": "tests/corn-controller-quality.luau",
+    "exit_code": 0,
+    "output": "PASS: LOD hysteresis/no threshold churn; root/camera elevation+2s; overview cache/event invalidation/ownership restore/disconnect; Ready fallback+visibility handoff; runtime immutable cache/dirty guard; far6 no sparse9 hole/fine-only loaded counts;18stud retention;100groups/4032plants; inherited fidelity/aspect/source preservation\r\n"
+  },
+  {
+    "test": "tests/corn-yellow-startup.luau",
+    "exit_code": 0,
+    "output": "PASS: production prepare publishes dry before Parent, clones inherit dry, repeat and exact original import preserved\r\nPASS: unknown mesh/texture/SurfaceAppearance and 9 ownership/session/duplicate guards publish nothing and preserve existing art\r\n"
+  },
+  {
+    "test": "tests/inventory-barrel-clearance.luau",
+    "exit_code": 0,
+    "output": "   0.187765600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n{\"actual_saved_legacy_cylinders\":3,\"all15_slot_bindings_preserved\":true,\"before_and_after_resize_rounds\":30,\"checked_trap_parts\":450,\"counts_and_key_exclusion_preserved\":true,\"minimum_trap_to_barrel_x_gap\":3.699987769126892,\"passed\":true,\"proved_former_inside_barrel_cases\":6,\"scope\":\"Production InventoryWorld/ItemModels and actual saved cylinder geometry in bounded Lune adapter; analytical separation/footprint, no engine raycast/native E/scene write claim\"}\r\n"
+  },
+  {
+    "test": "tests/resize-layout.luau",
+    "exit_code": 0,
+    "output": "   0.862607200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  10.215108900s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  12.870662100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  15.000374600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  17.011488300s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  18.803589900s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  20.640019700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  22.917019500s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  24.699778500s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  26.447701400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  28.959740200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  31.680267000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  34.081478200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  36.759732600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  39.286818100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  40.683507600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  42.131468100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  43.808947700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  46.701890800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  49.581585600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  52.480539200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  55.020584700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\n  56.715318500s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.\r\nPASS: actual generated resize630/27torches/15slots/904preview/2576overview, dry-before-visible, fullrepeat0; 16refusals; same-name barrel ordering; rollbackfirst/middle/plant; exact immutablebytes. Lune adapter only.\r\n"
+  }
+]

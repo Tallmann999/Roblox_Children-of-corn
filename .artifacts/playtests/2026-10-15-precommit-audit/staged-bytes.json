@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "exact_binary_and_frozen_files": [
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+      "staged_bytes_equal_working_file": true
+    },
+    {
+      "path": "place/Children_of_corn.before-resize-yellow-20261015.rbxl",
+      "bytes": 1028519,
+      "sha256": "c7015e55a7cf4a020fe0ae1e3d40d4c69c17faf10a8f01d8ce4379066c955fed",
+      "staged_bytes_equal_working_file": true
+    },
+    {
+      "path": "place/Children_of_corn.before-rustle-comparison-20261015.rbxl",
+      "bytes": 996617,
+      "sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d",
+      "staged_bytes_equal_working_file": true
+    },
+    {
+      "path": "scripts/resize-layout.json",
+      "bytes": 16525322,
+      "sha256": "aca4b7d116db835eaa638820d4c340b4cfdb3426826b7035fe0b4fae2a0b9f05",
+      "staged_bytes_equal_working_file": true
+    },
+    {
+      "path": "assets/audio/roblox-import/COC_Corn_Continuous_02.mp3",
+      "bytes": 354048,
+      "sha256": "a4dd527430e356cd3b7b5568107e2c3062ca730da5e17a3ed6a3a73ad697d710",
+      "staged_bytes_equal_working_file": true
+    }
+  ],
+  "no_scratch_staged": true,
+  "no_files_at_or_above_100MiB": true
+}

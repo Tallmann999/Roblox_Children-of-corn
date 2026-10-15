@@ -1,0 +1,475 @@
+{
+  "scope": "Actual Studio tests with diagnostic positioning/camera and temporary NPC separation; native E/Two/W/GUI inputs, not ordinary blind search. Fresh native energy pickup repeated after retry. First-ready/retry texture readbacks. Original failed dependent energy loop is not counted as energy pickup acceptance.",
+  "results": {
+    "resizeBindingsFirst": {
+      "method": "Read-only actual authored world and fresh runtime bindings; no pickup/input/GPU acceptance",
+      "linked_field_torches": 15,
+      "traps": 2,
+      "items": {
+        "1": {
+          "position": "198.60000610351562, 23.079986572265625, -183.75",
+          "kind": "energy",
+          "name": "Pickup1",
+          "slot": "solo_slot_03"
+        },
+        "2": {
+          "position": "-17.399999618530273, 23.079986572265625, 190.5",
+          "kind": "energy",
+          "name": "Pickup2",
+          "slot": "solo_slot_14"
+        },
+        "3": {
+          "position": "194.39999389648438, 14.619986534118652, -108.75",
+          "kind": "trap",
+          "name": "Pickup3",
+          "slot": "solo_slot_06"
+        },
+        "4": {
+          "position": "-202.35000610351562, 14.619986534118652, -186.75",
+          "kind": "trap",
+          "name": "Pickup4",
+          "slot": "solo_slot_01"
+        }
+      },
+      "key": {
+        "position": "-198, 14.81998348236084, 102",
+        "slot": "solo_slot_10"
+      },
+      "lookouts": 2,
+      "status": "PASS",
+      "spawns": 4,
+      "energy": 2,
+      "side": 630
+    },
+    "resizeBindingsLegacyRound": {
+      "method": "Read-only actual authored world and fresh runtime bindings; no pickup/input/GPU acceptance",
+      "linked_field_torches": 15,
+      "traps": 2,
+      "items": {
+        "1": {
+          "position": "-192.89999389648438, 23.079986572265625, -102",
+          "kind": "energy",
+          "name": "Pickup1",
+          "slot": "solo_slot_04"
+        },
+        "2": {
+          "position": "-172.64999389648438, 23.079986572265625, 0.75",
+          "kind": "energy",
+          "name": "Pickup2",
+          "slot": "solo_slot_07"
+        },
+        "3": {
+          "position": "194.39999389648438, 14.619986534118652, -108.75",
+          "kind": "trap",
+          "name": "Pickup3",
+          "slot": "solo_slot_06"
+        },
+        "4": {
+          "position": "17.399999618530273, 14.619986534118652, -9",
+          "kind": "trap",
+          "name": "Pickup4",
+          "slot": "solo_slot_08"
+        }
+      },
+      "key": {
+        "position": "-198.75, 14.81998348236084, -186.75",
+        "slot": "solo_slot_01"
+      },
+      "lookouts": 2,
+      "status": "PASS",
+      "spawns": 4,
+      "energy": 2,
+      "side": 630
+    },
+    "resizeNativeTrapLegacy": {
+      "inventory": {
+        "selected": 1,
+        "energy_remaining": 0,
+        "slots": [
+          "trap",
+          "empty",
+          "empty",
+          "empty",
+          "empty"
+        ],
+        "use": {
+          "id": 0,
+          "kind": "none"
+        }
+      },
+      "reward_diamonds": 0,
+      "lighting_mode": "hard",
+      "evacuation": {
+        "remaining": 0,
+        "duration": 120,
+        "active": false
+      },
+      "minimap": {
+        "round_id": 4,
+        "visited": [
+          {
+            "id": "clearing:solo_slot_08",
+            "kind": "clearing",
+            "position": null
+          }
+        ],
+        "deaths": []
+      },
+      "has_key": false,
+      "gate_open": false,
+      "elapsed_sec": 39.34831420000046,
+      "start_look": null,
+      "phase": "active",
+      "sprint_exhausted": false,
+      "notice": "",
+      "capture": {
+        "id": 0,
+        "remaining": 0,
+        "frame": null
+      },
+      "stamina_capacity": 100,
+      "session_diamonds": 0,
+      "stamina": 100,
+      "protection_sec": 0,
+      "monster_state": "patrol",
+      "catches_remaining": 2,
+      "is_sprinting": false
+    },
+    "nativePickup3": {
+      "inventory": {
+        "selected": 1,
+        "energy_remaining": 0,
+        "slots": [
+          "trap",
+          "energy",
+          "energy",
+          "trap",
+          "empty"
+        ],
+        "use": {
+          "id": 0,
+          "kind": "none"
+        }
+      },
+      "reward_diamonds": 0,
+      "lighting_mode": "hard",
+      "evacuation": {
+        "remaining": 0,
+        "duration": 120,
+        "active": false
+      },
+      "minimap": {
+        "round_id": 4,
+        "visited": [
+          {
+            "id": "clearing:solo_slot_08",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_05",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "house:HouseWest",
+            "kind": "house",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_04",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_07",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_06",
+            "kind": "clearing",
+            "position": null
+          }
+        ],
+        "deaths": []
+      },
+      "has_key": false,
+      "gate_open": false,
+      "elapsed_sec": 111.12688330000128,
+      "start_look": null,
+      "phase": "active",
+      "sprint_exhausted": false,
+      "notice": "",
+      "capture": {
+        "id": 0,
+        "remaining": 0,
+        "frame": null
+      },
+      "stamina_capacity": 100,
+      "session_diamonds": 0,
+      "stamina": 100,
+      "protection_sec": 0,
+      "monster_state": "patrol",
+      "catches_remaining": 2,
+      "is_sprinting": false
+    },
+    "resizeNativeEnergyUse": {
+      "speed": 24,
+      "snapshot": "{\"inventory\":{\"selected\":2,\"energy_remaining\":29.93258699999933,\"slots\":[\"key\",\"empty\",\"energy\",\"trap\",\"empty\"],\"use\":{\"id\":2,\"kind\":\"energy\"}},\"reward_diamonds\":0,\"lighting_mode\":\"hard\",\"evacuation\":{\"remaining\":0,\"duration\":120,\"active\":false},\"minimap\":{\"round_id\":4,\"visited\":[{\"id\":\"clearing:solo_slot_08\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_05\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"house:HouseWest\",\"kind\":\"house\",\"position\":null},{\"id\":\"clearing:solo_slot_04\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_07\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_06\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_01\",\"kind\":\"clearing\",\"position\":null}],\"deaths\":[]},\"has_key\":true,\"gate_open\":false,\"elapsed_sec\":197.65689089999979,\"start_look\":null,\"phase\":\"active\",\"sprint_exhausted\":false,\"notice\":\"\",\"capture\":{\"id\":0,\"remaining\":0,\"frame\":null},\"stamina_capacity\":100,\"session_diamonds\":0,\"stamina\":100,\"protection_sec\":0,\"monster_state\":\"patrol\",\"catches_remaining\":2,\"is_sprinting\":false}"
+    },
+    "resizeNativeGate": {
+      "inventory": {
+        "selected": 2,
+        "energy_remaining": 28.59832119999919,
+        "slots": [
+          "empty",
+          "empty",
+          "energy",
+          "trap",
+          "empty"
+        ],
+        "use": {
+          "id": 2,
+          "kind": "energy"
+        }
+      },
+      "reward_diamonds": 0,
+      "lighting_mode": "hard",
+      "evacuation": {
+        "remaining": 119.59820450000007,
+        "duration": 120,
+        "active": true
+      },
+      "minimap": {
+        "round_id": 4,
+        "visited": [
+          {
+            "id": "clearing:solo_slot_08",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_05",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "house:HouseWest",
+            "kind": "house",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_04",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_07",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_06",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_01",
+            "kind": "clearing",
+            "position": null
+          }
+        ],
+        "deaths": []
+      },
+      "has_key": false,
+      "gate_open": true,
+      "elapsed_sec": 198.99115689999962,
+      "start_look": null,
+      "phase": "active",
+      "sprint_exhausted": false,
+      "notice": "corn_evacuation_started",
+      "capture": {
+        "id": 0,
+        "remaining": 0,
+        "frame": null
+      },
+      "stamina_capacity": 100,
+      "session_diamonds": 0,
+      "stamina": 100,
+      "protection_sec": 0,
+      "monster_state": "patrol",
+      "catches_remaining": 2,
+      "is_sprinting": false
+    },
+    "resizeBarrelRays": {
+      "scope": "Actual production ItemWorld, cloned authored cylinders, engine raycasts and overlap queries in isolated elevated scratch; live native E separately",
+      "cleanup": true,
+      "passed": true,
+      "cases": [
+        {
+          "trap_parts_checked": 15,
+          "old_ray_blocked": true,
+          "slot_id": "solo_slot_03",
+          "traps": 2,
+          "new_barrel_overlaps": 0,
+          "energy": 2,
+          "new_ray_clear": true
+        },
+        {
+          "trap_parts_checked": 15,
+          "old_ray_blocked": true,
+          "slot_id": "solo_slot_08",
+          "traps": 2,
+          "new_barrel_overlaps": 0,
+          "energy": 2,
+          "new_ray_clear": true
+        },
+        {
+          "trap_parts_checked": 15,
+          "old_ray_blocked": true,
+          "slot_id": "solo_slot_13",
+          "traps": 2,
+          "new_barrel_overlaps": 0,
+          "energy": 2,
+          "new_ray_clear": true
+        }
+      ]
+    },
+    "resizeNativeWin": {
+      "root": "-3.1650415621697903e-10, 17.39801025390625, 325.59674072265625",
+      "snapshot": "{\"inventory\":{\"selected\":1,\"energy_remaining\":0,\"slots\":[\"empty\",\"empty\",\"empty\",\"empty\",\"empty\"],\"use\":{\"id\":0,\"kind\":\"none\"}},\"reward_diamonds\":20,\"lighting_mode\":\"hard\",\"evacuation\":{\"remaining\":0,\"duration\":120,\"active\":false},\"minimap\":{\"round_id\":4,\"visited\":[{\"id\":\"clearing:solo_slot_08\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_05\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"house:HouseWest\",\"kind\":\"house\",\"position\":null},{\"id\":\"clearing:solo_slot_04\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_07\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_06\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_01\",\"kind\":\"clearing\",\"position\":null}],\"deaths\":[]},\"has_key\":false,\"gate_open\":true,\"elapsed_sec\":237.8737987000004,\"start_look\":null,\"phase\":\"escaped\",\"sprint_exhausted\":false,\"notice\":\"\",\"capture\":{\"id\":0,\"remaining\":0,\"frame\":null},\"stamina_capacity\":100,\"session_diamonds\":20,\"stamina\":100,\"protection_sec\":0,\"monster_state\":\"stopped\",\"catches_remaining\":2,\"is_sprinting\":false}"
+    },
+    "resizeFreshEnergyPickup1": {
+      "inventory": {
+        "selected": 1,
+        "energy_remaining": 0,
+        "slots": [
+          "energy",
+          "empty",
+          "empty",
+          "empty",
+          "empty"
+        ],
+        "use": {
+          "id": 0,
+          "kind": "none"
+        }
+      },
+      "reward_diamonds": 0,
+      "lighting_mode": "hard",
+      "evacuation": {
+        "remaining": 0,
+        "duration": 120,
+        "active": false
+      },
+      "minimap": {
+        "round_id": 5,
+        "visited": [
+          {
+            "id": "clearing:solo_slot_07",
+            "kind": "clearing",
+            "position": null
+          }
+        ],
+        "deaths": []
+      },
+      "has_key": false,
+      "gate_open": false,
+      "elapsed_sec": 256.9554814000003,
+      "start_look": null,
+      "phase": "active",
+      "sprint_exhausted": false,
+      "notice": "",
+      "capture": {
+        "id": 0,
+        "remaining": 0,
+        "frame": null
+      },
+      "stamina_capacity": 100,
+      "session_diamonds": 20,
+      "stamina": 100,
+      "protection_sec": 0,
+      "monster_state": "patrol",
+      "catches_remaining": 2,
+      "is_sprinting": false
+    },
+    "resizeFreshEnergyPickup2": {
+      "inventory": {
+        "selected": 1,
+        "energy_remaining": 0,
+        "slots": [
+          "energy",
+          "energy",
+          "empty",
+          "empty",
+          "empty"
+        ],
+        "use": {
+          "id": 0,
+          "kind": "none"
+        }
+      },
+      "reward_diamonds": 0,
+      "lighting_mode": "hard",
+      "evacuation": {
+        "remaining": 0,
+        "duration": 120,
+        "active": false
+      },
+      "minimap": {
+        "round_id": 5,
+        "visited": [
+          {
+            "id": "clearing:solo_slot_07",
+            "kind": "clearing",
+            "position": null
+          },
+          {
+            "id": "clearing:solo_slot_09",
+            "kind": "clearing",
+            "position": null
+          }
+        ],
+        "deaths": []
+      },
+      "has_key": false,
+      "gate_open": false,
+      "elapsed_sec": 258.38746190000165,
+      "start_look": null,
+      "phase": "active",
+      "sprint_exhausted": false,
+      "notice": "",
+      "capture": {
+        "id": 0,
+        "remaining": 0,
+        "frame": null
+      },
+      "stamina_capacity": 100,
+      "session_diamonds": 20,
+      "stamina": 100,
+      "protection_sec": 0,
+      "monster_state": "patrol",
+      "catches_remaining": 2,
+      "is_sprinting": false
+    },
+    "yellowReady": {
+      "status": "PASS",
+      "roots": {
+        "CornClientBackdrop": 10578,
+        "CornClientPlants": 1362,
+        "EditorFieldOverview": 2576
+      },
+      "prepared": "rbxassetid://103653296385119"
+    },
+    "yellowRetry": {
+      "status": "PASS",
+      "roots": {
+        "CornClientBackdrop": 10578,
+        "CornClientPlants": 246,
+        "EditorFieldOverview": 2576
+      },
+      "prepared": "rbxassetid://103653296385119"
+    }
+  }
+}

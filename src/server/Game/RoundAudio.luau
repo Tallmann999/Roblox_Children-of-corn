@@ -13,7 +13,7 @@ local RoundAudio = {}
 RoundAudio.__index = RoundAudio
 
 local PROJECT = "children_of_corn"
-local CORN_KEYS = Rules.CornKeys
+local LOOP_KEY = "COC_Corn_Continuous_02"
 local VOICE_KEYS = Rules.VoiceKeys
 
 local function finite(value: number): boolean
@@ -412,29 +412,12 @@ function RoundAudio:_setHunt(hunt: any, hunts: { any }?)
 end
 
 function RoundAudio:_actor(root: BasePart): any
-	local sound = self:_sound(
-		root,
-		CORN_KEYS[1],
-		"corn_rustle",
-		Rules.Volume.Rustle,
-		"Effects",
-		Rules.Ranges.Rustle,
-		false
-	)
-	sound:SetAttribute("AudioRustleId", 0)
-	sound:SetAttribute("AudioRustleStart", "")
-	return {
-		root = root,
-		sound = sound,
-		rustleId = 0,
-		lastPosition = nil,
-		lastAt = nil,
-		lastClip = 0,
-		untilAt = 0,
-		nextAt = 0,
-		cueContinuous = false,
-		loadDeadline = 0,
-	}
+	-- This silent Sound is a replicated, owned movement binding only.
+	local sound =
+		self:_sound(root, LOOP_KEY, "corn_rustle", 0, "Effects", Rules.Ranges.Rustle, true)
+	sound:SetAttribute("AudioCornActive", false)
+	sound:SetAttribute("AudioCornSpeed", 1)
+	return { root = root, sound = sound, lastPosition = nil, lastAt = nil, playbackSpeed = 1 }
 end
 
 function RoundAudio:_inCorn(point: Vector3): boolean
@@ -447,77 +430,55 @@ function RoundAudio:_inCorn(point: Vector3): boolean
 end
 
 function RoundAudio:_stepActor(actor: any, now: number, eligible: boolean)
-	local root = actor.root
-	local point = root.Position
-	local before = actor.lastPosition
-	local beforeAt = actor.lastAt
-	actor.lastPosition = point
-	actor.lastAt = now
+	local root, sound = actor.root, actor.sound
+	local point, before, beforeAt = root.Position, actor.lastPosition, actor.lastAt
+	actor.lastPosition, actor.lastAt = point, now
 	local dt = if beforeAt then now - beforeAt else 0
 	local delta = if before then point - before else Vector3.zero
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
-	-- Clear discontinuities instead of turning spawn/teleport into a loud footstep.
 	local moving = dt > 0
 		and dt <= 1
 		and distance >= 0.05
 		and distance <= 12
 		and distance / dt <= 45
 		and math.abs(delta.Y) < 4
-	local sound = actor.sound
-	local busy = false
-	if sound:GetAttribute("AudioRequestedPlaying") == true then
-		-- This server player retains its own full clip. More frequent cues
-		-- below are metadata only while it is busy; no URI/Play/Stop rewrite.
-		if sound.SoundId ~= "" and not sound.IsLoaded then
-			if now < actor.loadDeadline or sound.TimePosition > 0 then
-				busy = true
-			else
-				-- Only abandon an unavailable attempt that never began playing.
-				stop(sound)
+	local active = eligible == true and moving and self:_inCorn(point)
+	local speed = 1
+	if active then
+		local stableRatio = actor.playerSpeed
+		local hunt = actor.hunt
+		if not stableRatio and hunt then
+			local huntSpeed
+			local character = self.ownerPlayer.Character
+			local playerRoot = if character
+				then character:FindFirstChild("HumanoidRootPart")
+				else nil
+			if hunt.state == "chase" and playerRoot and type(hunt._chaseSpeed) == "function" then
+				local ok, value = pcall(hunt._chaseSpeed, hunt, playerRoot, now)
+				if ok then
+					huntSpeed = value
+				end
+			elseif hunt.state == "patrol" and type(hunt.balance) == "table" then
+				huntSpeed = hunt.balance.monster_patrol_speed
 			end
-		elseif now < actor.untilAt or sound.IsPlaying then
-			busy = true
-		else
-			-- Natural completion needs no Stop (which resets playback position).
-			sound:SetAttribute("AudioRequestedPlaying", false)
+			if type(huntSpeed) == "number" and finite(huntSpeed) and huntSpeed > 0 then
+				stableRatio = huntSpeed / 10
+			end
 		end
+		local ratio = stableRatio or distance / dt / 10
+		ratio = math.floor(math.clamp(ratio, 1, 2) * 10 + 0.5) / 10
+		-- NPC waypoint/physics noise must not modulate pitch every poll.
+		speed = if stableRatio or math.abs(ratio - actor.playbackSpeed) >= 0.15
+			then ratio
+			else actor.playbackSpeed
 	end
-	if not eligible or not moving or not self:_inCorn(point) then
-		actor.cueContinuous = false
-		return
+	actor.playbackSpeed = speed
+	if sound:GetAttribute("AudioCornSpeed") ~= speed then
+		sound:SetAttribute("AudioCornSpeed", speed)
 	end
-	if now < actor.nextAt then
-		return
+	if sound:GetAttribute("AudioCornActive") ~= active then
+		sound:SetAttribute("AudioCornActive", active)
 	end
-	local index = self.random:NextInteger(1, #CORN_KEYS - 1)
-	if index >= actor.lastClip then
-		index += 1
-	end
-	if index > #CORN_KEYS then
-		index = 1
-	end
-	actor.lastClip = index
-	local definition = Assets.Get(CORN_KEYS[index])
-	local duration = math.max(0.1, definition.Duration)
-	-- Preserve at most one poll's timing remainder during continuous motion.
-	-- Pauses/discontinuities reset the anchor, so there is no catch-up burst.
-	local cueAt = if actor.cueContinuous then math.max(actor.nextAt, now - 0.1) else now
-	actor.nextAt = cueAt + math.max(Rules.RustleInterval, duration / Rules.RustleVoices)
-	actor.cueContinuous = true
-	if not busy then
-		sound.SoundId = definition.Id
-		sound:SetAttribute("AudioAssetKey", CORN_KEYS[index])
-		sound.Volume = math.clamp(Rules.Volume.Rustle * definition.Gain, 0, 1)
-		actor.untilAt = now + duration
-		actor.loadDeadline = now + Rules.RustleLoadTimeout
-		request(sound, true)
-	end
-	actor.rustleId += 1
-	sound:SetAttribute("AudioRustleId", actor.rustleId)
-	-- One replicated value commits the sequence and key together. A client
-	-- decoder can finish later than this server Sound; it schedules its own
-	-- full tails from accepted commits without trusting URI replication order.
-	sound:SetAttribute("AudioRustleStart", tostring(actor.rustleId) .. ":" .. CORN_KEYS[index])
 end
 
 function RoundAudio:_grounded(character: Model, humanoid: Humanoid, root: BasePart): boolean
@@ -579,6 +540,9 @@ function RoundAudio:_players(now: number, phase: string)
 			actor = self:_actor(root)
 			self.actors[player] = actor
 		end
+		actor.playerSpeed = if finite(humanoid.WalkSpeed)
+			then math.clamp(humanoid.WalkSpeed / 12, 1, 2)
+			else 1
 		self:_stepActor(
 			actor,
 			now,

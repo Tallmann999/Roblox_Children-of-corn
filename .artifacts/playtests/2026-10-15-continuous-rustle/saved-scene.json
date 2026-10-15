@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "method": "Author Ctrl+S 2026-10-15 12:48:01 UTC+3; exact engine bytes, read-only audit and independent Get-FileHash",
+  "bytes": 995988,
+  "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "sources": 78,
+  "instances": 4160,
+  "source_changes": 4,
+  "changed_sources": [
+    "AudioAssets",
+    "AudioRules",
+    "RoundAudio",
+    "AudioController"
+  ],
+  "movement_source_matches_baseline": true,
+  "world_lighting_art_identities_parents_raw_terrain_exact": true,
+  "new_instances": 0,
+  "removed_instances": 0,
+  "field_side": 630,
+  "baseline": "place/Children_of_corn.before-rustle-comparison-20261015.rbxl",
+  "baseline_sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d",
+  "promotion": false,
+  "scene_reserialization": false
+}

@@ -11,3 +11,10 @@ build/
 __pycache__/
 *.pyc
 .artifacts/connection/
+
+# Local resize investigation scratch; retained on disk, excluded from commits.
+.artifacts/build-rollback-probe.luau
+.artifacts/resize-dom.json
+.artifacts/resize-probe.luau
+.artifacts/resize-ref-probe.luau
+.artifacts/resize-rollback-only.luau

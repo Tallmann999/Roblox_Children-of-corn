@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "original_instances": 6844,
+  "candidate_instances": 4160,
+  "sources": 78,
+  "fixed_property_changes": 4728,
+  "deleted_owned_plants": 2684,
+  "reindexed_exporter_paths": 3480,
+  "unsafe_dom_cases_rejected": 88,
+  "raw_terrain_cases_rejected": 3,
+  "camera_dom_cases_rejected": 20,
+  "valid_camera_frames_accepted": 2,
+  "scope": "Actual checker/current Sources/fixed world manifest, in-memory fixtures; immutable scene inputs unchanged, no engine-save claim"
+}

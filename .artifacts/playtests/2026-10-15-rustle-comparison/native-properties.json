@@ -1,0 +1,55 @@
+{
+  "scope": "Actual production Sound with native Alt/button/W/Shift, diagnostic initial/capture positions; not ordinary blind search or human mix judgment",
+  "states": {
+    "comparisonFirstStop": {
+      "root": "100.00001525878906, 17.398006439208984, -224.79832458496094",
+      "playing": false,
+      "cursor": 2.283,
+      "active": false
+    },
+    "comparisonSprint": {
+      "loudness": 29.791515320539474,
+      "walkspeed": 18,
+      "speed": 1.5,
+      "cursor": 7.243,
+      "playing": true
+    },
+    "comparisonRoad": {
+      "root": "0.000016663198039168492, 17.398006439208984, -200.6486053466797",
+      "playing": false,
+      "cursor": 2.206,
+      "active": false
+    },
+    "comparisonCatch": {
+      "balance": "Алмазы в этом тесте: 0 · Попытки: 2",
+      "captureVisible": true,
+      "cursor": 6.459,
+      "playing": false
+    },
+    "comparisonRevive": {
+      "captureVisible": false,
+      "hudEnabled": true,
+      "mode": 2,
+      "cursor": 6.459,
+      "playing": false
+    },
+    "comparisonRetry": {
+      "enabled": true,
+      "mode": 2,
+      "cursor": 6.459,
+      "playing": false
+    },
+    "comparisonRetryResume": {
+      "root": "100.00001525878906, 17.398006439208984, -235.44895935058594",
+      "diagnostic": "[{\"at\":13016.375120499999,\"key\":\"Enum.KeyCode.W\",\"processed\":true}]",
+      "cursor": 6.886,
+      "playing": true
+    },
+    "comparisonRetryResumeStopped": {
+      "root": "100.00001525878906, 17.398006439208984, -235.44895935058594",
+      "active": false,
+      "cursor": 7.12,
+      "playing": false
+    }
+  }
+}

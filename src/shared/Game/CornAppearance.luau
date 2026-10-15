@@ -8,7 +8,8 @@ local CornAppearance = {
 }
 
 function CornAppearance.IsDry(mode: string?): boolean
-	return mode == "medium" or mode == "hard"
+	-- Ready/menu already show the only playable night field.
+	return mode == nil or mode == "medium" or mode == "hard"
 end
 
 function CornAppearance.IsValidMode(mode: any): boolean

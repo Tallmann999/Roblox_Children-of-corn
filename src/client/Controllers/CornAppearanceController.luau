@@ -94,11 +94,11 @@ function Controller:_register(root: any, item: Instance)
 	if texture ~= Appearance.GreenTextureId and texture ~= Appearance.DryTextureId then
 		return
 	end
-	-- New clones can inherit the locally dry template; their original is green.
+	-- Prepared/saved yellow copies keep that exact baseline through menu/cleanup.
 	local entry = {
 		root = root,
-		texture = if texture == Appearance.DryTextureId then Appearance.GreenTextureId else texture,
-		applied = texture == Appearance.DryTextureId,
+		texture = texture,
+		applied = false,
 	}
 	self._entries[item] = entry
 	root.parts[item] = true

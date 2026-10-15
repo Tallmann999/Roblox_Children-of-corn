@@ -31,7 +31,7 @@ function InventoryWorld.new(world: any, random: Random, keySlot: BasePart, onPic
 		used += 1
 		local kind = if used <= 2 then "energy" else "trap"
 		local position = Vector3.new(
-			slot.Position.X + 3.6,
+			slot.Position.X + (if kind == "energy" then 3.6 else -3.6),
 			world.Ground.Position.Y + world.Ground.Size.Y / 2,
 			slot.Position.Z
 		)

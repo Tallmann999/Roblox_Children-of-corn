@@ -1,6 +1,12 @@
 --!strict
 -- Author files prepared in assets/audio/roblox-import; real Roblox IDs are required.
 local clips = {
+	["COC_Corn_Continuous_02"] = table.freeze({
+		-- Author-supplied full MP3, imported and decoder-checked in Studio.
+		Id = "rbxassetid://138698164682825",
+		Gain = 1,
+		Duration = 11.064,
+	}),
 	["COC_Energy_Open"] = table.freeze({
 		Id = "rbxassetid://117691782180305",
 		Gain = 1.633052,

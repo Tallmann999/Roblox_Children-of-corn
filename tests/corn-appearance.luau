@@ -24,7 +24,7 @@ assert(
 	Appearance.IsDry("medium")
 		and Appearance.IsDry("hard")
 		and not Appearance.IsDry("easy")
-		and not Appearance.IsDry(nil)
+		and Appearance.IsDry(nil)
 )
 local PROJECT = "children_of_corn"
 local function signal()
@@ -171,9 +171,14 @@ end
 controller:SetMode(nil)
 drain(controller, heartbeat)
 for _, item in plants do
+	assert(item.TextureID == Appearance.DryTextureId, "Ready returned the field to green")
+end
+controller:SetMode("easy")
+drain(controller, heartbeat)
+for _, item in plants do
 	assert(item.TextureID == Appearance.GreenTextureId)
 end
-controller:SetMode("medium")
+controller:SetMode(nil)
 clock(0.0005)
 heartbeat:Fire(1 / 60)
 changed = 0
@@ -186,7 +191,7 @@ assert(changed > 0 and changed < 384, "2 ms clock did not stop the batch")
 clock(0)
 drain(controller, heartbeat)
 print(
-	"PASS: shared asset/mode whitelist, DEV Start, duplicate registration, 384/2ms batch guards and medium/hard/nil transitions"
+	"PASS: asset whitelist, ready/hard yellow, DEV Start, duplicate registration and 384/2ms batch guards"
 )
 local art = root(controller, "CornRuntimeArt", "CornRuntimeArtOwned")
 local prepared =
@@ -206,12 +211,22 @@ assert(
 	"Fixture accidentally added a near per-part project flag"
 )
 controller:_register(near, inherited)
-assert(controller._entries[inherited].texture == Appearance.GreenTextureId)
+assert(controller._entries[inherited].texture == Appearance.DryTextureId)
 controller:SetMode("easy")
 drain(controller, heartbeat)
 assert(
-	inherited.TextureID == Appearance.GreenTextureId
+	inherited.TextureID == Appearance.DryTextureId
 		and prepared.TextureID == Appearance.GreenTextureId
+)
+local savedYellow = mesh(overview.folder, "SavedYellow", flags, Appearance.DryTextureId)
+controller:_register(overview, savedYellow)
+drain(controller, heartbeat)
+assert(savedYellow.TextureID == Appearance.DryTextureId)
+controller:SetMode(nil)
+drain(controller, heartbeat)
+assert(
+	savedYellow.TextureID == Appearance.DryTextureId
+		and inherited.TextureID == Appearance.DryTextureId
 )
 local far = root(controller, "CornClientBackdrop", "CornClientBackdropOwned")
 local farPart = mesh(
@@ -302,8 +317,9 @@ assert(
 		and next(controller._queued) == nil
 )
 assert(
-	inherited.TextureID == Appearance.GreenTextureId
+	inherited.TextureID == Appearance.DryTextureId
 		and prepared.TextureID == Appearance.GreenTextureId
+		and savedYellow.TextureID == Appearance.DryTextureId
 )
 assert(manual.TextureID == "rbxassetid://9876")
 assert(foreignMesh.MeshId == "rbxassetid://4567")

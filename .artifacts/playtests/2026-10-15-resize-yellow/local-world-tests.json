@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "scope": "local actual generated installer in bounded Lune adapter",
+  "field_side": 630,
+  "torches": 27,
+  "slots": 15,
+  "preview": 904,
+  "overview": 2576,
+  "removed_plants": 2684,
+  "refusals": 16,
+  "full_repeat_changed": 0,
+  "same_name_barrel_order": true,
+  "rollback": [
+    "first_write",
+    "world_write_50",
+    "last_plant"
+  ],
+  "play_during_yield": [
+    1,
+    12
+  ],
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "manifest_sha256": "aca4b7d116db835eaa638820d4c340b4cfdb3426826b7035fe0b4fae2a0b9f05",
+  "no_scene_serialization": true,
+  "live_studio_claim": false,
+  "explicit_ref_clears": 193,
+  "legacy_orphan_repair": 193,
+  "legacy_repair_repeat_changed": 0,
+  "legacy_repair_refusals": [
+    "unknown_leaf_texture",
+    "partial_reference_mix"
+  ],
+  "legacy_repair_rollback_at": 87,
+  "fixture_limit": "Lune nil Ref overlay and old aliases; production uses real Roblox Value=nil; actual Studio migration separate"
+}

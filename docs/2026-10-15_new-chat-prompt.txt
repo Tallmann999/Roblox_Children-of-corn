@@ -1,0 +1,58 @@
+Продолжи работу над Roblox-игрой «Дети кукурузы» в проекте:
+D:\ROBLOX\My_Projects\Roblox_Children of Corn
+
+Это передача контекста после чата 15 октября 2026. Сначала прочитай этот файл, AGENTS.md и перечисленные актуальные документы. Новую задачу я дам следующим сообщением; не повторяй исторические установки и не начинай новую фичу сам.
+
+АКТУАЛЬНЫЙ ПРОВЕРЕННЫЙ ФАЙЛ
+place/Children_of_corn.rbxl, сохранён автором Ctrl+S 15.10.2026 в 12:48:01 UTC+3.
+995988 байт; SHA256:
+493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68
+78 Sources = 75 проектных + 3 импортированного CornfieldFog; 4160 экземпляров.
+Strict read-only audit PASS; последние изменения — только 4 Source: AudioAssets, AudioRules, RoundAudio, AudioController. MovementController возвращён точно к версии принятого поля630. Весь мир, Lighting, арт, identity/parents и raw Terrain сохранены. Нет пересериализации сцены или публикации.
+
+ТЕКУЩИЙ MVP
+Локальный solo PC прототип в Studio. Только hard/ночь20:30, без выбора лёгкого/среднего. Нет persistence, покупок, lobby, multiplayer или публичного publishing.
+Поле630×630 (сторона840 уменьшена на25%); четыре угловых старта, пятнадцать мест поиска, сараи/грузовик/декор,27факелов. Пятнадцать torch/slot/item групп хаотично размещены, шесть факелов сохраняют пары у сараев. Props не уменьшались физически.
+Кукуруза с самого появления жёлтая: saved растения и unparented runtime template имеют dryTexture103653296385119. Цвет земли НЕ менялся; исходная зелёная модель ServerStorage сохранена.
+Ключ,2энергетика,2капкана появляются на отдельных server-selected slots. Инвентарь5слотов, предметы в руках/use-анимации; энергетик даёт boost30сек, капкан держит NPC10сек. Исправлен баг скрытых в трёх старых бочках капканов: trapX−3.6 от slot, energyX+3.6 на пеньке. Подборы E проверены.
+Первое лицо, серверные спринт4сек/восстановление6сек. Мини-карта с посещениями/смертями, M/Alt.
+Монстр оживает через20сек; последние5сек предупреждение. Только первое обнаружение: скорость игрока10сек, затем теряет след/патрулирует; дальнейшая погоня прежняя, detection16/LOS и задержка ускорения2сек.
+При поимке — локальная сцена большого рта/тряска головы и камеры/брызги краски. «Возрождение»: после первой поимки тот же раунд, после второй новый; «Выход из игры» возвращает к стартовому меню.
+Ключ/E-ворота запускают финал120секунд: всего3монстра с обнаружением32. Время идёт и во время окна возрождения. Победа после физического выхода за ворота; награда20тестовых алмазов. По истечении срока невыбравшийся проигрывает.
+Вывеска выхода увеличена×3 и мигает физическим неоном; дымка CornfieldFog адаптирована. Bloom автора0.85/32 сохранён.
+
+ОКОНЧАТЕЛЬНЫЙ ВЫБОР ЗВУКА
+Автор сравнил два шелеста и выбрал ВТОРОЙ для всех игроков и монстров. Сравнение через Alt было временным; обе кнопки и A/B API УДАЛЕНЫ. Обычный Alt для курсора сохранён.
+Новый MP3 импортирован автором: rbxassetid://138698164682825, цикл11.064сек.
+Оригинал D:\Downloads\sspsurvival-dry-leaves-autumn-the-rustle-of-leaves-in-your-hands-10089.mp3 и точная копия assets/audio/roblox-import/COC_Corn_Continuous_02.mp3 сохранены.
+Движение внутри кукурузы автоматически запускает запись; остановка/дорога/просвет/воздух/поимка/меню ставят Pause, следующее движение — Resume с той же секунды. Looped проходит весь файл; повторного старта с нуля при каждом шаге нет.
+У своего игрока один personal2D CornLoop; walk1/sprint1.5 по серверному snapshot. У других поддерживаемых игроков и каждого NPC отдельный Root-attached spatial loop с independent cursor, rolloff5..65. Максимум11проигрывателей = 8игроков+3NPC; multiplayer этим не принят.
+Server CornAudio_corn_rustle — ТИХИЙ metadata Sound новогоURI/Volume0, никогда не Play. Валидированные AudioCornActive/AudioCornSpeed меняются только по необходимости на прежнем10Hz poll. NPC pitch использует стабильную authoritative hunt speed. Старые6коротких corn assets архивны, не запускаются и не preload; остальные музыка/голоса/сверчки/предметы сохранены.
+Actual native W/stop/resume/Shift/wrap и три настоящих NPC/пространственные loops/реальный капкан/cleanup прошли. Курсоры не сбрасываются. Были диагностические переносы игрока/NPC и временный anchor игрока; это не обычный слепой раунд. Чужие Source/Sound изменения защищены.
+Fire105538100476464 по-прежнему внешний not-approved asset; разрешения/перезагрузку/публикацию наугад НЕ менять. Не заявлять слышимость всех16исторических assets или принятие человеческого микса.
+
+КАК ПРОДОЛЖАТЬ БЕЗОПАСНО
+Работать ТОЛЬКО с Children_of_corn, не трогать соседние сцены Cooking_Cheff/Speed Monkey/Moon_Test.
+Последний Studio ID:23ea8e48-309b-41f3-8083-cef1a81600b2. После рестарта заново list_roblox_studios и проверить имя/сцену. Последнее состояние stopped Edit, CameraTypeFixed, runtime отсутствует. Source installer repeat created0/changed0/75; FarmEnsure40/applied0/built0/pending0. Rojo live выключен.
+После reopen farm EditableMesh требует guarded Edit Ensure/restore; Play восстанавливает автоматически. Сначала сверить Sources/ownership, не запускать исторические world installers.
+После кода scripts/check.ps1, затем scripts/build-readability-installer.py --compact и защищённый scripts/install-readability.luau только в правильном stopped Edit. Не запускать старые map/torch/cluster/840/1200 installers поверх630. Unknown Source/open-tab/topology guards сохранять.
+Точный engine save проверять scripts/verify-rustle-comparison-copy.py против immutable place/Children_of_corn.before-rustle-comparison-20261015.rbxl (996617байт/hash489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d). Историческое имя checker подходит итоговому непрерывному звуку; он разрешает только5объявленных Source paths, фактически изменены4. Отдельные engine candidates — только guarded promoter с обоими хэшами. Никакой Lune scene serialization.
+Studio MCP не сохраняет локальный rbxl: при необходимых новых правках после теста точные шаги Ctrl+S, затем read-only audit. Не повторять просьбу о сохранении нынешнего файла — он уже сохранён и проверен.
+
+ЧТО ЕЩЁ ОТКРЫТО
+Обычный blind full round после уменьшения поля, страх/микс нового игрока, баланс высокого безопасного пенька, длительный FPS с3NPC и reopen acceptance. Не подменять их диагностическими перемещениями или прежним FPS до финала.
+
+ПРОЧИТАТЬ
+AGENTS.md
+docs/architecture.md
+docs/project-concept.md
+docs/mvp-checklist.md
+docs/feature-index.md
+docs/2026-10-15_resize-yellow.md
+docs/2026-10-15_continuous-rustle.md
+docs/2026-10-15_rustle-comparison-save-pipeline.md
+.artifacts/playtests/2026-10-15-continuous-rustle/live-acceptance.json
+.artifacts/playtests/2026-10-15-continuous-rustle/preservation.json
+.artifacts/playtests/2026-10-15-continuous-rustle/saved-scene.json
+
+Предыдущие документы про режимы840/1200, A/B кнопки и save pending — ИСТОРИЯ. Актуальное состояние выше и в верхнем override AGENTS.md.

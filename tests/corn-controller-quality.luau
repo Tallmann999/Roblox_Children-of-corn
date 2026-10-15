@@ -221,6 +221,7 @@ assert(fallbackSparse,"Saved fallback lost its sparse3/6/9 renderer")
 -- A sparse clone preserves X/Z and inherited fidelity, suppresses shadows, and respects4032 cap.
 controller:_clearChunks()
 local template=I.new("MeshPart");template.Size=V3.new(2,8,2);template.CFrame=CF.new(0,4,0)
+template.MeshId="rbxassetid://104111861186519";template.TextureID="rbxassetid://103653296385119"
 local templateSize=template.Size;local originalFidelity=template.RenderFidelity
 controller._template=template;controller._exclusions={Boxes={},Circles={}};controller._plantCount=4031
 local pending=chunk("fixture");pending.Done=false;pending.MinColumn=0;pending.MaxColumn=3;pending.MinRow=0;pending.MaxRow=3;pending.Column=0;pending.Row=0;pending.Lod=3
@@ -229,6 +230,7 @@ controller:_createBatch()
 assert(controller._plantCount==4032 and pending.Count==1,"Plant cap was exceeded")
 local clone=pending.Folder:GetChildren()[1]
 assert(clone.Size.X==templateSize.X and clone.Size.Z==templateSize.Z)
+assert(clone.TextureID=="rbxassetid://103653296385119","Near renderer published green corn")
 assert(clone.RenderFidelity==originalFidelity and not clone.CastShadow,"Runtime clone changed inherited fidelity or shadow budget")
 assert(template.Size==templateSize and template.RenderFidelity==originalFidelity,"Imported/template art mutated")
 controller:_clearChunks();runtime:Destroy();template:Destroy()

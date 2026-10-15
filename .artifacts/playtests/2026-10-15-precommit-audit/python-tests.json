@@ -1,0 +1,22 @@
+[
+  {
+    "test": "tests/resize-yellow-copy-verifier.py",
+    "exit_code": 0,
+    "output": "{\"passed\": true, \"original_instances\": 6844, \"candidate_instances\": 4160, \"sources\": 78, \"fixed_property_changes\": 4728, \"deleted_owned_plants\": 2684, \"reindexed_exporter_paths\": 3480, \"unsafe_dom_cases_rejected\": 68, \"raw_terrain_cases_rejected\": 3, \"scope\": \"Actual checker/current Sources/fixed world manifest, in-memory fixtures; immutable scene inputs unchanged, no engine-save claim\"}\r\n"
+  },
+  {
+    "test": "tests/resize-yellow-promoter-guards.py",
+    "exit_code": 0,
+    "output": "{\"passed\": true, \"guard_cases\": 16, \"scope\": \"Temporary placeholder bytes + patched strict checker; no real scene read/written/promoted\", \"cases\": [\"positive\", \"hash-backup\", \"wrong-original-hash\", \"wrong-candidate-hash\", \"candidate-is-target\", \"candidate-is-baseline\", \"wrong-baseline-path\", \"redirected-target\", \"baseline-altered\", \"verification-failed\", \"snapshot-collision\", \"backup-collision\", \"temporary-collision\", \"target-race\", \"candidate-race\", \"baseline-race\"]}\r\n"
+  },
+  {
+    "test": "tests/rustle-comparison-copy-verifier.py",
+    "exit_code": 0,
+    "output": "{\"passed\": true, \"instances\": 4160, \"sources\": 78, \"declared_source_paths\": [\"ReplicatedStorage/GameShared/Game/AudioAssets\", \"ReplicatedStorage/GameShared/Game/AudioRules\", \"ServerScriptService/GameServer/Game/RoundAudio\", \"StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController\", \"StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController\"], \"current_source_changes\": 4, \"all_five_controlled_versions_accepted\": true, \"world_lighting_art_exact\": true, \"unsafe_dom_cases_rejected\": 68, \"raw_terrain_cases_rejected\": 3, \"scope\": \"Actual checker/current Source snapshot and five controlled Source versions, in-memory fixtures; immutable baseline unchanged, no engine audio/final-save claim\"}\r\n"
+  },
+  {
+    "test": "tests/rustle-comparison-promoter-guards.py",
+    "exit_code": 0,
+    "output": "{\"passed\": true, \"guard_cases\": 16, \"scope\": \"Temporary placeholder bytes + patched strict checker; no real scene read/written/promoted\", \"cases\": [\"positive\", \"hash-backup\", \"wrong-original-hash\", \"wrong-candidate-hash\", \"candidate-is-target\", \"candidate-is-baseline\", \"wrong-baseline-path\", \"redirected-target\", \"baseline-altered\", \"verification-failed\", \"snapshot-collision\", \"backup-collision\", \"temporary-collision\", \"target-race\", \"candidate-race\", \"baseline-race\"]}\r\n"
+  }
+]

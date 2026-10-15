@@ -70,6 +70,8 @@ local function setup(bridge)
 	template.Name = "CornPlantTemplate"
 	template.Size = V3.new(1.2, 8, 1.8)
 	template.CFrame = CF.identity
+	template.MeshId = "rbxassetid://104111861186519"
+	template.TextureID = "rbxassetid://103653296385119"
 	template:SetAttribute("CornPlantTemplateOwned", true)
 	template.Parent = art
 	local connections = { count = 0, disconnected = 0 }
@@ -159,6 +161,7 @@ for _, plant in first:GetChildren() do
 	)
 	assert(size.Y > 6.7 and size.Y < 9.3, "Normal height variation missing")
 	assert(plant.CastShadow == false and plant.RenderFidelity == template.RenderFidelity)
+	assert(plant.TextureID == "rbxassetid://103653296385119", "Backdrop published green corn")
 	assert(plant.Anchored and not plant.CanCollide and not plant.CanTouch and not plant.CanQuery)
 end
 for _ = 1, 3 do

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "method": "Author Ctrl+S exact engine bytes, read-only strict verifier; no promotion or scene serialization",
+  "bytes": 996617,
+  "sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d",
+  "source_count": 78,
+  "instances": 4160,
+  "field_side": 630,
+  "yellow": "Corn mesh texture only; Ground color preserved",
+  "original_source_art_preserved": true,
+  "baseline": "place/Children_of_corn.before-resize-yellow-20261015.rbxl",
+  "baseline_sha256": "c7015e55a7cf4a020fe0ae1e3d40d4c69c17faf10a8f01d8ce4379066c955fed"
+}

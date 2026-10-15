@@ -7,6 +7,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local GameShared = ReplicatedStorage:WaitForChild("GameShared")
 local Config = require(GameShared:WaitForChild("Config"):WaitForChild("GameConfig"))
 local CornLayout = require(GameShared:WaitForChild("Game"):WaitForChild("CornLayout"))
+local CornAppearance = require(GameShared:WaitForChild("Game"):WaitForChild("CornAppearance"))
 
 local CornField = {}
 local PROJECT_ID = "children_of_corn"
@@ -37,6 +38,18 @@ function CornField.Prepare(): boolean
 		warn("[CornField] " .. (problem or "Could not prepare corn art"))
 		return false
 	end
+	if
+		not prepared:IsA("MeshPart")
+		or prepared.MeshId ~= CornAppearance.MeshId
+		or (prepared.TextureID ~= CornAppearance.GreenTextureId and prepared.TextureID ~= CornAppearance.DryTextureId)
+		or prepared:FindFirstChildWhichIsA("SurfaceAppearance")
+	then
+		prepared:Destroy()
+		warn("[CornField] Unknown corn appearance; existing prepared art was preserved")
+		return false
+	end
+	-- Both renderers inherit yellow before the template can replicate or be cloned.
+	prepared.TextureID = CornAppearance.DryTextureId
 	local folder: Instance? = nil
 	for _, item in ReplicatedStorage:GetChildren() do
 		if item.Name == "CornRuntimeArt" then
