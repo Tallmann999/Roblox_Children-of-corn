@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "immutable_baseline": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-multiplayer-20261015.rbxl",
+  "bytes": 995988,
+  "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "working_bytes_equal_before_install": true,
+  "copy_method": "Exact byte copy after fixed size and SHA256 checks; existing backup only accepted if byte-identical",
+  "baseline_instances": 4160,
+  "baseline_sources": 78,
+  "project_sources": 75,
+  "fog_sources": 3,
+  "world_writes": false,
+  "scene_serialization": false
+}

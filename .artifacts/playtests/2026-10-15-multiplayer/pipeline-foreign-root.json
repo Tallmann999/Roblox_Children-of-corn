@@ -1,0 +1,8 @@
+{
+  "initialRollbackRefused": true,
+  "installerRefused": true,
+  "mutations": 0,
+  "passed": true,
+  "scope": "In-memory explicit foreign-owned-code replacement fixture; native live Studio remains untouched",
+  "validCornMapWithForeignCode": true
+}

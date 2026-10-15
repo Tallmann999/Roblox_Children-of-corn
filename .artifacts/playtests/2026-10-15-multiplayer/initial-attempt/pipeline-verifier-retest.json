@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "original_instances": 4160,
+  "candidate_instances": 4162,
+  "sources": 80,
+  "declared_source_paths": [
+    "ReplicatedStorage/GameShared/Config/GameConfig",
+    "ReplicatedStorage/GameShared/Game/RoundText",
+    "ServerScriptService/GameServer/Game/MonsterHunt",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Services/RoundService",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud"
+  ],
+  "current_source_changes": 7,
+  "all_seven_controlled_versions_accepted": true,
+  "new_modules_accepted": 2,
+  "world_lighting_art_exact": true,
+  "unsafe_dom_cases_rejected": 130,
+  "camera_dom_cases_rejected": 20,
+  "raw_terrain_cases_rejected": 3,
+  "identity_preserving_suffix_reindexes_accepted": 2,
+  "scope": "Actual checker/current Source snapshot and seven controlled Source versions, in-memory fixtures; immutable baseline unchanged, no engine audio/final-save claim"
+}

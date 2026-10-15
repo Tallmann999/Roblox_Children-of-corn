@@ -1,0 +1,21 @@
+{
+  "accepted_multiplayer": false,
+  "stage": "before corrected sixteen-Source installation",
+  "studio_id": "23ea8e48-309b-41f3-8083-cef1a81600b2",
+  "listed_name": "Children_of_corn.rbxl",
+  "observed_datamodel_name": "Roblox_Cooking_Shef_Music_Founder",
+  "observed_sources": 22,
+  "observed_foreign_code": ["RhythmService", "RhythmController", "DanceClip"],
+  "corn_map_project_attribute": "children_of_corn",
+  "ground": [630, 2, 630],
+  "guard_result": "Missing/colliding initial code; nothing changed: ReplicatedStorage/GameShared/Game/CornAppearance",
+  "rollback_mutated": false,
+  "foreign_rojo_process_observed": {
+    "id": 30652,
+    "path": "D:\\ROBLOX\\My_Projects\\Git\\01\\Roblox_Cooking_Shef_Music_Founder\\tools\\bin\\rojo.exe",
+    "stopped_by_this_task": false
+  },
+  "disk_working_scene_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "required_next_step": "Stop the foreign sync and reopen the unchanged verified Children_of_corn file. Re-list Studio and verify Sources before installation.",
+  "neighbor_scene_modified_by_this_task": false
+}

@@ -1,0 +1,597 @@
+{
+  "scope": "Read-only immutable backup source manifest; no src or Studio mutation; no scene serialization",
+  "baseline": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-multiplayer-20261015.rbxl",
+  "baseline_bytes": 995988,
+  "baseline_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "instances": 4160,
+  "sources": 78,
+  "rows": [
+    {
+      "path": "ReplicatedStorage/GameShared/Config/GameConfig",
+      "class": "ModuleScript",
+      "sha256_lf": "3206991b78e59062aa5a8630debaee35ac66f2ec24ce57dd2a3ec95bceb02012",
+      "sha256_raw": "3206991b78e59062aa5a8630debaee35ac66f2ec24ce57dd2a3ec95bceb02012",
+      "bytes_lf": 420
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Core/Logger",
+      "class": "ModuleScript",
+      "sha256_lf": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c",
+      "sha256_raw": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c",
+      "bytes_lf": 504
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/AudioAssets",
+      "class": "ModuleScript",
+      "sha256_lf": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5",
+      "sha256_raw": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5",
+      "bytes_lf": 2417
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/AudioRules",
+      "class": "ModuleScript",
+      "sha256_lf": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d",
+      "sha256_raw": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d",
+      "bytes_lf": 2696
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/Balance",
+      "class": "ModuleScript",
+      "sha256_lf": "e567d2849813ecd5de4087f603d12c65846958f58fea2558f66f35270fca9d88",
+      "sha256_raw": "e567d2849813ecd5de4087f603d12c65846958f58fea2558f66f35270fca9d88",
+      "bytes_lf": 963
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CapturePresentation",
+      "class": "ModuleScript",
+      "sha256_lf": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91",
+      "sha256_raw": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91",
+      "bytes_lf": 6215
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornAppearance",
+      "class": "ModuleScript",
+      "sha256_lf": "1d04d12a51407a9caf1d90960c9ff8e084a53c020ebc3104457ead81c326636c",
+      "sha256_raw": "1d04d12a51407a9caf1d90960c9ff8e084a53c020ebc3104457ead81c326636c",
+      "bytes_lf": 608
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornLayout",
+      "class": "ModuleScript",
+      "sha256_lf": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1",
+      "sha256_raw": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1",
+      "bytes_lf": 10341
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmEditableMeshBuilder",
+      "class": "ModuleScript",
+      "sha256_lf": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2",
+      "sha256_raw": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2",
+      "bytes_lf": 19891
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03",
+      "class": "ModuleScript",
+      "sha256_lf": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c",
+      "sha256_raw": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c",
+      "bytes_lf": 372
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk01",
+      "class": "ModuleScript",
+      "sha256_lf": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659",
+      "sha256_raw": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk02",
+      "class": "ModuleScript",
+      "sha256_lf": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17",
+      "sha256_raw": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk03",
+      "class": "ModuleScript",
+      "sha256_lf": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490",
+      "sha256_raw": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk04",
+      "class": "ModuleScript",
+      "sha256_lf": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f",
+      "sha256_raw": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk05",
+      "class": "ModuleScript",
+      "sha256_lf": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834",
+      "sha256_raw": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk06",
+      "class": "ModuleScript",
+      "sha256_lf": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924",
+      "sha256_raw": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk07",
+      "class": "ModuleScript",
+      "sha256_lf": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da",
+      "sha256_raw": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk08",
+      "class": "ModuleScript",
+      "sha256_lf": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919",
+      "sha256_raw": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk09",
+      "class": "ModuleScript",
+      "sha256_lf": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5",
+      "sha256_raw": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk10",
+      "class": "ModuleScript",
+      "sha256_lf": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e",
+      "sha256_raw": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e",
+      "bytes_lf": 96536
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05",
+      "class": "ModuleScript",
+      "sha256_lf": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d",
+      "sha256_raw": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d",
+      "bytes_lf": 250
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/Chunk01",
+      "class": "ModuleScript",
+      "sha256_lf": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4",
+      "sha256_raw": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4",
+      "bytes_lf": 103484
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01",
+      "class": "ModuleScript",
+      "sha256_lf": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab",
+      "sha256_raw": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab",
+      "bytes_lf": 305
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk01",
+      "class": "ModuleScript",
+      "sha256_lf": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb",
+      "sha256_raw": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk02",
+      "class": "ModuleScript",
+      "sha256_lf": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a",
+      "sha256_raw": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk03",
+      "class": "ModuleScript",
+      "sha256_lf": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d",
+      "sha256_raw": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk04",
+      "class": "ModuleScript",
+      "sha256_lf": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314",
+      "sha256_raw": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk05",
+      "class": "ModuleScript",
+      "sha256_lf": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0",
+      "sha256_raw": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk06",
+      "class": "ModuleScript",
+      "sha256_lf": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0",
+      "sha256_raw": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0",
+      "bytes_lf": 65407
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01",
+      "class": "ModuleScript",
+      "sha256_lf": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3",
+      "sha256_raw": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3",
+      "bytes_lf": 261
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk01",
+      "class": "ModuleScript",
+      "sha256_lf": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d",
+      "sha256_raw": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d",
+      "bytes_lf": 140000
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk02",
+      "class": "ModuleScript",
+      "sha256_lf": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b",
+      "sha256_raw": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b",
+      "bytes_lf": 111487
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/HandheldPresentation",
+      "class": "ModuleScript",
+      "sha256_lf": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c",
+      "sha256_raw": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c",
+      "bytes_lf": 5067
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/Inventory",
+      "class": "ModuleScript",
+      "sha256_lf": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad",
+      "sha256_raw": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad",
+      "bytes_lf": 2860
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/LightingModes",
+      "class": "ModuleScript",
+      "sha256_lf": "8e90fb793c88701f43089e0148f75d479e116303411bcc38619942f6080ff6db",
+      "sha256_raw": "8e90fb793c88701f43089e0148f75d479e116303411bcc38619942f6080ff6db",
+      "bytes_lf": 2259
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/MinimapGeometry",
+      "class": "ModuleScript",
+      "sha256_lf": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda",
+      "sha256_raw": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda",
+      "bytes_lf": 2546
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/ModePreviewImages",
+      "class": "ModuleScript",
+      "sha256_lf": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86",
+      "sha256_raw": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86",
+      "bytes_lf": 239
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/MonsterPose",
+      "class": "ModuleScript",
+      "sha256_lf": "aeb74cb60e7305700cac226c29fab3252f03c40df8fed08dc230c3b98246f428",
+      "sha256_raw": "aeb74cb60e7305700cac226c29fab3252f03c40df8fed08dc230c3b98246f428",
+      "bytes_lf": 4248
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/RoundText",
+      "class": "ModuleScript",
+      "sha256_lf": "b59f34404f42fd8b9df75ca5f5d31951b222a8240e2b9987d677c2ed047befaa",
+      "sha256_raw": "b59f34404f42fd8b9df75ca5f5d31951b222a8240e2b9987d677c2ed047befaa",
+      "bytes_lf": 3453
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/Stamina",
+      "class": "ModuleScript",
+      "sha256_lf": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783",
+      "sha256_raw": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783",
+      "bytes_lf": 1731
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Network/EndpointNames",
+      "class": "ModuleScript",
+      "sha256_lf": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca",
+      "sha256_raw": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca",
+      "bytes_lf": 205
+    },
+    {
+      "path": "ServerScriptService/GameServer/Bootstrap",
+      "class": "Script",
+      "sha256_lf": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956",
+      "sha256_raw": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956",
+      "bytes_lf": 2094,
+      "Disabled": [
+        "bool",
+        "false",
+        []
+      ],
+      "RunContext": [
+        "token",
+        "0",
+        []
+      ]
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/AuthoredWorld",
+      "class": "ModuleScript",
+      "sha256_lf": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80",
+      "sha256_raw": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80",
+      "bytes_lf": 12418
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/CornField",
+      "class": "ModuleScript",
+      "sha256_lf": "17b7f01b8fc6a44116a91b20f64cf0be92dd05be179c48687ec8ba741e8595e5",
+      "sha256_raw": "17b7f01b8fc6a44116a91b20f64cf0be92dd05be179c48687ec8ba741e8595e5",
+      "bytes_lf": 3441
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/FarmGeometry",
+      "class": "ModuleScript",
+      "sha256_lf": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a",
+      "sha256_raw": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a",
+      "bytes_lf": 470
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/InventoryWorld",
+      "class": "ModuleScript",
+      "sha256_lf": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7",
+      "sha256_raw": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7",
+      "bytes_lf": 5785
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/ItemModels",
+      "class": "ModuleScript",
+      "sha256_lf": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d",
+      "sha256_raw": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d",
+      "bytes_lf": 4604
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MapAuthoring",
+      "class": "ModuleScript",
+      "sha256_lf": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc",
+      "sha256_raw": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc",
+      "bytes_lf": 19226
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MapTuning",
+      "class": "ModuleScript",
+      "sha256_lf": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869",
+      "sha256_raw": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869",
+      "bytes_lf": 8631
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MinimapState",
+      "class": "ModuleScript",
+      "sha256_lf": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60",
+      "sha256_raw": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60",
+      "bytes_lf": 4249
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MonsterHunt",
+      "class": "ModuleScript",
+      "sha256_lf": "f4528ca78f7c9227016a6ce0ab23fd10a8a1b699673c4744f841b4ad82a019e1",
+      "sha256_raw": "f4528ca78f7c9227016a6ce0ab23fd10a8a1b699673c4744f841b4ad82a019e1",
+      "bytes_lf": 14054
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/RoundAudio",
+      "class": "ModuleScript",
+      "sha256_lf": "81804da1512f3e5419e87cc9a7b86f94803a73226e0bac1c43fe97eb49462b74",
+      "sha256_raw": "81804da1512f3e5419e87cc9a7b86f94803a73226e0bac1c43fe97eb49462b74",
+      "bytes_lf": 20707
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/SoloRound",
+      "class": "ModuleScript",
+      "sha256_lf": "02f3cfe2c0b3df14c7d367e889d9c3baee13edbbc23bb82274175d871a1fd2d7",
+      "sha256_raw": "02f3cfe2c0b3df14c7d367e889d9c3baee13edbbc23bb82274175d871a1fd2d7",
+      "bytes_lf": 32727
+    },
+    {
+      "path": "ServerScriptService/GameServer/Services/FarmGeometryService",
+      "class": "ModuleScript",
+      "sha256_lf": "324c49e1c033fce411682a80e909a030c2c3b6954ea809328eae73bdf473dbb4",
+      "sha256_raw": "324c49e1c033fce411682a80e909a030c2c3b6954ea809328eae73bdf473dbb4",
+      "bytes_lf": 611
+    },
+    {
+      "path": "ServerScriptService/GameServer/Services/NetworkService",
+      "class": "ModuleScript",
+      "sha256_lf": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea",
+      "sha256_raw": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea",
+      "bytes_lf": 1231
+    },
+    {
+      "path": "ServerScriptService/GameServer/Services/RoundService",
+      "class": "ModuleScript",
+      "sha256_lf": "abfe55f1a3a6506254785f323165d2661c11c73eb059e440214f75255b4455cb",
+      "sha256_raw": "abfe55f1a3a6506254785f323165d2661c11c73eb059e440214f75255b4455cb",
+      "bytes_lf": 646
+    },
+    {
+      "path": "ServerScriptService/GameServer/Services/TagService",
+      "class": "ModuleScript",
+      "sha256_lf": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4",
+      "sha256_raw": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4",
+      "bytes_lf": 747
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Bootstrap",
+      "class": "LocalScript",
+      "sha256_lf": "810a97bbc415966c8840b921690896b18ca71c2cf0d011eba7a9b4af4712db39",
+      "sha256_raw": "810a97bbc415966c8840b921690896b18ca71c2cf0d011eba7a9b4af4712db39",
+      "bytes_lf": 7453,
+      "Disabled": [
+        "bool",
+        "false",
+        []
+      ],
+      "RunContext": [
+        "token",
+        "0",
+        []
+      ]
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController",
+      "class": "ModuleScript",
+      "sha256_lf": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c",
+      "sha256_raw": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c",
+      "bytes_lf": 27449
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CaptureController",
+      "class": "ModuleScript",
+      "sha256_lf": "f89773a4ad435464819c6f81afae008e07ec63a179f55c3df2e48107894abc32",
+      "sha256_raw": "f89773a4ad435464819c6f81afae008e07ec63a179f55c3df2e48107894abc32",
+      "bytes_lf": 16896
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController",
+      "class": "ModuleScript",
+      "sha256_lf": "475ba50562138abeede58b1379f18aeb9fc3064d3bd43e98a23185164ed8463b",
+      "sha256_raw": "475ba50562138abeede58b1379f18aeb9fc3064d3bd43e98a23185164ed8463b",
+      "bytes_lf": 6682
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+      "class": "ModuleScript",
+      "sha256_lf": "40537424f04afc896c43669bef5997d8f3ab6ecf20a08af0c1fabd0c9beb0670",
+      "sha256_raw": "40537424f04afc896c43669bef5997d8f3ab6ecf20a08af0c1fabd0c9beb0670",
+      "bytes_lf": 11456
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+      "class": "ModuleScript",
+      "sha256_lf": "6d2c7e4336a1773bd8d5943bb85b686dc4df2c9097c1c7cdf836cc1476ef1e2d",
+      "sha256_raw": "6d2c7e4336a1773bd8d5943bb85b686dc4df2c9097c1c7cdf836cc1476ef1e2d",
+      "bytes_lf": 22656
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController",
+      "class": "ModuleScript",
+      "sha256_lf": "458d95a423b38f6abaa37b33bb138cef883d81b913e156a530a583e8d4aa6726",
+      "sha256_raw": "458d95a423b38f6abaa37b33bb138cef883d81b913e156a530a583e8d4aa6726",
+      "bytes_lf": 20318
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FarmGeometryController",
+      "class": "ModuleScript",
+      "sha256_lf": "fe2a9c73c3819797083b6cbd6855bfcee590ba1ffc7e064fcc4095fb8e008e7f",
+      "sha256_raw": "fe2a9c73c3819797083b6cbd6855bfcee590ba1ffc7e064fcc4095fb8e008e7f",
+      "bytes_lf": 5040
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GateHintController",
+      "class": "ModuleScript",
+      "sha256_lf": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed",
+      "sha256_raw": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed",
+      "bytes_lf": 11661
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HandheldController",
+      "class": "ModuleScript",
+      "sha256_lf": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e",
+      "sha256_raw": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e",
+      "bytes_lf": 10984
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/InventoryController",
+      "class": "ModuleScript",
+      "sha256_lf": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850",
+      "sha256_raw": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850",
+      "bytes_lf": 4814
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MinimapController",
+      "class": "ModuleScript",
+      "sha256_lf": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715",
+      "sha256_raw": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715",
+      "bytes_lf": 5141
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController",
+      "class": "ModuleScript",
+      "sha256_lf": "395d94fa951ab881140122f02b48f90c54d6bdb30e20b2eeb68e14f63c98d681",
+      "sha256_raw": "395d94fa951ab881140122f02b48f90c54d6bdb30e20b2eeb68e14f63c98d681",
+      "bytes_lf": 10246
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController",
+      "class": "ModuleScript",
+      "sha256_lf": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3",
+      "sha256_raw": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3",
+      "bytes_lf": 8143
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "class": "ModuleScript",
+      "sha256_lf": "3b970a044c52aa951371eefbc6bec92447ac4c17523db52d09deccab0bf82064",
+      "sha256_raw": "3b970a044c52aa951371eefbc6bec92447ac4c17523db52d09deccab0bf82064",
+      "bytes_lf": 8121
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/InventoryHud",
+      "class": "ModuleScript",
+      "sha256_lf": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26",
+      "sha256_raw": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26",
+      "bytes_lf": 10750
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/MinimapHud",
+      "class": "ModuleScript",
+      "sha256_lf": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93",
+      "sha256_raw": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93",
+      "bytes_lf": 12008
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud",
+      "class": "ModuleScript",
+      "sha256_lf": "9feac0b2a21e7f0276161dcc6aa06ba7f2247952163f717d51f6899d4adc72b4",
+      "sha256_raw": "9feac0b2a21e7f0276161dcc6aa06ba7f2247952163f717d51f6899d4adc72b4",
+      "bytes_lf": 26282
+    },
+    {
+      "path": "Workspace/CornfieldFog/Config",
+      "class": "ModuleScript",
+      "sha256_lf": "f091fcaf13c3056c66c2053b195e7f0157338050a02b6efdb140de8e7e9bd064",
+      "sha256_raw": "f091fcaf13c3056c66c2053b195e7f0157338050a02b6efdb140de8e7e9bd064",
+      "bytes_lf": 983
+    },
+    {
+      "path": "Workspace/CornfieldFog/RuntimeServer",
+      "class": "Script",
+      "sha256_lf": "179c915d63ecd4a9b0a17acfd3604460a7a349890dd4063f164b6d953bd52e73",
+      "sha256_raw": "179c915d63ecd4a9b0a17acfd3604460a7a349890dd4063f164b6d953bd52e73",
+      "bytes_lf": 6275,
+      "Disabled": [
+        "bool",
+        "false",
+        []
+      ],
+      "RunContext": [
+        "token",
+        "0",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornfieldFog/RuntimeServer/ClientTemplate",
+      "class": "LocalScript",
+      "sha256_lf": "6b87c4f04bf0675c808cd549cbca6cf5f067930ca85ac877badfa5899e6c46c2",
+      "sha256_raw": "6b87c4f04bf0675c808cd549cbca6cf5f067930ca85ac877badfa5899e6c46c2",
+      "bytes_lf": 28078,
+      "Disabled": [
+        "bool",
+        "true",
+        []
+      ],
+      "RunContext": [
+        "token",
+        "0",
+        []
+      ]
+    }
+  ],
+  "warnings": "0.111353800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+}

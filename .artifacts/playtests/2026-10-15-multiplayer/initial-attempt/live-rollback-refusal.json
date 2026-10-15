@@ -1,0 +1,17 @@
+{
+  "status": "refused_before_mutation",
+  "reported_by": "Root agent live Studio read-only audit and guarded rollback execution",
+  "rollback_error": "Missing/colliding initial CornAppearance Source",
+  "observed_open_name": "Roblox_Cooking_Shef_Music_Founder",
+  "observed_sources": 22,
+  "observed_foreign_sources": [
+    "RhythmService",
+    "RhythmController",
+    "DanceClip"
+  ],
+  "corn_map_630_present": true,
+  "working_scene_disk_sha256_reported": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "world_or_unknown_code_writes_by_rollback": false,
+  "guard_loosened": false,
+  "required_step": "User stops foreign Rojo/external writer and reopens clean Children_of_corn; apply only final baseline-guarded installer after correct target and Sources are verified. Do not overwrite unknown live code."
+}

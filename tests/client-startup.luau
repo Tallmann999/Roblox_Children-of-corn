@@ -106,8 +106,11 @@ local function child(state, parent, class, name)
 	object.Parent = parent
 	return object
 end
-local function fixture()
+local function startupFixture(mode, studio, environment)
 	local state = {
+		sessionMode = mode or "solo_local",
+		studio = studio ~= false,
+		environment = environment or "DEV",
 		now = 0,
 		events = {},
 		warnings = {},
@@ -130,8 +133,11 @@ local function fixture()
 	local shared = child(state, state.storage, "Folder", "GameShared")
 	local config = child(state, shared, "Folder", "Config")
 	local configModule = child(state, config, "ModuleScript", "GameConfig")
-	configModule.ModuleValue =
-		{ Debug = true, Environment = "DEV", Game = { Id = PROJECT, SessionMode = "solo_local" } }
+	configModule.ModuleValue = {
+		Debug = true,
+		Environment = state.environment,
+		Game = { Id = PROJECT, SessionMode = state.sessionMode },
+	}
 	local network = child(state, shared, "Folder", "Network")
 	child(state, network, "ModuleScript", "EndpointNames").ModuleValue = EndpointNames
 	local core = child(state, shared, "Folder", "Core")
@@ -284,7 +290,7 @@ local function fixture()
 						if name == "RunService" then
 							return {
 								IsStudio = function()
-									return true
+									return self.studio
 								end,
 							}
 						end
@@ -406,277 +412,325 @@ local function failure(state)
 	cleanup(state)
 end
 
-local delayed = fixture()
-delayed.onTick = function(s)
-	assert(
-		s.requiredControllers == 0 and s.initialized == 0 and s.started == 0,
-		"Partial replication initialized controllers"
-	)
-	if s.now >= 0.5 then
-		s:event(EndpointNames.RoundSnapshot)
+-- Run the entire production Bootstrap readiness/lifecycle corpus for both
+-- supported local sessions; the team mode must not silently return at startup.
+for _, sessionMode in { "solo_local", "team_local" } do
+	local function fixture()
+		return startupFixture(sessionMode)
 	end
-	if s.now >= 1.0 then
-		s:event(EndpointNames.RequestRoundAction)
-	end
-	if s.now >= 2.0 then
-		s:event(EndpointNames.RequestSprintIntent)
-	end
-	if s.now >= 3.0 then
-		s:art()
-	end
-	if s.now >= 4.0 then
-		s:template()
-	end
-	if s.now >= 5.0 then
-		s:allArt()
-	end
-	if s.now >= 5.5 then
-		s:event(EndpointNames.RequestInventoryAction)
-	end
-end
-delayed:run()
-success(delayed)
-assert(
-	delayed.now >= 5.5 and delayed.loadingSeen,
-	"Partial endpoints/art did not keep loading screen visible"
-)
-print(
-	"PASS: partial endpoint/art replication waits for all four typed endpoints, including late inventory; owned complete inputs unlock all require/Init/Start in order; loading UI removed and author GUI exact"
-)
 
-local ready = fixture()
-ready:allRemotes()
-ready:allArt()
-ready:run()
-success(ready)
-assert(ready.now == 0, "Already-ready inputs were delayed")
-
-local missingInventory = fixture()
-missingInventory:allRemotes()
-missingInventory:allArt()
-missingInventory:remotes():FindFirstChild(EndpointNames.RequestInventoryAction):Destroy()
-missingInventory:run()
-failure(missingInventory)
-assert(
-	missingInventory.now >= 60
-		and missingInventory.now <= 60.15
-		and missingInventory.loadingSeen
-		and tostring(missingInventory.problem):find(EndpointNames.RequestInventoryAction, 1, true),
-	"Missing fourth inventory endpoint did not wait to the shared deadline with exact diagnostic"
-)
-print(
-	"PASS: missing fourth inventory endpoint blocks all controllers and reports its exact name at the shared deadline"
-)
-
-local timeout = fixture()
-timeout.onTick = function(s)
-	if s.now >= 55 then
-		s:allRemotes()
-		s:art()
-	end
-end
-timeout:run()
-failure(timeout)
-assert(
-	timeout.now >= 60 and timeout.now <= 60.15 and timeout.loadingSeen,
-	"Resources used separate timeouts or did not show loading state"
-)
-assert(
-	tostring(timeout.problem):find("Corn", 1, true),
-	"Timeout error does not identify prepared Corn inputs"
-)
-print(
-	"PASS: staggered remotes/art share one <=60-second deadline, timeout cleans loading UI and never requires controllers"
-)
-
-for _, kind in
-	{
-		"remotes_class",
-		"event_class",
-		"inventory_event_class",
-		"art_class",
-		"template_class",
-		"art_owner",
-		"art_project",
-		"template_owner",
-	}
-do
-	local invalid = fixture()
-	invalid:allRemotes()
-	invalid:allArt()
-	if kind == "remotes_class" then
-		invalid.storage:FindFirstChild("GameRemotes").ClassName = "Model"
-	elseif kind == "event_class" then
-		invalid:remotes():FindFirstChild(EndpointNames.RequestSprintIntent).ClassName =
-			"RemoteFunction"
-	elseif kind == "inventory_event_class" then
-		invalid:remotes():FindFirstChild(EndpointNames.RequestInventoryAction).ClassName =
-			"RemoteFunction"
-	elseif kind == "art_class" then
-		invalid:art().ClassName = "Model"
-	elseif kind == "template_class" then
-		invalid:template().ClassName = "Part"
-	elseif kind == "art_owner" then
-		invalid:art():SetAttribute("CornRuntimeArtOwned", false)
-	elseif kind == "art_project" then
-		invalid:art():SetAttribute("corn_project_id", "another_game")
-	else
-		invalid:template():SetAttribute("CornPlantTemplateOwned", false)
-	end
-	invalid:run()
-	failure(invalid)
-	if kind == "inventory_event_class" then
+	local delayed = fixture()
+	delayed.onTick = function(s)
 		assert(
-			invalid.now == 0
-				and tostring(invalid.problem):find(EndpointNames.RequestInventoryAction, 1, true),
-			"Wrong fourth endpoint class did not refuse immediately with exact inventory diagnostic"
+			s.requiredControllers == 0 and s.initialized == 0 and s.started == 0,
+			"Partial replication initialized controllers"
+		)
+		if s.now >= 0.5 then
+			s:event(EndpointNames.RoundSnapshot)
+		end
+		if s.now >= 1.0 then
+			s:event(EndpointNames.RequestRoundAction)
+		end
+		if s.now >= 2.0 then
+			s:event(EndpointNames.RequestSprintIntent)
+		end
+		if s.now >= 3.0 then
+			s:art()
+		end
+		if s.now >= 4.0 then
+			s:template()
+		end
+		if s.now >= 5.0 then
+			s:allArt()
+		end
+		if s.now >= 5.5 then
+			s:event(EndpointNames.RequestInventoryAction)
+		end
+	end
+	delayed:run()
+	success(delayed)
+	assert(
+		delayed.now >= 5.5 and delayed.loadingSeen,
+		"Partial endpoints/art did not keep loading screen visible"
+	)
+	print(
+		"PASS: partial endpoint/art replication waits for all four typed endpoints, including late inventory; owned complete inputs unlock all require/Init/Start in order; loading UI removed and author GUI exact"
+	)
+
+	local ready = fixture()
+	ready:allRemotes()
+	ready:allArt()
+	ready:run()
+	success(ready)
+	assert(ready.now == 0, "Already-ready inputs were delayed")
+
+	local missingInventory = fixture()
+	missingInventory:allRemotes()
+	missingInventory:allArt()
+	missingInventory:remotes():FindFirstChild(EndpointNames.RequestInventoryAction):Destroy()
+	missingInventory:run()
+	failure(missingInventory)
+	assert(
+		missingInventory.now >= 60
+			and missingInventory.now <= 60.15
+			and missingInventory.loadingSeen
+			and tostring(missingInventory.problem):find(
+				EndpointNames.RequestInventoryAction,
+				1,
+				true
+			),
+		"Missing fourth inventory endpoint did not wait to the shared deadline with exact diagnostic"
+	)
+	print(
+		"PASS: missing fourth inventory endpoint blocks all controllers and reports its exact name at the shared deadline"
+	)
+
+	local timeout = fixture()
+	timeout.onTick = function(s)
+		if s.now >= 55 then
+			s:allRemotes()
+			s:art()
+		end
+	end
+	timeout:run()
+	failure(timeout)
+	assert(
+		timeout.now >= 60 and timeout.now <= 60.15 and timeout.loadingSeen,
+		"Resources used separate timeouts or did not show loading state"
+	)
+	assert(
+		tostring(timeout.problem):find("Corn", 1, true),
+		"Timeout error does not identify prepared Corn inputs"
+	)
+	print(
+		"PASS: staggered remotes/art share one <=60-second deadline, timeout cleans loading UI and never requires controllers"
+	)
+
+	for _, kind in
+		{
+			"remotes_class",
+			"event_class",
+			"inventory_event_class",
+			"art_class",
+			"template_class",
+			"art_owner",
+			"art_project",
+			"template_owner",
+		}
+	do
+		local invalid = fixture()
+		invalid:allRemotes()
+		invalid:allArt()
+		if kind == "remotes_class" then
+			invalid.storage:FindFirstChild("GameRemotes").ClassName = "Model"
+		elseif kind == "event_class" then
+			invalid:remotes():FindFirstChild(EndpointNames.RequestSprintIntent).ClassName =
+				"RemoteFunction"
+		elseif kind == "inventory_event_class" then
+			invalid:remotes():FindFirstChild(EndpointNames.RequestInventoryAction).ClassName =
+				"RemoteFunction"
+		elseif kind == "art_class" then
+			invalid:art().ClassName = "Model"
+		elseif kind == "template_class" then
+			invalid:template().ClassName = "Part"
+		elseif kind == "art_owner" then
+			invalid:art():SetAttribute("CornRuntimeArtOwned", false)
+		elseif kind == "art_project" then
+			invalid:art():SetAttribute("corn_project_id", "another_game")
+		else
+			invalid:template():SetAttribute("CornPlantTemplateOwned", false)
+		end
+		invalid:run()
+		failure(invalid)
+		if kind == "inventory_event_class" then
+			assert(
+				invalid.now == 0
+					and tostring(invalid.problem):find(
+						EndpointNames.RequestInventoryAction,
+						1,
+						true
+					),
+				"Wrong fourth endpoint class did not refuse immediately with exact inventory diagnostic"
+			)
+		end
+	end
+	print(
+		"PASS: wrong endpoint/art/template classes and foreign ownership never load controllers; all error paths preserve unrelated GUI"
+	)
+
+	local foreignName = fixture()
+	foreignName.foreign.Name = "ChildrenOfCornLoading"
+	foreignName:allRemotes()
+	foreignName:allArt()
+	foreignName:run()
+	success(foreignName)
+	assert(
+		foreignName.foreign.Name == "ChildrenOfCornLoading",
+		"Existing same-name author GUI was changed"
+	)
+
+	local lateGui = fixture()
+	lateGui.gui.Parent = nil
+	lateGui.onTick = function(s)
+		if s.now >= 55 and s.gui.Parent == nil then
+			s.gui.Parent = s.player
+		end
+		if s.now >= 58 then
+			s:allRemotes()
+		end
+	end
+	lateGui:run()
+	failure(lateGui)
+	assert(
+		lateGui.now >= 60 and lateGui.now <= 60.15,
+		"PlayerGui availability reset the shared startup deadline"
+	)
+
+	for _, kind in
+		{
+			"player_gui",
+			"anchored",
+			"collide",
+			"touch",
+			"query",
+			"archivable",
+			"size_zero",
+			"size_infinite",
+			"mesh_empty",
+			"script",
+			"sound",
+			"particles",
+			"prompt",
+			"nested_remote",
+		}
+	do
+		local invalid = fixture()
+		invalid:allRemotes()
+		local template = invalid:allArt()
+		if kind == "player_gui" then
+			invalid.gui.ClassName = "Folder"
+		elseif kind == "anchored" then
+			template.Anchored = false
+		elseif kind == "collide" then
+			template.CanCollide = true
+		elseif kind == "touch" then
+			template.CanTouch = true
+		elseif kind == "query" then
+			template.CanQuery = true
+		elseif kind == "archivable" then
+			template.Archivable = false
+		elseif kind == "size_zero" then
+			template.Size = r.Vector3.new(0, 8, 3)
+		elseif kind == "size_infinite" then
+			template.Size = r.Vector3.new(math.huge, 8, 3)
+		elseif kind == "mesh_empty" then
+			template.MeshId = ""
+		else
+			local classes = {
+				script = "Script",
+				sound = "Sound",
+				particles = "ParticleEmitter",
+				prompt = "ProximityPrompt",
+				nested_remote = "RemoteEvent",
+			}
+			child(invalid, template, classes[kind], "ForeignChild")
+		end
+		invalid:run()
+		failure(invalid)
+	end
+	print(
+		"PASS: one deadline includes late PlayerGui; same-name author GUI preserved; invalid template physics/geometry and active descendants refuse before controllers"
+	)
+
+	-- task.wait may resume after its requested duration; late readiness must still obey the total deadline.
+	for _, stage in { "inputs", "player_gui" } do
+		local overslept = fixture()
+		overslept.allowOvershoot, overslept.overshoot = true, 60.5
+		if stage == "player_gui" then
+			overslept.gui.Parent = nil
+		end
+		overslept.onTick = function(s)
+			s.gui.Parent = s.player
+			s:allRemotes()
+			s:allArt()
+		end
+		overslept:run()
+		failure(overslept)
+		assert(
+			overslept.now > 60
+				and (
+					tostring(overslept.problem):find("60", 1, true)
+					or tostring(overslept.problem):find("deadline", 1, true)
+				),
+			"Oversleep was not rejected by actual shared deadline"
 		)
 	end
-end
-print(
-	"PASS: wrong endpoint/art/template classes and foreign ownership never load controllers; all error paths preserve unrelated GUI"
-)
+	print(
+		"PASS: scheduler oversleep cannot unlock controllers after sixty seconds, including late PlayerGui arrival"
+	)
 
-local foreignName = fixture()
-foreignName.foreign.Name = "ChildrenOfCornLoading"
-foreignName:allRemotes()
-foreignName:allArt()
-foreignName:run()
-success(foreignName)
-assert(
-	foreignName.foreign.Name == "ChildrenOfCornLoading",
-	"Existing same-name author GUI was changed"
-)
-
-local lateGui = fixture()
-lateGui.gui.Parent = nil
-lateGui.onTick = function(s)
-	if s.now >= 55 and s.gui.Parent == nil then
-		s.gui.Parent = s.player
-	end
-	if s.now >= 58 then
-		s:allRemotes()
-	end
-end
-lateGui:run()
-failure(lateGui)
-assert(
-	lateGui.now >= 60 and lateGui.now <= 60.15,
-	"PlayerGui availability reset the shared startup deadline"
-)
-
-for _, kind in
-	{
-		"player_gui",
-		"anchored",
-		"collide",
-		"touch",
-		"query",
-		"archivable",
-		"size_zero",
-		"size_infinite",
-		"mesh_empty",
-		"script",
-		"sound",
-		"particles",
-		"prompt",
-		"nested_remote",
-	}
-do
-	local invalid = fixture()
-	invalid:allRemotes()
-	local template = invalid:allArt()
-	if kind == "player_gui" then
-		invalid.gui.ClassName = "Folder"
-	elseif kind == "anchored" then
-		template.Anchored = false
-	elseif kind == "collide" then
-		template.CanCollide = true
-	elseif kind == "touch" then
-		template.CanTouch = true
-	elseif kind == "query" then
-		template.CanQuery = true
-	elseif kind == "archivable" then
-		template.Archivable = false
-	elseif kind == "size_zero" then
-		template.Size = r.Vector3.new(0, 8, 3)
-	elseif kind == "size_infinite" then
-		template.Size = r.Vector3.new(math.huge, 8, 3)
-	elseif kind == "mesh_empty" then
-		template.MeshId = ""
-	else
-		local classes = {
-			script = "Script",
-			sound = "Sound",
-			particles = "ParticleEmitter",
-			prompt = "ProximityPrompt",
-			nested_remote = "RemoteEvent",
+	for _, duplicate in
+		{
+			"GameRemotes",
+			"CornRuntimeArt",
+			"CornPlantTemplate",
+			EndpointNames.RoundSnapshot,
+			EndpointNames.RequestInventoryAction,
 		}
-		child(invalid, template, classes[kind], "ForeignChild")
+	do
+		local duplicated = fixture()
+		duplicated:allRemotes()
+		duplicated:allArt()
+		local parent, class = duplicated.storage, "Folder"
+		if duplicate == "CornPlantTemplate" then
+			parent, class = duplicated:art(), "MeshPart"
+		elseif
+			duplicate == EndpointNames.RoundSnapshot
+			or duplicate == EndpointNames.RequestInventoryAction
+		then
+			parent, class = duplicated:remotes(), "RemoteEvent"
+		end
+		child(duplicated, parent, class, duplicate)
+		duplicated:run()
+		failure(duplicated)
+		assert(
+			duplicated.now == 0 and tostring(duplicated.problem):find(duplicate, 1, true),
+			"Duplicate binding lacked immediate exact diagnostic"
+		)
 	end
-	invalid:run()
-	failure(invalid)
-end
-print(
-	"PASS: one deadline includes late PlayerGui; same-name author GUI preserved; invalid template physics/geometry and active descendants refuse before controllers"
-)
-
--- task.wait may resume after its requested duration; late readiness must still obey the total deadline.
-for _, stage in { "inputs", "player_gui" } do
-	local overslept = fixture()
-	overslept.allowOvershoot, overslept.overshoot = true, 60.5
-	if stage == "player_gui" then
-		overslept.gui.Parent = nil
-	end
-	overslept.onTick = function(s)
-		s.gui.Parent = s.player
-		s:allRemotes()
-		s:allArt()
-	end
-	overslept:run()
-	failure(overslept)
-	assert(
-		overslept.now > 60
-			and (
-				tostring(overslept.problem):find("60", 1, true)
-				or tostring(overslept.problem):find("deadline", 1, true)
-			),
-		"Oversleep was not rejected by actual shared deadline"
+	print(
+		"PASS: duplicate server bindings refuse immediately with exact names and preserve existing GUI"
 	)
+	print("PASS actual ClientBootstrap complete readiness corpus: " .. sessionMode)
 end
-print(
-	"PASS: scheduler oversleep cannot unlock controllers after sixty seconds, including late PlayerGui arrival"
-)
 
-for _, duplicate in
-	{
-		"GameRemotes",
-		"CornRuntimeArt",
-		"CornPlantTemplate",
-		EndpointNames.RoundSnapshot,
-		EndpointNames.RequestInventoryAction,
-	}
-do
-	local duplicated = fixture()
-	duplicated:allRemotes()
-	duplicated:allArt()
-	local parent, class = duplicated.storage, "Folder"
-	if duplicate == "CornPlantTemplate" then
-		parent, class = duplicated:art(), "MeshPart"
-	elseif
-		duplicate == EndpointNames.RoundSnapshot
-		or duplicate == EndpointNames.RequestInventoryAction
-	then
-		parent, class = duplicated:remotes(), "RemoteEvent"
+for _, mode in { "solo_local", "team_local", "external", "team_public", "", "solo" } do
+	for _, studio in { true, false } do
+		for _, environment in { "DEV", "PROD" } do
+			local allowed = studio
+				and environment == "DEV"
+				and (mode == "solo_local" or mode == "team_local")
+			if allowed then
+				continue
+			end
+			local inactive = startupFixture(mode, studio, environment)
+			inactive:allRemotes()
+			inactive:allArt()
+			inactive:run()
+			assert(
+				inactive.ok
+					and inactive.now == 0
+					and inactive.requiredControllers == 0
+					and inactive.initialized == 0
+					and inactive.started == 0
+					and #inactive.created == 0,
+				"Unsupported session, production environment or non-Studio bootstrap became active"
+			)
+			assert(#inactive.warnings >= 1, "Inactive Bootstrap omitted its diagnostic")
+			cleanup(inactive)
+		end
 	end
-	child(duplicated, parent, class, duplicate)
-	duplicated:run()
-	failure(duplicated)
-	assert(
-		duplicated.now == 0 and tostring(duplicated.problem):find(duplicate, 1, true),
-		"Duplicate binding lacked immediate exact diagnostic"
-	)
 end
 print(
-	"PASS: duplicate server bindings refuse immediately with exact names and preserve existing GUI"
+	"PASS actual ClientBootstrap refuses unsupported sessions, non-DEV and non-Studio without creating/loading gameplay or changing author GUI"
 )

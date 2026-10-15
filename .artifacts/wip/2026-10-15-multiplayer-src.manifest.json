@@ -1,0 +1,829 @@
+{
+  "scope": "Preserve unfinished multiplayer WIP; restore only src to exact accepted solo Sources. No scene, Studio, docs, tests or scripts changes.",
+  "created_utc": "2026-10-15T11:29:56.468246+00:00",
+  "archive": ".artifacts/wip/2026-10-15-multiplayer-src.zip",
+  "archive_sha256": "8b5b534cf0f6162f0b1e4c0b6b4a4d338caab37ba708ec3c15ce1a61e45dba4f",
+  "archive_bytes": 864281,
+  "archive_readback_exact": true,
+  "git_head": "372b63a1d598c4ea322716466a896dda2a814c54",
+  "git_status_src": " M src/client/Bootstrap.client.luau\n M src/client/Controllers/CornAppearanceController.luau\n M src/client/Controllers/CornBackdropController.luau\n M src/client/Controllers/CornController.luau\n M src/client/Controllers/CornWindController.luau\n M src/client/Controllers/FarmGeometryController.luau\n M src/client/Controllers/MonsterAnimationController.luau\n M src/client/Controllers/RoundController.luau\n M src/client/Game/RoundHud.luau\n M src/server/Game/CornField.luau\n M src/server/Game/MonsterHunt.luau\n M src/server/Game/RoundAudio.luau\n M src/server/Services/FarmGeometryService.luau\n M src/server/Services/RoundService.luau\n M src/shared/Config/GameConfig.luau\n M src/shared/Game/RoundText.luau\n?? src/server/Game/RoundParticipant.luau\n?? src/server/Game/TeamRound.luau\n",
+  "git_diff": {
+    "path": ".artifacts/wip/2026-10-15-multiplayer-src.git-diff.patch",
+    "sha256": "b5a6df02ef159d91dd17a54be7653f748300dbab52e9ca08b60001d7b43b2842",
+    "bytes": 24860
+  },
+  "source_map": {
+    "path": ".artifacts/wip/2026-10-15-multiplayer-src.sourcemap.json",
+    "sha256": "ca75d3fa63762ee11f24d0d93a9b85e96020e0a97069293a46f985ac31dba170"
+  },
+  "archived_files": [
+    {
+      "path": "src/client/Bootstrap.client.luau",
+      "bytes": 7494,
+      "sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f"
+    },
+    {
+      "path": "src/client/Controllers/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/client/Controllers/AudioController.luau",
+      "bytes": 27449,
+      "sha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c"
+    },
+    {
+      "path": "src/client/Controllers/CaptureController.luau",
+      "bytes": 16896,
+      "sha256": "f89773a4ad435464819c6f81afae008e07ec63a179f55c3df2e48107894abc32"
+    },
+    {
+      "path": "src/client/Controllers/CornAppearanceController.luau",
+      "bytes": 6746,
+      "sha256": "e2545700c7dc5517699f54a2ae8ee7a3e2939992bb55bd3c1c90be32d2187b60"
+    },
+    {
+      "path": "src/client/Controllers/CornBackdropController.luau",
+      "bytes": 11519,
+      "sha256": "cdb5ea1633cc45a3aa33a9180713a05b5eaff4ee50ec8dab2df4b0ec29f4699c"
+    },
+    {
+      "path": "src/client/Controllers/CornController.luau",
+      "bytes": 22719,
+      "sha256": "9b4fda9dcb51a2351ddefed6ecf2d77ea7c4e3a98b14fe6ba37355a315f2bcc4"
+    },
+    {
+      "path": "src/client/Controllers/CornWindController.luau",
+      "bytes": 20381,
+      "sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515"
+    },
+    {
+      "path": "src/client/Controllers/FarmGeometryController.luau",
+      "bytes": 5103,
+      "sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed"
+    },
+    {
+      "path": "src/client/Controllers/GateHintController.luau",
+      "bytes": 11661,
+      "sha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed"
+    },
+    {
+      "path": "src/client/Controllers/HandheldController.luau",
+      "bytes": 10984,
+      "sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e"
+    },
+    {
+      "path": "src/client/Controllers/InventoryController.luau",
+      "bytes": 4814,
+      "sha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850"
+    },
+    {
+      "path": "src/client/Controllers/MinimapController.luau",
+      "bytes": 5141,
+      "sha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715"
+    },
+    {
+      "path": "src/client/Controllers/MonsterAnimationController.luau",
+      "bytes": 10309,
+      "sha256": "2a9020558ef07edb1b85a388f75b0f2992f8b5f48c8280fb1938fa8888951e75"
+    },
+    {
+      "path": "src/client/Controllers/MovementController.luau",
+      "bytes": 8143,
+      "sha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3"
+    },
+    {
+      "path": "src/client/Controllers/RoundController.luau",
+      "bytes": 9219,
+      "sha256": "a1a066480b6c4b4bfa17e563dbe31d33ed2931914a9fc721cd6b7457aeeed497"
+    },
+    {
+      "path": "src/client/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/client/Game/InventoryHud.luau",
+      "bytes": 10750,
+      "sha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26"
+    },
+    {
+      "path": "src/client/Game/MinimapHud.luau",
+      "bytes": 12008,
+      "sha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93"
+    },
+    {
+      "path": "src/client/Game/RoundHud.luau",
+      "bytes": 28961,
+      "sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5"
+    },
+    {
+      "path": "src/server/Bootstrap.server.luau",
+      "bytes": 2094,
+      "sha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956"
+    },
+    {
+      "path": "src/server/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/server/Game/AuthoredWorld.luau",
+      "bytes": 12418,
+      "sha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80"
+    },
+    {
+      "path": "src/server/Game/CornField.luau",
+      "bytes": 3487,
+      "sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187"
+    },
+    {
+      "path": "src/server/Game/FarmGeometry.luau",
+      "bytes": 470,
+      "sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a"
+    },
+    {
+      "path": "src/server/Game/InventoryWorld.luau",
+      "bytes": 5785,
+      "sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
+    },
+    {
+      "path": "src/server/Game/ItemModels.luau",
+      "bytes": 4604,
+      "sha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d"
+    },
+    {
+      "path": "src/server/Game/MapAuthoring.luau",
+      "bytes": 19226,
+      "sha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc"
+    },
+    {
+      "path": "src/server/Game/MapTuning.luau",
+      "bytes": 8631,
+      "sha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869"
+    },
+    {
+      "path": "src/server/Game/MinimapState.luau",
+      "bytes": 4249,
+      "sha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60"
+    },
+    {
+      "path": "src/server/Game/MonsterHunt.luau",
+      "bytes": 17089,
+      "sha256": "5e82a9e50fdf6cb7b0193d370d1890287aeb18e373b5f9f0e203682af0e6c63a"
+    },
+    {
+      "path": "src/server/Game/RoundAudio.luau",
+      "bytes": 20872,
+      "sha256": "0e56f5f20f869d539920f8e8e4e336d4ba5c91a25f36c6d8ace7bd4197bce4eb"
+    },
+    {
+      "path": "src/server/Game/RoundParticipant.luau",
+      "bytes": 9199,
+      "sha256": "6bc7b11589efa78848ee60f19d6bd3b1b91b1fb0519b38627bb092d6db1a862e"
+    },
+    {
+      "path": "src/server/Game/SoloRound.luau",
+      "bytes": 32727,
+      "sha256": "02f3cfe2c0b3df14c7d367e889d9c3baee13edbbc23bb82274175d871a1fd2d7"
+    },
+    {
+      "path": "src/server/Game/TeamRound.luau",
+      "bytes": 19983,
+      "sha256": "1d3e8e0998ca44505a3ecefd8e60513d6dc2c9ff60126ed16fa4d38420b37dd4"
+    },
+    {
+      "path": "src/server/Services/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/server/Services/FarmGeometryService.luau",
+      "bytes": 675,
+      "sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533"
+    },
+    {
+      "path": "src/server/Services/NetworkService.luau",
+      "bytes": 1231,
+      "sha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea"
+    },
+    {
+      "path": "src/server/Services/RoundService.luau",
+      "bytes": 642,
+      "sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1"
+    },
+    {
+      "path": "src/server/Services/TagService.luau",
+      "bytes": 747,
+      "sha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4"
+    },
+    {
+      "path": "src/shared/Config/GameConfig.luau",
+      "bytes": 438,
+      "sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063"
+    },
+    {
+      "path": "src/shared/Core/Logger.luau",
+      "bytes": 504,
+      "sha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c"
+    },
+    {
+      "path": "src/shared/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/shared/Game/AudioAssets.luau",
+      "bytes": 2417,
+      "sha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5"
+    },
+    {
+      "path": "src/shared/Game/AudioRules.luau",
+      "bytes": 2696,
+      "sha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d"
+    },
+    {
+      "path": "src/shared/Game/Balance.luau",
+      "bytes": 963,
+      "sha256": "e567d2849813ecd5de4087f603d12c65846958f58fea2558f66f35270fca9d88"
+    },
+    {
+      "path": "src/shared/Game/CapturePresentation.luau",
+      "bytes": 6215,
+      "sha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91"
+    },
+    {
+      "path": "src/shared/Game/CornAppearance.luau",
+      "bytes": 608,
+      "sha256": "1d04d12a51407a9caf1d90960c9ff8e084a53c020ebc3104457ead81c326636c"
+    },
+    {
+      "path": "src/shared/Game/CornLayout.luau",
+      "bytes": 10341,
+      "sha256": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1"
+    },
+    {
+      "path": "src/shared/Game/FarmEditableMeshBuilder.luau",
+      "bytes": 19891,
+      "sha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk06.luau",
+      "bytes": 140000,
+      "sha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk07.luau",
+      "bytes": 140000,
+      "sha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk08.luau",
+      "bytes": 140000,
+      "sha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk09.luau",
+      "bytes": 140000,
+      "sha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk10.luau",
+      "bytes": 96536,
+      "sha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/init.luau",
+      "bytes": 372,
+      "sha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/Chunk01.luau",
+      "bytes": 103484,
+      "sha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/init.luau",
+      "bytes": 250,
+      "sha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk06.luau",
+      "bytes": 65407,
+      "sha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/init.luau",
+      "bytes": 305,
+      "sha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk02.luau",
+      "bytes": 111487,
+      "sha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/init.luau",
+      "bytes": 261,
+      "sha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3"
+    },
+    {
+      "path": "src/shared/Game/HandheldPresentation.luau",
+      "bytes": 5067,
+      "sha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c"
+    },
+    {
+      "path": "src/shared/Game/Inventory.luau",
+      "bytes": 2860,
+      "sha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad"
+    },
+    {
+      "path": "src/shared/Game/LightingModes.luau",
+      "bytes": 2259,
+      "sha256": "8e90fb793c88701f43089e0148f75d479e116303411bcc38619942f6080ff6db"
+    },
+    {
+      "path": "src/shared/Game/MinimapGeometry.luau",
+      "bytes": 2546,
+      "sha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda"
+    },
+    {
+      "path": "src/shared/Game/ModePreviewImages.luau",
+      "bytes": 239,
+      "sha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86"
+    },
+    {
+      "path": "src/shared/Game/MonsterPose.luau",
+      "bytes": 4248,
+      "sha256": "aeb74cb60e7305700cac226c29fab3252f03c40df8fed08dc230c3b98246f428"
+    },
+    {
+      "path": "src/shared/Game/RoundText.luau",
+      "bytes": 4372,
+      "sha256": "c861cd2eee2807b7d2ce20aa7f3bac6d099472a6720db8c46c2c351a69824b00"
+    },
+    {
+      "path": "src/shared/Game/Stamina.luau",
+      "bytes": 1731,
+      "sha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783"
+    },
+    {
+      "path": "src/shared/Network/EndpointNames.luau",
+      "bytes": 205,
+      "sha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca"
+    }
+  ],
+  "archived_luau_sources": 77,
+  "archived_non_source_files": 5,
+  "baseline": {
+    "path": "place/Children_of_corn.before-multiplayer-20261015.rbxl",
+    "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+    "bytes": 995988,
+    "sources": 78,
+    "instances": 4160
+  },
+  "restore_sources": [
+    {
+      "path": "src/client/Bootstrap.client.luau",
+      "bytes": 7453,
+      "sha256": "810a97bbc415966c8840b921690896b18ca71c2cf0d011eba7a9b4af4712db39"
+    },
+    {
+      "path": "src/client/Controllers/AudioController.luau",
+      "bytes": 27449,
+      "sha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c"
+    },
+    {
+      "path": "src/client/Controllers/CaptureController.luau",
+      "bytes": 16896,
+      "sha256": "f89773a4ad435464819c6f81afae008e07ec63a179f55c3df2e48107894abc32"
+    },
+    {
+      "path": "src/client/Controllers/CornAppearanceController.luau",
+      "bytes": 6682,
+      "sha256": "475ba50562138abeede58b1379f18aeb9fc3064d3bd43e98a23185164ed8463b"
+    },
+    {
+      "path": "src/client/Controllers/CornBackdropController.luau",
+      "bytes": 11456,
+      "sha256": "40537424f04afc896c43669bef5997d8f3ab6ecf20a08af0c1fabd0c9beb0670"
+    },
+    {
+      "path": "src/client/Controllers/CornController.luau",
+      "bytes": 22656,
+      "sha256": "6d2c7e4336a1773bd8d5943bb85b686dc4df2c9097c1c7cdf836cc1476ef1e2d"
+    },
+    {
+      "path": "src/client/Controllers/CornWindController.luau",
+      "bytes": 20318,
+      "sha256": "458d95a423b38f6abaa37b33bb138cef883d81b913e156a530a583e8d4aa6726"
+    },
+    {
+      "path": "src/client/Controllers/FarmGeometryController.luau",
+      "bytes": 5040,
+      "sha256": "fe2a9c73c3819797083b6cbd6855bfcee590ba1ffc7e064fcc4095fb8e008e7f"
+    },
+    {
+      "path": "src/client/Controllers/GateHintController.luau",
+      "bytes": 11661,
+      "sha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed"
+    },
+    {
+      "path": "src/client/Controllers/HandheldController.luau",
+      "bytes": 10984,
+      "sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e"
+    },
+    {
+      "path": "src/client/Controllers/InventoryController.luau",
+      "bytes": 4814,
+      "sha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850"
+    },
+    {
+      "path": "src/client/Controllers/MinimapController.luau",
+      "bytes": 5141,
+      "sha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715"
+    },
+    {
+      "path": "src/client/Controllers/MonsterAnimationController.luau",
+      "bytes": 10246,
+      "sha256": "395d94fa951ab881140122f02b48f90c54d6bdb30e20b2eeb68e14f63c98d681"
+    },
+    {
+      "path": "src/client/Controllers/MovementController.luau",
+      "bytes": 8143,
+      "sha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3"
+    },
+    {
+      "path": "src/client/Controllers/RoundController.luau",
+      "bytes": 8121,
+      "sha256": "3b970a044c52aa951371eefbc6bec92447ac4c17523db52d09deccab0bf82064"
+    },
+    {
+      "path": "src/client/Game/InventoryHud.luau",
+      "bytes": 10750,
+      "sha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26"
+    },
+    {
+      "path": "src/client/Game/MinimapHud.luau",
+      "bytes": 12008,
+      "sha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93"
+    },
+    {
+      "path": "src/client/Game/RoundHud.luau",
+      "bytes": 26282,
+      "sha256": "9feac0b2a21e7f0276161dcc6aa06ba7f2247952163f717d51f6899d4adc72b4"
+    },
+    {
+      "path": "src/server/Bootstrap.server.luau",
+      "bytes": 2094,
+      "sha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956"
+    },
+    {
+      "path": "src/server/Game/AuthoredWorld.luau",
+      "bytes": 12418,
+      "sha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80"
+    },
+    {
+      "path": "src/server/Game/CornField.luau",
+      "bytes": 3441,
+      "sha256": "17b7f01b8fc6a44116a91b20f64cf0be92dd05be179c48687ec8ba741e8595e5"
+    },
+    {
+      "path": "src/server/Game/FarmGeometry.luau",
+      "bytes": 470,
+      "sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a"
+    },
+    {
+      "path": "src/server/Game/InventoryWorld.luau",
+      "bytes": 5785,
+      "sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
+    },
+    {
+      "path": "src/server/Game/ItemModels.luau",
+      "bytes": 4604,
+      "sha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d"
+    },
+    {
+      "path": "src/server/Game/MapAuthoring.luau",
+      "bytes": 19226,
+      "sha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc"
+    },
+    {
+      "path": "src/server/Game/MapTuning.luau",
+      "bytes": 8631,
+      "sha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869"
+    },
+    {
+      "path": "src/server/Game/MinimapState.luau",
+      "bytes": 4249,
+      "sha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60"
+    },
+    {
+      "path": "src/server/Game/MonsterHunt.luau",
+      "bytes": 14054,
+      "sha256": "f4528ca78f7c9227016a6ce0ab23fd10a8a1b699673c4744f841b4ad82a019e1"
+    },
+    {
+      "path": "src/server/Game/RoundAudio.luau",
+      "bytes": 20707,
+      "sha256": "81804da1512f3e5419e87cc9a7b86f94803a73226e0bac1c43fe97eb49462b74"
+    },
+    {
+      "path": "src/server/Game/SoloRound.luau",
+      "bytes": 32727,
+      "sha256": "02f3cfe2c0b3df14c7d367e889d9c3baee13edbbc23bb82274175d871a1fd2d7"
+    },
+    {
+      "path": "src/server/Services/FarmGeometryService.luau",
+      "bytes": 611,
+      "sha256": "324c49e1c033fce411682a80e909a030c2c3b6954ea809328eae73bdf473dbb4"
+    },
+    {
+      "path": "src/server/Services/NetworkService.luau",
+      "bytes": 1231,
+      "sha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea"
+    },
+    {
+      "path": "src/server/Services/RoundService.luau",
+      "bytes": 646,
+      "sha256": "abfe55f1a3a6506254785f323165d2661c11c73eb059e440214f75255b4455cb"
+    },
+    {
+      "path": "src/server/Services/TagService.luau",
+      "bytes": 747,
+      "sha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4"
+    },
+    {
+      "path": "src/shared/Config/GameConfig.luau",
+      "bytes": 420,
+      "sha256": "3206991b78e59062aa5a8630debaee35ac66f2ec24ce57dd2a3ec95bceb02012"
+    },
+    {
+      "path": "src/shared/Core/Logger.luau",
+      "bytes": 504,
+      "sha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c"
+    },
+    {
+      "path": "src/shared/Game/AudioAssets.luau",
+      "bytes": 2417,
+      "sha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5"
+    },
+    {
+      "path": "src/shared/Game/AudioRules.luau",
+      "bytes": 2696,
+      "sha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d"
+    },
+    {
+      "path": "src/shared/Game/Balance.luau",
+      "bytes": 963,
+      "sha256": "e567d2849813ecd5de4087f603d12c65846958f58fea2558f66f35270fca9d88"
+    },
+    {
+      "path": "src/shared/Game/CapturePresentation.luau",
+      "bytes": 6215,
+      "sha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91"
+    },
+    {
+      "path": "src/shared/Game/CornAppearance.luau",
+      "bytes": 608,
+      "sha256": "1d04d12a51407a9caf1d90960c9ff8e084a53c020ebc3104457ead81c326636c"
+    },
+    {
+      "path": "src/shared/Game/CornLayout.luau",
+      "bytes": 10341,
+      "sha256": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1"
+    },
+    {
+      "path": "src/shared/Game/FarmEditableMeshBuilder.luau",
+      "bytes": 19891,
+      "sha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk06.luau",
+      "bytes": 140000,
+      "sha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk07.luau",
+      "bytes": 140000,
+      "sha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk08.luau",
+      "bytes": 140000,
+      "sha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk09.luau",
+      "bytes": 140000,
+      "sha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk10.luau",
+      "bytes": 96536,
+      "sha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/init.luau",
+      "bytes": 372,
+      "sha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/Chunk01.luau",
+      "bytes": 103484,
+      "sha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/init.luau",
+      "bytes": 250,
+      "sha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk06.luau",
+      "bytes": 65407,
+      "sha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/init.luau",
+      "bytes": 305,
+      "sha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk02.luau",
+      "bytes": 111487,
+      "sha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/init.luau",
+      "bytes": 261,
+      "sha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3"
+    },
+    {
+      "path": "src/shared/Game/HandheldPresentation.luau",
+      "bytes": 5067,
+      "sha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c"
+    },
+    {
+      "path": "src/shared/Game/Inventory.luau",
+      "bytes": 2860,
+      "sha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad"
+    },
+    {
+      "path": "src/shared/Game/LightingModes.luau",
+      "bytes": 2259,
+      "sha256": "8e90fb793c88701f43089e0148f75d479e116303411bcc38619942f6080ff6db"
+    },
+    {
+      "path": "src/shared/Game/MinimapGeometry.luau",
+      "bytes": 2546,
+      "sha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda"
+    },
+    {
+      "path": "src/shared/Game/ModePreviewImages.luau",
+      "bytes": 239,
+      "sha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86"
+    },
+    {
+      "path": "src/shared/Game/MonsterPose.luau",
+      "bytes": 4248,
+      "sha256": "aeb74cb60e7305700cac226c29fab3252f03c40df8fed08dc230c3b98246f428"
+    },
+    {
+      "path": "src/shared/Game/RoundText.luau",
+      "bytes": 3453,
+      "sha256": "b59f34404f42fd8b9df75ca5f5d31951b222a8240e2b9987d677c2ed047befaa"
+    },
+    {
+      "path": "src/shared/Game/Stamina.luau",
+      "bytes": 1731,
+      "sha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783"
+    },
+    {
+      "path": "src/shared/Network/EndpointNames.luau",
+      "bytes": 205,
+      "sha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca"
+    }
+  ],
+  "remove_after_archive": [
+    "src/server/Game/RoundParticipant.luau",
+    "src/server/Game/TeamRound.luau"
+  ],
+  "restored": true,
+  "reader_warnings": "0.121219800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+  "restored_sources": 75,
+  "removed_own_sources": 2,
+  "untouched_non_source_files": 5,
+  "clean_source_set_sha256": "be8e5a5faeb5e9c9356b8fcddfea2f8c9210d03e4b062e71e8560e18f021617b",
+  "clean_digest_definition": "SHA256(UTF8 concat of sorted relative src path + NUL + file SHA256 hex + LF)",
+  "archive_verified_again_after_restore": true
+}

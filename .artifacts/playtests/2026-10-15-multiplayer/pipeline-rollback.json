@@ -1,0 +1,24 @@
+{
+  "cases": [
+    "not-studio",
+    "running",
+    "paused-play",
+    "manual-original",
+    "manual-new",
+    "manual-fog",
+    "open-new",
+    "partial-missing-new",
+    "extended-new",
+    "extra-owned",
+    "detach-error-restores-initial",
+    "verification-error-restores-initial"
+  ],
+  "diagnosticObjectsPreserved": 3,
+  "exactInitialSources": 80,
+  "originalWorldAndSourcesRestored": true,
+  "passed": true,
+  "removedModules": 2,
+  "restoredSources": 7,
+  "scope": "Actual generated initial installer and rollback against immutable baseline in memory; no live Studio or scene writes",
+  "unsafeCasesRejected": 12
+}

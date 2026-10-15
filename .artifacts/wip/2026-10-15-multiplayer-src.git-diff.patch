@@ -1,0 +1,639 @@
+diff --git a/src/client/Bootstrap.client.luau b/src/client/Bootstrap.client.luau
+index a749916..8408f3c 100644
+--- a/src/client/Bootstrap.client.luau
++++ b/src/client/Bootstrap.client.luau
+@@ -23,9 +23,9 @@ local RunService = game:GetService("RunService")
+ if
+ 	not RunService:IsStudio()
+ 	or Config.Environment ~= "DEV"
+-	or Config.Game.SessionMode ~= "solo_local"
++	or (Config.Game.SessionMode ~= "solo_local" and Config.Game.SessionMode ~= "team_local")
+ then
+-	warn("[ChildrenOfCorn] Inactive: this local prototype requires Studio DEV solo mode")
++	warn("[ChildrenOfCorn] Inactive: this local prototype requires Studio DEV mode")
+ 	return
+ end
+ local Endpoints = require(GameShared:WaitForChild("Network"):WaitForChild("EndpointNames"))
+diff --git a/src/client/Controllers/CornAppearanceController.luau b/src/client/Controllers/CornAppearanceController.luau
+index 98fdbc5..719d519 100644
+--- a/src/client/Controllers/CornAppearanceController.luau
++++ b/src/client/Controllers/CornAppearanceController.luau
+@@ -223,7 +223,10 @@ function Controller:Start(context: any)
+ 	if
+ 		not RunService:IsStudio()
+ 		or context.Config.Environment ~= "DEV"
+-		or context.Config.Game.SessionMode ~= "solo_local"
++		or (
++			context.Config.Game.SessionMode ~= "solo_local"
++			and context.Config.Game.SessionMode ~= "team_local"
++		)
+ 	then
+ 		return
+ 	end
+diff --git a/src/client/Controllers/CornBackdropController.luau b/src/client/Controllers/CornBackdropController.luau
+index c71a200..4f56da6 100644
+--- a/src/client/Controllers/CornBackdropController.luau
++++ b/src/client/Controllers/CornBackdropController.luau
+@@ -346,7 +346,10 @@ end
+ function CornBackdropController:Init(context: any)
+ 	self._enabled = RunService:IsStudio()
+ 		and context.Config.Environment == "DEV"
+-		and context.Config.Game.SessionMode == "solo_local"
++		and (
++			context.Config.Game.SessionMode == "solo_local"
++			or context.Config.Game.SessionMode == "team_local"
++		)
+ 	self._renderer = context.Controllers.CornController
+ 	self._connection = nil
+ 	self._clock = os.clock
+diff --git a/src/client/Controllers/CornController.luau b/src/client/Controllers/CornController.luau
+index ba3470c..f0ded97 100644
+--- a/src/client/Controllers/CornController.luau
++++ b/src/client/Controllers/CornController.luau
+@@ -727,7 +727,10 @@ function CornController:Init(context: any)
+ 	self._torchesEnabled = true
+ 	self._enabled = RunService:IsStudio()
+ 		and context.Config.Environment == "DEV"
+-		and context.Config.Game.SessionMode == "solo_local"
++		and (
++			context.Config.Game.SessionMode == "solo_local"
++			or context.Config.Game.SessionMode == "team_local"
++		)
+ end
+ 
+ function CornController:Start()
+diff --git a/src/client/Controllers/CornWindController.luau b/src/client/Controllers/CornWindController.luau
+index 5e83fbf..ab585b6 100644
+--- a/src/client/Controllers/CornWindController.luau
++++ b/src/client/Controllers/CornWindController.luau
+@@ -707,7 +707,10 @@ end
+ function CornWindController:Init(context: any)
+ 	self._enabled = RunService:IsStudio()
+ 		and context.Config.Environment == "DEV"
+-		and context.Config.Game.SessionMode == "solo_local"
++		and (
++			context.Config.Game.SessionMode == "solo_local"
++			or context.Config.Game.SessionMode == "team_local"
++		)
+ 	self._connection, self._player = nil, Players.LocalPlayer
+ 	self._clock = os.clock
+ 	self._map, self._mode = nil, nil
+diff --git a/src/client/Controllers/FarmGeometryController.luau b/src/client/Controllers/FarmGeometryController.luau
+index 0d1b17a..7bab680 100644
+--- a/src/client/Controllers/FarmGeometryController.luau
++++ b/src/client/Controllers/FarmGeometryController.luau
+@@ -10,7 +10,10 @@ local PROJECT = "children_of_corn"
+ function Controller:Init(context: any)
+ 	self._enabled = run:IsStudio()
+ 		and context.Config.Environment == "DEV"
+-		and context.Config.Game.SessionMode == "solo_local"
++		and (
++			context.Config.Game.SessionMode == "solo_local"
++			or context.Config.Game.SessionMode == "team_local"
++		)
+ 	self._runtime = Builder.newRuntime("client")
+ 	self._connections = {}
+ 	self._parts = {}
+diff --git a/src/client/Controllers/MonsterAnimationController.luau b/src/client/Controllers/MonsterAnimationController.luau
+index 243802c..58fb4b7 100644
+--- a/src/client/Controllers/MonsterAnimationController.luau
++++ b/src/client/Controllers/MonsterAnimationController.luau
+@@ -331,7 +331,10 @@ function Controller:Init(context: any, monsterIndex: number?)
+ 	self._companions = {}
+ 	self._enabled = RunService:IsStudio()
+ 		and context.Config.Environment == "DEV"
+-		and context.Config.Game.SessionMode == "solo_local"
++		and (
++			context.Config.Game.SessionMode == "solo_local"
++			or context.Config.Game.SessionMode == "team_local"
++		)
+ 	self._map, self._runtime, self._model, self._root = nil, nil, nil, nil
+ 	self._parts = {}
+ 	self._topConnections, self._mapConnections, self._runtimeConnections, self._monsterConnections =
+diff --git a/src/client/Controllers/RoundController.luau b/src/client/Controllers/RoundController.luau
+index 736e777..a809902 100644
+--- a/src/client/Controllers/RoundController.luau
++++ b/src/client/Controllers/RoundController.luau
+@@ -46,8 +46,33 @@ local function nonnegativeNumber(value: any): boolean
+ 	return typeof(value) == "number" and value == value and value >= 0 and value < math.huge
+ end
+ 
++local function boundedInteger(value: any, maximum: number): boolean
++	return nonnegativeNumber(value) and value % 1 == 0 and value <= maximum
++end
++
++local function validTeam(value: any): boolean
++	return value == nil
++		or (
++			typeof(value) == "table"
++			and boundedInteger(value.round_id, 9007199254740991)
++			and typeof(value.state) == "string"
++			and ({ waiting = true, preparing = true, active = true, finished = true })[value.state] == true
++			and value.capacity == 4
++			and boundedInteger(value.count, value.capacity)
++			and boundedInteger(value.ready_count, value.count)
++			and boundedInteger(value.remaining, value.count)
++			and typeof(value.ready) == "boolean"
++			and typeof(value.can_start) == "boolean"
++			and typeof(value.key_state) == "string"
++			and ({ hidden = true, carried = true, opened = true })[value.key_state] == true
++			and typeof(value.carrier_name) == "string"
++			and #value.carrier_name <= 50
++		)
++end
++
+ local function validSnapshot(value: any): boolean
+ 	return typeof(value) == "table"
++		and validTeam(value.team)
+ 		and LightingModes.IsValid(value.lighting_mode)
+ 		and MinimapGeometry.IsValid(value.minimap)
+ 		and Inventory.IsValidSnapshot(value.inventory)
+@@ -139,6 +164,10 @@ function RoundController:_request(action: string, mode: string?)
+ 	if (action == "start" or action == "retry") and not LightingModes.IsValid(mode) then
+ 		return
+ 	end
++	local team = self._snapshot.team
++	if (action == "start" or action == "retry") and team and (team.ready or not team.can_start) then
++		return
++	end
+ 	if action == "start" and self._snapshot.phase ~= "ready" then
+ 		return
+ 	end
+diff --git a/src/client/Game/RoundHud.luau b/src/client/Game/RoundHud.luau
+index 3f07761..5e39581 100644
+--- a/src/client/Game/RoundHud.luau
++++ b/src/client/Game/RoundHud.luau
+@@ -13,6 +13,18 @@ local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometr
+ local Balance = require(ReplicatedStorage.GameShared.Game.Balance)
+ 
+ export type Snapshot = {
++	team: {
++		round_id: number,
++		state: string,
++		capacity: number,
++		count: number,
++		ready_count: number,
++		remaining: number,
++		ready: boolean,
++		can_start: boolean,
++		key_state: string,
++		carrier_name: string,
++	}?,
+ 	capture: { id: number, remaining: number, frame: CFrame },
+ 	inventory: {
+ 		slots: { string },
+@@ -470,7 +482,9 @@ function RoundHud:_captureChoicesVisibility(visible: boolean)
+ 	self._captureChoicesVisible = visible
+ 	if visible then
+ 		self._captureSavedSelection = GuiService.SelectedObject
+-		GuiService.SelectedObject = self._captureRevive
++		GuiService.SelectedObject = if self._captureRevive.Active
++			then self._captureRevive
++			else self._captureExit
+ 	elseif
+ 		GuiService.SelectedObject == self._captureRevive
+ 		or GuiService.SelectedObject == self._captureExit
+@@ -508,12 +522,19 @@ function RoundHud:_canAct(): boolean
+ 		and self._snapshot ~= nil
+ end
+ 
++function RoundHud:_canStart(): boolean
++	local team = self._snapshot and self._snapshot.team
++	return not team or (team.can_start and not team.ready)
++end
++
+ function RoundHud:_introValid(): boolean
+ 	local pending, snapshot = self._introPending, self._snapshot
+ 	return pending ~= nil
+ 		and snapshot ~= nil
+ 		and snapshot.phase == pending.phase
+ 		and snapshot.minimap.round_id == pending.roundId
++		and (if snapshot.team then snapshot.team.round_id else nil) == pending.teamRoundId
++		and self:_canStart()
+ 		and LightingModes.IsValid(pending.mode)
+ 		and (pending.phase ~= "caught_out" or self:_captureReady())
+ end
+@@ -541,7 +562,13 @@ end
+ 
+ function RoundHud:ShowObjective(action: string)
+ 	local snapshot = self._snapshot
+-	if not self:_canAct() or not snapshot or self._captureActive or self._introPending then
++	if
++		not self:_canAct()
++		or not self:_canStart()
++		or not snapshot
++		or self._captureActive
++		or self._introPending
++	then
+ 		return
+ 	end
+ 	local allowed = (action == "start" and snapshot.phase == "ready")
+@@ -561,6 +588,7 @@ function RoundHud:ShowObjective(action: string)
+ 		mode = LightingModes.Default,
+ 		phase = snapshot.phase,
+ 		roundId = snapshot.minimap.round_id,
++		teamRoundId = if snapshot.team then snapshot.team.round_id else nil,
+ 	}
+ 	self:_render()
+ end
+@@ -658,6 +686,8 @@ function RoundHud:_render()
+ 	end
+ 	local intro = self._introPending ~= nil
+ 	local snapshot = self._snapshot
++	local team = snapshot and snapshot.team
++	local canStart = self:_canStart()
+ 	local phase = if snapshot then snapshot.phase else "loading"
+ 	local isActive = phase == "active"
+ 	local isResult = phase == "escaped" or phase == "aborted" or phase == "caught_out"
+@@ -684,13 +714,16 @@ function RoundHud:_render()
+ 			and not self._unavailable
+ 			and not intro
+ 			and not self._captureActive
++			and ((control ~= self._start and control ~= self._retry) or canStart)
+ 		control.Active = enabled
+ 		control.AutoButtonColor = enabled
+ 		control.BackgroundColor3 = if enabled then BUTTON_COLOR else DISABLED_COLOR
+ 		control.TextTransparency = if enabled then 0 else 0.35
+ 	end
+ 	for _, control in { self._captureRevive, self._captureExit } do
+-		control.Active = captureChoices and self:_canAct()
++		control.Active = captureChoices
++			and self:_canAct()
++			and (control ~= self._captureRevive or phase ~= "caught_out" or canStart)
+ 		control.AutoButtonColor = control.Active
+ 		control.BackgroundColor3 = if control.Active then BUTTON_COLOR else DISABLED_COLOR
+ 		control.Modal = captureChoices
+@@ -703,6 +736,26 @@ function RoundHud:_render()
+ 			elseif phase == "caught_out" then "corn_capture_retry"
+ 			else "corn_capture_continue"
+ 	)
++	local waitingKey = if team and team.ready then "corn_team_ready" else "corn_team_waiting"
++	self._start.Text = text(
++		if team then (if canStart then "corn_team_start" else waitingKey) else "corn_loop_start"
++	)
++	self._retry.Text = text(
++		if team then (if canStart then "corn_team_retry" else waitingKey) else "corn_loop_retry"
++	)
++	self._captureRevive.Text = text(
++		if phase == "caught_out" and team
++			then (if canStart then "corn_team_retry" else waitingKey)
++			else "corn_capture_revive"
++	)
++	if phase == "caught_out" and team and not canStart then
++		self._captureMessage.Text =
++			text(if team.ready then "corn_team_waiting_ready" else "corn_team_waiting_result")
++	end
++	self._introMessage.Text =
++		text(if team then "corn_team_intro_objective" else "corn_loop_intro_objective")
++	self._introConfirm.Text =
++		text(if team then "corn_team_intro_confirm" else "corn_loop_intro_confirm")
+ 	self._introBack.Text = text(
+ 		if self._introPending and self._introPending.phase == "caught_out"
+ 			then "corn_capture_back"
+@@ -717,6 +770,15 @@ function RoundHud:_render()
+ 	self._title.Text = text("corn_loop_title")
+ 	self._time.Text = ""
+ 	self._notice.Text = if snapshot then text(snapshot.notice) else ""
++	if team then
++		local teamText = text(
++			if team.state == "active" or team.state == "preparing"
++				then "corn_team_remaining"
++				else "corn_team_ready_count",
++			{ count = team.count, ready = team.ready_count, remaining = team.remaining }
++		)
++		self._notice.Text ..= (if self._notice.Text == "" then "" else "\n") .. teamText
++	end
+ 	self._balance.Visible = snapshot ~= nil
+ 	self._balance.Text = text(
+ 		"corn_loop_test_balance",
+@@ -729,7 +791,11 @@ function RoundHud:_render()
+ 			then text(snapshot and snapshot.notice or "corn_hunt_first_catch")
+ 			else text("corn_loop_loading")
+ 	elseif phase == "ready" then
+-		self._message.Text = text("corn_loop_objective_search")
++		self._message.Text = text(
++			if team and not canStart
++				then (if team.ready then "corn_team_waiting_ready" else "corn_team_waiting_result")
++				else "corn_loop_objective_search"
++		)
+ 	elseif snapshot and isResult then
+ 		self._title.Text = text(
+ 			if phase == "escaped"
+@@ -751,6 +817,7 @@ function RoundHud:_render()
+ 		local objectiveKey = if snapshot.gate_open
+ 			then "corn_loop_objective_exit"
+ 			elseif snapshot.has_key then "corn_loop_objective_return"
++			elseif team and team.key_state == "carried" then "corn_team_key_carried"
+ 			else "corn_loop_objective_search"
+ 		self._objective.Text = text(objectiveKey)
+ 		self._activeTime.Text =
+@@ -767,6 +834,17 @@ function RoundHud:_render()
+ 			"corn_hunt_attempts",
+ 			{ count = snapshot.catches_remaining }
+ 		)
++		if team then
++			self._activeTime.Text ..= " · " .. text(
++				"corn_team_remaining",
++				{ remaining = team.remaining, count = team.count }
++			)
++			if team.key_state == "carried" then
++				self._activeBalance.Text = text("corn_team_carrier", { name = team.carrier_name })
++					.. " · "
++					.. text("corn_hunt_attempts", { count = snapshot.catches_remaining })
++			end
++		end
+ 	end
+ 	local remaining = if snapshot
+ 		then math.ceil(Balance.hunt_start_delay_sec - snapshot.elapsed_sec)
+diff --git a/src/server/Game/CornField.luau b/src/server/Game/CornField.luau
+index 4a0d5cc..93ed26f 100644
+--- a/src/server/Game/CornField.luau
++++ b/src/server/Game/CornField.luau
+@@ -17,7 +17,7 @@ function CornField.Prepare(): boolean
+ 	if
+ 		not RunService:IsStudio()
+ 		or Config.Environment ~= "DEV"
+-		or Config.Game.SessionMode ~= "solo_local"
++		or (Config.Game.SessionMode ~= "solo_local" and Config.Game.SessionMode ~= "team_local")
+ 	then
+ 		return false
+ 	end
+diff --git a/src/server/Game/MonsterHunt.luau b/src/server/Game/MonsterHunt.luau
+index e4435b0..6854983 100644
+--- a/src/server/Game/MonsterHunt.luau
++++ b/src/server/Game/MonsterHunt.luau
+@@ -9,6 +9,14 @@ local Pose = require(
+ local MonsterHunt = {}
+ MonsterHunt.__index = MonsterHunt
+ 
++local function validUserId(value: any): boolean
++	return type(value) == "number"
++		and value == value
++		and math.abs(value) < math.huge
++		and value ~= 0
++		and value % 1 == 0
++end
++
+ function MonsterHunt.new(
+ 	world: any,
+ 	balance: any,
+@@ -86,11 +94,8 @@ function MonsterHunt.new(
+ 		detectRadius = balance.monster_detect_radius,
+ 		firstChaseUntil = nil,
+ 		reacquireAt = -math.huge,
+-		targetUserId = if targetUserId
+-				and targetUserId > 0
+-				and targetUserId % 1 == 0
+-			then targetUserId
+-			else 0,
++		targetUserId = if validUserId(targetUserId) then targetUserId else 0,
++		targetRoot = nil :: BasePart?,
+ 		stunnedUntil = nil,
+ 		lostSince = nil,
+ 		lastSeenPosition = nil,
+@@ -217,6 +222,16 @@ function MonsterHunt:BeginCapture(playerPosition: Vector3): CFrame
+ 	return self.root.CFrame
+ end
+ 
++function MonsterHunt:EndCapture(): boolean
++	if self.destroyed or self.state ~= "capturing" then
++		return false
++	end
++	self.targetRoot, self.targetUserId = nil, 0
++	self.goal, self.lostSince, self.lastSeenPosition, self.blockedSince = nil, nil, nil, nil
++	self:_state("patrol")
++	return true
++end
++
+ function MonsterHunt:GetPosition(): Vector3?
+ 	if self.destroyed or self.state == "dormant" or self.state == "stopped" then
+ 		return nil
+@@ -472,6 +487,82 @@ function MonsterHunt:Step(
+ 	return not protected and self:CanCapture(playerRoot, now), awakened
+ end
+ 
++-- The round supplies registered server actors only. Selection never calls Step
++-- per player: one hunter advances once, independently of the candidate count.
++function MonsterHunt:StepPlayers(dt: number, now: number, candidates: { any }): (any?, boolean)
++	if self.destroyed or self.state == "capturing" then
++		return nil, false
++	end
++	local available = {}
++	local retained = nil
++	for _, candidate in candidates do
++		local root = candidate.root
++		if
++			not validUserId(candidate.userId)
++			or typeof(root) ~= "Instance"
++			or not root:IsA("BasePart")
++			or not root.Parent
++			or type(candidate.protected) ~= "boolean"
++		then
++			continue
++		end
++		local point = root.Position
++		if
++			point.X ~= point.X
++			or point.Y ~= point.Y
++			or point.Z ~= point.Z
++			or math.abs(point.X) == math.huge
++			or math.abs(point.Y) == math.huge
++			or math.abs(point.Z) == math.huge
++		then
++			continue
++		end
++		table.insert(available, candidate)
++		if
++			self.state == "chase"
++			and not candidate.protected
++			and candidate.userId == self.targetUserId
++			and root == self.targetRoot
++		then
++			retained = candidate
++		end
++	end
++	if self.state == "chase" and not retained then
++		-- Departures, replacement characters and protection invalidate the old
++		-- target and its asynchronous path without moving or resetting the NPC.
++		self:_state("patrol")
++		self.goal, self.lostSince, self.lastSeenPosition, self.blockedSince = nil, nil, nil, nil
++	end
++	local selected, nearest = retained, nil
++	local bestDistance, nearestDistance = math.huge, math.huge
++	for _, candidate in available do
++		local delta = candidate.root.Position - self.root.Position
++		local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
++		if
++			not nearest
++			or distance < nearestDistance
++			or (distance == nearestDistance and candidate.userId < nearest.userId)
++		then
++			nearest, nearestDistance = candidate, distance
++		end
++		if
++			not retained
++			and not candidate.protected
++			and distance <= (self.detectRadius or self.balance.monster_detect_radius)
++			and now >= self.reacquireAt
++			and (not selected or distance < bestDistance or (distance == bestDistance and candidate.userId < selected.userId))
++			and self:CanSee(candidate.root)
++		then
++			selected, bestDistance = candidate, distance
++		end
++	end
++	self.targetRoot = if selected then selected.root else nil
++	self.targetUserId = if selected then selected.userId else 0
++	local root = if selected then selected.root elseif nearest then nearest.root else self.root
++	local caught, awakened = self:Step(dt, now, root, selected == nil)
++	return if caught then selected else nil, awakened
++end
++
+ function MonsterHunt:Destroy()
+ 	self.destroyed = true
+ 	self.stunnedUntil = nil
+diff --git a/src/server/Game/RoundAudio.luau b/src/server/Game/RoundAudio.luau
+index c73f092..1153eb1 100644
+--- a/src/server/Game/RoundAudio.luau
++++ b/src/server/Game/RoundAudio.luau
+@@ -450,9 +450,8 @@ function RoundAudio:_stepActor(actor: any, now: number, eligible: boolean)
+ 		if not stableRatio and hunt then
+ 			local huntSpeed
+ 			local character = self.ownerPlayer.Character
+-			local playerRoot = if character
+-				then character:FindFirstChild("HumanoidRootPart")
+-				else nil
++			local playerRoot = hunt.targetRoot
++				or (if character then character:FindFirstChild("HumanoidRootPart") else nil)
+ 			if hunt.state == "chase" and playerRoot and type(hunt._chaseSpeed) == "function" then
+ 				local ok, value = pcall(hunt._chaseSpeed, hunt, playerRoot, now)
+ 				if ok then
+@@ -501,7 +500,7 @@ function RoundAudio:_grounded(character: Model, humanoid: Humanoid, root: BasePa
+ 	return hit ~= nil and hit.Instance == self.world.Ground
+ end
+ 
+-function RoundAudio:_players(now: number, phase: string)
++function RoundAudio:_players(now: number, phase: string, eligible: ((Player) -> boolean)?)
+ 	local players = Players:GetPlayers()
+ 	table.sort(players, function(a, b)
+ 		if a == b then
+@@ -546,8 +545,11 @@ function RoundAudio:_players(now: number, phase: string)
+ 		self:_stepActor(
+ 			actor,
+ 			now,
+-			(phase == "active" or player ~= self.ownerPlayer)
+-				and self:_grounded(character, humanoid, root)
++			(
++				if eligible
++					then eligible(player) == true
++					else phase == "active" or player ~= self.ownerPlayer
++			) and self:_grounded(character, humanoid, root)
+ 		)
+ 	end
+ 	for player, actor in self.actors do
+@@ -589,7 +591,14 @@ function RoundAudio:_voice(now: number)
+ 	request(sound, true)
+ end
+ 
+-function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hunts: { any }?)
++function RoundAudio:Step(
++	now: number,
++	phase: string,
++	mode: string,
++	hunt: any,
++	hunts: { any }?,
++	eligible: ((Player) -> boolean)?
++)
+ 	if self.destroyed or not finite(now) then
+ 		return
+ 	end
+@@ -659,7 +668,7 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hu
+ 				and math.abs(actor.root.Position.Y - floor - 3) <= 3
+ 		)
+ 	end
+-	self:_players(now, phase)
++	self:_players(now, phase, eligible)
+ end
+ 
+ function RoundAudio:Destroy()
+diff --git a/src/server/Services/FarmGeometryService.luau b/src/server/Services/FarmGeometryService.luau
+index 33582b9..aff1b4f 100644
+--- a/src/server/Services/FarmGeometryService.luau
++++ b/src/server/Services/FarmGeometryService.luau
+@@ -6,7 +6,10 @@ function Service:Init(context: any)
+ 	if
+ 		not run:IsStudio()
+ 		or context.Config.Environment ~= "DEV"
+-		or context.Config.Game.SessionMode ~= "solo_local"
++		or (
++			context.Config.Game.SessionMode ~= "solo_local"
++			and context.Config.Game.SessionMode ~= "team_local"
++		)
+ 	then
+ 		return
+ 	end
+diff --git a/src/server/Services/RoundService.luau b/src/server/Services/RoundService.luau
+index 4725d59..06f141c 100644
+--- a/src/server/Services/RoundService.luau
++++ b/src/server/Services/RoundService.luau
+@@ -1,7 +1,7 @@
+ --!strict
+ 
+ local RunService = game:GetService("RunService")
+-local SoloRound = require(script.Parent.Parent:WaitForChild("Game"):WaitForChild("SoloRound"))
++local TeamRound = require(script.Parent.Parent:WaitForChild("Game"):WaitForChild("TeamRound"))
+ 
+ local RoundService = { Name = "RoundService", Order = 30 }
+ local runtime: any = nil
+@@ -10,12 +10,12 @@ function RoundService:Init(context: any)
+ 	if
+ 		not RunService:IsStudio()
+ 		or context.Config.Environment ~= "DEV"
+-		or context.Config.Game.SessionMode ~= "solo_local"
++		or context.Config.Game.SessionMode ~= "team_local"
+ 	then
+-		context.Log:Warn("Temporary solo prototype is available only in Studio DEV mode")
++		context.Log:Warn("Local team prototype is available only in Studio DEV mode")
+ 		return
+ 	end
+-	runtime = SoloRound.new(context)
++	runtime = TeamRound.new(context)
+ end
+ 
+ function RoundService:Start()
+diff --git a/src/shared/Config/GameConfig.luau b/src/shared/Config/GameConfig.luau
+index 415e83f..8c8bf41 100644
+--- a/src/shared/Config/GameConfig.luau
++++ b/src/shared/Config/GameConfig.luau
+@@ -9,7 +9,8 @@ return {
+ 		Id = "children_of_corn",
+ 		Name = "Дети кукурузы",
+ 		Version = "0.1.0",
+-		SessionMode = "solo_local",
++		SessionMode = "team_local",
++		MaxPlayers = 4,
+ 		SupportedDevice = "pc",
+ 	},
+ 	CoreLoop = Balance,
+diff --git a/src/shared/Game/RoundText.luau b/src/shared/Game/RoundText.luau
+index 3dfd0e2..c8027dd 100644
+--- a/src/shared/Game/RoundText.luau
++++ b/src/shared/Game/RoundText.luau
+@@ -2,6 +2,18 @@
+ 
+ -- Player-facing strings shared by the round and movement HUDs.
+ return table.freeze({
++	corn_team_start = "Готов к раунду",
++	corn_team_retry = "Готов к следующему",
++	corn_team_ready = "Ты готов",
++	corn_team_waiting = "Ожидание команды",
++	corn_team_waiting_ready = "Ты готов. Раунд начнётся, когда будут готовы все",
++	corn_team_waiting_result = "Дождись завершения раунда команды",
++	corn_team_ready_count = "Готовы: {ready} / {count}",
++	corn_team_remaining = "В поле: {remaining} / {count}",
++	corn_team_key_carried = "Ключ у команды. Доберись до ворот",
++	corn_team_carrier = "Ключ несёт: {name}",
++	corn_team_intro_objective = "Найдите общий ключ и откройте ворота для всей команды. Каждый должен выбраться сам",
++	corn_team_intro_confirm = "Понятно, я готов",
+ 	corn_inventory_full = "Все пять слотов заняты",
+ 	corn_evacuation_started = "Ворота открыты. Успей выбраться за две минуты!",
+ 	corn_evacuation_expired = "Время вышло. Ты не успел выбраться",

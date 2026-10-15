@@ -1,0 +1,10 @@
+{
+  "status": "failed_two_client_attempt",
+  "reason": "Real 2-client test found additional9 production Sources rejecting team_local via solo_local-only SessionMode guards. Initial pipeline fixtures were scoped to original7 Sources and passed; this evidence does not claim successful2-client acceptance.",
+  "initial_installer_sha256": "0818132a28e127910d4edbe81d369889ba9e0d02ad9ead5a802a129a8ed79f0f",
+  "initial_manifest_sha256": "fb25ba722d6385ca6cc5e911113b2f9cb807c76fa44dabaa3b51f3f0d90a489a",
+  "immutable_baseline_sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "existing_source_changes": 7,
+  "new_modules": 2,
+  "world_and_scene_files_written": false
+}
