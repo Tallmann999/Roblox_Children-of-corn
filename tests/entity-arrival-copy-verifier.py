@@ -1,4 +1,4 @@
-"""Real source-only checker with current Sources and two controlled Source versions.
+"""Real source-only checker with current Sources and three controlled Source versions.
 No scene is written; engine rendering/audio and final save remain separate.
 """
 import copy
@@ -21,7 +21,7 @@ current_report = f.validate_dom(BEFORE, CURRENT, SOURCES, CLASSES, ASSETS)
 EXPECTED = SOURCES.copy()
 AFTER = copy.deepcopy(CURRENT)
 for path in f.DECLARED_SOURCES:
-    EXPECTED[path] += "\n-- controlled two-source checker fixture\n"
+    EXPECTED[path] += "\n-- controlled three-source checker fixture\n"
     AFTER[path]["properties"]["Source"][1] = EXPECTED[path]
 
 
@@ -56,7 +56,7 @@ def rejects(name, mutate, sources=None, assets=None):
 
 report = validate(AFTER)
 assert report["total_sources"] == 78 and report["matching_sources"] == 75 and report["matching_asset_sources"] == 3
-assert report["new_instances"] == report["removed_instances"] == 0 and report["source_change_count"] == 2
+assert report["new_instances"] == report["removed_instances"] == 0 and report["source_change_count"] == 3
 assert set(report["source_changes"]) == f.DECLARED_SOURCES and report["world_and_lighting_exact"]
 for path in sorted(f.DECLARED_SOURCES):
     rejects(path + " mismatch", lambda a, path=path: node(a, path)["properties"]["Source"].__setitem__(1, "return 'wrong'"))
@@ -67,8 +67,8 @@ for path in sorted(f.DECLARED_SOURCES):
     rejects(path + " capabilities", lambda a, path=path: node(a, path)["properties"]["Capabilities"].__setitem__(1, "1"))
 
 outside = next(path for path in SOURCES if path not in f.DECLARED_SOURCES)
-changed_expected = EXPECTED | {outside: EXPECTED[outside] + "\n-- outside the approved two\n"}
-rejects("third Source even when equal to src", lambda a: node(a, outside)["properties"]["Source"].__setitem__(1, changed_expected[outside]), sources=changed_expected)
+changed_expected = EXPECTED | {outside: EXPECTED[outside] + "\n-- outside the approved three\n"}
+rejects("fourth Source even when equal to src", lambda a: node(a, outside)["properties"]["Source"].__setitem__(1, changed_expected[outside]), sources=changed_expected)
 fog_path = next(iter(ASSETS))
 changed_assets = ASSETS | {fog_path: ASSETS[fog_path] + "\n-- unapproved fog change\n"}
 rejects("Fog Source even when equal to assets", lambda a: node(a, fog_path)["properties"]["Source"].__setitem__(1, changed_assets[fog_path]), assets=changed_assets)
@@ -148,6 +148,6 @@ for field in ("payload_sha256", "instance_count", "payload_bytes"):
         raise AssertionError("Raw Terrain mutation accepted")
 assert f.sha256(f.BASELINE) == f.BASELINE_HASH
 print(json.dumps({"passed": True, "instances": 4160, "sources": 78, "declared_source_paths": sorted(f.DECLARED_SOURCES),
-    "current_source_changes": current_report["source_change_count"], "all_two_controlled_versions_accepted": True,
+    "current_source_changes": current_report["source_change_count"], "all_three_controlled_versions_accepted": True,
     "world_lighting_art_exact": True, "unsafe_dom_cases_rejected": len(rejected), "camera_dom_cases_rejected": camera_dom_cases_rejected, "raw_terrain_cases_rejected": binary_rejected,
-    "scope": "Actual checker/current Source snapshot and two controlled Source versions, in-memory fixtures; immutable baseline unchanged, no engine audio/final-save claim"}))
+    "scope": "Actual checker/current Source snapshot and three controlled Source versions, in-memory fixtures; immutable baseline unchanged, no engine audio/final-save claim"}))

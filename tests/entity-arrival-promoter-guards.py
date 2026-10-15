@@ -49,7 +49,7 @@ def fixture(kind):
                 candidate.write_bytes(b"NEW ENGINE SAVE")
             if kind == "baseline-race":
                 baseline.write_bytes(b"CHANGED BASELINE")
-            return {"passed": True, "candidate_sha256": promoter.digest(new), "matching_sources": 75, "source_change_count": 2, "source_changes": ["declared-two-placeholder"], "matching_asset_sources": 3, "total_sources": 78, "layout_sha256": "fixed-manifest-proof"}
+            return {"passed": True, "candidate_sha256": promoter.digest(new), "matching_sources": 75, "source_change_count": 3, "source_changes": ["declared-three-placeholder"], "matching_asset_sources": 3, "total_sources": 78, "layout_sha256": "fixed-manifest-proof"}
 
         checker = SimpleNamespace(BASELINE=baseline, BASELINE_HASH=baseline_hash, require=require, check=check)
         original_hash, candidate_hash = baseline_hash, promoter.digest(new)
@@ -97,7 +97,7 @@ def fixture(kind):
                 assert baseline.read_bytes() == b"PLACEHOLDER ORIGINAL; not a Roblox scene"
                 assert Path(saved["backup"]).read_bytes() == original
                 assert saved["sources"] == 78 and saved["rojo_sources"] == 75 and saved["fog_asset_sources"] == 3 and saved["exit_text_always_on_top"] is False
-                assert saved["exit_text_pixels_per_stud"] == 16 and saved["source_change_count"] == 2 and saved["source_changes"] == ["declared-two-placeholder"] and saved["world_and_lighting_exact"] is True
+                assert saved["exit_text_pixels_per_stud"] == 16 and saved["source_change_count"] == 3 and saved["source_changes"] == ["declared-three-placeholder"] and saved["world_and_lighting_exact"] is True
                 assert len(check_calls) == 1
                 assert not target.with_suffix(".verified-entity-arrival.tmp").exists()
             else:

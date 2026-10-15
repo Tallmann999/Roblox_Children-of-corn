@@ -138,7 +138,7 @@ for _,item in game:GetDescendants() do
         sourceCount+=1
     end
 end
-assert(sourceCount==(if baseline then 78 else 78),"Persistent Source count differs; nothing changed")
+assert(sourceCount==78,"Persistent Source count differs; nothing changed")
 if final then return {changed=0,created=0,sources=75,totalSources=78,repeated=true} end
 local history=game:GetService("ChangeHistoryService")
 history:SetWaypoint("Before Corn entity arrival and detection")
@@ -146,14 +146,7 @@ local changed,created={},{}
 local ok,problem=pcall(function()
     for _,entry in entries do
         local item=resolve(entry.path)
-        if additions[entry.path] then
-            assert(not item,"Added Source appeared; update rolled back: "..entry.path)
-            item=Instance.new("ModuleScript")
-            table.insert(created,item)
-            item.Name=string.match(entry.path,"[^/]+$")
-            item.Source=assert(entry.source)
-            item.Parent=assert(resolve(string.match(entry.path,"^(.*)/[^/]+$")))
-        elseif entry.source then
+        if entry.source then
             assert(item and digest(item.Source)==entry.before,"Original Source changed; update rolled back: "..entry.path)
             table.insert(changed,{item=item,source=item.Source})
             item.Source=entry.source

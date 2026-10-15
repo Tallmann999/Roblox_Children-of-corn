@@ -1,4 +1,4 @@
-"""Read-only exact save audit of two entity-arrival/detection Sources on accepted 630 map.
+"""Read-only exact save audit of three entity-arrival/detection Sources on accepted 630 map.
 
 All 4160 original instances, their identities, parents, art, world, Lighting and
 raw Terrain remain exact. No new instance or world-property exception exists.
@@ -20,6 +20,7 @@ ADDITIONS = frozenset()
 DECLARED_SOURCES = frozenset({
     "ReplicatedStorage/GameShared/Game/Balance",
     "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Game/SoloRound",
 })
 
 FRAME_KEYS = ("X", "Y", "Z", "R00", "R01", "R02", "R10", "R11", "R12", "R20", "R21", "R22")
@@ -65,7 +66,7 @@ def validate_dom(before, after, sources, classes, asset_sources):
                 require(value[0] == other[0] == "string" and not value[2] and not other[2], "Original Source shape changed: " + path)
                 if value[1].replace("\r\n", "\n") == other[1].replace("\r\n", "\n"):
                     continue
-                require(path in DECLARED_SOURCES, "Source outside declared two changed: " + path)
+                require(path in DECLARED_SOURCES, "Source outside declared three changed: " + path)
                 source_changes.append(path)
                 changes.append({"path": path, "property": prop, "reason": "declared_entity_arrival_source"})
                 continue
@@ -104,7 +105,7 @@ def check(original, candidate):
     return result | {"passed": True, "original_sha256": old_hash, "candidate_sha256": new_hash,
         "original_instances": len(before), "candidate_instances": len(after), "bytes": candidate.stat().st_size,
         "raw_unknown_properties": unknown_after, "warnings": {"original": warning_before, "candidate": warning_after},
-        "scope": "Read-only exact engine bytes. All 75 src and three fog Sources match declared files; only two approved Source contents may change. Zero instance/world/Lighting/art/raw Terrain deltas, exact retained identities/classes/names/parents; existing narrow camera/selection editor metadata only. No scene serialization."}
+        "scope": "Read-only exact engine bytes. All 75 src and three fog Sources match declared files; only three approved Source contents may change. Zero instance/world/Lighting/art/raw Terrain deltas, exact retained identities/classes/names/parents; existing narrow camera/selection editor metadata only. No scene serialization."}
 
 
 if __name__ == "__main__":

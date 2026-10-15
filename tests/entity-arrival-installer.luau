@@ -50,10 +50,7 @@ local function equal(a, b)
 	for key, value in a do assert(b[key] == value, "Table value changed: " .. tostring(key)) end
 	for key, value in b do assert(a[key] == value, "Table value added: " .. tostring(key)) end
 end
-local additions = {
-	["ServerScriptService/GameServer/Game/TeamRound"]=true,
-	["ServerScriptService/GameServer/Game/RoundParticipant"]=true,
-}
+local additions = {}
 local function pathOf(item)
 	return item:GetFullName():gsub("%.", "/")
 end
@@ -80,7 +77,7 @@ end
 local place = setup()
 local before = snapshot(place)
 local ok, result = run(place)
-assert(ok and result.sources == 75 and result.totalSources == 78 and result.created == 0 and result.changed == 2 and not result.repeated, result)
+assert(ok and result.sources == 75 and result.totalSources == 78 and result.created == 0 and result.changed == 3 and not result.repeated, result)
 unchanged(place, before, true, false)
 local installed = snapshot(place)
 ok, result = run(place)
@@ -144,4 +141,4 @@ local finalMark="    for _,entry in entries do\n        local item=resolve(entry
 first=assert(source:find(finalMark,1,true))
 local failedVerify=source:sub(1,first-1).."    error('Injected verification failure')\n"..source:sub(first)
 rejects("final-verification-rollback",function() end,failedVerify)
-print(serde.encode("json",{passed=true,changed=2,created=0,projectSources=75,totalSources=78,repeatAndCrLf=true,unsafeCasesRejected=#rejected,cases=rejected,scope="Actual generated two-Source installer against exact immutable engine baseline in memory; no live Studio, gameplay, sound or save claim"}))
+print(serde.encode("json",{passed=true,changed=3,created=0,projectSources=75,totalSources=78,repeatAndCrLf=true,unsafeCasesRejected=#rejected,cases=rejected,scope="Actual generated three-Source installer against exact immutable engine baseline in memory; no live Studio, gameplay, sound or save claim"}))
