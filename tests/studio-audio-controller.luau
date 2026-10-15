@@ -121,6 +121,9 @@ local ok, problem = pcall(function()
 	own(enemyModel, "fixture-monster")
 	enemyModel:SetAttribute("CornMonsterOwned", true)
 	enemyModel:SetAttribute("MonsterRigVersion", 1)
+	enemyModel:SetAttribute("MonsterIndex", 1)
+	enemyModel:SetAttribute("HuntState", "chase")
+	enemyModel.Name = "Monster"
 	enemyModel:SetAttribute("ChaseTargetUserId", player.UserId)
 	enemyModel.Parent = folder
 	enemyRoot.Name = "Root"
@@ -130,6 +133,7 @@ local ok, problem = pcall(function()
 	enemyRoot.Position = root.Position + Vector3.new(0, 0, 10)
 	enemyRoot.Parent = enemyModel
 	controller._monster, controller._monsterRoot = enemyModel, enemyRoot
+	controller._monsters = { { model = enemyModel, root = enemyRoot, runtime = folder, index = 1 } }
 	controller._resolveAt = math.huge
 	show(1, 4, "energy", "active", "chase")
 	step(0.14)

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"passed\":true,\"ltm_restored\":true,\"gui_removed\":true,\"surface_restored\":true}"
+    }
+  ],
+  "isError": false
+}

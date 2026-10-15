@@ -104,6 +104,15 @@ local function signal()
 			table.insert(listeners, { Connection = connection, Callback = callback })
 			return connection
 		end,
+		CountConnected = function()
+			local count = 0
+			for _, listener in listeners do
+				if listener.Connection.Connected then
+					count += 1
+				end
+			end
+			return count
+		end,
 		Fire = function(_, ...)
 			for _, listener in listeners do
 				if listener.Connection.Connected then
@@ -281,11 +290,13 @@ local function part(name, frame)
 	object.Anchored, object.CanCollide, object.CanTouch, object.CanQuery = true, false, false, false
 	return object
 end
-local function rig()
-	local model = node("Model", "Monster")
+local function rig(index)
+	index = index or 1
+	local model = node("Model", if index == 1 then "Monster" else "Monster" .. index)
 	model:SetAttribute("CornMonsterOwned", true)
 	model:SetAttribute("corn_project_id", "children_of_corn")
 	model:SetAttribute("MonsterRigVersion", 1)
+	model:SetAttribute("MonsterIndex", index)
 	model:SetAttribute("HuntState", "dormant")
 	local root = part("Root", CF.new(40, 17, -50) * CF.Angles(0, 0.6, 0))
 	parent(root, model)
@@ -416,12 +427,127 @@ assert(controller._map == nil)
 rest(newRoot, newParts, "Map removal retained motion")
 parent(map, world)
 tick(0.5)
+local second, secondRoot, secondParts = rig(2)
+local third, thirdRoot, thirdParts = rig(3)
+local fourth, fourthRoot, fourthParts = rig(4)
+second:SetAttribute("HuntState", "chase")
+third:SetAttribute("HuntState", "trapped")
+fourth:SetAttribute("HuntState", "chase")
+local authoritativeWrites =
+	{ newRoot.Writes, secondRoot.Writes, thirdRoot.Writes, fourthRoot.Writes }
+local animationStates = { controller, table.unpack(controller._companions) }
+assert(
+	#animationStates == 3
+		and animationStates[2]._model == second
+		and animationStates[3]._model == third
+)
+local function visualWrites()
+	local total = 0
+	for _, rigParts in { newParts, secondParts, thirdParts } do
+		for _, p in rigParts do
+			total += p.Writes
+		end
+	end
+	return total
+end
+local multiBefore, multiReads, multiDesc = visualWrites(), reads, descReads
+for _ = 1, 600 do
+	tick(1 / 60)
+	local writes = 0
+	for _, state in animationStates do
+		writes += state._lastWrites
+	end
+	assert(writes <= 27, "Three rigs exceeded27visualwrites per update")
+end
+assert(visualWrites() - multiBefore <= 27 * 302, "Three rigs exceeded30Hz budget")
+assert(reads == multiReads and descReads == multiDesc, "Three rigs rescanned field/rig children")
+assert(
+	newRoot.Writes == authoritativeWrites[1]
+		and secondRoot.Writes == authoritativeWrites[2]
+		and thirdRoot.Writes == authoritativeWrites[3]
+		and fourthRoot.Writes == authoritativeWrites[4],
+	"Three-rig animation wrote Root"
+)
+rest(fourthRoot, fourthParts, "Unexpected fourth rig animated")
+second:SetAttribute("MonsterIndex", 3)
+assert(
+	animationStates[2]._model == nil and animationStates[3]._model == third,
+	"Index mismatch contaminated other rig"
+)
+rest(secondRoot, secondParts, "Index mismatch retained pose")
+second:SetAttribute("MonsterIndex", 2)
+tick(0.5)
+assert(animationStates[2]._model == second)
+third:SetAttribute("corn_project_id", "foreign")
+assert(animationStates[3]._model == nil, "Foreign project remained animated")
+rest(thirdRoot, thirdParts, "Foreign rig retained old pose")
+third:SetAttribute("corn_project_id", "children_of_corn")
+tick(0.5)
 controller:Destroy()
+rest(secondRoot, secondParts, "Destroy retained second rig motion")
+rest(thirdRoot, thirdParts, "Destroy retained third rig motion")
 rest(newRoot, newParts, "Destroy retained motion")
 assert(
 	controller._model == nil and controller._connection == nil and disconnected == connected,
 	"Lifecycle leaked connections"
 )
+-- Bootstrap uses the required Module table itself, not a separate wrapper.
+-- A stateful Module used as __index makes unset companion _connection inherit
+-- the primary connection after primary Start, suppressing both companions.
+assert(heartbeat:CountConnected() == 0)
+Controller:Init({ Config = { Environment = "DEV", Game = { SessionMode = "solo_local" } } })
+Controller:Start()
+assert(
+	heartbeat:CountConnected() == 3,
+	"Bootstrap Module singleton did not start3 independent Heartbeats"
+)
+Controller:Start()
+assert(heartbeat:CountConnected() == 3, "Bootstrap duplicate Start leaked connections")
+local bootStates = { Controller, table.unpack(Controller._companions) }
+assert(
+	bootStates[1]._model == newer
+		and bootStates[2]._model == second
+		and bootStates[3]._model == third
+)
+assert(
+	bootStates[1]._connection ~= bootStates[2]._connection
+		and bootStates[2]._connection ~= bootStates[3]._connection,
+	"Companion inherited primary state"
+)
+local bootRoots = { newRoot, secondRoot, thirdRoot }
+local bootParts = { newParts, secondParts, thirdParts }
+local bootHead, bootRootWrites = {}, {}
+for index, rigRoot in bootRoots do
+	rigRoot.CFrame += V3.new(0.2, 0, 0)
+	bootRootWrites[index] = rigRoot.Writes
+end
+tick()
+for index, rigRoot in bootRoots do
+	bootHead[index] = rigRoot.CFrame:ToObjectSpace(bootParts[index].Head.CFrame)
+end
+for _ = 1, 12 do
+	tick()
+	local writes = 0
+	for _, state in bootStates do
+		writes += state._lastWrites
+	end
+	assert(writes <= 27, "Bootstrap animation exceeded27visualwrites")
+end
+for index, rigRoot in bootRoots do
+	assert(
+		rigRoot.CFrame:ToObjectSpace(bootParts[index].Head.CFrame) ~= bootHead[index],
+		"Bootstrap rig" .. index .. " had no relative visual animation"
+	)
+	assert(rigRoot.Writes == bootRootWrites[index], "Bootstrap animation wrote authoritative Root")
+end
+Controller:Destroy()
+assert(
+	heartbeat:CountConnected() == 0 and disconnected == connected,
+	"Bootstrap singleton cleanup leaked"
+)
+for index, rigRoot in bootRoots do
+	rest(rigRoot, bootParts[index], "Bootstrap cleanup retained pose")
+end
 print(
-	"PASS: actual MonsterPose grouped head/hat/eyes, fixed shoulder/hip anchors, opposed moving gait/no stationary steps, bounded finite9part poses; actualController30Hz/9writes/0Rootwrites, dormant/stopped write silence, no field/recurring scans, current-root restrestore and complete streaming/replacement/ownership/manualrig/Destroy cleanup"
+	"PASS: actual MonsterPose grouped head/hat/eyes, fixed shoulder/hip anchors, opposed moving gait/no stationary steps, bounded finite9part poses; actualController + actualModuleBootstrap3Heartbeats/3relativeposes/cleanup;3rigs/30Hz/27writes/0Rootwrites + foreign/index/fourthrig guards, dormant/stopped write silence, no field/recurring scans, current-root restrestore and complete streaming/replacement/ownership/manualrig/Destroy cleanup"
 )

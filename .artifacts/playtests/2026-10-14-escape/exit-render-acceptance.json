@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "method": "Native foreground GPU images from actual production controller; diagnostic held camera, no ordinary-round claim",
+  "far_distance_studs": 570.0302,
+  "far_gui_size_px": [
+    96,
+    26
+  ],
+  "near_distance_studs": 39.7045,
+  "modes_confirmed": [
+    "easy/day",
+    "medium/dusk",
+    "hard/night"
+  ],
+  "mode_clock_note": "Day13.5/night20.5 queried. Dusk HUD Средне and actual renderer confirmed; diagnostic exact-equality ClockTime assertion did not pass, so not reported as engine assertion PASS.",
+  "screenshots": [
+    "exit-night-far.jpg",
+    "exit-near.jpg"
+  ],
+  "blink": {
+    "actual_samples": 20,
+    "on": 10,
+    "off": 10,
+    "surface_suppressed": true
+  },
+  "cleanup": {
+    "actual_native_abort_menu": true,
+    "owned_gui_removed": true,
+    "surface_enabled_restored": true,
+    "ltm_zero_restored": true
+  },
+  "persistent_exit_changes": [
+    "Size3x",
+    "CFrame centerY+3.2",
+    "PixelsPerStud48to16"
+  ],
+  "always_on_top": false,
+  "camera_and_root_production_writes": 0,
+  "new_persistent_instances": 0
+}

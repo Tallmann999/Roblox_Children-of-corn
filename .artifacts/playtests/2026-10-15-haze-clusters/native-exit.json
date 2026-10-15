@@ -1,0 +1,4 @@
+{
+  "root": "0.0005035783397033811, 17.39801025390625, 428.53826904296875",
+  "snapshot": "{\"inventory\":{\"selected\":1,\"energy_remaining\":0,\"slots\":[\"empty\",\"empty\",\"empty\",\"empty\",\"empty\"],\"use\":{\"id\":0,\"kind\":\"none\"}},\"reward_diamonds\":20,\"lighting_mode\":\"hard\",\"evacuation\":{\"remaining\":0,\"duration\":120,\"active\":false},\"minimap\":{\"round_id\":1,\"visited\":[{\"id\":\"clearing:solo_slot_10\",\"kind\":\"clearing\",\"position\":null},{\"id\":\"clearing:solo_slot_06\",\"kind\":\"clearing\",\"position\":null}],\"deaths\":[]},\"has_key\":false,\"gate_open\":true,\"elapsed_sec\":793.1176349999996,\"start_look\":null,\"phase\":\"escaped\",\"sprint_exhausted\":false,\"notice\":\"\",\"capture\":{\"id\":0,\"remaining\":0,\"frame\":null},\"stamina_capacity\":100,\"session_diamonds\":20,\"stamina\":100,\"protection_sec\":0,\"monster_state\":\"stopped\",\"catches_remaining\":2,\"is_sprinting\":false}"
+}

@@ -15,7 +15,7 @@ hud:SetOnAction(function(action, mode)
 	table.insert(calls, { action = action, mode = mode })
 end)
 local base = {
-	lighting_mode = "medium",
+	lighting_mode = "hard",
 	phase = "ready",
 	has_key = false,
 	gate_open = false,
@@ -67,7 +67,7 @@ local ok, problem = pcall(function()
 		"Install the authorized 20-second Balance before this fixture"
 	)
 	render({})
-	hud._selectedMode = "hard"
+	expect(hud._modeButtons == nil and hud._modeCards == nil, "Removed mode chooser remains")
 	GuiService.SelectedObject = hud._start
 	hud:ShowObjective("start")
 	task.wait(0.1)
@@ -128,9 +128,81 @@ local ok, problem = pcall(function()
 			and not actualIntro.Enabled
 	)
 	checks.actual_full_viewport_objective_confirm_back_modal_focus_no_early_action = true
+	render({
+		phase = "caught",
+		catches_remaining = 1,
+		capture = { id = 1, remaining = 0.5, frame = CFrame.identity },
+	})
+	expect(not hud._captureChoices.Visible and not hud._card.Visible and hud._modeCards == nil)
+	hud:ChooseCapture("revive")
+	hud:ChooseCapture("menu")
+	expect(#calls == 1, "Capture choices bypassed the server timer")
+	hud:SetCaptureActive(true)
+	render({
+		phase = "caught",
+		catches_remaining = 1,
+		capture = { id = 1, remaining = 0, frame = CFrame.identity },
+	})
+	expect(not hud._captureChoices.Visible)
+	hud:ChooseCapture("revive")
+	expect(#calls == 1)
+	hud:SetCaptureActive(false)
+	task.wait(0.1)
+	expect(hud._captureChoices.Visible and hud._captureChoices.AbsoluteSize.X <= 380)
+	expect(hud._captureRevive.Modal and hud._captureExit.Modal and hud._captureRevive.Active)
+	expect(
+		hud._captureRevive.Text == "Возрождение"
+			and hud._captureExit.Text == "Выход из игры"
+	)
+	expect(GuiService.SelectedObject == hud._captureRevive)
+	inside(hud._captureChoices, actualRoot)
+	for _, control in { hud._captureMessage, hud._captureRevive, hud._captureExit } do
+		inside(control, hud._captureChoices)
+		expect(control.TextBounds.Y <= control.AbsoluteSize.Y + 1, "Capture choice text clipped")
+	end
+	hud:SetBusy(true)
+	hud:ChooseCapture("revive")
+	hud:ChooseCapture("menu")
+	expect(#calls == 1 and not hud._captureRevive.Active)
+	hud:SetBusy(false)
+	hud:ChooseCapture("revive")
+	hud:ChooseCapture("revive")
+	hud:ChooseCapture("menu")
+	expect(
+		#calls == 2
+			and calls[2].action == "revive"
+			and calls[2].mode == nil
+			and not actualIntro.Enabled
+	)
+	hud:SetBusy(false)
+	render({
+		phase = "caught_out",
+		lighting_mode = "hard",
+		catches_remaining = 0,
+		capture = { id = 2, remaining = 0, frame = CFrame.identity },
+	})
+	hud:ChooseCapture("revive")
+	expect(
+		actualIntro.Enabled and not hud._captureChoices.Visible and hud._introPending.mode == "hard"
+	)
+	expect(hud._introBack.Text == Text.corn_capture_back)
+	hud:CloseObjective()
+	expect(hud._captureChoices.Visible and not actualIntro.Enabled and #calls == 2)
+	hud:ChooseCapture("menu")
+	hud:ChooseCapture("menu")
+	expect(#calls == 3 and calls[3].action == "menu" and calls[3].mode == nil)
+	hud:SetBusy(false)
+	checks.actual_capture_choices_timer_scene_gates_small_modal_revive_menu_and_retry_back = true
 	for _, phase in { "escaped", "aborted", "caught_out" } do
-		render({ phase = phase })
-		hud._selectedMode = "easy"
+		render({
+			phase = phase,
+			catches_remaining = if phase == "caught_out" then 0 else 2,
+			capture = {
+				id = if phase == "caught_out" then 2 else 0,
+				remaining = 0,
+				frame = CFrame.identity,
+			},
+		})
 		hud:ShowObjective("retry")
 		expect(actualIntro.Enabled)
 		local before = #calls
@@ -138,10 +210,10 @@ local ok, problem = pcall(function()
 		expect(
 			#calls == before + 1
 				and calls[#calls].action == "retry"
-				and calls[#calls].mode == "easy"
+				and calls[#calls].mode == "hard"
 		)
 	end
-	checks.retry_all_results_preserves_original_action_and_mode = true
+	checks.retry_all_results_uses_only_night = true
 	for count = 5, 1, -1 do
 		render({ phase = "active", elapsed_sec = 20 - count })
 		expect(
@@ -216,10 +288,7 @@ local ok, problem = pcall(function()
 				and hud._introMessage.TextSize >= 18
 		)
 		local bodyEnd = hud._introMessage.Position.Y.Offset + hud._introMessage.Size.Y.Offset
-		expect(
-			bodyEnd <= hud._introMode.Position.Y.Offset
-				and hud._introMode.Position.Y.Offset + 28 <= hud._introConfirm.Position.Y.Offset
-		)
+		expect(bodyEnd <= hud._introConfirm.Position.Y.Offset)
 		expect(
 			hud._introConfirm.Position.Y.Offset + 48 <= hud._introBack.Position.Y.Offset
 				and hud._introBack.Position.Y.Offset + 36 <= hud._introPanel.Size.Y.Offset

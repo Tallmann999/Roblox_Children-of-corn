@@ -18,6 +18,8 @@ return {
 	monster_chase_speed = 13,
 	monster_detect_radius = 16,
 	monster_chase_windup_sec = 2,
+	monster_first_chase_duration_sec = 10,
+	monster_first_chase_reacquire_sec = 1,
 	monster_lose_radius = 42,
 	monster_lose_delay_sec = 1.25,
 	monster_growl_radius = 72,
@@ -26,5 +28,7 @@ return {
 	respawn_protection_sec = 5,
 	key_drop_adjust_radius = 6,
 	interaction_radius = 4,
-	escape_reward_diamonds = 10,
+	escape_reward_diamonds = 20,
+	escape_rewards = { hard = 20 },
+	evacuation_duration_sec = 120,
 }

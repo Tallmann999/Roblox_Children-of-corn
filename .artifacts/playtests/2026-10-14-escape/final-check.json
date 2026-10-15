@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-14",
+  "passed": true,
+  "checks": {
+    "stylua": true,
+    "selene_errors": 0,
+    "selene_warnings": 0,
+    "selene_parse_errors": 0,
+    "code_only_rojo_build": true,
+    "sourcemap": true,
+    "safe_mappings": true,
+    "persistence_disabled": true
+  },
+  "api_dump": "Cached standard library used after network update failed",
+  "method": "Actual scripts/check.ps1 invocation completed exit_code0; no Source edits after final installation.",
+  "latest_build_report": "signFinalBuild.json",
+  "final_installer_bytes": 440504,
+  "sources": 75,
+  "scene_sha256": "9082169a7da5fed15cd962611777285213fce99f23de82f83e0f361a683ecf16",
+  "final_source_equality": {
+    "created": 0,
+    "changed": 0,
+    "sources": 75
+  }
+}

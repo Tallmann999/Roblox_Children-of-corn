@@ -1,0 +1,25 @@
+ERROR: There was an error generating a new Roblox standard library: error when getting API dump
+Using the cached one instead.
+Results:
+0 errors
+0 warnings
+0 parse errors
+Building project 'ChildrenOfCorn'
+Built project to code-foundation.rbxlx
+Created sourcemap at build/sourcemap.json
+PASS: formatting, lint, code-only build, sourcemap, safe mappings and disabled persistence.
+Studio connection, Output and Play Test still require a live Studio session.
+PASS: eight-player cap/owner priority, server motion/alive/ground guards, complete tiny-step/resume/continuous/long/late-load rustles, trapped/caught tails, replacement/death/terminal cleanup, empty-ID no-Play, voices/awakening and strict owned cleanup. Adapter test only; no engine or audible claim.
+PASS client rustle scheduler adapters: atomic accepted key/id; skip stopped history; stale/duplicate/malformed guards; one natural current+latest pending; no Stop/URI replacement across manifest/caught/menu; Ended-only advance; gain mute/guard restore/foreign identity; terminal/death/retry; cold8s timeout/latest retry/recovery; nine actors; cleanup. Real client decoder/playback still needs Studio fixture.
+PASS first-chase: server speed12/18/24/36, no early capture, forced loss10s before capture, grace1s, later10/13, one per round through endings, speed validation, deferred route epoch
+PASS: actual RoundHud first capture scene/timer gating, small revive/menu choices, second-capture fixed-mode retry objective/back, duplicate/busy/unavailable/phase cleanup; actual RoundController early/second/mode/debounce/malformed revival guards and menu/retry routing; original full-screen start/retry confirmation, selection/capture/destroy lifecycle, server-elapsed-only 5→1 warning and desktop/phone GUI bounds. Adapter only; no engine pixels or gameplay acceptance.
+PASS: capture identity/deadline plus bounded rapid head shake, mild camera motion, opening mouth and timed paint
+PASS: actual controller13-part open-mouth/head-group and21-drop noninteractive paint, camera/FOV ownership, deadline/new spawn/server9-part LTM guards, menu/death/respawn/replacement/foreign visual+GUI cleanup
+PASS: actual Movement capture guard releases sprint/cursor/map, suppresses stamina/modal UI and camera reset
+PASS:22/24-radius/12height hysteresis, public moved gate binding, active/key/open/phase/dead/absent guards, unchanged snapshot,10Hz and Destroy cleanup
+   0.133890100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.
+   2.614292700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.
+   3.883197100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.
+   5.144140200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.
+   6.408866700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.
+   7.635833800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.

@@ -111,6 +111,73 @@ function RoundAudio:_sound(
 	return sound
 end
 
+function RoundAudio:_stepCricket(entry: any, now: number)
+	local sound = entry.sound
+	local elapsed = now - self.startedAt - entry.offset
+	local inSlot = Rules.CricketIsOn(now, self.startedAt, entry.offset)
+	if sound:GetAttribute("AudioRequestedPlaying") ~= inSlot then
+		sound:SetAttribute("AudioRequestedPlaying", inSlot)
+	end
+	if elapsed < 0 then
+		sound.Volume = 0
+		return
+	end
+	local cycle = math.floor(elapsed / Rules.Cycle)
+	local slotAt = self.startedAt + entry.offset + cycle * Rules.Cycle
+	if cycle ~= entry.cycle then
+		-- A stalled/unavailable request stayed silent. Cancel only that
+		-- never-decoded attempt before considering a later scheduled slot.
+		if entry.requestedAt and not entry.playBeganAt and not entry.abandoned then
+			if not sound.IsLoaded and sound.TimePosition == 0 then
+				sound:Stop()
+			end
+		end
+		entry.cycle = cycle
+		entry.requestedAt, entry.playBeganAt = nil, nil
+		entry.abandoned = false
+		-- One attempt per slot; no replay of missed slots after a stall.
+		if
+			inSlot
+			and now - slotAt <= Rules.CricketStartWindow
+			and sound.SoundId ~= ""
+			and not sound.IsPlaying
+		then
+			sound.Volume = 0
+			sound.TimePosition = 0
+			entry.requestedAt = now
+			entry.startDeadline = slotAt + Rules.CricketStartWindow
+			sound:Play()
+		end
+	end
+	if entry.requestedAt and not entry.playBeganAt and not entry.abandoned then
+		local progressed = finite(sound.TimePosition) and sound.TimePosition > 0
+		if now <= entry.startDeadline and ((sound.IsLoaded and sound.IsPlaying) or progressed) then
+			-- Fade from the first observed decode/playback, never jump to the
+			-- historical gain of a partially elapsed slot after cold loading.
+			entry.playBeganAt = now
+		elseif now >= entry.startDeadline then
+			entry.abandoned = true
+			if not sound.IsLoaded and not progressed then
+				sound:Stop()
+			end
+		end
+	end
+	local alpha = 0
+	if inSlot and entry.playBeganAt and not entry.abandoned and sound.IsPlaying then
+		local played = math.max(0, now - entry.playBeganAt)
+		local length = entry.duration
+		if finite(sound.TimeLength) and sound.TimeLength > 0 then
+			length = math.min(length, sound.TimeLength)
+		end
+		local progress = if finite(sound.TimePosition)
+			then math.max(played, sound.TimePosition)
+			else played
+		alpha = Rules.CricketEnvelope(played, slotAt + Rules.CricketOn - now, length - progress)
+	end
+	-- Normal off is silence followed by natural Ended, never a timer Stop.
+	sound.Volume = entry.gain * alpha
+end
+
 function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Random?)
 	assert(world.Root and world.Root:IsA("Model"), "Round audio requires a bound map")
 	assert(world.Field and world.Field:IsA("BasePart"), "Round audio requires Field")
@@ -125,6 +192,10 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 		fires = {} :: { Sound },
 		actors = {} :: { [Player]: any },
 		npc = nil :: any,
+		npcActors = {} :: { [BasePart]: any },
+		primaryHunt = nil :: any,
+		leadHunt = nil :: any,
+		voiceRoot = nil :: BasePart?,
 		voices = {} :: { Sound },
 		voiceBag = {} :: { number },
 		voiceLast = 0,
@@ -133,6 +204,7 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 		chasing = false,
 		wakeObservedDormant = hunt and hunt.state == "dormant",
 		wakePlayed = false,
+		wakePrimaryRoot = nil :: BasePart?,
 		wakeUntil = 0,
 		startedAt = nil :: number?,
 		pollAt = -math.huge,
@@ -212,9 +284,20 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 			Rules.Volume.Crickets,
 			"Ambience",
 			Rules.Ranges.Crickets,
-			true
+			false
 		)
-		table.insert(self.crickets, { sound = sound, offset = (index - 1) * Rules.Cycle / 5 })
+		local gain = sound.Volume
+		sound.Volume = 0
+		table.insert(self.crickets, {
+			sound = sound,
+			offset = (index - 1) * Rules.Cycle / 5,
+			gain = gain,
+			duration = math.max(0.1, Assets.Get("COC_Crickets_15s").Duration),
+			cycle = -1,
+			requestedAt = nil,
+			playBeganAt = nil,
+			abandoned = false,
+		})
 	end
 	local markers = world.Root:FindFirstChild("TorchMarkers")
 	if
@@ -251,28 +334,69 @@ function RoundAudio.new(world: any, ownerPlayer: Player, hunt: any, random: Rand
 	return self
 end
 
-function RoundAudio:_setHunt(hunt: any)
-	if not self.wakePlayed and hunt and hunt.state == "dormant" then
-		self.wakeObservedDormant = true
+function RoundAudio:_setHunt(hunt: any, hunts: { any }?)
+	local desired = {} :: { [BasePart]: any }
+	self.primaryHunt = nil
+	-- Exactly three authoritative sources, without a Workspace/field scan.
+	for index = 1, 3 do
+		local source = if hunts then hunts[index] else (if index == 1 then hunt else nil)
+		local root = if source and not source.destroyed then source.root else nil
+		if root and root:IsA("BasePart") and root.Parent and not desired[root] then
+			desired[root] = source
+			if index == 1 then
+				self.primaryHunt = source
+			end
+		end
 	end
-	local root = if hunt and not hunt.destroyed then hunt.root else nil
-	if root and not root.Parent then
-		root = nil
+	if not self.wakePlayed then
+		local primary = self.primaryHunt
+		local root = if primary then primary.root else nil
+		if self.wakePrimaryRoot ~= root then
+			self.wakePrimaryRoot = root
+			self.wakeObservedDormant = primary ~= nil and primary.state == "dormant"
+			if primary then
+				self.wakeSound.Parent.Position = primary.home or self.world.Field.Position
+			end
+		elseif primary and primary.state == "dormant" then
+			self.wakeObservedDormant = true
+		end
 	end
-	if self.npc and self.npc.root == root then
+	-- Remove only vanished NPCs before adding replacements; the live corn pool
+	-- stays bounded at three and lead handoffs never cut another NPC's tail.
+	for root, actor in self.npcActors do
+		if not desired[root] then
+			self:_remove(actor.sound)
+			self.npcActors[root] = nil
+		end
+	end
+	for root, source in desired do
+		local actor = self.npcActors[root]
+		if not actor then
+			actor = self:_actor(root)
+			self.npcActors[root] = actor
+		end
+		actor.hunt = source
+	end
+	local leadRoot = if hunt and not hunt.destroyed then hunt.root else nil
+	local selected = if leadRoot then self.npcActors[leadRoot] else nil
+	if not selected and self.primaryHunt then
+		selected = self.npcActors[self.primaryHunt.root]
+	end
+	self.npc = selected -- Legacy alias for the selected voice/threat source.
+	self.leadHunt = if selected then selected.hunt else nil
+	local root = if selected then selected.root else nil
+	if self.voiceRoot == root then
 		return
-	end
-	if self.npc then
-		self:_remove(self.npc.sound)
 	end
 	for _, sound in self.voices do
 		self:_remove(sound)
 	end
 	self.voices = {}
-	self.npc = nil
+	self.voiceRoot = root
+	self.voiceBag = {}
+	self.voiceLast, self.voiceUntil, self.voiceAt = 0, 0, 0
 	self.chasing = false
-	if root and root:IsA("BasePart") and root.Parent then
-		self.npc = self:_actor(root)
+	if root then
 		for index, key in VOICE_KEYS do
 			self.voices[index] = self:_sound(
 				root,
@@ -288,22 +412,28 @@ function RoundAudio:_setHunt(hunt: any)
 end
 
 function RoundAudio:_actor(root: BasePart): any
+	local sound = self:_sound(
+		root,
+		CORN_KEYS[1],
+		"corn_rustle",
+		Rules.Volume.Rustle,
+		"Effects",
+		Rules.Ranges.Rustle,
+		false
+	)
+	sound:SetAttribute("AudioRustleId", 0)
+	sound:SetAttribute("AudioRustleStart", "")
 	return {
 		root = root,
-		sound = self:_sound(
-			root,
-			CORN_KEYS[1],
-			"corn_rustle",
-			Rules.Volume.Rustle,
-			"Effects",
-			Rules.Ranges.Rustle,
-			false
-		),
+		sound = sound,
+		rustleId = 0,
 		lastPosition = nil,
 		lastAt = nil,
 		lastClip = 0,
 		untilAt = 0,
 		nextAt = 0,
+		cueContinuous = false,
+		loadDeadline = 0,
 	}
 end
 
@@ -333,14 +463,28 @@ function RoundAudio:_stepActor(actor: any, now: number, eligible: boolean)
 		and distance <= 12
 		and distance / dt <= 45
 		and math.abs(delta.Y) < 4
-	if not eligible or not moving or not self:_inCorn(point) then
-		stop(actor.sound)
-		actor.untilAt = 0
-		actor.nextAt = now
-		return
+	local sound = actor.sound
+	local busy = false
+	if sound:GetAttribute("AudioRequestedPlaying") == true then
+		-- This server player retains its own full clip. More frequent cues
+		-- below are metadata only while it is busy; no URI/Play/Stop rewrite.
+		if sound.SoundId ~= "" and not sound.IsLoaded then
+			if now < actor.loadDeadline or sound.TimePosition > 0 then
+				busy = true
+			else
+				-- Only abandon an unavailable attempt that never began playing.
+				stop(sound)
+			end
+		elseif now < actor.untilAt or sound.IsPlaying then
+			busy = true
+		else
+			-- Natural completion needs no Stop (which resets playback position).
+			sound:SetAttribute("AudioRequestedPlaying", false)
+		end
 	end
-	if now >= actor.untilAt then
-		stop(actor.sound)
+	if not eligible or not moving or not self:_inCorn(point) then
+		actor.cueContinuous = false
+		return
 	end
 	if now < actor.nextAt then
 		return
@@ -354,16 +498,26 @@ function RoundAudio:_stepActor(actor: any, now: number, eligible: boolean)
 	end
 	actor.lastClip = index
 	local definition = Assets.Get(CORN_KEYS[index])
-	-- The cadence can cut a long clip short. Stop before replacing its URI,
-	-- so one actor never layers an old rustle under the next one.
-	stop(actor.sound)
-	actor.sound.SoundId = definition.Id
-	actor.sound:SetAttribute("AudioAssetKey", CORN_KEYS[index])
-	actor.sound.Volume = math.clamp(Rules.Volume.Rustle * definition.Gain, 0, 1)
 	local duration = math.max(0.1, definition.Duration)
-	actor.untilAt = now + duration
-	actor.nextAt = now + math.min(Rules.RustleInterval, duration)
-	request(actor.sound, true)
+	-- Preserve at most one poll's timing remainder during continuous motion.
+	-- Pauses/discontinuities reset the anchor, so there is no catch-up burst.
+	local cueAt = if actor.cueContinuous then math.max(actor.nextAt, now - 0.1) else now
+	actor.nextAt = cueAt + math.max(Rules.RustleInterval, duration / Rules.RustleVoices)
+	actor.cueContinuous = true
+	if not busy then
+		sound.SoundId = definition.Id
+		sound:SetAttribute("AudioAssetKey", CORN_KEYS[index])
+		sound.Volume = math.clamp(Rules.Volume.Rustle * definition.Gain, 0, 1)
+		actor.untilAt = now + duration
+		actor.loadDeadline = now + Rules.RustleLoadTimeout
+		request(sound, true)
+	end
+	actor.rustleId += 1
+	sound:SetAttribute("AudioRustleId", actor.rustleId)
+	-- One replicated value commits the sequence and key together. A client
+	-- decoder can finish later than this server Sound; it schedules its own
+	-- full tails from accepted commits without trusting URI replication order.
+	sound:SetAttribute("AudioRustleStart", tostring(actor.rustleId) .. ":" .. CORN_KEYS[index])
 end
 
 function RoundAudio:_grounded(character: Model, humanoid: Humanoid, root: BasePart): boolean
@@ -471,7 +625,7 @@ function RoundAudio:_voice(now: number)
 	request(sound, true)
 end
 
-function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any)
+function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hunts: { any }?)
 	if self.destroyed or not finite(now) then
 		return
 	end
@@ -482,17 +636,18 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any)
 	if not self.startedAt then
 		self.startedAt = now
 	end
-	self:_setHunt(hunt)
+	self:_setHunt(hunt, hunts)
+	local primary = self.primaryHunt
 	if phase == "caught" then
 		stop(self.wakeSound)
 		self.wakeUntil = 0
 	elseif
 		not self.wakePlayed
 		and self.wakeObservedDormant
-		and hunt
-		and not hunt.destroyed
-		and hunt.state ~= "dormant"
-		and hunt.state ~= "stopped"
+		and primary
+		and not primary.destroyed
+		and primary.state ~= "dormant"
+		and primary.state ~= "stopped"
 	then
 		self.wakePlayed = true
 		self.wakeUntil = now
@@ -505,12 +660,13 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any)
 		stop(self.wakeSound)
 	end
 	for _, entry in self.crickets do
-		request(entry.sound, Rules.CricketIsOn(now, self.startedAt, entry.offset))
+		self:_stepCricket(entry, now)
 	end
 	for _, sound in self.fires do
 		request(sound, mode == "medium" or mode == "hard")
 	end
-	local chasing = phase == "active" and hunt and not hunt.destroyed and hunt.state == "chase"
+	local lead = self.leadHunt
+	local chasing = phase == "active" and lead and not lead.destroyed and lead.state == "chase"
 	if not chasing then
 		for _, sound in self.voices do
 			stop(sound)
@@ -520,18 +676,6 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any)
 		self.voiceUntil = now
 	end
 	self.chasing = chasing == true
-	if phase == "caught" then
-		local owner = self.actors[self.ownerPlayer]
-		if owner then
-			stop(owner.sound)
-		end
-	end
-	if
-		self.npc
-		and (phase ~= "active" or not hunt or (hunt.state ~= "patrol" and hunt.state ~= "chase"))
-	then
-		stop(self.npc.sound)
-	end
 	if now < self.pollAt then
 		return
 	end
@@ -539,15 +683,16 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any)
 	if self.chasing then
 		self:_voice(now)
 	end
-	if self.npc then
+	for _, actor in self.npcActors do
+		local source = actor.hunt
 		local floor = self.world.Ground.Position.Y + self.world.Ground.Size.Y / 2
 		self:_stepActor(
-			self.npc,
+			actor,
 			now,
 			phase == "active"
-				and hunt
-				and (hunt.state == "patrol" or hunt.state == "chase")
-				and math.abs(self.npc.root.Position.Y - floor - 3) <= 3
+				and source
+				and (source.state == "patrol" or source.state == "chase")
+				and math.abs(actor.root.Position.Y - floor - 3) <= 3
 		)
 	end
 	self:_players(now, phase)
@@ -571,6 +716,9 @@ function RoundAudio:Destroy()
 	self.fires = {}
 	self.crickets = {}
 	self.npc = nil
+	self.npcActors = {}
+	self.primaryHunt, self.leadHunt, self.voiceRoot = nil, nil, nil
+	self.wakePrimaryRoot = nil
 end
 
 RoundAudio.Stop = RoundAudio.Destroy

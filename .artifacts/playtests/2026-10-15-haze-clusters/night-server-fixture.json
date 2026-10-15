@@ -1,0 +1,13 @@
+{
+  "elapsed_sec": 0.016588499999670603,
+  "cleanup": "owned scratch destroyed, hunter callbacks invalidated; live character untouched, normal passing path never applies Lighting",
+  "method": "actual SoloRound _request/_startRound invalid guards + actual key/gate/Hunt32/physical exit methods; staged active hard round and isolated owned character/network boundary; no native-input/start/GPU/audio/endurance claim",
+  "checks": {
+    "actual_physical_exit_reward20_once_and_menu_cleanup": true,
+    "actual_key_gate120_once_three_owned_rigs_detection31_yes33_no": true,
+    "hard_only_provider_default_order_profile_reward_contract": true,
+    "actual_invalid_start_retry_no_world_lighting_or_round_mutations": 20
+  },
+  "status": "PASS",
+  "snapshot_count": 4
+}

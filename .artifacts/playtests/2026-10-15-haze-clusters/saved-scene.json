@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "method": "Author engine Ctrl+S; read-only strict audit, no promotion/reserialization",
+  "path": "place/Children_of_corn.rbxl",
+  "bytes": 1028519,
+  "sha256": "c7015e55a7cf4a020fe0ae1e3d40d4c69c17faf10a8f01d8ce4379066c955fed",
+  "source_count": 78,
+  "instances": 6844,
+  "baseline": "a897bb52fa85505090f973e910139915e6ebb2995e44915c31ecbc2b5c511dca",
+  "original_identities_preserved": true,
+  "raw_terrain_preserved": true,
+  "changes": {
+    "cluster_cframes": 28,
+    "imported_fog_nodes": 5,
+    "bloom_values": 2
+  },
+  "studio_final": {
+    "mode": "Edit",
+    "code_created": 0,
+    "code_changed": 0,
+    "asset_changed": 0,
+    "cluster_changed": 0,
+    "farm_targets": 40,
+    "farm_applied": 0,
+    "farm_built": 0,
+    "camera": "Fixed",
+    "round_runtime": false
+  },
+  "validation": {
+    "source_build": "PASS",
+    "dom_negative_cases": 121,
+    "raw_terrain_negatives": 3,
+    "promoter_cases": 16,
+    "native_hard_key_gate_exit20_retry": "PASS with diagnostic positioning",
+    "native_rustle_plays": 16,
+    "native_rustle_natural_ends": 16,
+    "native_rustle_stops": 0,
+    "native_rustle_uri_cuts": 0,
+    "controlled_decoder_plays": 40,
+    "controlled_decoder_natural_ends": 40,
+    "controlled_cadence_old": 18,
+    "controlled_cadence_new": 36
+  }
+}

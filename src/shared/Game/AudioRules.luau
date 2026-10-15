@@ -21,11 +21,16 @@ local Rules = {
 	}),
 	CricketOn = 15,
 	Cycle = 30,
+	CricketFadeIn = 1,
+	CricketFadeOut = 1,
+	CricketStartWindow = 1,
 	VoiceMin = 4,
 	VoiceMax = 7.5,
 	FirstVoiceDelay = 0.4,
 	ActorLimit = 8,
-	RustleInterval = 0.45,
+	RustleInterval = 0.225,
+	RustleVoices = 2,
+	RustleLoadTimeout = 8,
 	HuntFadeIn = 1.4,
 	HuntFadeOut = 2.5,
 	HuntMaxDistance = 60,
@@ -70,6 +75,29 @@ end
 function Rules.CricketIsOn(now: number, started: number, offset: number): boolean
 	local elapsed = now - started - offset
 	return finite(elapsed) and elapsed >= 0 and elapsed % Rules.Cycle < Rules.CricketOn
+end
+
+function Rules.CricketEnvelope(played: number, slotRemaining: number, clipRemaining: number): number
+	if
+		not finite(played)
+		or not finite(slotRemaining)
+		or not finite(clipRemaining)
+		or played < 0
+	then
+		return 0
+	end
+	if slotRemaining <= 0 or clipRemaining <= 0 then
+		return 0
+	end
+	return math.clamp(
+		math.min(
+			played / Rules.CricketFadeIn,
+			slotRemaining / Rules.CricketFadeOut,
+			clipRemaining / Rules.CricketFadeOut
+		),
+		0,
+		1
+	)
 end
 
 return table.freeze(Rules)

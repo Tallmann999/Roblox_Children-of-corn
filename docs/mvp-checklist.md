@@ -1,8 +1,53 @@
 # Дети кукурузы — MVP checklist
 
-## Актуальный этап — дальний обзор и уход от погони 2026-10-10
+## Текущий follow-up — 2026-10-15
 
-Текущий код содержит 28 Sources. Обычный обход и проверка качества продолжаются; [итоговый отчёт](2026-10-10_quality-playtest.md) заполняется. Эта запись не объявляет полную приёмку страха, времени поиска или длительного FPS. Rojo остановлен; карта 840, 21 факел, сохранённые 4977 overview/1187 preview растений и импортированный арт остаются авторскими.
+Единственный игровой режим — ночь/hard, награда20; лёгкий и средний удалены из интерфейса и server whitelist. Три импортированных Sources дымки плюс75 code Sources дают78. [Дымка и связанные группы](2026-10-15_haze-clusters.md) сохранены: E-подборы предмета/ключа, E-ворота/W-выход20 и native hard Retry PASS с диагностическим позиционированием. Двадцать invalid-mode guards и gate/3NPC/radius32/reward20once прошли настоящую server fixture. Шелест: controlled36vs18/12сек,40naturalEnds; native ходьба16/16naturalEnds,0Stops/URIcuts. Пары факелов сараев сохранены. **Strict save PASS**:1028519байт/6844instances/78Sources, hash c7015e55…; source equality/world/Lighting/art/rawTerrain кроме явных28CF/5Fog/2Bloom изменений. [Полная приёмка и ограничения](2026-10-15_haze-night-playtest.md). Прежние a897/modes записи ниже — история.
+
+## Сохранённая finale до текущего follow-up — 2026-10-15
+
+Локальный solo PC, карта 840 × 840, 75 Sources. Установлены 13 Source правок и два дополнительных исправления неона/анимации; новые Sources и remotes не добавлены. [Контракт](2026-10-15_finale.md), [точная приёмка и артефакты](2026-10-15_finale-playtest.md). **Сохранение и strict preservation PASS**: 1019419 байт, hash a897bb52…; reopen отдельно. Новый follow-up дымки/кластеров ещё не входит в этот save.
+
+- [x] Check PASS, девять локальных fixtures и engine intro/readability регрессии; финальная Source equality 75/0/0.
+- [x] Actual server finale: 11 проверок / 3,48 секунды / 28 snapshots; ключ/сторона/LOS/owner/phase/rate, одна deadline/три NPC, capture/revive/награды/cleanup.
+- [x] Настоящий wallclock: 120,0040129 секунды, 6 проверок / 373 snapshots; caught held без выбора до конца, награда 0, NPC/deadline удалены. Часы и deadline не ускорялись.
+- [x] Native E-ключ / E-ворота / W-выход во всех режимах: легко +5, средне +10, сложно +20; terminal удаляет NPC. Диагностические позиции/взгляд отделены от blind поиска. Medium HUD наблюдался на 1:58.
+- [x] Actual captor 2/3 frame, одна поимка за tick, секундный hold, запрет ранних/чужих решений, ResetHome всех трёх и продолжающийся deadline.
+- [x] Исправлено наследование runtime-состояния primary Module. Регрессия запускает сам Module как Bootstrap: три независимых соединения и позы, 0 Root writes, cleanup. После установки actual regular client: по 8 изменённых деталей у всех трёх за 73 RenderSteps / 1,2 секунды, Root каждого прошёл около 11 studs.
+- [x] Клиентские лимиты: 27 visual writes / 30 Hz, capture restore до 27 деталей, 11 corn actors с независимыми tails, wind один NPC / 4 растения / 32 части.
+- [x] Пять cricket Sounds: настоящие decode/fade in/fade out/natural Ended, 0 обычных Stop за 17,082 секунды. Это server engine evidence; человеческий mix отдельно. Full corn playback 14 октября остаётся отдельным доказательством, общий decoder последний раз 14/15; Fire external.
+- [x] Физический неон: исправление quantization guard/readback, 160 production samples, G≈0,043137…0,749019 / текст 0,1…1, нет projected HUD, bright GPU.
+- [x] Финальный Torch V2: guarded baseline → 54 Part CFrames, repeat 0, 25 ground queries с Props/gate без пересечений. Пары у West показаны на GPU, два других дома подтверждены теми же offsets guards.
+- [x] Foreground A/B 152,525 секунды завершён условно на Automatic: фоновых/unknown кадров нет, автор подтвердил foreground; Quality10 setter refused. Данные и пики записаны, все свойства восстановлены. Это замер до последней правки анимации, с одним NPC до gateOpen, без обещания GPU headroom или FPS трёх активных NPC.
+- [x] Studio Edit, Farm Ensure 40/0/0, Torch V2 повтор 0; Lighting восстановлен Soft / softness около 0,2 / GlobalShadows=true / PrioritizeLightingQuality=true. Постоянная смена Lighting не выбрана.
+- [x] Exact engine save/hash/preservation после авторского Ctrl+S: 1019419 байт, a897bb52fa85505090f973e910139915e6ebb2995e44915c31ecbc2b5c511dca; 75 Sources, 6839 instances, 54 CFrame и три точных служебных дополнения с отдельным аудитом.
+- [ ] Реальный reopen сохранённого .rbxl с FarmGeometry restore и Source/world проверкой.
+
+Отдельная общая приёмка MVP: blind поиск 7–10 минут, обычные повторные раунды, страх/справедливость/человеческий mix, баланс высокого пенька и длительный маршрут с тремя активными NPC. Эти пункты не объявлены выполненными техническими fixtures.
+
+## История принятой версии —2026-10-14
+
+На этапе14октября local solo PC MVP: карта840,75Sources были установлены, проверены и сохранены в `place/Children_of_corn.rbxl`. Первая погоня=current server speed/forced loss10сек/grace1сек; subsequent10→13/16LOS/42/1.25, все сохраняют2сек no-capture. Точная AutoRecovery19:05:32 успешно promoted:1015691байт/hash`9082169a7da5fed15cd962611777285213fce99f23de82f83e0f361a683ecf16`, независимый повторный hash PASS. Строго75Sources/6839instances/0additions/3fixed worldprops/остальной exact world/Lighting/art/raw Terrain; immutable baselineEF unchanged. Studio оставлена Edit. [Точная готовность и артефакты](2026-10-14_mvp-readiness.md). Старые28Sources,32studs/15сек ниже — история.
+
+- [x] Основные игровые системы установлены и имеют реальные engine/Studio результаты с указанными ограничениями.
+- [x] Полный corn rustle:6реальных decoders,8server natural Ended,4client fixture Ended и6production клипов при настоящих W90мс/W5500мс; noStop/noURI-before-Ended. Очередь newest-only1; real client completion, а не только server intent.
+- [x] Текущий decoder14/15, только Fire105538100476464 не загрузился. Старые0/15 относятся к прошлой сессии; ни ассеты, ни permissions/reimport/publishing не менялись.
+- [x] Первая особая10сек погоня прошла engine fixture: server speed12/18/24/36,2сек no-capture, fixed deadline before capture,grace1сек,one per round; это контролируемая engine приёмка, а не обычный blind chase.
+- [x] Настоящие первая/вторая поимки и GUI: первая «Возрождение» продолжает тот же раунд, вторая retry objective/Back/Confirm, первая «Выход из игры»→выбор режима; engine authority/epoch/retention также PASS.
+- [x] Capture13local Parts/рот/head+camera shake/краска: engine/live результаты и статический mouth-paint GPU кадр PASS; человеческий страх отдельно.
+- [x] Final вывеска:Size3×/Y+3.2/PixelsPerStud48→16,AlwaysOnTop исходныйfalse. Проектируемый runtime текст,3owned GUI instances/96×26…600×160/≤1300, без Root/camera writes/field scans.
+- [x] Production GPU: читаемый «ВЫХОД» с≈570studs day13.5/night20.5/dusk≈17.9 и рядом39.7studs; диагностическая камера отдельно от ordinary round. Ночь20samples=10on/10off, coherent Surface/gui/LTM; native abort/menu удалил GUI и восстановил Surface.Enabled/LTM0.
+- [x] Final75Source equality0created/0changed; exact engine candidate strict75/6839/0additions/3approved properties/worldLightingartRawTerrain PASS. Local Gate guards,exit16refusals,verifier19DOM+3rawTerrain,promoter16cases PASS.
+- [x] Финальное guarded promotion exact engine copy в рабочий .rbxl,exit0/повторный независимый hash9082169…/baselineEFunchanged; saved-scene.json и preservation.json записаны,Studio Edit,без Lune serialization.
+- [ ] Внешняя доступность Fire и человеческая оценка полного звукового микса.
+- [ ] Самостоятельный полный раунд и поиск7–10минут, человеческая оценка страха/справедливости.
+- [ ] Баланс высокого пенька как возможного безопасного места.
+- [ ] Длительный FPS и повторные раунды на нынешней75-source версии.
+- [ ] Реальный reopen .rbxl с восстановлением фермерской EditableMesh геометрии.
+
+## История — дальний обзор и уход от погони 2026-10-10
+
+На этом историческом этапе код содержал28Sources. Обычный обход и проверка качества описаны в [отчёте](2026-10-10_quality-playtest.md); результат не объявляет полную приёмку страха, времени поиска или нынешнего75-source FPS. Тогда Rojo остановлен, карта840/21факел/4977overview/1187preview и импортированный арт сохранены.
 
 - [x] Runtime CornBackdrop с шагом 6: 19715 растений на текущей карте, лимит 20000, наследуемый RenderFidelity=Automatic, CastShadow=false; авторские Size/CFrame не меняются.
 - [x] Кэш обзора с инвалидацией, hysteresis ±12 и удержание внешних групп ещё на 18 studs; ближние лимиты 100 групп/4032 растений. При готовом фоне 6 sparse LOD3=9 не создаёт дыр.

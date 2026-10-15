@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"lower_edge_preserved\":true,\"pixels_per_stud\":16,\"frame\":\"0, 39.3999863, 419.700012, 1, 0, 0, 0, 1, 0, 0, 0, 1\",\"changed\":2,\"always_on_top\":false,\"physical_letters_scale\":3,\"size\":\"36, 9.600000381469727, 0.9000000357627869\"}"
+    }
+  ],
+  "isError": false
+}

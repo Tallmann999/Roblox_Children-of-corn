@@ -1,0 +1,699 @@
+<?xml version='1.0' encoding='utf-8'?>
+<roblox version="4">
+  <External>null</External>
+  <External>nil</External>
+  <Item class="Model" referent="RBX1">
+    <Properties>
+      <string name="Name">CornfieldFog</string>
+    </Properties>
+    <Item class="ModuleScript" referent="RBX2">
+      <Properties>
+        <string name="Name">Config</string>
+        <ProtectedString name="Source">-- Settings are read when Play starts. Live panel changes last for this server session.
+return {
+	Enabled = true,
+	Steps = 20,
+	StudsPerStep = 3, -- A design convention, not the avatar's measured stride.
+	StartRatio = 0.2, -- Fog starts at 12 studs and becomes opaque at 60 by default.
+	Preset = "Night",
+	Presets = {
+		Field = Color3.fromRGB(177, 184, 158), -- muted green-grey for a daytime cornfield
+		Dawn = Color3.fromRGB(205, 197, 171),
+		Night = Color3.fromRGB(20, 27, 36), -- based on the current corn map's fog colour
+	},
+	MinSteps = 10,
+	MaxSteps = 120,
+	-- The panel is enabled in Studio. In published games add your numeric UserId here.
+	AdminUserIds = {},
+	AllowExperienceOwner = true, -- applies to an experience owned by a user, not a group
+	PanelInStudio = true,
+	-- Global fog is the reliable default. For field-only fog, set this true and
+	-- set FieldCenter to the actual cornfield centre. Only the X/Z rectangle is used.
+	FieldOnly = false,
+	FieldCenter = Vector3.new(0, 0, 0),
+	FieldSize = Vector3.new(840, 300, 840),
+	EdgeFadeStuds = 30, -- blend inside the rectangle; not an invisible boundary wall
+}
+</ProtectedString>
+      </Properties>
+    </Item>
+    <Item class="Script" referent="RBX3">
+      <Properties>
+        <string name="Name">RuntimeServer</string>
+        <ProtectedString name="Source">-- Drop the CornfieldFog model into Workspace or ServerScriptService.
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local root = script.Parent
+local config = require(root:WaitForChild("Config"))
+local runtimeName = "CornfieldFogRuntime"
+local previous = ReplicatedStorage:FindFirstChild(runtimeName)
+if previous then
+	local previousOwner = previous:FindFirstChild("Owner")
+	if previousOwner and previousOwner:IsA("ObjectValue")
+		and (not previousOwner.Value or not previousOwner.Value:IsDescendantOf(game)) then
+		-- Studio Delete can unparent the model without firing Destroying.
+		previous:Destroy()
+		previous = nil
+	end
+end
+if previous then
+	warn("[CornfieldFog] A controller already exists. Keep only one CornfieldFog model.")
+	return
+end
+
+local function finite(n)
+	return type(n) == "number" and n == n and math.abs(n) &lt; math.huge
+end
+local function number(n, fallback, low, high)
+	if not finite(n) then n = fallback end
+	return math.clamp(n, low, high)
+end
+local minSteps = number(config.MinSteps, 10, 1, 1000)
+local maxSteps = number(config.MaxSteps, 120, minSteps, 1000)
+local presets = config.Presets
+local function canEdit(player)
+	if config.PanelInStudio and RunService:IsStudio() then return true end
+	if config.AllowExperienceOwner and game.CreatorType == Enum.CreatorType.User
+		and player.UserId == game.CreatorId then return true end
+	return table.find(config.AdminUserIds, player.UserId) ~= nil
+end
+
+local runtime = Instance.new("Folder")
+runtime.Name = runtimeName
+local remote = Instance.new("RemoteEvent")
+remote.Name = "Control"
+remote.Parent = runtime
+local owner = Instance.new("ObjectValue")
+owner.Name = "Owner"
+owner.Value = root
+owner.Parent = runtime
+local defaultPreset = presets[config.Preset] and config.Preset or "Field"
+local defaults = {
+	Enabled = config.Enabled ~= false,
+	Steps = number(config.Steps, 20, minSteps, maxSteps),
+	StudsPerStep = number(config.StudsPerStep, 3, 0.1, 100),
+	StartRatio = number(config.StartRatio, 0.2, 0, 0.8),
+	FogColor = presets[defaultPreset],
+	Preset = defaultPreset,
+	FieldOnly = config.FieldOnly == true,
+	FieldCenter = config.FieldCenter,
+	FieldSize = config.FieldSize,
+	EdgeFadeStuds = number(config.EdgeFadeStuds, 30, 0, 420),
+}
+runtime:SetAttribute("MinSteps", minSteps)
+runtime:SetAttribute("MaxSteps", maxSteps)
+for key, value in defaults do runtime:SetAttribute(key, value) end
+-- Publish a completely initialized state, so joining clients cannot read partial defaults.
+runtime.Parent = ReplicatedStorage
+
+local connections = {}
+local installed = {}
+local installing = {}
+local lastRequest = {}
+local alive = true
+local template = script:WaitForChild("ClientTemplate")
+
+local function install(player)
+	if installing[player] or installed[player] then return end
+	installing[player] = true
+	local playerGui = player:WaitForChild("PlayerGui", 20)
+	if not alive or not playerGui or player.Parent ~= Players then
+		installing[player] = nil
+		return
+	end
+	player:SetAttribute("CornfieldFogCanEdit", canEdit(player))
+	local bootstrap = Instance.new("ScreenGui")
+	bootstrap.Name = "CornfieldFogBootstrap"
+	bootstrap.ResetOnSpawn = false
+	local runtimeReference = Instance.new("ObjectValue")
+	runtimeReference.Name = "Runtime"
+	runtimeReference.Value = runtime
+	runtimeReference.Parent = bootstrap
+	bootstrap.Parent = playerGui
+	local client = template:Clone()
+	client.Name = "CornfieldFogClient"
+	client.Enabled = true
+	installed[player] = bootstrap
+	installing[player] = nil
+	client.Parent = bootstrap
+end
+
+connections[#connections + 1] = remote.OnServerEvent:Connect(function(player, request)
+	if not canEdit(player) or type(request) ~= "table" then return end
+	local now = os.clock()
+	if now - (lastRequest[player] or -math.huge) &lt; 0.08 then return end
+	lastRequest[player] = now
+	if request.Reset == true then
+		for key, value in defaults do runtime:SetAttribute(key, value) end
+		return
+	end
+	-- Only these small, validated fields may be changed by the control panel.
+	if finite(request.Steps) then
+		runtime:SetAttribute("Steps", math.floor(math.clamp(request.Steps, minSteps, maxSteps) * 10 + 0.5) / 10)
+	end
+	if finite(request.StartRatio) then
+		runtime:SetAttribute("StartRatio", math.clamp(request.StartRatio, 0, 0.8))
+	end
+	if type(request.Enabled) == "boolean" then runtime:SetAttribute("Enabled", request.Enabled) end
+	if type(request.Preset) == "string" and presets[request.Preset] then
+		runtime:SetAttribute("Preset", request.Preset)
+		runtime:SetAttribute("FogColor", presets[request.Preset])
+	end
+end)
+connections[#connections + 1] = Players.PlayerAdded:Connect(function(player) task.spawn(install, player) end)
+connections[#connections + 1] = Players.PlayerRemoving:Connect(function(player)
+	installed[player] = nil
+	installing[player] = nil
+	lastRequest[player] = nil
+end)
+for _, player in Players:GetPlayers() do task.spawn(install, player) end
+
+local function cleanup()
+	if not alive then return end
+	alive = false
+	for _, connection in connections do connection:Disconnect() end
+	-- Clients observe Destroying / removal and restore their original Lighting.
+	runtime:Destroy()
+	for player in installed do
+		if player.Parent == Players then player:SetAttribute("CornfieldFogCanEdit", nil) end
+	end
+end
+script.Destroying:Connect(cleanup)
+root.Destroying:Connect(cleanup)
+runtime.Destroying:Connect(cleanup)
+connections[#connections + 1] = root.AncestryChanged:Connect(function()
+	if not root:IsDescendantOf(game) then cleanup() end
+end)
+connections[#connections + 1] = script.AncestryChanged:Connect(function()
+	if not script:IsDescendantOf(root) then cleanup() end
+end)
+connections[#connections + 1] = runtime.AncestryChanged:Connect(function()
+	if runtime.Parent ~= ReplicatedStorage then cleanup() end
+end)
+</ProtectedString>
+        <bool name="Disabled">false</bool>
+      </Properties>
+      <Item class="LocalScript" referent="RBX4">
+        <Properties>
+          <string name="Name">ClientTemplate</string>
+          <ProtectedString name="Source">-- Portable client renderer and editor. Fog state is authoritative on the server.
+-- This script does not change time of day, brightness, audio, or camera settings.
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Lighting = game:GetService("Lighting")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+if not player then return end
+local playerGui = player:WaitForChild("PlayerGui")
+local bootstrap = script.Parent
+if not (bootstrap:IsA("ScreenGui") and bootstrap.Name == "CornfieldFogBootstrap") then bootstrap = nil end
+
+-- Resolve the exact installation before acquiring ownership. ObjectValue targets may
+-- arrive after the bootstrap itself, so an initial nil is not an uninstall signal.
+local runtime = nil
+local binding = bootstrap and (bootstrap:FindFirstChild("Runtime") or bootstrap:WaitForChild("Runtime", 10))
+if bootstrap then
+ if not binding or not binding:IsA("ObjectValue") then bootstrap:Destroy();return end
+ local deadline = os.clock() + 10
+ while not binding.Value and os.clock() &lt; deadline and bootstrap:IsDescendantOf(playerGui) do task.wait(0.05) end
+ runtime = binding.Value
+else
+ runtime = ReplicatedStorage:FindFirstChild("CornfieldFogRuntime")
+ if not runtime then runtime = ReplicatedStorage:WaitForChild("CornfieldFogRuntime", 10) end
+end
+if not runtime or not runtime:IsA("Folder") or not runtime:IsDescendantOf(ReplicatedStorage) then
+ if bootstrap then bootstrap:Destroy() end
+ return
+end
+
+local OWNER_NAME = "_CornfieldFogClientOwner"
+local previousOwner = playerGui:FindFirstChild(OWNER_NAME)
+if previousOwner and previousOwner:IsA("ObjectValue") then
+ local other = previousOwner.Value
+ if other and other ~= script and other:IsDescendantOf(playerGui) then
+  local oldBinding = other.Parent and other.Parent:FindFirstChild("Runtime")
+  local oldRuntime = oldBinding and oldBinding:IsA("ObjectValue") and oldBinding.Value
+  if oldRuntime == runtime then return end
+  -- Give the old controller a synchronous restore opportunity before taking a baseline.
+  local stop = previousOwner:FindFirstChild("Stop")
+  if stop and stop:IsA("BindableEvent") then stop:Fire() end
+  local deadline = os.clock() + 2
+  while previousOwner.Parent and os.clock() &lt; deadline do task.wait() end
+  if previousOwner.Parent then return end
+ else previousOwner:Destroy() end
+end
+local owner = Instance.new("ObjectValue")
+owner.Name = OWNER_NAME
+owner.Value = script
+owner.Parent = playerGui
+
+local connections = {}
+local uiConnections = {}
+local dead = false
+local fogOwned = false
+local gui = nil
+local controls = nil
+local panelOpen = false
+local drag = nil
+local pendingMessage = nil
+local pendingSerial = 0
+local refreshUI
+local heldAtmospheres = {}
+local stash = Instance.new("Folder")
+stash.Name = "_HeldAtmospheres"
+stash.Parent = script
+local original = { Color = Lighting.FogColor, Start = Lighting.FogStart, End = Lighting.FogEnd }
+
+local function connect(bucket, signal, callback)
+ local connection = signal:Connect(callback)
+ table.insert(bucket, connection)
+ return connection
+end
+local function disconnect(bucket)
+ for _,connection in bucket do pcall(function() connection:Disconnect() end) end
+ table.clear(bucket)
+end
+local function restoreAtmospheres()
+ -- Clear ownership before parenting, since this fires Lighting.DescendantAdded.
+ for atmosphere,parent in heldAtmospheres do
+  heldAtmospheres[atmosphere] = nil
+  pcall(function()
+   if atmosphere.Parent ~= stash then return end
+   local target = Lighting
+   if parent == Lighting or (parent and parent:IsDescendantOf(Lighting)) then target = parent end
+   atmosphere.Parent = target
+  end)
+ end
+end
+local function restoreLighting()
+ if fogOwned then
+  pcall(function()
+   Lighting.FogColor = original.Color
+   Lighting.FogStart = original.Start
+   Lighting.FogEnd = original.End
+  end)
+ end
+ fogOwned = false
+ restoreAtmospheres()
+end
+local function destroyUI()
+ drag = nil
+ controls = nil
+ disconnect(uiConnections)
+ if gui then gui:Destroy(); gui = nil end
+end
+local function cleanup()
+ if dead then return end
+ dead = true
+ script:SetAttribute("CornfieldFogStopped", true)
+ -- Restore synchronously while the script's stash still exists.
+ restoreLighting()
+ disconnect(connections)
+ destroyUI()
+ if owner.Parent and owner.Value == script then owner:Destroy() end
+ pcall(function() stash:Destroy() end)
+ if bootstrap then
+  local oldBootstrap = bootstrap
+  task.defer(function() pcall(function() oldBootstrap:Destroy() end) end)
+ end
+end
+local stop = Instance.new("BindableEvent")
+stop.Name = "Stop"
+stop.Parent = owner
+connect(connections, stop.Event, cleanup)
+connect(connections, script.Destroying, cleanup)
+connect(connections, script.AncestryChanged, function()
+ if not script:IsDescendantOf(playerGui) then cleanup() end
+end)
+if bootstrap then connect(connections, bootstrap.Destroying, cleanup) end
+
+if dead then return end
+if not runtime or not runtime:IsA("Folder") or not runtime:IsDescendantOf(ReplicatedStorage) then cleanup(); return end
+connect(connections, runtime.Destroying, cleanup)
+connect(connections, runtime.AncestryChanged, function()
+ if not runtime:IsDescendantOf(ReplicatedStorage) then cleanup() end
+end)
+local rootBinding = runtime:FindFirstChild("Owner")
+if rootBinding and rootBinding:IsA("ObjectValue") then
+ local watched = {}
+ local function watchOwner()
+  local root = rootBinding.Value
+  if not root or watched[root] then return end -- nil is normal for ServerScriptService owners.
+  watched[root] = true
+  local wasInGame = root:IsDescendantOf(game)
+  connect(connections, root.AncestryChanged, function()
+   if root:IsDescendantOf(game) then wasInGame = true elseif wasInGame then cleanup() end
+  end)
+ end
+ connect(connections, rootBinding:GetPropertyChangedSignal("Value"), watchOwner)
+ watchOwner()
+end
+
+local function finite(value, fallback)
+ if typeof(value) ~= "number" or value ~= value or value == math.huge or value == -math.huge then return fallback end
+ return value
+end
+local function readState()
+ local color = runtime:GetAttribute("FogColor")
+ local center = runtime:GetAttribute("FieldCenter")
+ local size = runtime:GetAttribute("FieldSize")
+ local minimum = math.max(1, math.floor(finite(runtime:GetAttribute("MinSteps"), 10) + 0.5))
+ local maximum = math.max(minimum, math.floor(finite(runtime:GetAttribute("MaxSteps"), 120) + 0.5))
+ return {
+  Enabled = runtime:GetAttribute("Enabled") ~= false,
+  Steps = math.max(1, finite(runtime:GetAttribute("Steps"), 20)),
+  MinSteps = minimum,
+  MaxSteps = maximum,
+  StudsPerStep = math.max(0.01, finite(runtime:GetAttribute("StudsPerStep"), 3)),
+  StartRatio = math.clamp(finite(runtime:GetAttribute("StartRatio"), 0.2), 0, 0.8),
+  FogColor = typeof(color) == "Color3" and color or Color3.fromRGB(20, 27, 36),
+  Preset = runtime:GetAttribute("Preset") or "Night",
+  FieldOnly = runtime:GetAttribute("FieldOnly") == true,
+  FieldCenter = typeof(center) == "Vector3" and center or Vector3.zero,
+  FieldSize = typeof(size) == "Vector3" and size or Vector3.new(840, 300, 840),
+  EdgeFadeStuds = math.max(0, finite(runtime:GetAttribute("EdgeFadeStuds"), 30)),
+ }
+end
+local state = readState()
+local function canEdit() return player:GetAttribute("CornfieldFogCanEdit") == true end
+local function send(patch)
+ if dead or not canEdit() then return end
+ local remote = runtime:FindFirstChild("Control")
+ if not remote or not remote:IsA("RemoteEvent") then
+  pendingMessage = "Нет связи с сервером"
+  if refreshUI then refreshUI() end
+  return
+ end
+ pendingMessage = "Применяется на сервере…"
+ pendingSerial += 1
+ local serial = pendingSerial
+ local ok = pcall(function() remote:FireServer(patch) end)
+ if not ok then pendingMessage = "Нет связи с сервером" end
+ if refreshUI then refreshUI() end
+ task.delay(2, function()
+  if not dead and pendingSerial == serial then pendingMessage = nil;if refreshUI then refreshUI() end end
+ end)
+end
+
+-- Region fading is horizontal only; Y and the cornfield's map size do not limit global fog.
+local function regionWeight()
+ if not state.FieldOnly then return 1 end
+ local character = player.Character
+ local root = character and character:FindFirstChild("HumanoidRootPart")
+ local camera = workspace.CurrentCamera
+ local position = root and root:IsA("BasePart") and root.Position or camera and camera.CFrame.Position
+ if not position then return 0 end
+ local dx = math.abs(position.X - state.FieldCenter.X)
+ local dz = math.abs(position.Z - state.FieldCenter.Z)
+ local margin = math.min(math.abs(state.FieldSize.X) * 0.5 - dx, math.abs(state.FieldSize.Z) * 0.5 - dz)
+ if margin &lt;= 0 then return 0 end
+ if state.EdgeFadeStuds &lt;= 0 then return 1 end
+ return math.clamp(margin / state.EdgeFadeStuds, 0, 1)
+end
+local function holdAtmosphere(atmosphere)
+ if dead or not fogOwned or not atmosphere:IsA("Atmosphere") then return end
+ pcall(function()
+  if atmosphere.Parent == stash then return end
+  if not atmosphere:IsDescendantOf(Lighting) then return end
+  if not heldAtmospheres[atmosphere] then heldAtmospheres[atmosphere] = atmosphere.Parent end
+  atmosphere.Parent = stash
+ end)
+end
+connect(connections, Lighting.DescendantAdded, holdAtmosphere)
+
+local lastTarget = nil
+local settledFor = 0
+local current = nil
+local function baseline()
+ local distance = math.max(0.001, original.End)
+ return { inverseEnd = 1 / distance, ratio = original.Start / distance, color = original.Color, active = false }
+end
+local function sameTarget(a, b)
+ return a and a.active == b.active and math.abs(a.inverseEnd - b.inverseEnd) &lt; 1e-9
+  and math.abs(a.ratio - b.ratio) &lt; 1e-6 and a.color == b.color
+end
+local function renderFog(deltaTime)
+ if dead then return end
+ -- Independent of the removed instance's signals, including deferred destruction.
+ if not runtime:IsDescendantOf(ReplicatedStorage) then cleanup(); return end
+ local weight = regionWeight()
+ local wanted = state.Enabled and weight &gt; 0.0001
+ if wanted and not fogOwned then
+  -- Capture fresh values on each activation, preserving changes made while this feature was off.
+  original = { Color = Lighting.FogColor, Start = Lighting.FogStart, End = Lighting.FogEnd }
+  current = baseline()
+  fogOwned = true
+  for _,obj in Lighting:GetDescendants() do if obj:IsA("Atmosphere") then holdAtmosphere(obj) end end
+  lastTarget = nil
+  settledFor = 0
+ end
+ if not fogOwned then return end
+ local distance = math.max(0.01, state.Steps * state.StudsPerStep)
+ local target = wanted and {
+  inverseEnd = weight / distance,
+  ratio = state.StartRatio,
+  color = state.FogColor,
+  active = true,
+ } or baseline()
+ local dt = math.clamp(deltaTime or 1 / 60, 0, 0.2)
+ if sameTarget(lastTarget, target) then settledFor += dt else settledFor = 0 end
+ lastTarget = target
+ -- Unlike restarting a tween on each target change, exponential interpolation
+ -- keeps progressing while the player moves continuously through the edge fade.
+ local eased = settledFor &gt;= 0.3 and 1 or (1 - math.exp(-dt / 0.09))
+ local from, to = current, target
+ current = {
+  inverseEnd = from.inverseEnd + (to.inverseEnd - from.inverseEnd) * eased,
+  ratio = from.ratio + (to.ratio - from.ratio) * eased,
+  color = from.color:Lerp(to.color, eased), active = to.active,
+ }
+ if settledFor &gt;= 0.3 and not wanted then
+  restoreLighting()
+  lastTarget = nil
+  current = nil
+  return
+ end
+ local fogEnd = math.min(100000, 1 / math.max(current.inverseEnd, 1e-8))
+ Lighting.FogColor = current.color
+ Lighting.FogEnd = fogEnd
+ Lighting.FogStart = math.clamp(fogEnd * current.ratio, 0, fogEnd)
+end
+connect(connections, RunService.RenderStepped, renderFog)
+
+local COLORS = { background = Color3.fromRGB(25, 30, 37), card = Color3.fromRGB(42, 49, 59),
+ text = Color3.fromRGB(244, 247, 250), muted = Color3.fromRGB(174, 186, 199), accent = Color3.fromRGB(75, 154, 126) }
+local function create(className, properties, parent)
+ local object = Instance.new(className)
+ for key,value in properties do object[key] = value end
+ object.Parent = parent
+ return object
+end
+local function rounded(object, radius)
+ create("UICorner", { CornerRadius = UDim.new(0, radius or 8) }, object)
+end
+local function text(parent, value, position, size, fontSize)
+ return create("TextLabel", { BackgroundTransparency = 1, Text = value, TextColor3 = COLORS.text,
+  Font = Enum.Font.Gotham, TextSize = fontSize or 16, TextXAlignment = Enum.TextXAlignment.Left,
+  Position = position, Size = size }, parent)
+end
+local function button(parent, value, position, size)
+ local object = create("TextButton", { BackgroundColor3 = COLORS.card, BorderSizePixel = 0,
+  Text = value, TextColor3 = COLORS.text, Font = Enum.Font.GothamMedium, TextSize = 16,
+  AutoButtonColor = true, Position = position, Size = size }, parent)
+ rounded(object)
+ return object
+end
+local function input(parent, position, size)
+ local object = create("TextBox", { BackgroundColor3 = COLORS.card, BorderSizePixel = 0,
+  Text = "", TextColor3 = COLORS.text, PlaceholderColor3 = COLORS.muted, Font = Enum.Font.GothamMedium,
+  TextSize = 19, ClearTextOnFocus = false, TextXAlignment = Enum.TextXAlignment.Center,
+  Position = position, Size = size }, parent)
+ rounded(object)
+ return object
+end
+local function parseNumber(value)
+ return tonumber((value:gsub("%%", ""):gsub("%s", ""):gsub(",", ".")))
+end
+local function setPanel(open)
+ panelOpen = open
+ if controls then controls.panel.Visible = open end
+end
+local function buildUI()
+ if dead or gui or not canEdit() then return end
+ gui = create("ScreenGui", { Name = "CornfieldFogControls", ResetOnSpawn = false,
+  IgnoreGuiInset = false, DisplayOrder = 80, ZIndexBehavior = Enum.ZIndexBehavior.Sibling }, playerGui)
+ local screen = create("Frame", { BackgroundTransparency = 1, Size = UDim2.fromScale(1, 1) }, gui)
+ local opener = button(screen, UserInputService.TouchEnabled and "Туман" or "Туман · F6",
+  UDim2.new(1, -154, 0, 14), UDim2.fromOffset(140, 46))
+ local panel = create("Frame", { Name = "Panel", BackgroundColor3 = COLORS.background, BorderSizePixel = 0,
+  AnchorPoint = Vector2.new(1, 0), Position = UDim2.new(1, -14, 0, 70),
+  Size = UDim2.fromOffset(360, 500), Visible = panelOpen }, screen)
+ rounded(panel, 12)
+ text(panel, "Туман на карте", UDim2.fromOffset(16, 9), UDim2.new(1, -78, 0, 38), 21)
+ local close = button(panel, "×", UDim2.new(1, -54, 0, 6), UDim2.fromOffset(44, 44))
+ local body = create("ScrollingFrame", { BackgroundTransparency = 1, BorderSizePixel = 0,
+  Position = UDim2.fromOffset(14, 56), Size = UDim2.new(1, -28, 1, -66),
+  CanvasSize = UDim2.new(), AutomaticCanvasSize = Enum.AutomaticSize.Y,
+  ScrollBarThickness = 4, ScrollBarImageColor3 = COLORS.muted }, panel)
+ create("UIListLayout", { Padding = UDim.new(0, 10), SortOrder = Enum.SortOrder.LayoutOrder }, body)
+ local order = 0
+ local function block(height)
+  order += 1
+  return create("Frame", { BackgroundTransparency = 1, Size = UDim2.new(1, -6, 0, height), LayoutOrder = order }, body)
+ end
+ local intro = block(32)
+ local status = text(intro, "", UDim2.new(), UDim2.fromScale(1, 1), 14)
+ status.TextColor3 = COLORS.muted
+ status.TextWrapped = true
+ local stepBlock = block(104)
+ text(stepBlock, "Видимость, шаги", UDim2.new(), UDim2.new(1, 0, 0, 24))
+ local minus = button(stepBlock, "−5", UDim2.fromOffset(0, 32), UDim2.new(0.25, -5, 0, 48))
+ local stepBox = input(stepBlock, UDim2.new(0.25, 5, 0, 32), UDim2.new(0.5, -10, 0, 48))
+ local plus = button(stepBlock, "+5", UDim2.new(0.75, 5, 0, 32), UDim2.new(0.25, -5, 0, 48))
+ local distanceText = text(stepBlock, "", UDim2.fromOffset(0, 84), UDim2.new(1, 0, 0, 20), 13)
+ distanceText.TextColor3 = COLORS.muted
+ local sliderBlock = block(58)
+ local sliderArea = button(sliderBlock, "", UDim2.new(), UDim2.new(1, 0, 0, 40))
+ sliderArea.BackgroundTransparency = 1
+ local track = create("Frame", { BackgroundColor3 = COLORS.card, BorderSizePixel = 0,
+  Position = UDim2.new(0, 10, 0.5, -4), Size = UDim2.new(1, -20, 0, 8) }, sliderArea)
+ rounded(track, 4)
+ local fill = create("Frame", { BackgroundColor3 = COLORS.accent, BorderSizePixel = 0, Size = UDim2.fromScale(0, 1) }, track)
+ rounded(fill, 4)
+ local thumb = create("Frame", { BackgroundColor3 = COLORS.text, BorderSizePixel = 0,
+  AnchorPoint = Vector2.new(0.5, 0.5), Position = UDim2.fromScale(0, 0.5), Size = UDim2.fromOffset(22, 22) }, track)
+ rounded(thumb, 11)
+ local minimum = text(sliderBlock, "", UDim2.fromOffset(0, 38), UDim2.new(0.5, 0, 0, 20), 13)
+ minimum.TextColor3 = COLORS.muted
+ local maximum = text(sliderBlock, "", UDim2.new(0.5, 0, 0, 38), UDim2.new(0.5, 0, 0, 20), 13)
+ maximum.TextXAlignment = Enum.TextXAlignment.Right
+ maximum.TextColor3 = COLORS.muted
+ local ratioBlock = block(80)
+ text(ratioBlock, "Чистая зона, %", UDim2.new(), UDim2.new(1, -100, 0, 42))
+ local ratioBox = input(ratioBlock, UDim2.new(1, -88, 0, 0), UDim2.fromOffset(88, 44))
+ local startText = text(ratioBlock, "", UDim2.fromOffset(0, 48), UDim2.new(1, 0, 0, 28), 13)
+ startText.TextColor3 = COLORS.muted
+ startText.TextWrapped = true
+ local presetBlock = block(78)
+ text(presetBlock, "Цвет тумана", UDim2.new(), UDim2.new(1, 0, 0, 24))
+ local presets = {}
+ for i,preset in { {"Field", "Поле"}, {"Dawn", "Рассвет"}, {"Night", "Ночь"} } do
+  local item = button(presetBlock, preset[2], UDim2.new((i - 1) / 3, i &gt; 1 and 3 or 0, 0, 31), UDim2.new(1 / 3, -6, 0, 44))
+  presets[preset[1]] = item
+  connect(uiConnections, item.Activated, function() send({ Preset = preset[1] }) end)
+ end
+ local toggleBlock = block(48)
+ local toggle = button(toggleBlock, "", UDim2.new(), UDim2.fromScale(1, 1))
+ local resetBlock = block(44)
+ local reset = button(resetBlock, "Сбросить настройки", UDim2.new(), UDim2.fromScale(1, 1))
+ local footerBlock = block(38)
+ local footer = text(footerBlock, "Изменения применяются ко всем игрокам.", UDim2.new(), UDim2.fromScale(1, 1), 12)
+ footer.TextColor3 = COLORS.muted
+ footer.TextWrapped = true
+ controls = { panel = panel, status = status, stepBox = stepBox, ratioBox = ratioBox,
+  distanceText = distanceText, startText = startText, fill = fill, thumb = thumb, presets = presets, toggle = toggle,
+  minimum = minimum, maximum = maximum }
+ local function resize()
+  local size = screen.AbsoluteSize
+  panel.Size = UDim2.fromOffset(math.max(220, math.min(360, size.X - 28)), math.max(180, math.min(540, size.Y - 84)))
+ end
+ connect(uiConnections, screen:GetPropertyChangedSignal("AbsoluteSize"), resize)
+ resize()
+ connect(uiConnections, opener.Activated, function() setPanel(not panelOpen) end)
+ connect(uiConnections, close.Activated, function() setPanel(false) end)
+ connect(uiConnections, minus.Activated, function() send({ Steps = math.clamp(math.floor(state.Steps + 0.5) - 5, state.MinSteps, state.MaxSteps) }) end)
+ connect(uiConnections, plus.Activated, function() send({ Steps = math.clamp(math.floor(state.Steps + 0.5) + 5, state.MinSteps, state.MaxSteps) }) end)
+ connect(uiConnections, toggle.Activated, function() send({ Enabled = not state.Enabled }) end)
+ connect(uiConnections, reset.Activated, function() send({ Reset = true }) end)
+ connect(uiConnections, stepBox.FocusLost, function()
+  local value = parseNumber(stepBox.Text)
+  if value and value == value then
+   value = math.clamp(math.floor(value + 0.5), state.MinSteps, state.MaxSteps)
+   if value ~= state.Steps then send({ Steps = value }) end
+  end
+  refreshUI()
+ end)
+ connect(uiConnections, ratioBox.FocusLost, function()
+  local value = parseNumber(ratioBox.Text)
+  if value and value == value then
+   value = math.clamp(value / 100, 0, 0.8)
+   if math.abs(value - state.StartRatio) &gt; 0.0001 then send({ StartRatio = value }) end
+  end
+  refreshUI()
+ end)
+ local function previewAt(x)
+  if not drag or not controls then return end
+  local fraction = math.clamp((x - track.AbsolutePosition.X) / math.max(1, track.AbsoluteSize.X), 0, 1)
+  drag.steps = math.floor(state.MinSteps + fraction * (state.MaxSteps - state.MinSteps) + 0.5)
+  refreshUI()
+ end
+ connect(uiConnections, sliderArea.InputBegan, function(inputObject)
+  if drag then return end
+  if inputObject.UserInputType ~= Enum.UserInputType.MouseButton1 and inputObject.UserInputType ~= Enum.UserInputType.Touch then return end
+  drag = { input = inputObject, touch = inputObject.UserInputType == Enum.UserInputType.Touch, steps = state.Steps }
+  previewAt(inputObject.Position.X)
+ end)
+ connect(uiConnections, UserInputService.InputChanged, function(inputObject)
+  if not drag then return end
+  if (drag.touch and inputObject == drag.input) or (not drag.touch and inputObject.UserInputType == Enum.UserInputType.MouseMovement) then previewAt(inputObject.Position.X) end
+ end)
+ connect(uiConnections, UserInputService.InputEnded, function(inputObject)
+  if not drag then return end
+  if inputObject == drag.input or (not drag.touch and inputObject.UserInputType == Enum.UserInputType.MouseButton1) then
+   local value = drag.steps
+   drag = nil
+   if value ~= state.Steps then send({ Steps = value }) end
+   refreshUI()
+  end
+ end)
+ refreshUI()
+end
+
+refreshUI = function()
+ if not controls then return end
+ local shownSteps = drag and drag.steps or state.Steps
+ local fraction = math.clamp((shownSteps - state.MinSteps) / math.max(1, state.MaxSteps - state.MinSteps), 0, 1)
+ controls.fill.Size = UDim2.fromScale(fraction, 1)
+ controls.thumb.Position = UDim2.fromScale(fraction, 0.5)
+ if not controls.stepBox:IsFocused() then controls.stepBox.Text = tostring(math.floor(shownSteps + 0.5)) end
+ if not controls.ratioBox:IsFocused() then controls.ratioBox.Text = string.format("%.0f", state.StartRatio * 100) end
+ local distance = state.Steps * state.StudsPerStep
+ controls.distanceText.Text = string.format("Сервер: %g шагов · %g студов", state.Steps, distance)
+ controls.startText.Text = string.format("0–80%% · Начало тумана: %g студов", distance * state.StartRatio)
+ controls.minimum.Text = tostring(state.MinSteps)
+ controls.maximum.Text = tostring(state.MaxSteps)
+ controls.status.Text = pendingMessage or (state.FieldOnly and "Область: поле. За границей туман отключён." or "Область: вся карта, без ограничения размером поля.")
+ controls.toggle.Text = state.Enabled and "Туман: включён" or "Туман: выключен"
+ controls.toggle.BackgroundColor3 = state.Enabled and COLORS.accent or COLORS.card
+ for name,item in controls.presets do item.BackgroundColor3 = state.Preset == name and COLORS.accent or COLORS.card end
+end
+connect(connections, runtime.AttributeChanged, function()
+ if dead then return end
+ state = readState()
+ pendingMessage = nil
+ refreshUI()
+end)
+connect(connections, player:GetAttributeChangedSignal("CornfieldFogCanEdit"), function()
+ if canEdit() then buildUI() else destroyUI() end
+end)
+connect(connections, UserInputService.InputBegan, function(inputObject, processed)
+ if processed or not canEdit() or UserInputService:GetFocusedTextBox() then return end
+ if inputObject.KeyCode == Enum.KeyCode.F6 then setPanel(not panelOpen) end
+end)
+if canEdit() then buildUI() end
+</ProtectedString>
+          <bool name="Disabled">true</bool>
+        </Properties>
+      </Item>
+    </Item>
+    <Item class="StringValue" referent="RBX5">
+      <Properties>
+        <string name="Name">READ_ME</string>
+        <string name="Value">Insert CornfieldFog in Workspace or ServerScriptService and press Play. Open the Fog / Туман panel in Studio. Config holds persistent settings. Default: 20 design steps x 3 studs = 60 studs from camera; fog starts at 12. No external assets, no particles. Atmosphere is saved locally and restored. Live panel settings apply to this server session. See README_RU.md.</string>
+      </Properties>
+    </Item>
+  </Item>
+</roblox>

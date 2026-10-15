@@ -170,7 +170,6 @@ local modules = {
 	Balance = load("src/shared/Game/Balance.luau", {}),
 	LightingModes = load("src/shared/Game/LightingModes.luau", { Color3 = r.Color3 }),
 	RoundText = load("src/shared/Game/RoundText.luau", {}),
-	ModePreviewImages = load("src/shared/Game/ModePreviewImages.luau", {}),
 	MinimapGeometry = load(
 		"src/shared/Game/MinimapGeometry.luau",
 		{ Vector2 = r.Vector2, Vector3 = r.Vector3 }
@@ -210,7 +209,7 @@ local Hud = load("src/client/Game/RoundHud.luau", {
 local playerGui = make("PlayerGui")
 local hud = Hud.new(playerGui)
 local state = {
-	lighting_mode = "medium",
+	lighting_mode = "hard",
 	phase = "ready",
 	has_key = false,
 	gate_open = false,
@@ -248,7 +247,10 @@ hud:SetOnAction(function(action, mode)
 	table.insert(calls, { action, mode })
 end)
 render({})
-hud._modeButtons.hard.Activated:Fire()
+assert(
+	modules.LightingModes.Default == "hard" and hud._modeButtons == nil,
+	"Night-only default/GUI"
+)
 guiService.SelectedObject = hud._start
 hud._start.Activated:Fire()
 assert(
@@ -267,11 +269,10 @@ assert(
 )
 assert(hud._introRoot.Backdrop.Size == r.UDim2.fromScale(1, 1) and hud._introRoot.Backdrop.Active)
 assert(hud._introConfirm.Modal and hud._introBack.Modal and hud._introConfirm.Active)
-hud._modeButtons.easy.Activated:Fire()
 hud._start.Activated:Fire()
 hud._menu.Activated:Fire()
 assert(
-	hud._selectedMode == "hard" and #calls == 0,
+	hud._introPending.mode == "hard" and #calls == 0,
 	"Hidden underlying controls operated through modal"
 )
 hud._introBack.Activated:Fire()
@@ -293,19 +294,112 @@ assert(
 	#calls == 1 and calls[1][1] == "start" and calls[1][2] == "hard" and not hud._introRoot.Enabled,
 	"Confirm did not send exactly one original start/mode"
 )
-render({ phase = "escaped", lighting_mode = "medium" })
-hud._modeButtons.easy.Activated:Fire()
+render({ phase = "escaped" })
 hud._retry.Activated:Fire()
 assert(#calls == 1 and hud._introRoot.Enabled and hud._introPending.action == "retry")
 hud._introConfirm.Activated:Fire()
-assert(#calls == 2 and calls[2][1] == "retry" and calls[2][2] == "easy")
+assert(
+	#calls == 2 and calls[2][1] == "retry" and calls[2][2] == "hard",
+	"Result retry left night mode"
+)
 for _, phase in { "aborted", "caught_out" } do
-	render({ phase = phase })
-	hud._retry.Activated:Fire()
+	render({
+		phase = phase,
+		catches_remaining = if phase == "caught_out" then 0 else 2,
+		capture = {
+			id = if phase == "caught_out" then 2 else 0,
+			remaining = 0,
+			frame = r.CFrame.identity,
+		},
+	})
+	local control = if phase == "caught_out" then hud._captureRevive else hud._retry
+	control.Activated:Fire()
 	assert(hud._introRoot.Enabled and hud._introPending.action == "retry")
 	hud._introBack.Activated:Fire()
 	assert(not hud._introRoot.Enabled and #calls == 2)
 end
+
+-- First capture has no automatic continuation; two explicit choices appear
+-- only after both the confirmed server timer and local scene have finished.
+render({
+	phase = "caught",
+	catches_remaining = 1,
+	capture = { id = 1, remaining = 0.5, frame = r.CFrame.identity },
+})
+assert(not hud._captureChoices.Visible and not hud._card.Visible and hud._modeCards == nil)
+hud._captureRevive.Activated:Fire()
+hud._captureExit.Activated:Fire()
+assert(#calls == 2, "Early capture choices emitted a request")
+hud:SetCaptureActive(true)
+render({
+	phase = "caught",
+	catches_remaining = 1,
+	capture = { id = 1, remaining = 0, frame = r.CFrame.identity },
+})
+assert(not hud._captureChoices.Visible)
+hud._captureRevive.Activated:Fire()
+assert(#calls == 2)
+hud:SetCaptureActive(false)
+assert(hud._captureChoices.Visible and hud._captureRevive.Modal and hud._captureExit.Modal)
+assert(
+	hud._captureRevive.Text == "Возрождение"
+		and hud._captureExit.Text == "Выход из игры"
+)
+assert(guiService.SelectedObject == hud._captureRevive)
+hud:SetBusy(true)
+hud._captureRevive.Activated:Fire()
+hud._captureExit.Activated:Fire()
+assert(#calls == 2 and not hud._captureRevive.Active)
+hud:SetBusy(false)
+hud._captureRevive.Activated:Fire()
+hud._captureRevive.Activated:Fire()
+hud._captureExit.Activated:Fire()
+assert(
+	#calls == 3 and calls[3][1] == "revive" and calls[3][2] == nil and not hud._introRoot.Enabled
+)
+hud:SetBusy(false)
+render({ phase = "active" })
+assert(
+	not hud._captureChoices.Visible
+		and not hud._captureRevive.Active
+		and not hud._captureRevive.Modal
+)
+render({
+	phase = "caught_out",
+	catches_remaining = 0,
+	lighting_mode = "hard",
+	capture = { id = 2, remaining = 0, frame = r.CFrame.identity },
+})
+assert(hud._modeButtons == nil, "Capture kept hidden mode choices")
+hud._captureRevive.Activated:Fire()
+assert(
+	hud._introRoot.Enabled and not hud._captureChoices.Visible and hud._introPending.mode == "hard"
+)
+hud._captureExit.Activated:Fire()
+assert(#calls == 3)
+hud._introBack.Activated:Fire()
+assert(hud._captureChoices.Visible and not hud._introRoot.Enabled and #calls == 3)
+hud._captureRevive.Activated:Fire()
+hud._introConfirm.Activated:Fire()
+hud._introConfirm.Activated:Fire()
+assert(#calls == 4 and calls[4][1] == "retry" and calls[4][2] == "hard")
+hud:SetBusy(false)
+hud._captureExit.Activated:Fire()
+hud._captureExit.Activated:Fire()
+assert(#calls == 5 and calls[5][1] == "menu" and calls[5][2] == nil)
+hud:SetBusy(false)
+hud:ShowUnavailable()
+assert(not hud._captureChoices.Visible and not hud._captureRevive.Active)
+hud._captureRevive.Activated:Fire()
+assert(#calls == 5)
+render({
+	phase = "caught_out",
+	catches_remaining = 0,
+	capture = { id = 2, remaining = 0, frame = r.CFrame.identity },
+})
+hud._captureRevive.Activated:Fire()
+render({ phase = "preparing", minimap = { round_id = 2, visited = {}, deaths = {} } })
+assert(not hud._captureChoices.Visible and not hud._introRoot.Enabled)
 render({})
 hud._start.Activated:Fire()
 render({ minimap = { round_id = 2, visited = {}, deaths = {} } })
@@ -415,7 +509,6 @@ do
 		{
 			hud._introPanel.Title,
 			hud._introMessage,
-			hud._introMode,
 			hud._introConfirm,
 			hud._introBack,
 		}
@@ -423,8 +516,7 @@ do
 		inside(item, hud._introPanel)
 	end
 	separate(hud._introPanel.Title, hud._introMessage)
-	separate(hud._introMessage, hud._introMode)
-	separate(hud._introMode, hud._introConfirm)
+	separate(hud._introMessage, hud._introConfirm)
 	separate(hud._introConfirm, hud._introBack)
 	assert(
 		hud._introConfirm.AbsoluteSize.Y == 48
@@ -432,6 +524,17 @@ do
 			and hud._introMessage.TextSize >= 18
 	)
 	hud:CloseObjective()
+	render({
+		phase = "caught_out",
+		catches_remaining = 0,
+		capture = { id = 2, remaining = 0, frame = r.CFrame.identity },
+	})
+	inside(hud._captureChoices, hud._root)
+	inside(hud._captureMessage, hud._captureChoices)
+	inside(hud._captureRevive, hud._captureChoices)
+	inside(hud._captureExit, hud._captureChoices)
+	separate(hud._captureMessage, hud._captureRevive)
+	separate(hud._captureRevive, hud._captureExit)
 	render({ phase = "active", elapsed_sec = wake - 3 })
 	inside(hud._waking, hud._root)
 	inside(hud._wakingMessage, hud._waking)
@@ -439,6 +542,48 @@ do
 	separate(hud._wakingMessage, hud._wakingSeconds)
 end
 viewport = r.Vector2.new(1400, 800)
+-- The local clock interpolates server remaining time without pausing for the
+-- capture film or its revival modal. Only the server can decide the outcome.
+render({ phase = "active", evacuation = { active = true, remaining = 120, duration = 120 } })
+local countdownStart = hud._evacuationUntil - 120
+hud:_stepEvacuation(countdownStart)
+assert(hud._evacuation.Visible and hud._evacuationClock.Text == "2:00")
+hud:_stepEvacuation(countdownStart + 1.2)
+assert(hud._evacuationClock.Text == "1:59")
+local firstPulse = hud._evacuationClock.TextTransparency
+hud:_stepEvacuation(countdownStart + 1.4)
+assert(firstPulse ~= hud._evacuationClock.TextTransparency, "Countdown did not pulse")
+render({
+	phase = "caught",
+	catches_remaining = 1,
+	capture = { id = 1, remaining = 0, frame = r.CFrame.identity },
+	evacuation = { active = true, remaining = 97, duration = 120 },
+})
+local caughtDeadline = hud._evacuationUntil
+hud:_stepEvacuation(caughtDeadline - 92)
+assert(
+	hud._evacuation.Visible and hud._evacuationClock.Text == "1:32" and hud._captureChoices.Visible
+)
+hud:SetCaptureActive(true)
+hud:_stepEvacuation(caughtDeadline - 90)
+assert(hud._evacuation.Visible and hud._evacuationClock.Text == "1:30")
+hud:SetCaptureActive(false)
+render({
+	phase = "caught_out",
+	notice = "corn_evacuation_expired",
+	evacuation = { active = false, remaining = 0, duration = 120 },
+})
+assert(not hud._evacuation.Visible and hud._captureTitle.Text == "Время вышло")
+for _, reward in { 5, 10, 20 } do
+	render({
+		phase = "escaped",
+		reward_diamonds = reward,
+		evacuation = { active = false, remaining = 0, duration = 120 },
+	})
+	assert(
+		not hud._evacuation.Visible and string.find(hud._message.Text, tostring(reward), 1, true)
+	)
+end
 local oldConnections = table.clone(hud._connections)
 hud:Destroy()
 for _, connection in oldConnections do
@@ -446,7 +591,7 @@ for _, connection in oldConnections do
 end
 assert(#playerGui:GetChildren() == 0 and #hud._connections == 0)
 hud:ConfirmObjective()
-assert(#calls == 2, "Destroyed HUD emitted a stale action")
+assert(#calls == 5, "Destroyed HUD emitted a stale action")
 
 -- Actual RoundController callback wiring and validation with fake remotes.
 modules.Inventory = load("src/shared/Game/Inventory.luau", {})
@@ -518,8 +663,32 @@ controller:Init({})
 controller:Start({ Controllers = stubControllers })
 assert(#networkCalls == 1 and networkCalls[1][1] == "sync")
 snapshots.OnClientEvent:Fire(state)
+for _, mode in { "easy", "medium" } do
+	controller:_request("start", mode)
+	assert(#networkCalls == 1, "Client forwarded a removed mode from ready")
+	local invalid = table.clone(state)
+	invalid.lighting_mode = mode
+	snapshots.OnClientEvent:Fire(invalid)
+	assert(controller._snapshot == nil, "Client accepted a removed-mode snapshot")
+	snapshots.OnClientEvent:Fire(state)
+end
+for _, evacuation in
+	{
+		{ active = true, remaining = -1, duration = 120 },
+		{ active = true, remaining = 121, duration = 120 },
+		{ active = true, remaining = 0 / 0, duration = 120 },
+		{ active = true, remaining = 60, duration = 60 },
+		{ active = false, remaining = 1, duration = 120 },
+	}
+do
+	local invalid = table.clone(state)
+	invalid.evacuation = evacuation
+	snapshots.OnClientEvent:Fire(invalid)
+	assert(controller._snapshot == nil and not controller._hud._evacuation.Visible)
+end
+snapshots.OnClientEvent:Fire(state)
 local liveHud = controller._hud
-liveHud._modeButtons.hard.Activated:Fire()
+assert(liveHud._modeButtons == nil, "Live controller restored mode controls")
 liveHud._start.Activated:Fire()
 assert(#networkCalls == 1 and liveHud._introRoot.Enabled and controller._snapshot.elapsed_sec == 0)
 liveHud._introBack.Activated:Fire()
@@ -538,15 +707,64 @@ for _, event in delayed do
 		event.callback()
 	end
 end
-liveHud._modeButtons.easy.Activated:Fire()
+for _, mode in { "easy", "medium" } do
+	controller:_request("retry", mode)
+	assert(#networkCalls == 2, "Client forwarded a removed mode from a retry phase")
+end
 liveHud._retry.Activated:Fire()
 assert(#networkCalls == 2 and liveHud._introRoot.Enabled)
 liveHud._introConfirm.Activated:Fire()
-assert(#networkCalls == 3 and networkCalls[3][1] == "retry" and networkCalls[3][2] == "easy")
+assert(#networkCalls == 3 and networkCalls[3][1] == "retry" and networkCalls[3][2] == "hard")
 now += 1
 controller:_request("start", "easy")
 controller:_request("retry", "unknown")
 assert(#networkCalls == 3, "Client forwarded wrong-phase start or unknown mode")
+local caught = table.clone(state)
+caught.phase, caught.catches_remaining = "caught", 1
+caught.capture = { id = 1, remaining = 0.5, frame = r.CFrame.identity }
+snapshots.OnClientEvent:Fire(caught)
+controller:_request("revive")
+assert(#networkCalls == 3 and not liveHud._captureChoices.Visible, "Early revival was forwarded")
+caught.capture = { id = 1, remaining = 0, frame = r.CFrame.identity }
+snapshots.OnClientEvent:Fire(caught)
+liveHud:SetBusy(false)
+liveHud:SetCaptureActive(true)
+controller:_request("revive")
+assert(#networkCalls == 3, "A still-active capture scene forwarded revival")
+liveHud:SetCaptureActive(false)
+controller:_request("revive", "hard")
+assert(#networkCalls == 3, "Revival with a mode was forwarded")
+liveHud._captureRevive.Activated:Fire()
+liveHud._captureRevive.Activated:Fire()
+controller:_request("revive")
+assert(#networkCalls == 4 and networkCalls[4][1] == "revive" and networkCalls[4][2] == nil)
+now += 1
+local second = table.clone(caught)
+second.phase, second.catches_remaining, second.lighting_mode = "caught_out", 0, "hard"
+second.capture = { id = 2, remaining = 0, frame = r.CFrame.identity }
+snapshots.OnClientEvent:Fire(second)
+liveHud:SetBusy(false)
+controller:_request("revive")
+assert(#networkCalls == 4, "Second capture forwarded same-round revival")
+liveHud._captureRevive.Activated:Fire()
+liveHud._introBack.Activated:Fire()
+assert(liveHud._captureChoices.Visible and #networkCalls == 4)
+liveHud._captureRevive.Activated:Fire()
+liveHud._introConfirm.Activated:Fire()
+assert(#networkCalls == 5 and networkCalls[5][1] == "retry" and networkCalls[5][2] == "hard")
+now += 1
+snapshots.OnClientEvent:Fire(caught)
+liveHud:SetBusy(false)
+liveHud._captureExit.Activated:Fire()
+liveHud._captureExit.Activated:Fire()
+assert(#networkCalls == 6 and networkCalls[6][1] == "menu" and networkCalls[6][2] == nil)
+now += 1
+snapshots.OnClientEvent:Fire({})
+controller:_request("revive")
+assert(
+	controller._snapshot == nil and not liveHud._captureChoices.Visible and #networkCalls == 6,
+	"Malformed snapshot retained a captured-state action"
+)
 snapshots.OnClientEvent:Fire(state)
 for _, event in delayed do
 	if event.at <= now then
@@ -564,7 +782,7 @@ controller:Destroy()
 for _, event in delayed do
 	event.callback()
 end
-assert(#playerGui:GetChildren() == 0 and not controller._snapshot and #networkCalls == 3)
+assert(#playerGui:GetChildren() == 0 and not controller._snapshot and #networkCalls == 6)
 print(
-	"PASS: actual RoundHud full-screen objective start/retry/back/frozen mode/one confirm; actual RoundController no start before confirm, old remote validation/debounce/phase guards and malformed cleanup; selection/foreign focus/capture/busy/unavailable/round-change/destroy lifecycle; server-elapsed-only 5→1 wake countdown/other-state clearing; desktop/320x568/568x320/320x320 GUI bounds and unscaled touch buttons; no timer/gameplay/remote before confirmation"
+	"PASS: actual RoundHud first capture scene/timer gating, small revive/menu choices, second-capture fixed-mode retry objective/back, duplicate/busy/unavailable/phase cleanup; actual RoundController early/second/mode/debounce/malformed revival guards and menu/retry routing; original full-screen start/retry confirmation, selection/capture/destroy lifecycle, server-elapsed-only 5→1 warning and desktop/phone GUI bounds. Adapter only; no engine pixels or gameplay acceptance."
 )

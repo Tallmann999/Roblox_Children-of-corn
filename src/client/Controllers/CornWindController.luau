@@ -357,6 +357,7 @@ function CornWindController:_bindLayer(folder: Instance?, kind: string)
 end
 
 function CornWindController:_clearMap()
+	self._monsterSamples = {}
 	self:_detachLayer("near")
 	self:_detachLayer("far")
 	disconnect(self._mapConnections)
@@ -537,29 +538,49 @@ end
 
 function CornWindController:_monsterPosition(): Vector3?
 	local runtime = self._map and self._map:FindFirstChild("CornRoundRuntime")
-	local monster = runtime
-		and runtime:GetAttribute("corn_project_id") == PROJECT_ID
-		and runtime:FindFirstChild("Monster")
-	local root = monster
-		and monster:GetAttribute("CornMonsterOwned") == true
-		and monster:FindFirstChild("Root")
-	local state = monster and monster:GetAttribute("HuntState")
-	if not root or not root:IsA("BasePart") or (state ~= "patrol" and state ~= "chase") then
-		self._previousMonster, self._monsterTrail = nil, 0
-		return nil
+	local nearest, nearestRoot, distance = nil, nil, math.huge
+	for index = 1, 3 do
+		local monster = runtime
+			and runtime:IsA("Folder")
+			and runtime:GetAttribute("corn_project_id") == PROJECT_ID
+			and runtime:FindFirstChild(if index == 1 then "Monster" else "Monster" .. index)
+		local root = monster and monster:FindFirstChild("Root")
+		local state = monster and monster:GetAttribute("HuntState")
+		if
+			not monster
+			or not monster:IsA("Model")
+			or monster:GetAttribute("CornMonsterOwned") ~= true
+			or monster:GetAttribute("corn_project_id") ~= PROJECT_ID
+			or monster:GetAttribute("MonsterRigVersion") ~= 1
+			or monster:GetAttribute("MonsterIndex") ~= index
+			or not root
+			or not root:IsA("BasePart")
+			or (state ~= "patrol" and state ~= "chase")
+		then
+			self._monsterSamples[index] = nil
+			continue
+		end
+		local sample = self._monsterSamples[index]
+		if not sample or sample.root ~= root then
+			sample = { root = root, previous = root.Position, untilAt = 0 }
+			self._monsterSamples[index] = sample
+		end
+		local position = root.Position
+		if horizontalDistanceSquared(position, sample.previous) > 0.01 then
+			sample.untilAt = self._time + TRAIL_SEC
+		end
+		sample.previous = position
+		local candidate = if self._playerRoot
+			then horizontalDistanceSquared(position, self._playerRoot.Position)
+			else math.huge
+		if sample.untilAt > self._time and candidate < distance then
+			nearest, nearestRoot, distance = sample, root, candidate
+		end
 	end
-	if self._monsterRoot ~= root then
-		self._monsterRoot, self._previousMonster, self._monsterTrail = root, nil, 0
-	end
-	local position = root.Position
-	if
-		self._previousMonster
-		and horizontalDistanceSquared(position, self._previousMonster) > 0.01
-	then
-		self._monsterTrail = self._time + TRAIL_SEC
-	end
-	self._previousMonster = position
-	return if self._monsterTrail > self._time then position else nil
+	self._monsterRoot = nearestRoot
+	self._previousMonster = if nearest then nearest.previous else nil
+	self._monsterTrail = if nearest then nearest.untilAt else 0
+	return if nearest then nearest.previous else nil
 end
 
 function CornWindController:_select(camera: Camera)
@@ -642,6 +663,7 @@ function CornWindController:SetMode(mode: string?)
 	self:_restoreActive()
 	self._mode = nextMode
 	self._previousPlayer, self._previousMonster = nil, nil
+	self._monsterSamples = {}
 	self._playerTrail, self._monsterTrail = 0, 0
 	self._updateElapsed, self._selectElapsed = UPDATE_SEC, SELECT_SEC
 	self._lastWrites, self._lastNear, self._lastFar = 0, 0, 0
@@ -697,6 +719,7 @@ function CornWindController:Init(context: any)
 	self._previousPlayer, self._previousMonster, self._playerRoot, self._monsterRoot =
 		nil, nil, nil, nil
 	self._playerTrail, self._monsterTrail = 0, 0
+	self._monsterSamples = {}
 end
 
 function CornWindController:Start()

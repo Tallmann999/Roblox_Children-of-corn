@@ -1,7 +1,6 @@
 -- Current RoundHud constructor/render/Activated/_fitCard methods, deterministic
 -- GUI-object adapter. No engine pixels/network asset loading or physical mouse claims.
 local fs = require("@lune/fs")
-local process = require("@lune/process")
 local r = require("@lune/roblox")
 local viewport = r.Vector2.new(1400, 800)
 local function signal()
@@ -170,7 +169,6 @@ local modules = {
 	Balance = load("src/shared/Game/Balance.luau", {}),
 	LightingModes = load("src/shared/Game/LightingModes.luau", { Color3 = r.Color3 }),
 	RoundText = load("src/shared/Game/RoundText.luau", {}),
-	ModePreviewImages = load("src/shared/Game/ModePreviewImages.luau", {}),
 	MinimapGeometry = load(
 		"src/shared/Game/MinimapGeometry.luau",
 		{ Vector2 = r.Vector2, Vector3 = r.Vector3 }
@@ -205,22 +203,10 @@ local Hud = load("src/client/Game/RoundHud.luau", {
 	Color3 = r.Color3,
 	Enum = r.Enum,
 })
-local seen, readyImages = {}, true
-for _, mode in modules.LightingModes.Order do
-	local uri = modules.ModePreviewImages[mode]
-	if not uri:match("^rbxassetid://[1-9]%d*$") or seen[uri] then
-		readyImages = false
-	else
-		seen[uri] = true
-	end
-end
-if table.find(process.args, "--require-images") then
-	assert(readyImages, "ModePreviewImages has empty/invalid/reused URI; photos pending")
-end
 local playerGui = make("PlayerGui")
 local hud = Hud.new(playerGui)
 local base = {
-	lighting_mode = "medium",
+	lighting_mode = "hard",
 	phase = "ready",
 	has_key = false,
 	gate_open = false,
@@ -237,10 +223,15 @@ local base = {
 	monster_state = "patrol",
 	protection_sec = 0,
 	minimap = { round_id = 1, visited = {}, deaths = {} },
+	capture = { id = 0, remaining = 0, frame = r.CFrame.identity },
 }
 local function render(phase)
 	local state = table.clone(base)
 	state.phase = phase
+	if phase == "caught_out" then
+		state.catches_remaining = 0
+		state.capture = { id = 2, remaining = 0, frame = r.CFrame.identity }
+	end
 	hud:Render(state)
 end
 local function rect(item)
@@ -271,100 +262,108 @@ local function separate(a, b, message)
 		message
 	)
 end
-local photos = 0
-for _, item in hud._root:GetDescendants() do
+-- This historical test filename now checks removal of the old chooser.
+local calls = {}
+hud:SetOnAction(function(action, mode)
+	table.insert(calls, { action, mode })
+end)
+local function noModes()
 	assert(
-		not item:IsA("ViewportFrame") and not item:IsA("WorldModel"),
-		"Synthetic viewport scene remains"
+		hud._modeCards == nil and hud._modeButtons == nil and hud._introMode == nil,
+		"Removed mode controls still have controller state"
 	)
-	if item:IsA("ImageLabel") then
-		photos += 1
-	end
-end
-assert(photos == 3, "Photo card count")
-for _, size in { r.Vector2.new(1400, 800), r.Vector2.new(800, 600), r.Vector2.new(640, 480) } do
-	viewport = size
-	for _, phase in { "ready", "preparing", "active", "caught", "escaped", "aborted", "caught_out" } do
-		render(phase)
-		local expanded = phase == "ready"
-			or phase == "escaped"
-			or phase == "aborted"
-			or phase == "caught_out"
-		assert(
-			hud._modeCards.Visible == expanded and hud._card.Visible == (phase ~= "active"),
-			"Photo phase visibility"
-		)
-		inside(hud._card, hud._root)
-		if expanded then
-			local row = inside(hud._modeCards, hud._card)
-			local previous = nil
-			for _, mode in modules.LightingModes.Order do
-				local option = hud._modeCards:FindFirstChild(mode)
-				local bounds = inside(option, hud._modeCards)
-				if previous then
-					separate(previous, bounds, "Mode cards overlap")
-				end
-				previous = bounds
-				local photo = inside(option.LightingPreview, option)
+	for _, root in { hud._root, hud._introRoot } do
+		for _, item in root:GetDescendants() do
+			assert(
+				not item:IsA("ImageLabel")
+					and not item:IsA("ViewportFrame")
+					and not item:IsA("WorldModel"),
+				"Mode imagery or artificial world remains"
+			)
+			assert(
+				item.Name ~= "ModeCards" and item.Name ~= "ChooseMode" and item.Name ~= "ModeHint",
+				"Mode selection node remains"
+			)
+			if item.Text then
 				assert(
-					option.LightingPreview.Image == modules.ModePreviewImages[mode]
-						and option.LightingPreview.ScaleType == r.Enum.ScaleType.Crop,
-					"Photo URI/Crop"
+					not item.Text:find("сложност", 1, true)
+						and not item.Text:find("Режим:", 1, true)
+						and not item.Text:find("Выбрано:", 1, true),
+					"Mode text remains in the UI"
 				)
-				assert(
-					photo.w / photo.h > 1.5 and photo.w / photo.h < 1.8,
-					"Photo aspect distorted"
-				)
-				local name = inside(option:FindFirstChild("Name"), option)
-				local desc = inside(option.Description, option)
-				local button = inside(option.Select, option)
-				separate(photo, name, "photo/name overlap")
-				separate(name, desc, "name/desc overlap")
-				separate(desc, button, "desc/button overlap")
-				hud._modeButtons[mode].Activated:Fire()
-				assert(
-					hud._selectedMode == mode
-						and hud._modeButtons[mode].Text
-							== modules.RoundText.corn_modes_selected_button,
-					"Current choice handler failed"
-				)
-			end
-			local hint = inside(hud._modeHint, hud._card)
-			local balance = inside(hud._balance, hud._card)
-			local action = inside(if phase == "ready" then hud._start else hud._retry, hud._card)
-			separate(row, hint, "row/hint overlap")
-			separate(hint, balance, "hint/balance overlap")
-			separate(balance, action, "balance/action overlap")
-			if phase ~= "ready" then
-				separate(action, inside(hud._menu, hud._card), "retry/menu overlap")
-			end
-		else
-			for _, button in hud._modeButtons do
-				assert(not button.Active, "Invisible mode button active")
 			end
 		end
 	end
 end
+for _, size in { r.Vector2.new(1400, 800), r.Vector2.new(800, 600), r.Vector2.new(640, 480) } do
+	viewport = size
+	for _, phase in { "ready", "preparing", "active", "caught", "escaped", "aborted", "caught_out" } do
+		render(phase)
+		noModes()
+		assert(hud._card.Size == r.UDim2.fromOffset(460, 320), "Obsolete wide mode chooser layout")
+		assert(
+			hud._card.Visible == (phase ~= "active" and phase ~= "caught" and phase ~= "caught_out"),
+			"Round card visibility changed"
+		)
+		inside(hud._card, hud._root)
+		if phase == "ready" or phase == "escaped" or phase == "aborted" then
+			local action = if phase == "ready" then hud._start else hud._retry
+			assert(action.Visible and action.Active, "Single round action unavailable")
+			assert(hud._start.Visible ~= hud._retry.Visible, "Start and retry are both visible")
+			local message = inside(hud._message, hud._card)
+			local balance = inside(hud._balance, hud._card)
+			local button = inside(action, hud._card)
+			separate(message, balance, "Message/balance overlap")
+			separate(balance, button, "Balance/action overlap")
+			if phase ~= "ready" then
+				separate(button, inside(hud._menu, hud._card), "Retry/menu overlap")
+			end
+			local before = #calls
+			action.Activated:Fire()
+			assert(
+				#calls == before and hud._introRoot.Enabled and hud._introPending.mode == "hard",
+				"Action bypassed objective or retained an old mode"
+			)
+			noModes()
+			hud._introConfirm.Activated:Fire()
+			assert(
+				#calls == before + 1
+					and calls[#calls][1] == (if phase == "ready" then "start" else "retry")
+					and calls[#calls][2] == "hard",
+				"Confirmed action did not use night"
+			)
+		end
+	end
+end
+render("escaped")
+local before = #calls
+hud._menu.Activated:Fire()
+assert(
+	#calls == before + 1 and calls[#calls][1] == "menu" and calls[#calls][2] == nil,
+	"Menu action changed"
+)
 render("ready")
+assert(
+	hud._start.Visible
+		and not hud._retry.Visible
+		and not hud._menu.Visible
+		and not hud._introRoot.Enabled,
+	"Menu return did not restore a single main Start"
+)
 hud:SetBusy(true)
-local prior = hud._selectedMode
-hud._modeButtons.easy.Activated:Fire()
-assert(hud._selectedMode == prior, "Busy choice changed")
+before = #calls
+hud._start.Activated:Fire()
+assert(#calls == before and not hud._introRoot.Enabled, "Busy Start operated")
 hud:SetBusy(false)
 hud:ShowUnavailable()
-hud._modeButtons.easy.Activated:Fire()
-assert(hud._selectedMode == prior, "Unavailable choice changed")
+hud._start.Activated:Fire()
+assert(#calls == before and not hud._introRoot.Enabled, "Unavailable Start operated")
 local oldConnections = table.clone(hud._connections)
 hud:Destroy()
-assert(#playerGui:GetChildren() == 0 and #hud._connections == 0, "Photo GUI cleanup failed")
+assert(#playerGui:GetChildren() == 0 and #hud._connections == 0, "Night-only GUI cleanup failed")
 for _, connection in oldConnections do
-	assert(not connection.Connected, "Photo signal leaked")
+	assert(not connection.Connected, "Night-only GUI signal leaked")
 end
 print(
-	"PASS: actual RoundHud photo constructor/render/choice handlers,3 Crop images/no cloned world, all phases,1400x800/800x600/640x480 adapter layouts and cleanup"
-)
-print(
-	if readyImages
-		then "PASS: configured photo URIs are nonempty/unique; asset/pixel acceptance remains engine-only"
-		else "PENDING: three actual photo URIs still empty; no asset/image acceptance claimed"
+	"PASS: actual RoundHud has zero mode cards/buttons/images/text, compact main Start/result Retry, all phases at 1400x800/800x600/640x480, objective-confirmed hard only, menu return, busy/unavailable and cleanup. Adapter only; no engine pixels or gameplay claim."
 )

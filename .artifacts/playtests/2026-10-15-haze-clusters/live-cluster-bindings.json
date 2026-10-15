@@ -1,0 +1,48 @@
+{
+  "items": {
+    "Pickup1": {
+      "slot": "solo_slot_06",
+      "xz_error": 0.00000610351571594947,
+      "slot_id": "solo_slot_06",
+      "torch_distance": 5.381453990936279
+    },
+    "Pickup2": {
+      "slot": "solo_slot_13",
+      "xz_error": 0.00000610351571594947,
+      "slot_id": "solo_slot_13",
+      "torch_distance": 5.381453990936279
+    },
+    "Pickup4": {
+      "slot": "solo_slot_04",
+      "xz_error": 0.00000610351571594947,
+      "slot_id": "solo_slot_04",
+      "torch_distance": 5.381453990936279
+    },
+    "Pickup3": {
+      "slot": "solo_slot_02",
+      "xz_error": 3.814697322468419e-7,
+      "slot_id": "solo_slot_02",
+      "torch_distance": 5.3814496994018555
+    }
+  },
+  "stumps": {
+    "Lookout1": {
+      "slot": "solo_slot_06",
+      "xz_error": 0.00000610351571594947,
+      "slot_id": "solo_slot_06",
+      "torch_distance": 5.381453990936279
+    },
+    "Lookout2": {
+      "slot": "solo_slot_13",
+      "xz_error": 0.00000610351571594947,
+      "slot_id": "solo_slot_13",
+      "torch_distance": 5.381453990936279
+    }
+  },
+  "key": {
+    "slot": "solo_slot_08",
+    "xz_error": 0,
+    "slot_id": "solo_slot_08",
+    "torch_distance": 4
+  }
+}

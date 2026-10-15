@@ -37,6 +37,7 @@ local ACTIONS: { [string]: boolean } = {
 	retry = true,
 	abort = true,
 	menu = true,
+	revive = true,
 }
 local DEBOUNCE_SEC = 0.55
 local REMOTE_WAIT_SEC = 10
@@ -56,6 +57,11 @@ local function validSnapshot(value: any): boolean
 		and (value.phase == "caught" or value.capture.remaining == 0)
 		and typeof(value.has_key) == "boolean"
 		and typeof(value.gate_open) == "boolean"
+		and (value.evacuation == nil or (typeof(value.evacuation) == "table" and typeof(
+			value.evacuation.active
+		) == "boolean" and value.evacuation.duration == 120 and nonnegativeNumber(
+			value.evacuation.remaining
+		) and value.evacuation.remaining <= 120 and (value.evacuation.active or value.evacuation.remaining == 0)))
 		and nonnegativeNumber(value.session_diamonds)
 		and nonnegativeNumber(value.reward_diamonds)
 		and nonnegativeNumber(value.elapsed_sec)
@@ -121,13 +127,31 @@ end
 function RoundController:_request(action: string, mode: string?)
 	local remote = self._requestRemote
 	local hud = self._hud
-	if not remote or not hud or not self._snapshot or ACTIONS[action] ~= true then
+	if
+		not remote
+		or not hud
+		or hud._unavailable
+		or not self._snapshot
+		or ACTIONS[action] ~= true
+	then
 		return
 	end
 	if (action == "start" or action == "retry") and not LightingModes.IsValid(mode) then
 		return
 	end
 	if action == "start" and self._snapshot.phase ~= "ready" then
+		return
+	end
+	if
+		action == "revive"
+		and (
+			mode ~= nil
+			or self._snapshot.phase ~= "caught"
+			or self._snapshot.capture.remaining ~= 0
+			or self._snapshot.catches_remaining ~= 1
+			or hud._captureActive
+		)
+	then
 		return
 	end
 	if
@@ -173,7 +197,8 @@ function RoundController:Start(context: any)
 	self._requestRemote = requestRemote
 	self._snapshotConnection = snapshotRemote.OnClientEvent:Connect(function(payload: any)
 		if not validSnapshot(payload) then
-			hud:CloseObjective()
+			self._snapshot = nil
+			hud:ShowUnavailable()
 			context.Controllers.CaptureController:Cancel("malformed snapshot")
 			context.Controllers.HandheldController:Clear("malformed snapshot")
 			context.Controllers.AudioController:Clear("malformed snapshot")

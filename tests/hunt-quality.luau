@@ -286,8 +286,10 @@ hunt:Destroy()
 pendingPaths = {}
 deferPaths = false
 -- Integrate the real Stamina rule and actual MonsterHunt movement on a free line.
+-- Exercise the unchanged subsequent-chase contract; first chase has its own fixture.
 wall.CanCollide = false
 hunt = Hunt.new(world, Balance, 0)
+hunt.firstChaseUsed = true
 root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(16, 0, 0))
 hunt:Step(0, 20.0, root, false)
 assert(hunt.state == "chase")
@@ -312,6 +314,7 @@ assert(
 )
 hunt:Destroy()
 hunt = Hunt.new(world, Balance, 0)
+hunt.firstChaseUsed = true
 assert(
 	Balance.hunt_start_delay_sec == 20
 		and Balance.monster_detect_radius == 16
@@ -331,7 +334,7 @@ for _, entry in { { 20.2, 1 }, { 22.099, 1 }, { 22.1, 1.3 } } do
 	assert(not hunt:Step(0.1, entry[1], root, false))
 	assert(
 		math.abs((hunt.root.CFrame.Position - before).Magnitude - entry[2]) < 0.0001,
-		"Windup speed10 then13"
+		"Subsequent chase windup speed10 then13"
 	)
 end
 root.CFrame = CF.new(hunt.root.CFrame.Position + V3.new(2, 0, 0))

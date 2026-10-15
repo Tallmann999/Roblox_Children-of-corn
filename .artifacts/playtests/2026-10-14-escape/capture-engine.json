@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"replacement_camera_untouched\":true,\"method\":\"Actual current camera/Parts and scheduled1s cleanup with controlled snapshots; real first/second catches accepted separately\",\"approach_FOV_duplicate_does_not_extend_and_wall_clock_cleanup_without_frames\":true,\"explicit_cancel_restores_owned_camera_visual_and_coordinator_flags\":true,\"one_owned_static_collisionless_rig_and_face_light\":true,\"malformed_cancels_without_replay_and_retry_round_cancels\":true,\"open_mouth_grouped_rapid_head_motion_and_noninteractive_colour_paint\":true,\"cleanup\":true,\"first_and_second_capture_ids_and_terminal_cleanup\":true,\"local_visual_four_studs_above_unchanged_authoritative_frame\":true}"
+    }
+  ],
+  "isError": false
+}

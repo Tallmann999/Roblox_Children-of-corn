@@ -1,0 +1,29 @@
+{
+  "install": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"changed\":11,\"sources\":75}"
+      }
+    ],
+    "isError": false
+  },
+  "sign": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"lower_edge_preserved\":true,\"changed\":2,\"frame\":\"0, 39.3999863, 419.700012, 1, 0, 0, 0, 1, 0, 0, 0, 1\",\"size\":\"36, 9.600000381469727, 0.9000000357627869\"}"
+      }
+    ],
+    "isError": false
+  },
+  "repeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"repeated\":true,\"changed\":0,\"size\":\"36, 9.600000381469727, 0.9000000357627869\"}"
+      }
+    ],
+    "isError": false
+  }
+}

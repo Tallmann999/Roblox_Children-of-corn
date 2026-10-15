@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"first_chase_two_second_no_capture\":true,\"cleanup\":true,\"new_round_renews_first_chase_speed_is_bounded_and_invalid_falls_back\":true,\"los_reacquisition_does_not_extend_first_deadline\":true,\"trap_capture_home_protection_los_distance_do_not_refund_special_chase\":true,\"subsequent_chase_retains_ten_then_thirteen_and_no_forced_ten_second_loss\":true,\"method\":\"Real engine Parts/Humanoid/LOS with current server methods and controlled logical time; owned isolated world; no live character/gameplay/world changes or ordinary-round claim\",\"first_real_detection_consumes_once_matches_current_walk_sprint_energy\":true,\"ten_second_deadline_before_capture_cancels_route_and_grace_one_second\":true}"
+    }
+  ],
+  "isError": false
+}

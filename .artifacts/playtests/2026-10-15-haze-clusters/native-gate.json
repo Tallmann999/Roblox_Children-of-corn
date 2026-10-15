@@ -1,0 +1,59 @@
+{
+  "inventory": {
+    "selected": 1,
+    "energy_remaining": 0,
+    "slots": [
+      "energy",
+      "empty",
+      "empty",
+      "empty",
+      "empty"
+    ],
+    "use": {
+      "id": 0,
+      "kind": "none"
+    }
+  },
+  "reward_diamonds": 0,
+  "lighting_mode": "hard",
+  "evacuation": {
+    "remaining": 115.9161309000001,
+    "duration": 120,
+    "active": true
+  },
+  "minimap": {
+    "round_id": 1,
+    "visited": [
+      {
+        "id": "clearing:solo_slot_10",
+        "kind": "clearing",
+        "position": null
+      },
+      {
+        "id": "clearing:solo_slot_06",
+        "kind": "clearing",
+        "position": null
+      }
+    ],
+    "deaths": []
+  },
+  "has_key": false,
+  "gate_open": true,
+  "elapsed_sec": 781.3343795999999,
+  "start_look": null,
+  "phase": "active",
+  "sprint_exhausted": false,
+  "notice": "corn_evacuation_started",
+  "capture": {
+    "id": 0,
+    "remaining": 0,
+    "frame": null
+  },
+  "stamina_capacity": 100,
+  "session_diamonds": 0,
+  "stamina": 100,
+  "protection_sec": 0,
+  "monster_state": "patrol",
+  "catches_remaining": 2,
+  "is_sprinting": false
+}

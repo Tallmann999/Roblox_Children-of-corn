@@ -1,0 +1,11 @@
+{
+  "saved": true,
+  "method": "Author engine Ctrl+S, strict read-only verification; no promotion or serialization",
+  "sha256": "a897bb52fa85505090f973e910139915e6ebb2995e44915c31ecbc2b5c511dca",
+  "bytes": 1019419,
+  "sources": 75,
+  "instances": 6839,
+  "world_scope": "Read-only exact engine bytes; 75 Sources, zero new instances; only fixed 54 torch Part CFrames, Sources, approved editor metadata and three exact audited service metadata additions differ. Service defaults are unverified. Model pivots and all other original properties/world/Lighting/art/raw Terrain stay exact.",
+  "service_metadata_default_unverified": true,
+  "reopen": false
+}

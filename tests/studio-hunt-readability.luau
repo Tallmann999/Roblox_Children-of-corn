@@ -38,8 +38,14 @@ end
 local character = Instance.new("Model")
 character.Parent = scratch
 local root = part("HumanoidRootPart", Vector3.new(2, 2, 1), Vector3.new(16.001, 504, 0), character)
-local world =
-	{ Root = scratch, Runtime = runtime, Home = home, Ground = ground, Field = field, Slots = slots }
+local world = {
+	Root = scratch,
+	Runtime = runtime,
+	Home = home,
+	Ground = ground,
+	Field = field,
+	Slots = slots,
+}
 local hunt = Hunt.new(world, Balance, 0, owner.UserId)
 local audio = Audio.new(world, owner, hunt, Random.new(78))
 local checks = {}
@@ -77,6 +83,9 @@ local ok, problem = pcall(function()
 	)
 	assert(audio.wakeSound.Parent.Position == hunt.home and not audio.wakeSound.Looped)
 	checks.awakening_twenty_seconds_radius_sixteen_and_spatial_home_scream = true
+	-- This historical fixture retains the ordinary subsequent-chase contract.
+	-- First detected chase is checked separately in tests/first-chase.luau.
+	hunt.firstChaseUsed = true
 	root.Position = hunt.home + Vector3.new(16, 0, 0)
 	hunt:Step(0, 20.1, root, false)
 	assert(hunt.state == "chase" and hunt.chaseStartedAt == 20.1)
@@ -103,7 +112,8 @@ local ok, problem = pcall(function()
 	assert(hunt:Stun(22.4, 10) and hunt.chaseStartedAt == nil)
 	hunt:ResetHome()
 	assert(hunt.chaseStartedAt == nil)
-	checks.two_second_patrol_speed_then_chase_and_capture_reset_on_protection_trap_home = true
+	checks.subsequent_chase_two_second_patrol_speed_then_chase_and_capture_reset_on_protection_trap_home =
+		true
 	audio:Step(22.5, "caught", "hard", hunt)
 	assert(audio.wakeSound:GetAttribute("AudioRequestedPlaying") == false)
 	audio:Step(30, "active", "hard", hunt)

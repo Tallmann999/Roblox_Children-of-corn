@@ -1,43 +1,9 @@
 --!strict
 
 local LightingModes = {}
-LightingModes.Order = table.freeze({ "easy", "medium", "hard" })
-LightingModes.Default = "medium"
+LightingModes.Order = table.freeze({ "hard" })
+LightingModes.Default = "hard"
 LightingModes.Profiles = table.freeze({
-	easy = table.freeze({
-		ClockTime = 13.5,
-		Brightness = 2.5,
-		Ambient = Color3.fromRGB(105, 110, 96),
-		OutdoorAmbient = Color3.fromRGB(145, 151, 139),
-		FogColor = Color3.fromRGB(193, 213, 225),
-		FogStart = 500,
-		FogEnd = 1500,
-		Density = 0.08,
-		Haze = 0,
-		Offset = 0.25,
-		Color = Color3.fromRGB(199, 216, 229),
-		Decay = Color3.fromRGB(153, 168, 183),
-		Torches = false,
-		SkyTop = Color3.fromRGB(82, 163, 212),
-		SkyBottom = Color3.fromRGB(206, 223, 204),
-	}),
-	medium = table.freeze({
-		ClockTime = 17.9,
-		Brightness = 1.6,
-		Ambient = Color3.fromRGB(74, 73, 70),
-		OutdoorAmbient = Color3.fromRGB(109, 106, 99),
-		FogColor = Color3.fromRGB(136, 112, 132),
-		FogStart = 150,
-		FogEnd = 700,
-		Density = 0.18,
-		Haze = 0.4,
-		Offset = 0.25,
-		Color = Color3.fromRGB(185, 176, 167),
-		Decay = Color3.fromRGB(98, 77, 107),
-		Torches = true,
-		SkyTop = Color3.fromRGB(72, 58, 104),
-		SkyBottom = Color3.fromRGB(223, 142, 86),
-	}),
 	hard = table.freeze({
 		ClockTime = 20.5,
 		Brightness = 1,
@@ -62,7 +28,7 @@ local LIGHTING_PROPERTIES =
 local ATMOSPHERE_PROPERTIES = { "Density", "Haze", "Offset", "Color", "Decay" }
 
 function LightingModes.IsValid(value: any): boolean
-	return type(value) == "string" and (value == "easy" or value == "medium" or value == "hard")
+	return value == "hard"
 end
 
 function LightingModes.Capture(lighting: Lighting): any

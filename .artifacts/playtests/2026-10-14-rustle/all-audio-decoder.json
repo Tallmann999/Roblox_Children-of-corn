@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "loaded_count": 14,
+  "total": 15,
+  "missing": [
+    "COC_Fire"
+  ],
+  "fire": {
+    "IsLoaded": false,
+    "TimeLength": 0
+  },
+  "corn_loaded": 6,
+  "method": "Actual client muted temporary Sounds IsLoaded/TimeLength + PreloadAsync, 8 seconds bounded. Decoder only, no listener mix claim.",
+  "cleanup": true
+}

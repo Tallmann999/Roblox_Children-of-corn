@@ -1,0 +1,6 @@
+{
+  "clock": 20.5,
+  "snapshot": "{\"inventory\":{\"selected\":1,\"energy_remaining\":0,\"slots\":[\"empty\",\"empty\",\"empty\",\"empty\",\"empty\"],\"use\":{\"id\":0,\"kind\":\"none\"}},\"reward_diamonds\":0,\"lighting_mode\":\"hard\",\"evacuation\":{\"remaining\":0,\"duration\":120,\"active\":false},\"minimap\":{\"round_id\":2,\"visited\":[],\"deaths\":[]},\"has_key\":false,\"gate_open\":false,\"elapsed_sec\":3.0141846999995325,\"start_look\":null,\"phase\":\"active\",\"sprint_exhausted\":false,\"notice\":\"\",\"capture\":{\"id\":0,\"remaining\":0,\"frame\":null},\"stamina_capacity\":100,\"session_diamonds\":20,\"stamina\":100,\"protection_sec\":0,\"monster_state\":\"dormant\",\"catches_remaining\":2,\"is_sprinting\":false}",
+  "intro": false,
+  "modecards": false
+}

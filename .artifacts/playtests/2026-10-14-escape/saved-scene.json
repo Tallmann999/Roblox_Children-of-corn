@@ -1,0 +1,19 @@
+{
+  "target": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+  "sha256": "9082169a7da5fed15cd962611777285213fce99f23de82f83e0f361a683ecf16",
+  "bytes": 1015691,
+  "engine_copy": "C:\\Users\\User\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Children_of_corn_AutoRecovery_0.rbxl",
+  "backup": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-rustle-20261014.rbxl",
+  "backup_sha256": "ef0731f3235a26e4aa76dd26a7853be4d67e9ccc934f4f054428e5cbd6d146f0",
+  "immutable_baseline_sha256": "ef0731f3235a26e4aa76dd26a7853be4d67e9ccc934f4f054428e5cbd6d146f0",
+  "field_side": 840,
+  "torches": 27,
+  "exit_poles": 4,
+  "wall_torches": 2,
+  "sources": 75,
+  "exit_sign_scale": 3,
+  "exit_text_pixels_per_stud": 16,
+  "exit_text_always_on_top": false,
+  "raw_terrain_preserved": true,
+  "method": "Verified exact engine bytes; atomic replacement, no Lune scene serialization"
+}

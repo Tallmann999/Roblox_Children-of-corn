@@ -1,0 +1,167 @@
+{
+  "cleanup_source_gain_restored": true,
+  "assets": {
+    "COC_Corn_20": {
+      "id": "rbxassetid://80980555958242",
+      "length": 0.9569160997732427,
+      "loaded": true
+    },
+    "COC_Corn_11": {
+      "id": "rbxassetid://82316318861323",
+      "length": 1.1188208616780044,
+      "loaded": true
+    },
+    "COC_Corn_02": {
+      "id": "rbxassetid://70577970161798",
+      "length": 0.8524263038548753,
+      "loaded": true
+    },
+    "COC_Corn_18": {
+      "id": "rbxassetid://101463611520693",
+      "length": 0.9323356009070295,
+      "loaded": true
+    },
+    "COC_Corn_10": {
+      "id": "rbxassetid://136100994535896",
+      "length": 0.4177777777777778,
+      "loaded": true
+    },
+    "COC_Corn_13": {
+      "id": "rbxassetid://128248535752141",
+      "length": 2.029637188208617,
+      "loaded": true
+    }
+  },
+  "passed": false,
+  "preload": {
+    "done": true,
+    "failures": [],
+    "loaded_count": 6
+  },
+  "traceback": "AssistantCommand:555\nAssistantCommand:98\nAssistantCommand:111\n",
+  "status": "failed",
+  "cleanup_actor_count": 0,
+  "elapsed_sec": 2.5486634999997477,
+  "cleanup": true,
+  "method": "Real current AudioController/author local Sound decoder and natural Ended; controlled accepted server metadata in an isolated client actor. No server-network timing, physical walking, human mix, multiplayer or ordinary-round claim.",
+  "checks": {
+    "short_step_stop_naturally_ended": true
+  },
+  "done": true,
+  "unexpected_stopped": 0,
+  "played_count": 3,
+  "clips": [
+    {
+      "elapsed_sec": 2.0597753999991255,
+      "sequence": 1,
+      "id": "rbxassetid://128248535752141",
+      "voice": 1,
+      "max_position": 2.027,
+      "key": "COC_Corn_13",
+      "ended_at": 2.3452249000001757,
+      "started_at": 0.2854495000010502,
+      "length": 2.029637188208617,
+      "stage": "short_step_stop_tail",
+      "max_loudness": 116.81771278381348
+    },
+    {
+      "sequence": 2,
+      "id": "rbxassetid://128248535752141",
+      "voice": 1,
+      "key": "COC_Corn_13",
+      "max_position": 0.192,
+      "started_at": 2.346396700000696,
+      "length": 2.029637188208617,
+      "stage": "two_overlap_and_newest_pending",
+      "max_loudness": 18.686939030885696
+    },
+    {
+      "sequence": 3,
+      "id": "rbxassetid://82316318861323",
+      "voice": 2,
+      "key": "COC_Corn_11",
+      "max_position": 0,
+      "started_at": 2.529507900000681,
+      "length": 0,
+      "stage": "two_overlap_and_newest_pending",
+      "max_loudness": 0
+    }
+  ],
+  "natural_ended_count": 1,
+  "events": [
+    {
+      "at": 0.28543960000024526,
+      "key": "COC_Corn_13",
+      "sequence": 1,
+      "position": 0,
+      "id": "rbxassetid://128248535752141",
+      "stage": "short_step_stop_tail",
+      "event": "SoundId",
+      "voice": 1
+    },
+    {
+      "at": 0.2854526999999507,
+      "key": "COC_Corn_13",
+      "sequence": 1,
+      "position": 0,
+      "id": "rbxassetid://128248535752141",
+      "stage": "short_step_stop_tail",
+      "event": "Played",
+      "voice": 1
+    },
+    {
+      "at": 2.345232200001192,
+      "key": "COC_Corn_13",
+      "sequence": 1,
+      "position": 0,
+      "id": "rbxassetid://128248535752141",
+      "stage": "short_step_stop_tail",
+      "event": "Ended",
+      "voice": 1
+    },
+    {
+      "at": 2.346399800000654,
+      "key": "COC_Corn_13",
+      "sequence": 2,
+      "position": 0,
+      "id": "rbxassetid://128248535752141",
+      "stage": "two_overlap_and_newest_pending",
+      "event": "Played",
+      "voice": 1
+    },
+    {
+      "at": 2.5294162000009237,
+      "key": "COC_Corn_11",
+      "sequence": 3,
+      "position": 0,
+      "id": "rbxassetid://82316318861323",
+      "stage": "two_overlap_and_newest_pending",
+      "event": "SoundId",
+      "voice": 2
+    },
+    {
+      "at": 2.5295124000003852,
+      "key": "COC_Corn_11",
+      "sequence": 3,
+      "position": 0,
+      "id": "rbxassetid://82316318861323",
+      "stage": "two_overlap_and_newest_pending",
+      "event": "Played",
+      "voice": 2
+    }
+  ],
+  "problem": "AssistantCommand:98: Two busy voices must keep exactly newest pending",
+  "cleanup_local_voices": true,
+  "cleanup_problems": [
+    "",
+    ""
+  ],
+  "fixture_id": "6cc41b14-c5e3-47a1-9b2e-dde33a5f1981",
+  "first_overlap": {
+    "first_voice": 1,
+    "second_voice": 2,
+    "onset_gap_sec": 0.18311119999998482,
+    "second_length": 0,
+    "first_length": 2.029637188208617
+  }
+}

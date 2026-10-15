@@ -11,6 +11,16 @@ local EXIT_RADIUS = 24
 local HEIGHT_TOLERANCE = 12
 local UPDATE_INTERVAL = 0.1
 local PANEL_WIDTH = 436
+local PROJECT = "children_of_corn"
+local NEON_CYCLE = {
+	{ 0.8, true },
+	{ 0.7, false },
+	{ 0.6, true },
+	{ 0.9, false },
+	{ 4.5, true },
+	{ 0.8, false },
+	{ 6, true },
+}
 
 local function eligible(snapshot: any): boolean
 	return snapshot ~= nil
@@ -48,6 +58,8 @@ function GateHintController:Init(_context: any)
 	self._shown = false
 	self._elapsed = math.huge
 	self._connection = nil
+	self._beacon = nil
+	self._beaconRefused = nil
 	local gui = Instance.new("ScreenGui")
 	gui.Name = "CornGateHint"
 	gui.ResetOnSpawn = false
@@ -142,8 +154,170 @@ function GateHintController:SetSnapshot(snapshot: any)
 	if not eligible(snapshot) then
 		self:_show(false)
 	end
+	if not snapshot or (snapshot.phase ~= "active" and snapshot.phase ~= "caught") then
+		self:_restoreBeacon()
+		self._beaconRefused = nil
+	end
 end
 
+local function roadExitOwned(item: Instance, role: string): boolean
+	return item:GetAttribute("CornRoadExitOwned") == true
+		and item:GetAttribute("corn_project_id") == PROJECT
+		and item:GetAttribute("RoadExitVersion") == 1
+		and item:GetAttribute("RoadExitRole") == role
+end
+
+local function beaconOwned(state: any): boolean
+	return workspace:FindFirstChild("CornMap") == state.map
+		and state.map:GetAttribute("corn_project_id") == PROJECT
+		and state.map:FindFirstChild("Props") == state.props
+		and state.props:FindFirstChild("VillageRoad") == state.road
+		and state.road:FindFirstChild("ExitSign") == state.sign
+		and state.sign:FindFirstChild("ExitTextSurface") == state.surface
+		and state.surface:FindFirstChild("ExitText") == state.text
+		and state.props.Parent == state.map
+		and state.road.Parent == state.props
+		and state.sign.Parent == state.road
+		and state.surface.Parent == state.sign
+		and state.text.Parent == state.surface
+		and roadExitOwned(state.road, "Road")
+		and roadExitOwned(state.sign, "ExitSign")
+		and roadExitOwned(state.surface, "ExitTextSurface")
+		and roadExitOwned(state.text, "ExitText")
+		and state.text.Text == "ВЫХОД"
+end
+
+local function sameBeacon(a: any, b: any): boolean
+	return a.sign == b.sign and a.surface == b.surface and a.text == b.text
+end
+
+function GateHintController:_restoreBeacon()
+	local state = self._beacon
+	self._beacon = nil
+	if not state or not beaconOwned(state) then
+		return
+	end
+	if state.sign.Color == state.lastColor then
+		state.sign.Color = state.color
+	end
+	if state.text.TextColor3 == state.lastTextColor then
+		state.text.TextColor3 = state.textColor
+	end
+end
+
+local function neonBright(elapsed: number): boolean
+	local phase = math.max(0, elapsed) % 14.3
+	for _, segment in NEON_CYCLE do
+		if phase < segment[1] then
+			return segment[2]
+		end
+		phase -= segment[1]
+	end
+	return true
+end
+
+function GateHintController:_blinkBeacon(now: number)
+	local character = player.Character
+	local humanoid = if character then character:FindFirstChildOfClass("Humanoid") else nil
+	local root = if character then character:FindFirstChild("HumanoidRootPart") else nil
+	local capture = self._snapshot and self._snapshot.capture
+	if
+		not self._snapshot
+		or (self._snapshot.phase ~= "active" and self._snapshot.phase ~= "caught")
+		or not humanoid
+		or humanoid.Health <= 0
+		or not root
+		or not root:IsA("BasePart")
+		or (type(capture) == "table" and type(capture.remaining) == "number" and capture.remaining > 0)
+		or GuiService.MenuIsOpen
+	then
+		self:_restoreBeacon()
+		return
+	end
+	local map = workspace:FindFirstChild("CornMap")
+	local props = if map then map:FindFirstChild("Props") else nil
+	local road = if props then props:FindFirstChild("VillageRoad") else nil
+	local sign = if road then road:FindFirstChild("ExitSign") else nil
+	local surface = if sign then sign:FindFirstChild("ExitTextSurface") else nil
+	local text = if surface then surface:FindFirstChild("ExitText") else nil
+	local candidate =
+		{ map = map, props = props, road = road, sign = sign, surface = surface, text = text }
+	local state = self._beacon
+	if state and not beaconOwned(state) then
+		self:_restoreBeacon()
+		self._beaconRefused = state
+		state = nil
+	end
+	if self._beaconRefused and sameBeacon(self._beaconRefused, candidate) then
+		return
+	end
+	if
+		not map
+		or not map:IsA("Model")
+		or not props
+		or not road
+		or not road:IsA("Model")
+		or not sign
+		or not sign:IsA("BasePart")
+		or not surface
+		or not surface:IsA("SurfaceGui")
+		or not text
+		or not text:IsA("TextLabel")
+		or not beaconOwned(candidate)
+	then
+		self:_restoreBeacon()
+		return
+	end
+	self._beaconRefused = nil
+	if state and not sameBeacon(state, candidate) then
+		self:_restoreBeacon()
+		state = nil
+	end
+	if not state then
+		if sign.Material ~= Enum.Material.Neon then
+			return
+		end
+		state = candidate
+		state.startedAt = now
+		state.color, state.textColor = sign.Color, text.TextColor3
+		state.lastColor, state.lastTextColor = sign.Color, text.TextColor3
+		state.material, state.ltm, state.enabled =
+			sign.Material, sign.LocalTransparencyModifier, surface.Enabled
+		state.visible, state.transparency = text.Visible, text.TextTransparency
+		self._beacon = state
+	end
+	-- Foreign changes release this exact pair until ready or a streamed replacement.
+	if
+		sign.Color ~= state.lastColor
+		or text.TextColor3 ~= state.lastTextColor
+		or sign.Material ~= state.material
+		or sign.LocalTransparencyModifier ~= state.ltm
+		or surface.Enabled ~= state.enabled
+		or text.Visible ~= state.visible
+		or text.TextTransparency ~= state.transparency
+	then
+		self:_restoreBeacon()
+		self._beaconRefused = state
+		return
+	end
+	if not state.enabled or not state.visible then
+		return
+	end
+	local bright = neonBright(now - state.startedAt)
+	local color = if bright then state.color else state.color:Lerp(Color3.new(0, 0, 0), 0.94)
+	local textColor = if bright
+		then state.textColor
+		else state.textColor:Lerp(Color3.new(0, 0, 0), 0.9)
+	if sign.Color ~= color then
+		sign.Color = color
+	end
+	if text.TextColor3 ~= textColor then
+		text.TextColor3 = textColor
+	end
+	-- BasePart.Color is stored at engine precision. Guard the value actually
+	-- written so rounding cannot be mistaken for an external edit next tick.
+	state.lastColor, state.lastTextColor = sign.Color, text.TextColor3
+end
 function GateHintController:_gatePosition(): Vector3?
 	local map = workspace:FindFirstChild("CornMap")
 	if
@@ -172,6 +346,7 @@ function GateHintController:_canShow(position: Vector3?, anchor: Vector3?, alive
 end
 
 function GateHintController:_update()
+	self:_blinkBeacon(os.clock())
 	local position = nil
 	local alive = false
 	local character = player.Character
@@ -204,6 +379,8 @@ function GateHintController:Start(_context: any)
 end
 
 function GateHintController:Destroy()
+	self:_restoreBeacon()
+	self._beaconRefused = nil
 	if self._connection then
 		self._connection:Disconnect()
 		self._connection = nil

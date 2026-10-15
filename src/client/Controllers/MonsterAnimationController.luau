@@ -63,6 +63,10 @@ function Controller:_valid(): boolean
 		or runtime:GetAttribute("corn_project_id") ~= PROJECT
 		or not model
 		or model.Parent ~= runtime
+		or model.Name ~= (if self._monsterIndex == 1
+			then "Monster"
+			else "Monster" .. self._monsterIndex)
+		or model:GetAttribute("MonsterIndex") ~= self._monsterIndex
 		or model:GetAttribute("CornMonsterOwned") ~= true
 		or model:GetAttribute("corn_project_id") ~= PROJECT
 		or model:GetAttribute("MonsterRigVersion") ~= 1
@@ -86,7 +90,8 @@ function Controller:_valid(): boolean
 end
 
 function Controller:_resolveMonster()
-	local model = self._runtime and self._runtime:FindFirstChild("Monster")
+	local name = if self._monsterIndex == 1 then "Monster" else "Monster" .. self._monsterIndex
+	local model = self._runtime and self._runtime:FindFirstChild(name)
 	if model == self._model and self:_valid() then
 		return
 	end
@@ -94,6 +99,7 @@ function Controller:_resolveMonster()
 	if
 		not model
 		or not model:IsA("Model")
+		or model:GetAttribute("MonsterIndex") ~= self._monsterIndex
 		or model:GetAttribute("CornMonsterOwned") ~= true
 		or model:GetAttribute("corn_project_id") ~= PROJECT
 		or model:GetAttribute("MonsterRigVersion") ~= 1
@@ -138,7 +144,9 @@ function Controller:_resolveMonster()
 			end
 		end)
 	)
-	for _, attribute in { "CornMonsterOwned", "corn_project_id", "MonsterRigVersion" } do
+	for _, attribute in
+		{ "CornMonsterOwned", "corn_project_id", "MonsterRigVersion", "MonsterIndex" }
+	do
 		table.insert(
 			self._monsterConnections,
 			model:GetAttributeChangedSignal(attribute):Connect(function()
@@ -187,7 +195,14 @@ function Controller:_resolveRuntime()
 		table.insert(
 			self._runtimeConnections,
 			runtime.ChildAdded:Connect(function(item)
-				if item.Name == "Monster" then
+				if
+					item.Name
+					== (
+						if self._monsterIndex == 1
+							then "Monster"
+							else "Monster" .. self._monsterIndex
+					)
+				then
 					self:_resolveMonster()
 				end
 			end)
@@ -311,7 +326,9 @@ function Controller:_step(delta: number)
 	self._restored = pose == Pose.Rest
 end
 
-function Controller:Init(context: any)
+function Controller:Init(context: any, monsterIndex: number?)
+	self._monsterIndex = monsterIndex or 1
+	self._companions = {}
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
 		and context.Config.Game.SessionMode == "solo_local"
@@ -323,6 +340,16 @@ function Controller:Init(context: any)
 	self._updateElapsed, self._resolveElapsed = UPDATE_SEC, RESOLVE_SEC
 	self._state, self._previousPosition, self._restored = nil, nil, true
 	self._connection = nil
+	if monsterIndex == nil then
+		-- Reuse the same guarded lifecycle independently for exactly three rigs.
+		for index = 2, 3 do
+			-- Bootstrap initializes this Module table itself. A __index pointing
+			-- at it would inherit its later _connection and skip companion Start.
+			local companion = table.clone(Controller)
+			companion:Init(context, index)
+			table.insert(self._companions, companion)
+		end
+	end
 end
 
 function Controller:Start()
@@ -349,9 +376,15 @@ function Controller:Start()
 	self._connection = RunService.Heartbeat:Connect(function(delta)
 		self:_step(delta)
 	end)
+	for _, companion in self._companions do
+		companion:Start()
+	end
 end
 
 function Controller:Destroy()
+	for _, companion in self._companions do
+		companion:Destroy()
+	end
 	if self._connection then
 		self._connection:Disconnect()
 		self._connection = nil

@@ -50,6 +50,7 @@ function Controller:Init(_context: any)
 	self._connections = {}
 	self._monster = nil
 	self._monsterRoot = nil
+	self._monsters = {}
 	self._resolveAt = 0
 	self._capture = nil
 	self._background = 0
@@ -60,6 +61,9 @@ function Controller:Init(_context: any)
 	self._started = false
 	self._footstepPlayers = {}
 	self._footstepPlayerCount = 0
+	self._rustles = {}
+	self._rustleCount = 0
+	self._rustleResolveAt = 0
 end
 
 local function disconnect(entries: { RBXScriptConnection })
@@ -67,6 +71,329 @@ local function disconnect(entries: { RBXScriptConnection })
 		connection:Disconnect()
 	end
 	table.clear(entries)
+end
+
+local function serverRustle(sound: Instance?, root: BasePart): boolean
+	if
+		not (
+			sound ~= nil
+			and sound:IsA("Sound")
+			and sound.Parent == root
+			and sound.Name == "CornAudio_corn_rustle"
+			and sound:GetAttribute("CornAudioOwned") == true
+			and sound:GetAttribute("corn_project_id") == PROJECT
+			and sound:GetAttribute("audio_role") == "corn_rustle"
+		)
+	then
+		return false
+	end
+	for _, key in Rules.CornKeys do
+		local asset = Assets.Get(key)
+		if asset and asset.Id == (sound :: Sound).SoundId then
+			return true
+		end
+	end
+	return false
+end
+
+local function rustleCommit(source: Sound): any
+	local value = source:GetAttribute("AudioRustleStart")
+	if type(value) ~= "string" or #value > 80 then
+		return nil
+	end
+	local rawId, key = string.match(value, "^([1-9]%d*):([%w_]+)$")
+	local id = tonumber(rawId)
+	if not id or id >= 9007199254740992 or id % 1 ~= 0 or not table.find(Rules.CornKeys, key) then
+		return nil
+	end
+	local asset = Assets.Get(key)
+	return if asset and string.match(asset.Id, "^rbxassetid://[1-9]%d*$")
+		then { id = id, key = key, asset = asset }
+		else nil
+end
+
+function Controller:_muteRustle(entry: any)
+	if
+		not entry.released
+		and serverRustle(entry.source, entry.root)
+		and entry.source.Volume ~= 0
+	then
+		entry.previousVolume = entry.source.Volume
+		entry.source.Volume = 0
+	end
+end
+
+function Controller:_releaseRustle(root: BasePart)
+	local entry = self._rustles[root]
+	if not entry or entry.released then
+		return
+	end
+	entry.released = true
+	disconnect(entry.connections)
+	for _, voice in entry.voices do
+		local sound = voice.sound
+		if owned(sound) and sound.Parent == root then
+			-- Preserve a foreign child inserted under either owned local player.
+			for _, child in sound:GetChildren() do
+				if not owned(child) then
+					child.Parent = root
+				end
+			end
+			sound:Destroy()
+		end
+	end
+	if
+		entry.previousVolume ~= nil
+		and serverRustle(entry.source, root)
+		and entry.source.Volume == 0
+	then
+		local recognizedId = false
+		for _, key in Rules.CornKeys do
+			local asset = Assets.Get(key)
+			if asset and asset.Id == entry.source.SoundId then
+				recognizedId = true
+				break
+			end
+		end
+		if recognizedId then
+			entry.source.Volume = entry.previousVolume
+		end
+	end
+	self._rustles[root] = nil
+	self._rustleCount -= 1
+end
+
+function Controller:_clearRustles()
+	for root in self._rustles do
+		self:_releaseRustle(root)
+	end
+	self._rustleResolveAt = 0
+end
+
+local function rustleVoicesOwned(entry: any): boolean
+	for _, voice in entry.voices do
+		if not owned(voice.sound) or voice.sound.Parent ~= entry.root then
+			return false
+		end
+	end
+	return true
+end
+
+function Controller:_tryRustle(entry: any, now: number)
+	if entry.released or not entry.pending or now < entry.retryAt then
+		return
+	end
+	if not rustleVoicesOwned(entry) or not serverRustle(entry.source, entry.root) then
+		return
+	end
+	for _, voice in entry.voices do
+		if not voice.active and not voice.deferStart then
+			local sound, clip = voice.sound, entry.pending
+			entry.pending, voice.current = nil, clip
+			voice.active, voice.started = true, false
+			voice.loadDeadline = now + PRELOAD_TIMEOUT
+			sound.SoundId = clip.asset.Id
+			sound.Volume = math.clamp(Rules.Volume.Rustle * clip.asset.Gain, 0, 1)
+			sound:SetAttribute("AudioRustleId", clip.id)
+			sound:SetAttribute("AudioAssetKey", clip.key)
+			sound:Play()
+			return
+		end
+	end
+end
+
+function Controller:_acceptRustle(entry: any, initial: boolean)
+	if entry.released or not serverRustle(entry.source, entry.root) then
+		return
+	end
+	local clip = rustleCommit(entry.source)
+	if not clip or clip.id <= entry.lastId then
+		return
+	end
+	entry.lastId = clip.id
+	if initial and entry.source:GetAttribute("AudioRequestedPlaying") ~= true then
+		return
+	end
+	entry.pending = clip -- Latest only: at most one future clip per actor.
+	self:_tryRustle(entry, os.clock())
+end
+
+function Controller:_bindRustle(root: BasePart, source: Sound): any
+	local old = self._rustles[root]
+	if old and (old.released or old.source == source) then
+		return old
+	end
+	if old then
+		self:_releaseRustle(root)
+	end
+	if
+		self._rustleCount >= Rules.ActorLimit + 3
+		or not serverRustle(source, root)
+		or not owned(self._groups.Effects)
+	then
+		return nil
+	end
+	local group = source.SoundGroup
+	if
+		not group
+		or group:GetAttribute("CornAudioOwned") ~= true
+		or group:GetAttribute("corn_project_id") ~= PROJECT
+	then
+		group = self._groups.Effects
+	end
+	local function voiceSound(index: number): Sound
+		local sound = Instance.new("Sound")
+		sound.Name = if index == 1 then "CornLocalRustle" else "CornLocalRustle" .. index
+		annotate(sound, "corn_rustle_local")
+		sound.Looped = false
+		sound.PlaybackSpeed = 1
+		sound.RollOffMode = Enum.RollOffMode.InverseTapered
+		sound.RollOffMinDistance = Rules.Ranges.Rustle.Min
+		sound.RollOffMaxDistance = Rules.Ranges.Rustle.Max
+		sound.SoundGroup = group
+		return sound
+	end
+	local entry = {
+		root = root,
+		source = source,
+		sound = voiceSound(1),
+		connections = {},
+		lastId = 0,
+		active = false,
+		started = false,
+		released = false,
+		retryAt = 0,
+	}
+	entry.voices = { entry }
+	for index = 2, Rules.RustleVoices do
+		table.insert(entry.voices, {
+			sound = voiceSound(index),
+			active = false,
+			started = false,
+		})
+	end
+	self._rustles[root] = entry
+	self._rustleCount += 1
+	for _, voice in entry.voices do
+		-- Register the full fixed pool before Root.ChildAdded can reenter
+		-- the existing footsteps/rustle binder for either local Sound.
+		voice.sound.Parent = root
+		table.insert(
+			entry.connections,
+			voice.sound.Ended:Connect(function()
+				if entry.released or self._rustles[root] ~= entry then
+					return
+				end
+				voice.active, voice.started, voice.current = false, false, nil
+				-- A completed voice is reused on the next heartbeat, after every
+				-- Ended listener has observed its URI and natural completion.
+				voice.deferStart = true
+			end)
+		)
+	end
+	table.insert(
+		entry.connections,
+		source:GetAttributeChangedSignal("AudioRustleStart"):Connect(function()
+			self:_acceptRustle(entry, false)
+		end)
+	)
+	table.insert(
+		entry.connections,
+		source:GetPropertyChangedSignal("Volume"):Connect(function()
+			self:_muteRustle(entry)
+		end)
+	)
+	self:_muteRustle(entry)
+	self:_acceptRustle(entry, true)
+	return entry
+end
+
+function Controller:_refreshRustle(root: BasePart?)
+	if not root then
+		return
+	end
+	local source = root:FindFirstChild("CornAudio_corn_rustle")
+	local current = self._rustles[root]
+	if current and current.released then
+		return
+	end
+	if not serverRustle(source, root) then
+		self:_releaseRustle(root)
+	elseif
+		self._snapshot and (self._snapshot.phase == "active" or self._snapshot.phase == "caught")
+	then
+		self:_bindRustle(root, source :: Sound)
+	end
+end
+
+function Controller:_stepRustles(now: number)
+	local snapshot = self._snapshot
+	if
+		not snapshot
+		or (snapshot.phase ~= "active" and snapshot.phase ~= "caught")
+		or not self:_livingRoot()
+	then
+		self:_clearRustles()
+		return
+	end
+	if now >= self._rustleResolveAt then
+		self._rustleResolveAt = now + RESOLVE_INTERVAL
+		local allowed = {}
+		for _, state in self._footstepPlayers do
+			local humanoid = if state.character
+				then state.character:FindFirstChildOfClass("Humanoid")
+				else nil
+			if
+				state.root
+				and state.root.Parent == state.character
+				and humanoid
+				and humanoid.Health > 0
+			then
+				allowed[state.root] = true
+				self:_refreshRustle(state.root)
+			end
+		end
+		self:_resolveMonster(now)
+		for _, actor in self._monsters do
+			allowed[actor.root] = true
+			self:_refreshRustle(actor.root)
+		end
+		for root in self._rustles do
+			if not allowed[root] then
+				self:_releaseRustle(root)
+			end
+		end
+	end
+	for root, entry in self._rustles do
+		if
+			not root.Parent
+			or not serverRustle(entry.source, root)
+			or not rustleVoicesOwned(entry)
+		then
+			self:_releaseRustle(root)
+		else
+			for _, voice in entry.voices do
+				voice.deferStart = false
+				local sound = voice.sound
+				if voice.active then
+					voice.started = voice.started
+						or sound.TimePosition > 0
+						or (sound.IsLoaded and sound.IsPlaying)
+					if not voice.started and now >= voice.loadDeadline then
+						-- Retry only the newest unplayed request; a newer accepted
+						-- cue on either voice must never revive an old failed clip.
+						sound:Stop()
+						if not entry.pending and voice.current.id == entry.lastId then
+							entry.pending = voice.current
+						end
+						voice.current, voice.active = nil, false
+						entry.retryAt = now + 0.5
+					end
+				end
+			end
+			self:_tryRustle(entry, now)
+		end
+	end
 end
 
 local function defaultFootstep(entry: any): boolean
@@ -137,6 +464,7 @@ function Controller:_refreshFootsteps(state: any)
 			self:_muteFootstep(state.sounds[name])
 		end
 	end
+	self:_refreshRustle(root)
 end
 
 function Controller:_bindFootstepRoot(state: any)
@@ -150,6 +478,9 @@ function Controller:_bindFootstepRoot(state: any)
 		return
 	end
 	disconnect(state.rootConnections)
+	if state.root then
+		self:_releaseRustle(state.root)
+	end
 	for _, entry in state.sounds do
 		self:_releaseFootstep(entry)
 	end
@@ -175,6 +506,9 @@ function Controller:_bindFootstepRoot(state: any)
 end
 
 function Controller:_bindFootstepCharacter(state: any, character: Model?)
+	if state.root then
+		self:_releaseRustle(state.root)
+	end
 	disconnect(state.characterConnections)
 	disconnect(state.rootConnections)
 	for _, entry in state.sounds do
@@ -292,7 +626,9 @@ end
 
 function Controller:Clear(_reason: string?)
 	self._snapshot = nil
+	self:_clearRustles()
 	self._monster, self._monsterRoot = nil, nil
+	self._monsters = {}
 	self._resolveAt = 0
 	self:_stopAll()
 end
@@ -437,24 +773,40 @@ function Controller:_resolveMonster(now: number)
 	end
 	self._resolveAt = now + RESOLVE_INTERVAL
 	self._monster, self._monsterRoot = nil, nil
+	self._monsters = {}
 	local map = workspace:FindFirstChild("CornMap")
 	local runtime = if map and map:GetAttribute("corn_project_id") == PROJECT
 		then map:FindFirstChild("CornRoundRuntime")
 		else nil
-	local monster = if runtime and runtime:GetAttribute("corn_project_id") == PROJECT
-		then runtime:FindFirstChild("Monster")
-		else nil
-	local root = if monster then monster:FindFirstChild("Root") else nil
 	if
-		monster
-		and monster:IsA("Model")
-		and monster:GetAttribute("CornMonsterOwned") == true
-		and monster:GetAttribute("corn_project_id") == PROJECT
-		and monster:GetAttribute("MonsterRigVersion") == 1
-		and root
-		and root:IsA("BasePart")
+		not runtime
+		or not runtime:IsA("Folder")
+		or runtime:GetAttribute("corn_project_id") ~= PROJECT
 	then
-		self._monster, self._monsterRoot = monster, root
+		return
+	end
+	for index = 1, 3 do
+		local name = if index == 1 then "Monster" else "Monster" .. index
+		local monster = runtime:FindFirstChild(name)
+		local root = if monster then monster:FindFirstChild("Root") else nil
+		if
+			monster
+			and monster:IsA("Model")
+			and monster:GetAttribute("CornMonsterOwned") == true
+			and monster:GetAttribute("corn_project_id") == PROJECT
+			and monster:GetAttribute("MonsterRigVersion") == 1
+			and monster:GetAttribute("MonsterIndex") == index
+			and root
+			and root:IsA("BasePart")
+		then
+			table.insert(
+				self._monsters,
+				{ model = monster, root = root, runtime = runtime, index = index }
+			)
+			if index == 1 then
+				self._monster, self._monsterRoot = monster, root
+			end
+		end
 	end
 end
 
@@ -469,20 +821,31 @@ function Controller:_huntGoal(root: BasePart, now: number): number
 		return 0
 	end
 	self:_resolveMonster(now)
-	local monster, enemy = self._monster, self._monsterRoot
-	if
-		not monster
-		or not enemy
-		or enemy.Parent ~= monster
-		or not monster.Parent
-		or monster:GetAttribute("CornMonsterOwned") ~= true
-		or monster:GetAttribute("corn_project_id") ~= PROJECT
-		or monster:GetAttribute("MonsterRigVersion") ~= 1
-		or monster:GetAttribute("ChaseTargetUserId") ~= player.UserId
-	then
-		return 0
+	local nearest, distance = nil, math.huge
+	for _, actor in self._monsters do
+		local monster, enemy = actor.model, actor.root
+		if
+			enemy.Parent == monster
+			and monster.Parent == actor.runtime
+			and actor.runtime.Parent ~= nil
+			and actor.runtime:GetAttribute("corn_project_id") == PROJECT
+			and monster.Name == (if actor.index == 1 then "Monster" else "Monster" .. actor.index)
+			and monster:GetAttribute("MonsterIndex") == actor.index
+			and monster:GetAttribute("CornMonsterOwned") == true
+			and monster:GetAttribute("corn_project_id") == PROJECT
+			and monster:GetAttribute("MonsterRigVersion") == 1
+			and monster:GetAttribute("HuntState") == "chase"
+			and monster:GetAttribute("ChaseTargetUserId") == player.UserId
+		then
+			local candidate = (enemy.Position - root.Position).Magnitude
+			if candidate < distance then
+				nearest, distance = actor, candidate
+			end
+		end
 	end
-	local distance = (enemy.Position - root.Position).Magnitude
+	if nearest then
+		self._monster, self._monsterRoot = nearest.model, nearest.root
+	end
 	return if distance <= (Rules.HuntMaxDistance or 60) then Rules.ChaseIntensity(distance) else 0
 end
 
@@ -527,6 +890,7 @@ function Controller:_playEffect(kind: string, now: number)
 end
 
 function Controller:_step(dt: number, now: number)
+	self:_stepRustles(now)
 	local snapshot = self._snapshot
 	local root = self:_livingRoot()
 	if
@@ -592,8 +956,10 @@ function Controller:SetSnapshot(snapshot: any)
 	end
 	local first = roundId ~= self._roundId
 	if first then
+		self:_clearRustles()
 		self:_stopAll()
 		self._monster, self._monsterRoot = nil, nil
+		self._monsters = {}
 		self._resolveAt = 0
 		self._roundId, self._useId = roundId, use.id
 		self._endedRound = nil

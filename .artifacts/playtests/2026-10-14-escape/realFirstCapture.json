@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"observer\":{\"popup_modal\":true,\"paint_frames\":7,\"popup_visible\":true,\"visual_removed\":true,\"parts_max\":13,\"done\":true,\"mouth_height_max\":1.2999999523162842,\"visual_frames\":15,\"fov_after\":70,\"head_changes\":14,\"fov_min\":62.000003814697269,\"camera_frames\":15,\"camera_type\":\"Enum.CameraType.Custom\",\"camera_subject\":\"Humanoid\",\"paint_removed\":true},\"popup\":true,\"reviveText\":\"Возрождение\",\"active\":false,\"exitText\":\"Выход из игры\"}"
+    }
+  ],
+  "isError": false
+}

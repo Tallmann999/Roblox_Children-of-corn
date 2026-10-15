@@ -1,0 +1,26 @@
+[
+  {
+    "file": "scripts/install-exit-beacon.luau",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"repeated\":true,\"changed\":0,\"size\":\"36, 9.600000381469727, 0.9000000357627869\"}"
+        }
+      ],
+      "isError": false
+    }
+  },
+  {
+    "file": "scripts/install-readability.luau",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"created\":0,\"changed\":0,\"sources\":75}"
+        }
+      ],
+      "isError": false
+    }
+  }
+]

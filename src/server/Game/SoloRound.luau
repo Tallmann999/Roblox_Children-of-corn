@@ -48,6 +48,9 @@ function SoloRound.new(context: any)
 		reward = 0,
 		startedAt = nil :: number?,
 		hunt = nil :: any,
+		reinforcements = {} :: { any },
+		evacuationDeadline = nil :: number?,
+		evacuationActive = false,
 		audio = nil :: any,
 		catches = 0,
 		captureFrame = CFrame.identity,
@@ -93,6 +96,17 @@ function SoloRound:_send()
 		inventory = Inventory.Snapshot(self.inventory, os.clock()),
 		has_key = self.hasKey,
 		gate_open = self.gateOpen,
+		evacuation = {
+			active = self.evacuationActive,
+			remaining = if self.evacuationActive and self.evacuationDeadline
+				then math.clamp(
+					self.evacuationDeadline - os.clock(),
+					0,
+					self.balance.evacuation_duration_sec or 120
+				)
+				else 0,
+			duration = self.balance.evacuation_duration_sec or 120,
+		},
 		session_diamonds = self.diamonds,
 		reward_diamonds = self.reward,
 		elapsed_sec = if self.phase == "active" and self.startedAt
@@ -110,7 +124,7 @@ function SoloRound:_send()
 			remaining = math.clamp(self.captureUntil - os.clock(), 0, 1),
 			frame = self.captureFrame,
 		},
-		monster_state = if self.hunt then self.hunt.state else "stopped",
+		monster_state = self:_monsterState(),
 		protection_sec = math.max(0, self.protectedUntil - os.clock()),
 	})
 end
@@ -325,12 +339,19 @@ function SoloRound:_finish(phase: string, notice: string)
 		return
 	end
 	-- Fix the terminal state before rewarding or notifying any client.
-	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
+	if self.phase ~= "caught" then
+		self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
+	end
 	self.phase = phase
+	self.evacuationActive = false
+	self.evacuationDeadline = nil
 	self.captureUntil = 0
 	self.epoch += 1
 	self.notice = notice
-	self.reward = if phase == "escaped" then self.balance.escape_reward_diamonds else 0
+	local rewards = self.balance.escape_rewards
+	self.reward = if phase == "escaped"
+		then (if rewards then rewards[self.lightingMode] else self.balance.escape_reward_diamonds)
+		else 0
 	self.diamonds += self.reward
 	self.hasKey = false
 	self:_clearInventory()
@@ -399,7 +420,108 @@ function SoloRound:_openGate(player: Player)
 	Inventory.Remove(self.inventory, "key")
 	self.notice = ""
 	world:SetGateOpen(true)
+	if not self:_startEvacuation(os.clock(), root) then
+		self:_finish("aborted", "corn_loop_setup_error")
+		return
+	end
 	self:_send()
+end
+
+function SoloRound:_hunts(): { any }
+	local result = {}
+	if self.hunt then
+		table.insert(result, self.hunt)
+	end
+	for _, hunt in self.reinforcements do
+		table.insert(result, hunt)
+	end
+	return result
+end
+
+function SoloRound:_monsterState(): string
+	for _, hunt in self:_hunts() do
+		if not hunt.destroyed and hunt.state == "chase" then
+			return "chase"
+		end
+	end
+	return if self.hunt then self.hunt.state else "stopped"
+end
+
+function SoloRound:_audioLeader(root: BasePart?): any
+	local best, distance = self.hunt, math.huge
+	for _, hunt in self:_hunts() do
+		if root and not hunt.destroyed and hunt.state == "chase" then
+			local value = (hunt.root.Position - root.Position).Magnitude
+			if value < distance then
+				best, distance = hunt, value
+			end
+		end
+	end
+	return best
+end
+
+function SoloRound:_startEvacuation(now: number, root: BasePart): boolean
+	if self.evacuationActive then
+		return true
+	end
+	if not self.hunt or self.hunt.destroyed then
+		return false
+	end
+	local slots = table.clone(self.world.Slots)
+	table.sort(slots, function(a, b)
+		local da, db =
+			(a.Position - root.Position).Magnitude, (b.Position - root.Position).Magnitude
+		return if math.abs(da - db) < 0.01 then a.Name < b.Name else da < db
+	end)
+	local chosen = {}
+	for _, slot in slots do
+		if (slot.Position - root.Position).Magnitude < 48 then
+			continue
+		end
+		if chosen[1] and (slot.Position - chosen[1].Position).Magnitude < 72 then
+			continue
+		end
+		table.insert(chosen, slot)
+		if #chosen == 2 then
+			break
+		end
+	end
+	if #chosen ~= 2 then
+		return false
+	end
+	local ok, problem = pcall(function()
+		self.hunt:SetDetectionMultiplier(2)
+		for index, slot in chosen do
+			local hunt = MonsterHunt.new(self.world, self.balance, now, self.player.UserId, {
+				index = index + 1,
+				position = slot.Position,
+				immediate = true,
+			})
+			table.insert(self.reinforcements, hunt)
+			hunt:SetDetectionMultiplier(2)
+		end
+	end)
+	if not ok then
+		self.context.Log:Warn("Cannot prepare evacuation hunters:", problem)
+		return false
+	end
+	self.evacuationDeadline = now + (self.balance.evacuation_duration_sec or 120)
+	self.evacuationActive = true
+	self.notice = "corn_evacuation_started"
+	return true
+end
+
+function SoloRound:_expireEvacuation(now: number): boolean
+	if
+		self.evacuationActive
+		and self.evacuationDeadline
+		and now >= self.evacuationDeadline
+		and (self.phase == "active" or self.phase == "caught")
+	then
+		self:_finish("caught_out", "corn_evacuation_expired")
+		return true
+	end
+	return false
 end
 
 function SoloRound:_ensureWorld(): boolean
@@ -434,6 +556,10 @@ function SoloRound:_stopHunt()
 		self.hunt:Destroy()
 		self.hunt = nil
 	end
+	for _, hunt in self.reinforcements do
+		hunt:Destroy()
+	end
+	table.clear(self.reinforcements)
 end
 
 function SoloRound:_bindKey(keyPrompt: ProximityPrompt)
@@ -467,18 +593,24 @@ function SoloRound:_bindKey(keyPrompt: ProximityPrompt)
 	end)
 end
 
-function SoloRound:_caught(root: BasePart)
+function SoloRound:_caught(root: BasePart, captor: any?)
 	if self.phase ~= "active" then
 		return
 	end
 	self.minimap:RecordCaught(root.Position)
 	self.catches += 1
-	self.captureFrame = self.hunt:BeginCapture(root.Position)
+	captor = captor or self.hunt
+	self.captureFrame = captor:BeginCapture(root.Position)
+	for _, hunt in self:_hunts() do
+		if hunt ~= captor then
+			hunt:BeginCapture(root.Position)
+		end
+	end
 	self.captureUntil = os.clock() + self.balance.capture_transition_sec
 	self.elapsed = if self.startedAt then os.clock() - self.startedAt else 0
 	self.phase = "caught"
 	if self.audio then
-		self.audio:Step(os.clock(), self.phase, self.lightingMode, self.hunt)
+		self.audio:Step(os.clock(), self.phase, self.lightingMode, self.hunt, self:_hunts())
 	end
 	self.inventory.energyUntil = 0
 	if self.items then
@@ -517,19 +649,51 @@ function SoloRound:_caught(root: BasePart)
 			return
 		end
 		self.captureUntil = 0
-		self:_moveToStart(character)
-		self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
-		self.protectedUntil = os.clock() + self.balance.respawn_protection_sec
-		self.hunt:ResetHome()
-		self.huntAt = os.clock()
-		self.phase = "active"
-		if self.items then
-			self.items:SetEnabled(true)
-		end
-		self.world:SetInteractionEnabled(true, self.gateOpen)
-		self:_controls(true)
+		-- Keep the confirmed caught state frozen until the owner chooses revive.
 		self:_send()
 	end)
+end
+
+function SoloRound:_revive()
+	if self:_expireEvacuation(os.clock()) then
+		return
+	end
+	if
+		self.phase ~= "caught"
+		or self.captureUntil ~= 0
+		or self.catches ~= 1
+		or self.catches >= self.balance.max_catches
+	then
+		return
+	end
+	local character = self:_livingCharacter()
+	if
+		not character
+		or character ~= self.roundCharacter
+		or not self.world
+		or not self.world:IsValid()
+		or not self.hunt
+		or self.hunt.destroyed
+	then
+		self:_finish("aborted", "corn_loop_result_aborted")
+		return
+	end
+	local now = os.clock()
+	self:_moveToStart(character)
+	self.stamina = Stamina.new(self.balance.stamina_capacity, now)
+	self.protectedUntil = now + self.balance.respawn_protection_sec
+	for _, hunt in self:_hunts() do
+		hunt:ResetHome()
+	end
+	self.huntAt = now
+	self.startedAt = now - self.elapsed
+	self.phase = "active"
+	if self.items then
+		self.items:SetEnabled(true)
+	end
+	self.world:SetInteractionEnabled(true, self.gateOpen)
+	self:_controls(true)
+	self:_send()
 end
 
 function SoloRound:_restoreLighting()
@@ -560,6 +724,7 @@ function SoloRound:_startRound(mode: string)
 	self.epoch += 1
 	self.stamina = Stamina.new(self.balance.stamina_capacity, os.clock())
 	self:_stopHunt()
+	self.evacuationActive, self.evacuationDeadline = false, nil
 	self:_clearInventory()
 	self.catches = 0
 	self.captureFrame = CFrame.identity
@@ -669,10 +834,20 @@ function SoloRound:_startRound(mode: string)
 end
 
 function SoloRound:_menu()
-	if self.phase ~= "escaped" and self.phase ~= "aborted" and self.phase ~= "caught_out" then
+	local afterFirstCapture = self.phase == "caught"
+		and self.captureUntil == 0
+		and self.catches == 1
+	if
+		self.phase ~= "escaped"
+		and self.phase ~= "aborted"
+		and self.phase ~= "caught_out"
+		and not afterFirstCapture
+	then
 		return
 	end
 	self.epoch += 1
+	self:_stopHunt()
+	self.evacuationActive, self.evacuationDeadline = false, nil
 	self.phase = "ready"
 	self:_restoreLighting()
 	self.reward = 0
@@ -711,6 +886,8 @@ function SoloRound:_request(player: Player, action: any, mode: any)
 	end
 	if action == "sync" then
 		self:_send()
+	elseif action == "revive" then
+		self:_revive()
 	elseif
 		(action == "start" and self.phase == "ready")
 		or (
@@ -801,6 +978,7 @@ function SoloRound:_removePlayer(player: Player)
 		return
 	end
 	self.epoch += 1
+	self.evacuationActive, self.evacuationDeadline = false, nil
 	self:_clearKey()
 	self:_clearInventory()
 	if self.characterConnection then
@@ -843,9 +1021,16 @@ function SoloRound:_removePlayer(player: Player)
 end
 
 function SoloRound:_poll(now: number)
+	if self:_expireEvacuation(now) then
+		return
+	end
 	if self.phase ~= "active" then
 		if self.phase == "caught" and self.audio then
-			self.audio:Step(now, self.phase, self.lightingMode, self.hunt)
+			self.audio:Step(now, self.phase, self.lightingMode, self.hunt, self:_hunts())
+		end
+		if self.phase == "caught" and self.evacuationActive and now - self.snapshotAt >= 0.25 then
+			self.snapshotAt = now
+			self:_send()
 		end
 		return
 	end
@@ -871,27 +1056,26 @@ function SoloRound:_poll(now: number)
 	end
 	-- A visit and capture in the same tick both belong to this pre-teleport position.
 	self.minimap:Poll(self.world, root.Position)
-	if self.hunt then
-		local previous = self.hunt:GetPosition()
+	for _, hunt in self:_hunts() do
+		local previous = hunt:GetPosition()
 		if self.items then
-			self.items:CheckTraps(self.hunt, previous, now)
+			self.items:CheckTraps(hunt, previous, now)
 		end
-		local caught, awakened =
-			self.hunt:Step(now - self.huntAt, now, root, now < self.protectedUntil)
-		self.huntAt = now
-		if self.items and self.items:CheckTraps(self.hunt, previous, now) then
+		local caught, awakened = hunt:Step(now - self.huntAt, now, root, now < self.protectedUntil)
+		if self.items and self.items:CheckTraps(hunt, previous, now) then
 			caught = false
 		end
 		if awakened then
 			self.notice = "corn_hunt_awakened"
 		end
 		if caught then
-			self:_caught(root)
+			self:_caught(root, hunt)
 			return
 		end
 	end
+	self.huntAt = now
 	if self.audio then
-		self.audio:Step(now, self.phase, self.lightingMode, self.hunt)
+		self.audio:Step(now, self.phase, self.lightingMode, self:_audioLeader(root), self:_hunts())
 	end
 	if self.gateOpen and self.world:IsInExit(root.Position) then
 		self:_finish("escaped", "")

@@ -9,12 +9,19 @@ local Capture = require(Shared:WaitForChild("CapturePresentation"))
 local Pose = require(Shared:WaitForChild("MonsterPose"))
 local player = Players.LocalPlayer
 local VISUAL_NAME = "CornCaptureVisual"
+local PAINT_NAME = "CornCapturePaint"
 local CAMERA_OWNER = "CornCaptureCameraOwner"
 local BINDING = "CornCaptureCamera"
 local PROJECT = "children_of_corn"
 -- Lift only the decorative shot above nearby corn; server catch geometry stays exact.
 local PRESENTATION_OFFSET = CFrame.new(0, 4, 0)
 local Controller = { Name = "CaptureController", Order = 92 }
+local HEAD_PARTS = { Head = true, Hat = true, LeftEye = true, RightEye = true }
+local PAINT_COLORS = {
+	Color3.fromRGB(30, 218, 197),
+	Color3.fromRGB(250, 211, 53),
+	Color3.fromRGB(154, 87, 230),
+}
 
 function Controller:Init(_context: any)
 	self._state = Capture.NewState()
@@ -24,6 +31,9 @@ function Controller:Init(_context: any)
 	self._round = nil
 	self._visual = nil
 	self._parts = {}
+	self._mouthParts = {}
+	self._paint = nil
+	self._paintDrops = {}
 	self._hiddenServer = {}
 	self._saved = nil
 	self._token = nil
@@ -34,8 +44,11 @@ function Controller:Init(_context: any)
 end
 
 local function knownMonster(model: Instance?): boolean
+	local index = if model then model:GetAttribute("MonsterIndex") else nil
 	return model ~= nil
 		and model:IsA("Model")
+		and (index == 1 or index == 2 or index == 3)
+		and model.Name == (if index == 1 then "Monster" else "Monster" .. index)
 		and model:GetAttribute("CornMonsterOwned") == true
 		and model:GetAttribute("corn_project_id") == PROJECT
 		and model:GetAttribute("MonsterRigVersion") == 1
@@ -46,9 +59,19 @@ function Controller:_hideServerRig()
 	local runtime = if map and map:GetAttribute("corn_project_id") == PROJECT
 		then map:FindFirstChild("CornRoundRuntime")
 		else nil
-	local model = if runtime and runtime:GetAttribute("corn_project_id") == PROJECT
-		then runtime:FindFirstChild("Monster")
-		else nil
+	if
+		not runtime
+		or not runtime:IsA("Folder")
+		or runtime:GetAttribute("corn_project_id") ~= PROJECT
+	then
+		return
+	end
+	for index = 1, 3 do
+		self:_hideRig(runtime:FindFirstChild(if index == 1 then "Monster" else "Monster" .. index))
+	end
+end
+
+function Controller:_hideRig(model: Instance?)
 	if not knownMonster(model) then
 		return
 	end
@@ -72,10 +95,13 @@ function Controller:_hideServerRig()
 	end
 	for _, definition in Pose.Parts do
 		local part = model:FindFirstChild(definition.Name) :: BasePart
-		table.insert(
-			self._hiddenServer,
-			{ part = part, previous = part.LocalTransparencyModifier, model = model }
-		)
+		table.insert(self._hiddenServer, {
+			part = part,
+			previous = part.LocalTransparencyModifier,
+			model = model,
+			index = model:GetAttribute("MonsterIndex"),
+			name = model.Name,
+		})
 		part.LocalTransparencyModifier = 1
 	end
 end
@@ -84,6 +110,8 @@ function Controller:_restoreServerRig()
 	for _, entry in self._hiddenServer do
 		if
 			knownMonster(entry.model)
+			and entry.model.Name == entry.name
+			and entry.model:GetAttribute("MonsterIndex") == entry.index
 			and entry.part.Parent == entry.model
 			and entry.part.LocalTransparencyModifier == 1
 		then
@@ -156,9 +184,114 @@ function Controller:_buildVisual(frame: CFrame): boolean
 	light.Shadows = false
 	light.Color = Color3.fromRGB(255, 206, 154)
 	light.Parent = assert(parts.Head, "Capture face missing")
+	local mouthParts = {}
+	for _, definition in
+		{
+			{
+				name = "OpenMouth",
+				size = Vector3.new(1.85, 1.3, 0.14),
+				color = Color3.fromRGB(9, 7, 5),
+			},
+			{ name = "LowerJaw", size = Vector3.new(2.12, 0.3, 0.28), color = parts.Head.Color },
+			{
+				name = "UpperTeeth",
+				size = Vector3.new(1.6, 0.16, 0.2),
+				color = Color3.fromRGB(238, 229, 201),
+			},
+			{
+				name = "LowerTeeth",
+				size = Vector3.new(1.6, 0.16, 0.2),
+				color = Color3.fromRGB(238, 229, 201),
+			},
+		}
+	do
+		local part = Instance.new("Part")
+		part.Name = definition.name
+		part.Size = definition.size
+		part.Color = definition.color
+		part.Material = Enum.Material.SmoothPlastic
+		part.CFrame = parts.Head.CFrame
+		part.Anchored = true
+		part.CanCollide = false
+		part.CanTouch = false
+		part.CanQuery = false
+		part.CastShadow = false
+		part.Parent = model
+		mouthParts[definition.name] = part
+	end
 	self._visual, self._parts = model, parts
+	self._mouthParts = mouthParts
 	model.Parent = workspace
 	return true
+end
+
+local function paintOwned(item: Instance): boolean
+	return item:GetAttribute("CornCaptureOwned") == true
+		and item:GetAttribute("corn_project_id") == PROJECT
+		and item:GetAttribute("CaptureOverlayVersion") == 1
+end
+
+local function annotatePaint(item: Instance)
+	item:SetAttribute("CornCaptureOwned", true)
+	item:SetAttribute("corn_project_id", PROJECT)
+	item:SetAttribute("CaptureOverlayVersion", 1)
+end
+
+function Controller:_buildPaint()
+	local playerGui = player:FindFirstChildOfClass("PlayerGui")
+	if not playerGui or playerGui:FindFirstChild(PAINT_NAME) then
+		warn("[CaptureController] Paint overlay unavailable; existing GUI preserved")
+		return
+	end
+	local gui = Instance.new("ScreenGui")
+	gui.Name = PAINT_NAME
+	annotatePaint(gui)
+	gui.IgnoreGuiInset = true
+	gui.ResetOnSpawn = false
+	gui.DisplayOrder = 60
+	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	local drops = {}
+	for index, definition in Capture.PaintDrops do
+		local drop = Instance.new("Frame")
+		drop.Name = "PaintDrop" .. index
+		annotatePaint(drop)
+		drop.AnchorPoint = Vector2.new(0.5, 0.5)
+		drop.Position = UDim2.fromScale(definition.x, definition.y)
+		drop.Size = UDim2.fromScale(definition.w, definition.h)
+		drop.Rotation = definition.rotation
+		drop.BackgroundColor3 = PAINT_COLORS[definition.color]
+		drop.BackgroundTransparency = 1
+		drop.BorderSizePixel = 0
+		drop.Active = false
+		drop.Selectable = false
+		drop.Parent = gui
+		local corner = Instance.new("UICorner")
+		annotatePaint(corner)
+		corner.CornerRadius = UDim.new(1, 0)
+		corner.Parent = drop
+		table.insert(drops, drop)
+	end
+	self._paint, self._paintDrops = gui, drops
+	gui.Parent = playerGui
+end
+
+function Controller:_clearPaint()
+	local gui = self._paint
+	self._paint, self._paintDrops = nil, {}
+	if not gui then
+		return
+	end
+	if not paintOwned(gui) then
+		warn("[CaptureController] Changed paint overlay preserved during cleanup")
+		return
+	end
+	-- A foreign insertion must survive even when its temporary owned parent ends.
+	for _, item in gui:GetDescendants() do
+		if not paintOwned(item) and item.Parent and paintOwned(item.Parent) then
+			item.Parent = gui.Parent
+		end
+	end
+	gui:Destroy()
 end
 
 function Controller:_restoreCamera()
@@ -207,6 +340,8 @@ function Controller:Cancel(_reason: string?)
 	local visual = self._visual
 	self._visual = nil
 	self._parts = {}
+	self._mouthParts = {}
+	self:_clearPaint()
 	self:_restoreServerRig()
 	if visual then
 		if
@@ -252,16 +387,36 @@ function Controller:_step(now: number)
 	local elapsed = math.max(0, now - self._state.started)
 	local pose = Pose.Get("capturing", elapsed, false)
 	local frame = self._state.frame * PRESENTATION_OFFSET
+	local headShake = pose.Head * Capture.HeadShake(elapsed) * pose.Head:Inverse()
 	for name, part in self._parts do
-		part.CFrame = frame * pose[name]
+		part.CFrame = frame * (if HEAD_PARTS[name] then headShake * pose[name] else pose[name])
+	end
+	local face = self._parts.Head.CFrame
+	local opening = Capture.MouthOpen(elapsed)
+	local height = 1.3 * opening
+	self._mouthParts.OpenMouth.Size = Vector3.new(1.85, height, 0.14)
+	self._mouthParts.OpenMouth.CFrame = face * CFrame.new(0, -0.15 - height / 2, -1.34)
+	self._mouthParts.LowerJaw.CFrame = face * CFrame.new(0, -0.3 - height, -1.34)
+	self._mouthParts.UpperTeeth.CFrame = face * CFrame.new(0, -0.19, -1.44)
+	self._mouthParts.LowerTeeth.CFrame = face * CFrame.new(0, -0.08 - height, -1.44)
+	local opacity = Capture.PaintOpacity(elapsed)
+	for _, drop in self._paintDrops do
+		if
+			self._paint
+			and paintOwned(self._paint)
+			and drop.Parent == self._paint
+			and paintOwned(drop)
+		then
+			drop.BackgroundTransparency = 1 - opacity
+		end
 	end
 	local progress = Capture.Progress(self._state, now)
 	local eased = progress * progress * (3 - 2 * progress)
 	local head = (frame * pose.Head).Position
-	local distance = 8 - 4.2 * eased
-	local position = head + frame.LookVector * distance + frame.UpVector * 0.15
-	local target = head + frame.LookVector * 1.05
-	camera.CFrame = CFrame.lookAt(position, target, frame.UpVector)
+	local distance = 8 - 5.35 * eased
+	local position = head + frame.LookVector * distance - frame.UpVector * (0.25 * eased)
+	local target = head + frame.LookVector * 1.05 - frame.UpVector * (0.6 * eased)
+	camera.CFrame = CFrame.lookAt(position, target, frame.UpVector) * Capture.CameraShake(elapsed)
 	camera.Focus = CFrame.new(target)
 	camera.FieldOfView = 70 - 8 * eased
 end
@@ -294,6 +449,7 @@ function Controller:_begin(): boolean
 		return false
 	end
 	self:_hideServerRig()
+	self:_buildPaint()
 	self._generation += 1
 	self._token = HttpService:GenerateGUID(false)
 	self._saved = {

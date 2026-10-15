@@ -183,6 +183,9 @@ runtime:SetAttribute("corn_project_id", "children_of_corn")
 parent(runtime, map)
 local monster = node("Model", "Monster")
 monster:SetAttribute("CornMonsterOwned", true)
+monster:SetAttribute("corn_project_id", "children_of_corn")
+monster:SetAttribute("MonsterRigVersion", 1)
+monster:SetAttribute("MonsterIndex", 1)
 monster:SetAttribute("HuntState", "dormant")
 parent(monster, runtime)
 local monsterRoot = node("Part", "Root")
@@ -281,6 +284,76 @@ assert(
 	remoteA.CFrame == originals[remoteA] and remoteB.CFrame == originals[remoteB],
 	"Trapped monster created wind"
 )
+-- Three moving NPCs still contribute only one nearest actor/two plants.
+local function extraRig(index, z)
+	local model = node("Model", "Monster" .. index)
+	model:SetAttribute("CornMonsterOwned", true)
+	model:SetAttribute("corn_project_id", "children_of_corn")
+	model:SetAttribute("MonsterRigVersion", 1)
+	model:SetAttribute("MonsterIndex", index)
+	model:SetAttribute("HuntState", "chase")
+	parent(model, runtime)
+	local root = node("Part", "Root")
+	root.Position = V3.new(0, 3, z)
+	parent(root, model)
+	return model, root
+end
+local secondMonster, secondRoot = extraRig(2, -20)
+local thirdMonster, thirdRoot = extraRig(3, -40)
+local fourthMonster, fourthRoot = extraRig(4, -10)
+local secondA = plant(far, V3.new(-1, 4, -20), "Far_0_-6")
+local secondB = plant(far, V3.new(1, 4, -21), "Far_1_-6")
+local thirdA = plant(far, V3.new(-1, 4, -40), "Far_0_-13")
+local thirdB = plant(far, V3.new(1, 4, -41), "Far_1_-13")
+ticks(1)
+secondRoot.Position += V3.new(0.3, 0, 0)
+thirdRoot.Position += V3.new(0.3, 0, 0)
+fourthRoot.Position += V3.new(0.3, 0, 0)
+local actorFrames = { secondRoot.Position, thirdRoot.Position, fourthRoot.Position }
+ticks(1)
+assert(
+	controller._monsterRoot == secondRoot
+		and secondA.CFrame ~= originals[secondA]
+		and secondB.CFrame ~= originals[secondB],
+	"Nearest moving reinforcement did not animate"
+)
+assert(
+	thirdA.CFrame == originals[thirdA]
+		and thirdB.CFrame == originals[thirdB]
+		and #controller._selected <= 4
+		and controller._lastWrites <= 32,
+	"Three NPCs expanded corn budget"
+)
+assert(
+	secondRoot.Position == actorFrames[1]
+		and thirdRoot.Position == actorFrames[2]
+		and fourthRoot.Position == actorFrames[3],
+	"Wind wrote authoritative roots"
+)
+secondMonster:SetAttribute("HuntState", "trapped")
+thirdRoot.Position += V3.new(0.3, 0, 0)
+ticks(1)
+assert(
+	controller._monsterRoot == thirdRoot and thirdA.CFrame ~= originals[thirdA],
+	"Trapped nearest masked moving farther NPC"
+)
+assert(secondA.CFrame == originals[secondA] and secondB.CFrame == originals[secondB])
+thirdMonster:SetAttribute("corn_project_id", "foreign")
+secondMonster:SetAttribute("HuntState", "chase")
+secondMonster:SetAttribute("MonsterIndex", 3)
+secondRoot.Position += V3.new(0.3, 0, 0)
+thirdRoot.Position += V3.new(0.3, 0, 0)
+ticks(1)
+assert(
+	controller._monsterRoot == nil and thirdA.CFrame == originals[thirdA],
+	"Foreign/index/fourth NPC created wind"
+)
+for _, model in { secondMonster, thirdMonster, fourthMonster } do
+	parent(model, nil)
+end
+for _, part in { secondA, secondB, thirdA, thirdB } do
+	parent(part, nil)
+end
 -- A live stationary player on a stump sees only the monster's local disturbance.
 humanoid.MoveDirection = V3.zero
 playerRoot.Position = V3.new(0, 35, 0)
@@ -414,5 +487,5 @@ assert(controller._map == nil and next(controller._layers) == nil and controller
 restored("Destroy retained motion")
 assert(disconnected == connected, "Signal connections leaked")
 print(
-	"PASS: actual corn controller no ambient wind; 2 front/contact +2 moving monster stalks, all modes, rooted<=3deg, no stationary/dead/trapped/elevated-player wind, stump view,12Hz/5Hz/4plant/32part/256candidate budgets, exact restore, no recurring scans, stream/ownership/Ready/map cleanup and no signal leaks"
+	"PASS: actual corn controller no ambient wind; 2 front/contact +2 nearest moving NPC stalks across3rigs/foreign+index+fourth guards, all modes, rooted<=3deg, no stationary/dead/trapped/elevated-player wind, stump view,12Hz/5Hz/4plant/32part/256candidate budgets, exact restore, no recurring scans, stream/ownership/Ready/map cleanup and no signal leaks"
 )

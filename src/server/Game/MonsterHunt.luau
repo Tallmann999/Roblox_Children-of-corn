@@ -9,18 +9,32 @@ local Pose = require(
 local MonsterHunt = {}
 MonsterHunt.__index = MonsterHunt
 
-function MonsterHunt.new(world: any, balance: any, startedAt: number, targetUserId: number?)
+function MonsterHunt.new(
+	world: any,
+	balance: any,
+	startedAt: number,
+	targetUserId: number?,
+	options: any?
+)
+	options = options or {}
+	local index = options.index or 1
+	assert(index == 1 or index == 2 or index == 3, "Unknown monster index")
+	local modelName = if index == 1 then "Monster" else "Monster" .. index
+	assert(not world.Runtime:FindFirstChild(modelName), "Monster name already occupied")
 	local home = world.Home:FindFirstChild("Body") :: BasePart
 	assert(home and home:IsA("BasePart"), "Scarecrow home body missing")
 	local floor = world.Ground.Position.Y + world.Ground.Size.Y / 2
 	local model = Instance.new("Model")
-	model.Name = "Monster"
+	model.Name = modelName
 	model:SetAttribute("CornMonsterOwned", true)
 	model:SetAttribute("corn_project_id", "children_of_corn")
 	model:SetAttribute("MonsterRigVersion", 1)
+	model:SetAttribute("MonsterIndex", index)
 	model:SetAttribute("HuntState", "dormant")
 	model:SetAttribute("ChaseTargetUserId", 0)
-	local origin = Vector3.new(home.Position.X, floor + 3, home.Position.Z)
+	local at = options.position or home.Position
+	assert(typeof(at) == "Vector3", "Monster spawn position missing")
+	local origin = Vector3.new(at.X, floor + 3, at.Z)
 	local visuals = {}
 	local function part(
 		name: string,
@@ -58,7 +72,7 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number, targetUser
 	model:SetAttribute("MonsterHeightScale", Pose.HeightScale)
 	model.PrimaryPart = root
 	model.Parent = world.Runtime
-	return setmetatable({
+	local self = setmetatable({
 		world = world,
 		balance = balance,
 		startedAt = startedAt,
@@ -68,6 +82,10 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number, targetUser
 		home = origin,
 		state = "dormant",
 		chaseStartedAt = nil,
+		firstChaseUsed = options.immediate == true,
+		detectRadius = balance.monster_detect_radius,
+		firstChaseUntil = nil,
+		reacquireAt = -math.huge,
 		targetUserId = if targetUserId
 				and targetUserId > 0
 				and targetUserId % 1 == 0
@@ -88,6 +106,19 @@ function MonsterHunt.new(world: any, balance: any, startedAt: number, targetUser
 		originalMarker = {},
 		blockedSince = nil,
 	}, MonsterHunt)
+	if options.immediate then
+		for _, visual in visuals do
+			visual.Transparency = 0
+		end
+		self:_state("patrol", startedAt)
+	end
+	return self
+end
+
+function MonsterHunt:SetDetectionMultiplier(multiplier: number)
+	assert(multiplier == 1 or multiplier == 2, "Invalid hunt detection multiplier")
+	self.detectRadius = self.balance.monster_detect_radius * multiplier
+	self.model:SetAttribute("DetectionRadius", self.detectRadius)
 end
 
 function MonsterHunt:_state(state: string, now: number?)
@@ -103,6 +134,10 @@ function MonsterHunt:_state(state: string, now: number?)
 	self.pathAt = -math.huge
 	self.state = state
 	self.chaseStartedAt = if state == "chase" then now or os.clock() else nil
+	if state ~= "chase" then
+		-- Consumption belongs to the round, not a capture, trap or home reset.
+		self.firstChaseUntil = nil
+	end
 	self.model:SetAttribute("HuntState", state)
 	self.model:SetAttribute("ChaseTargetUserId", if state == "chase" then self.targetUserId else 0)
 end
@@ -127,11 +162,13 @@ function MonsterHunt:CanSee(playerRoot: BasePart): boolean
 end
 
 function MonsterHunt:CanCapture(playerRoot: BasePart, now: number?): boolean
+	local at = now or os.clock()
 	if
 		self.destroyed
 		or self.state ~= "chase"
 		or not self.chaseStartedAt
-		or (now or os.clock()) - self.chaseStartedAt < self.balance.monster_chase_windup_sec
+		or at - self.chaseStartedAt < self.balance.monster_chase_windup_sec
+		or (self.firstChaseUntil and at >= self.firstChaseUntil)
 	then
 		return false
 	end
@@ -143,6 +180,28 @@ function MonsterHunt:CanCapture(playerRoot: BasePart, now: number?): boolean
 		return false
 	end
 	return self:CanSee(playerRoot)
+end
+
+function MonsterHunt:_chaseSpeed(playerRoot: BasePart, now: number): number
+	if self.firstChaseUntil then
+		local character = playerRoot.Parent
+		local humanoid = if character then character:FindFirstChildOfClass("Humanoid") else nil
+		local speed = if humanoid then humanoid.WalkSpeed else nil
+		-- SoloRound writes this server value before Step. Never accept a client
+		-- speed argument; invalid values fall back to normal walking. Energy's
+		-- existing multiplier is two, including sprint+energy (18*2 = 36).
+		local maxSpeed = math.max(self.balance.walk_speed, self.balance.sprint_speed) * 2
+		return if typeof(speed) == "number"
+				and speed == speed
+				and speed > 0
+				and speed < math.huge
+			then math.min(speed, maxSpeed)
+			else self.balance.walk_speed
+	end
+	return if self.chaseStartedAt
+			and now - self.chaseStartedAt >= self.balance.monster_chase_windup_sec
+		then self.balance.monster_chase_speed
+		else self.balance.monster_patrol_speed
 end
 
 function MonsterHunt:BeginCapture(playerPosition: Vector3): CFrame
@@ -295,8 +354,29 @@ function MonsterHunt:Step(
 	local delta = playerRoot.Position - self.root.Position
 	local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
 	local canSee = not protected and self:CanSee(playerRoot)
-	if canSee and distance <= self.balance.monster_detect_radius then
+	if self.state == "chase" and self.firstChaseUntil and now >= self.firstChaseUntil then
+		-- The timed loss wins over capture even if the target is still visible
+		-- and close. Transition cancels the old asynchronous route by epoch.
+		self.reacquireAt = now + self.balance.monster_first_chase_reacquire_sec
+		self:_state("patrol")
+		self.goal = nil
+		self.lostSince = nil
+		self.lastSeenPosition = nil
+		self.blockedSince = nil
+	end
+	if
+		canSee
+		and distance <= (self.detectRadius or self.balance.monster_detect_radius)
+		and now >= self.reacquireAt
+	then
+		local newlyDetected = self.state ~= "chase"
 		self:_state("chase", now)
+		if newlyDetected then
+			if not self.firstChaseUsed then
+				self.firstChaseUntil = now + self.balance.monster_first_chase_duration_sec
+			end
+			self.firstChaseUsed = true
+		end
 		self.lostSince = nil
 		self.lastSeenPosition = playerRoot.Position
 	end
@@ -365,9 +445,7 @@ function MonsterHunt:Step(
 	end
 	local direction = target - self.root.Position
 	local speed = if self.state == "chase"
-			and self.chaseStartedAt
-			and now - self.chaseStartedAt >= self.balance.monster_chase_windup_sec
-		then self.balance.monster_chase_speed
+		then self:_chaseSpeed(playerRoot, now)
 		else self.balance.monster_patrol_speed
 	if direction.Magnitude > 0.05 then
 		local step = direction.Unit * math.min(direction.Magnitude, speed * math.clamp(dt, 0, 0.25))

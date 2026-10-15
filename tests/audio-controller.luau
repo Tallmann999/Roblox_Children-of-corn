@@ -195,6 +195,8 @@ for _, object in { map, runtime, monster } do
 end
 monster:SetAttribute("CornMonsterOwned", true)
 monster:SetAttribute("MonsterRigVersion", 1)
+monster:SetAttribute("MonsterIndex", 1)
+monster:SetAttribute("HuntState", "chase")
 monster:SetAttribute("ChaseTargetUserId", 20)
 enemy.Position = roblox.Vector3.new(0, 0, 10)
 local player =
@@ -445,6 +447,56 @@ advance(object, 0.14)
 assert(hunt.IsPlaying and math.abs(hunt.Volume - 0.034) < 1e-8, "Chase did not start quietly")
 advance(object, 1.4)
 assert(hunt.Volume > 0.2 and hunt.Volume <= 0.34 and hunt.plays == 1)
+-- Fixed names/indexes; personal intensity follows the nearest actual chasing target.
+local function extraMonster(index, distance)
+	local previousWrites = gameplayWrites
+	local model, targetRoot = make("Model"), make("Part")
+	model.Name, model.Parent = "Monster" .. index, runtime
+	for name, value in
+		{
+			corn_project_id = "children_of_corn",
+			CornMonsterOwned = true,
+			MonsterRigVersion = 1,
+			MonsterIndex = index,
+			HuntState = "chase",
+			ChaseTargetUserId = 20,
+		}
+	do
+		model:SetAttribute(name, value)
+	end
+	targetRoot.Name, targetRoot.Parent = "Root", model
+	targetRoot._values.Position = roblox.Vector3.new(0, 0, distance)
+	gameplayWrites = previousWrites
+	return model, targetRoot
+end
+local secondMonster, secondEnemy = extraMonster(2, 5)
+local thirdMonster, thirdEnemy = extraMonster(3, 2)
+local fourthMonster = extraMonster(4, 1)
+object._resolveAt = 0
+assert(object:_huntGoal(root, now) == Rules.ChaseIntensity(2) and object._monster == thirdMonster)
+assert(#object._monsters == 3, "Audio resolver accepted fourth NPC")
+thirdMonster._attributes.HuntState = "patrol"
+assert(
+	object:_huntGoal(root, now) == Rules.ChaseIntensity(5) and object._monster == secondMonster,
+	"Nearest nonchasing NPC masked an actual chaser"
+)
+thirdMonster._attributes.HuntState = "chase"
+thirdMonster._attributes.corn_project_id = "foreign"
+secondMonster._attributes.ChaseTargetUserId = 99
+assert(
+	object:_huntGoal(root, now) == Rules.ChaseIntensity(10) and object._monster == monster,
+	"Foreign or other-target NPC affected personal Hunt"
+)
+secondMonster._attributes.ChaseTargetUserId = 20
+secondMonster._attributes.MonsterIndex = 3
+assert(object:_huntGoal(root, now) == Rules.ChaseIntensity(10), "Wrong MonsterIndex accepted")
+local fixtureCleanupWrites = gameplayWrites
+secondMonster:Destroy()
+thirdMonster:Destroy()
+fourthMonster:Destroy()
+gameplayWrites = fixtureCleanupWrites
+object._resolveAt = 0
+object:_resolveMonster(now)
 monster._attributes.ChaseTargetUserId = 99
 local previous = hunt.Volume
 advance(object, 0.25)
@@ -667,5 +719,5 @@ show(empty, 1, 0, "none", "active", "chase")
 advance(empty, 5)
 empty:Destroy()
 print(
-	"PASS: background/own-target-only quiet hunt fades and distance mute; authoritative use first-sync/duplicate/stale/terminal/retry guards; caught/menu/death/reset stop; exact default Running/Climbing existing/late-ID/new-player/late-Root/respawn mute, volume rewrites, unknown duplicates/custom IDs and jump/death/corn preservation, guarded restoration; bounded resolver/all15unique-valid-clips asynchronous preload/missing-ID/failure/8s timeout; transient failure later-loaded recovery without effect history replay/stale failure after loaded; category groups/ownership/foreign preservation; zero gameplay/world/camera writes and cleanup"
+	"PASS: three fixed indexed NPCs/nearest actual own-target/foreign+fourth guards; background/own-target-only quiet hunt fades and distance mute; authoritative use first-sync/duplicate/stale/terminal/retry guards; caught/menu/death/reset stop; exact default Running/Climbing existing/late-ID/new-player/late-Root/respawn mute, volume rewrites, unknown duplicates/custom IDs and jump/death/corn preservation, guarded restoration; bounded resolver/all15unique-valid-clips asynchronous preload/missing-ID/failure/8s timeout; transient failure later-loaded recovery without effect history replay/stale failure after loaded; category groups/ownership/foreign preservation; zero gameplay/world/camera writes and cleanup"
 )

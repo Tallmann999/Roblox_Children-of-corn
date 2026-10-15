@@ -1,0 +1,7 @@
+{
+  "chunk_id": "b7b1b9",
+  "wall_time_seconds": 9.629142,
+  "exit_code": 0,
+  "original_token_count": 171,
+  "output": "ERROR: There was an error generating a new Roblox standard library: error when getting API dump\nUsing the cached one instead.\nResults:\n0 errors\n0 warnings\n0 parse errors\nBuilding project 'ChildrenOfCorn'\nBuilt project to code-foundation.rbxlx\nCreated sourcemap at build/sourcemap.json\nPASS: formatting, lint, code-only build, sourcemap, safe mappings and disabled persistence.\r\nStudio connection, Output and Play Test still require a live Studio session.\r\n{\"built\": \"D:\\\\ROBLOX\\\\My_Projects\\\\Roblox_Children of Corn\\\\scripts\\\\install-readability.luau\", \"sources\": 75, \"new_sources\": 0, \"baseline_sources\": 75, \"bytes\": 440504, \"compact_sha256_guards\": true, \"scene_written\": false}\r\n"
+}

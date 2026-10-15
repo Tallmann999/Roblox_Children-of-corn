@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"alwaysOnTop\":true,\"off\":9,\"on\":13,\"position\":\"0, 39.399986267089844, 419.70001220703125\",\"scope\":\"Actual production controller during active hard round; GPU not inferred\",\"samples\":{\"22\":{\"enabled\":true,\"time\":2.2988725999966848,\"ltm\":0},\"21\":{\"enabled\":true,\"time\":2.1827874000009617,\"ltm\":0},\"20\":{\"enabled\":true,\"time\":2.0660385000010139,\"ltm\":0},\"19\":{\"enabled\":false,\"time\":1.9491305999981706,\"ltm\":1},\"18\":{\"enabled\":false,\"time\":1.8490896000002977,\"ltm\":1},\"9\":{\"enabled\":true,\"time\":0.8648688999965088,\"ltm\":0},\"1\":{\"enabled\":false,\"time\":4.999965312890708e-7,\"ltm\":1},\"15\":{\"enabled\":false,\"time\":1.515472500002943,\"ltm\":1},\"3\":{\"enabled\":false,\"time\":0.23204049999912969,\"ltm\":1},\"2\":{\"enabled\":false,\"time\":0.11593130000255769,\"ltm\":1},\"5\":{\"enabled\":true,\"time\":0.4479194000014104,\"ltm\":0},\"4\":{\"enabled\":false,\"time\":0.3334515000024112,\"ltm\":1},\"7\":{\"enabled\":true,\"time\":0.6496010999981081,\"ltm\":0},\"6\":{\"enabled\":true,\"time\":0.5492754000006244,\"ltm\":0},\"14\":{\"enabled\":true,\"time\":1.4151228999980959,\"ltm\":0},\"8\":{\"enabled\":true,\"time\":0.7497918000008212,\"ltm\":0},\"16\":{\"enabled\":false,\"time\":1.6168039999975009,\"ltm\":1},\"17\":{\"enabled\":false,\"time\":1.7320995999980369,\"ltm\":1},\"13\":{\"enabled\":true,\"time\":1.2998469000012847,\"ltm\":0},\"12\":{\"enabled\":true,\"time\":1.182324699999299,\"ltm\":0},\"11\":{\"enabled\":true,\"time\":1.0814026000007289,\"ltm\":0},\"10\":{\"enabled\":true,\"time\":0.9665431000030367,\"ltm\":0}},\"passed\":true,\"dimensions\":\"36, 9.600000381469727, 0.9000000357627869\"}"
+    }
+  ],
+  "isError": false
+}

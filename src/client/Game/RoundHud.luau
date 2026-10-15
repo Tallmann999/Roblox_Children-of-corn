@@ -2,13 +2,12 @@
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local GuiService = game:GetService("GuiService")
+local RunService = game:GetService("RunService")
 local RoundText: { [string]: string } = require(
 	ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("Game"):WaitForChild("RoundText")
 )
 
 local LightingModes = require(ReplicatedStorage.GameShared.Game.LightingModes)
-
-local ModePreviewImages = require(ReplicatedStorage.GameShared.Game.ModePreviewImages)
 
 local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometry)
 local Balance = require(ReplicatedStorage.GameShared.Game.Balance)
@@ -26,6 +25,7 @@ export type Snapshot = {
 	phase: string,
 	has_key: boolean,
 	gate_open: boolean,
+	evacuation: { active: boolean, remaining: number, duration: number }?,
 	session_diamonds: number,
 	reward_diamonds: number,
 	elapsed_sec: number,
@@ -129,22 +129,6 @@ local function panel(parent: Instance, name: string, size: UDim2, position: UDim
 	return result
 end
 
-local function modePreview(parent: Instance, mode: string)
-	local photo = Instance.new("ImageLabel")
-	photo.Name = "LightingPreview"
-	photo.Size = UDim2.new(1, -20, 0, 128)
-	photo.Position = UDim2.fromOffset(10, 10)
-	photo.BackgroundColor3 = PANEL_COLOR
-	photo.BorderSizePixel = 0
-	photo.Image = ModePreviewImages[mode]
-	photo.ScaleType = Enum.ScaleType.Crop
-	photo.ClipsDescendants = true
-	photo.Parent = parent
-	local corner = Instance.new("UICorner")
-	corner.CornerRadius = UDim.new(0, 5)
-	corner.Parent = photo
-end
-
 function RoundHud.new(playerGui: PlayerGui)
 	local root = Instance.new("ScreenGui")
 	root.Name = "CornRoundHud"
@@ -152,6 +136,19 @@ function RoundHud.new(playerGui: PlayerGui)
 	root.DisplayOrder = 10
 	root.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	root.Parent = playerGui
+	local evacuation = panel(root, "Evacuation", UDim2.fromOffset(180, 66), UDim2.new(0.5, 0, 0, 8))
+	evacuation.AnchorPoint = Vector2.new(0.5, 0)
+	evacuation.Active = false
+	evacuation.Visible = false
+	local evacuationTitle =
+		label(evacuation, "Title", UDim2.new(1, -8, 0, 17), UDim2.fromOffset(4, 2), 13)
+	evacuationTitle.Text = text("corn_evacuation_title")
+	evacuationTitle.TextXAlignment = Enum.TextXAlignment.Center
+	local evacuationClock =
+		label(evacuation, "Clock", UDim2.new(1, -8, 0, 43), UDim2.fromOffset(4, 20), 36)
+	evacuationClock.Font = Enum.Font.GothamBold
+	evacuationClock.TextXAlignment = Enum.TextXAlignment.Center
+	evacuationClock.TextColor3 = CHASE_COLOR
 
 	local card = panel(root, "RoundCard", UDim2.fromOffset(460, 320), UDim2.fromScale(0.5, 0.5))
 	card.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -195,50 +192,34 @@ function RoundHud.new(playerGui: PlayerGui)
 		UDim2.new(1, -48, 0, 44),
 		UDim2.fromOffset(24, 250)
 	)
-
-	local modeCards = Instance.new("Frame")
-	modeCards.Name = "ModeCards"
-	modeCards.BackgroundTransparency = 1
-	modeCards.Size = UDim2.new(1, -48, 0, 254)
-	modeCards.Position = UDim2.fromOffset(24, 142)
-	modeCards.Parent = card
-	local choose =
-		label(card, "ChooseMode", UDim2.new(1, -48, 0, 24), UDim2.fromOffset(24, 110), 16)
-	choose.TextColor3 = MUTED_COLOR
-	local modeHint =
-		label(card, "ModeHint", UDim2.new(1, -48, 0, 24), UDim2.fromOffset(24, 406), 15)
-	modeHint.TextColor3 = MUTED_COLOR
-	local modeButtons, modeStrokes = {}, {}
-	for index, mode in LightingModes.Order do
-		local option = panel(
-			modeCards,
-			mode,
-			UDim2.new(1 / 3, -8, 1, 0),
-			UDim2.new((index - 1) / 3, (index - 1) * 4, 0, 0)
-		)
-		option.BackgroundColor3 = Color3.fromRGB(38, 45, 38)
-		local stroke = Instance.new("UIStroke")
-		stroke.Thickness = 2
-		stroke.Parent = option
-		modeStrokes[mode] = stroke
-		modePreview(option, mode)
-		local name = label(option, "Name", UDim2.new(1, -20, 0, 28), UDim2.fromOffset(10, 144), 21)
-		name.Font = Enum.Font.GothamBold
-		name.Text = text("corn_modes_" .. mode)
-		local description =
-			label(option, "Description", UDim2.new(1, -20, 0, 30), UDim2.fromOffset(10, 176), 15)
-		description.TextColor3 = MUTED_COLOR
-		description.Text = text("corn_modes_" .. mode .. "_desc")
-		local select = button(
-			option,
-			"Select",
-			"corn_modes_select",
-			UDim2.new(1, -20, 0, 32),
-			UDim2.fromOffset(10, 212)
-		)
-		select.Modal = true
-		modeButtons[mode] = select
-	end
+	local captureChoices =
+		panel(root, "CaptureChoices", UDim2.fromOffset(380, 244), UDim2.fromScale(0.5, 0.5))
+	captureChoices.AnchorPoint = Vector2.new(0.5, 0.5)
+	local captureScale = Instance.new("UIScale")
+	captureScale.Parent = captureChoices
+	local captureTitle =
+		label(captureChoices, "Title", UDim2.new(1, -40, 0, 34), UDim2.fromOffset(20, 16), 25)
+	captureTitle.Font = Enum.Font.GothamBold
+	captureTitle.Text = text("corn_hunt_defeat")
+	local captureMessage =
+		label(captureChoices, "Message", UDim2.new(1, -40, 0, 48), UDim2.fromOffset(20, 56), 17)
+	captureMessage.TextColor3 = MUTED_COLOR
+	local captureRevive = button(
+		captureChoices,
+		"Revive",
+		"corn_capture_revive",
+		UDim2.new(1, -40, 0, 44),
+		UDim2.fromOffset(20, 118)
+	)
+	local captureExit = button(
+		captureChoices,
+		"Exit",
+		"corn_capture_exit",
+		UDim2.new(1, -40, 0, 44),
+		UDim2.fromOffset(20, 178)
+	)
+	captureRevive.SelectionOrder, captureExit.SelectionOrder = 0, 1
+	captureRevive.NextSelectionDown, captureExit.NextSelectionUp = captureExit, captureRevive
 
 	local active = panel(root, "ActiveStatus", UDim2.new(0.64, 0, 0, 128), UDim2.fromOffset(20, 16))
 	local activeConstraint = Instance.new("UISizeConstraint")
@@ -310,10 +291,6 @@ function RoundHud.new(playerGui: PlayerGui)
 	introMessage.Text = text("corn_loop_intro_objective")
 	introMessage.Font = Enum.Font.GothamBold
 	introMessage.TextXAlignment = Enum.TextXAlignment.Center
-	local introMode =
-		label(introPanel, "Mode", UDim2.new(1, -32, 0, 28), UDim2.fromOffset(16, 244), 17)
-	introMode.TextColor3 = MUTED_COLOR
-	introMode.TextXAlignment = Enum.TextXAlignment.Center
 	local introConfirm = button(
 		introPanel,
 		"Confirm",
@@ -336,13 +313,6 @@ function RoundHud.new(playerGui: PlayerGui)
 		_root = root,
 		_card = card,
 		_cardScale = cardScale,
-		_modeCards = modeCards,
-		_chooseMode = choose,
-		_modeHint = modeHint,
-		_modeButtons = modeButtons,
-		_modeStrokes = modeStrokes,
-		_selectedMode = LightingModes.Default,
-		_lastPhase = "loading",
 		_title = title,
 		_message = message,
 		_time = resultTime,
@@ -364,7 +334,6 @@ function RoundHud.new(playerGui: PlayerGui)
 		_introRoot = introRoot,
 		_introPanel = introPanel,
 		_introMessage = introMessage,
-		_introMode = introMode,
 		_introConfirm = introConfirm,
 		_introBack = introBack,
 		_introPending = nil,
@@ -378,25 +347,19 @@ function RoundHud.new(playerGui: PlayerGui)
 		_snapshot = nil :: Snapshot?,
 		_busy = false,
 		_captureActive = false,
+		_captureChoices = captureChoices,
+		_captureScale = captureScale,
+		_captureMessage = captureMessage,
+		_captureTitle = captureTitle,
+		_evacuation = evacuation,
+		_evacuationClock = evacuationClock,
+		_evacuationUntil = nil,
+		_captureRevive = captureRevive,
+		_captureExit = captureExit,
+		_captureChoicesVisible = false,
+		_captureSavedSelection = nil,
 		_unavailable = false,
 	}, RoundHud)
-	for mode, select in modeButtons do
-		table.insert(
-			self._connections,
-			select.Activated:Connect(function()
-				if
-					not self._busy
-					and not self._unavailable
-					and not self._introPending
-					and not self._destroyed
-					and self._snapshot
-				then
-					self._selectedMode = mode
-					self:_render()
-				end
-			end)
-		)
-	end
 	table.insert(
 		self._connections,
 		root:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
@@ -411,7 +374,40 @@ function RoundHud.new(playerGui: PlayerGui)
 		end)
 	)
 	self:_render()
+	if RunService and RunService.RenderStepped then
+		local elapsed = 0
+		table.insert(
+			self._connections,
+			RunService.RenderStepped:Connect(function(dt)
+				elapsed += dt
+				if elapsed >= 0.1 then
+					elapsed = 0
+					self:_stepEvacuation(os.clock())
+				end
+			end)
+		)
+	end
 	return self
+end
+
+function RoundHud:_stepEvacuation(now: number)
+	if self._destroyed then
+		return
+	end
+	local snapshot = self._snapshot
+	local state = snapshot and snapshot.evacuation
+	local visible = not self._unavailable
+		and state
+		and state.active
+		and (snapshot.phase == "active" or snapshot.phase == "caught")
+	self._evacuation.Visible = visible == true
+	if not visible then
+		return
+	end
+	local remaining = math.max(0, (self._evacuationUntil or now) - now)
+	self._evacuationClock.Text = elapsedText(math.ceil(remaining))
+	self._evacuationClock.TextTransparency = 0.08
+		+ 0.25 * (0.5 + 0.5 * math.sin(now * math.pi * 1.5))
 end
 
 function RoundHud:_fitCard()
@@ -440,7 +436,6 @@ function RoundHud:_fitOverlays()
 		self._introMessage.Size = UDim2.new(1, -32, 0, bodyHeight)
 		self._introMessage.TextSize =
 			math.min(if width < 390 then 24 else 32, math.max(18, bodyHeight / 3))
-		self._introMode.Position = UDim2.fromOffset(16, height - 146)
 		self._introConfirm.Position = UDim2.fromOffset(16, height - 112)
 		self._introBack.Position = UDim2.fromOffset(16, height - 54)
 	end
@@ -451,6 +446,58 @@ function RoundHud:_fitOverlays()
 		self._waking.Position =
 			UDim2.new(0.5, 0, 0, math.max(0, math.min(150, hudViewport.Y - 144)))
 		self._wakingMessage.TextSize = if width < 390 then 17 else 21
+		self._captureScale.Scale =
+			math.min(1, (hudViewport.X - 36) / 380, (hudViewport.Y - 36) / 244)
+	end
+end
+
+function RoundHud:_captureReady(): boolean
+	local snapshot = self._snapshot
+	return snapshot ~= nil
+		and snapshot.capture ~= nil
+		and snapshot.capture.remaining == 0
+		and (
+			snapshot.phase == "caught_out"
+			or (snapshot.phase == "caught" and snapshot.catches_remaining == 1)
+		)
+end
+
+function RoundHud:_captureChoicesVisibility(visible: boolean)
+	self._captureChoices.Visible = visible
+	if visible == self._captureChoicesVisible then
+		return
+	end
+	self._captureChoicesVisible = visible
+	if visible then
+		self._captureSavedSelection = GuiService.SelectedObject
+		GuiService.SelectedObject = self._captureRevive
+	elseif
+		GuiService.SelectedObject == self._captureRevive
+		or GuiService.SelectedObject == self._captureExit
+	then
+		local saved = self._captureSavedSelection
+		GuiService.SelectedObject = if saved and saved.Parent and saved.Visible then saved else nil
+	end
+	if not visible then
+		self._captureSavedSelection = nil
+	end
+end
+
+function RoundHud:ChooseCapture(action: string)
+	if
+		not self:_canAct()
+		or not self:_captureReady()
+		or self._captureActive
+		or self._introPending
+		or not self._onAction
+	then
+		return
+	end
+	if action == "revive" and self._snapshot.phase == "caught_out" then
+		self:ShowObjective("retry")
+	elseif action == "revive" or action == "menu" then
+		self:SetBusy(true)
+		self._onAction(action, nil)
 	end
 end
 
@@ -468,6 +515,7 @@ function RoundHud:_introValid(): boolean
 		and snapshot.phase == pending.phase
 		and snapshot.minimap.round_id == pending.roundId
 		and LightingModes.IsValid(pending.mode)
+		and (pending.phase ~= "caught_out" or self:_captureReady())
 end
 
 function RoundHud:_introVisibility(visible: boolean)
@@ -505,12 +553,12 @@ function RoundHud:ShowObjective(action: string)
 				or snapshot.phase == "caught_out"
 			)
 		)
-	if not allowed or not LightingModes.IsValid(self._selectedMode) then
+	if not allowed or (snapshot.phase == "caught_out" and not self:_captureReady()) then
 		return
 	end
 	self._introPending = {
 		action = action,
-		mode = self._selectedMode,
+		mode = LightingModes.Default,
 		phase = snapshot.phase,
 		roundId = snapshot.minimap.round_id,
 	}
@@ -554,13 +602,33 @@ function RoundHud:SetOnAction(callback: (string, string?) -> ())
 		table.insert(
 			self._connections,
 			binding.button.Activated:Connect(function()
-				if self:_canAct() and not self._introPending and self._onAction then
+				if
+					self:_canAct()
+					and binding.button.Visible
+					and binding.button.Active
+					and not self._captureActive
+					and not self._introPending
+					and self._onAction
+				then
 					if binding.action == "start" or binding.action == "retry" then
 						self:ShowObjective(binding.action)
 					else
 						self._onAction(binding.action, nil)
 					end
 				end
+			end)
+		)
+	end
+	for _, binding in
+		{
+			{ button = self._captureRevive, action = "revive" },
+			{ button = self._captureExit, action = "menu" },
+		}
+	do
+		table.insert(
+			self._connections,
+			binding.button.Activated:Connect(function()
+				self:ChooseCapture(binding.action)
 			end)
 		)
 	end
@@ -581,6 +649,7 @@ function RoundHud:SetOnAction(callback: (string, string?) -> ())
 end
 
 function RoundHud:_render()
+	self:_stepEvacuation(os.clock())
 	if self._destroyed then
 		return
 	end
@@ -592,79 +661,59 @@ function RoundHud:_render()
 	local phase = if snapshot then snapshot.phase else "loading"
 	local isActive = phase == "active"
 	local isResult = phase == "escaped" or phase == "aborted" or phase == "caught_out"
-	local expanded = phase == "ready" or isResult
-	self._card.Size = if expanded then UDim2.fromOffset(780, 530) else UDim2.fromOffset(460, 320)
-	self._modeCards.Visible = expanded
-	self._chooseMode.Visible = expanded
-	self._modeHint.Visible = expanded
-	self._chooseMode.Text =
-		text("corn_modes_selected", { mode = text("corn_modes_" .. self._selectedMode) })
-	self._modeHint.Text = text("corn_modes_hint")
-	self._message.Position = UDim2.fromOffset(24, if expanded then 62 else 68)
-	self._message.Size = UDim2.new(1, -48, 0, if expanded then 32 else 52)
-	self._time.Position = UDim2.fromOffset(24, if expanded then 96 else 124)
-	self._time.Visible = not expanded or isResult
-	self._time.Size = UDim2.new(1, -48, 0, if expanded then 22 else 26)
-	self._chooseMode.Position = UDim2.fromOffset(24, if isResult then 118 else 110)
-	self._balance.Position = UDim2.fromOffset(24, if expanded then 440 else 154)
-	self._notice.Position = UDim2.fromOffset(24, if expanded then 392 else 186)
-	self._notice.Visible = not expanded
-	for _, control in { self._start, self._retry, self._menu, self._preparingLeave } do
-		control.Position = UDim2.new(
-			control.Position.X.Scale,
-			control.Position.X.Offset,
-			0,
-			if expanded then 476 else 250
-		)
-	end
-	for mode, control in self._modeButtons do
-		local enabled = expanded
+	local capturePhase = phase == "caught" or phase == "caught_out"
+	local captureChoices = self:_captureReady()
+		and not self._captureActive
+		and not self._unavailable
+		and not intro
+	self._time.Visible = isResult
+	self:_fitCard()
+	self._card.Visible = not intro
+		and not self._captureActive
+		and (self._unavailable or (not isActive and not capturePhase))
+	self._active.Visible = isActive
+	self._activeLeave.Visible = isActive
+	self._start.Visible = phase == "ready" or phase == "loading"
+	self._retry.Visible = isResult and not capturePhase
+	self._menu.Visible = isResult and not capturePhase
+	self._preparingLeave.Visible = phase == "preparing"
+	for _, control in self._buttons do
+		local enabled = control.Visible
 			and snapshot ~= nil
 			and not self._busy
 			and not self._unavailable
 			and not intro
-		control.Active = enabled
-		control.AutoButtonColor = enabled
-		local selected = mode == self._selectedMode
-		control.Text = text(if selected then "corn_modes_selected_button" else "corn_modes_select")
-		control.BackgroundColor3 = if enabled
-			then (if selected then BUTTON_COLOR else DISABLED_COLOR)
-			else DISABLED_COLOR
-		self._modeStrokes[mode].Color = if selected
-			then Color3.fromRGB(204, 190, 114)
-			else Color3.fromRGB(61, 71, 60)
-		self._modeStrokes[mode].Transparency = if selected then 0 else 0.6
-	end
-	self:_fitCard()
-	self._card.Visible = not intro
-		and not isActive
-		and not (phase == "caught" and self._captureActive)
-	self._active.Visible = isActive
-	self._activeLeave.Visible = isActive
-	self._start.Visible = phase == "ready" or phase == "loading"
-	self._retry.Visible = isResult
-	self._menu.Visible = isResult
-	self._preparingLeave.Visible = phase == "preparing" or phase == "caught"
-	for _, control in self._buttons do
-		local enabled = snapshot ~= nil and not self._busy and not self._unavailable and not intro
+			and not self._captureActive
 		control.Active = enabled
 		control.AutoButtonColor = enabled
 		control.BackgroundColor3 = if enabled then BUTTON_COLOR else DISABLED_COLOR
 		control.TextTransparency = if enabled then 0 else 0.35
 	end
+	for _, control in { self._captureRevive, self._captureExit } do
+		control.Active = captureChoices and self:_canAct()
+		control.AutoButtonColor = control.Active
+		control.BackgroundColor3 = if control.Active then BUTTON_COLOR else DISABLED_COLOR
+		control.Modal = captureChoices
+	end
+	local expired = snapshot and snapshot.notice == "corn_evacuation_expired"
+	self._captureTitle.Text = if expired then "Время вышло" else text("corn_hunt_defeat")
+	self._captureMessage.Text = text(
+		if expired
+			then "corn_evacuation_expired"
+			elseif phase == "caught_out" then "corn_capture_retry"
+			else "corn_capture_continue"
+	)
+	self._introBack.Text = text(
+		if self._introPending and self._introPending.phase == "caught_out"
+			then "corn_capture_back"
+			else "corn_loop_intro_back"
+	)
 	for _, control in { self._introConfirm, self._introBack } do
 		control.Active = intro and self:_canAct()
 		control.AutoButtonColor = control.Active
 		control.BackgroundColor3 = if control.Active then BUTTON_COLOR else DISABLED_COLOR
 		control.Modal = intro
 	end
-	if self._introPending then
-		self._introMode.Text =
-			text("corn_modes_selected", { mode = text("corn_modes_" .. self._introPending.mode) })
-	else
-		self._introMode.Text = ""
-	end
-
 	self._title.Text = text("corn_loop_title")
 	self._time.Text = ""
 	self._notice.Text = if snapshot then text(snapshot.notice) else ""
@@ -680,7 +729,7 @@ function RoundHud:_render()
 			then text(snapshot and snapshot.notice or "corn_hunt_first_catch")
 			else text("corn_loop_loading")
 	elseif phase == "ready" then
-		self._message.Text = text("corn_modes_choose")
+		self._message.Text = text("corn_loop_objective_search")
 	elseif snapshot and isResult then
 		self._title.Text = text(
 			if phase == "escaped"
@@ -704,13 +753,8 @@ function RoundHud:_render()
 			elseif snapshot.has_key then "corn_loop_objective_return"
 			else "corn_loop_objective_search"
 		self._objective.Text = text(objectiveKey)
-		self._activeTime.Text = text(
-			"corn_loop_round_time",
-			{ time = elapsedText(snapshot.elapsed_sec) }
-		) .. " · " .. text(
-			"corn_modes_active",
-			{ mode = text("corn_modes_" .. snapshot.lighting_mode) }
-		)
+		self._activeTime.Text =
+			text("corn_loop_round_time", { time = elapsedText(snapshot.elapsed_sec) })
 		self._activeBalance.Text = self._balance.Text
 		local chasing = snapshot.protection_sec <= 0 and snapshot.monster_state == "chase"
 		self._activeNotice.Text = if snapshot.protection_sec > 0
@@ -741,15 +785,20 @@ function RoundHud:_render()
 		then text("corn_hunt_waking_seconds", { seconds = remaining })
 		else ""
 	self:_fitOverlays()
-	self:_introVisibility(intro)
+	if intro then
+		self:_captureChoicesVisibility(false)
+		self:_introVisibility(true)
+	else
+		self:_introVisibility(false)
+		self:_captureChoicesVisibility(captureChoices)
+	end
 end
 
 function RoundHud:Render(snapshot: Snapshot)
+	self._evacuationUntil = if snapshot.evacuation and snapshot.evacuation.active
+		then os.clock() + snapshot.evacuation.remaining
+		else nil
 	self._unavailable = false
-	if snapshot.phase ~= self._lastPhase and snapshot.phase ~= "ready" then
-		self._selectedMode = snapshot.lighting_mode
-	end
-	self._lastPhase = snapshot.phase
 	self._snapshot = snapshot
 	self:_render()
 end
@@ -772,6 +821,13 @@ end
 function RoundHud:Destroy()
 	self._introPending = nil
 	self:_introVisibility(false)
+	self:_captureChoicesVisibility(false)
+	if
+		GuiService.SelectedObject == self._captureRevive
+		or GuiService.SelectedObject == self._captureExit
+	then
+		GuiService.SelectedObject = nil
+	end
 	self._destroyed = true
 	self._snapshot, self._onAction = nil, nil
 	for _, connection in self._connections do

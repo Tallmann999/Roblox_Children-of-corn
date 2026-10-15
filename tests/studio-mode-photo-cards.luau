@@ -1,37 +1,26 @@
--- Verified Studio Client only. Actual current GUI/assets; controlled phase/choice
--- states and simulated usable viewport inputs. No game/world/camera mutations.
+-- Client only: historical filename now verifies the removed chooser in the real GUI.
+-- Controlled confirmed snapshots and local callbacks; no remotes, world or camera writes.
 local Players = game:GetService("Players")
-local ContentProvider = game:GetService("ContentProvider")
-local player = Players.LocalPlayer
+local GuiService = game:GetService("GuiService")
+local player = assert(Players.LocalPlayer, "Client context required")
 local shared = game.ReplicatedStorage.GameShared.Game
-local Images = require(shared.ModePreviewImages)
 local Modes = require(shared.LightingModes)
-local Text = require(shared.RoundText)
-local RoundHud = require(player.PlayerScripts.GameClient.Game.RoundHud)
-local function expect(condition: any, message: string?)
-	assert(condition, message or "Photo-card state/style/layout assertion failed; see caller line")
+local Hud = require(player.PlayerScripts.GameClient.Game.RoundHud)
+local savedFocus = GuiService.SelectedObject
+local hud = Hud.new(player.PlayerGui)
+hud._root.Name, hud._introRoot.Name = "NightOnlyAcceptance", "NightOnlyIntroAcceptance"
+local checks, calls = {}, {}
+local function expect(condition, message)
+	assert(condition, message or "Actual night-only GUI fixture failed")
 end
-local seen = {}
-for _, mode in Modes.Order do
-	local uri = Images[mode]
-	expect(
-		type(uri) == "string" and uri:match("^rbxassetid://[1-9]%d*$"),
-		"Photo URI empty/invalid for " .. mode
-	)
-	expect(not seen[uri], "Photo URI reused across modes: " .. mode)
-	seen[uri] = true
-end
-local hud = RoundHud.new(player.PlayerGui)
-local actualRoot = hud._root
-actualRoot.Name = "ModePhotoAcceptance"
 local base = {
-	lighting_mode = "medium",
+	lighting_mode = "hard",
 	phase = "ready",
 	has_key = false,
 	gate_open = false,
 	session_diamonds = 0,
 	reward_diamonds = 0,
-	elapsed_sec = 16,
+	elapsed_sec = 15,
 	notice = "",
 	stamina = 100,
 	stamina_capacity = 100,
@@ -42,221 +31,126 @@ local base = {
 	monster_state = "patrol",
 	protection_sec = 0,
 	minimap = { round_id = 1, visited = {}, deaths = {} },
+	capture = { id = 0, remaining = 0, frame = CFrame.identity },
+	inventory = {
+		slots = { "empty", "empty", "empty", "empty", "empty" },
+		selected = 1,
+		energy_remaining = 0,
+		use = { id = 0, kind = "none" },
+	},
 }
-local checks = {}
 local function render(phase)
-	local snapshot = table.clone(base)
-	snapshot.phase = phase
-	if phase == "escaped" then
-		snapshot.reward_diamonds = 10
+	local value = table.clone(base)
+	value.phase = phase
+	if phase == "caught_out" then
+		value.catches_remaining = 0
+		value.capture = { id = 2, remaining = 0, frame = CFrame.identity }
 	end
-	hud:Render(snapshot)
+	hud:Render(value)
 end
-local function localRect(item, parentWidth, parentHeight)
-	local width = item.Size.X.Scale * parentWidth + item.Size.X.Offset
-	local height = item.Size.Y.Scale * parentHeight + item.Size.Y.Offset
-	return {
-		x = item.Position.X.Scale * parentWidth
-			+ item.Position.X.Offset
-			- item.AnchorPoint.X * width,
-		y = item.Position.Y.Scale * parentHeight
-			+ item.Position.Y.Offset
-			- item.AnchorPoint.Y * height,
-		w = width,
-		h = height,
-	}
-end
-local function inside(item, width, height)
-	local a = localRect(item, width, height)
+local function inside(item, parent)
+	local a, b = item.AbsolutePosition, parent.AbsolutePosition
+	local size, outer = item.AbsoluteSize, parent.AbsoluteSize
 	expect(
-		a.x >= -0.01 and a.y >= -0.01 and a.x + a.w <= width + 0.01 and a.y + a.h <= height + 0.01,
-		item.Name .. " exceeds parent layout bounds"
-	)
-	return a
-end
-local function noOverlap(a, b, name)
-	expect(
-		a.x + a.w <= b.x + 0.01
-			or b.x + b.w <= a.x + 0.01
-			or a.y + a.h <= b.y + 0.01
-			or b.y + b.h <= a.y + 0.01,
-		"Overlap: " .. name
+		a.X >= b.X - 1
+			and a.Y >= b.Y - 1
+			and a.X + size.X <= b.X + outer.X + 1
+			and a.Y + size.Y <= b.Y + outer.Y + 1,
+		item.Name .. " viewport overflow"
 	)
 end
+local function noModes()
+	expect(
+		hud._modeCards == nil and hud._modeButtons == nil and hud._introMode == nil,
+		"Removed mode state remains"
+	)
+	for _, root in { hud._root, hud._introRoot } do
+		for _, item in root:GetDescendants() do
+			expect(
+				not item:IsA("ImageLabel")
+					and not item:IsA("ViewportFrame")
+					and not item:IsA("WorldModel"),
+				"Mode imagery remains"
+			)
+			expect(
+				item.Name ~= "ModeCards" and item.Name ~= "ChooseMode" and item.Name ~= "ModeHint",
+				"Mode selection node remains"
+			)
+			if item:IsA("TextLabel") or item:IsA("TextButton") then
+				expect(
+					not item.Text:find("сложност", 1, true)
+						and not item.Text:find("Режим:", 1, true)
+						and not item.Text:find("Выбрано:", 1, true),
+					"Mode label remains"
+				)
+			end
+		end
+	end
+end
+hud:SetOnAction(function(action, mode)
+	table.insert(calls, { action = action, mode = mode })
+end)
 local ok, problem = pcall(function()
-	local failed = {}
-	local photoLabels = {}
-	for _, mode in Modes.Order do
-		table.insert(photoLabels, hud._modeCards[mode].LightingPreview)
-	end
-	-- Instance content supplies ImageLabel's asset type to the engine loader.
-	-- Bare URI preloading failed while these actual image objects succeeded.
-	ContentProvider:PreloadAsync(photoLabels, function(uri, status)
-		if status ~= Enum.AssetFetchStatus.Success then
-			table.insert(failed, uri .. "/" .. status.Name)
-		end
-	end)
-	expect(#failed == 0, "Photo fetch failed: " .. table.concat(failed, ", "))
-	render("ready")
-	local deadline = os.clock() + 10
-	repeat
-		local loaded = true
-		for _, label in photoLabels do
-			loaded = loaded and label.IsLoaded
-		end
-		if loaded then
-			break
-		end
-		task.wait(0.1)
-	until os.clock() >= deadline
-	local imageCount = 0
-	for _, item in actualRoot:GetDescendants() do
-		expect(
-			not item:IsA("ViewportFrame") and not item:IsA("WorldModel"),
-			"Synthetic scene retained in photo UI"
-		)
-		if item:IsA("ImageLabel") then
-			imageCount += 1
-		end
-	end
-	expect(imageCount == 3)
-	for _, mode in Modes.Order do
-		local card = hud._modeCards:FindFirstChild(mode)
-		expect(card and card.Name == mode and card:FindFirstChild("Select"))
-		local image = card.LightingPreview
-		expect(
-			image:IsA("ImageLabel")
-				and image.Image == Images[mode]
-				and image.ScaleType == Enum.ScaleType.Crop
-		)
-		expect(image.IsLoaded, "Real photo not loaded for " .. mode)
-		expect(image.Size.Y.Offset == 128 and image.Size.X.Scale == 1)
-		expect(
-			image.AbsoluteSize.X / image.AbsoluteSize.Y > 1.5
-				and image.AbsoluteSize.X / image.AbsoluteSize.Y < 1.8
-		)
-		expect(card:FindFirstChild("Name").Text == Text["corn_modes_" .. mode])
-		expect(card.Description.Text == Text["corn_modes_" .. mode .. "_desc"])
-	end
-	checks.unique_loaded_real_images_and_crop = true
-	checks.three_photos_without_world_cloning = true
+	expect(
+		Modes.Default == "hard"
+			and #Modes.Order == 1
+			and Modes.Order[1] == "hard"
+			and not Modes.IsValid("easy")
+			and not Modes.IsValid("medium"),
+		"Night whitelist mismatch"
+	)
 	for _, phase in { "ready", "preparing", "active", "caught", "escaped", "aborted", "caught_out" } do
 		render(phase)
-		local expanded = phase == "ready"
-			or phase == "escaped"
-			or phase == "aborted"
-			or phase == "caught_out"
-		expect(hud._modeCards.Visible == expanded)
+		task.wait(0.05)
+		noModes()
+		expect(hud._card.Size == UDim2.fromOffset(460, 320), "Obsolete chooser size")
 		expect(
-			hud._card.Visible == (phase ~= "active") and hud._active.Visible == (phase == "active")
+			hud._card.Visible == (phase ~= "active" and phase ~= "caught" and phase ~= "caught_out")
 		)
-		for _, mode in Modes.Order do
-			expect(hud._modeButtons[mode].Active == expanded)
-		end
-		if expanded then
-			for _, choice in Modes.Order do
-				hud._selectedMode = choice
-				hud:_render()
-				expect(hud._chooseMode.Text:find(Text["corn_modes_" .. choice], 1, true))
-				for _, mode in Modes.Order do
-					local button = hud._modeButtons[mode]
-					expect(
-						button.Text
-							== (
-								if mode == choice
-									then Text.corn_modes_selected_button
-									else Text.corn_modes_select
-							)
-					)
-					expect(button.Active)
-				end
-			end
-		end
-	end
-	checks.all_phases_and_controlled_choices = true
-	render("ready")
-	hud:SetBusy(true)
-	for _, button in hud._modeButtons do
-		expect(not button.Active)
-	end
-	hud:SetBusy(false)
-	hud:ShowUnavailable()
-	for _, button in hud._modeButtons do
-		expect(not button.Active)
-	end
-	render("ready")
-	checks.busy_unavailable_disable_choices = true
-	for _, viewport in { Vector2.new(1400, 800), Vector2.new(800, 600), Vector2.new(640, 480) } do
-		for _, phase in { "ready", "escaped", "preparing", "caught" } do
-			render(phase)
-			-- _fitCard reads only AbsoluteSize. The actual GUI/card remains the renderer target.
-			hud._root = { AbsoluteSize = viewport }
-			hud:_fitCard()
-			hud._root = actualRoot
-			local cardWidth, cardHeight = hud._card.Size.X.Offset, hud._card.Size.Y.Offset
-			local scale = hud._cardScale.Scale
+		inside(hud._card, hud._root)
+		if phase == "ready" or phase == "escaped" or phase == "aborted" then
+			local action = if phase == "ready" then "start" else "retry"
+			local control = if phase == "ready" then hud._start else hud._retry
+			expect(control.Visible and control.Active and hud._start.Visible ~= hud._retry.Visible)
+			inside(control, hud._card)
+			local before = #calls
+			hud:ShowObjective(action)
+			task.wait(0.05)
+			expect(#calls == before and hud._introRoot.Enabled and hud._introPending.mode == "hard")
+			noModes()
+			inside(hud._introPanel, hud._introRoot)
+			hud:ConfirmObjective()
 			expect(
-				cardWidth * scale <= viewport.X - 36 + 0.01
-					and cardHeight * scale <= viewport.Y - 36 + 0.01
+				#calls == before + 1
+					and calls[#calls].action == action
+					and calls[#calls].mode == "hard"
 			)
-			local expanded = phase == "ready" or phase == "escaped"
-			if expanded then
-				local mapRect = inside(hud._modeCards, cardWidth, cardHeight)
-				local titleRect = inside(hud._title, cardWidth, cardHeight)
-				local messageRect = inside(hud._message, cardWidth, cardHeight)
-				local chooseRect = inside(hud._chooseMode, cardWidth, cardHeight)
-				noOverlap(titleRect, messageRect, "title/message")
-				if hud._time.Visible then
-					local timeRect = inside(hud._time, cardWidth, cardHeight)
-					noOverlap(messageRect, timeRect, "message/time")
-					noOverlap(timeRect, chooseRect, "time/choice")
-				else
-					noOverlap(messageRect, chooseRect, "message/choice")
-				end
-				noOverlap(chooseRect, mapRect, "choice/mode row")
-				local previous = nil
-				for _, mode in Modes.Order do
-					local card = hud._modeCards[mode]
-					local cardRect = inside(card, mapRect.w, mapRect.h)
-					if previous then
-						noOverlap(previous, cardRect, "mode siblings")
-					end
-					previous = cardRect
-					local image = inside(card.LightingPreview, cardRect.w, cardRect.h)
-					local name = inside(card:FindFirstChild("Name"), cardRect.w, cardRect.h)
-					local desc = inside(card.Description, cardRect.w, cardRect.h)
-					local select = inside(card.Select, cardRect.w, cardRect.h)
-					noOverlap(image, name, "photo/name")
-					noOverlap(name, desc, "name/description")
-					noOverlap(desc, select, "description/select")
-				end
-				local hint = inside(hud._modeHint, cardWidth, cardHeight)
-				local balance = inside(hud._balance, cardWidth, cardHeight)
-				local action = inside(
-					if phase == "ready" then hud._start else hud._retry,
-					cardWidth,
-					cardHeight
-				)
-				noOverlap(mapRect, hint, "mode row/hint")
-				noOverlap(hint, balance, "hint/balance")
-				noOverlap(balance, action, "balance/action")
-				if phase == "escaped" then
-					local menu = inside(hud._menu, cardWidth, cardHeight)
-					noOverlap(action, menu, "retry/menu")
-				end
-			else
-				inside(hud._preparingLeave, cardWidth, cardHeight)
-			end
 		end
 	end
-	checks.layout_bounds_and_no_overlap_at_simulated_viewports = true
-	checks.simulated_usable_viewports = "1400x800 /800x600 /640x480; no physical window resize"
+	checks.no_mode_gui_all_phases = true
+	checks.actual_viewport_start_retry_objective_hard_only = true
+	render("ready")
+	expect(
+		hud._start.Visible
+			and not hud._retry.Visible
+			and not hud._menu.Visible
+			and not hud._introRoot.Enabled,
+		"Main menu did not restore one Start"
+	)
+	checks.main_start = true
+	checks.viewport = { x = hud._root.AbsoluteSize.X, y = hud._root.AbsoluteSize.Y }
 end)
-hud._root = actualRoot
 hud:Destroy()
+if GuiService.SelectedObject == nil and savedFocus and savedFocus.Parent then
+	GuiService.SelectedObject = savedFocus
+end
 expect(ok, tostring(problem))
-expect(not player.PlayerGui:FindFirstChild("ModePhotoAcceptance"))
+expect(
+	not player.PlayerGui:FindFirstChild("NightOnlyAcceptance")
+		and not player.PlayerGui:FindFirstChild("NightOnlyIntroAcceptance"),
+	"Fixture GUI leaked"
+)
 checks.cleanup = true
 checks.method =
-	"Current actual GUI/assets; controlled phases/choices and simulated _fitCard viewport inputs; mouse selection accepted separately"
+	"Actual GUI current viewport; controlled snapshots and ShowObjective/Confirm callbacks. No real mouse, server gameplay or blind round claim."
 return game:GetService("HttpService"):JSONEncode(checks)

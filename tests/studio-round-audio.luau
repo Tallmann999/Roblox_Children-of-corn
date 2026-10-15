@@ -157,21 +157,38 @@ local ok, problem = pcall(function()
 	audio:Step(now + 0.001, "active", "hard", hunt)
 	assert(
 		voicesOn() == 0 and not requested(audio.npc.sound),
-		"Trap stops immediately between movement polls"
+		"Trap stops voices immediately and does not start stationary corn"
 	)
 	hunt.state = "patrol"
+	-- Empty NPC ID isolates deterministic scheduling from actual async loading.
+	-- Real decoded corn completion is tested separately with playback observations.
+	audio.npc.sound.SoundId = ""
 	-- Real rotated map geometry: stationary/teleport/air/outside/road/barn/slot.
 	local cursor = now + 2
 	local function step(x, z, height)
 		cursor += 0.11
 		npcRoot.CFrame = at(x, z, height)
 		audio:Step(cursor, "active", "medium", hunt)
+		-- Each selection restores the deliberate empty-ID intent fixture.
+		audio.npc.sound.SoundId = ""
+	end
+	local function finishTail(phase)
+		cursor = math.max(cursor + 0.11, audio.npc.untilAt + 0.11, audio.npc.nextAt + 0.11)
+		audio:Step(cursor, phase or "active", "medium", hunt)
+		assert(not requested(audio.npc.sound), "Finished stationary tail has no new request")
 	end
 	step(-90, 20)
 	step(-89, 20)
 	assert(requested(audio.npc.sound), "Moving NPC in corn rustles")
+	local originalKey = audio.npc.sound:GetAttribute("AudioAssetKey")
 	step(-89, 20)
-	assert(not requested(audio.npc.sound), "Stationary NPC silent")
+	assert(requested(audio.npc.sound), "Stationary NPC preserves the started tail")
+	step(-88, 20)
+	assert(
+		requested(audio.npc.sound) and audio.npc.sound:GetAttribute("AudioAssetKey") == originalKey,
+		"Resuming before completion does not replace the clip"
+	)
+	finishTail()
 	step(70, -80)
 	assert(not requested(audio.npc.sound), "Teleport silent")
 	step(0, 20)
@@ -192,20 +209,28 @@ local ok, problem = pcall(function()
 	step(-90, 20)
 	step(-89, 20)
 	assert(requested(audio.npc.sound))
-	-- Each actor keeps one Sound; long clips are replaced on the shared cadence.
+	-- Each actor keeps one Sound; continuous walking waits for full intent duration.
+	local rustleSound = audio.npc.sound
+	local walkX = -89
 	for index = 1, 12 do
 		local previousKey = audio.npc.sound:GetAttribute("AudioAssetKey")
-		local expectedInterval = math.min(Rules.RustleInterval, Assets.Get(previousKey).Duration)
+		local expectedInterval = math.max(Rules.RustleInterval, Assets.Get(previousKey).Duration)
 		assert(math.abs(audio.npc.nextAt - cursor - expectedInterval) < 0.00001)
-		cursor = audio.npc.nextAt
-		npcRoot.CFrame = at(-89 + index, 20)
-		audio:Step(cursor, "active", "medium", hunt)
+		local due = audio.npc.nextAt
+		while cursor + 0.11 < due do
+			walkX += 0.5
+			step(walkX, 20)
+			assert(audio.npc.sound:GetAttribute("AudioAssetKey") == previousKey)
+		end
+		walkX += 0.5
+		step(walkX, 20)
 		assert(
 			requested(audio.npc.sound)
 				and audio.npc.sound:GetAttribute("AudioAssetKey") ~= previousKey
+				and audio.npc.sound == rustleSound
 		)
 	end
-	checks.moving_actor_rustle_cadence_min_interval_duration_without_extra_gap = true
+	checks.moving_actor_one_sound_full_duration_and_no_early_replacement_intent = true
 	local originalExclusions = audio.exclusions
 	part("LateExclusion", Vector3.new(20, 10, 20), at(-90, 20), zones)
 	assert(
@@ -214,12 +239,23 @@ local ok, problem = pcall(function()
 	)
 	checks.actual_movement_rotated_field_road_clearings_air_and_cached_exclusions = true
 	audio:Step(cursor + 0.001, "caught", "hard", hunt)
-	assert(not requested(audio.npc.sound) and voicesOn() == 0)
+	assert(
+		requested(audio.npc.sound) and voicesOn() == 0,
+		"Capture preserves the current corn tail"
+	)
 	for _, sound in audio.fires do
 		assert(requested(sound))
 	end
 	cricketFormula(cursor + 0.001)
-	checks.capture_silences_actors_and_retains_ambience = true
+	hunt.state = "trapped"
+	cursor += 0.11
+	audio:Step(cursor, "active", "hard", hunt)
+	assert(requested(audio.npc.sound), "Trap preserves the current corn tail")
+	finishTail("caught")
+	step(walkX + 0.5, 20)
+	assert(not requested(audio.npc.sound), "Trapped NPC cannot start another rustle")
+	hunt.state = "patrol"
+	checks.capture_trap_preserve_tail_and_suppress_new_rustle_intent = true
 	local oldNpcSound = audio.npc.sound
 	local oldVoice = audio.voices[1]
 	local replacementRoot = part("ReplacementRoot", Vector3.new(3, 6, 2), at(-90, 20), runtime)
@@ -262,7 +298,7 @@ local ok, problem = pcall(function()
 	end
 	checks.configured_ids = ids
 	checks.method =
-		"Actual engine Parts/Sounds/groups with controlled logical Step clocks. Intent attributes exercise scheduling, not audible playback, IsLoaded, human mix, or multiplayer acceptance. No live character relocation."
+		"Actual engine Parts/Sounds/groups with controlled logical Step clocks; NPC corn SoundId deliberately empty after each selection. Corn intent attributes exercise complete-duration scheduling and suppression, not decoded/audible playback, IsLoaded, human mix, or multiplayer acceptance. No live character relocation."
 end)
 if audio then
 	audio:Destroy()
