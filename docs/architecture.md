@@ -1,6 +1,6 @@
 # Дети кукурузы — архитектура
 
-## Текущая правка чистой Corn: появление подкрепления — 2026-10-15
+## Сохранённый baseline: появление подкрепления — 2026-10-15
 
 После восстановления принятого solo checkpoint автор подтвердил крики при
 появлении Monster2/3 и радиусы обнаружения48/96studs. Server-only уведомление
@@ -8,11 +8,21 @@
 сущностей; Sound отдельные от rustle, по одному старту на индекс за раунд.
 Новых remotes или persistent world bindings нет.
 [Контракт и точный scope](2026-10-15_entity-arrival.md).
-Незавершённый multiplayer ниже сохранён как план/WIP-архив, в эту правку не входит.
+Этот чистый solo baseline сохранён автором Ctrl+S14:52:11:997184байт,
+SHA256 `b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8`,
+78Sources=75проектных+3Fog/4160instances. Strict engine audit допускает только
+3Source-дельты Balance/SoloRound/RoundAudio к прежнему493bc1f9… и подтверждает
+точный мир/Lighting/art/identities/parents/rawTerrain. После чужого Cooking/Rhythm
+sync чистые engine-байты были восстановлены без сериализации;
+[история восстановления](2026-10-15_foreign-cleanup.md).
 
-## Следующий этап: общий multiplayer round — 2026-10-15
+## Текущий этап в разработке: общий multiplayer round — 2026-10-15
 
-Автор разрешил переход к мультиплееру и выбрал общий ключ. Контракт первой
+Автор подтвердил1–4игрока на ПК в Studio DEV, общий ключ, личные две поимки
+и+20алмазов каждому сбежавшему. Лобби, matchmaking, persistence, покупки
+и публичная публикация в текущий этап не входят. Реализация возобновлена из
+проверенного WIP-архива поверх принятого baseline997184/b5ef0471…; прежний
+архив не устанавливается целиком поверх текущих Sources. Контракт первой
 реализации и расширение `round_snapshot.team` описаны в
 [спецификации](2026-10-15_multiplayer.md). Один TeamRound владеет общим миром,
 ключом, воротами, финальным deadline, предметами, охотой и аудио; личный
@@ -20,17 +30,30 @@ RoundParticipant хранит персонажа/инвентарь/попытк
 Четыре gameplay remotes и persistent world bindings остаются прежними.
 Ни выход, ни поимка одного не сбрасывают команду. Проверка живого отправителя,
 фазы, дистанции, LOS и server transaction обязательна для каждого pickup/use.
+Все допущенные подключённые игроки подтверждают готовность; следующий общий
+раунд начинается после завершения/ухода всех текущих участников. Поздние
+подключения ждут следующего раунда. Время команды и общий аудиопланировщик
+продолжаются при личной поимке: меняются только controls/eligibility пойманного
+игрока и состояние захватившего NPC; чужие фон/шелест/охота не останавливаются.
+Радиусы48до ворот/96у всех3после, два Root-bound arrival крика Monster_01/02
+и независимые rustle cursors сохраняются. TeamRound сообщает об arrival только
+после успешного создания обеих дополнительных сущностей и commit общего
+deadline; ошибка аудио не отменяет ворота, повторный prompt не повторяет крики.
 Один NPC делает один Step за тик и публикует выбранный сервером UserId; отрицательные
 целые Studio IDs поддерживаются только как идентичности зарегистрированных Players.
-Этот этап ещё не принят и не заменяет сохранённый checkpoint ниже.
+Новая native multiplayer приёмка и точное сохранение ещё предстоят: локальные
+fixtures и этот контракт не заменяют настоящий server с несколькими клиентами.
+До такой приёмки сохранённым checkpoint остаётся solo997184/b5ef0471… выше.
 
 ## Текущий сохранённый контракт — 2026-10-15
 
-Local solo PC: поле630×630, только hard/ночь20:30 без выбора сложности, побег+20сессионных алмазов. Мир сохраняет15связанных с факелами слотов/27факелов,2энергетика/2капкана/ключ; сухой атлас103653296385119 задаётся до первого появления, trap pickup использует X−3.6 от slot. Сервер владеет движением/предметами/поимками/воротами и120-секундным финалом с3NPC; deadline идёт во время окна возрождения. Persistence/покупок/lobby/publishing/multiplayer в этом milestone нет.
+Сохранённый local solo PC checkpoint: поле630×630, только hard/ночь20:30 без выбора сложности, побег+20сессионных алмазов. Мир сохраняет15связанных с факелами слотов/27факелов,2энергетика/2капкана/ключ; сухой атлас103653296385119 задаётся до первого появления, trap pickup использует X−3.6 от slot. Сервер владеет движением/предметами/поимками/воротами и120-секундным финалом с3NPC; deadline идёт во время окна возрождения. В сохранённом checkpoint multiplayer отсутствует; текущий этап1–4игрока описан выше. Persistence/покупки/lobby/publishing не добавляются.
 
 Окончательный шелест138698164682825 включается автоматически при проверенном движении в кукурузе: один personal2D loop владельца и до10отдельных Root-attached spatial loops (7других Players+3NPC), максимум11. Каждый использует первый Play и последующие Pause/Resume/Looped с независимым cursor; owner walk1/sprint1.5, spatial range5..65 и validated speed1..2. Server CornAudio_corn_rustle — silent metadata Sound/Volume0, on-change AudioCornActive/AudioCornSpeed на прежнем10Hz poll, никогда не Play. A/Bкнопки/API удалены, обычный Alt сохранён; старые6коротких corn assets архивны и исключены из10активных preloadIDs. Подробный текущий контракт — в последнем разделе этого документа и [итоговой приёмке](2026-10-15_continuous-rustle.md).
 
-Авторский Ctrl+S12:48:01 сохранён и строго проверен:995988байт/SHA256 `493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68`,78Sources=75проектных+3Fog/4160instances. От immutable принятого поля489af64f… изменены только4Sources AudioAssets/AudioRules/RoundAudio/AudioController; MovementController равен baseline, мир/Lighting/art/identities/parents/rawTerrain точные. Рабочий workflow: check.ps1 → build-readability-installer.py --compact → guarded install-readability.luau только в проверенной Children_of_corn stopped Edit; exact engine save проверяет verify-rustle-comparison-copy.py, без Lune scene serialization/live Rojo/исторических world installers. FarmGeometry Edit restore после reopen остаётся отдельным guarded шагом.
+Текущий saved checkpoint — Ctrl+S14:52:11/997184байт/b5ef0471… из верхнего раздела. Для возобновлённого multiplayer immutable baseline — `place/Children_of_corn.before-multiplayer-resume-20261015.rbxl` с этими точными байтами и полным SHA256. Прежний `before-multiplayer-20261015.rbxl`/995988/493bc1f9… сохраняется как исторический backup и не является baseline новой установки. Рабочий code-only workflow: check.ps1 → build-multiplayer-installer.py --compact → guarded install-multiplayer.luau только в проверенной Children_of_corn stopped Edit; exact engine save проверяет verify-multiplayer-copy.py относительно актуального resume baseline. Допускаются только объявленные Source-дельты и2ModuleScript TeamRound/RoundParticipant в прежнем GameServer/Game; ожидается80Sources=77src+3Fog/4162instances, без других instance/world/Lighting/art/identity/parent/rawTerrain дельт. Отдельные engine candidates — guarded promote-tested-multiplayer-copy.py с обоими хэшами. Никакой Lune scene serialization/live Rojo/исторических world installers. FarmGeometry Edit restore после reopen остаётся отдельным guarded шагом.
+
+Исторический continuous-rustle checkpoint12:48:01 —995988байт/SHA256 `493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68`:78Sources/4160instances, четыреSource-дельты от поля489af64f… и точный MovementController. Его readability installer/rustle-only verifier относятся к той приёмке и не заменяют текущий entity-arrival/resume pipeline.
 
 Actual native owner/3NPC/trap/cleanup прошли с диагностической постановкой; blind full round/страх/человеческий микс/длительный3NPC FPS/safe-perch/reopen и multiplayer не приняты. Fire105538100476464 остаётся внешним not-approved asset. Датированные разделы ниже сохраняют историю; при конфликте размеров/режимов/коротких cues/A-B UI/старых pending применяется этот итог и последние разделы15октября.
 

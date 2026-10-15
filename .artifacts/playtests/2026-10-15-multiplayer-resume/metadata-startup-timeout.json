@@ -1,0 +1,92 @@
+{
+  "test_acceptance": false,
+  "native_transport_result": "Parent reported empty {ok:true}, no result/assertions; not acceptance.",
+  "main_edit_authentication": "Parent verified authenticated Edit; no logout conclusion from child metadata timeout.",
+  "log": {
+    "filename": "0.743.0.7431133_20261015T152749Z_Studio_B1912_last.log",
+    "bytes": 20133,
+    "sha256": "f2563bae646ba510cc481fac93c267b9e95e5434ea6592a3bac8ad4a3f2aae88",
+    "last_write_utc": "2026-10-15T15:28:17.718693+00:00"
+  },
+  "start_server_intent": {
+    "observed": true,
+    "utc": "2026-10-15T15:27:50.348Z"
+  },
+  "metadata_timeouts": [
+    {
+      "line": 121,
+      "utc": "2026-10-15T15:27:52.656Z",
+      "component": "BackendConfigFetcher",
+      "message": "Failed to fetch meta data with code -1 and Request timed out",
+      "try": 1
+    },
+    {
+      "line": 150,
+      "utc": "2026-10-15T15:27:55.656Z",
+      "component": "BackendConfigFetcher",
+      "message": "Failed to fetch meta data with code -1 and Request timed out",
+      "try": 2
+    },
+    {
+      "line": 157,
+      "utc": "2026-10-15T15:27:58.658Z",
+      "component": "BackendConfigFetcher",
+      "message": "Failed to fetch meta data with code -1 and Request timed out",
+      "try": 3
+    },
+    {
+      "line": 161,
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "BackendConfigFetcher",
+      "message": "Failed to fetch meta data with code -1 and Request timed out",
+      "try": 4
+    },
+    {
+      "line": 163,
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "LoginController",
+      "message": "Failed to fetch meta data with code -1 and Request timed out",
+      "try": null
+    }
+  ],
+  "plugin_ota_download_lock_warning": {
+    "observed": true,
+    "utc": "2026-10-15T15:27:52.786Z",
+    "causality": "Not established."
+  },
+  "harness_evidence": {
+    "multiplayer_test_marker_count": 0,
+    "corn_diagnostic_marker_count": 0,
+    "set3d_rendering_marker_count": 0,
+    "endtest_marker_count": 0,
+    "structured_test_report_found": false,
+    "harness_start_confirmed": false,
+    "harness_finish_confirmed": false
+  },
+  "last_records_timestamp_component_only": [
+    {
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "BackendConfigFetcher"
+    },
+    {
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "BackendConfigFetcher"
+    },
+    {
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "LoginController"
+    },
+    {
+      "utc": "2026-10-15T15:28:01.665Z",
+      "component": "LoginController"
+    },
+    {
+      "utc": "2026-10-15T15:28:17.426Z",
+      "component": "SessionL2ValidationHelper"
+    }
+  ],
+  "explicit_crash_or_shutdown_marker_found": false,
+  "source_log_unchanged_during_read": true,
+  "interpretation": "Child StartServer launch and metadata timeouts are directly logged. No test harness start/EndTest/final structured report is logged. This does not establish an exact shutdown/crash reason or a production gameplay defect.",
+  "scope": "Evidence JSON only; no Studio call, production change, process control, authentication retry/steps or auth/command-line/URL values."
+}

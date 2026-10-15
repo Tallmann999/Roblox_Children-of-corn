@@ -606,9 +606,8 @@ function RoundAudio:_stepActor(actor: any, now: number, eligible: boolean)
 		if not stableRatio and hunt then
 			local huntSpeed
 			local character = self.ownerPlayer.Character
-			local playerRoot = if character
-				then character:FindFirstChild("HumanoidRootPart")
-				else nil
+			local playerRoot = hunt.targetRoot
+				or (if character then character:FindFirstChild("HumanoidRootPart") else nil)
 			if hunt.state == "chase" and playerRoot and type(hunt._chaseSpeed) == "function" then
 				local ok, value = pcall(hunt._chaseSpeed, hunt, playerRoot, now)
 				if ok then
@@ -657,7 +656,7 @@ function RoundAudio:_grounded(character: Model, humanoid: Humanoid, root: BasePa
 	return hit ~= nil and hit.Instance == self.world.Ground
 end
 
-function RoundAudio:_players(now: number, phase: string)
+function RoundAudio:_players(now: number, phase: string, eligible: ((Player) -> boolean)?)
 	local players = Players:GetPlayers()
 	table.sort(players, function(a, b)
 		if a == b then
@@ -702,8 +701,11 @@ function RoundAudio:_players(now: number, phase: string)
 		self:_stepActor(
 			actor,
 			now,
-			(phase == "active" or player ~= self.ownerPlayer)
-				and self:_grounded(character, humanoid, root)
+			(
+				if eligible
+					then eligible(player) == true
+					else phase == "active" or player ~= self.ownerPlayer
+			) and self:_grounded(character, humanoid, root)
 		)
 	end
 	for player, actor in self.actors do
@@ -745,7 +747,14 @@ function RoundAudio:_voice(now: number)
 	request(sound, true)
 end
 
-function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hunts: { any }?)
+function RoundAudio:Step(
+	now: number,
+	phase: string,
+	mode: string,
+	hunt: any,
+	hunts: { any }?,
+	eligible: ((Player) -> boolean)?
+)
 	if self.destroyed or not finite(now) then
 		return
 	end
@@ -816,7 +825,7 @@ function RoundAudio:Step(now: number, phase: string, mode: string, hunt: any, hu
 				and math.abs(actor.root.Position.Y - floor - 3) <= 3
 		)
 	end
-	self:_players(now, phase)
+	self:_players(now, phase, eligible)
 end
 
 function RoundAudio:Destroy()

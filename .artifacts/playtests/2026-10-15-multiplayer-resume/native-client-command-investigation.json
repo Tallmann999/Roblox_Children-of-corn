@@ -1,0 +1,482 @@
+{
+  "investigation_recorded": true,
+  "test_passed": false,
+  "source_report": {
+    "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-four-client-command-timeout.json",
+    "bytes": 86552,
+    "sha256": "d519979a54a49eadad27ead049c795789a331c5e2106c824477e9f17f0073a46",
+    "transport_ok": true,
+    "actual_result_passed": false
+  },
+  "failure": {
+    "final_stage": "late_join_two_clients",
+    "error": "ServerScriptService.CornMultiplayerResumeServerHarness:112: Timeout [late_join_two_clients]: client command action\nServerScriptService.CornMultiplayerResumeServerHarness:112 function waitFor\nServerScriptService.CornMultiplayerResumeServerHarness:190 function command\nServerScriptService.CornMultiplayerResumeServerHarness:218\nServerScriptService.CornMultiplayerResumeServerHarness:306\n",
+    "duration_sec": 174.29682719999983,
+    "command_wait_sec": 20,
+    "attempted_command": {
+      "kind": "action",
+      "action": "start",
+      "recipient": "C, first sorted late participant (UserId -4)",
+      "evidence": "Parent invocation/harness sequence; no acknowledgement observed."
+    },
+    "completed_checks_before_failure": [
+      {
+        "at": 37.47090719999687,
+        "name": "two real recipients receive personal team snapshots",
+        "stage": "startup"
+      },
+      {
+        "at": 45.3681335999936,
+        "name": "one ready cannot start teammate",
+        "stage": "round1_ready"
+      },
+      {
+        "at": 46.18434669999988,
+        "name": "shared first round ID",
+        "stage": "round1_ready"
+      },
+      {
+        "at": 46.184714499999245,
+        "name": "two-player starts distinct corner pair 1/2",
+        "stage": "round1_ready"
+      },
+      {
+        "at": 47.783800899997004,
+        "name": "one carrier and no duplicated key",
+        "stage": "round1_key_gate_exit"
+      },
+      {
+        "at": 49.480692199998884,
+        "name": "shared deadline and three hunters",
+        "stage": "round1_key_gate_exit"
+      },
+      {
+        "at": 49.85082539999712,
+        "name": "A rewarded once while B continues",
+        "stage": "round1_key_gate_exit"
+      },
+      {
+        "at": 50.61735869999393,
+        "name": "personal retry cannot reset team or duplicate reward",
+        "stage": "round1_key_gate_exit"
+      },
+      {
+        "at": 50.9837469999984,
+        "name": "last result cleans hunters",
+        "stage": "round1_key_gate_exit"
+      },
+      {
+        "at": 74.03633259999333,
+        "name": "capture drops key and preserves teammate active state/WalkSpeed12 during diagnostic anchoring",
+        "stage": "round2_capture_revive"
+      },
+      {
+        "at": 75.79940959999658,
+        "name": "revive leaves teammate attempts and NPC location intact",
+        "stage": "round2_capture_revive"
+      },
+      {
+        "at": 152.85241429999587,
+        "name": "late clients three and four wait outside current roster",
+        "stage": "late_join_two_clients"
+      }
+    ],
+    "completed_check_count": 12,
+    "late_start_acknowledgements": [],
+    "late_start_raw_delivery_rows": [],
+    "raw_audit_dropped_rows": 0,
+    "raw_audit_rows": [
+      {
+        "player_name": "Player1",
+        "estimated_tokens_before": 2,
+        "action_value": "sync",
+        "user_id": -1,
+        "at": 28.553552599994873,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "startup",
+        "estimated_tokens_after": 1,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player1",
+        "estimated_tokens_before": 1.000194599997485,
+        "action_value": "sync",
+        "user_id": -1,
+        "at": 28.553649899993616,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "startup",
+        "estimated_tokens_after": 0.00019459999748505652,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 2,
+        "action_value": "sync",
+        "user_id": -2,
+        "at": 34.804607399993984,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "startup",
+        "estimated_tokens_after": 1,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 1.00016220001271,
+        "action_value": "sync",
+        "user_id": -2,
+        "at": 34.80468850000034,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "startup",
+        "estimated_tokens_after": 0.00016220001270994544,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 2,
+        "action_value": "start",
+        "user_id": -2,
+        "at": 44.65470029999415,
+        "estimated_request_fits": true,
+        "mode_value": "hard",
+        "stage": "round1_ready",
+        "estimated_tokens_after": 1,
+        "mode_type": "string",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player1",
+        "estimated_tokens_before": 2,
+        "action_value": "start",
+        "user_id": -1,
+        "at": 45.434269399993354,
+        "estimated_request_fits": true,
+        "mode_value": "hard",
+        "stage": "round1_ready",
+        "estimated_tokens_after": 1,
+        "mode_type": "string",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 2,
+        "action_value": "retry",
+        "user_id": -2,
+        "at": 49.88745769999514,
+        "estimated_request_fits": true,
+        "mode_value": "hard",
+        "stage": "round1_key_gate_exit",
+        "estimated_tokens_after": 1,
+        "mode_type": "string",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 2,
+        "action_value": "retry",
+        "user_id": -2,
+        "at": 51.034753099993395,
+        "estimated_request_fits": true,
+        "mode_value": "hard",
+        "stage": "round2_capture_revive",
+        "estimated_tokens_after": 1,
+        "mode_type": "string",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player1",
+        "estimated_tokens_before": 2,
+        "action_value": "retry",
+        "user_id": -1,
+        "at": 51.8001582999932,
+        "estimated_request_fits": true,
+        "mode_value": "hard",
+        "stage": "round2_capture_revive",
+        "estimated_tokens_after": 1,
+        "mode_type": "string",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player2",
+        "estimated_tokens_before": 2,
+        "action_value": "revive",
+        "user_id": -2,
+        "at": 75.06749039999704,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "round2_capture_revive",
+        "estimated_tokens_after": 1,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 2
+      },
+      {
+        "player_name": "Player3",
+        "estimated_tokens_before": 2,
+        "action_value": "sync",
+        "user_id": -3,
+        "at": 151.44126909999613,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "late_join_two_clients",
+        "estimated_tokens_after": 1,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player3",
+        "estimated_tokens_before": 1.0001802000042517,
+        "action_value": "sync",
+        "user_id": -3,
+        "at": 151.44135919999826,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "late_join_two_clients",
+        "estimated_tokens_after": 0.00018020000425167382,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player4",
+        "estimated_tokens_before": 2,
+        "action_value": "sync",
+        "user_id": -4,
+        "at": 152.85194570000021,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "late_join_two_clients",
+        "estimated_tokens_after": 1,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      },
+      {
+        "player_name": "Player4",
+        "estimated_tokens_before": 1.0002064000000246,
+        "action_value": "sync",
+        "user_id": -4,
+        "at": 152.85204890000023,
+        "estimated_request_fits": true,
+        "mode_value": "nil",
+        "stage": "late_join_two_clients",
+        "estimated_tokens_after": 0.00020640000002458692,
+        "mode_type": "nil",
+        "action_type": "string",
+        "argument_count": 1
+      }
+    ],
+    "raw_audit_limit": 100,
+    "raw_audit_scope": "Approximate 2-token/cap2/refill2-per-second model from observed string requests only; not production bucket introspection or proof of server acceptance. Raw delivery times/types/values are direct OnServerEvent observations.",
+    "completed_commands_count": 9,
+    "staging_restored": true
+  },
+  "recipients_observed": [
+    {
+      "user_id": -4,
+      "name": "Player4",
+      "joined_at_sec": 148.6445498999965,
+      "recorded_connected": true,
+      "trace_row_count": 3,
+      "last_trace_at_sec": 156.33842249999725,
+      "last_trace_stage": "late_join_two_clients",
+      "last_snapshot_phase": "ready",
+      "last_snapshot_hud": true,
+      "last_snapshot_team": {
+        "can_start": false,
+        "carrier_name": "",
+        "capacity": 4,
+        "state": "active",
+        "remaining": 2,
+        "count": 4,
+        "round_id": 2,
+        "key_state": "hidden",
+        "ready_count": 0,
+        "ready": false
+      },
+      "note": "Snapshot/report arrival times on server harness clock; not a direct measurement of client thread liveness."
+    },
+    {
+      "user_id": -3,
+      "name": "Player3",
+      "joined_at_sec": 147.27019359999395,
+      "recorded_connected": true,
+      "trace_row_count": 3,
+      "last_trace_at_sec": 152.62856819999433,
+      "last_trace_stage": "late_join_two_clients",
+      "last_snapshot_phase": "ready",
+      "last_snapshot_hud": true,
+      "last_snapshot_team": {
+        "can_start": false,
+        "carrier_name": "",
+        "capacity": 4,
+        "state": "active",
+        "remaining": 2,
+        "count": 4,
+        "round_id": 2,
+        "key_state": "hidden",
+        "ready_count": 0,
+        "ready": false
+      },
+      "note": "Snapshot/report arrival times on server harness clock; not a direct measurement of client thread liveness."
+    },
+    {
+      "user_id": -2,
+      "name": "Player2",
+      "joined_at_sec": 33.777430499998445,
+      "recorded_connected": true,
+      "trace_row_count": 72,
+      "last_trace_at_sec": 173.91261509999458,
+      "last_trace_stage": "late_join_two_clients",
+      "last_snapshot_phase": "active",
+      "last_snapshot_hud": true,
+      "last_snapshot_team": {
+        "can_start": false,
+        "carrier_name": "",
+        "capacity": 4,
+        "state": "active",
+        "remaining": 2,
+        "count": 4,
+        "round_id": 2,
+        "key_state": "hidden",
+        "ready_count": 0,
+        "ready": false
+      },
+      "note": "Snapshot/report arrival times on server harness clock; not a direct measurement of client thread liveness."
+    },
+    {
+      "user_id": -1,
+      "name": "Player1",
+      "joined_at_sec": 27.555176799993205,
+      "recorded_connected": true,
+      "trace_row_count": 72,
+      "last_trace_at_sec": 174.2296359999964,
+      "last_trace_stage": "late_join_two_clients",
+      "last_snapshot_phase": "active",
+      "last_snapshot_hud": true,
+      "last_snapshot_team": {
+        "can_start": false,
+        "carrier_name": "",
+        "capacity": 4,
+        "state": "active",
+        "remaining": 2,
+        "count": 4,
+        "round_id": 2,
+        "key_state": "hidden",
+        "ready_count": 0,
+        "ready": false
+      },
+      "note": "Snapshot/report arrival times on server harness clock; not a direct measurement of client thread liveness."
+    }
+  ],
+  "five_log_read_only_inspection": {
+    "window": "Current native run created15:19:48Z; failures around15:22:20Z onward, plus startup Lua Output check",
+    "logs": [
+      {
+        "file": "0.743.0.7431133_20261015T151948Z_Studio_2E2B0_last.log",
+        "role": "server",
+        "corn_luau_or_mcp_error_stack_found": false,
+        "observations_msk": [
+          "18:22:45.003MSK wrap-deformer mesh-fetch warning",
+          "18:22:47.086MSK wrap-deformer mesh-fetch warning"
+        ]
+      },
+      {
+        "file": "0.743.0.7431133_20261015T152015Z_Studio_58CFC_last.log",
+        "role": "initial client",
+        "corn_luau_or_mcp_error_stack_found": false,
+        "observations_msk": [
+          "18:22:45.281MSK wrap-deformer mesh-fetch warning",
+          "18:22:47.555MSK wrap-deformer mesh-fetch warning"
+        ]
+      },
+      {
+        "file": "0.743.0.7431133_20261015T152016Z_Studio_AE27B_last.log",
+        "role": "initial client",
+        "corn_luau_or_mcp_error_stack_found": false,
+        "observations_msk": [
+          "18:22:45.703MSK wrap-deformer mesh-fetch warning",
+          "18:22:47.635MSK wrap-deformer mesh-fetch warning"
+        ]
+      },
+      {
+        "file": "0.743.0.7431133_20261015T152131Z_Studio_85822_last.log",
+        "role": "late client",
+        "corn_luau_or_mcp_error_stack_found": false,
+        "observations_msk": [
+          "18:22:21.046MSK Studio StyleRule CornerRadius string-to-UDim warning, four repeats"
+        ]
+      },
+      {
+        "file": "0.743.0.7431133_20261015T152132Z_Studio_0C22C_last.log",
+        "role": "late client",
+        "corn_luau_or_mcp_error_stack_found": false,
+        "observations_msk": [
+          "18:22:20.237MSK Studio StyleRule CornerRadius string-to-UDim warning, four repeats",
+          "18:22:20.488MSK Studio PlaceAnnotations plugin Failed Empty warning",
+          "18:23:11.397-398MSK wrap-deformer mesh-fetch warning, four repeats"
+        ]
+      }
+    ],
+    "no_corn_module_script_error_stack_found": true,
+    "no_infinite_yield_found": true,
+    "no_related_mcp_error_found": true,
+    "no_gameclient_bootstrap_failure_logged": true,
+    "limits": "Inspection found no relevant exception, but absence of log errors does not establish client handler/thread health or explain missing command delivery. Engine/UI warnings do not prove causality."
+  },
+  "studio_process_snapshot": {
+    "observed_at": "2026-10-15T18:25:03.0231873+03:00",
+    "process_name": "RobloxStudioBeta",
+    "count": 4,
+    "working_set_total_bytes": 4171182080,
+    "private_total_bytes": 9028292608,
+    "working_set_total_gib": 3.884716033935547,
+    "private_total_gib": 8.408252716064453,
+    "processes": [
+      {
+        "pid": 8040,
+        "working_set_bytes": 885473280,
+        "private_bytes": 2937040896,
+        "cpu_cumulative_sec": 3751.765625
+      },
+      {
+        "pid": 16944,
+        "working_set_bytes": 860172288,
+        "private_bytes": 3011244032,
+        "cpu_cumulative_sec": 3362.640625
+      },
+      {
+        "pid": 35304,
+        "working_set_bytes": 2030264320,
+        "private_bytes": 2454552576,
+        "cpu_cumulative_sec": 234.296875
+      },
+      {
+        "pid": 36812,
+        "working_set_bytes": 395272192,
+        "private_bytes": 625455104,
+        "cpu_cumulative_sec": 112.796875
+      }
+    ],
+    "limits": "Single post-test process snapshot, no sampling interval or per-core utilization. Private bytes are committed private address space, not a measured physical-RAM total. Cumulative CPU is process lifetime CPU, not CPU utilization."
+  },
+  "cause_status": "Undetermined. Client scheduling, CPU/load or rendering pressure remain unconfirmed possibilities; no production defect/root cause asserted.",
+  "scope": "Requested evidence JSON only, based on saved failed native report and prior read-only whitelisted log/process observations. No Studio action, process termination, production edit, scene write, rebuild, retry or authentication/command-line data."
+}

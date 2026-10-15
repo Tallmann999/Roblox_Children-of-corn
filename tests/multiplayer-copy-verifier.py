@@ -76,6 +76,14 @@ for path in sorted(f.DECLARED_SOURCES | f.ADDITIONS):
 outside = next(path for path in SOURCES if path not in f.DECLARED_SOURCES | f.ADDITIONS)
 changed_expected = EXPECTED | {outside: EXPECTED[outside] + "\n-- outside the approved sixteen\n"}
 rejects("seventeenth existing Source even when equal to src", lambda a: node(a, outside)["properties"]["Source"].__setitem__(1, changed_expected[outside]), sources=changed_expected)
+# The resumed baseline already contains the accepted48/96 Balance and arrival
+# callback in SoloRound. Neither may be silently reverted by archived WIP.
+for protected in ("ReplicatedStorage/GameShared/Game/Balance", "ServerScriptService/GameServer/Game/SoloRound"):
+    assert protected not in f.DECLARED_SOURCES
+    changed_protected = EXPECTED | {protected: EXPECTED[protected] + "\n-- unapproved accepted-solo change\n"}
+    rejects("accepted solo Source preserved: " + protected,
+        lambda a, protected=protected, changed_protected=changed_protected: node(a, protected)["properties"]["Source"].__setitem__(1, changed_protected[protected]),
+        sources=changed_protected)
 fog_path = next(iter(ASSETS))
 changed_assets = ASSETS | {fog_path: ASSETS[fog_path] + "\n-- unapproved fog change\n"}
 rejects("Fog Source even when equal to assets", lambda a: node(a, fog_path)["properties"]["Source"].__setitem__(1, changed_assets[fog_path]), assets=changed_assets)

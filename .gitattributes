@@ -15,3 +15,9 @@
 
 # Frozen resize manifest: its SHA-256 covers the original CRLF bytes.
 scripts/resize-layout.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Multiplayer checkpoint hashes cover these tested CRLF payloads and frozen evidence.
+scripts/install-multiplayer.luau -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/multiplayer-installer.luau -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/multiplayer-foreign-root.luau -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/playtests/2026-10-15-multiplayer-resume/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

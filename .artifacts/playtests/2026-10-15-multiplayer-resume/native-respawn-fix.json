@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "result": {
+    "path": "ServerScriptService.GameServer.Game.RoundParticipant",
+    "world_write": false,
+    "old_sha256": "6bc7b11589efa78848ee60f19d6bd3b1b91b1fb0519b38627bb092d6db1a862e",
+    "new_sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5",
+    "changed": 1
+  },
+  "scope": "Guarded exact known installed Source -> current Source in stopped verified Children; existing two owned test harnesses stay outside production roots; check.ps1 PASS after fix"
+}

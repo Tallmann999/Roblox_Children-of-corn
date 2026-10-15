@@ -346,7 +346,10 @@ end
 function CornBackdropController:Init(context: any)
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
-		and context.Config.Game.SessionMode == "solo_local"
+		and (
+			context.Config.Game.SessionMode == "solo_local"
+			or context.Config.Game.SessionMode == "team_local"
+		)
 	self._renderer = context.Controllers.CornController
 	self._connection = nil
 	self._clock = os.clock

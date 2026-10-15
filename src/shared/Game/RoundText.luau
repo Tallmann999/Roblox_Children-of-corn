@@ -2,6 +2,18 @@
 
 -- Player-facing strings shared by the round and movement HUDs.
 return table.freeze({
+	corn_team_start = "Готов к раунду",
+	corn_team_retry = "Готов к следующему",
+	corn_team_ready = "Ты готов",
+	corn_team_waiting = "Ожидание команды",
+	corn_team_waiting_ready = "Ты готов. Раунд начнётся, когда будут готовы все",
+	corn_team_waiting_result = "Дождись завершения раунда команды",
+	corn_team_ready_count = "Готовы: {ready} / {count}",
+	corn_team_remaining = "В поле: {remaining} / {count}",
+	corn_team_key_carried = "Ключ у команды. Доберись до ворот",
+	corn_team_carrier = "Ключ несёт: {name}",
+	corn_team_intro_objective = "Найдите общий ключ и откройте ворота для всей команды. Каждый должен выбраться сам",
+	corn_team_intro_confirm = "Понятно, я готов",
 	corn_inventory_full = "Все пять слотов заняты",
 	corn_evacuation_started = "Ворота открыты. Успей выбраться за две минуты!",
 	corn_evacuation_expired = "Время вышло. Ты не успел выбраться",

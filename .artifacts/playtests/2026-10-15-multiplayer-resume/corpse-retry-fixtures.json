@@ -1,0 +1,215 @@
+{
+  "passed": true,
+  "scope": "Targeted production RoundParticipant corpse-retry regression with deterministic task, character and event adapters; no native multiplayer acceptance claim.",
+  "test": "tests/multiplayer-round.luau",
+  "evidence_origin": "Already observed tool outputs; this report creation did not rerun tests.",
+  "archived_module": {
+    "archive": ".artifacts/wip/2026-10-15-multiplayer-src.zip",
+    "archive_sha256": "8b5b534cf0f6162f0b1e4c0b6b4a4d338caab37ba708ec3c15ce1a61e45dba4f",
+    "entry": "src/server/Game/RoundParticipant.luau",
+    "normalized_sha256": "6bc7b11589efa78848ee60f19d6bd3b1b91b1fb0519b38627bb092d6db1a862e"
+  },
+  "fixed_module": {
+    "path": "src/server/Game/RoundParticipant.luau",
+    "normalized_sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5"
+  },
+  "hash_normalization": "UTF-8 Source bytes after CRLF to LF normalization; no trimming.",
+  "summary": {
+    "archived_cases": 8,
+    "archived_expected_failures": 8,
+    "archived_unexpected_passes": 0,
+    "archived_process_exit": 1,
+    "fixed_cases": 8,
+    "fixed_passes": 8,
+    "fixed_failures": 0,
+    "fixed_process_exit": 0,
+    "current_full_multiplayer_round": "PASS",
+    "targeted_stylua_check": "PASS"
+  },
+  "method": {
+    "previous_round_ends_at_health_zero": true,
+    "next_round_readied_before_automatic_respawn": true,
+    "reset_round_character_is_nil_while_bound_character_is_old_corpse": true,
+    "old_event_and_fresh_character_added_during_production_preparation_wait": true,
+    "source_override": "Archived Source read directly from verified ZIP into COC_MULTIPLAYER_PARTICIPANT_TEST_SOURCE for the test process; loadstring substitutes only the test module dependency.",
+    "production_source_files_rewritten_for_negative_replay": false,
+    "override_restored_after_negative_replay": true,
+    "final_current_source_run_includes_immediate_delayed_died_assertion_before_removal": true,
+    "negative_replay_note": "The archived eight-failure output was captured before adding the later immediate Died-specific diagnostic assertion; the final current-Source full run includes that stronger assertion and passes."
+  },
+  "cases": [
+    {
+      "previous_corpse_event": "CharacterRemoving",
+      "fresh_phase": "active",
+      "fresh_event": "CharacterRemoving",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "CharacterRemoving",
+      "fresh_phase": "active",
+      "fresh_event": "Died",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "CharacterRemoving",
+      "fresh_phase": "caught",
+      "fresh_event": "CharacterRemoving",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "CharacterRemoving",
+      "fresh_phase": "caught",
+      "fresh_event": "Died",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "Died",
+      "fresh_phase": "active",
+      "fresh_event": "CharacterRemoving",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "Died",
+      "fresh_phase": "active",
+      "fresh_event": "Died",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "Died",
+      "fresh_phase": "caught",
+      "fresh_event": "CharacterRemoving",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    },
+    {
+      "previous_corpse_event": "Died",
+      "fresh_phase": "caught",
+      "fresh_event": "Died",
+      "archived_source": {
+        "outcome": "EXPECTED_FAIL",
+        "actor_a_phase": "aborted",
+        "actor_b_phase": "active",
+        "observed_assertion": "Previous corpse event aborted the new round: A=aborted, B=active"
+      },
+      "fixed_source": {
+        "outcome": "PASS",
+        "new_round_actor_a_phase": "active",
+        "new_round_actor_b_phase": "active",
+        "healthy_round_character_committed": true,
+        "stale_event_does_not_end_new_round": true,
+        "fresh_active_or_caught_event_ends_personal_attempt": true,
+        "shared_key_recoverable": true,
+        "teammate_continues": true
+      }
+    }
+  ],
+  "limits": [
+    "Deterministic adapters exercise actual TeamRound/RoundParticipant methods, not native Studio transport or scheduling.",
+    "NPC decisions, world geometry and audio rendering are adapted; those acceptance results are separate.",
+    "Current second native run and a new engine Save are not inferred from this fixture report."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "paused_by_explicit_user_request",
+  "user_request": "давай чуть позже тогда мне надо доработать",
+  "production_installed": true,
+  "network_accepted": false,
+  "engine_saved": false,
+  "branch": "main",
+  "studio_id": "1712610d-6d4d-441b-99a7-3b0598e8a566",
+  "studio_mode": "Edit",
+  "project_sources": 77,
+  "total_sources": 80,
+  "temporary_owned_nodes_removed": 3,
+  "current_installer_repeat": {
+    "changed": 0,
+    "created": 0,
+    "sources": 77,
+    "totalSources": 80
+  },
+  "disk": {
+    "bytes": 997184,
+    "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+    "scope": "accepted previous solo baseline"
+  },
+  "backup": "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+  "native_reports": [
+    "native-first-ready-failure.json",
+    "native-second-startup-failure.json"
+  ],
+  "resume": "Wait for author. Re-list correct Studio and inspect author changes. No blind restore or neighbor edits. Actual2->4client acceptance, exact owned cleanup, source/farm/camera checks, engineSave+strict verifier still needed."
+}

@@ -1,0 +1,225 @@
+{
+  "ok": true,
+  "result": {
+    "trace_limit_per_recipient": 72,
+    "commands": {
+      "1": {
+        "at": 57.20149429999947,
+        "action": "start",
+        "ok": true,
+        "kind": "action",
+        "stage": "round1_ready",
+        "user_id": -2
+      }
+    },
+    "staging_restored": true,
+    "passed": false,
+    "departures": [],
+    "checks": {
+      "1": {
+        "at": 56.76851949999764,
+        "name": "two real recipients receive personal team snapshots",
+        "stage": "startup"
+      }
+    },
+    "starts": [],
+    "final_stage": "round1_ready",
+    "duration_sec": 77.96852739999667,
+    "mode": "Actual Studio server and real clients/gameplay remotes/custom prompt input; diagnostic actor positions and temporary elevated anchors during joins; no physical E/native UI/blind-round/FPS claim",
+    "error": "ServerScriptService.CornMultiplayerResumeServerHarness:37: Timeout [round1_ready]: first ready\nServerScriptService.CornMultiplayerResumeServerHarness:37 function waitFor\nServerScriptService.CornMultiplayerResumeServerHarness:249\nServerScriptService.CornMultiplayerResumeServerHarness:231\n",
+    "recipients": {
+      "1": {
+        "connected": true,
+        "dropped_trace_rows": 0,
+        "trace": {
+          "1": {
+            "reward": 0,
+            "team_state": "waiting",
+            "phase": "ready",
+            "evacuation": 0,
+            "diamonds": 0,
+            "catches": 2,
+            "at": 56.687585699997726,
+            "remaining": 0,
+            "count": 2,
+            "round_id": 0,
+            "hud": true,
+            "has_key": false,
+            "stage": "startup",
+            "ready": false
+          },
+          "2": {
+            "reward": 0,
+            "team_state": "waiting",
+            "phase": "ready",
+            "evacuation": 0,
+            "diamonds": 0,
+            "catches": 2,
+            "at": 62.82003329999861,
+            "remaining": 0,
+            "count": 2,
+            "round_id": 0,
+            "hud": true,
+            "has_key": false,
+            "stage": "round1_ready",
+            "ready": false
+          }
+        },
+        "identity": {
+          "user_id": -2,
+          "name": "Player2",
+          "joined_at": 55.142074599996704
+        },
+        "last_snapshot": {
+          "inventory": {
+            "selected": 1,
+            "energy_remaining": 0,
+            "slots": {
+              "1": "empty",
+              "2": "empty",
+              "3": "empty",
+              "4": "empty",
+              "5": "empty"
+            },
+            "use": {
+              "id": 0,
+              "kind": "none"
+            }
+          },
+          "objective": "",
+          "capture_remaining": 0,
+          "evacuation": {
+            "duration": 120,
+            "remaining": 0,
+            "active": false
+          },
+          "phase": "ready",
+          "user_id": -2,
+          "hud": true,
+          "has_key": false,
+          "monster_state": "stopped",
+          "diamonds": 0,
+          "team": {
+            "can_start": true,
+            "key_state": "hidden",
+            "capacity": 4,
+            "state": "waiting",
+            "round_id": 0,
+            "count": 2,
+            "carrier_name": "",
+            "remaining": 0,
+            "ready_count": 0,
+            "ready": false
+          },
+          "gate_open": false,
+          "catches_remaining": 2,
+          "reward": 0
+        }
+      },
+      "2": {
+        "connected": true,
+        "dropped_trace_rows": 0,
+        "trace": {
+          "1": {
+            "reward": 0,
+            "team_state": "waiting",
+            "phase": "ready",
+            "evacuation": 0,
+            "diamonds": 0,
+            "catches": 2,
+            "at": 56.051372199999605,
+            "remaining": 0,
+            "count": 1,
+            "round_id": 0,
+            "hud": true,
+            "has_key": false,
+            "stage": "startup",
+            "ready": false
+          },
+          "2": {
+            "reward": 0,
+            "team_state": "waiting",
+            "phase": "ready",
+            "evacuation": 0,
+            "diamonds": 0,
+            "catches": 2,
+            "at": 56.134455100000196,
+            "remaining": 0,
+            "count": 2,
+            "round_id": 0,
+            "hud": true,
+            "has_key": false,
+            "stage": "startup",
+            "ready": false
+          },
+          "3": {
+            "reward": 0,
+            "team_state": "waiting",
+            "phase": "ready",
+            "evacuation": 0,
+            "diamonds": 0,
+            "catches": 2,
+            "at": 62.82006159999946,
+            "remaining": 0,
+            "count": 2,
+            "round_id": 0,
+            "hud": true,
+            "has_key": false,
+            "stage": "round1_ready",
+            "ready": false
+          }
+        },
+        "identity": {
+          "user_id": -1,
+          "name": "Player1",
+          "joined_at": 53.228121599997394
+        },
+        "last_snapshot": {
+          "inventory": {
+            "selected": 1,
+            "energy_remaining": 0,
+            "slots": {
+              "1": "empty",
+              "2": "empty",
+              "3": "empty",
+              "4": "empty",
+              "5": "empty"
+            },
+            "use": {
+              "id": 0,
+              "kind": "none"
+            }
+          },
+          "objective": "",
+          "capture_remaining": 0,
+          "evacuation": {
+            "duration": 120,
+            "remaining": 0,
+            "active": false
+          },
+          "phase": "ready",
+          "user_id": -1,
+          "hud": true,
+          "has_key": false,
+          "monster_state": "stopped",
+          "diamonds": 0,
+          "team": {
+            "can_start": true,
+            "key_state": "hidden",
+            "capacity": 4,
+            "state": "waiting",
+            "round_id": 0,
+            "count": 2,
+            "carrier_name": "",
+            "remaining": 0,
+            "ready_count": 0,
+            "ready": false
+          },
+          "gate_open": false,
+          "catches_remaining": 2,
+          "reward": 0
+        }
+      }
+    }
+  }
+}

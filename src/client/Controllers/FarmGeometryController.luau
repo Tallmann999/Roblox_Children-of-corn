@@ -10,7 +10,10 @@ local PROJECT = "children_of_corn"
 function Controller:Init(context: any)
 	self._enabled = run:IsStudio()
 		and context.Config.Environment == "DEV"
-		and context.Config.Game.SessionMode == "solo_local"
+		and (
+			context.Config.Game.SessionMode == "solo_local"
+			or context.Config.Game.SessionMode == "team_local"
+		)
 	self._runtime = Builder.newRuntime("client")
 	self._connections = {}
 	self._parts = {}

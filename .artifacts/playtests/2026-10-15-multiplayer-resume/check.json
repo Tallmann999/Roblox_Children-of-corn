@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "StyLua src",
+    "Selene 0 errors/0 warnings/0 parse errors",
+    "code-only Rojo build and sourcemap 77 project Sources",
+    "safe code-container mappings",
+    "persistence disabled"
+  ],
+  "api_dump": "Refresh failed; existing cached API dump used",
+  "scope": "Current merged multiplayer sources before live install, preserving arrival cries and 48/96 radii"
+}

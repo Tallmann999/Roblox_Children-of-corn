@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "baseline": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+  "bytes": 997184,
+  "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+  "working_equal_at_copy": true,
+  "original_before_multiplayer_sha256_unchanged": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+  "instances": 4160,
+  "sources": 78,
+  "project_sources": 75,
+  "fog_sources": 3,
+  "method": "Exclusive exact-byte copy after fixed path/size/hash guards; prior immutable493bc baseline untouched; no serialization"
+}

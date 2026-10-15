@@ -1,5 +1,5 @@
 """Verify and atomically promote exact engine-saved Children_of_corn bytes.
-Both input hashes and the immutable before-multiplayer baseline are required.
+Both input hashes and the immutable before-multiplayer-resume baseline are required.
 No scene is reconstructed or serialized through Lune.
 """
 import argparse
@@ -23,19 +23,19 @@ def promote(candidate, expected_original, expected_candidate):
     place = (ROOT / "place").resolve()
     target_path = place / "Children_of_corn.rbxl"
     target = target_path.resolve()
-    baseline_path = place / "Children_of_corn.before-multiplayer-20261015.rbxl"
+    baseline_path = place / "Children_of_corn.before-multiplayer-resume-20261015.rbxl"
     baseline = checker.BASELINE.resolve()
     candidate = candidate.resolve()
     checker.require(place == ROOT.resolve() / "place", "Redirected scene directory")
     checker.require(target == target_path, "Wrong scene target or redirected working file")
-    checker.require(baseline == baseline_path and baseline_path.resolve() == baseline_path, "Wrong immutable before-multiplayer baseline path")
+    checker.require(baseline == baseline_path and baseline_path.resolve() == baseline_path, "Wrong immutable before-multiplayer-resume baseline path")
     checker.require(candidate != target and candidate != baseline, "Candidate must be a separate engine-saved copy")
     checker.require(candidate.suffix.lower() == ".rbxl" and candidate.is_file(), "Candidate must be a saved RBXL file")
-    checker.require(digest(baseline.read_bytes()) == checker.BASELINE_HASH, "Immutable before-multiplayer baseline changed")
+    checker.require(digest(baseline.read_bytes()) == checker.BASELINE_HASH, "Immutable before-multiplayer-resume baseline changed")
     original, data = target.read_bytes(), candidate.read_bytes()
     checker.require(digest(original) == expected_original.lower(), "Working scene changed; inspect author edits")
     checker.require(digest(data) == expected_candidate.lower(), "Engine copy changed; inspect the new save")
-    snapshot = ROOT / "build" / ("tested-multiplayer-candidate-" + digest(data)[:16] + ".rbxl")
+    snapshot = ROOT / "build" / ("tested-multiplayer-resume-candidate-" + digest(data)[:16] + ".rbxl")
     snapshot.parent.mkdir(parents=True, exist_ok=True)
     checker.require(snapshot.resolve() == snapshot, "Redirected candidate snapshot")
     if snapshot.exists():
@@ -49,18 +49,18 @@ def promote(candidate, expected_original, expected_candidate):
         backup = baseline
         checker.require(backup.read_bytes() == original, "Immutable backup collision")
     else:
-        backup = target.with_name("Children_of_corn.before-multiplayer-save-" + digest(original)[:16] + ".rbxl")
+        backup = target.with_name("Children_of_corn.before-multiplayer-resume-save-" + digest(original)[:16] + ".rbxl")
         checker.require(backup.resolve() == backup, "Redirected save backup")
         if backup.exists():
             checker.require(backup.read_bytes() == original, "Save backup collision; preserve both files")
         else:
             with backup.open("xb") as handle:
                 handle.write(original)
-    output = ROOT / ".artifacts/playtests/2026-10-15-multiplayer"
+    output = ROOT / ".artifacts/playtests/2026-10-15-multiplayer-resume"
     checker.require(output.resolve() == output, "Redirected preservation artifact directory")
     output.mkdir(parents=True, exist_ok=True)
     (output / "preservation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    temporary = target.with_suffix(".verified-multiplayer.tmp")
+    temporary = target.with_suffix(".verified-multiplayer-resume.tmp")
     checker.require(not temporary.exists(), "Temporary path collision")
     created_temporary = False
     try:

@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "files": {
+    "scripts/build-multiplayer-installer.py": {
+      "bytes": 10287,
+      "sha256": "b4fe2791c1e400acd89111955eb741fe61cf5a5e52abb20039d00d007e4d4f80"
+    },
+    "scripts/install-multiplayer.luau": {
+      "bytes": 270772,
+      "sha256": "eb7c533b1645a36a1ebde0c3b759cacd40bf61e09d7babc710695a29fd462c2c"
+    },
+    "scripts/verify-multiplayer-copy.py": {
+      "bytes": 13840,
+      "sha256": "14d86ffb75f1e4d4f80a09398e225abf4cb11bf46814f0b83c2e6e2442a25cad"
+    },
+    "scripts/promote-tested-multiplayer-copy.py": {
+      "bytes": 6084,
+      "sha256": "787c332cf96264454d0a51df1b726d79382d8bef944954dc6ae04a433c7dbd0f"
+    },
+    "tests/multiplayer-installer.luau": {
+      "bytes": 9536,
+      "sha256": "b7248545afcd367b6136bf97a059093fe0e109b933d7b9287dab70414cdd21cf"
+    },
+    "tests/multiplayer-copy-verifier.py": {
+      "bytes": 14250,
+      "sha256": "7c7cca4191122e7b45080dad1c44356e0cc0503534729c56109801aedb4587e7"
+    },
+    "tests/multiplayer-promoter-guards.py": {
+      "bytes": 7546,
+      "sha256": "7653ac459918c8b074c4b632fb889c57b63e38d32b31df9398e7fc1328b62c36"
+    },
+    "tests/multiplayer-foreign-root.luau": {
+      "bytes": 5312,
+      "sha256": "3b1b231e5d7bb238c9fcf16ac620934306b35375c356db92e97ffb9bef5a357b"
+    },
+    "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl": {
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+    }
+  },
+  "baseline": "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+  "allowed_existing_source_changes": [
+    "ReplicatedStorage/GameShared/Config/GameConfig",
+    "ReplicatedStorage/GameShared/Game/RoundText",
+    "ServerScriptService/GameServer/Game/CornField",
+    "ServerScriptService/GameServer/Game/MonsterHunt",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "ServerScriptService/GameServer/Services/FarmGeometryService",
+    "ServerScriptService/GameServer/Services/RoundService",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Bootstrap",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FarmGeometryController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud"
+  ],
+  "protected_accepted_solo_sources": [
+    "ReplicatedStorage/GameShared/Game/Balance",
+    "ServerScriptService/GameServer/Game/SoloRound"
+  ],
+  "new_module_paths": [
+    "ServerScriptService/GameServer/Game/RoundParticipant",
+    "ServerScriptService/GameServer/Game/TeamRound"
+  ],
+  "new_instances": 2,
+  "baseline_instances": 4160,
+  "candidate_instances": 4162,
+  "project_sources": 77,
+  "fog_sources": 3,
+  "fixture_report": "pipeline-fixtures.json",
+  "scope": "Resumed multiplayer code-only pipeline against accepted48/96+arrival baseline. All source snapshots stable; old493bc immutable untouched. No live Studio, source code, world, scene serialization or author-save changes by this worker."
+}

@@ -727,7 +727,10 @@ function CornController:Init(context: any)
 	self._torchesEnabled = true
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
-		and context.Config.Game.SessionMode == "solo_local"
+		and (
+			context.Config.Game.SessionMode == "solo_local"
+			or context.Config.Game.SessionMode == "team_local"
+		)
 end
 
 function CornController:Start()

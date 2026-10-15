@@ -1,0 +1,739 @@
+{
+  "passed": true,
+  "branch": "main",
+  "parent": "2dc84a7bebb6a830a4d5e72aad3dc25abd305255",
+  "staged_path_count": 73,
+  "scope": "Index audited before adding this report. Binary scenes, frozen evidence and tested installer/fixtures preserve exact bytes; other text is LF-equivalent. No game or scene edits.",
+  "files": [
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/before-character-guard-fix/install-multiplayer.luau",
+      "working_bytes": 270772,
+      "staged_bytes": 270772,
+      "working_sha256": "eb7c533b1645a36a1ebde0c3b759cacd40bf61e09d7babc710695a29fd462c2c",
+      "staged_sha256": "eb7c533b1645a36a1ebde0c3b759cacd40bf61e09d7babc710695a29fd462c2c",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/before-character-guard-fix/pipeline-fixtures.json",
+      "working_bytes": 29973,
+      "staged_bytes": 29973,
+      "working_sha256": "ca5eeb732035930af4b1c13ce9e5d98d72cdd7c9264046038d59cccd01a030f0",
+      "staged_sha256": "ca5eeb732035930af4b1c13ce9e5d98d72cdd7c9264046038d59cccd01a030f0",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/before-character-guard-fix/pipeline-manifest.json",
+      "working_bytes": 3509,
+      "staged_bytes": 3509,
+      "working_sha256": "7aaed354d1c6f0290930240cc1356b69f02f362bcaf8912198e222bf0749a4bc",
+      "staged_sha256": "7aaed354d1c6f0290930240cc1356b69f02f362bcaf8912198e222bf0749a4bc",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/check.json",
+      "working_bytes": 405,
+      "staged_bytes": 405,
+      "working_sha256": "acbf606ba26a56f3cb9f636c9b68c698dfe5b0fd1f47ec1a8dd4086c5d00dc3f",
+      "staged_sha256": "acbf606ba26a56f3cb9f636c9b68c698dfe5b0fd1f47ec1a8dd4086c5d00dc3f",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/clean-source-save-audit.json",
+      "working_bytes": 7542,
+      "staged_bytes": 7542,
+      "working_sha256": "f1dfc4642d745ac189a7439fa2c7aa8cf005d9f9a9add7b0d223c85f97510953",
+      "staged_sha256": "f1dfc4642d745ac189a7439fa2c7aa8cf005d9f9a9add7b0d223c85f97510953",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/corpse-retry-fixtures.json",
+      "working_bytes": 8836,
+      "staged_bytes": 8836,
+      "working_sha256": "d51eb62acf36bd18dc5b3c7e54f51f479c8612c161a063f4c70c61ce33b20ee7",
+      "staged_sha256": "d51eb62acf36bd18dc5b3c7e54f51f479c8612c161a063f4c70c61ce33b20ee7",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/final-disk-audit.json",
+      "working_bytes": 15931,
+      "staged_bytes": 15931,
+      "working_sha256": "41d6c73869ac39a55905b75210f00eb9e9d2eb999f8c1a463e185d33a3e3e4de",
+      "staged_sha256": "41d6c73869ac39a55905b75210f00eb9e9d2eb999f8c1a463e185d33a3e3e4de",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/final-disk-preservation.json",
+      "working_bytes": 7542,
+      "staged_bytes": 7542,
+      "working_sha256": "15687e197bd2a631161d2ae9bbce14bb697b46e354ec5ad6da08897fff1cfc39",
+      "staged_sha256": "15687e197bd2a631161d2ae9bbce14bb697b46e354ec5ad6da08897fff1cfc39",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/final-state-audit.json",
+      "working_bytes": 41651,
+      "staged_bytes": 41651,
+      "working_sha256": "3e26db1319949a01f2c68f72d19db0dab15875aca7d0a2f557c205057e8b1673",
+      "staged_sha256": "3e26db1319949a01f2c68f72d19db0dab15875aca7d0a2f557c205057e8b1673",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/interrupted-recovered-state.json",
+      "working_bytes": 1198,
+      "staged_bytes": 1198,
+      "working_sha256": "1cb1b7e650a267181f87660c4361a8f3c538500dfed567df6344e1488635b540",
+      "staged_sha256": "1cb1b7e650a267181f87660c4361a8f3c538500dfed567df6344e1488635b540",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/interrupted-save-forensic-audit.json",
+      "working_bytes": 25586,
+      "staged_bytes": 25586,
+      "working_sha256": "3b9f4b28cefc565ed94a733a68d42b97a117b75193c223fb394d62602adc5583",
+      "staged_sha256": "3b9f4b28cefc565ed94a733a68d42b97a117b75193c223fb394d62602adc5583",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/interrupted-save-raw-terrain-audit.json",
+      "working_bytes": 38996,
+      "staged_bytes": 38996,
+      "working_sha256": "7221add31799dd6859cf1d341a2fe5d6dce6894aac6a0517c737655ed90397f5",
+      "staged_sha256": "7221add31799dd6859cf1d341a2fe5d6dce6894aac6a0517c737655ed90397f5",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/local-tests.json",
+      "working_bytes": 14690,
+      "staged_bytes": 14690,
+      "working_sha256": "1c24935bd64bbb0e4a73c855ed64ef0a87ab0a58c3dce41b63df60a4f2cd0cbb",
+      "staged_sha256": "1c24935bd64bbb0e4a73c855ed64ef0a87ab0a58c3dce41b63df60a4f2cd0cbb",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/metadata-startup-timeout.json",
+      "working_bytes": 3222,
+      "staged_bytes": 3222,
+      "working_sha256": "5b50461d18700f69b5c2080b617f25d4e9651bac8ad9f1721403384f367ef357",
+      "staged_sha256": "5b50461d18700f69b5c2080b617f25d4e9651bac8ad9f1721403384f367ef357",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-after-login-late-join-failure.json",
+      "working_bytes": 85527,
+      "staged_bytes": 85527,
+      "working_sha256": "2c549571ee60b0d7a5b9b28210ae70e622b48d5f7f226d3c04d2ba4b37cb1cb4",
+      "staged_sha256": "2c549571ee60b0d7a5b9b28210ae70e622b48d5f7f226d3c04d2ba4b37cb1cb4",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-client-command-investigation.json",
+      "working_bytes": 16925,
+      "staged_bytes": 16925,
+      "working_sha256": "2c8d4bddcb2f7efa02275562ec6ebf3ddf3f8f53e1afa237af438c16e25a09f4",
+      "staged_sha256": "2c8d4bddcb2f7efa02275562ec6ebf3ddf3f8f53e1afa237af438c16e25a09f4",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-final.json",
+      "working_bytes": 147148,
+      "staged_bytes": 147148,
+      "working_sha256": "75bdf56dccd011fcdf05ba8196b1c097ec8c758c1e3efab087cda121322095bf",
+      "staged_sha256": "75bdf56dccd011fcdf05ba8196b1c097ec8c758c1e3efab087cda121322095bf",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-first-ready-failure.json",
+      "working_bytes": 6156,
+      "staged_bytes": 6156,
+      "working_sha256": "05301e4d5fe8f643e600cf528e0cc585d3654a63c605b4e60b7d783dfcda93cf",
+      "staged_sha256": "05301e4d5fe8f643e600cf528e0cc585d3654a63c605b4e60b7d783dfcda93cf",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-four-client-command-timeout.json",
+      "working_bytes": 86552,
+      "staged_bytes": 86552,
+      "working_sha256": "d519979a54a49eadad27ead049c795789a331c5e2106c824477e9f17f0073a46",
+      "staged_sha256": "d519979a54a49eadad27ead049c795789a331c5e2106c824477e9f17f0073a46",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-install.json",
+      "working_bytes": 520,
+      "staged_bytes": 520,
+      "working_sha256": "88d74edc95435400fc827f528811a68598cd3b283d6d473c1c0591bf50357a02",
+      "staged_sha256": "88d74edc95435400fc827f528811a68598cd3b283d6d473c1c0591bf50357a02",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-late-client-startup-timeout.json",
+      "working_bytes": 96235,
+      "staged_bytes": 96235,
+      "working_sha256": "7a3bac133cd191f551b9487f503354f52a86edbd0b15aff72aa5d15e13594dd5",
+      "staged_sha256": "7a3bac133cd191f551b9487f503354f52a86edbd0b15aff72aa5d15e13594dd5",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-no3d-empty-result.json",
+      "working_bytes": 185,
+      "staged_bytes": 185,
+      "working_sha256": "1377e0ea00a4f1b3c7997cfe9a7e9809e85019dfc56f3b92d9a81653e54d2623",
+      "staged_sha256": "1377e0ea00a4f1b3c7997cfe9a7e9809e85019dfc56f3b92d9a81653e54d2623",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-respawn-fix.json",
+      "working_bytes": 512,
+      "staged_bytes": 512,
+      "working_sha256": "132b08dabaf639501c9c71a7626203825d66ec5c106d0cc454584e830f987549",
+      "staged_sha256": "132b08dabaf639501c9c71a7626203825d66ec5c106d0cc454584e830f987549",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-second-startup-failure.json",
+      "working_bytes": 1367,
+      "staged_bytes": 1367,
+      "working_sha256": "8c0fc1c1d7b2d89f94740b798e3f3346d0b45bc1144c9e7d83528aac6ebaf927",
+      "staged_sha256": "8c0fc1c1d7b2d89f94740b798e3f3346d0b45bc1144c9e7d83528aac6ebaf927",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-sequential-key-recovery-timeout.json",
+      "working_bytes": 123773,
+      "staged_bytes": 123773,
+      "working_sha256": "ccd010b7f46dd953239d24306273f1d2c1f8778569c8fda8d0dbc749f5328c5c",
+      "staged_sha256": "ccd010b7f46dd953239d24306273f1d2c1f8778569c8fda8d0dbc749f5328c5c",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/native-startup-membership-race.json",
+      "working_bytes": 6777,
+      "staged_bytes": 6777,
+      "working_sha256": "a4257c87643ec5cae9fbe2c704192d2f42cd8ead29b81e9118250333720e7074",
+      "staged_sha256": "a4257c87643ec5cae9fbe2c704192d2f42cd8ead29b81e9118250333720e7074",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/paused-handoff.json",
+      "working_bytes": 1126,
+      "staged_bytes": 1126,
+      "working_sha256": "3aa6a0671e52a69963ec3aa1aa12c4ef9961d5814988f5aa4acf82a523b4f989",
+      "staged_sha256": "3aa6a0671e52a69963ec3aa1aa12c4ef9961d5814988f5aa4acf82a523b4f989",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/pipeline-baseline.json",
+      "working_bytes": 630,
+      "staged_bytes": 630,
+      "working_sha256": "d632cda5b4bd324098278da294754244bdff1712a697e83e6242cf438f41f90c",
+      "staged_sha256": "d632cda5b4bd324098278da294754244bdff1712a697e83e6242cf438f41f90c",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/pipeline-fixtures.json",
+      "working_bytes": 30550,
+      "staged_bytes": 30550,
+      "working_sha256": "c9642cb186c9f9b81448d3c334995e50ff5c66fc246141225f1cb5236458f4d1",
+      "staged_sha256": "c9642cb186c9f9b81448d3c334995e50ff5c66fc246141225f1cb5236458f4d1",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/pipeline-manifest.json",
+      "working_bytes": 14642,
+      "staged_bytes": 14642,
+      "working_sha256": "c79d948f6334b0ede400f960cab7505d8b541b1670ba3605073c409b32c6bbf6",
+      "staged_sha256": "c79d948f6334b0ede400f960cab7505d8b541b1670ba3605073c409b32c6bbf6",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/preservation.json",
+      "working_bytes": 7542,
+      "staged_bytes": 7542,
+      "working_sha256": "0d48d67e96be60affc572afb229da8e3bcdb6f6ef862f1d7eb3152b327f304bc",
+      "staged_sha256": "0d48d67e96be60affc572afb229da8e3bcdb6f6ef862f1d7eb3152b327f304bc",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-15-multiplayer-resume/studio-final.json",
+      "working_bytes": 1313,
+      "staged_bytes": 1313,
+      "working_sha256": "e0131c6a660cab0bcb3f830f8c71861d3a3f626146721aff2dcbaa1c8aa0b199",
+      "staged_sha256": "e0131c6a660cab0bcb3f830f8c71861d3a3f626146721aff2dcbaa1c8aa0b199",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": ".gitattributes",
+      "working_bytes": 920,
+      "staged_bytes": 920,
+      "working_sha256": "76a983eb8617096e3426d52e75dd693574624f621a1608dbf5eccc8b8c845b20",
+      "staged_sha256": "76a983eb8617096e3426d52e75dd693574624f621a1608dbf5eccc8b8c845b20",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "AGENTS.md",
+      "working_bytes": 59069,
+      "staged_bytes": 58873,
+      "working_sha256": "8d351c0c0a0cd91511044a8bf459c1ddffab3642f287c70ce40ae88866a387a3",
+      "staged_sha256": "1e1be2274cd62428b9b7b99e2bf6289739b45ecd1e80c6b95cdd93760dfadc9e",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/2026-10-15_multiplayer-playtest.md",
+      "working_bytes": 20106,
+      "staged_bytes": 20106,
+      "working_sha256": "ed5d0903f3de6ebd0f811cb02609bc9a664bdbd7455f5a86ff479c4b7b49cd08",
+      "staged_sha256": "ed5d0903f3de6ebd0f811cb02609bc9a664bdbd7455f5a86ff479c4b7b49cd08",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/2026-10-15_multiplayer.md",
+      "working_bytes": 12955,
+      "staged_bytes": 12955,
+      "working_sha256": "f7fc23a2210f6102b73ce7931512f9bd680847a616aa9ab0dd2297bff10493a3",
+      "staged_sha256": "f7fc23a2210f6102b73ce7931512f9bd680847a616aa9ab0dd2297bff10493a3",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/2026-10-15_new-chat-prompt.txt",
+      "working_bytes": 27294,
+      "staged_bytes": 27294,
+      "working_sha256": "2a9ed4af0c9427dba277a3ffd207124b79d1db3b285b0d19c5e479dd3248fae4",
+      "staged_sha256": "2a9ed4af0c9427dba277a3ffd207124b79d1db3b285b0d19c5e479dd3248fae4",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/architecture.md",
+      "working_bytes": 117587,
+      "staged_bytes": 117253,
+      "working_sha256": "bd20de06101190b88763f5eb2be029960ce016d49fdda1778a1b1ac1e2c389a6",
+      "staged_sha256": "126b630e7f62ec41d6bb998f75bdde0833b2e30a13586e4fb7e441ec4d830978",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/feature-index.md",
+      "working_bytes": 36315,
+      "staged_bytes": 36198,
+      "working_sha256": "0dded082e3e74df368fa3dd09a3d0c929bdc66ec297627f20116c94454789ccf",
+      "staged_sha256": "55072e433e0223803970d846574d2dd7c3f38a61e2950a90faad338f5ef57b07",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "docs/project-concept.md",
+      "working_bytes": 38406,
+      "staged_bytes": 38274,
+      "working_sha256": "4c0b0db9cc8551e3ee6ee49ce30cbf34c84a4f5cd8bda256ec33a90b1c4decbc",
+      "staged_sha256": "80269b7aefc4d98f0ab5430a2083967ecd9e1d46d2556c92e834840a28d84295",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-network-20261015.rbxl",
+      "working_bytes": 1003371,
+      "staged_bytes": 1003371,
+      "working_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "staged_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+      "working_bytes": 997184,
+      "staged_bytes": 997184,
+      "working_sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+      "staged_sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.forensic-b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d.rbxl",
+      "working_bytes": 1010853,
+      "staged_bytes": 1010853,
+      "working_sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d",
+      "staged_sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "working_bytes": 1003371,
+      "staged_bytes": 1003371,
+      "working_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "staged_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "scripts/build-multiplayer-installer.py",
+      "working_bytes": 10287,
+      "staged_bytes": 10101,
+      "working_sha256": "b4fe2791c1e400acd89111955eb741fe61cf5a5e52abb20039d00d007e4d4f80",
+      "staged_sha256": "2054476d9eb049577539383aca093ec5a51c4d22c8cf2f6d86b7f90e85e7baf5",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "scripts/install-multiplayer.luau",
+      "working_bytes": 270932,
+      "staged_bytes": 270932,
+      "working_sha256": "fe25e55e623c0d4f45800f8945a0ed36347cbc528dca80be2a2d5ff1d5dc9a94",
+      "staged_sha256": "fe25e55e623c0d4f45800f8945a0ed36347cbc528dca80be2a2d5ff1d5dc9a94",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "scripts/promote-tested-multiplayer-copy.py",
+      "working_bytes": 6084,
+      "staged_bytes": 5986,
+      "working_sha256": "787c332cf96264454d0a51df1b726d79382d8bef944954dc6ae04a433c7dbd0f",
+      "staged_sha256": "0c34dcfa0eeb2fcc62b299a7c01294c7dc820ae591dc539bbf38503e86d91ac7",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "scripts/verify-multiplayer-copy.py",
+      "working_bytes": 13840,
+      "staged_bytes": 13635,
+      "working_sha256": "14d86ffb75f1e4d4f80a09398e225abf4cb11bf46814f0b83c2e6e2442a25cad",
+      "staged_sha256": "1baab24c822acb7b6d9d2d1ab607bb9e18543d96b95264f7cd7940280124c16b",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Bootstrap.client.luau",
+      "working_bytes": 7494,
+      "staged_bytes": 7494,
+      "working_sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f",
+      "staged_sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/CornAppearanceController.luau",
+      "working_bytes": 6746,
+      "staged_bytes": 6746,
+      "working_sha256": "e2545700c7dc5517699f54a2ae8ee7a3e2939992bb55bd3c1c90be32d2187b60",
+      "staged_sha256": "e2545700c7dc5517699f54a2ae8ee7a3e2939992bb55bd3c1c90be32d2187b60",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/CornBackdropController.luau",
+      "working_bytes": 11519,
+      "staged_bytes": 11519,
+      "working_sha256": "cdb5ea1633cc45a3aa33a9180713a05b5eaff4ee50ec8dab2df4b0ec29f4699c",
+      "staged_sha256": "cdb5ea1633cc45a3aa33a9180713a05b5eaff4ee50ec8dab2df4b0ec29f4699c",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/CornController.luau",
+      "working_bytes": 22719,
+      "staged_bytes": 22719,
+      "working_sha256": "9b4fda9dcb51a2351ddefed6ecf2d77ea7c4e3a98b14fe6ba37355a315f2bcc4",
+      "staged_sha256": "9b4fda9dcb51a2351ddefed6ecf2d77ea7c4e3a98b14fe6ba37355a315f2bcc4",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/CornWindController.luau",
+      "working_bytes": 20381,
+      "staged_bytes": 20381,
+      "working_sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515",
+      "staged_sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/FarmGeometryController.luau",
+      "working_bytes": 5103,
+      "staged_bytes": 5103,
+      "working_sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed",
+      "staged_sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/MonsterAnimationController.luau",
+      "working_bytes": 10309,
+      "staged_bytes": 10309,
+      "working_sha256": "2a9020558ef07edb1b85a388f75b0f2992f8b5f48c8280fb1938fa8888951e75",
+      "staged_sha256": "2a9020558ef07edb1b85a388f75b0f2992f8b5f48c8280fb1938fa8888951e75",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Controllers/RoundController.luau",
+      "working_bytes": 9219,
+      "staged_bytes": 9219,
+      "working_sha256": "a1a066480b6c4b4bfa17e563dbe31d33ed2931914a9fc721cd6b7457aeeed497",
+      "staged_sha256": "a1a066480b6c4b4bfa17e563dbe31d33ed2931914a9fc721cd6b7457aeeed497",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/client/Game/RoundHud.luau",
+      "working_bytes": 28961,
+      "staged_bytes": 28961,
+      "working_sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5",
+      "staged_sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Game/CornField.luau",
+      "working_bytes": 3487,
+      "staged_bytes": 3487,
+      "working_sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187",
+      "staged_sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Game/MonsterHunt.luau",
+      "working_bytes": 17089,
+      "staged_bytes": 17089,
+      "working_sha256": "5e82a9e50fdf6cb7b0193d370d1890287aeb18e373b5f9f0e203682af0e6c63a",
+      "staged_sha256": "5e82a9e50fdf6cb7b0193d370d1890287aeb18e373b5f9f0e203682af0e6c63a",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Game/RoundAudio.luau",
+      "working_bytes": 25606,
+      "staged_bytes": 25606,
+      "working_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb",
+      "staged_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Game/RoundParticipant.luau",
+      "working_bytes": 9347,
+      "staged_bytes": 9347,
+      "working_sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5",
+      "staged_sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Game/TeamRound.luau",
+      "working_bytes": 20233,
+      "staged_bytes": 20233,
+      "working_sha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba",
+      "staged_sha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Services/FarmGeometryService.luau",
+      "working_bytes": 675,
+      "staged_bytes": 675,
+      "working_sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533",
+      "staged_sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/server/Services/RoundService.luau",
+      "working_bytes": 642,
+      "staged_bytes": 642,
+      "working_sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1",
+      "staged_sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/shared/Config/GameConfig.luau",
+      "working_bytes": 438,
+      "staged_bytes": 438,
+      "working_sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063",
+      "staged_sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "src/shared/Game/RoundText.luau",
+      "working_bytes": 4372,
+      "staged_bytes": 4372,
+      "working_sha256": "c861cd2eee2807b7d2ce20aa7f3bac6d099472a6720db8c46c2c351a69824b00",
+      "staged_sha256": "c861cd2eee2807b7d2ce20aa7f3bac6d099472a6720db8c46c2c351a69824b00",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/multiplayer-copy-verifier.py",
+      "working_bytes": 14250,
+      "staged_bytes": 14050,
+      "working_sha256": "7c7cca4191122e7b45080dad1c44356e0cc0503534729c56109801aedb4587e7",
+      "staged_sha256": "f8c4422f21721d7932bca8ee1336b556951b398c7bcc1b356f2a20bfaf82ba70",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/multiplayer-foreign-root.luau",
+      "working_bytes": 5312,
+      "staged_bytes": 5312,
+      "working_sha256": "3b1b231e5d7bb238c9fcf16ac620934306b35375c356db92e97ffb9bef5a357b",
+      "staged_sha256": "3b1b231e5d7bb238c9fcf16ac620934306b35375c356db92e97ffb9bef5a357b",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/multiplayer-installer.luau",
+      "working_bytes": 9536,
+      "staged_bytes": 9536,
+      "working_sha256": "b7248545afcd367b6136bf97a059093fe0e109b933d7b9287dab70414cdd21cf",
+      "staged_sha256": "b7248545afcd367b6136bf97a059093fe0e109b933d7b9287dab70414cdd21cf",
+      "exact_bytes_required": true,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/multiplayer-promoter-guards.py",
+      "working_bytes": 7546,
+      "staged_bytes": 7413,
+      "working_sha256": "7653ac459918c8b074c4b632fb889c57b63e38d32b31df9398e7fc1328b62c36",
+      "staged_sha256": "1c5610091b2da378be0165936424007ab9ee03aad0390f8f580ae91da6169da9",
+      "exact_bytes_required": false,
+      "exact_bytes_match": false,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/multiplayer-round.luau",
+      "working_bytes": 40654,
+      "staged_bytes": 40654,
+      "working_sha256": "a274cc3202ec39412a6f0008f0f73de6c741acaba9ee91495ea25651b058cf8b",
+      "staged_sha256": "a274cc3202ec39412a6f0008f0f73de6c741acaba9ee91495ea25651b058cf8b",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/studio-multiplayer-client.luau",
+      "working_bytes": 5535,
+      "staged_bytes": 5535,
+      "working_sha256": "151d14a8fe1deeb1cdb7cc6b56bc092f74d944d6a41c0926f747ca7ac405ee8a",
+      "staged_sha256": "151d14a8fe1deeb1cdb7cc6b56bc092f74d944d6a41c0926f747ca7ac405ee8a",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    },
+    {
+      "path": "tests/studio-multiplayer-server.luau",
+      "working_bytes": 25836,
+      "staged_bytes": 25836,
+      "working_sha256": "6f09688d222d3285efcbe306a6e3ee056d13b09acfeec6517442f3897cc4f741",
+      "staged_sha256": "6f09688d222d3285efcbe306a6e3ee056d13b09acfeec6517442f3897cc4f741",
+      "exact_bytes_required": false,
+      "exact_bytes_match": true,
+      "lf_normalized_equal": true
+    }
+  ]
+}

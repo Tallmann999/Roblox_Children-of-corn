@@ -1,0 +1,1058 @@
+{
+  "audit": "Interrupted saved-scene immutable snapshot: independent raw Terrain and unknown-property preservation",
+  "created_utc": "2026-10-15T15:10:13.869254+00:00",
+  "passed": true,
+  "baseline_path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+  "forensic_snapshot_path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.forensic-b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d.rbxl",
+  "expected_input_fingerprints": {
+    "baseline": {
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+    },
+    "forensic_snapshot": {
+      "bytes": 1010853,
+      "sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d"
+    }
+  },
+  "input_fingerprints_before": {
+    "baseline": {
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+    },
+    "forensic_snapshot": {
+      "bytes": 1010853,
+      "sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d"
+    }
+  },
+  "input_fingerprints_after": {
+    "baseline": {
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+    },
+    "forensic_snapshot": {
+      "bytes": 1010853,
+      "sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d"
+    }
+  },
+  "input_hashes_unchanged": true,
+  "unknown_properties": {
+    "before": {
+      "supported": true,
+      "properties": {
+        "Terrain.VoxelGridAssetContentMap": {
+          "type": 35,
+          "instance_count": 1,
+          "payload_bytes": 9,
+          "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+          "payload_hex": "020000000000000000"
+        }
+      }
+    },
+    "after": {
+      "supported": true,
+      "properties": {
+        "Terrain.VoxelGridAssetContentMap": {
+          "type": 35,
+          "instance_count": 1,
+          "payload_bytes": 9,
+          "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+          "payload_hex": "020000000000000000"
+        }
+      }
+    },
+    "exact_match": true,
+    "differences": {}
+  },
+  "raw_terrain_properties": {
+    "before_count": 70,
+    "after_count": 70,
+    "before": {
+      "Terrain.AcquisitionMethod": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Anchored": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.AttributesSerialize": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.AudioCanCollide": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.BackParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.BackParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.BackSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.BackSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.BottomParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.BottomParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.BottomSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "1bc5d0e3df0ea12c4d0078668d14924f95106bbe173e196de50fe13a900b0937",
+        "payload_hex": "00000004"
+      },
+      "Terrain.BottomSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.CFrame": {
+        "type": 16,
+        "instance_count": 1,
+        "payload_bytes": 13,
+        "payload_sha256": "edea17609e561aacc378a28195dfd3fd8916a95b3f4334b986fe0aab9bc87565",
+        "payload_hex": "02000000000000000000000000"
+      },
+      "Terrain.CanCollide": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CanQuery": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CanTouch": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.Capabilities": {
+        "type": 33,
+        "instance_count": 1,
+        "payload_bytes": 8,
+        "payload_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "payload_hex": "0000000000000000"
+      },
+      "Terrain.CastShadow": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CollisionGroup": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 11,
+        "payload_sha256": "d07ec9ad1c2fa591481676fd5e200b5bc72862fa8852d4ea67cc238c8ebd9b37",
+        "payload_hex": "0700000044656661756c74"
+      },
+      "Terrain.CollisionGroupId": {
+        "type": 3,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Color3uint8": {
+        "type": 26,
+        "instance_count": 1,
+        "payload_bytes": 3,
+        "payload_sha256": "eaf40139d7b27696654ff6a592e7d90ba208bfadfb113a988684c809d14fdf18",
+        "payload_hex": "a3a2a5"
+      },
+      "Terrain.CustomPhysicalProperties": {
+        "type": 25,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+        "payload_hex": "02"
+      },
+      "Terrain.Decoration": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.DefinesCapabilities": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.EnableFluidForces": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.FrontParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.FrontParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.FrontSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.FrontSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.GrassLength": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "beb69dba1e35b1e11819a449551354184b148b15e96ea0a4b47a67007bd91bb9",
+        "payload_hex": "7e666666"
+      },
+      "Terrain.HistoryId": {
+        "type": 31,
+        "instance_count": 1,
+        "payload_bytes": 16,
+        "payload_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "payload_hex": "00000000000000000000000000000000"
+      },
+      "Terrain.LeftParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.LeftParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.LeftSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.LeftSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Locked": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.Massless": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.Material": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6b1e73a0094b7b812d3b9e22cffb4f8239319847522c4fa103753b6950020f93",
+        "payload_hex": "00000100"
+      },
+      "Terrain.MaterialColors": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 73,
+        "payload_sha256": "8499f94d23544be8820db664bd65d1a64a3b756a34c7aacd66be5f909ce1950a",
+        "payload_hex": "450000000000000000006f7e3e5859569898988a6149cfcba7ac946c636466dde4e5ebfdff947c5f7970624b4a4a8c8268ff1843505454868676ccd2df6a8640fffffefff3c08f9087"
+      },
+      "Terrain.MaterialVariantSerialized": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Materials": {
+        "type": 28,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "bc2d9ddc9857e53598677dbea82a2583879e89ce6c032c77d825187bf3f1a943",
+        "payload_hex": "00000016"
+      },
+      "Terrain.Name": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 11,
+        "payload_sha256": "72cf02e5fa349e4292614826bfbe78d1141084fd1c882570675def850520d26b",
+        "payload_hex": "070000005465727261696e"
+      },
+      "Terrain.PhysicsGrid": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 18,
+        "payload_sha256": "a07872939e0d046fc162581d47a0cac92ac13e38500e5143e343ab22404f8f61",
+        "payload_hex": "0e0000000203000000000000000000000000"
+      },
+      "Terrain.PivotOffset": {
+        "type": 16,
+        "instance_count": 1,
+        "payload_bytes": 13,
+        "payload_sha256": "edea17609e561aacc378a28195dfd3fd8916a95b3f4334b986fe0aab9bc87565",
+        "payload_hex": "02000000000000000000000000"
+      },
+      "Terrain.Reflectance": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RightParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.RightParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.RightSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RightSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RootPriority": {
+        "type": 3,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RotVelocity": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "payload_hex": "000000000000000000000000"
+      },
+      "Terrain.SerializedOverrides": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.SmoothGrid": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 6,
+        "payload_sha256": "8562b1368b4c6a4a678fa4e3151b810b2d846e143eea5c20f2930446391ea801",
+        "payload_hex": "020000000105"
+      },
+      "Terrain.SmoothVoxelsUpgraded": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.SourceAssetId": {
+        "type": 27,
+        "instance_count": 1,
+        "payload_bytes": 8,
+        "payload_sha256": "cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50",
+        "payload_hex": "0000000000000001"
+      },
+      "Terrain.Tags": {
+        "type": 28,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.TopParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.TopParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.TopSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "88185d128d9922e0e6bcd32b07b6c7f20f27968eab447a1d8d1cdf250f79f7d3",
+        "payload_hex": "00000003"
+      },
+      "Terrain.TopSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Transparency": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.UniqueId": {
+        "type": 31,
+        "instance_count": 1,
+        "payload_bytes": 16,
+        "payload_sha256": "bb699d49a2ca36d151628dbd5bee2b1567d5ca45f3db6bd35eb426b3434682e5",
+        "payload_hex": "000003e50ada5c98e94ff9292c26f620"
+      },
+      "Terrain.Velocity": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "payload_hex": "000000000000000000000000"
+      },
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      },
+      "Terrain.WaterColor": {
+        "type": 12,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "0d54cde7a55db0c217c364585f7a25dabeaa0bcc3363fbf0a427d5507addb408",
+        "payload_hex": "7a8181847d5151527d717172"
+      },
+      "Terrain.WaterReflectance": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03",
+        "payload_hex": "7f000000"
+      },
+      "Terrain.WaterTransparency": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "ff24d9d89f6f9b2918447f9134eee4db9b82cb552c9cb87a60aaf27d0726fad0",
+        "payload_hex": "7d333334"
+      },
+      "Terrain.WaterWaveSize": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "4f640143d9c801ceccbdeb6454c7d806f4e46bf4001fbe46790020ef6e11b1e4",
+        "payload_hex": "7c333334"
+      },
+      "Terrain.WaterWaveSpeed": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "7cd6a1af91189ed243f1a456ce885d6707e25821ef3e65ca1337611305d99a73",
+        "payload_hex": "82400000"
+      },
+      "Terrain.size": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "2ff58c05193b8b0f927c3512320c5f30840500edccdcf1067658cd71d72b8f28",
+        "payload_hex": "89ff000086f8000089ff0000"
+      }
+    },
+    "after": {
+      "Terrain.AcquisitionMethod": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Anchored": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.AttributesSerialize": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.AudioCanCollide": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.BackParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.BackParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.BackSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.BackSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.BottomParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.BottomParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.BottomSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "1bc5d0e3df0ea12c4d0078668d14924f95106bbe173e196de50fe13a900b0937",
+        "payload_hex": "00000004"
+      },
+      "Terrain.BottomSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.CFrame": {
+        "type": 16,
+        "instance_count": 1,
+        "payload_bytes": 13,
+        "payload_sha256": "edea17609e561aacc378a28195dfd3fd8916a95b3f4334b986fe0aab9bc87565",
+        "payload_hex": "02000000000000000000000000"
+      },
+      "Terrain.CanCollide": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CanQuery": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CanTouch": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.Capabilities": {
+        "type": 33,
+        "instance_count": 1,
+        "payload_bytes": 8,
+        "payload_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "payload_hex": "0000000000000000"
+      },
+      "Terrain.CastShadow": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.CollisionGroup": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 11,
+        "payload_sha256": "d07ec9ad1c2fa591481676fd5e200b5bc72862fa8852d4ea67cc238c8ebd9b37",
+        "payload_hex": "0700000044656661756c74"
+      },
+      "Terrain.CollisionGroupId": {
+        "type": 3,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Color3uint8": {
+        "type": 26,
+        "instance_count": 1,
+        "payload_bytes": 3,
+        "payload_sha256": "eaf40139d7b27696654ff6a592e7d90ba208bfadfb113a988684c809d14fdf18",
+        "payload_hex": "a3a2a5"
+      },
+      "Terrain.CustomPhysicalProperties": {
+        "type": 25,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+        "payload_hex": "02"
+      },
+      "Terrain.Decoration": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.DefinesCapabilities": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.EnableFluidForces": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.FrontParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.FrontParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.FrontSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.FrontSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.GrassLength": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "beb69dba1e35b1e11819a449551354184b148b15e96ea0a4b47a67007bd91bb9",
+        "payload_hex": "7e666666"
+      },
+      "Terrain.HistoryId": {
+        "type": 31,
+        "instance_count": 1,
+        "payload_bytes": 16,
+        "payload_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "payload_hex": "00000000000000000000000000000000"
+      },
+      "Terrain.LeftParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.LeftParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.LeftSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.LeftSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Locked": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+        "payload_hex": "01"
+      },
+      "Terrain.Massless": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.Material": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6b1e73a0094b7b812d3b9e22cffb4f8239319847522c4fa103753b6950020f93",
+        "payload_hex": "00000100"
+      },
+      "Terrain.MaterialColors": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 73,
+        "payload_sha256": "8499f94d23544be8820db664bd65d1a64a3b756a34c7aacd66be5f909ce1950a",
+        "payload_hex": "450000000000000000006f7e3e5859569898988a6149cfcba7ac946c636466dde4e5ebfdff947c5f7970624b4a4a8c8268ff1843505454868676ccd2df6a8640fffffefff3c08f9087"
+      },
+      "Terrain.MaterialVariantSerialized": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Materials": {
+        "type": 28,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "bc2d9ddc9857e53598677dbea82a2583879e89ce6c032c77d825187bf3f1a943",
+        "payload_hex": "00000016"
+      },
+      "Terrain.Name": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 11,
+        "payload_sha256": "72cf02e5fa349e4292614826bfbe78d1141084fd1c882570675def850520d26b",
+        "payload_hex": "070000005465727261696e"
+      },
+      "Terrain.PhysicsGrid": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 18,
+        "payload_sha256": "a07872939e0d046fc162581d47a0cac92ac13e38500e5143e343ab22404f8f61",
+        "payload_hex": "0e0000000203000000000000000000000000"
+      },
+      "Terrain.PivotOffset": {
+        "type": 16,
+        "instance_count": 1,
+        "payload_bytes": 13,
+        "payload_sha256": "edea17609e561aacc378a28195dfd3fd8916a95b3f4334b986fe0aab9bc87565",
+        "payload_hex": "02000000000000000000000000"
+      },
+      "Terrain.Reflectance": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RightParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.RightParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.RightSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RightSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RootPriority": {
+        "type": 3,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.RotVelocity": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "payload_hex": "000000000000000000000000"
+      },
+      "Terrain.SerializedOverrides": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.SmoothGrid": {
+        "type": 1,
+        "instance_count": 1,
+        "payload_bytes": 6,
+        "payload_sha256": "8562b1368b4c6a4a678fa4e3151b810b2d846e143eea5c20f2930446391ea801",
+        "payload_hex": "020000000105"
+      },
+      "Terrain.SmoothVoxelsUpgraded": {
+        "type": 2,
+        "instance_count": 1,
+        "payload_bytes": 1,
+        "payload_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+        "payload_hex": "00"
+      },
+      "Terrain.SourceAssetId": {
+        "type": 27,
+        "instance_count": 1,
+        "payload_bytes": 8,
+        "payload_sha256": "cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50",
+        "payload_hex": "0000000000000001"
+      },
+      "Terrain.Tags": {
+        "type": 28,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.TopParamA": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "6d7da85165d7106b53202f21429f76f77f0873387a581b8ac4b6b9b08ee9d8e1",
+        "payload_hex": "7e000001"
+      },
+      "Terrain.TopParamB": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "76803349baeb5f1ce6a8194b832de56fcdc6d0f8d14fe8cb2687956374bfda10",
+        "payload_hex": "7e000000"
+      },
+      "Terrain.TopSurface": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "88185d128d9922e0e6bcd32b07b6c7f20f27968eab447a1d8d1cdf250f79f7d3",
+        "payload_hex": "00000003"
+      },
+      "Terrain.TopSurfaceInput": {
+        "type": 18,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.Transparency": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+        "payload_hex": "00000000"
+      },
+      "Terrain.UniqueId": {
+        "type": 31,
+        "instance_count": 1,
+        "payload_bytes": 16,
+        "payload_sha256": "bb699d49a2ca36d151628dbd5bee2b1567d5ca45f3db6bd35eb426b3434682e5",
+        "payload_hex": "000003e50ada5c98e94ff9292c26f620"
+      },
+      "Terrain.Velocity": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+        "payload_hex": "000000000000000000000000"
+      },
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      },
+      "Terrain.WaterColor": {
+        "type": 12,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "0d54cde7a55db0c217c364585f7a25dabeaa0bcc3363fbf0a427d5507addb408",
+        "payload_hex": "7a8181847d5151527d717172"
+      },
+      "Terrain.WaterReflectance": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "8d12d9fcf1bb74eb413e34f28b96439b1260da900a2c70af2440c5c7dbb43c03",
+        "payload_hex": "7f000000"
+      },
+      "Terrain.WaterTransparency": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "ff24d9d89f6f9b2918447f9134eee4db9b82cb552c9cb87a60aaf27d0726fad0",
+        "payload_hex": "7d333334"
+      },
+      "Terrain.WaterWaveSize": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "4f640143d9c801ceccbdeb6454c7d806f4e46bf4001fbe46790020ef6e11b1e4",
+        "payload_hex": "7c333334"
+      },
+      "Terrain.WaterWaveSpeed": {
+        "type": 4,
+        "instance_count": 1,
+        "payload_bytes": 4,
+        "payload_sha256": "7cd6a1af91189ed243f1a456ce885d6707e25821ef3e65ca1337611305d99a73",
+        "payload_hex": "82400000"
+      },
+      "Terrain.size": {
+        "type": 14,
+        "instance_count": 1,
+        "payload_bytes": 12,
+        "payload_sha256": "2ff58c05193b8b0f927c3512320c5f30840500edccdcf1067658cd71d72b8f28",
+        "payload_hex": "89ff000086f8000089ff0000"
+      }
+    },
+    "exact_match": true,
+    "differences": {}
+  },
+  "method": "Python -B; sys.dont_write_bytecode; imported unknown_properties, binary_string, lz4_block and zstd from scripts/verify-scene-preservation.py. Direct decoded binary PROP payloads, including full payload hex and hashes. No known_dom or scene serialization.",
+  "scope": "Only the immutable baseline and hash-named forensic snapshot were read. The changing working scene was not read. Only this JSON evidence report was written. No src/scene writes, Studio calls, tests or builds."
+}

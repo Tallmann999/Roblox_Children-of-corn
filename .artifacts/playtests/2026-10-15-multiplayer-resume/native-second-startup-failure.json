@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "result": {
+    "trace_limit_per_recipient": 72,
+    "commands": [],
+    "staging_restored": true,
+    "passed": false,
+    "checks": [],
+    "departures": [],
+    "error": "ServerScriptService.CornMultiplayerResumeServerHarness:112: Timeout [startup]: two actual Players\nServerScriptService.CornMultiplayerResumeServerHarness:112 function waitFor\nServerScriptService.CornMultiplayerResumeServerHarness:307\nServerScriptService.CornMultiplayerResumeServerHarness:306\n",
+    "starts": [],
+    "final_stage": "startup",
+    "duration_sec": 120.08385070000077,
+    "mode": "Actual Studio server and real clients/gameplay remotes/custom prompt input; diagnostic actor positions and temporary elevated anchors during joins; no physical E/native UI/blind-round/FPS claim",
+    "action_delivery_audit": {
+      "connections_disconnected": true,
+      "dropped": 0,
+      "bindings": {
+        "1": {
+          "at": 17.249722200001997,
+          "path": "ReplicatedStorage.GameRemotes.request_round_action"
+        }
+      },
+      "rows": [],
+      "rate_estimate_scope": "Approximate 2-token/cap2/refill2-per-second model from observed string requests only; not production bucket introspection or proof of server acceptance. Raw delivery times/types/values are direct OnServerEvent observations.",
+      "limit": 100
+    },
+    "recipients": []
+  }
+}

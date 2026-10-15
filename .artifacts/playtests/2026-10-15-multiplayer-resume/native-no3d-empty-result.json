@@ -1,0 +1,7 @@
+{
+  "accepted": false,
+  "reason": "StudioTestService returned nil; no completed structured test report. Correct Studio remains authenticated in Edit.",
+  "raw": {
+    "ok": true
+  }
+}

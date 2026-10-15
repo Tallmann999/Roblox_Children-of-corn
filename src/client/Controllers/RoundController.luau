@@ -46,8 +46,33 @@ local function nonnegativeNumber(value: any): boolean
 	return typeof(value) == "number" and value == value and value >= 0 and value < math.huge
 end
 
+local function boundedInteger(value: any, maximum: number): boolean
+	return nonnegativeNumber(value) and value % 1 == 0 and value <= maximum
+end
+
+local function validTeam(value: any): boolean
+	return value == nil
+		or (
+			typeof(value) == "table"
+			and boundedInteger(value.round_id, 9007199254740991)
+			and typeof(value.state) == "string"
+			and ({ waiting = true, preparing = true, active = true, finished = true })[value.state] == true
+			and value.capacity == 4
+			and boundedInteger(value.count, value.capacity)
+			and boundedInteger(value.ready_count, value.count)
+			and boundedInteger(value.remaining, value.count)
+			and typeof(value.ready) == "boolean"
+			and typeof(value.can_start) == "boolean"
+			and typeof(value.key_state) == "string"
+			and ({ hidden = true, carried = true, opened = true })[value.key_state] == true
+			and typeof(value.carrier_name) == "string"
+			and #value.carrier_name <= 50
+		)
+end
+
 local function validSnapshot(value: any): boolean
 	return typeof(value) == "table"
+		and validTeam(value.team)
 		and LightingModes.IsValid(value.lighting_mode)
 		and MinimapGeometry.IsValid(value.minimap)
 		and Inventory.IsValidSnapshot(value.inventory)
@@ -137,6 +162,10 @@ function RoundController:_request(action: string, mode: string?)
 		return
 	end
 	if (action == "start" or action == "retry") and not LightingModes.IsValid(mode) then
+		return
+	end
+	local team = self._snapshot.team
+	if (action == "start" or action == "retry") and team and (team.ready or not team.can_start) then
 		return
 	end
 	if action == "start" and self._snapshot.phase ~= "ready" then

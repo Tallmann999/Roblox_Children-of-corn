@@ -17,7 +17,7 @@ function CornField.Prepare(): boolean
 	if
 		not RunService:IsStudio()
 		or Config.Environment ~= "DEV"
-		or Config.Game.SessionMode ~= "solo_local"
+		or (Config.Game.SessionMode ~= "solo_local" and Config.Game.SessionMode ~= "team_local")
 	then
 		return false
 	end

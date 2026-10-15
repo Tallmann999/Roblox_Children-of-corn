@@ -1,0 +1,40 @@
+{
+  "studio_id": "eb588c51-4726-41c4-b052-3a5f36b31d1d",
+  "scene": "Children_of_corn.rbxl",
+  "camera": "Fixed",
+  "runtime": false,
+  "items": [
+    {
+      "attrs": {
+        "corn_project_id": "children_of_corn",
+        "CornDiagnosticOwned": true
+      },
+      "path": "ServerScriptService.CornMultiplayerResumeServerHarness",
+      "class": "Script",
+      "children": 0,
+      "source_bytes": 21015
+    },
+    {
+      "attrs": {
+        "corn_project_id": "children_of_corn",
+        "CornDiagnosticOwned": true
+      },
+      "path": "StarterPlayer.StarterPlayerScripts.CornMultiplayerResumeClientHarness",
+      "class": "LocalScript",
+      "children": 0,
+      "source_bytes": 5323
+    },
+    {
+      "attrs": {
+        "Done": true,
+        "CornDiagnosticOwned": true,
+        "corn_project_id": "children_of_corn"
+      },
+      "path": "ServerStorage.CornMultiplayerResumeTestResult",
+      "value": "{\"ok\":true}",
+      "class": "StringValue",
+      "children": 0
+    }
+  ],
+  "scope": "Read-only state recovered after user-reported account/app interruption; old Studio disconnected. Saved working scene includes known temporary test objects; no network acceptance inferred."
+}

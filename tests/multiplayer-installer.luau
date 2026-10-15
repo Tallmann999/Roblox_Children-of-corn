@@ -4,8 +4,8 @@ local r, fs = require("@lune/roblox"), require("@lune/fs")
 local I = r.Instance
 local serde = require("@lune/serde")
 local source = fs.readFile("scripts/install-multiplayer.luau"):gsub("\r\n", "\n")
-local bytes = fs.readFile("place/Children_of_corn.before-multiplayer-20261015.rbxl")
-assert(serde.hash("sha256", bytes) == "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68")
+local bytes = fs.readFile("place/Children_of_corn.before-multiplayer-resume-20261015.rbxl")
+assert(serde.hash("sha256", bytes) == "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8")
 local kind, openScript = "positive", nil
 r.implementMethod("RunService", "IsStudio", function() return kind ~= "not-studio" end)
 r.implementMethod("RunService", "IsRunning", function() return kind == "running" end)
@@ -124,6 +124,13 @@ rejects("wrong-field", function(p) p.Workspace.CornMap.FieldZone.Size = r.Vector
 rejects("runtime-present", function(p) local x=I.new("Folder") x.Name="Runtime" x.Parent=p.Workspace.CornMap end)
 rejects("manual-source", function(p) p.ServerScriptService.GameServer.Services.RoundService.Source ..= "\n-- manual" end)
 rejects("manual-fog", function(p) p.Workspace.CornfieldFog.RuntimeServer.Source ..= "\n-- manual" end)
+rejects("old-solo-baseline493bc", function(p)
+	local old = r.deserializePlace(fs.readFile("place/Children_of_corn.before-multiplayer-20261015.rbxl"))
+	p.ReplicatedStorage.GameShared.Game.Balance.Source = old.ReplicatedStorage.GameShared.Game.Balance.Source
+	p.ServerScriptService.GameServer.Game.SoloRound.Source = old.ServerScriptService.GameServer.Game.SoloRound.Source
+	p.ServerScriptService.GameServer.Game.RoundAudio.Source = old.ServerScriptService.GameServer.Game.RoundAudio.Source
+	old:Destroy()
+end)
 rejects("missing-original", function(p) p.ServerScriptService.GameServer.Services.RoundService:Destroy() end)
 rejects("missing-folder", function(p) p.ServerScriptService.GameServer.Game:Destroy() end)
 rejects("extra-code", function(p) local x=I.new("Folder") x.Name="Unexpected" x.Parent=p.ServerScriptService.GameServer end)
@@ -150,7 +157,7 @@ assert(source:find(old, 1, true), "Missing rollback insertion point")
 local startAt, endAt = assert(source:find(old, 1, true))
 local failedFinal = source:sub(1, startAt-1) .. "    error('Injected final verification failure')\n" .. source:sub(startAt)
 rejects("rollback-after-all-writes", function() end, false, failedFinal)
-assert(serde.hash("sha256", bytes) == "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68")
+assert(serde.hash("sha256", bytes) == "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8")
 print(serde.encode("json", {passed=true, baselineSources=78, finalSources=80, projectSources=77, created=2, changed=changed,
 	unsafeCasesRejected=#rejected, cases=rejected, repeatAndCrLf=true,
 	scope="Actual generated installer, immutable engine baseline in-memory; no scene writes, Studio Play or networking claims"}))

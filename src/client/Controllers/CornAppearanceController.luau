@@ -223,7 +223,10 @@ function Controller:Start(context: any)
 	if
 		not RunService:IsStudio()
 		or context.Config.Environment ~= "DEV"
-		or context.Config.Game.SessionMode ~= "solo_local"
+		or (
+			context.Config.Game.SessionMode ~= "solo_local"
+			and context.Config.Game.SessionMode ~= "team_local"
+		)
 	then
 		return
 	end

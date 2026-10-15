@@ -2,10 +2,11 @@
 -- real Inventory/Stamina/MinimapState/InventoryWorld rules. World geometry, Roblox
 -- signals/tasks, NPC decisions and sound rendering are deterministic adapters.
 local fs = require("@lune/fs")
+local process = require("@lune/process")
 local r = require("@lune/roblox")
 
-local function load(path, env)
-	local fn = assert(loadstring(fs.readFile(path), path))
+local function load(path, env, sourceOverride)
+	local fn = assert(loadstring(sourceOverride or fs.readFile(path), path))
 	setfenv(fn, setmetatable(env, { __index = getfenv() }))
 	return fn()
 end
@@ -35,63 +36,60 @@ local function fixture(count)
 		}
 	end
 	local function make(class, name, parent)
-		local object = setmetatable(
-			{
-				class = class,
-				values = {
-					Name = name or class,
-					CFrame = r.CFrame.identity,
-					Size = r.Vector3.one,
-					Health = 100,
-					JumpPower = 50,
-					JumpHeight = 7.2,
-					AutoRotate = true,
-					AssemblyLinearVelocity = r.Vector3.zero,
-					AssemblyAngularVelocity = r.Vector3.zero,
-					Enabled = true,
-				},
-				children = {},
-				attributes = {},
-				tags = {},
+		local object = setmetatable({
+			class = class,
+			values = {
+				Name = name or class,
+				CFrame = r.CFrame.identity,
+				Size = r.Vector3.one,
+				Health = 100,
+				JumpPower = 50,
+				JumpHeight = 7.2,
+				AutoRotate = true,
+				AssemblyLinearVelocity = r.Vector3.zero,
+				AssemblyAngularVelocity = r.Vector3.zero,
+				Enabled = true,
 			},
-			{
-				__index = function(self, key)
-					if key == "Position" then
-						return self.values.CFrame.Position
+			children = {},
+			attributes = {},
+			tags = {},
+		}, {
+			__index = function(self, key)
+				if key == "Position" then
+					return self.values.CFrame.Position
+				end
+				if methods[key] then
+					return methods[key]
+				end
+				if self.values[key] ~= nil then
+					return self.values[key]
+				end
+				for _, child in self.children do
+					if child.Name == key then
+						return child
 					end
-					if methods[key] then
-						return methods[key]
-					end
-					if self.values[key] ~= nil then
-						return self.values[key]
-					end
-					for _, child in self.children do
-						if child.Name == key then
-							return child
+				end
+				return nil
+			end,
+			__newindex = function(self, key, value)
+				if key == "Parent" then
+					local previous = self.values.Parent
+					if previous then
+						local index = table.find(previous.children, self)
+						if index then
+							table.remove(previous.children, index)
 						end
 					end
-					return nil
-				end,
-				__newindex = function(self, key, value)
-					if key == "Parent" then
-						local previous = self.values.Parent
-						if previous then
-							local index = table.find(previous.children, self)
-							if index then
-								table.remove(previous.children, index)
-							end
-						end
-						if value then
-							table.insert(value.children, self)
-						end
-					elseif key == "Position" then
-						self.values.CFrame = r.CFrame.new(value)
-						return
+					if value then
+						table.insert(value.children, self)
 					end
-					self.values[key] = value
-				end,
-			}
-		)
+				elseif key == "Position" then
+					self.values.CFrame = r.CFrame.new(value)
+					return
+				end
+				self.values[key] = value
+			end,
+		})
 		if class == "ProximityPrompt" then
 			object.Triggered = signal()
 		end
@@ -165,6 +163,7 @@ local function fixture(count)
 		self.Destroyed = true
 	end
 	local tasks = {}
+	local nextWait
 	function tasks.spawn(callback)
 		table.insert(delayed, { at = now, callback = callback })
 	end
@@ -173,6 +172,11 @@ local function fixture(count)
 	end
 	function tasks.wait(duration)
 		now += duration or 0.01
+		if nextWait then
+			local callback = nextWait
+			nextWait = nil
+			callback()
+		end
 	end
 	local function flush()
 		while true do
@@ -409,11 +413,18 @@ local function fixture(count)
 		load("src/server/Game/InventoryWorld.luau", environment("InventoryWorld"))
 	)
 	local hunts, audios = {}, {}
+	local activeTeam, failHuntIndex
 	register("MonsterHunt", {
-		new = function(_, _, _, _, options)
+		new = function(_world, balance, _startedAt, _targetUserId, options)
+			local index = if options then options.index else 1
+			if index == failHuntIndex then
+				error("Fixture rejected reinforcement creation " .. tostring(index))
+			end
 			local hunt = {
 				state = "patrol",
-				index = if options then options.index else 1,
+				index = index,
+				baseDetection = balance.monster_detect_radius,
+				detectRadius = balance.monster_detect_radius,
 				position = if options then options.position else r.Vector3.zero,
 				steps = {},
 				destroyCalls = 0,
@@ -425,6 +436,7 @@ local function fixture(count)
 			end
 			function hunt:SetDetectionMultiplier(value)
 				self.multiplier = value
+				self.detectRadius = self.baseDetection * value
 			end
 			function hunt:StepPlayers(dt, at, candidates)
 				local ids = {}
@@ -464,10 +476,48 @@ local function fixture(count)
 	})
 	register("RoundAudio", {
 		new = function()
-			local audio = { steps = 0, destroyCalls = 0 }
-			function audio:Step(_, _, _, _, _, eligible)
+			local audio = { steps = 0, destroyCalls = 0, arrivalCalls = 0, requestedCries = 0 }
+			function audio:ReinforcementsSpawned(reinforcements)
+				self.arrivalCalls += 1
+				assert(
+					activeTeam and activeTeam.state == "active" and activeTeam.gateOpen,
+					"Arrival notification preceded the authoritative active gate transaction"
+				)
+				assert(
+					activeTeam.evacuationActive and activeTeam.evacuationDeadline == now + 120,
+					"Arrival notification preceded the shared evacuation deadline commit"
+				)
+				assert(
+					reinforcements == activeTeam.reinforcements
+						and #reinforcements == 2
+						and #hunts == 3,
+					"Arrival notification preceded both successful NPC creations"
+				)
+				for index, source in reinforcements do
+					assert(
+						source == hunts[index + 1]
+							and source.index == index + 1
+							and source.multiplier == 2
+							and source.detectRadius == 96
+							and not source.destroyed,
+						"Arrival notification carried an incomplete or unconfigured reinforcement"
+					)
+				end
+				self.notifiedPair = table.clone(reinforcements)
+				if self.throwArrival then
+					error("Fixture arrival decoder/service failure")
+				end
+				self.requestedCries += 2
+				return 2
+			end
+			function audio:Step(_, phase, _, _, _, eligible)
 				self.steps += 1
+				self.phase = phase
 				self.eligible = eligible
+				self.eligibleAtStep = {}
+				for _, player in players:GetPlayers() do
+					self.eligibleAtStep[player.UserId] = eligible(player)
+				end
 			end
 			function audio:Destroy()
 				self.destroyCalls += 1
@@ -479,7 +529,13 @@ local function fixture(count)
 	register("SoloRound", load("src/server/Game/SoloRound.luau", environment("SoloRound")))
 	register(
 		"RoundParticipant",
-		load("src/server/Game/RoundParticipant.luau", environment("RoundParticipant"))
+		load(
+			"src/server/Game/RoundParticipant.luau",
+			environment("RoundParticipant"),
+			-- Optional test-process-only archived Source for a negative regression
+			-- replay. Normal runs execute the current production file unchanged.
+			process.env.COC_MULTIPLAYER_PARTICIPANT_TEST_SOURCE
+		)
 	)
 	local Team = load("src/server/Game/TeamRound.luau", environment("TeamRound"))
 	local events, sent, warnings = {}, {}, {}
@@ -523,6 +579,7 @@ local function fixture(count)
 		add()
 	end
 	local team = Team.new(context)
+	activeTeam = team
 	team:Start()
 	flush()
 	local result = {
@@ -539,6 +596,26 @@ local function fixture(count)
 	}
 	function result:now()
 		return now
+	end
+	function result:failHuntSpawn(index)
+		failHuntIndex = index
+	end
+	function result:onNextWait(callback)
+		nextWait = callback
+	end
+	function result:respawn(index)
+		local user = users[index]
+		local old = user.character
+		user.player.CharacterRemoving:Fire(old)
+		old.Parent = nil
+		local character = make("Model", user.player.Name .. "Respawn", workspace)
+		local humanoid = make("Humanoid", "Humanoid", character)
+		local root = make("Part", "HumanoidRootPart", character)
+		root.Position = world.Spawns[index].Position
+		user.character, user.humanoid, user.root = character, humanoid, root
+		user.player.Character = character
+		user.player.CharacterAdded:Fire(character)
+		return old, character
 	end
 	function result:advance(seconds, heartbeat)
 		now += seconds
@@ -621,6 +698,104 @@ end
 
 -- Two players, server readiness, prompt contention, independent rate buckets,
 -- same item consumption, owner-only sprint, and one shared evacuation deadline.
+-- Preparation must wait for a new healthy character after a prior-round death.
+-- Neither old-corpse removal nor a delayed old Died event belongs to the newly
+-- reset round. Fresh active/caught events still finish that current attempt.
+do
+	local failures = {}
+	for _, oldEvent in { "CharacterRemoving", "Died" } do
+		for _, freshPhase in { "active", "caught" } do
+			for _, freshEvent in { "CharacterRemoving", "Died" } do
+				local label = oldEvent .. " -> " .. freshPhase .. "/" .. freshEvent
+				local ok, problem = pcall(function()
+					local f = fixture(2)
+					f:start()
+					local a, b = f:member(1), f:member(2)
+					local corpse, oldHumanoid = f.users[1].character, f.users[1].humanoid
+					oldHumanoid.Health = 0
+					oldHumanoid.Died:Fire()
+					f:request(2, "abort")
+					assert(f.team.state == "finished" and a.phase == "aborted")
+					local previousRound = f.team.roundId
+					f:advance(1)
+					f:request(1, "retry", "hard")
+					local replaced = false
+					f:onNextWait(function()
+						assert(
+							a.phase == "preparing"
+								and a.roundCharacter == nil
+								and a.boundCharacter == corpse,
+							"Fixture did not reach the production corpse preparation wait"
+						)
+						if oldEvent == "Died" then
+							oldHumanoid.Died:Fire()
+							assert(
+								a.phase == "preparing",
+								"Delayed previous Died aborted preparation before CharacterRemoving"
+							)
+						end
+						f:respawn(1)
+						replaced = true
+					end)
+					f:request(2, "retry", "hard")
+					f:flush()
+					assert(
+						replaced
+							and f.team.roundId == previousRound + 1
+							and f.team.state == "active"
+					)
+					assert(
+						a.phase == "active" and b.phase == "active",
+						"Previous corpse event aborted the new round: A="
+							.. a.phase
+							.. ", B="
+							.. b.phase
+					)
+					assert(
+						a.roundCharacter == f.users[1].character
+							and a.boundCharacter == f.users[1].character
+							and f.users[1].character ~= corpse
+							and f.users[1].humanoid.Health > 0
+							and #a.minimap.deaths == 0,
+						"The new healthy character was not committed cleanly"
+					)
+					oldHumanoid.Died:Fire()
+					assert(
+						a.phase == "active",
+						"Old disconnected Died listener finished the current character"
+					)
+					f:pickup(1)
+					if freshPhase == "caught" then
+						f.team.hunt.nextCatch = f.users[1].player.UserId
+						f:advance(0.3, true)
+						assert(a.phase == "caught" and f.world.Key and not a.hasKey)
+					end
+					if freshEvent == "Died" then
+						f.users[1].humanoid.Health = 0
+						f.users[1].humanoid.Died:Fire()
+					else
+						f.users[1].player.CharacterRemoving:Fire(f.users[1].character)
+					end
+					assert(
+						a.phase == "aborted"
+							and b.phase == "active"
+							and f.team.state == "active"
+							and f.world.Key
+							and not a.hasKey
+							and not f.team.keyCarrier,
+						"Current active/caught death or removal did not finish and recover the shared key"
+					)
+				end)
+				if not ok then
+					table.insert(failures, label .. ": " .. tostring(problem))
+					print("FAIL corpse retry regression " .. failures[#failures])
+				end
+			end
+		end
+	end
+	assert(#failures == 0, "Corpse retry regression failures: " .. tostring(#failures))
+end
+
 do
 	local f = fixture(2)
 	local team, a, b = f.team, f:member(1), f:member(2)
@@ -706,8 +881,9 @@ do
 	local deadline, primary = team.evacuationDeadline, team.hunt
 	assert(deadline == f:now() + 120 and #team:_hunts() == 3)
 	for _, hunt in team:_hunts() do
-		assert(hunt.multiplier == 2)
+		assert(hunt.multiplier == 2 and hunt.detectRadius == 96)
 	end
+	assert(team.audio.arrivalCalls == 1 and team.audio.requestedCries == 2)
 	assert(not a.hasKey and not b.hasKey and not team.keyCarrier and countKind(a, "key") == 0)
 	for _ = 1, 5 do
 		f.world.GatePrompt.Triggered:Fire(f.users[1].player)
@@ -717,6 +893,11 @@ do
 		team.evacuationDeadline == deadline and team.hunt == primary and #f.hunts == 3,
 		"Repeated gate interaction reset the deadline or added hunters"
 	)
+	assert(
+		team.audio.arrivalCalls == 1 and team.audio.requestedCries == 2,
+		"Repeated gate interaction replayed the successful reinforcement notification"
+	)
+	assert(#f.warnings == 0, "Successful gate emitted an audio integration warning")
 	local snapshot = team:Snapshot(b)
 	assert(snapshot.key_state == "opened" and snapshot.remaining == 2 and snapshot.count == 2)
 	for key in snapshot do
@@ -736,6 +917,96 @@ do
 			"Shared snapshot leaked an unapproved marker or coordinate"
 		)
 	end
+end
+
+-- The supported range includes a single ready participant and three players;
+-- each retains personal attempts/reward while using the same one-shot gate.
+for _, participantCount in { 1, 3 } do
+	local f = fixture(participantCount)
+	f:start()
+	assert(
+		f.team:Snapshot(f:member(1)).count == participantCount
+			and f.team:_remaining() == participantCount
+			and #f.team:_hunts() == 1
+	)
+	for index = 1, participantCount do
+		assert(f:member(index).catches == 0 and f:member(index).diamonds == 0)
+	end
+	f:pickup(1)
+	f:gate(1)
+	assert(f.team.audio.arrivalCalls == 1 and f.team.audio.requestedCries == 2 and #f.warnings == 0)
+	f.users[1].root.Position = r.Vector3.new(0, 3, 326)
+	f:advance(0.3, true)
+	assert(f:member(1).phase == "escaped" and f:member(1).diamonds == 20)
+	if participantCount == 1 then
+		assert(f.team.state == "finished" and not f.team.audio)
+	else
+		assert(f.team.state == "active" and f.team:_remaining() == participantCount - 1)
+		assert(f:member(2).phase == "active" and f:member(2).diamonds == 0)
+	end
+end
+
+-- A failed second reinforcement never notifies audio for the partial pair.
+-- The existing setup-failure transaction completes every actor and cleans up.
+do
+	local f = fixture(2)
+	f:start()
+	f:pickup(1)
+	local audio = f.team.audio
+	f:failHuntSpawn(3)
+	f:advance(0.3)
+	f.users[1].root.Position = f.world.GateAnchor.Position
+	f.world.GatePrompt.Triggered:Fire(f.users[1].player)
+	assert(
+		audio.arrivalCalls == 0 and audio.requestedCries == 0,
+		"A partial reinforcement spawn emitted an arrival notification"
+	)
+	assert(#f.hunts == 2 and f.hunts[1].destroyed and f.hunts[2].destroyed)
+	assert(f.team.state == "finished" and not f.team.audio and not f.team.evacuationDeadline)
+	assert(
+		f:member(1).phase == "aborted"
+			and f:member(2).phase == "aborted"
+			and audio.destroyCalls == 1
+	)
+	assert(#f.warnings == 1 and f.warnings[1][1] == "Cannot prepare team evacuation:")
+end
+
+-- Audio is presentation: a failed notification cannot roll back an otherwise
+-- committed shared gate or prevent either live participant from continuing.
+do
+	local f = fixture(2)
+	f:start()
+	f:pickup(1)
+	local audio = f.team.audio
+	audio.throwArrival = true
+	f:gate(1)
+	local deadline = f.team.evacuationDeadline
+	assert(
+		f.team.state == "active"
+			and f.team.gateOpen
+			and f.team.evacuationActive
+			and deadline == f:now() + 120
+			and #f.team:_hunts() == 3
+	)
+	assert(f:member(1).phase == "active" and f:member(2).phase == "active")
+	assert(audio.arrivalCalls == 1 and audio.requestedCries == 0 and audio.destroyCalls == 0)
+	assert(
+		#f.warnings == 1 and f.warnings[1][1] == "Cannot play team reinforcement arrival voices:"
+	)
+	f:advance(0.3, true)
+	f.world.GatePrompt.Triggered:Fire(f.users[1].player)
+	assert(
+		audio.arrivalCalls == 1 and f.team.evacuationDeadline == deadline,
+		"A failed audio presentation caused gameplay to replay the gate notification"
+	)
+	f.users[1].root.Position = r.Vector3.new(0, 3, 326)
+	f:advance(0.3, true)
+	assert(
+		f:member(1).phase == "escaped"
+			and f:member(1).diamonds == 20
+			and f:member(2).phase == "active"
+			and f.team.state == "active"
+	)
 end
 
 -- One escape pays once and does not finish the other participant's hunt, world
@@ -811,6 +1082,13 @@ do
 	primary.nextCatch = f.users[1].player.UserId
 	f:advance(0.3, true)
 	assert(a.phase == "caught" and b.phase == "active" and team.evacuationDeadline == deadline)
+	assert(
+		audio.phase == "active"
+			and audio.eligibleAtStep[f.users[2].player.UserId] == true
+			and audio.eligibleAtStep[f.users[1].player.UserId] == false
+			and audio.destroyCalls == 0,
+		"A personal capture paused shared audio or retained that player's corn movement"
+	)
 	local caughtRemaining = deadline - f:now()
 	f:advance(1.01, true)
 	f:request(1, "revive")
@@ -1003,5 +1281,5 @@ do
 end
 
 print(
-	"PASS production shared-key TeamRound/RoundParticipant: two-player readiness, key/item contention, shared gate/120-second deadline/three NPCs, first/second capture and personal revival, Health-zero death/character removal/disconnect/abort/fallback key recovery, one escape +20 once while teammate continues, terminal retry/menu isolation, per-player round/inventory/sprint limits, late-join/capacity/four distinct starts and all-terminal/empty cleanup. Deterministic engine/world/hunt/audio adapters; no Studio network, NPC decision or visual/FPS acceptance claim."
+	"PASS production shared-key TeamRound/RoundParticipant: supported1-4 participants, two-player readiness, key/item contention, shared gate/120-second deadline/three NPCs at96, one post-commit reinforcement notification/no replay, failed second spawn silent and throwing audio keeps gameplay active; first/second capture/personal revival/shared audio continuity, Health-zero death/character removal/disconnect/abort/fallback key recovery, one escape +20 once while teammate continues, terminal retry/menu isolation, per-player round/inventory/sprint limits, late-join/capacity/four distinct starts and all-terminal/empty cleanup. Deterministic engine/world/hunt/audio adapters; no Studio network, NPC decision or visual/FPS acceptance claim."
 )

@@ -28,11 +28,13 @@ def fixture(kind):
         place = root / "place"
         place.mkdir()
         target = place / "Children_of_corn.rbxl"
-        baseline = place / "Children_of_corn.before-multiplayer-20261015.rbxl"
+        baseline = place / "Children_of_corn.before-multiplayer-resume-20261015.rbxl"
+        old_baseline = place / "Children_of_corn.before-multiplayer-20261015.rbxl"
         candidate = root / "engine-placeholder.rbxl"
         original = b"PLACEHOLDER ORIGINAL; not a Roblox scene"
         new = b"PLACEHOLDER ENGINE COPY; not a Roblox scene"
         baseline.write_bytes(original)
+        old_baseline.write_bytes(b"PLACEHOLDER OLD493BC BASELINE; immutable and not a Roblox scene")
         target.write_bytes(original)
         candidate.write_bytes(new)
         check_calls = []
@@ -66,14 +68,16 @@ def fixture(kind):
             wrong = place / "NeighbourBaseline.rbxl"
             wrong.write_bytes(original)
             checker.BASELINE = wrong
+        if kind == "old-before-multiplayer-path":
+            checker.BASELINE = old_baseline
         if kind == "baseline-altered":
             baseline.write_bytes(b"CHANGED BASELINE")
         if kind == "snapshot-collision":
-            snapshot = root / "build" / ("tested-multiplayer-candidate-" + candidate_hash[:16] + ".rbxl")
+            snapshot = root / "build" / ("tested-multiplayer-resume-candidate-" + candidate_hash[:16] + ".rbxl")
             snapshot.parent.mkdir()
             snapshot.write_bytes(b"OTHER SNAPSHOT")
         if kind == "temporary-collision":
-            target.with_suffix(".verified-multiplayer.tmp").write_bytes(b"FOREIGN TEMPORARY FILE")
+            target.with_suffix(".verified-multiplayer-resume.tmp").write_bytes(b"FOREIGN TEMPORARY FILE")
         if kind == "hash-backup":
             original = b"PLACEHOLDER LATER AUTHOR SAVE; not a Roblox scene"
             target.write_bytes(original)
@@ -82,7 +86,7 @@ def fixture(kind):
             original = b"PLACEHOLDER LATER AUTHOR SAVE; not a Roblox scene"
             target.write_bytes(original)
             original_hash = promoter.digest(original)
-            target.with_name("Children_of_corn.before-multiplayer-save-" + original_hash[:16] + ".rbxl").write_bytes(b"OTHER BACKUP")
+            target.with_name("Children_of_corn.before-multiplayer-resume-save-" + original_hash[:16] + ".rbxl").write_bytes(b"OTHER BACKUP")
         real_resolve = Path.resolve
 
         def resolve(path, *args, **kwargs):
@@ -100,7 +104,7 @@ def fixture(kind):
                 assert saved["new_instances"] == 2 and saved["added_module_paths"] == ["placeholder-TeamRound", "placeholder-RoundParticipant"]
                 assert saved["exit_text_pixels_per_stud"] == 16 and saved["source_change_count"] == 16 and saved["source_changes"] == ["declared-sixteen-placeholder"] and saved["world_and_lighting_exact"] is True
                 assert len(check_calls) == 1
-                assert not target.with_suffix(".verified-multiplayer.tmp").exists()
+                assert not target.with_suffix(".verified-multiplayer-resume.tmp").exists()
             else:
                 try:
                     promoter.promote(supplied, original_hash, candidate_hash)
@@ -112,15 +116,16 @@ def fixture(kind):
                 assert candidate.read_bytes() == (b"NEW ENGINE SAVE" if kind == "candidate-race" else new)
                 assert baseline.read_bytes() == (b"CHANGED BASELINE" if kind in {"baseline-race", "baseline-altered"} else b"PLACEHOLDER ORIGINAL; not a Roblox scene")
                 if kind == "temporary-collision":
-                    assert target.with_suffix(".verified-multiplayer.tmp").read_bytes() == b"FOREIGN TEMPORARY FILE"
+                    assert target.with_suffix(".verified-multiplayer-resume.tmp").read_bytes() == b"FOREIGN TEMPORARY FILE"
                 else:
-                    assert not target.with_suffix(".verified-multiplayer.tmp").exists()
+                    assert not target.with_suffix(".verified-multiplayer-resume.tmp").exists()
+            assert old_baseline.read_bytes() == b"PLACEHOLDER OLD493BC BASELINE; immutable and not a Roblox scene"
         cases.append(kind)
 
 
 for kind in (
     "positive", "hash-backup", "wrong-original-hash", "wrong-candidate-hash",
-    "candidate-is-target", "candidate-is-baseline", "wrong-baseline-path",
+    "candidate-is-target", "candidate-is-baseline", "wrong-baseline-path", "old-before-multiplayer-path",
     "redirected-target", "baseline-altered", "verification-failed", "snapshot-collision",
     "backup-collision", "temporary-collision", "target-race", "candidate-race", "baseline-race",
 ):

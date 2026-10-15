@@ -331,7 +331,10 @@ function Controller:Init(context: any, monsterIndex: number?)
 	self._companions = {}
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
-		and context.Config.Game.SessionMode == "solo_local"
+		and (
+			context.Config.Game.SessionMode == "solo_local"
+			or context.Config.Game.SessionMode == "team_local"
+		)
 	self._map, self._runtime, self._model, self._root = nil, nil, nil, nil
 	self._parts = {}
 	self._topConnections, self._mapConnections, self._runtimeConnections, self._monsterConnections =

@@ -12,9 +12,9 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASELINE = ROOT / "place/Children_of_corn.before-multiplayer-20261015.rbxl"
-BASELINE_HASH = "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68"
-BASELINE_BYTES = 995988
+BASELINE = ROOT / "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl"
+BASELINE_HASH = "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+BASELINE_BYTES = 997184
 BASELINE_INSTANCES = 4160
 EXPECTED_SOURCES = 77
 ADDITIONS = frozenset({
@@ -172,7 +172,7 @@ def validate_dom(before, after, sources, classes, asset_sources):
 def check(original, candidate):
     original, candidate = original.resolve(), candidate.resolve()
     old_hash, new_hash = sha256(original), sha256(candidate)
-    require(original == BASELINE.resolve() and old_hash == BASELINE_HASH and original.stat().st_size == BASELINE_BYTES, "Immutable before-multiplayer baseline changed")
+    require(original == BASELINE.resolve() and old_hash == BASELINE_HASH and original.stat().st_size == BASELINE_BYTES, "Immutable before-multiplayer-resume baseline changed")
     require(candidate.is_file() and candidate.suffix.lower() == ".rbxl", "Candidate must be an exact engine-saved RBXL")
     sources, classes = mapping_from_sourcemap(ROOT / "build/sourcemap.json")
     asset_sources = fog.current_sources()

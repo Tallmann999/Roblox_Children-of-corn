@@ -4,8 +4,8 @@ local r, fs = require("@lune/roblox"), require("@lune/fs")
 local I = r.Instance
 local serde = require("@lune/serde")
 local source = fs.readFile("scripts/install-multiplayer.luau"):gsub("\r\n", "\n")
-local bytes = fs.readFile("place/Children_of_corn.before-multiplayer-20261015.rbxl")
-assert(serde.hash("sha256", bytes) == "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68")
+local bytes = fs.readFile("place/Children_of_corn.before-multiplayer-resume-20261015.rbxl")
+assert(serde.hash("sha256", bytes) == "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8")
 local kind, openScript = "positive", nil
 r.implementMethod("RunService", "IsStudio", function() return kind ~= "not-studio" end)
 r.implementMethod("RunService", "IsRunning", function() return kind == "running" end)

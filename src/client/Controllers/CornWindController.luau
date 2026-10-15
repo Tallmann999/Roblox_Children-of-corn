@@ -707,7 +707,10 @@ end
 function CornWindController:Init(context: any)
 	self._enabled = RunService:IsStudio()
 		and context.Config.Environment == "DEV"
-		and context.Config.Game.SessionMode == "solo_local"
+		and (
+			context.Config.Game.SessionMode == "solo_local"
+			or context.Config.Game.SessionMode == "team_local"
+		)
 	self._connection, self._player = nil, Players.LocalPlayer
 	self._clock = os.clock
 	self._map, self._mode = nil, nil

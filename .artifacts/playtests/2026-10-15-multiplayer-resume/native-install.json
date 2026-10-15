@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "studio_id": "1712610d-6d4d-441b-99a7-3b0598e8a566",
+  "scene": "Children_of_corn.rbxl",
+  "mode": "stopped Edit",
+  "before_baseline_sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+  "installer_sha256": "eb7c533b1645a36a1ebde0c3b759cacd40bf61e09d7babc710695a29fd462c2c",
+  "installer_bytes": 270772,
+  "result": {
+    "created": 2,
+    "repeated": false,
+    "totalSources": 80,
+    "changed": 16,
+    "sources": 77
+  },
+  "world_write": false,
+  "live_rojo": false
+}

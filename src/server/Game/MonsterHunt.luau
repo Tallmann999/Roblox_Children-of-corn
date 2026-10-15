@@ -9,6 +9,14 @@ local Pose = require(
 local MonsterHunt = {}
 MonsterHunt.__index = MonsterHunt
 
+local function validUserId(value: any): boolean
+	return type(value) == "number"
+		and value == value
+		and math.abs(value) < math.huge
+		and value ~= 0
+		and value % 1 == 0
+end
+
 function MonsterHunt.new(
 	world: any,
 	balance: any,
@@ -86,11 +94,8 @@ function MonsterHunt.new(
 		detectRadius = balance.monster_detect_radius,
 		firstChaseUntil = nil,
 		reacquireAt = -math.huge,
-		targetUserId = if targetUserId
-				and targetUserId > 0
-				and targetUserId % 1 == 0
-			then targetUserId
-			else 0,
+		targetUserId = if validUserId(targetUserId) then targetUserId else 0,
+		targetRoot = nil :: BasePart?,
 		stunnedUntil = nil,
 		lostSince = nil,
 		lastSeenPosition = nil,
@@ -215,6 +220,16 @@ function MonsterHunt:BeginCapture(playerPosition: Vector3): CFrame
 	self.lastSeenPosition = nil
 	self:_state("capturing")
 	return self.root.CFrame
+end
+
+function MonsterHunt:EndCapture(): boolean
+	if self.destroyed or self.state ~= "capturing" then
+		return false
+	end
+	self.targetRoot, self.targetUserId = nil, 0
+	self.goal, self.lostSince, self.lastSeenPosition, self.blockedSince = nil, nil, nil, nil
+	self:_state("patrol")
+	return true
 end
 
 function MonsterHunt:GetPosition(): Vector3?
@@ -470,6 +485,82 @@ function MonsterHunt:Step(
 	end
 	self.model:SetAttribute("TargetDistance", distance)
 	return not protected and self:CanCapture(playerRoot, now), awakened
+end
+
+-- The round supplies registered server actors only. Selection never calls Step
+-- per player: one hunter advances once, independently of the candidate count.
+function MonsterHunt:StepPlayers(dt: number, now: number, candidates: { any }): (any?, boolean)
+	if self.destroyed or self.state == "capturing" then
+		return nil, false
+	end
+	local available = {}
+	local retained = nil
+	for _, candidate in candidates do
+		local root = candidate.root
+		if
+			not validUserId(candidate.userId)
+			or typeof(root) ~= "Instance"
+			or not root:IsA("BasePart")
+			or not root.Parent
+			or type(candidate.protected) ~= "boolean"
+		then
+			continue
+		end
+		local point = root.Position
+		if
+			point.X ~= point.X
+			or point.Y ~= point.Y
+			or point.Z ~= point.Z
+			or math.abs(point.X) == math.huge
+			or math.abs(point.Y) == math.huge
+			or math.abs(point.Z) == math.huge
+		then
+			continue
+		end
+		table.insert(available, candidate)
+		if
+			self.state == "chase"
+			and not candidate.protected
+			and candidate.userId == self.targetUserId
+			and root == self.targetRoot
+		then
+			retained = candidate
+		end
+	end
+	if self.state == "chase" and not retained then
+		-- Departures, replacement characters and protection invalidate the old
+		-- target and its asynchronous path without moving or resetting the NPC.
+		self:_state("patrol")
+		self.goal, self.lostSince, self.lastSeenPosition, self.blockedSince = nil, nil, nil, nil
+	end
+	local selected, nearest = retained, nil
+	local bestDistance, nearestDistance = math.huge, math.huge
+	for _, candidate in available do
+		local delta = candidate.root.Position - self.root.Position
+		local distance = Vector3.new(delta.X, 0, delta.Z).Magnitude
+		if
+			not nearest
+			or distance < nearestDistance
+			or (distance == nearestDistance and candidate.userId < nearest.userId)
+		then
+			nearest, nearestDistance = candidate, distance
+		end
+		if
+			not retained
+			and not candidate.protected
+			and distance <= (self.detectRadius or self.balance.monster_detect_radius)
+			and now >= self.reacquireAt
+			and (not selected or distance < bestDistance or (distance == bestDistance and candidate.userId < selected.userId))
+			and self:CanSee(candidate.root)
+		then
+			selected, bestDistance = candidate, distance
+		end
+	end
+	self.targetRoot = if selected then selected.root else nil
+	self.targetUserId = if selected then selected.userId else 0
+	local root = if selected then selected.root elseif nearest then nearest.root else self.root
+	local caught, awakened = self:Step(dt, now, root, selected == nil)
+	return if caught then selected else nil, awakened
 end
 
 function MonsterHunt:Destroy()

@@ -13,6 +13,18 @@ local MinimapGeometry = require(ReplicatedStorage.GameShared.Game.MinimapGeometr
 local Balance = require(ReplicatedStorage.GameShared.Game.Balance)
 
 export type Snapshot = {
+	team: {
+		round_id: number,
+		state: string,
+		capacity: number,
+		count: number,
+		ready_count: number,
+		remaining: number,
+		ready: boolean,
+		can_start: boolean,
+		key_state: string,
+		carrier_name: string,
+	}?,
 	capture: { id: number, remaining: number, frame: CFrame },
 	inventory: {
 		slots: { string },
@@ -470,7 +482,9 @@ function RoundHud:_captureChoicesVisibility(visible: boolean)
 	self._captureChoicesVisible = visible
 	if visible then
 		self._captureSavedSelection = GuiService.SelectedObject
-		GuiService.SelectedObject = self._captureRevive
+		GuiService.SelectedObject = if self._captureRevive.Active
+			then self._captureRevive
+			else self._captureExit
 	elseif
 		GuiService.SelectedObject == self._captureRevive
 		or GuiService.SelectedObject == self._captureExit
@@ -508,12 +522,19 @@ function RoundHud:_canAct(): boolean
 		and self._snapshot ~= nil
 end
 
+function RoundHud:_canStart(): boolean
+	local team = self._snapshot and self._snapshot.team
+	return not team or (team.can_start and not team.ready)
+end
+
 function RoundHud:_introValid(): boolean
 	local pending, snapshot = self._introPending, self._snapshot
 	return pending ~= nil
 		and snapshot ~= nil
 		and snapshot.phase == pending.phase
 		and snapshot.minimap.round_id == pending.roundId
+		and (if snapshot.team then snapshot.team.round_id else nil) == pending.teamRoundId
+		and self:_canStart()
 		and LightingModes.IsValid(pending.mode)
 		and (pending.phase ~= "caught_out" or self:_captureReady())
 end
@@ -541,7 +562,13 @@ end
 
 function RoundHud:ShowObjective(action: string)
 	local snapshot = self._snapshot
-	if not self:_canAct() or not snapshot or self._captureActive or self._introPending then
+	if
+		not self:_canAct()
+		or not self:_canStart()
+		or not snapshot
+		or self._captureActive
+		or self._introPending
+	then
 		return
 	end
 	local allowed = (action == "start" and snapshot.phase == "ready")
@@ -561,6 +588,7 @@ function RoundHud:ShowObjective(action: string)
 		mode = LightingModes.Default,
 		phase = snapshot.phase,
 		roundId = snapshot.minimap.round_id,
+		teamRoundId = if snapshot.team then snapshot.team.round_id else nil,
 	}
 	self:_render()
 end
@@ -658,6 +686,8 @@ function RoundHud:_render()
 	end
 	local intro = self._introPending ~= nil
 	local snapshot = self._snapshot
+	local team = snapshot and snapshot.team
+	local canStart = self:_canStart()
 	local phase = if snapshot then snapshot.phase else "loading"
 	local isActive = phase == "active"
 	local isResult = phase == "escaped" or phase == "aborted" or phase == "caught_out"
@@ -684,13 +714,16 @@ function RoundHud:_render()
 			and not self._unavailable
 			and not intro
 			and not self._captureActive
+			and ((control ~= self._start and control ~= self._retry) or canStart)
 		control.Active = enabled
 		control.AutoButtonColor = enabled
 		control.BackgroundColor3 = if enabled then BUTTON_COLOR else DISABLED_COLOR
 		control.TextTransparency = if enabled then 0 else 0.35
 	end
 	for _, control in { self._captureRevive, self._captureExit } do
-		control.Active = captureChoices and self:_canAct()
+		control.Active = captureChoices
+			and self:_canAct()
+			and (control ~= self._captureRevive or phase ~= "caught_out" or canStart)
 		control.AutoButtonColor = control.Active
 		control.BackgroundColor3 = if control.Active then BUTTON_COLOR else DISABLED_COLOR
 		control.Modal = captureChoices
@@ -703,6 +736,26 @@ function RoundHud:_render()
 			elseif phase == "caught_out" then "corn_capture_retry"
 			else "corn_capture_continue"
 	)
+	local waitingKey = if team and team.ready then "corn_team_ready" else "corn_team_waiting"
+	self._start.Text = text(
+		if team then (if canStart then "corn_team_start" else waitingKey) else "corn_loop_start"
+	)
+	self._retry.Text = text(
+		if team then (if canStart then "corn_team_retry" else waitingKey) else "corn_loop_retry"
+	)
+	self._captureRevive.Text = text(
+		if phase == "caught_out" and team
+			then (if canStart then "corn_team_retry" else waitingKey)
+			else "corn_capture_revive"
+	)
+	if phase == "caught_out" and team and not canStart then
+		self._captureMessage.Text =
+			text(if team.ready then "corn_team_waiting_ready" else "corn_team_waiting_result")
+	end
+	self._introMessage.Text =
+		text(if team then "corn_team_intro_objective" else "corn_loop_intro_objective")
+	self._introConfirm.Text =
+		text(if team then "corn_team_intro_confirm" else "corn_loop_intro_confirm")
 	self._introBack.Text = text(
 		if self._introPending and self._introPending.phase == "caught_out"
 			then "corn_capture_back"
@@ -717,6 +770,15 @@ function RoundHud:_render()
 	self._title.Text = text("corn_loop_title")
 	self._time.Text = ""
 	self._notice.Text = if snapshot then text(snapshot.notice) else ""
+	if team then
+		local teamText = text(
+			if team.state == "active" or team.state == "preparing"
+				then "corn_team_remaining"
+				else "corn_team_ready_count",
+			{ count = team.count, ready = team.ready_count, remaining = team.remaining }
+		)
+		self._notice.Text ..= (if self._notice.Text == "" then "" else "\n") .. teamText
+	end
 	self._balance.Visible = snapshot ~= nil
 	self._balance.Text = text(
 		"corn_loop_test_balance",
@@ -729,7 +791,11 @@ function RoundHud:_render()
 			then text(snapshot and snapshot.notice or "corn_hunt_first_catch")
 			else text("corn_loop_loading")
 	elseif phase == "ready" then
-		self._message.Text = text("corn_loop_objective_search")
+		self._message.Text = text(
+			if team and not canStart
+				then (if team.ready then "corn_team_waiting_ready" else "corn_team_waiting_result")
+				else "corn_loop_objective_search"
+		)
 	elseif snapshot and isResult then
 		self._title.Text = text(
 			if phase == "escaped"
@@ -751,6 +817,7 @@ function RoundHud:_render()
 		local objectiveKey = if snapshot.gate_open
 			then "corn_loop_objective_exit"
 			elseif snapshot.has_key then "corn_loop_objective_return"
+			elseif team and team.key_state == "carried" then "corn_team_key_carried"
 			else "corn_loop_objective_search"
 		self._objective.Text = text(objectiveKey)
 		self._activeTime.Text =
@@ -767,6 +834,17 @@ function RoundHud:_render()
 			"corn_hunt_attempts",
 			{ count = snapshot.catches_remaining }
 		)
+		if team then
+			self._activeTime.Text ..= " · " .. text(
+				"corn_team_remaining",
+				{ remaining = team.remaining, count = team.count }
+			)
+			if team.key_state == "carried" then
+				self._activeBalance.Text = text("corn_team_carrier", { name = team.carrier_name })
+					.. " · "
+					.. text("corn_hunt_attempts", { count = snapshot.catches_remaining })
+			end
+		end
 	end
 	local remaining = if snapshot
 		then math.ceil(Balance.hunt_start_delay_sec - snapshot.elapsed_sec)

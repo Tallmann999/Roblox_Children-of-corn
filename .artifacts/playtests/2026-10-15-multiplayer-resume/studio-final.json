@@ -1,0 +1,55 @@
+{
+  "studio_id": "eb588c51-4726-41c4-b052-3a5f36b31d1d",
+  "accepted": true,
+  "cleanup": {
+    "sources": 80,
+    "removed_exact_owned_diagnostics": 3,
+    "probe_absent": true,
+    "name": "Children_of_corn.rbxl",
+    "running": false
+  },
+  "installer_repeat": {
+    "created": 0,
+    "repeated": true,
+    "totalSources": 80,
+    "changed": 0,
+    "sources": 77
+  },
+  "state": {
+    "foreign_source_names": [],
+    "runtime_audio": [],
+    "farm_repeat": {
+      "applied": 0,
+      "built": 0,
+      "scope": "server",
+      "pending": 0,
+      "targets": 40
+    },
+    "diagnostic_nodes": [],
+    "user_id": 11644801627,
+    "runtime": false,
+    "running": false,
+    "name": "Children_of_corn.rbxl",
+    "farm_first": {
+      "applied": 40,
+      "built": 10,
+      "scope": "server",
+      "pending": 0,
+      "targets": 40
+    },
+    "camera": "Fixed",
+    "source_count": 80,
+    "ground": [
+      630,
+      2,
+      630
+    ],
+    "field": [
+      630,
+      10,
+      630
+    ]
+  },
+  "saved_scene_unchanged_expected_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+  "scope": "After actual native server/four-client test. Exact three owned temporary nodes removed; production Source guard repeated, editor Farm geometry restored. No scene serialization or new save."
+}
