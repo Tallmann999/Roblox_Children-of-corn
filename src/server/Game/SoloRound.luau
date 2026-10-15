@@ -508,6 +508,12 @@ function SoloRound:_startEvacuation(now: number, root: BasePart): boolean
 	self.evacuationDeadline = now + (self.balance.evacuation_duration_sec or 120)
 	self.evacuationActive = true
 	self.notice = "corn_evacuation_started"
+	if self.audio then
+		local audioOk, audioProblem = pcall(self.audio.ReinforcementsSpawned, self.audio, self.reinforcements)
+		if not audioOk then
+			self.context.Log:Warn("Cannot play reinforcement arrival voices:", audioProblem)
+		end
+	end
 	return true
 end
 
