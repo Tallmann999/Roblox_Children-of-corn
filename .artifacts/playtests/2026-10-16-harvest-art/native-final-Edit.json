@@ -1,0 +1,25 @@
+{
+  "field": [
+    630,
+    10,
+    630
+  ],
+  "ground": [
+    630,
+    2,
+    630
+  ],
+  "artModels": 41,
+  "runtimeArt": false,
+  "studio": "ac24a80f-d32d-40bc-bfad-eeb6792d042e",
+  "camera": "Fixed",
+  "sources": 153,
+  "runtime": false,
+  "running": false,
+  "name": "Children_of_corn.rbxl",
+  "variant": "B",
+  "personalAudio": false,
+  "artParts": 244,
+  "foreignOrDiagnosticSources": [],
+  "http": false
+}

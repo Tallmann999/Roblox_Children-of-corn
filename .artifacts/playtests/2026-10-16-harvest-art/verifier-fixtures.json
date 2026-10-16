@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "command": "python tests/harvest-copy-verifier.py",
+  "exit_code": 0,
+  "result": "PASS harvest-copy-verifier: both exact A/B contracts, 153 Sources/73 code+291 art additions; 489 unsafe DOM/typed/manifest cases, 3 raw Terrain refusals; first-save review remains explicitly incomplete",
+  "both_variants_positive": true,
+  "project_sources": 150,
+  "unchanged_fog_sources": 3,
+  "new_source_modules": 73,
+  "new_art_nodes": 291,
+  "unsafe_dom_typed_manifest_refusals": 489,
+  "raw_terrain_refusals": 3,
+  "a_to_b_derived_property_changes": 57,
+  "a_to_b_transparency_changes": 55,
+  "a_to_b_root_variant_attribute_changes": 2,
+  "bad_a_to_b_derivation_refusals": 3,
+  "bad_derivation_cases": [
+    "missing unique serialized variant pattern",
+    "duplicated serialized variant pattern",
+    "A visibility inconsistent with reviewed A contract"
+  ],
+  "checker_contract_fixes": [
+    {
+      "case": "empty GetTags encoding",
+      "observed": "Lune serde represents an empty tag table as {} rather than []",
+      "fix": "Accept only exact empty {} or []; nonempty tags and DOM Tags BinaryString changes remain rejected"
+    },
+    {
+      "case": "BasePart.Color3uint8 conversion",
+      "observed": "Color is truncated after float32 conversion: (.095,.061,.029) -> (24/255,15/255,7/255); (.042,.031,.026) -> (10/255,7/255,6/255)",
+      "fix": "Derive expected catalog colors using exact float32 then floor(channel*255)/255; no broad tolerance increase"
+    }
+  ],
+  "native_A_capture_adapter": {
+    "scope": "Independent native-A snapshot comparison only",
+    "confirmed_by_root": true,
+    "adapted_dot_named_mesh_records": 20,
+    "mapping": "The capture used GetFullName and replaced literal dots with slash; a checked 291-record bijection recovered exact canonical names; disk identity/name/parent guards unchanged"
+  },
+  "fixture_producer_note": "Synthetic DOM visibility was aligned to its A/B typed contract before testing strict A-to-B derivation",
+  "production_sources_changed": false,
+  "scene_files_changed": false,
+  "no_new_play_or_render_claim": true,
+  "script_sha256": "436034c6ac62e20373f56207828713c3154c54515aaa72d8e2b7913b47ee294f",
+  "fixture_sha256": "b7999825a0067a5b3b3961278f1f6423f5a3b8e86060b8f4812d566aacba456a",
+  "actual_A_preservation_report": ".artifacts/playtests/2026-10-16-harvest-art/A-preservation.json",
+  "actual_B_preservation_report": ".artifacts/playtests/2026-10-16-harvest-art/B-preservation.json",
+  "manifest_A_sha256": "226fe9428f9485030f009ad90cea68e43d560880f88d294acdfddb1f18c9818c",
+  "manifest_B_sha256": "690eeb26c312b0e37bad87f220acb8a48cdeae58b6d48f5324c79be75fc5047f"
+}

@@ -1,0 +1,4220 @@
+{
+  "schema": "harvest-pack-independent-binary-audit-v1",
+  "date": "2026-10-16",
+  "ok": true,
+  "scope": "Offline FBX/GLB arrays, embedded bitmap bytes, protected source bytes. No Studio connection.",
+  "textures": [
+    {
+      "path": "assets/harvest-warden/textures/barn_wood_dark.png",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "decoded_bytes": 4718802,
+      "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+    },
+    {
+      "path": "assets/harvest-warden/textures/burlap.png",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "decoded_bytes": 4718802,
+      "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab"
+    },
+    {
+      "path": "assets/harvest-warden/textures/coat_canvas.png",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "decoded_bytes": 4718802,
+      "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a"
+    },
+    {
+      "path": "assets/harvest-warden/textures/corn_leaf_dry.png",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "decoded_bytes": 4718802,
+      "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+    },
+    {
+      "path": "assets/harvest-warden/textures/soil_gravel.png",
+      "width": 1254,
+      "height": 1254,
+      "bit_depth": 8,
+      "color_type": 2,
+      "decoded_bytes": 4718802,
+      "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+    }
+  ],
+  "glb_models": [
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.glb",
+      "bytes": 2951200,
+      "sha256": "7141f92e2b6308ee92087dbead8cf223810c4823857decc9df2132c99a7dd86f",
+      "mesh_count": 1,
+      "triangles": 100,
+      "meshes": [
+        {
+          "name": "Corn_A_Far_Mesh",
+          "vertices_after_uv_splits": 120,
+          "triangles": 100,
+          "bounds_y_up": {
+            "min": [
+              -1.2414361238479614,
+              0.0,
+              -0.35971391201019287
+            ],
+            "max": [
+              1.9185638427734375,
+              8.0,
+              1.912546157836914
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.2414361238479614,
+          0.0,
+          -0.35971391201019287
+        ],
+        "max": [
+          1.9185638427734375,
+          8.0,
+          1.912546157836914
+        ]
+      },
+      "geometry_sha256": "b92bab453cfa38f34ea535ac005439b0faff294f5f01d3cab29811e51dc165c9",
+      "unique_positions_rounded_5_sha256": "0477f41231a2106154568e8dcd4c33dde5ae082f65853bae76a70afa2bf2afda"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.glb",
+      "bytes": 2957060,
+      "sha256": "104e986c960e33d46148d62aaff029a03f6234876f4c7ee8344e35b7a9391de9",
+      "mesh_count": 1,
+      "triangles": 276,
+      "meshes": [
+        {
+          "name": "Corn_A_Mid_Mesh",
+          "vertices_after_uv_splits": 270,
+          "triangles": 276,
+          "bounds_y_up": {
+            "min": [
+              -1.0634559392929077,
+              0.0,
+              -1.3979212045669556
+            ],
+            "max": [
+              1.6431143283843994,
+              8.0,
+              1.7620787620544434
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.0634559392929077,
+          0.0,
+          -1.3979212045669556
+        ],
+        "max": [
+          1.6431143283843994,
+          8.0,
+          1.7620787620544434
+        ]
+      },
+      "geometry_sha256": "6e0ea6077fd1367d70690512d2dcf240047b7520c46ce5f934d23fa7b87d8448",
+      "unique_positions_rounded_5_sha256": "9f399845812bd7a88b43248c530ff82450b9e3648959203b4ba1c8d0aedd6b5b"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.glb",
+      "bytes": 2990816,
+      "sha256": "7a05a80358f723b7ff17ad12fe13dd3371a38ad5260800ea55b73649bfe44fe7",
+      "mesh_count": 1,
+      "triangles": 1378,
+      "meshes": [
+        {
+          "name": "Corn_A_Near_Mesh",
+          "vertices_after_uv_splits": 1118,
+          "triangles": 1378,
+          "bounds_y_up": {
+            "min": [
+              -1.1421281099319458,
+              0.0,
+              -1.61849844455719
+            ],
+            "max": [
+              1.6830430030822754,
+              8.0,
+              1.541501522064209
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.1421281099319458,
+          0.0,
+          -1.61849844455719
+        ],
+        "max": [
+          1.6830430030822754,
+          8.0,
+          1.541501522064209
+        ]
+      },
+      "geometry_sha256": "27f9fe971170d9fa84a5ff8ac4e27f5cb8ab7aa7783b1130aa01d607af8ef908",
+      "unique_positions_rounded_5_sha256": "9c662f8b7f83c378269d334c1236d1386298c9eb47aa94c142b6a936959a7d90"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.glb",
+      "bytes": 2951200,
+      "sha256": "1ea59ea00d21a6ece9992b92d08a64fd23a3f2d61d39eaf374c44f95fc11f8c9",
+      "mesh_count": 1,
+      "triangles": 100,
+      "meshes": [
+        {
+          "name": "Corn_B_Far_Mesh",
+          "vertices_after_uv_splits": 120,
+          "triangles": 100,
+          "bounds_y_up": {
+            "min": [
+              -0.16942423582077026,
+              0.0,
+              -2.7727437019348145
+            ],
+            "max": [
+              3.1805758476257324,
+              8.0,
+              0.14677630364894867
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.16942423582077026,
+          0.0,
+          -2.7727437019348145
+        ],
+        "max": [
+          3.1805758476257324,
+          8.0,
+          0.14677630364894867
+        ]
+      },
+      "geometry_sha256": "1ed7e1bb3e9615ec7abc8e3a61b9b39cd22e1fe4de14dcc4274d1c9fa9d23f25",
+      "unique_positions_rounded_5_sha256": "892706b1dae5330b3ca9d2a5fbb377bedca64a6200611090eb5767a47f13805e"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.glb",
+      "bytes": 2957056,
+      "sha256": "4864c0f85d761fd2e565237936d690705a1a367869b9abb749a3fb896c6f523e",
+      "mesh_count": 1,
+      "triangles": 276,
+      "meshes": [
+        {
+          "name": "Corn_B_Mid_Mesh",
+          "vertices_after_uv_splits": 270,
+          "triangles": 276,
+          "bounds_y_up": {
+            "min": [
+              -1.4901189804077148,
+              0.0,
+              -1.5611649751663208
+            ],
+            "max": [
+              1.5418840646743774,
+              8.0,
+              1.788835048675537
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.4901189804077148,
+          0.0,
+          -1.5611649751663208
+        ],
+        "max": [
+          1.5418840646743774,
+          8.0,
+          1.788835048675537
+        ]
+      },
+      "geometry_sha256": "0f86a833e3e0e464c3f996badfd3aa104984532e88524a07ef0f545adfcc6ff4",
+      "unique_positions_rounded_5_sha256": "a503b5eca95c3b0bd390c63446c122be4cce46ac3b389877fb6c73966859eb4a"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.glb",
+      "bytes": 2993640,
+      "sha256": "0e625723628ac4495f5b19581e4f9fe5687a49a0b8dfcfcf715358b937188d39",
+      "mesh_count": 1,
+      "triangles": 1470,
+      "meshes": [
+        {
+          "name": "Corn_B_Near_Mesh",
+          "vertices_after_uv_splits": 1189,
+          "triangles": 1470,
+          "bounds_y_up": {
+            "min": [
+              -1.3739689588546753,
+              0.0,
+              -1.811842918395996
+            ],
+            "max": [
+              1.5398385524749756,
+              8.0,
+              1.5381569862365723
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.3739689588546753,
+          0.0,
+          -1.811842918395996
+        ],
+        "max": [
+          1.5398385524749756,
+          8.0,
+          1.5381569862365723
+        ]
+      },
+      "geometry_sha256": "76fdeb0cb7df06a67374e2086edd8ceee3661e591ed205f644d2f0f6ab525105",
+      "unique_positions_rounded_5_sha256": "03eba0f4d85bb119d76a19ef535c958165595c25262bb550e1c1359d3af39507"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.glb",
+      "bytes": 2951200,
+      "sha256": "ba1b55af6c6690e13ae2dd08d4b6ed7a0c4fe73d9f9769ed03fe0b855fa4dd19",
+      "mesh_count": 1,
+      "triangles": 100,
+      "meshes": [
+        {
+          "name": "Corn_C_Far_Mesh",
+          "vertices_after_uv_splits": 120,
+          "triangles": 100,
+          "bounds_y_up": {
+            "min": [
+              -1.3879342079162598,
+              0.0,
+              -0.8556624054908752
+            ],
+            "max": [
+              1.692065715789795,
+              8.0,
+              0.7340206503868103
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -0.8556624054908752
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          0.7340206503868103
+        ]
+      },
+      "geometry_sha256": "8ef81edcc6518312bda4335a15c3ebfea070a8d1f6e200da06b257e655500db1",
+      "unique_positions_rounded_5_sha256": "1350806958ede19c21340d297c4f72308f8cee07f68d3fcbbd7a08827e0b5410"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.glb",
+      "bytes": 2957056,
+      "sha256": "b5fe787770390b99fbefb13f6cdd7116a7939a91f09049936637139e2d033477",
+      "mesh_count": 1,
+      "triangles": 276,
+      "meshes": [
+        {
+          "name": "Corn_C_Mid_Mesh",
+          "vertices_after_uv_splits": 270,
+          "triangles": 276,
+          "bounds_y_up": {
+            "min": [
+              -1.3879342079162598,
+              0.0,
+              -1.4674408435821533
+            ],
+            "max": [
+              1.692065715789795,
+              8.0,
+              1.4010677337646484
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -1.4674408435821533
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          1.4010677337646484
+        ]
+      },
+      "geometry_sha256": "c61ce5f93c7e44b27954048dbce1ad0c72f002633c2a2d89488694caae1e8586",
+      "unique_positions_rounded_5_sha256": "ed3c718a0eae8f456e0137044e843912778681b9457d383571429da82f53c3e3"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.glb",
+      "bytes": 2990816,
+      "sha256": "96b01c226b3f7614bedcb735eeba38bdd5fcc13ef3befd95f5ec754f4a895fc7",
+      "mesh_count": 1,
+      "triangles": 1378,
+      "meshes": [
+        {
+          "name": "Corn_C_Near_Mesh",
+          "vertices_after_uv_splits": 1118,
+          "triangles": 1378,
+          "bounds_y_up": {
+            "min": [
+              -1.5669194459915161,
+              0.0,
+              -1.3815232515335083
+            ],
+            "max": [
+              1.5130804777145386,
+              8.0,
+              1.354448914527893
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.5669194459915161,
+          0.0,
+          -1.3815232515335083
+        ],
+        "max": [
+          1.5130804777145386,
+          8.0,
+          1.354448914527893
+        ]
+      },
+      "geometry_sha256": "cbdc1ac0cafd6df4baa7e58db9b2b2078cb9870a5c69efa73d889c5cc5a4b6ca",
+      "unique_positions_rounded_5_sha256": "fec8ec641dbd9b439c07415ee503f847129efd6dd0f852af6f2a2af835b5f1df"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.glb",
+      "bytes": 2951200,
+      "sha256": "f57b94bf088c63defb7f5460195e8f78bee2229b24989ad5493bd7bdb09a28e3",
+      "mesh_count": 1,
+      "triangles": 100,
+      "meshes": [
+        {
+          "name": "Corn_D_Far_Mesh",
+          "vertices_after_uv_splits": 120,
+          "triangles": 100,
+          "bounds_y_up": {
+            "min": [
+              -0.5180471539497375,
+              0.0,
+              -0.1365276426076889
+            ],
+            "max": [
+              2.8319528102874756,
+              8.0,
+              3.189363479614258
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.5180471539497375,
+          0.0,
+          -0.1365276426076889
+        ],
+        "max": [
+          2.8319528102874756,
+          8.0,
+          3.189363479614258
+        ]
+      },
+      "geometry_sha256": "e40d357986df6347bd94718f3f75ab6ea4b529ee7d94c961c843403f79133b3d",
+      "unique_positions_rounded_5_sha256": "f5a0f36d9e1f7dcf4e9fefb70a0c6b1fa5637389fce62204c6b6aacb61876b0a"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.glb",
+      "bytes": 2957060,
+      "sha256": "0e6605707498ccf26fc5c445cf1aeb20ff78488bee11938d514e9ca680e65abe",
+      "mesh_count": 1,
+      "triangles": 276,
+      "meshes": [
+        {
+          "name": "Corn_D_Mid_Mesh",
+          "vertices_after_uv_splits": 270,
+          "triangles": 276,
+          "bounds_y_up": {
+            "min": [
+              -1.3683652877807617,
+              0.0,
+              -1.609679102897644
+            ],
+            "max": [
+              0.9765235185623169,
+              8.0,
+              1.7403209209442139
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.3683652877807617,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          0.9765235185623169,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "geometry_sha256": "f193f53fc599ec58180fdf9ab25bdcb5981faaf9ab7adb3371b5c88f3760d016",
+      "unique_positions_rounded_5_sha256": "ff2bb93679b2fd27cc761e9d822b7bbba933dc145bcc44683d565cb841a69bcf"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.glb",
+      "bytes": 2993644,
+      "sha256": "8d5a9e95d4ae7983d809adb30cd6d514843ab7695cf031e6ec8f55e42bed9c1d",
+      "mesh_count": 1,
+      "triangles": 1470,
+      "meshes": [
+        {
+          "name": "Corn_D_Near_Mesh",
+          "vertices_after_uv_splits": 1189,
+          "triangles": 1470,
+          "bounds_y_up": {
+            "min": [
+              -1.4744672775268555,
+              0.0,
+              -1.609679102897644
+            ],
+            "max": [
+              1.7260266542434692,
+              8.0,
+              1.7403209209442139
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.4744672775268555,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          1.7260266542434692,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "geometry_sha256": "17ed3fe4d96bff0b00b87a7742b95f40e4e34df489efcfad29371bcd2a26fd6e",
+      "unique_positions_rounded_5_sha256": "328ffc33fa2519651b9770e37873a87709827bb3e64d81d68210378d9d502915"
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.glb",
+      "bytes": 3662500,
+      "sha256": "7306b1494195c4ca8bd2b206c3fc3487a5a8fb02fd9837b52d897054987da69f",
+      "mesh_count": 4,
+      "triangles": 1528,
+      "meshes": [
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_01_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 816,
+          "triangles": 382,
+          "bounds_y_up": {
+            "min": [
+              -8.679738998413086,
+              -2.473496897437144e-05,
+              0.004318037535995245
+            ],
+            "max": [
+              -8.247857093811035,
+              7.499975204467773,
+              4.044553279876709
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_02_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 818,
+          "triangles": 382,
+          "bounds_y_up": {
+            "min": [
+              -8.679738998413086,
+              -2.4759377993177623e-05,
+              -4.035916328430176
+            ],
+            "max": [
+              -8.247857093811035,
+              7.499975204467773,
+              0.004318314138799906
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_03_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 814,
+          "triangles": 382,
+          "bounds_y_up": {
+            "min": [
+              8.16401481628418,
+              -2.473496897437144e-05,
+              0.004318037535995245
+            ],
+            "max": [
+              8.595898628234863,
+              7.499975204467773,
+              4.044553279876709
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_04_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 814,
+          "triangles": 382,
+          "bounds_y_up": {
+            "min": [
+              8.16401481628418,
+              -2.4759377993177623e-05,
+              -4.035916328430176
+            ],
+            "max": [
+              8.595898628234863,
+              7.499975204467773,
+              0.004318314138799906
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -8.679738998413086,
+          -2.4759377993177623e-05,
+          -4.035916328430176
+        ],
+        "max": [
+          8.595898628234863,
+          7.499975204467773,
+          4.044553279876709
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_Open/BarnDark_Open.glb",
+      "bytes": 4067960,
+      "sha256": "f0766637d5f5232f8f738e6d194f9839e4fab81958799db1e25d6341bd8f9e48",
+      "mesh_count": 3,
+      "triangles": 6600,
+      "meshes": [
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 14082,
+          "triangles": 6104,
+          "bounds_y_up": {
+            "min": [
+              -10.418519020080566,
+              -2.489769940439146e-05,
+              -7.929307460784912
+            ],
+            "max": [
+              10.418551445007324,
+              19.421178817749023,
+              7.929307460784912
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Shutter_01_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 452,
+          "triangles": 248,
+          "bounds_y_up": {
+            "min": [
+              -8.332517623901367,
+              8.895578384399414,
+              -1.506639838218689
+            ],
+            "max": [
+              -7.933529853820801,
+              13.198914527893066,
+              1.5509300231933594
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Shutter_02_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 454,
+          "triangles": 248,
+          "bounds_y_up": {
+            "min": [
+              7.935421943664551,
+              8.895578384399414,
+              -1.506639838218689
+            ],
+            "max": [
+              8.334409713745117,
+              13.198914527893066,
+              1.5509300231933594
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -10.418519020080566,
+          -2.489769940439146e-05,
+          -7.929307460784912
+        ],
+        "max": [
+          10.418551445007324,
+          19.421178817749023,
+          7.929307460784912
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_01/Fence_01.glb",
+      "bytes": 3569480,
+      "sha256": "115399acf26508ee7abab3ed42b86a50093aa47c579f07d6a31cb9b79b0acc4b",
+      "mesh_count": 7,
+      "triangles": 252,
+      "meshes": [
+        {
+          "name": "Fence01_Post1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.227580547332764,
+              -0.0005769461859017611,
+              -0.24785824120044708
+            ],
+            "max": [
+              -5.807732105255127,
+              4.059723854064941,
+              0.22349995374679565
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Post2_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.3054896295070648,
+              -0.002379756420850754,
+              -0.3072625398635864
+            ],
+            "max": [
+              0.32059746980667114,
+              3.92988920211792,
+              0.3256530165672302
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Post3_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 74,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              5.636703968048096,
+              -0.0037586065009236336,
+              -0.26995837688446045
+            ],
+            "max": [
+              6.2782721519470215,
+              4.005282878875732,
+              0.3252412974834442
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Rail0_0_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.121545791625977,
+              1.2084025144577026,
+              -0.04034566134214401
+            ],
+            "max": [
+              0.12168820202350616,
+              1.6967235803604126,
+              0.20034566521644592
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Rail0_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.120028495788574,
+              2.534684658050537,
+              -0.03603865206241608
+            ],
+            "max": [
+              0.12003082036972046,
+              2.9867606163024902,
+              0.1960386484861374
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Rail1_0_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.12200091779232025,
+              1.2166833877563477,
+              -0.03950571268796921
+            ],
+            "max": [
+              6.121835231781006,
+              1.6946955919265747,
+              0.19950571656227112
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence01_Rail1_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.12145081162452698,
+              2.506535291671753,
+              -0.03949126601219177
+            ],
+            "max": [
+              6.121243000030518,
+              3.00172758102417,
+              0.19949126243591309
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -6.227580547332764,
+          -0.0037586065009236336,
+          -0.3072625398635864
+        ],
+        "max": [
+          6.2782721519470215,
+          4.059723854064941,
+          0.3256530165672302
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_02/Fence_02.glb",
+      "bytes": 3573148,
+      "sha256": "3b50896f77e74be6ab22869feaffb909affdbf5d294b8fedce535ca78fd18baf",
+      "mesh_count": 8,
+      "triangles": 288,
+      "meshes": [
+        {
+          "name": "Fence02_BrokenRailA_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.14733456075191498,
+              2.4532766342163086,
+              -0.030997315421700478
+            ],
+            "max": [
+              2.028623104095459,
+              3.096745491027832,
+              0.2662295997142792
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_BrokenRailB_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              3.473623514175415,
+              2.296546459197998,
+              -0.0408598892390728
+            ],
+            "max": [
+              6.146557807922363,
+              3.028367757797241,
+              0.22003409266471863
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Post1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.295783996582031,
+              -0.006109582260251045,
+              -0.28746193647384644
+            ],
+            "max": [
+              -5.642602443695068,
+              4.096232891082764,
+              0.3094336986541748
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Post2_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.37502747774124146,
+              -0.005358656402677298,
+              -0.2795630097389221
+            ],
+            "max": [
+              0.28980425000190735,
+              4.040202617645264,
+              0.3215228319168091
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Post3_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 76,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              5.711949348449707,
+              -0.006007329560816288,
+              -0.373555064201355
+            ],
+            "max": [
+              6.387759685516357,
+              3.916295051574707,
+              0.285858690738678
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Rail0_0_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.122281074523926,
+              1.2114485502243042,
+              -0.03892229497432709
+            ],
+            "max": [
+              0.12250949442386627,
+              1.7132116556167603,
+              0.1989222913980484
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Rail0_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.121069431304932,
+              2.6170761585235596,
+              -0.039299435913562775
+            ],
+            "max": [
+              0.12105339020490646,
+              3.0901551246643066,
+              0.1992994248867035
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence02_Rail1_0_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.12156566232442856,
+              1.2282224893569946,
+              -0.034585803747177124
+            ],
+            "max": [
+              6.121610164642334,
+              1.7073040008544922,
+              0.19458580017089844
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -6.295783996582031,
+          -0.006109582260251045,
+          -0.373555064201355
+        ],
+        "max": [
+          6.387759685516357,
+          4.096232891082764,
+          0.3215228319168091
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_03/Fence_03.glb",
+      "bytes": 3569488,
+      "sha256": "19d7836a302df8ea3d36747f6caa4fcf4a973981f10651667e568696c6b0df2e",
+      "mesh_count": 7,
+      "triangles": 252,
+      "meshes": [
+        {
+          "name": "Fence03_DroppedRail_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -5.812791347503662,
+              0.014605298638343811,
+              0.24274443089962006
+            ],
+            "max": [
+              -0.2862873375415802,
+              0.5573095083236694,
+              0.8149821162223816
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Post1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.243173599243164,
+              -0.004338877275586128,
+              -0.33163416385650635
+            ],
+            "max": [
+              -5.72529411315918,
+              4.141608238220215,
+              0.25208133459091187
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Post2_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.2631150484085083,
+              -0.0037819636054337025,
+              -0.25567835569381714
+            ],
+            "max": [
+              0.34927141666412354,
+              4.057303428649902,
+              0.3119533956050873
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Post3_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 74,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              5.658016204833984,
+              -0.003851262154057622,
+              -0.22672250866889954
+            ],
+            "max": [
+              6.221480846405029,
+              4.112707614898682,
+              0.2615661323070526
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Rail0_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -6.1227707862854,
+              2.5852181911468506,
+              -0.03173673152923584
+            ],
+            "max": [
+              0.12251387536525726,
+              3.0812370777130127,
+              0.19173672795295715
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Rail1_0_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.12090762704610825,
+              1.1951229572296143,
+              -0.029329434037208557
+            ],
+            "max": [
+              6.120885372161865,
+              1.651129961013794,
+              0.18932943046092987
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Fence03_Rail1_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 72,
+          "triangles": 36,
+          "bounds_y_up": {
+            "min": [
+              -0.12148165702819824,
+              2.6133196353912354,
+              -0.03982149064540863
+            ],
+            "max": [
+              6.12152624130249,
+              3.090505838394165,
+              0.19982148706912994
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -6.243173599243164,
+          -0.004338877275586128,
+          -0.33163416385650635
+        ],
+        "max": [
+          6.221480846405029,
+          4.141608238220215,
+          0.8149821162223816
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Ground_Tile_8/Ground_Tile_8.glb",
+      "bytes": 4199276,
+      "sha256": "3042126d8d5187443d1ba2fd94b52f60f0c7fe63708d144c29c48c1e5817c2cc",
+      "mesh_count": 1,
+      "triangles": 2,
+      "meshes": [
+        {
+          "name": "HW_GroundTile8_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 4,
+          "triangles": 2,
+          "bounds_y_up": {
+            "min": [
+              -4.0,
+              0.0,
+              -4.0
+            ],
+            "max": [
+              4.0,
+              0.0,
+              4.0
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -4.0,
+          0.0,
+          -4.0
+        ],
+        "max": [
+          4.0,
+          0.0,
+          4.0
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Path_Tile_8/Path_Tile_8.glb",
+      "bytes": 4201992,
+      "sha256": "02598dca90f94bbee96a65d55b9ee8524b6d766e6d4f1a5f6c4324e3b693b2d5",
+      "mesh_count": 3,
+      "triangles": 10,
+      "meshes": [
+        {
+          "name": "HW_PathTile8_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 4,
+          "triangles": 2,
+          "bounds_y_up": {
+            "min": [
+              -4.0,
+              0.0,
+              -4.0
+            ],
+            "max": [
+              4.0,
+              0.0,
+              4.0
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_PathTile8_Shoulder_1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 12,
+          "triangles": 4,
+          "bounds_y_up": {
+            "min": [
+              3.4700000286102295,
+              0.014999999664723873,
+              -4.0
+            ],
+            "max": [
+              4.079999923706055,
+              0.02500000037252903,
+              4.0
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "HW_PathTile8_Shoulder_-1_Mesh_TriangulatedExport",
+          "vertices_after_uv_splits": 12,
+          "triangles": 4,
+          "bounds_y_up": {
+            "min": [
+              -4.070000171661377,
+              0.014999999664723873,
+              -4.0
+            ],
+            "max": [
+              -3.4600000381469727,
+              0.02500000037252903,
+              4.0
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -4.070000171661377,
+          0.0,
+          -4.0
+        ],
+        "max": [
+          4.079999923706055,
+          0.02500000037252903,
+          4.0
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_01/Rock_01.glb",
+      "bytes": 4206820,
+      "sha256": "86315d7dc17bdc467220782d14417cff1ed9d3cd5079baf0cb0bbf6309f3b212",
+      "mesh_count": 1,
+      "triangles": 80,
+      "meshes": [
+        {
+          "name": "Icosphere_TriangulatedExport",
+          "vertices_after_uv_splits": 227,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.8916909694671631,
+              0.0,
+              -0.6611857414245605
+            ],
+            "max": [
+              0.8696919679641724,
+              0.7213135361671448,
+              0.5456219911575317
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.8916909694671631,
+          0.0,
+          -0.6611857414245605
+        ],
+        "max": [
+          0.8696919679641724,
+          0.7213135361671448,
+          0.5456219911575317
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_02/Rock_02.glb",
+      "bytes": 4206820,
+      "sha256": "03a6efd146d46c4eb5935844d05431323800e5eb74ab1feaef6df42558bd410f",
+      "mesh_count": 1,
+      "triangles": 80,
+      "meshes": [
+        {
+          "name": "Icosphere.001_TriangulatedExport",
+          "vertices_after_uv_splits": 227,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.6903017163276672,
+              0.0,
+              -0.615011990070343
+            ],
+            "max": [
+              0.7592893838882446,
+              0.5419568419456482,
+              0.6227298378944397
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.6903017163276672,
+          0.0,
+          -0.615011990070343
+        ],
+        "max": [
+          0.7592893838882446,
+          0.5419568419456482,
+          0.6227298378944397
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_03/Rock_03.glb",
+      "bytes": 4206884,
+      "sha256": "06113d4f48ffd6d046a6b3fa7cfb290dc34d0a1ef11850f60295020172d56658",
+      "mesh_count": 1,
+      "triangles": 80,
+      "meshes": [
+        {
+          "name": "Icosphere.002_TriangulatedExport",
+          "vertices_after_uv_splits": 229,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.7390602827072144,
+              0.0,
+              -0.6611354351043701
+            ],
+            "max": [
+              0.7366799116134644,
+              0.7198445200920105,
+              0.660243570804596
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.7390602827072144,
+          0.0,
+          -0.6611354351043701
+        ],
+        "max": [
+          0.7366799116134644,
+          0.7198445200920105,
+          0.660243570804596
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_04/Rock_04.glb",
+      "bytes": 4206756,
+      "sha256": "e434858153977e8523021f5faeac1b3eb38a23b76245760cc11e0c0607fc1965",
+      "mesh_count": 1,
+      "triangles": 80,
+      "meshes": [
+        {
+          "name": "Icosphere.003_TriangulatedExport",
+          "vertices_after_uv_splits": 225,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.8316752910614014,
+              0.0,
+              -0.6875388622283936
+            ],
+            "max": [
+              0.8401210904121399,
+              0.7437900304794312,
+              0.706057071685791
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.8316752910614014,
+          0.0,
+          -0.6875388622283936
+        ],
+        "max": [
+          0.8401210904121399,
+          0.7437900304794312,
+          0.706057071685791
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_05/Rock_05.glb",
+      "bytes": 4206948,
+      "sha256": "5030e8849af377f9030b2238cf98972d52359b7ef164af7fa4e31b550e41cb88",
+      "mesh_count": 1,
+      "triangles": 80,
+      "meshes": [
+        {
+          "name": "Icosphere.004_TriangulatedExport",
+          "vertices_after_uv_splits": 231,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.6332148909568787,
+              0.0,
+              -0.6107324957847595
+            ],
+            "max": [
+              0.6505738496780396,
+              0.642798900604248,
+              0.6167406439781189
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "soil_gravel",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animations": [],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -0.6332148909568787,
+          0.0,
+          -0.6107324957847595
+        ],
+        "max": [
+          0.6505738496780396,
+          0.642798900604248,
+          0.6167406439781189
+        ]
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/HarvestWarden.glb",
+      "bytes": 11166616,
+      "sha256": "eb0d9ca09ce763db3da7d75fc852d5131e90a0eed736ef05b08432b014517e54",
+      "mesh_count": 9,
+      "triangles": 2414,
+      "meshes": [
+        {
+          "name": "Coat_Mesh",
+          "vertices_after_uv_splits": 394,
+          "triangles": 194,
+          "bounds_y_up": {
+            "min": [
+              -1.0225929021835327,
+              2.5997726917266846,
+              -0.49000000953674316
+            ],
+            "max": [
+              1.0225929021835327,
+              6.795953273773193,
+              0.5699999928474426
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Hat_Mesh",
+          "vertices_after_uv_splits": 160,
+          "triangles": 80,
+          "bounds_y_up": {
+            "min": [
+              -0.7109999656677246,
+              6.800000190734863,
+              -0.571584939956665
+            ],
+            "max": [
+              0.7109999656677246,
+              7.235616683959961,
+              0.6056339144706726
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Head_Mesh",
+          "vertices_after_uv_splits": 546,
+          "triangles": 272,
+          "bounds_y_up": {
+            "min": [
+              -0.6181915998458862,
+              6.822103023529053,
+              -0.43107545375823975
+            ],
+            "max": [
+              0.5968421101570129,
+              8.507898330688477,
+              0.5450000166893005
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftArm_Mesh",
+          "vertices_after_uv_splits": 680,
+          "triangles": 338,
+          "bounds_y_up": {
+            "min": [
+              -1.9449307918548584,
+              1.9882030487060547,
+              -0.35097405314445496
+            ],
+            "max": [
+              -0.5601269006729126,
+              6.486932277679443,
+              0.3770541846752167
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftEye_Mesh",
+          "vertices_after_uv_splits": 390,
+          "triangles": 186,
+          "bounds_y_up": {
+            "min": [
+              -0.3919999897480011,
+              7.4730000495910645,
+              0.34444913268089294
+            ],
+            "max": [
+              0.03191382437944412,
+              7.896999835968018,
+              0.5194435119628906
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftLeg_Mesh",
+          "vertices_after_uv_splits": 838,
+          "triangles": 410,
+          "bounds_y_up": {
+            "min": [
+              -0.7730000019073486,
+              0.04669537395238876,
+              -0.30300000309944153
+            ],
+            "max": [
+              -0.11027127504348755,
+              3.764831304550171,
+              0.5980117321014404
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightArm_Mesh",
+          "vertices_after_uv_splits": 680,
+          "triangles": 338,
+          "bounds_y_up": {
+            "min": [
+              0.5937849283218384,
+              3.13973331451416,
+              -0.35097405314445496
+            ],
+            "max": [
+              1.788846731185913,
+              6.498685836791992,
+              0.3764336109161377
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightEye_Mesh",
+          "vertices_after_uv_splits": 390,
+          "triangles": 186,
+          "bounds_y_up": {
+            "min": [
+              0.08799999952316284,
+              7.523000240325928,
+              0.34444913268089294
+            ],
+            "max": [
+              0.5119138956069946,
+              7.947000026702881,
+              0.5194435119628906
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightLeg_Mesh",
+          "vertices_after_uv_splits": 838,
+          "triangles": 410,
+          "bounds_y_up": {
+            "min": [
+              0.15963616967201233,
+              0.0414959117770195,
+              -0.30300000309944153
+            ],
+            "max": [
+              0.7697268724441528,
+              3.762124538421631,
+              0.5980117321014404
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        },
+        {
+          "name": "coat_canvas",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a"
+        },
+        {
+          "name": "burlap",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Classic_Capture",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 0.7916666865348816,
+          "duration_seconds": 0.7500000186264515,
+          "has_motion": true,
+          "motion_sha256": "2c3d408d2d9569d429c3be6ad784bab5c5c9d7e2e0aa932bade80b72c70613c5"
+        },
+        {
+          "name": "Classic_Chase",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 0.9583333134651184,
+          "duration_seconds": 0.9166666455566883,
+          "has_motion": true,
+          "motion_sha256": "c75f1f2abf27bd3aaf8607725484a4662e48eeba1ebbcec2cbfd73a31ed24b62"
+        },
+        {
+          "name": "Classic_Idle",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 3.0416667461395264,
+          "duration_seconds": 3.0000000782310963,
+          "has_motion": true,
+          "motion_sha256": "be98b63e49588f1aef8cfa70a17c63ecf0c93b4d0d0599cd0b7aaf70f4cbceed"
+        },
+        {
+          "name": "Classic_Trapped",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 1.2916666269302368,
+          "duration_seconds": 1.2499999590218067,
+          "has_motion": true,
+          "motion_sha256": "a3dea89472a60d3b09f7b89c31ee8991f7b1c8db0760ca0c0532c9c75a7f1fb5"
+        },
+        {
+          "name": "Classic_Walk",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 1.375,
+          "duration_seconds": 1.33333333209157,
+          "has_motion": true,
+          "motion_sha256": "c1dbaafd1755df4f52b989bb37becf6094a14200c00fb5ed91b6bcf14c54d903"
+        }
+      ],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.9449307918548584,
+          0.0414959117770195,
+          -0.571584939956665
+        ],
+        "max": [
+          1.788846731185913,
+          8.507898330688477,
+          0.6056339144706726
+        ]
+      },
+      "bone_count": 10,
+      "normalized_weights_all_vertices": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/HarvestWarden.glb",
+      "bytes": 11463792,
+      "sha256": "534d2f1f67cab3bd4cabd98132930f12599a4955f55663ed7a8e3aa2338f3306",
+      "mesh_count": 9,
+      "triangles": 5190,
+      "meshes": [
+        {
+          "name": "Coat_Mesh.001",
+          "vertices_after_uv_splits": 1168,
+          "triangles": 570,
+          "bounds_y_up": {
+            "min": [
+              -1.029927134513855,
+              2.5997726917266846,
+              -0.5590569972991943
+            ],
+            "max": [
+              1.029927134513855,
+              6.8569746017456055,
+              0.5699999928474426
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Hat_Mesh.001",
+          "vertices_after_uv_splits": 352,
+          "triangles": 176,
+          "bounds_y_up": {
+            "min": [
+              -0.7109999656677246,
+              6.800000190734863,
+              -0.5948826670646667
+            ],
+            "max": [
+              0.7109999656677246,
+              7.236484527587891,
+              0.6288928985595703
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "Head_Mesh.001",
+          "vertices_after_uv_splits": 1048,
+          "triangles": 540,
+          "bounds_y_up": {
+            "min": [
+              -0.6181915998458862,
+              6.822103023529053,
+              -0.43107545375823975
+            ],
+            "max": [
+              0.5968421101570129,
+              8.507898330688477,
+              0.5450000166893005
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftArm_Mesh.001",
+          "vertices_after_uv_splits": 1306,
+          "triangles": 670,
+          "bounds_y_up": {
+            "min": [
+              -1.9475396871566772,
+              1.987074613571167,
+              -0.36000001430511475
+            ],
+            "max": [
+              -0.5601269006729126,
+              6.498685836791992,
+              0.3777468204498291
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftEye_Mesh.001",
+          "vertices_after_uv_splits": 830,
+          "triangles": 402,
+          "bounds_y_up": {
+            "min": [
+              -0.3963262438774109,
+              7.4686737060546875,
+              0.34376099705696106
+            ],
+            "max": [
+              0.03618679568171501,
+              7.9013261795043945,
+              0.5231477618217468
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "LeftLeg_Mesh.001",
+          "vertices_after_uv_splits": 1736,
+          "triangles": 880,
+          "bounds_y_up": {
+            "min": [
+              -0.8061665296554565,
+              0.020754124969244003,
+              -0.3913157284259796
+            ],
+            "max": [
+              -0.12109033018350601,
+              3.7589564323425293,
+              0.5983074903488159
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightArm_Mesh.001",
+          "vertices_after_uv_splits": 1306,
+          "triangles": 670,
+          "bounds_y_up": {
+            "min": [
+              0.5601269006729126,
+              3.1404788494110107,
+              -0.36000001430511475
+            ],
+            "max": [
+              1.907590627670288,
+              6.498685836791992,
+              0.40294304490089417
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightEye_Mesh.001",
+          "vertices_after_uv_splits": 830,
+          "triangles": 402,
+          "bounds_y_up": {
+            "min": [
+              0.08367376029491425,
+              7.518673896789551,
+              0.34376099705696106
+            ],
+            "max": [
+              0.5161868333816528,
+              7.951326370239258,
+              0.5231477618217468
+            ]
+          },
+          "degenerate_triangles": 0
+        },
+        {
+          "name": "RightLeg_Mesh.001",
+          "vertices_after_uv_splits": 1736,
+          "triangles": 880,
+          "bounds_y_up": {
+            "min": [
+              0.16699999570846558,
+              0.04339258372783661,
+              -0.4336687922477722
+            ],
+            "max": [
+              0.8125154972076416,
+              3.7589564323425293,
+              0.5983074903488159
+            ]
+          },
+          "degenerate_triangles": 0
+        }
+      ],
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        },
+        {
+          "name": "coat_canvas",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a"
+        },
+        {
+          "name": "burlap",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Detailed_Capture",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 0.7916666865348816,
+          "duration_seconds": 0.7500000186264515,
+          "has_motion": true,
+          "motion_sha256": "2c3d408d2d9569d429c3be6ad784bab5c5c9d7e2e0aa932bade80b72c70613c5"
+        },
+        {
+          "name": "Detailed_Chase",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 0.9583333134651184,
+          "duration_seconds": 0.9166666455566883,
+          "has_motion": true,
+          "motion_sha256": "c75f1f2abf27bd3aaf8607725484a4662e48eeba1ebbcec2cbfd73a31ed24b62"
+        },
+        {
+          "name": "Detailed_Idle",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 3.0416667461395264,
+          "duration_seconds": 3.0000000782310963,
+          "has_motion": true,
+          "motion_sha256": "be98b63e49588f1aef8cfa70a17c63ecf0c93b4d0d0599cd0b7aaf70f4cbceed"
+        },
+        {
+          "name": "Detailed_Trapped",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 1.2916666269302368,
+          "duration_seconds": 1.2499999590218067,
+          "has_motion": true,
+          "motion_sha256": "a3dea89472a60d3b09f7b89c31ee8991f7b1c8db0760ca0c0532c9c75a7f1fb5"
+        },
+        {
+          "name": "Detailed_Walk",
+          "channels": 30,
+          "time_start": 0.0416666679084301,
+          "time_end": 1.375,
+          "duration_seconds": 1.33333333209157,
+          "has_motion": true,
+          "motion_sha256": "c1dbaafd1755df4f52b989bb37becf6094a14200c00fb5ed91b6bcf14c54d903"
+        }
+      ],
+      "all_accessors_finite": true,
+      "all_uvs_finite": true,
+      "bounds_y_up_local_mesh_space": {
+        "min": [
+          -1.9475396871566772,
+          0.020754124969244003,
+          -0.5948826670646667
+        ],
+        "max": [
+          1.907590627670288,
+          8.507898330688477,
+          0.6288928985595703
+        ]
+      },
+      "bone_count": 10,
+      "normalized_weights_all_vertices": true
+    }
+  ],
+  "fbx_exports": [
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.fbx",
+      "bytes": 2967964,
+      "sha256": "19bc03064309564ddad175f4090f7815fb2b1e266ccc46f3845e14e0aa801428",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_A_Far_Mesh.001",
+          "vertices": 80,
+          "triangles": 100,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 100,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.2414361238479614,
+          0.0,
+          -0.35971391201019287
+        ],
+        "max": [
+          1.9185638427734375,
+          8.0,
+          1.912546157836914
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "0477f41231a2106154568e8dcd4c33dde5ae082f65853bae76a70afa2bf2afda"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.fbx",
+      "bytes": 2973788,
+      "sha256": "c0308a4dc5215a8d8511282d324f709b757b12a8700cdb622196320eb05f3166",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_A_Mid_Mesh.001",
+          "vertices": 201,
+          "triangles": 276,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 276,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.0634559392929077,
+          0.0,
+          -1.3979212045669556
+        ],
+        "max": [
+          1.6431143283843994,
+          8.0,
+          1.7620787620544434
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "9f399845812bd7a88b43248c530ff82450b9e3648959203b4ba1c8d0aedd6b5b"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.fbx",
+      "bytes": 3008700,
+      "sha256": "d879ec0042a37b18a1306de2253fadbabff02df03dc2eab433a09856e7c6cffd",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_A_Near_Mesh.001",
+          "vertices": 926,
+          "triangles": 1378,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 1378,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.1421281099319458,
+          0.0,
+          -1.61849844455719
+        ],
+        "max": [
+          1.6830430030822754,
+          8.0,
+          1.541501522064209
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "9c662f8b7f83c378269d334c1236d1386298c9eb47aa94c142b6a936959a7d90"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.fbx",
+      "bytes": 2967948,
+      "sha256": "a878153121b6f1d9725e9a30e1834cd5aa5ff06e1d96dc221faa8c1d4f74fb6e",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_B_Far_Mesh.001",
+          "vertices": 80,
+          "triangles": 100,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 100,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -0.16942423582077026,
+          0.0,
+          -2.7727437019348145
+        ],
+        "max": [
+          3.1805758476257324,
+          8.0,
+          0.14677630364894867
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "892706b1dae5330b3ca9d2a5fbb377bedca64a6200611090eb5767a47f13805e"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.fbx",
+      "bytes": 2973804,
+      "sha256": "17e3c8ef66f7d7cb63ca49dc4e7e2baf07af109b438a7ac538be6844c7732be9",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_B_Mid_Mesh.001",
+          "vertices": 201,
+          "triangles": 276,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 276,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.4901189804077148,
+          0.0,
+          -1.5611649751663208
+        ],
+        "max": [
+          1.5418840646743774,
+          8.0,
+          1.788835048675537
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "a503b5eca95c3b0bd390c63446c122be4cce46ac3b389877fb6c73966859eb4a"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.fbx",
+      "bytes": 3011676,
+      "sha256": "a2975d239d9d051e81d1a4ebf5d4084b16b2f28e3af3c5440b8be5ea44631742",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_B_Near_Mesh.001",
+          "vertices": 989,
+          "triangles": 1470,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 1470,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.3739689588546753,
+          0.0,
+          -1.811842918395996
+        ],
+        "max": [
+          1.5398385524749756,
+          8.0,
+          1.5381569862365723
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "03eba0f4d85bb119d76a19ef535c958165595c25262bb550e1c1359d3af39507"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.fbx",
+      "bytes": 2967964,
+      "sha256": "c23d3e7e8829f66654a09964e29ef9444f7df6da3f7f623bcc8f67c3653d0ee3",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_C_Far_Mesh.001",
+          "vertices": 80,
+          "triangles": 100,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 100,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -0.8556624054908752
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          0.7340206503868103
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "1350806958ede19c21340d297c4f72308f8cee07f68d3fcbbd7a08827e0b5410"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.fbx",
+      "bytes": 2973756,
+      "sha256": "cd8c19dfc22a52f4189436116b6ded06c89159d94447ecbb05b35d3aabbf94d8",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_C_Mid_Mesh.001",
+          "vertices": 201,
+          "triangles": 276,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 276,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -1.4674408435821533
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          1.4010677337646484
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "ed3c718a0eae8f456e0137044e843912778681b9457d383571429da82f53c3e3"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.fbx",
+      "bytes": 3008700,
+      "sha256": "86822afb8d00c4653085b00d845498d9fcf07170ab86aeb26a7d87f91326101b",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_C_Near_Mesh.001",
+          "vertices": 926,
+          "triangles": 1378,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 1378,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.5669194459915161,
+          0.0,
+          -1.3815232515335083
+        ],
+        "max": [
+          1.5130804777145386,
+          8.0,
+          1.354448914527893
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "fec8ec641dbd9b439c07415ee503f847129efd6dd0f852af6f2a2af835b5f1df"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.fbx",
+      "bytes": 2967932,
+      "sha256": "063de6a58c3c293792c2008dfac354207875ee9a8e7ba1c7dcade7edcde501b7",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_D_Far_Mesh.001",
+          "vertices": 80,
+          "triangles": 100,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 100,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -0.5180471539497375,
+          0.0,
+          -0.1365276426076889
+        ],
+        "max": [
+          2.8319528102874756,
+          8.0,
+          3.189363479614258
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "f5a0f36d9e1f7dcf4e9fefb70a0c6b1fa5637389fce62204c6b6aacb61876b0a"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.fbx",
+      "bytes": 2973724,
+      "sha256": "47cb690870288d340bd29fc0b897e787ae555373e8a56769a80f0c8df6593701",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_D_Mid_Mesh.001",
+          "vertices": 201,
+          "triangles": 276,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 276,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.3683652877807617,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          0.9765235185623169,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "ff2bb93679b2fd27cc761e9d822b7bbba933dc145bcc44683d565cb841a69bcf"
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.fbx",
+      "bytes": 3011484,
+      "sha256": "c4d25b27b53c24f287a2c28dc2d118c4303bb8ee19f681be4a4d673141a9f482",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Corn_D_Near_Mesh.001",
+          "vertices": 989,
+          "triangles": 1470,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 1470,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        }
+      ],
+      "animation": null,
+      "bounds_y_up": {
+        "min": [
+          -1.4744672775268555,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          1.7260266542434692,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "unique_positions_rounded_5_sha256": "328ffc33fa2519651b9770e37873a87709827bb3e64d81d68210378d9d502915"
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.fbx",
+      "bytes": 3620732,
+      "sha256": "b10e9e2dab3b1553f6ea8f0ad8721daf133416ebd8c801f1a9271dccd0b19d78",
+      "version": 7400,
+      "mesh_count": 4,
+      "meshes": [
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_01_Mesh_TriangulatedExport.001",
+          "vertices": 258,
+          "triangles": 382,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_02_Mesh_TriangulatedExport.001",
+          "vertices": 258,
+          "triangles": 382,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_03_Mesh_TriangulatedExport.001",
+          "vertices": 258,
+          "triangles": 382,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Door_04_Mesh_TriangulatedExport.001",
+          "vertices": 258,
+          "triangles": 382,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 1528,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_Open/BarnDark_Open.fbx",
+      "bytes": 3771132,
+      "sha256": "063b43aa04557b942ec8a16a06f23eebcb3e44747de9900e186e7f0ea8f8b811",
+      "version": 7400,
+      "mesh_count": 3,
+      "meshes": [
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Mesh_TriangulatedExport.001",
+          "vertices": 3866,
+          "triangles": 6104,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Shutter_01_Mesh_TriangulatedExport.001",
+          "vertices": 156,
+          "triangles": 248,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_Dark_SM_Bld_Barn_03_Shutter_02_Mesh_TriangulatedExport.001",
+          "vertices": 156,
+          "triangles": 248,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 6600,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_01/Fence_01.fbx",
+      "bytes": 3590268,
+      "sha256": "02084c5968c2996b1c666ac8fe224f73c0ab9954d4ffe82362e0708ae9c99137",
+      "version": 7400,
+      "mesh_count": 7,
+      "meshes": [
+        {
+          "name": "Fence01_Post1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Post2_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Post3_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Rail0_0_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Rail0_1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Rail1_0_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence01_Rail1_1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 252,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_02/Fence_02.fbx",
+      "bytes": 3595356,
+      "sha256": "e15bc2a8a66d1f08b2896c994e60f328d00745d9812c499f3fa5de5078bc9195",
+      "version": 7400,
+      "mesh_count": 8,
+      "meshes": [
+        {
+          "name": "Fence02_BrokenRailA_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_BrokenRailB_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Post1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Post2_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Post3_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Rail0_0_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Rail0_1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence02_Rail1_0_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 288,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_03/Fence_03.fbx",
+      "bytes": 3590668,
+      "sha256": "f56ec2592c7ca8b1dd5f19709fa3c12854b138e171c4aafe1afb6609720ee492",
+      "version": 7400,
+      "mesh_count": 7,
+      "meshes": [
+        {
+          "name": "Fence03_DroppedRail_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Post1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Post2_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Post3_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Rail0_1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Rail1_0_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        },
+        {
+          "name": "Fence03_Rail1_1_Mesh_TriangulatedExport.001",
+          "vertices": 20,
+          "triangles": 36,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 252,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Ground_Tile_8/Ground_Tile_8.fbx",
+      "bytes": 4216892,
+      "sha256": "1faca052ac957c93f6d6b6a7bd2909aa21151450320083c611875f8b712ecbc2",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "HW_GroundTile8_Mesh_TriangulatedExport.001",
+          "vertices": 4,
+          "triangles": 2,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 2,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Path_Tile_8/Path_Tile_8.fbx",
+      "bytes": 4224860,
+      "sha256": "919cb1599f94d8e344748b4e2af9a46ab7a5c44ca23aae303882f1cd1848f5d5",
+      "version": 7400,
+      "mesh_count": 3,
+      "meshes": [
+        {
+          "name": "HW_PathTile8_Mesh_TriangulatedExport.001",
+          "vertices": 4,
+          "triangles": 2,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_PathTile8_Shoulder_-1_Mesh_TriangulatedExport.001",
+          "vertices": 6,
+          "triangles": 4,
+          "uv_layers": 1
+        },
+        {
+          "name": "HW_PathTile8_Shoulder_1_Mesh_TriangulatedExport.001",
+          "vertices": 6,
+          "triangles": 4,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 10,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_01/Rock_01.fbx",
+      "bytes": 4219708,
+      "sha256": "22101f137ee4ac0ae84a6e5ad04cac7ca7a619ebfe3e917d8d7d772d43845658",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Icosphere_TriangulatedExport.001",
+          "vertices": 42,
+          "triangles": 80,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 80,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_02/Rock_02.fbx",
+      "bytes": 4219724,
+      "sha256": "0e54b52873a812c843dfdc5e0d6185567594866cf60f49608be5c8f5999a84dc",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Icosphere.001_TriangulatedExport.001",
+          "vertices": 42,
+          "triangles": 80,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 80,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_03/Rock_03.fbx",
+      "bytes": 4219740,
+      "sha256": "5bb7d25b3b40c5013a9faac30b948990cc8cfc04572f1196e56284ae0b30fc62",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Icosphere.002_TriangulatedExport.001",
+          "vertices": 42,
+          "triangles": 80,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 80,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_04/Rock_04.fbx",
+      "bytes": 4219708,
+      "sha256": "29027de5c31328ec6744a9be48268a7a8da16c86e1634792652392142d83e979",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Icosphere.003_TriangulatedExport.001",
+          "vertices": 42,
+          "triangles": 80,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 80,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_05/Rock_05.fbx",
+      "bytes": 4219772,
+      "sha256": "9a4a7a6c44a51cbbd74f024f8c683e5499e60a4e92b928f4c5707a032389ff9a",
+      "version": 7400,
+      "mesh_count": 1,
+      "meshes": [
+        {
+          "name": "Icosphere.004_TriangulatedExport.001",
+          "vertices": 42,
+          "triangles": 80,
+          "uv_layers": 1
+        }
+      ],
+      "triangles": 80,
+      "bone_count": 0,
+      "embedded_textures": [
+        {
+          "name": "soil_gravel.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Capture.fbx",
+      "bytes": 92476,
+      "sha256": "954c9fc835a044efd786d021c733f923b9eef3fe1b302d488b7ea13c76e53acc",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Capture",
+        "duration_seconds": 0.75,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "c95ea6a251dc08ff2fa3c0ea36e2a1b680989288b5dfef316f11b0dbcb3b41ad"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Chase.fbx",
+      "bytes": 96540,
+      "sha256": "5d52559fe55d9884423311466b4e27a8d9cfacdb638a1a2d9c7a524f3735bf81",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Chase",
+        "duration_seconds": 0.9166666666666666,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "be285837a00481f3aa23a56938095ceeb2e2844abb1cc6783aa30fbf9a974dc2"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Idle.fbx",
+      "bytes": 123276,
+      "sha256": "05422c9623ce492c1dfd2bc0f5d70b19eb3ed621b7819d2e102874aee0831d0b",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Idle",
+        "duration_seconds": 3.0,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "77f7d16bfa47c34050fdec4dcdd97715590ca18d1650668bd0462188315cc52f"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Trapped.fbx",
+      "bytes": 104652,
+      "sha256": "8beb009dcf1ff874efbdfdd52153c3005f13f6d218d486af4b6a8cbfa4cb8b03",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Trapped",
+        "duration_seconds": 1.25,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "f037fe940605a1707e4180bd7d402d470b0b588e72c8e581d1d7ad1d40affdf2"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Walk.fbx",
+      "bytes": 97628,
+      "sha256": "37e5e29d9216a20f5dfef6155f4badb0c1a50eb33add0f2aefc4e52b89f7f745",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Walk",
+        "duration_seconds": 1.3333333333333333,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "b09386e982c66d11de3d21124a06841efe608bf75c7fcfe174da943afca8c317"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/HarvestWarden.fbx",
+      "bytes": 11036204,
+      "sha256": "006f83c1eb2f15e757c45a0afa8dec4125f20bae0514f40d19f5987bf0d00657",
+      "version": 7400,
+      "mesh_count": 9,
+      "meshes": [
+        {
+          "name": "Coat_Mesh",
+          "vertices": 142,
+          "triangles": 194,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "Hat_Mesh",
+          "vertices": 90,
+          "triangles": 80,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "Head_Mesh",
+          "vertices": 162,
+          "triangles": 272,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftArm_Mesh",
+          "vertices": 189,
+          "triangles": 338,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftEye_Mesh",
+          "vertices": 97,
+          "triangles": 186,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftLeg_Mesh",
+          "vertices": 231,
+          "triangles": 410,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightArm_Mesh",
+          "vertices": 189,
+          "triangles": 338,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightEye_Mesh",
+          "vertices": 97,
+          "triangles": 186,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightLeg_Mesh",
+          "vertices": 231,
+          "triangles": 410,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        }
+      ],
+      "triangles": 2414,
+      "bone_count": 10,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        },
+        {
+          "name": "burlap.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab"
+        },
+        {
+          "name": "coat_canvas.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a"
+        }
+      ],
+      "animation": null
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Capture.fbx",
+      "bytes": 92476,
+      "sha256": "0abecc1d1628d627dd8e06d29f8653ff6d31a78a5c4a39f6ba8296ad2680f702",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Capture",
+        "duration_seconds": 0.75,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "c95ea6a251dc08ff2fa3c0ea36e2a1b680989288b5dfef316f11b0dbcb3b41ad"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Chase.fbx",
+      "bytes": 96540,
+      "sha256": "8d873380f9b42a0e469a6dc3b9e9f0b20f1e0183588de96ec948a11326c1d068",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Chase",
+        "duration_seconds": 0.9166666666666666,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "be285837a00481f3aa23a56938095ceeb2e2844abb1cc6783aa30fbf9a974dc2"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Idle.fbx",
+      "bytes": 123276,
+      "sha256": "bfbbdff677c7b32c3063f0c0f2c11d9afab54a7ad8912234de84ae41a3cbe3dd",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Idle",
+        "duration_seconds": 3.0,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "77f7d16bfa47c34050fdec4dcdd97715590ca18d1650668bd0462188315cc52f"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Trapped.fbx",
+      "bytes": 104652,
+      "sha256": "a131b362a6e705a418b573bc9d331080fea41122151065efa14f5735e6ad204d",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Trapped",
+        "duration_seconds": 1.25,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "f037fe940605a1707e4180bd7d402d470b0b588e72c8e581d1d7ad1d40affdf2"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Walk.fbx",
+      "bytes": 97628,
+      "sha256": "053d52c57fe76c561fb2698162174338bc4f60a1662c130619c84bb62da4e4b9",
+      "version": 7400,
+      "mesh_count": 0,
+      "meshes": [],
+      "triangles": 0,
+      "bone_count": 10,
+      "embedded_textures": [],
+      "animation": {
+        "name": "Walk",
+        "duration_seconds": 1.3333333333333333,
+        "curves": 99,
+        "has_motion": true,
+        "motion_sha256": "b09386e982c66d11de3d21124a06841efe608bf75c7fcfe174da943afca8c317"
+      }
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/HarvestWarden.fbx",
+      "bytes": 11097868,
+      "sha256": "b845ba35ca0774a84ed3bce71cd4ee3bce6769f7510af61150f4d4d6a0111d3c",
+      "version": 7400,
+      "mesh_count": 9,
+      "meshes": [
+        {
+          "name": "Coat_Mesh.001",
+          "vertices": 403,
+          "triangles": 570,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "Hat_Mesh.001",
+          "vertices": 198,
+          "triangles": 176,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "Head_Mesh.001",
+          "vertices": 308,
+          "triangles": 540,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftArm_Mesh.001",
+          "vertices": 382,
+          "triangles": 670,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftEye_Mesh.001",
+          "vertices": 205,
+          "triangles": 402,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "LeftLeg_Mesh.001",
+          "vertices": 516,
+          "triangles": 880,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightArm_Mesh.001",
+          "vertices": 382,
+          "triangles": 670,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightEye_Mesh.001",
+          "vertices": 205,
+          "triangles": 402,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        },
+        {
+          "name": "RightLeg_Mesh.001",
+          "vertices": 516,
+          "triangles": 880,
+          "uv_layers": 1,
+          "all_vertices_weighted": true,
+          "max_influences": 1
+        }
+      ],
+      "triangles": 5190,
+      "bone_count": 10,
+      "embedded_textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790"
+        },
+        {
+          "name": "burlap.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab"
+        },
+        {
+          "name": "coat_canvas.png",
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 2,
+          "decoded_bytes": 4718802,
+          "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a"
+        }
+      ],
+      "animation": null
+    }
+  ],
+  "protected_originals": [
+    {
+      "path": "assets/corn/01_roblax_style.png",
+      "bytes": 2163488,
+      "sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/corn/01_roblax_style_dry_corn.png",
+      "bytes": 2147627,
+      "sha256": "69408d26e1580f1ae58e3a80a2abe10ee9e7161284f849647fa424034690d14e",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/corn/SM_Prop_Plant_Corn_01_L.fbx",
+      "bytes": 45824,
+      "sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/corn/SM_Prop_Plant_Corn_01_L_textured.fbx",
+      "bytes": 2211804,
+      "sha256": "30dfe4f3261089e6d8475373d57db2e124679f8a47ca3a1dfb615cbf03df1708",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/01_roblax_style.png",
+      "bytes": 2163488,
+      "sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/PolygonFarm_Texture_01_A.png",
+      "bytes": 351202,
+      "sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Bld_Barn_03.fbx",
+      "bytes": 232688,
+      "sha256": "7fd177843110adaf726860156886da76651fd393956647c3c7ece299711ecc37",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Bld_Barn_03_stylized_reference.fbx",
+      "bytes": 2395936,
+      "sha256": "a3dd07b6805ac23ae8f2c72cf655466b8d0ff372f44c92bfabc686d24f151858",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Bld_Barn_03_textured.fbx",
+      "bytes": 583696,
+      "sha256": "5003d1d7fe44b8082197cb22ba2a4292b735ed06df71fd7c49889e9b91fb7796",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Rubbish_Pile_05.fbx",
+      "bytes": 36288,
+      "sha256": "9a8b1a775cd24dbb9ee89fdefc7402222163890c51f8282491d563e67830555b",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Rubbish_Pile_05_stylized_reference.fbx",
+      "bytes": 2199536,
+      "sha256": "ac524cd0a0ec487880703adb9db3f1389684363eebce29c21c5e38f8592da572",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Rubbish_Pile_05_textured.fbx",
+      "bytes": 387296,
+      "sha256": "8dc68514c2c2cbe1e6674f8ecbfa50da859c1621145751de0b7b2b20ccc54025",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Truck_Rusted_01.fbx",
+      "bytes": 156624,
+      "sha256": "83b77ec628f7f3b35d71658560d995adbf0c946ec96d5f94eae54ec8b84b5b06",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Truck_Rusted_01_stylized_reference.fbx",
+      "bytes": 2319872,
+      "sha256": "8dda7c1aba5eb59e15b4fe9cc1a0489df3432c70d996d6b4cb86e7ec80338eae",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Truck_Rusted_01_textured.fbx",
+      "bytes": 507632,
+      "sha256": "b75353ecb503d816c6da01222c8526f185ae3cfc98d2483a5986843176c18b05",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Tyre_01.fbx",
+      "bytes": 59952,
+      "sha256": "2b415712537b09de5d97e66388df6f0ccb284f7f5d2a60eb1da991a64078f284",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Tyre_01_stylized_reference.fbx",
+      "bytes": 2223200,
+      "sha256": "da02396a1801eb5da87b2ba974e186d9658e1865312e8c359e23567795fe0ce3",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "assets/farm/SM_Prop_Tyre_01_textured.fbx",
+      "bytes": 410960,
+      "sha256": "161c1fdeb21472bd37c70a6b3781a5c503c02ff89c2ad54674ef9aa1a9465d02",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-audio-20261013.rbxl",
+      "bytes": 999458,
+      "sha256": "bdebd256fb5d2ad74a9ed5dc51b93f254e592b0d510a0d2b8b797d63847811e6",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-autumn-20261012.rbxl",
+      "bytes": 239719,
+      "sha256": "0e8a382fcd5b3e61f696e5e40ffa7a33a45436058aa9544ec2b409e4de89e410",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-editable.rbxl",
+      "bytes": 105095,
+      "sha256": "065eeeebf998cf396ef98486c80b7b8d084c956378997482c2345ea00af6e61d",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-entity-arrival-20261015.rbxl",
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-finale-20261015.rbxl",
+      "bytes": 1015691,
+      "sha256": "9082169a7da5fed15cd962611777285213fce99f23de82f83e0f361a683ecf16",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-foreign-cleanup-20261015.rbxl",
+      "bytes": 359914,
+      "sha256": "50d8d341bcffc34148151ff7ea2e3e7dad7dbe513be1f8cedc82573333f30aca",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-handheld-20261012.rbxl",
+      "bytes": 995413,
+      "sha256": "66997087e67a05e0095448c8c1fb91b51d61f6acf1de865a78df3b376fb87d93",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-haze-clusters-20261015.rbxl",
+      "bytes": 1019419,
+      "sha256": "a897bb52fa85505090f973e910139915e6ebb2995e44915c31ecbc2b5c511dca",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-inventory-20261012.rbxl",
+      "bytes": 981060,
+      "sha256": "6f9a95e624a96ab6c318a4a1912db0c5aae7b6d6e1dfa0d92f70dcc97638e03a",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-lighting-modes-20261010.rbxl",
+      "bytes": 228018,
+      "sha256": "c2a58d56a1adf964dd617e5eca81fb6e83707b79a9244adae4f45739aa27e5e1",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-live-proportion-fix-20261010.rbxl",
+      "bytes": 138822,
+      "sha256": "e11accd30c6be71aa0c01ca753a05e15b3c60ed44860b069bb135cb9674aa804",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-map-tuning-20261010.rbxl",
+      "bytes": 141703,
+      "sha256": "c4d027d34540118cb1c037f00bb4efd0dbb3d673a0a4194c03968ea28d577cb8",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-map-tuning-author-save-20261010.rbxl",
+      "bytes": 141703,
+      "sha256": "bfb43cbf826d567f5376ff06dd5eaa590b49062fd98c40b4a538c7707c9d06b2",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-minimap-20261010.rbxl",
+      "bytes": 231503,
+      "sha256": "ccf9eabe433f68f4d4a3f9455da2c759de44003c179f25ac4234241b574c0679",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-20261015.rbxl",
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-network-20261015.rbxl",
+      "bytes": 1003371,
+      "sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-proportion-fix.rbxl",
+      "bytes": 138811,
+      "sha256": "58c708359df037c85a7dc777dc46dbcad88af86ac8ede588472fc294b0759105",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-quality-20261010.rbxl",
+      "bytes": 236519,
+      "sha256": "38714df503f02abce02d5555533d7f4949f384690a1a75d9135cfe655015e1fa",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-readability-20261013.rbxl",
+      "bytes": 1007172,
+      "sha256": "4ee103b95110e2a2a1a691d58a7bb5cdc34d0dc466d3c5265b47eb5823986546",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-resize-yellow-20261015.rbxl",
+      "bytes": 1028519,
+      "sha256": "c7015e55a7cf4a020fe0ae1e3d40d4c69c17faf10a8f01d8ce4379066c955fed",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-rustle-20261014.rbxl",
+      "bytes": 1009332,
+      "sha256": "ef0731f3235a26e4aa76dd26a7853be4d67e9ccc934f4f054428e5cbd6d146f0",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-rustle-comparison-20261015.rbxl",
+      "bytes": 996617,
+      "sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-scarecrow-20261012.rbxl",
+      "bytes": 989746,
+      "sha256": "95d87061a83808a139da4c98c7552b65b3c8e86137dff5f472c362c7fd984d5d",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.before-spawn-fix.rbxl",
+      "bytes": 152819,
+      "sha256": "df831a6af024f9d8b4667ff3b67974b8a3c0c541afb3a54e2bb4a0da7831274b",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.forensic-b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d.rbxl",
+      "bytes": 1010853,
+      "sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d",
+      "head_bytes_equal": true
+    },
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 1003371,
+      "sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "head_bytes_equal": true
+    }
+  ],
+  "blender_source_readbacks": [
+    {
+      "path": "assets/harvest-warden/corn.blend",
+      "bytes": 3076133,
+      "sha256": "e842169947318779537036909f00d89206abd894e0fc7a1859f6b3ceb88d9060",
+      "source_bytes_unchanged": true,
+      "blender_version": "5.2.2 LTS",
+      "mesh_objects": 17,
+      "armatures": [],
+      "actions": [],
+      "fps": 24,
+      "textures": [
+        {
+          "name": "corn_leaf_dry.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        }
+      ],
+      "all_mesh_positions_uvs_finite": true
+    },
+    {
+      "path": "assets/harvest-warden/environment.blend",
+      "bytes": 7802496,
+      "sha256": "ee4fb6570c893a7d19fbf93abbe46bd3ce950c4799457f0462ccec4803c9eca4",
+      "source_bytes_unchanged": true,
+      "blender_version": "5.2.2 LTS",
+      "mesh_objects": 70,
+      "armatures": [],
+      "actions": [],
+      "fps": 24,
+      "textures": [
+        {
+          "name": "barn_wood_dark.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        },
+        {
+          "name": "soil_gravel.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        }
+      ],
+      "all_mesh_positions_uvs_finite": true
+    },
+    {
+      "path": "assets/harvest-warden/warden.blend",
+      "bytes": 10753615,
+      "sha256": "70e2c14e02b18217aaec1cef79e65c3ecde8d694d44c9de09793261bdc171071",
+      "source_bytes_unchanged": true,
+      "blender_version": "5.2.2 LTS",
+      "mesh_objects": 19,
+      "armatures": [
+        {
+          "name": "Warden_Classic_Rig",
+          "bones": 10
+        },
+        {
+          "name": "Warden_Detailed_Rig",
+          "bones": 10
+        }
+      ],
+      "actions": [
+        {
+          "name": "Classic_Capture",
+          "frame_range": [
+            1.0,
+            19.0
+          ]
+        },
+        {
+          "name": "Classic_Chase",
+          "frame_range": [
+            1.0,
+            23.0
+          ]
+        },
+        {
+          "name": "Classic_Idle",
+          "frame_range": [
+            1.0,
+            73.0
+          ]
+        },
+        {
+          "name": "Classic_Trapped",
+          "frame_range": [
+            1.0,
+            31.0
+          ]
+        },
+        {
+          "name": "Classic_Walk",
+          "frame_range": [
+            1.0,
+            33.0
+          ]
+        },
+        {
+          "name": "Detailed_Capture",
+          "frame_range": [
+            1.0,
+            19.0
+          ]
+        },
+        {
+          "name": "Detailed_Chase",
+          "frame_range": [
+            1.0,
+            23.0
+          ]
+        },
+        {
+          "name": "Detailed_Idle",
+          "frame_range": [
+            1.0,
+            73.0
+          ]
+        },
+        {
+          "name": "Detailed_Trapped",
+          "frame_range": [
+            1.0,
+            31.0
+          ]
+        },
+        {
+          "name": "Detailed_Walk",
+          "frame_range": [
+            1.0,
+            33.0
+          ]
+        }
+      ],
+      "fps": 24,
+      "textures": [
+        {
+          "name": "burlap.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        },
+        {
+          "name": "coat_canvas.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        },
+        {
+          "name": "corn_leaf_dry.png",
+          "packed": true,
+          "external_file_exists": true,
+          "dimensions": [
+            1254,
+            1254
+          ]
+        }
+      ],
+      "all_mesh_positions_uvs_finite": true
+    }
+  ],
+  "existing_game_and_original_art_git_diff_clean": true,
+  "git_head": "5d52b0ffabea60c0445c8b3a1201d04b68d81e9b",
+  "limitations": [
+    "Roblox import scale, orientation, material appearance and animation playback remain untested in Studio.",
+    "Red emissive meshes do not export Roblox PointLights; engine lights and range must be integrated and tested.",
+    "No world replacement, monster-controller integration, network playtest or FPS measurement was performed.",
+    "This binary audit does not prove art quality, seamless tiling, fear or resemblance to the concept image."
+  ],
+  "errors": []
+}

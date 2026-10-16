@@ -29,6 +29,8 @@ function MonsterHunt.new(
 	assert(index == 1 or index == 2 or index == 3, "Unknown monster index")
 	local modelName = if index == 1 then "Monster" else "Monster" .. index
 	assert(not world.Runtime:FindFirstChild(modelName), "Monster name already occupied")
+	local artVariant = if world.Root then world.Root:GetAttribute("HarvestArtVariant") else nil
+	local wardenVariant = if artVariant == "A" or artVariant == "B" then artVariant else nil
 	local home = world.Home:FindFirstChild("Body") :: BasePart
 	assert(home and home:IsA("BasePart"), "Scarecrow home body missing")
 	local floor = world.Ground.Position.Y + world.Ground.Size.Y / 2
@@ -37,6 +39,10 @@ function MonsterHunt.new(
 	model:SetAttribute("CornMonsterOwned", true)
 	model:SetAttribute("corn_project_id", "children_of_corn")
 	model:SetAttribute("MonsterRigVersion", 1)
+	if wardenVariant then
+		model:SetAttribute("HarvestWardenVersion", 1)
+		model:SetAttribute("HarvestArtVariant", wardenVariant)
+	end
 	model:SetAttribute("MonsterIndex", index)
 	model:SetAttribute("HuntState", "dormant")
 	model:SetAttribute("ChaseTargetUserId", 0)
@@ -109,11 +115,12 @@ function MonsterHunt.new(
 		generation = 0,
 		destroyed = false,
 		originalMarker = {},
+		wardenVariant = wardenVariant,
 		blockedSince = nil,
 	}, MonsterHunt)
 	if options.immediate then
 		for _, visual in visuals do
-			visual.Transparency = 0
+			visual.Transparency = if wardenVariant then 1 else 0
 		end
 		self:_state("patrol", startedAt)
 	end
@@ -355,7 +362,7 @@ function MonsterHunt:Step(
 			return false, false
 		end
 		for _, p in self.visuals do
-			p.Transparency = 0
+			p.Transparency = if self.wardenVariant then 1 else 0
 		end
 		for _, item in self.world.Home:GetDescendants() do
 			if item:IsA("BasePart") and item.Name ~= "Pole" then

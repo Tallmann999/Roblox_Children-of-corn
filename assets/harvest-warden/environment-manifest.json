@@ -1,0 +1,952 @@
+{
+  "format": "ChildrenOfCorn_HarvestEnvironment_v1",
+  "seed": 20261016,
+  "blender_version": "5.2.2 LTS",
+  "root_collection": "HW_ENVIRONMENT",
+  "units": "1 Blender unit = 1 intended Roblox stud; Z-up .blend, Y-up FBX/glTF",
+  "roblox_import_acceptance": "pending actual Studio import, eye/gameplay integration and FPS",
+  "original_input_hashes": {
+    "assets/farm/SM_Bld_Barn_03_textured.fbx": "5003d1d7fe44b8082197cb22ba2a4292b735ed06df71fd7c49889e9b91fb7796",
+    "assets/farm/PolygonFarm_Texture_01_A.png": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd"
+  },
+  "barn_preservation": {
+    "source": "assets/farm/SM_Bld_Barn_03_textured.fbx",
+    "source_mesh_names": [
+      "SM_Bld_Barn_03",
+      "SM_Bld_Barn_03_Door_01",
+      "SM_Bld_Barn_03_Door_02",
+      "SM_Bld_Barn_03_Door_03",
+      "SM_Bld_Barn_03_Door_04",
+      "SM_Bld_Barn_03_Shutter_01",
+      "SM_Bld_Barn_03_Shutter_02"
+    ],
+    "uniform_scale": 0.021329354445945803,
+    "source_positions_units": "FBX centimetres; source Y-up converted to Blender Z-up",
+    "geometry_input": "read-only original FBX raw polygons; avoids importer polygon loss",
+    "source_door_height": 351.6280822753906,
+    "exported_door_height_studs": 7.5,
+    "all_seven_source_meshes_preserved_in_blend": true,
+    "open_export_omits_four_archived_door_leaves": true,
+    "max_position_error": 0.0,
+    "mesh_checks": [
+      {
+        "source_mesh": "SM_Bld_Barn_03",
+        "vertices": 3866,
+        "polygons": 3120,
+        "triangles": 6112,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": false
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Shutter_01",
+        "vertices": 156,
+        "polygons": 142,
+        "triangles": 252,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": false
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Shutter_02",
+        "vertices": 156,
+        "polygons": 142,
+        "triangles": 252,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": false
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Door_04",
+        "vertices": 258,
+        "polygons": 220,
+        "triangles": 386,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": true
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Door_03",
+        "vertices": 258,
+        "polygons": 220,
+        "triangles": 386,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": true
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Door_02",
+        "vertices": 258,
+        "polygons": 220,
+        "triangles": 386,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": true
+      },
+      {
+        "source_mesh": "SM_Bld_Barn_03_Door_01",
+        "vertices": 258,
+        "polygons": 220,
+        "triangles": 386,
+        "topology_identical": true,
+        "max_scaled_world_position_error": 0.0,
+        "uv_changed": true,
+        "door_archived_for_open_passage": true
+      }
+    ],
+    "appearance_only": "new planar UV, dark wood texture, matte desaturated roof material",
+    "export_duplicate_cleanup": [
+      {
+        "source_object": "HW_Dark_SM_Bld_Barn_03",
+        "polygon": 174,
+        "duplicate_of": 1,
+        "triangles": 2
+      },
+      {
+        "source_object": "HW_Dark_SM_Bld_Barn_03",
+        "polygon": 194,
+        "duplicate_of": 21,
+        "triangles": 2
+      }
+    ],
+    "export_zero_area_triangle_cleanup": 28,
+    "export_open_barn_triangles": 6600,
+    "export_all_parts_triangles": 8128
+  },
+  "assets": [
+    {
+      "name": "BarnDark_Open",
+      "collection": "HW_BarnDark_Open",
+      "meshes": 3,
+      "vertices": 4178,
+      "triangles": 6600,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "polygon": 174,
+            "duplicate_of": 1,
+            "triangles": 2
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "polygon": 194,
+            "duplicate_of": 21,
+            "triangles": 2
+          }
+        ],
+        "zero_area_triangles_removed": [
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "source_polygon": 1026,
+            "vertices": [
+              1147,
+              1230,
+              1244
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "source_polygon": 1126,
+            "vertices": [
+              1325,
+              1422,
+              1408
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "source_polygon": 2268,
+            "vertices": [
+              2709,
+              2806,
+              2792
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03",
+            "source_polygon": 2368,
+            "vertices": [
+              2887,
+              2970,
+              2984
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_01",
+            "source_polygon": 67,
+            "vertices": [
+              77,
+              79,
+              47
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_01",
+            "source_polygon": 69,
+            "vertices": [
+              76,
+              80,
+              45
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_01",
+            "source_polygon": 138,
+            "vertices": [
+              151,
+              125,
+              153
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_01",
+            "source_polygon": 140,
+            "vertices": [
+              150,
+              123,
+              154
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_02",
+            "source_polygon": 67,
+            "vertices": [
+              77,
+              47,
+              79
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_02",
+            "source_polygon": 69,
+            "vertices": [
+              76,
+              45,
+              80
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_02",
+            "source_polygon": 138,
+            "vertices": [
+              151,
+              153,
+              125
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Shutter_02",
+            "source_polygon": 140,
+            "vertices": [
+              150,
+              154,
+              123
+            ],
+            "squared_cross_product": 0.0
+          }
+        ],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -10.418519020080566,
+          -7.929307460784912,
+          -2.489769940439146e-05
+        ],
+        "max": [
+          10.418551445007324,
+          7.929307460784912,
+          19.421178817749023
+        ],
+        "size": [
+          20.83707046508789,
+          15.858614921569824,
+          19.421203715448428
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/BarnDark_Open/BarnDark_Open.fbx",
+          "bytes": 3771132,
+          "sha256": "063b43aa04557b942ec8a16a06f23eebcb3e44747de9900e186e7f0ea8f8b811"
+        },
+        {
+          "path": "exports/environment/BarnDark_Open/BarnDark_Open.glb",
+          "bytes": 4067960,
+          "sha256": "f0766637d5f5232f8f738e6d194f9839e4fab81958799db1e25d6341bd8f9e48"
+        }
+      ]
+    },
+    {
+      "name": "BarnDark_DoorLeaves_Optional",
+      "collection": "HW_BarnDark_OriginalDoorLeaves",
+      "meshes": 4,
+      "vertices": 1032,
+      "triangles": 1528,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_04",
+            "source_polygon": 62,
+            "vertices": [
+              84,
+              64,
+              85
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_04",
+            "source_polygon": 99,
+            "vertices": [
+              115,
+              99,
+              116
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_04",
+            "source_polygon": 172,
+            "vertices": [
+              213,
+              214,
+              194
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_04",
+            "source_polygon": 209,
+            "vertices": [
+              239,
+              240,
+              223
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_03",
+            "source_polygon": 62,
+            "vertices": [
+              84,
+              64,
+              85
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_03",
+            "source_polygon": 99,
+            "vertices": [
+              115,
+              99,
+              116
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_03",
+            "source_polygon": 172,
+            "vertices": [
+              213,
+              214,
+              194
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_03",
+            "source_polygon": 209,
+            "vertices": [
+              239,
+              240,
+              223
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_02",
+            "source_polygon": 62,
+            "vertices": [
+              84,
+              85,
+              64
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_02",
+            "source_polygon": 99,
+            "vertices": [
+              115,
+              116,
+              99
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_02",
+            "source_polygon": 172,
+            "vertices": [
+              213,
+              194,
+              214
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_02",
+            "source_polygon": 209,
+            "vertices": [
+              239,
+              223,
+              240
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_01",
+            "source_polygon": 62,
+            "vertices": [
+              84,
+              85,
+              64
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_01",
+            "source_polygon": 99,
+            "vertices": [
+              115,
+              116,
+              99
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_01",
+            "source_polygon": 172,
+            "vertices": [
+              213,
+              194,
+              214
+            ],
+            "squared_cross_product": 0.0
+          },
+          {
+            "source_object": "HW_Dark_SM_Bld_Barn_03_Door_01",
+            "source_polygon": 209,
+            "vertices": [
+              239,
+              223,
+              240
+            ],
+            "squared_cross_product": 0.0
+          }
+        ],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -8.679738998413086,
+          -4.044553279876709,
+          -2.4759377993177623e-05
+        ],
+        "max": [
+          8.595898628234863,
+          4.035916328430176,
+          7.499975204467773
+        ],
+        "size": [
+          17.27563762664795,
+          8.080469608306885,
+          7.499999963845767
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.fbx",
+          "bytes": 3620732,
+          "sha256": "b10e9e2dab3b1553f6ea8f0ad8721daf133416ebd8c801f1a9271dccd0b19d78"
+        },
+        {
+          "path": "exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.glb",
+          "bytes": 3662500,
+          "sha256": "7306b1494195c4ca8bd2b206c3fc3487a5a8fb02fd9837b52d897054987da69f"
+        }
+      ]
+    },
+    {
+      "name": "Fence_01",
+      "collection": "HW_Fence_01",
+      "meshes": 7,
+      "vertices": 140,
+      "triangles": 252,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -6.227580547332764,
+          -0.3256530165672302,
+          -0.0037586065009236336
+        ],
+        "max": [
+          6.2782721519470215,
+          0.3072625398635864,
+          4.059723854064941
+        ],
+        "size": [
+          12.505852699279785,
+          0.6329155564308167,
+          4.063482460565865
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Fence_01/Fence_01.fbx",
+          "bytes": 3590268,
+          "sha256": "02084c5968c2996b1c666ac8fe224f73c0ab9954d4ffe82362e0708ae9c99137"
+        },
+        {
+          "path": "exports/environment/Fence_01/Fence_01.glb",
+          "bytes": 3569480,
+          "sha256": "115399acf26508ee7abab3ed42b86a50093aa47c579f07d6a31cb9b79b0acc4b"
+        }
+      ]
+    },
+    {
+      "name": "Fence_02",
+      "collection": "HW_Fence_02",
+      "meshes": 8,
+      "vertices": 160,
+      "triangles": 288,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -6.295783996582031,
+          -0.3215228319168091,
+          -0.006109582260251045
+        ],
+        "max": [
+          6.387759685516357,
+          0.373555064201355,
+          4.096232891082764
+        ],
+        "size": [
+          12.683543682098389,
+          0.6950778961181641,
+          4.102342473343015
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Fence_02/Fence_02.fbx",
+          "bytes": 3595356,
+          "sha256": "e15bc2a8a66d1f08b2896c994e60f328d00745d9812c499f3fa5de5078bc9195"
+        },
+        {
+          "path": "exports/environment/Fence_02/Fence_02.glb",
+          "bytes": 3573148,
+          "sha256": "3b50896f77e74be6ab22869feaffb909affdbf5d294b8fedce535ca78fd18baf"
+        }
+      ]
+    },
+    {
+      "name": "Fence_03",
+      "collection": "HW_Fence_03",
+      "meshes": 7,
+      "vertices": 140,
+      "triangles": 252,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -6.243173599243164,
+          -0.8149821162223816,
+          -0.004338877275586128
+        ],
+        "max": [
+          6.221480846405029,
+          0.33163416385650635,
+          4.141608238220215
+        ],
+        "size": [
+          12.464654445648193,
+          1.146616280078888,
+          4.145947115495801
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Fence_03/Fence_03.fbx",
+          "bytes": 3590668,
+          "sha256": "f56ec2592c7ca8b1dd5f19709fa3c12854b138e171c4aafe1afb6609720ee492"
+        },
+        {
+          "path": "exports/environment/Fence_03/Fence_03.glb",
+          "bytes": 3569488,
+          "sha256": "19d7836a302df8ea3d36747f6caa4fcf4a973981f10651667e568696c6b0df2e"
+        }
+      ]
+    },
+    {
+      "name": "Rock_01",
+      "collection": "HW_Rock_01",
+      "meshes": 1,
+      "vertices": 42,
+      "triangles": 80,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -0.8916909694671631,
+          -0.5456219911575317,
+          0.0
+        ],
+        "max": [
+          0.8696919679641724,
+          0.6611857414245605,
+          0.7213135361671448
+        ],
+        "size": [
+          1.7613829374313354,
+          1.2068077325820923,
+          0.7213135361671448
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Rock_01/Rock_01.fbx",
+          "bytes": 4219708,
+          "sha256": "22101f137ee4ac0ae84a6e5ad04cac7ca7a619ebfe3e917d8d7d772d43845658"
+        },
+        {
+          "path": "exports/environment/Rock_01/Rock_01.glb",
+          "bytes": 4206820,
+          "sha256": "86315d7dc17bdc467220782d14417cff1ed9d3cd5079baf0cb0bbf6309f3b212"
+        }
+      ]
+    },
+    {
+      "name": "Rock_02",
+      "collection": "HW_Rock_02",
+      "meshes": 1,
+      "vertices": 42,
+      "triangles": 80,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -0.6903017163276672,
+          -0.6227298378944397,
+          0.0
+        ],
+        "max": [
+          0.7592893838882446,
+          0.615011990070343,
+          0.5419568419456482
+        ],
+        "size": [
+          1.4495911002159119,
+          1.2377418279647827,
+          0.5419568419456482
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Rock_02/Rock_02.fbx",
+          "bytes": 4219724,
+          "sha256": "0e54b52873a812c843dfdc5e0d6185567594866cf60f49608be5c8f5999a84dc"
+        },
+        {
+          "path": "exports/environment/Rock_02/Rock_02.glb",
+          "bytes": 4206820,
+          "sha256": "03a6efd146d46c4eb5935844d05431323800e5eb74ab1feaef6df42558bd410f"
+        }
+      ]
+    },
+    {
+      "name": "Rock_03",
+      "collection": "HW_Rock_03",
+      "meshes": 1,
+      "vertices": 42,
+      "triangles": 80,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -0.7390602827072144,
+          -0.660243570804596,
+          0.0
+        ],
+        "max": [
+          0.7366799116134644,
+          0.6611354351043701,
+          0.7198445200920105
+        ],
+        "size": [
+          1.4757401943206787,
+          1.321379005908966,
+          0.7198445200920105
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Rock_03/Rock_03.fbx",
+          "bytes": 4219740,
+          "sha256": "5bb7d25b3b40c5013a9faac30b948990cc8cfc04572f1196e56284ae0b30fc62"
+        },
+        {
+          "path": "exports/environment/Rock_03/Rock_03.glb",
+          "bytes": 4206884,
+          "sha256": "06113d4f48ffd6d046a6b3fa7cfb290dc34d0a1ef11850f60295020172d56658"
+        }
+      ]
+    },
+    {
+      "name": "Rock_04",
+      "collection": "HW_Rock_04",
+      "meshes": 1,
+      "vertices": 42,
+      "triangles": 80,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -0.8316752910614014,
+          -0.706057071685791,
+          0.0
+        ],
+        "max": [
+          0.8401210904121399,
+          0.6875388622283936,
+          0.7437900304794312
+        ],
+        "size": [
+          1.6717963814735413,
+          1.3935959339141846,
+          0.7437900304794312
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Rock_04/Rock_04.fbx",
+          "bytes": 4219708,
+          "sha256": "29027de5c31328ec6744a9be48268a7a8da16c86e1634792652392142d83e979"
+        },
+        {
+          "path": "exports/environment/Rock_04/Rock_04.glb",
+          "bytes": 4206756,
+          "sha256": "e434858153977e8523021f5faeac1b3eb38a23b76245760cc11e0c0607fc1965"
+        }
+      ]
+    },
+    {
+      "name": "Rock_05",
+      "collection": "HW_Rock_05",
+      "meshes": 1,
+      "vertices": 42,
+      "triangles": 80,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -0.6332148909568787,
+          -0.6167406439781189,
+          0.0
+        ],
+        "max": [
+          0.6505738496780396,
+          0.6107324957847595,
+          0.642798900604248
+        ],
+        "size": [
+          1.2837887406349182,
+          1.2274731397628784,
+          0.642798900604248
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Rock_05/Rock_05.fbx",
+          "bytes": 4219772,
+          "sha256": "9a4a7a6c44a51cbbd74f024f8c683e5499e60a4e92b928f4c5707a032389ff9a"
+        },
+        {
+          "path": "exports/environment/Rock_05/Rock_05.glb",
+          "bytes": 4206948,
+          "sha256": "5030e8849af377f9030b2238cf98972d52359b7ef164af7fa4e31b550e41cb88"
+        }
+      ]
+    },
+    {
+      "name": "Ground_Tile_8",
+      "collection": "HW_GroundTile8",
+      "meshes": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "max": [
+          4.0,
+          4.0,
+          0.0
+        ],
+        "size": [
+          8.0,
+          8.0,
+          0.0
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Ground_Tile_8/Ground_Tile_8.fbx",
+          "bytes": 4216892,
+          "sha256": "1faca052ac957c93f6d6b6a7bd2909aa21151450320083c611875f8b712ecbc2"
+        },
+        {
+          "path": "exports/environment/Ground_Tile_8/Ground_Tile_8.glb",
+          "bytes": 4199276,
+          "sha256": "3042126d8d5187443d1ba2fd94b52f60f0c7fe63708d144c29c48c1e5817c2cc"
+        }
+      ]
+    },
+    {
+      "name": "Path_Tile_8",
+      "collection": "HW_PathTile8",
+      "meshes": 3,
+      "vertices": 16,
+      "triangles": 10,
+      "export_cleanup": {
+        "duplicate_index_polygons_removed": [],
+        "zero_area_triangles_removed": [],
+        "zero_area_squared_cross_threshold": 1e-18,
+        "source_blend_unchanged": true
+      },
+      "bounds_blender_z_up": {
+        "min": [
+          -4.070000171661377,
+          -4.0,
+          0.0
+        ],
+        "max": [
+          4.079999923706055,
+          4.0,
+          0.02500000037252903
+        ],
+        "size": [
+          8.150000095367432,
+          8.0,
+          0.02500000037252903
+        ]
+      },
+      "files": [
+        {
+          "path": "exports/environment/Path_Tile_8/Path_Tile_8.fbx",
+          "bytes": 4224860,
+          "sha256": "919cb1599f94d8e344748b4e2af9a46ab7a5c44ca23aae303882f1cd1848f5d5"
+        },
+        {
+          "path": "exports/environment/Path_Tile_8/Path_Tile_8.glb",
+          "bytes": 4201992,
+          "sha256": "02598dca90f94bbee96a65d55b9ee8524b6d766e6d4f1a5f6c4324e3b693b2d5"
+        }
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "path": "textures/barn_wood_dark.png",
+      "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63"
+    },
+    {
+      "path": "textures/soil_gravel.png",
+      "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+    }
+  ],
+  "checks": {
+    "finite_positions": true,
+    "finite_uv": true,
+    "materials_resolve": true,
+    "original_inputs_unchanged": true,
+    "barn_topology_preserved": true,
+    "barn_world_geometry_uniform_scale_only": true,
+    "asset_exports_triangulated": true,
+    "preview_from_actual_3d_meshes": true
+  },
+  "notes": [
+    "Source .blend retains all seven original barn meshes; four door leaves are hidden and separately exported.",
+    "Open barn export contains body plus two shutters; original four closed door leaves omitted for existing passage.",
+    "Barn palette UV replaced by metric planar wood UV; topology and uniformly-scaled positions unchanged.",
+    "Export-only copies remove two coincident source quads (four redundant triangles); all 8160 source triangles remain editable in the .blend.",
+    "Export-only triangulated copies also omit 28 exactly collinear source triangles (four in each original barn part); no exported barn surface has zero area.",
+    "Fences and rocks are decorative assets; authoritative collisions must remain separate.",
+    "Ground/path are repeatable surface tiles. Importing does not alter original map or terrain."
+  ]
+}

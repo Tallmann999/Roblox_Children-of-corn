@@ -100,6 +100,8 @@ function CornBackdropController:_clear()
 	self._signature = nil
 	self._ready = false
 	self._count = 0
+	self._detailed = false
+	self._detailedTemplates = nil
 end
 
 function CornBackdropController:_publish(): boolean
@@ -188,6 +190,38 @@ function CornBackdropController:_resolveInputs(): boolean
 		)
 		return false
 	end
+	local detailed = map:GetAttribute("HarvestArtVariant") == "B"
+	local templates, appearance = self._detailedTemplates, self._appearance
+	if detailed and not templates then
+		if self._detailPreparing then
+			return false
+		end
+		self._detailPreparing = true
+		local epoch = self._epoch
+		local ok, result = pcall(function()
+			local module = require(
+				ReplicatedStorage:WaitForChild("GameShared")
+					:WaitForChild("Game")
+					:WaitForChild("CornAppearance")
+			)
+			return { Appearance = module, Templates = module.DetailedTemplates() }
+		end)
+		self._detailPreparing = false
+		if
+			self._epoch ~= epoch
+			or not map.Parent
+			or map:GetAttribute("HarvestArtVariant") ~= "B"
+		then
+			return false
+		end
+		if not ok then
+			self:_warn(
+				"Detailed backdrop unavailable; saved overview preserved: " .. tostring(result)
+			)
+			return false
+		end
+		templates, appearance = result.Templates, result.Appearance
+	end
 	local exclusions = CornLayout.ReadExclusions(map, field)
 	local bounds, size = CornLayout.Bounds(template)
 	local signature = exclusions.Signature
@@ -195,6 +229,7 @@ function CornBackdropController:_resolveInputs(): boolean
 		.. tostring(bounds)
 		.. "/"
 		.. tostring(size)
+		.. (if detailed then "/variant/B" else "")
 	local folder = self._folder
 	if
 		self._map == map
@@ -206,6 +241,7 @@ function CornBackdropController:_resolveInputs(): boolean
 		and owned(folder)
 		and folder:GetAttribute("CornEditorOverview") == true
 		and folder:GetAttribute("Ready") == self._ready
+		and (self._detailed == true) == detailed
 	then
 		return true
 	end
@@ -228,6 +264,7 @@ function CornBackdropController:_resolveInputs(): boolean
 		return false
 	end
 	self._map, self._field, self._template = map, field, template
+	self._detailed, self._detailedTemplates, self._appearance = detailed, templates, appearance
 	self._exclusions, self._signature = exclusions, signature
 	self._minColumn, self._maxColumn = minColumn, maxColumn
 	self._minRow, self._maxRow = minRow, maxRow
@@ -245,6 +282,10 @@ function CornBackdropController:_resolveInputs(): boolean
 	folder:SetAttribute("DetailStride", STRIDE * CornLayout.Spacing)
 	folder:SetAttribute("MaxPlants", MAX_PLANTS)
 	folder:SetAttribute("LoadedPlants", 0)
+	if detailed then
+		folder:SetAttribute("HarvestArtVariant", "B")
+		folder:SetAttribute("HarvestCornLod", "Far")
+	end
 	folder.Parent = map
 	self._folder = folder
 	self._lastWarning = ""
@@ -270,6 +311,7 @@ function CornBackdropController:_buildStep()
 		or not owned(folder)
 		or field.CFrame ~= self._fieldFrame
 		or field.Size ~= self._fieldSize
+		or (self._map:GetAttribute("HarvestArtVariant") == "B") ~= (self._detailed == true)
 	then
 		self:_clear()
 		self._pollElapsed = POLL_SEC
@@ -290,7 +332,10 @@ function CornBackdropController:_buildStep()
 		if CornLayout.IsExcluded(position, exclusions) then
 			continue
 		end
-		local plant = template:Clone()
+		local source = if self._detailed
+			then self._detailedTemplates.Far[self._appearance.Variety(column, row)]
+			else template
+		local plant = source:Clone()
 		if not plant then
 			error("Prepared backdrop plant could not be cloned")
 		end
@@ -311,12 +356,11 @@ function CornBackdropController:_buildStep()
 			end
 		end
 		CornLayout.ApplyVariation(plant, column, row)
+		local yaw = CornLayout.CellYaw(column, row) + self._fieldYaw
 		plant:PivotTo(
-			CornLayout.PivotForPlant(
-				plant,
-				position,
-				CornLayout.CellYaw(column, row) + self._fieldYaw
-			)
+			if self._detailed
+				then self._appearance.DetailedPivot(plant, position, yaw)
+				else CornLayout.PivotForPlant(plant, position, yaw)
 		)
 		plant.Parent = folder
 		created += 1

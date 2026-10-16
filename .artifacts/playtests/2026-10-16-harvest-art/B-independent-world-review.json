@@ -1,0 +1,364 @@
+{
+  "passed": true,
+  "variant": "B",
+  "candidate_sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+  "reviewed_A_manifest_sha256": "226fe9428f9485030f009ad90cea68e43d560880f88d294acdfddb1f18c9818c",
+  "native_B_snapshot_sha256": "6129867238b05a744865faacdf53b7131db01f0d1305c5607d4b6bdf1f2a34cf",
+  "manifest_derived_only_from_reviewed_A_contract": true,
+  "exact_nativeA_to_nativeB_after_57_declared_changes": true,
+  "proper_literal_B_paths_291": true,
+  "nodes": 291,
+  "all_canonical_properties_compared_including_new_IDs": 18905,
+  "transparency_changes": 55,
+  "root_variant_attribute_changes": 2,
+  "allowed_new_property_changes": [
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/GroundSurface",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/GroundSurface/HarvestSurface",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/RoadSurface",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/RoadSurface/HarvestSurface",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Hat_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material3",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material3",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material1",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material2",
+      "property": "Transparency",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material3",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Hat.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material3",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material3",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material1",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material2",
+      "property": "Transparency",
+      "before": 1,
+      "after": 0
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor",
+      "property": "AttributesSerialize",
+      "attribute": "HarvestAppliedVariant",
+      "before": "A",
+      "after": "B"
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome",
+      "property": "AttributesSerialize",
+      "attribute": "HarvestAppliedVariant",
+      "before": "A",
+      "after": "B"
+    }
+  ],
+  "original9barns_mapvariant_checked_by_full_engine_audit": true,
+  "manifest_sha256": "690eeb26c312b0e37bad87f220acb8a48cdeae58b6d48f5324c79be75fc5047f",
+  "manifest_bytes": 4163685,
+  "manifest_lf_only": true
+}

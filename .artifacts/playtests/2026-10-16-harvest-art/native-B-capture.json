@@ -1,0 +1,43 @@
+{
+  "capture": {
+    "lights": 2,
+    "seconds": 8.031533599998511,
+    "samples": 14,
+    "asset": "WardenDetailed",
+    "neonEyes": 2,
+    "variant": "B",
+    "seen": true,
+    "maxMeshes": 20,
+    "cameraHeadDistance": 3.085622787475586
+  },
+  "snapshot": {
+    "capture": {
+      "id": 1,
+      "remaining": 0
+    },
+    "phase": "caught",
+    "evacuation": {
+      "remaining": 0,
+      "duration": 120,
+      "active": false
+    },
+    "has_key": false,
+    "monster": "patrol",
+    "diamonds": 20,
+    "team": {
+      "can_start": false,
+      "key_state": "hidden",
+      "capacity": 4,
+      "state": "active",
+      "round_id": 3,
+      "count": 1,
+      "remaining": 1,
+      "carrier_name": "",
+      "ready_count": 0,
+      "ready": false
+    },
+    "gate_open": false,
+    "catches_remaining": 1,
+    "reward": 0
+  }
+}

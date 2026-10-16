@@ -30,6 +30,7 @@ function Controller:Init(_context: any)
 	self._minimap = nil
 	self._round = nil
 	self._visual = nil
+	self._warden = nil
 	self._parts = {}
 	self._mouthParts = {}
 	self._paint = nil
@@ -157,6 +158,11 @@ function Controller:_buildVisual(frame: CFrame): boolean
 	model:SetAttribute("corn_project_id", PROJECT)
 	model:SetAttribute("CaptureRigVersion", 1)
 	model:SetAttribute("MonsterHeightScale", Pose.HeightScale)
+	local map = workspace:FindFirstChild("CornMap")
+	local variant = if map and map:GetAttribute("corn_project_id") == PROJECT
+		then map:GetAttribute("HarvestArtVariant")
+		else nil
+	local harvest = variant == "A" or variant == "B"
 	local parts = {}
 	for _, definition in Pose.Parts do
 		assert(
@@ -174,8 +180,37 @@ function Controller:_buildVisual(frame: CFrame): boolean
 		part.CanTouch = false
 		part.CanQuery = false
 		part.CastShadow = false
+		part.Transparency = if harvest then 1 else 0
 		part.Parent = model
 		parts[definition.Name] = part
+	end
+	if harvest then
+		local buildGeneration, buildState = self._generation, self._state
+		local ok, result = pcall(function()
+			local builder = require(Shared:WaitForChild("HarvestArtGeometry"))
+			local presentation = require(Shared:WaitForChild("HarvestWardenVisual"))
+			local template =
+				builder.Template(if variant == "B" then "WardenDetailed" else "WardenClassic")
+			-- Capture may have expired/reset while the initial EditableMesh allocation yielded.
+			assert(
+				self._generation == buildGeneration
+					and self._state == buildState
+					and self._state.active
+					and os.clock() < self._state.deadline,
+				"Capture expired while building Warden"
+			)
+			return presentation.new(template, model)
+		end)
+		if not ok then
+			model:Destroy()
+			warn("[CaptureController] Harvest Warden rendering failed: " .. tostring(result))
+			return false
+		end
+		self._warden = result
+		self._visual, self._parts = model, parts
+		self._mouthParts = {}
+		model.Parent = workspace
+		return true
 	end
 	local light = Instance.new("PointLight")
 	light.Name = "CaptureFaceLight"
@@ -338,6 +373,10 @@ function Controller:Cancel(_reason: string?)
 		self._bound = false
 	end
 	local visual = self._visual
+	if self._warden then
+		self._warden:Destroy()
+		self._warden = nil
+	end
 	self._visual = nil
 	self._parts = {}
 	self._mouthParts = {}
@@ -392,13 +431,27 @@ function Controller:_step(now: number)
 		part.CFrame = frame * (if HEAD_PARTS[name] then headShake * pose[name] else pose[name])
 	end
 	local face = self._parts.Head.CFrame
-	local opening = Capture.MouthOpen(elapsed)
-	local height = 1.3 * opening
-	self._mouthParts.OpenMouth.Size = Vector3.new(1.85, height, 0.14)
-	self._mouthParts.OpenMouth.CFrame = face * CFrame.new(0, -0.15 - height / 2, -1.34)
-	self._mouthParts.LowerJaw.CFrame = face * CFrame.new(0, -0.3 - height, -1.34)
-	self._mouthParts.UpperTeeth.CFrame = face * CFrame.new(0, -0.19, -1.44)
-	self._mouthParts.LowerTeeth.CFrame = face * CFrame.new(0, -0.08 - height, -1.44)
+	if self._warden then
+		local wardenPose = Pose.GetWarden("capturing", elapsed, false)
+		local shake = Capture.HeadShake(elapsed)
+		local pivot = CFrame.new(Pose.WardenPivots.Head)
+		local headDelta = pivot * shake * pivot:Inverse()
+		for _, name in { "Head", "Hat", "LeftEye", "RightEye" } do
+			wardenPose[name] = headDelta * wardenPose[name]
+		end
+		self._warden:Step(frame, wardenPose, true)
+		face = frame
+			* Pose.WardenAssetFrame
+			* Pose.ScaleWardenFrame(wardenPose.Head * CFrame.new(0, 7.7, 0.42))
+	else
+		local opening = Capture.MouthOpen(elapsed)
+		local height = 1.3 * opening
+		self._mouthParts.OpenMouth.Size = Vector3.new(1.85, height, 0.14)
+		self._mouthParts.OpenMouth.CFrame = face * CFrame.new(0, -0.15 - height / 2, -1.34)
+		self._mouthParts.LowerJaw.CFrame = face * CFrame.new(0, -0.3 - height, -1.34)
+		self._mouthParts.UpperTeeth.CFrame = face * CFrame.new(0, -0.19, -1.44)
+		self._mouthParts.LowerTeeth.CFrame = face * CFrame.new(0, -0.08 - height, -1.44)
+	end
 	local opacity = Capture.PaintOpacity(elapsed)
 	for _, drop in self._paintDrops do
 		if
@@ -412,7 +465,7 @@ function Controller:_step(now: number)
 	end
 	local progress = Capture.Progress(self._state, now)
 	local eased = progress * progress * (3 - 2 * progress)
-	local head = (frame * pose.Head).Position
+	local head = if self._warden then face.Position else (frame * pose.Head).Position
 	local distance = 8 - 5.35 * eased
 	local position = head + frame.LookVector * distance - frame.UpVector * (0.25 * eased)
 	local target = head + frame.LookVector * 1.05 - frame.UpVector * (0.6 * eased)

@@ -81,6 +81,7 @@ end
 function Controller:_register(root: any, item: Instance)
 	if
 		not item:IsA("MeshPart")
+		or item:GetAttribute("HarvestGeometryOwner") ~= nil
 		or item.MeshId ~= Appearance.MeshId
 		or self._entries[item]
 		or not ownedPart(root, item)

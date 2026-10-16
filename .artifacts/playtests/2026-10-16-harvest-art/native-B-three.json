@@ -1,0 +1,40 @@
+{
+  "actors": {
+    "1": {
+      "maxEyeHeight": 10.049919128417969,
+      "animated": true,
+      "index": 1,
+      "enabledLights": 2,
+      "lights": 2,
+      "minEyeHeight": 9.993671417236328,
+      "state": "patrol",
+      "parts": 20
+    },
+    "2": {
+      "maxEyeHeight": 10.061168670654297,
+      "animated": true,
+      "index": 2,
+      "enabledLights": 2,
+      "lights": 2,
+      "minEyeHeight": 9.986900329589844,
+      "state": "patrol",
+      "parts": 20
+    },
+    "3": {
+      "maxEyeHeight": 10.061168670654297,
+      "animated": true,
+      "index": 3,
+      "enabledLights": 2,
+      "lights": 2,
+      "minEyeHeight": 9.986900329589844,
+      "state": "patrol",
+      "parts": 20
+    }
+  },
+  "method": "Actual peer-local mesh content, carried legacy rig bounds, anatomy/Neon/light budgets and real relative animation. No visual/fear/long FPS claim.",
+  "variant": "B",
+  "elapsed": 1.264284900000348,
+  "samples": 49,
+  "read_only": true,
+  "regular_bootstrap": true
+}

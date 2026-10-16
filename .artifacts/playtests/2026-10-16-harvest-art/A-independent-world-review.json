@@ -1,0 +1,526 @@
+{
+  "passed": true,
+  "variant": "A",
+  "candidate_sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11",
+  "native_snapshot_sha256": "52e63ff778bdcff4c6a08b656c15e57644858e07dd30453cbef65de7b8a4749e",
+  "native_studio": "ac24a80f-d32d-40bc-bfad-eeb6792d042e",
+  "nativeA_dot_path_adapter_bijection_confirmed_by_root": 20,
+  "empty_native_properties_arrays_mean_zero_properties": true,
+  "nodes": 291,
+  "native_property_comparisons": 4644,
+  "all_closed_contract_attrs_and244_geometry_parts_match": true,
+  "242fixed_box_meshes_raw_bounds_inertial_values_finite_positive_clone_consistent": true,
+  "distinct_mesh_keys": 70,
+  "remaining_canonical_default_groups_independently_inspected": {
+    "Folder": {
+      "Capabilities": [
+        "[\"SecurityCapabilities\",\"0\",[]]"
+      ],
+      "HistoryId": [
+        "[\"UniqueId\",\"00000000000000000000000000000000\",[]]"
+      ],
+      "IconTint": [
+        "[\"Color3\",\"\",[[\"R\",[\"R\",\"0\",[]]],[\"G\",[\"G\",\"0\",[]]],[\"B\",[\"B\",\"0\",[]]]]]"
+      ],
+      "DefinesCapabilities": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "SerializedOverrides": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "SourceAssetId": [
+        "[\"int64\",\"-1\",[]]"
+      ],
+      "Tags": [
+        "[\"BinaryString\",\"\",[]]"
+      ]
+    },
+    "Model": {
+      "Capabilities": [
+        "[\"SecurityCapabilities\",\"0\",[]]"
+      ],
+      "HistoryId": [
+        "[\"UniqueId\",\"00000000000000000000000000000000\",[]]"
+      ],
+      "LevelOfDetail": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "ModelMeshCFrame": [
+        "[\"CoordinateFrame\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]],[\"R00\",[\"R00\",\"1\",[]]],[\"R01\",[\"R01\",\"0\",[]]],[\"R02\",[\"R02\",\"0\",[]]],[\"R10\",[\"R10\",\"0\",[]]],[\"R11\",[\"R11\",\"1\",[]]],[\"R12\",[\"R12\",\"0\",[]]],[\"R20\",[\"R20\",\"0\",[]]],[\"R21\",[\"R21\",\"0\",[]]],[\"R22\",[\"R22\",\"1\",[]]]]]"
+      ],
+      "ModelMeshData": [
+        "[\"SharedString\",\"\",[]]"
+      ],
+      "ModelMeshSize": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ],
+      "ModelStreamingMode": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "NeedsPivotMigration": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "PrimaryPart": [
+        "[\"Ref\",\"null\",[]]"
+      ],
+      "DefinesCapabilities": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "ScaleFactor": [
+        "[\"float\",\"1\",[]]"
+      ],
+      "SerializedOverrides": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "SlimHash": [
+        "[\"SharedString\",\"\",[]]"
+      ],
+      "SourceAssetId": [
+        "[\"int64\",\"-1\",[]]"
+      ],
+      "Tags": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "WorldPivotData": [
+        "[\"OptionalCoordinateFrame\",\"\",[[\"CFrame\",[\"CFrame\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]],[\"R00\",[\"R00\",\"1\",[]]],[\"R01\",[\"R01\",\"0\",[]]],[\"R02\",[\"R02\",\"0\",[]]],[\"R10\",[\"R10\",\"0\",[]]],[\"R11\",[\"R11\",\"1\",[]]],[\"R12\",[\"R12\",\"0\",[]]],[\"R20\",[\"R20\",\"0\",[]]],[\"R21\",[\"R21\",\"0\",[]]],[\"R22\",[\"R22\",\"1\",[]]]]]]]]"
+      ]
+    },
+    "MeshPart": {
+      "AeroMeshData": [
+        "[\"SharedString\",\"\",[]]"
+      ],
+      "Anchored": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "AudioCanCollide": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "BackParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "BackParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "BackSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "BackSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "BottomParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "BottomParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "BottomSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "BottomSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "CanCollide": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "CanQuery": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "CanTouch": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "Capabilities": [
+        "[\"SecurityCapabilities\",\"0\",[]]"
+      ],
+      "CastShadow": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "CollisionGroup": [
+        "[\"string\",\"Default\",[]]"
+      ],
+      "CollisionGroupId": [
+        "[\"int\",\"0\",[]]"
+      ],
+      "CustomPhysicalProperties": [
+        "[\"PhysicalProperties\",\"\",[[\"CustomPhysics\",[\"CustomPhysics\",\"false\",[]]]]]"
+      ],
+      "DoubleSided": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "EnableFluidForces": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "FluidFidelityInternal": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "FrontParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "FrontParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "FrontSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "FrontSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "HasJointOffset": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "HasSkinnedMesh": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "HistoryId": [
+        "[\"UniqueId\",\"00000000000000000000000000000000\",[]]"
+      ],
+      "InertiaMigrated": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "JointOffset": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ],
+      "LeftParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "LeftParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "LeftSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "LeftSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "Locked": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "Massless": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "Material": [
+        "[\"token\",\"1312\",[]]",
+        "[\"token\",\"1360\",[]]",
+        "[\"token\",\"272\",[]]",
+        "[\"token\",\"288\",[]]",
+        "[\"token\",\"512\",[]]"
+      ],
+      "MaterialVariantSerialized": [
+        "[\"string\",\"\",[]]"
+      ],
+      "MeshContent": [
+        "[\"Content\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "PhysicalConfigData": [
+        "[\"SharedString\",\"43534750485300000000424c4f434b\",[]]"
+      ],
+      "PhysicsData": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "PivotOffset": [
+        "[\"CoordinateFrame\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]],[\"R00\",[\"R00\",\"1\",[]]],[\"R01\",[\"R01\",\"0\",[]]],[\"R02\",[\"R02\",\"0\",[]]],[\"R10\",[\"R10\",\"0\",[]]],[\"R11\",[\"R11\",\"1\",[]]],[\"R12\",[\"R12\",\"0\",[]]],[\"R20\",[\"R20\",\"0\",[]]],[\"R21\",[\"R21\",\"0\",[]]],[\"R22\",[\"R22\",\"1\",[]]]]]"
+      ],
+      "Reflectance": [
+        "[\"float\",\"0\",[]]"
+      ],
+      "RenderFidelity": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "RightParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "RightParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "RightSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "RightSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "RootPriority": [
+        "[\"int\",\"0\",[]]"
+      ],
+      "RotVelocity": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ],
+      "DefinesCapabilities": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "SerializedOverrides": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "SourceAssetId": [
+        "[\"int64\",\"-1\",[]]"
+      ],
+      "Tags": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "TopParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "TopParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "TopSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "TopSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "Transparency": [
+        "[\"float\",\"0\",[]]",
+        "[\"float\",\"1\",[]]"
+      ],
+      "Velocity": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ],
+      "VertexCount": [
+        "[\"int\",\"0\",[]]"
+      ]
+    },
+    "Part": {
+      "Anchored": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "AudioCanCollide": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "BackParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "BackParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "BackSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "BackSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "BottomParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "BottomParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "BottomSurface": [
+        "[\"token\",\"4\",[]]"
+      ],
+      "BottomSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "CanCollide": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "CanQuery": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "CanTouch": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "Capabilities": [
+        "[\"SecurityCapabilities\",\"0\",[]]"
+      ],
+      "CastShadow": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "CollisionGroup": [
+        "[\"string\",\"Default\",[]]"
+      ],
+      "CollisionGroupId": [
+        "[\"int\",\"0\",[]]"
+      ],
+      "CustomPhysicalProperties": [
+        "[\"PhysicalProperties\",\"\",[[\"CustomPhysics\",[\"CustomPhysics\",\"false\",[]]]]]"
+      ],
+      "EnableFluidForces": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "formFactorRaw": [
+        "[\"token\",\"1\",[]]"
+      ],
+      "FrontParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "FrontParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "FrontSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "FrontSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "HistoryId": [
+        "[\"UniqueId\",\"00000000000000000000000000000000\",[]]"
+      ],
+      "LeftParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "LeftParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "LeftSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "LeftSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "Locked": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "Massless": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "Material": [
+        "[\"token\",\"1360\",[]]"
+      ],
+      "MaterialVariantSerialized": [
+        "[\"string\",\"\",[]]"
+      ],
+      "PivotOffset": [
+        "[\"CoordinateFrame\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]],[\"R00\",[\"R00\",\"1\",[]]],[\"R01\",[\"R01\",\"0\",[]]],[\"R02\",[\"R02\",\"0\",[]]],[\"R10\",[\"R10\",\"0\",[]]],[\"R11\",[\"R11\",\"1\",[]]],[\"R12\",[\"R12\",\"0\",[]]],[\"R20\",[\"R20\",\"0\",[]]],[\"R21\",[\"R21\",\"0\",[]]],[\"R22\",[\"R22\",\"1\",[]]]]]"
+      ],
+      "Reflectance": [
+        "[\"float\",\"0\",[]]"
+      ],
+      "RightParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "RightParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "RightSurface": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "RightSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "RootPriority": [
+        "[\"int\",\"0\",[]]"
+      ],
+      "RotVelocity": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ],
+      "DefinesCapabilities": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "SerializedOverrides": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "shape": [
+        "[\"token\",\"1\",[]]"
+      ],
+      "SourceAssetId": [
+        "[\"int64\",\"-1\",[]]"
+      ],
+      "Tags": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "TopParamA": [
+        "[\"float\",\"-0.5\",[]]"
+      ],
+      "TopParamB": [
+        "[\"float\",\"0.5\",[]]"
+      ],
+      "TopSurface": [
+        "[\"token\",\"3\",[]]"
+      ],
+      "TopSurfaceInput": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "Transparency": [
+        "[\"float\",\"1\",[]]"
+      ],
+      "Velocity": [
+        "[\"Vector3\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]],[\"Z\",[\"Z\",\"0\",[]]]]]"
+      ]
+    },
+    "Texture": {
+      "AutoLocalize": [
+        "[\"bool\",\"true\",[]]"
+      ],
+      "Capabilities": [
+        "[\"SecurityCapabilities\",\"0\",[]]"
+      ],
+      "Color3": [
+        "[\"Color3\",\"\",[[\"R\",[\"R\",\"1\",[]]],[\"G\",[\"G\",\"1\",[]]],[\"B\",[\"B\",\"1\",[]]]]]"
+      ],
+      "EmissiveMaskContent": [
+        "[\"Content\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "EmissiveStrength": [
+        "[\"float\",\"1\",[]]"
+      ],
+      "EmissiveTint": [
+        "[\"Color3\",\"\",[[\"R\",[\"R\",\"1\",[]]],[\"G\",[\"G\",\"1\",[]]],[\"B\",[\"B\",\"1\",[]]]]]"
+      ],
+      "Face": [
+        "[\"token\",\"1\",[]]"
+      ],
+      "HistoryId": [
+        "[\"UniqueId\",\"00000000000000000000000000000000\",[]]"
+      ],
+      "MetalnessMapContent": [
+        "[\"Content\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "NormalMapContent": [
+        "[\"Content\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "OffsetStudsU": [
+        "[\"float\",\"0\",[]]"
+      ],
+      "OffsetStudsV": [
+        "[\"float\",\"0\",[]]"
+      ],
+      "ResampleMode": [
+        "[\"token\",\"0\",[]]"
+      ],
+      "Rotation": [
+        "[\"float\",\"0\",[]]"
+      ],
+      "RoughnessMapContent": [
+        "[\"Content\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "DefinesCapabilities": [
+        "[\"bool\",\"false\",[]]"
+      ],
+      "SerializedOverrides": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "SourceAssetId": [
+        "[\"int64\",\"-1\",[]]"
+      ],
+      "StudsPerTileU": [
+        "[\"float\",\"8\",[]]"
+      ],
+      "StudsPerTileV": [
+        "[\"float\",\"8\",[]]"
+      ],
+      "Tags": [
+        "[\"BinaryString\",\"\",[]]"
+      ],
+      "TexturePack": [
+        "[\"ContentId\",\"\",[[\"null\",[\"null\",\"\",[]]]]]"
+      ],
+      "TexturePackMetadata": [
+        "[\"string\",\"\",[]]"
+      ],
+      "Transparency": [
+        "[\"float\",\"1\",[]]"
+      ],
+      "UVOffset": [
+        "[\"Vector2\",\"\",[[\"X\",[\"X\",\"0\",[]]],[\"Y\",[\"Y\",\"0\",[]]]]]"
+      ],
+      "UVScale": [
+        "[\"Vector2\",\"\",[[\"X\",[\"X\",\"1\",[]]],[\"Y\",[\"Y\",\"1\",[]]]]]"
+      ],
+      "ZIndex": [
+        "[\"int\",\"1\",[]]"
+      ]
+    }
+  },
+  "manifest_sha256": "226fe9428f9485030f009ad90cea68e43d560880f88d294acdfddb1f18c9818c",
+  "manifest_bytes": 4163685,
+  "manifest_lf_only": true
+}

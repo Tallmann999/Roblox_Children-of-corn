@@ -1,0 +1,405 @@
+{
+  "asset_pack": "Harvest Warden",
+  "date": "2026-10-16",
+  "blender": "5.2.2 LTS",
+  "original_design": true,
+  "unit": "1 Blender unit = 1 intended Roblox stud",
+  "engine_import_and_playtest": "PENDING; offline assets only; no Roblox scene changed",
+  "animation_note": "Rigid sections with a real 10-bone armature and five exported clips; not a Roblox Humanoid.",
+  "eye_light_note": "Emissive geometry is exported. Add Roblox PointLight with initial Range24/Brightness3 per eye; tune in engine.",
+  "variants": [
+    {
+      "variant": "Classic",
+      "objects": {
+        "Coat": {
+          "vertices": 142,
+          "triangles": 194,
+          "bounds_studs": [
+            [
+              -1.022593,
+              -0.57,
+              2.599773
+            ],
+            [
+              1.022593,
+              0.49,
+              6.795953
+            ]
+          ],
+          "uv_corners": 394
+        },
+        "LeftArm": {
+          "vertices": 189,
+          "triangles": 338,
+          "bounds_studs": [
+            [
+              -1.944931,
+              -0.377054,
+              1.988203
+            ],
+            [
+              -0.560127,
+              0.350974,
+              6.486932
+            ]
+          ],
+          "uv_corners": 680
+        },
+        "RightArm": {
+          "vertices": 189,
+          "triangles": 338,
+          "bounds_studs": [
+            [
+              0.593785,
+              -0.376434,
+              3.139733
+            ],
+            [
+              1.788847,
+              0.350974,
+              6.498686
+            ]
+          ],
+          "uv_corners": 680
+        },
+        "LeftLeg": {
+          "vertices": 231,
+          "triangles": 410,
+          "bounds_studs": [
+            [
+              -0.773,
+              -0.598012,
+              0.046695
+            ],
+            [
+              -0.110271,
+              0.303,
+              3.764831
+            ]
+          ],
+          "uv_corners": 838
+        },
+        "RightLeg": {
+          "vertices": 231,
+          "triangles": 410,
+          "bounds_studs": [
+            [
+              0.159636,
+              -0.598012,
+              0.041496
+            ],
+            [
+              0.769727,
+              0.303,
+              3.762125
+            ]
+          ],
+          "uv_corners": 838
+        },
+        "Head": {
+          "vertices": 162,
+          "triangles": 272,
+          "bounds_studs": [
+            [
+              -0.618192,
+              -0.545,
+              6.822103
+            ],
+            [
+              0.596842,
+              0.431075,
+              8.507898
+            ]
+          ],
+          "uv_corners": 546
+        },
+        "Hat": {
+          "vertices": 90,
+          "triangles": 80,
+          "bounds_studs": [
+            [
+              -0.711,
+              -0.605634,
+              6.8
+            ],
+            [
+              0.711,
+              0.571585,
+              7.235617
+            ]
+          ],
+          "uv_corners": 160
+        },
+        "LeftEye": {
+          "vertices": 97,
+          "triangles": 186,
+          "bounds_studs": [
+            [
+              -0.392,
+              -0.519444,
+              7.473
+            ],
+            [
+              0.031914,
+              -0.344449,
+              7.897
+            ]
+          ],
+          "uv_corners": 390
+        },
+        "RightEye": {
+          "vertices": 97,
+          "triangles": 186,
+          "bounds_studs": [
+            [
+              0.088,
+              -0.519444,
+              7.523
+            ],
+            [
+              0.511914,
+              -0.344449,
+              7.947
+            ]
+          ],
+          "uv_corners": 390
+        }
+      },
+      "triangles": 2414,
+      "bone_count": 10,
+      "animations": [
+        {
+          "name": "Idle",
+          "action": "Classic_Idle",
+          "frames": 73,
+          "seconds_at_24fps": 3.0
+        },
+        {
+          "name": "Walk",
+          "action": "Classic_Walk",
+          "frames": 33,
+          "seconds_at_24fps": 1.3333
+        },
+        {
+          "name": "Chase",
+          "action": "Classic_Chase",
+          "frames": 23,
+          "seconds_at_24fps": 0.9167
+        },
+        {
+          "name": "Trapped",
+          "action": "Classic_Trapped",
+          "frames": 31,
+          "seconds_at_24fps": 1.25
+        },
+        {
+          "name": "Capture",
+          "action": "Classic_Capture",
+          "frames": 19,
+          "seconds_at_24fps": 0.75
+        }
+      ],
+      "directory": "assets/harvest-warden/exports/warden/classic"
+    },
+    {
+      "variant": "Detailed",
+      "objects": {
+        "Coat": {
+          "vertices": 403,
+          "triangles": 570,
+          "bounds_studs": [
+            [
+              -1.029927,
+              -0.57,
+              2.599773
+            ],
+            [
+              1.029927,
+              0.559057,
+              6.856975
+            ]
+          ],
+          "uv_corners": 1168
+        },
+        "LeftArm": {
+          "vertices": 382,
+          "triangles": 670,
+          "bounds_studs": [
+            [
+              -1.94754,
+              -0.377747,
+              1.987075
+            ],
+            [
+              -0.560127,
+              0.36,
+              6.498686
+            ]
+          ],
+          "uv_corners": 1306
+        },
+        "RightArm": {
+          "vertices": 382,
+          "triangles": 670,
+          "bounds_studs": [
+            [
+              0.560127,
+              -0.402943,
+              3.140479
+            ],
+            [
+              1.907591,
+              0.36,
+              6.498686
+            ]
+          ],
+          "uv_corners": 1306
+        },
+        "LeftLeg": {
+          "vertices": 516,
+          "triangles": 880,
+          "bounds_studs": [
+            [
+              -0.806167,
+              -0.598307,
+              0.020754
+            ],
+            [
+              -0.12109,
+              0.391316,
+              3.758956
+            ]
+          ],
+          "uv_corners": 1736
+        },
+        "RightLeg": {
+          "vertices": 516,
+          "triangles": 880,
+          "bounds_studs": [
+            [
+              0.167,
+              -0.598307,
+              0.043393
+            ],
+            [
+              0.812515,
+              0.433669,
+              3.758956
+            ]
+          ],
+          "uv_corners": 1736
+        },
+        "Head": {
+          "vertices": 308,
+          "triangles": 540,
+          "bounds_studs": [
+            [
+              -0.618192,
+              -0.545,
+              6.822103
+            ],
+            [
+              0.596842,
+              0.431075,
+              8.507898
+            ]
+          ],
+          "uv_corners": 1048
+        },
+        "Hat": {
+          "vertices": 198,
+          "triangles": 176,
+          "bounds_studs": [
+            [
+              -0.711,
+              -0.628893,
+              6.8
+            ],
+            [
+              0.711,
+              0.594883,
+              7.236485
+            ]
+          ],
+          "uv_corners": 352
+        },
+        "LeftEye": {
+          "vertices": 205,
+          "triangles": 402,
+          "bounds_studs": [
+            [
+              -0.396326,
+              -0.523148,
+              7.468674
+            ],
+            [
+              0.036187,
+              -0.343761,
+              7.901326
+            ]
+          ],
+          "uv_corners": 830
+        },
+        "RightEye": {
+          "vertices": 205,
+          "triangles": 402,
+          "bounds_studs": [
+            [
+              0.083674,
+              -0.523148,
+              7.518674
+            ],
+            [
+              0.516187,
+              -0.343761,
+              7.951326
+            ]
+          ],
+          "uv_corners": 830
+        }
+      },
+      "triangles": 5190,
+      "bone_count": 10,
+      "animations": [
+        {
+          "name": "Idle",
+          "action": "Detailed_Idle",
+          "frames": 73,
+          "seconds_at_24fps": 3.0
+        },
+        {
+          "name": "Walk",
+          "action": "Detailed_Walk",
+          "frames": 33,
+          "seconds_at_24fps": 1.3333
+        },
+        {
+          "name": "Chase",
+          "action": "Detailed_Chase",
+          "frames": 23,
+          "seconds_at_24fps": 0.9167
+        },
+        {
+          "name": "Trapped",
+          "action": "Detailed_Trapped",
+          "frames": 31,
+          "seconds_at_24fps": 1.25
+        },
+        {
+          "name": "Capture",
+          "action": "Detailed_Capture",
+          "frames": 19,
+          "seconds_at_24fps": 0.75
+        }
+      ],
+      "directory": "assets/harvest-warden/exports/warden/detailed"
+    }
+  ],
+  "source_textures": {
+    "barn_wood_dark.png": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63",
+    "burlap.png": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab",
+    "coat_canvas.png": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a",
+    "corn_leaf_dry.png": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790",
+    "soil_gravel.png": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479"
+  }
+}

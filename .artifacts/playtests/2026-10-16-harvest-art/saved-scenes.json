@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "saved_by": "Author via Roblox Studio engine Save / Save As",
+  "variants": {
+    "A": {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+      "bytes": 1485712,
+      "sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11",
+      "strict_preservation_passed": true,
+      "world_manifest_sha256": "226fe9428f9485030f009ad90cea68e43d560880f88d294acdfddb1f18c9818c",
+      "preservation_report": "A-preservation.json",
+      "independent_world_review": "A-independent-world-review.json"
+    },
+    "B": {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn_B.rbxl",
+      "bytes": 1485700,
+      "sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+      "strict_preservation_passed": true,
+      "world_manifest_sha256": "690eeb26c312b0e37bad87f220acb8a48cdeae58b6d48f5324c79be75fc5047f",
+      "preservation_report": "B-preservation.json",
+      "independent_world_review": "B-independent-world-review.json"
+    }
+  },
+  "baseline_preserved": true,
+  "scene_serialization_or_promotion_by_agent": false,
+  "reopen_acceptance": false,
+  "current_art_native_clients": 1
+}

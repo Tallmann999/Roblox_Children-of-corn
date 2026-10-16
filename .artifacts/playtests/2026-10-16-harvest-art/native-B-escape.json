@@ -1,0 +1,30 @@
+{
+  "capture": {
+    "id": 0,
+    "remaining": 0
+  },
+  "phase": "escaped",
+  "evacuation": {
+    "remaining": 0,
+    "duration": 120,
+    "active": false
+  },
+  "has_key": false,
+  "monster": "stopped",
+  "diamonds": 20,
+  "team": {
+    "can_start": true,
+    "key_state": "opened",
+    "capacity": 4,
+    "state": "finished",
+    "round_id": 2,
+    "count": 1,
+    "remaining": 0,
+    "carrier_name": "",
+    "ready_count": 0,
+    "ready": false
+  },
+  "gate_open": true,
+  "catches_remaining": 2,
+  "reward": 20
+}

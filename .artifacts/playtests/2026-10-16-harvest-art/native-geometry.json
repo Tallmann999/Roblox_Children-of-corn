@@ -1,0 +1,34 @@
+{
+  "warden": {
+    "eyes": 2,
+    "sections": {
+      "RightArm": true,
+      "Head": true,
+      "LeftEye": true,
+      "RightLeg": true,
+      "LeftArm": true,
+      "Coat": true,
+      "Hat": true,
+      "RightEye": true,
+      "LeftLeg": true
+    },
+    "parts": 19
+  },
+  "corn": {
+    "root": "0.27045801281929016, 4, -0.03849799931049347",
+    "uri": "rbxassetid://130010939468822",
+    "content": "Enum.ContentSourceType.Object",
+    "size": "2.8251709938049316, 8, 3.1600000858306885"
+  },
+  "stats": {
+    "meshes": 20
+  },
+  "before": {
+    "meshes": 1
+  },
+  "fetch": {
+    "rbxassetid://130010939468822": "Enum.AssetFetchStatus.Success",
+    "rbxassetid://116548767974420": "Enum.AssetFetchStatus.Success",
+    "rbxassetid://129035890974385": "Enum.AssetFetchStatus.Success"
+  }
+}

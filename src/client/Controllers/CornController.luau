@@ -11,6 +11,7 @@ local CornLayout = require(GameShared:WaitForChild("Game"):WaitForChild("CornLay
 type Chunk = {
 	Key: string,
 	Lod: number,
+	ArtLod: number?,
 	Folder: Folder,
 	MinColumn: number,
 	MaxColumn: number,
@@ -343,6 +344,7 @@ function CornController:_clearChunks()
 end
 
 function CornController:_clearInputs()
+	self._inputEpoch = (self._inputEpoch or 0) + 1
 	self:_clearChunks()
 	self:_restoreOverview()
 	if self._folder then
@@ -354,6 +356,8 @@ function CornController:_clearInputs()
 	self._template = nil
 	self._exclusions = nil
 	self._elevatedUntil = nil
+	self._detailed = false
+	self._detailedTemplates = nil
 end
 
 function CornController:_resolveInputs(): boolean
@@ -388,13 +392,40 @@ function CornController:_resolveInputs(): boolean
 		self:_warn("Prepared corn art is not available; check CornField Output")
 		return false
 	end
+	local detailed = map:GetAttribute("HarvestArtVariant") == "B"
 	if
 		self._map == map
 		and self._field == field
 		and self._template == template
 		and self._folder
+		and (self._detailed == true) == detailed
 	then
 		return true
+	end
+	local templates, appearance = nil, nil
+	if detailed then
+		if self._detailPreparing then
+			return false
+		end
+		self._detailPreparing = true
+		local epoch = self._inputEpoch
+		local ok, result = pcall(function()
+			local module = require(GameShared:WaitForChild("Game"):WaitForChild("CornAppearance"))
+			return { Appearance = module, Templates = module.DetailedTemplates() }
+		end)
+		self._detailPreparing = false
+		if
+			self._inputEpoch ~= epoch
+			or not map.Parent
+			or map:GetAttribute("HarvestArtVariant") ~= "B"
+		then
+			return false
+		end
+		if not ok then
+			self:_warn("Detailed corn unavailable; editor overview preserved: " .. tostring(result))
+			return false
+		end
+		templates, appearance = result.Templates, result.Appearance
 	end
 	self:_clearInputs()
 	local existing = map:FindFirstChild("CornClientPlants")
@@ -415,11 +446,18 @@ function CornController:_resolveInputs(): boolean
 	self._map = map
 	self._field = field
 	self._template = template
+	self._detailed = detailed
+	self._detailedTemplates = templates
+	self._appearance = appearance
 	local folder = Instance.new("Folder")
 	folder.Name = "CornClientPlants"
 	folder:SetAttribute("CornClientRendererOwned", true)
 	folder:SetAttribute("corn_project_id", PROJECT_ID)
 	folder:SetAttribute("LoadedPlants", 0)
+	if detailed then
+		folder:SetAttribute("HarvestArtVariant", "B")
+		folder:SetAttribute("NearPlantCap", appearance.DetailedNearPlantLimit)
+	end
 	folder.Parent = map
 	self._folder = folder
 	-- This client-only deletion never changes the author's saved scene or Props.
@@ -545,13 +583,27 @@ function CornController:_reconcile(root: BasePart)
 		return if a.Distance == b.Distance then a.Key < b.Key else a.Distance < b.Distance
 	end)
 	local wanted: { [string]: boolean } = {}
+	local nearChunks = 0
 	for index, candidate in desired do
 		if index > MAX_CHUNKS then
 			break
 		end
 		wanted[candidate.Key] = true
+		local artLod = candidate.Lod
+		if self._detailed then
+			if candidate.Lod == 1 then
+				nearChunks += 1
+			end
+			artLod = if candidate.Lod == 1
+					and nearChunks <= self._appearance.DetailedNearChunkLimit
+				then 1
+				elseif candidate.Lod <= 2 then 2
+				else 3
+		end
 		local chunk = self._chunks[candidate.Key]
-		if chunk and chunk.Lod ~= candidate.Lod then
+		if
+			chunk and (chunk.Lod ~= candidate.Lod or (self._detailed and chunk.ArtLod ~= artLod))
+		then
 			self:_markOverviewChunk(chunk.Key)
 			chunk.Alive = false
 			self._plantCount -= chunk.Count
@@ -565,10 +617,14 @@ function CornController:_reconcile(root: BasePart)
 			local chunkFolder = Instance.new("Folder")
 			chunkFolder.Name = "Chunk_" .. candidate.Key
 			chunkFolder:SetAttribute("DetailStride", candidate.Lod * CornLayout.Spacing)
+			if self._detailed then
+				chunkFolder:SetAttribute("HarvestCornLod", ({ "Near", "Mid", "Far" })[artLod])
+			end
 			chunkFolder.Parent = folder
 			chunk = {
 				Key = candidate.Key,
 				Lod = candidate.Lod,
+				ArtLod = artLod,
 				Folder = chunkFolder,
 				MinColumn = candidate.MinColumn,
 				MaxColumn = candidate.MaxColumn,
@@ -648,7 +704,13 @@ function CornController:_createBatch()
 		if CornLayout.IsExcluded(position, exclusions) then
 			continue
 		end
-		local clone = template:Clone()
+		local source = template
+		if self._detailed then
+			local lod = ({ "Near", "Mid", "Far" })[chunk.ArtLod or 3]
+			local variety = self._appearance.Variety(column, row)
+			source = self._detailedTemplates[lod][variety]
+		end
+		local clone = source:Clone()
 		if not clone then
 			self:_warn("Prepared corn template is not Archivable")
 			self:Destroy()
@@ -666,8 +728,11 @@ function CornController:_createBatch()
 			end
 		end
 		CornLayout.ApplyVariation(plant, column, row)
+		local yaw = CornLayout.CellYaw(column, row) + fieldYaw
 		plant:PivotTo(
-			CornLayout.PivotForPlant(plant, position, CornLayout.CellYaw(column, row) + fieldYaw)
+			if self._detailed
+				then self._appearance.DetailedPivot(plant, position, yaw)
+				else CornLayout.PivotForPlant(plant, position, yaw)
 		)
 		plant.Parent = chunk.Folder
 		chunk.Count += 1

@@ -1,5 +1,43 @@
 # Дети кукурузы — архитектура
 
+## Два оформления Harvest Warden — 2026-10-16
+
+Текущая визуальная интеграция сохраняет принятые правила multiplayer 1–4:
+общий ключ/ворота/deadline, личные две поимки/+20, поздние игроки ждут.
+Принятый сетевой baseline 15 октября — 1003371 байт/b5084774…;
+его actual server + четыре клиента и clean Source Save подтверждены
+[приёмкой](2026-10-15_multiplayer-playtest.md). Нижние датированные разделы
+с прежними pending/solo статусами являются историей.
+
+`CornMap.HarvestArtVariant=A|B` выбирает оформление. Новые owned bindings:
+`CornMap/HarvestDecor` и узкий `Props/ScarecrowMarker/HarvestWardenHome`;
+owner `HarvestGeometryOwner=harvest_warden_v1`, проект `children_of_corn`.
+`HarvestAssetKey/HarvestMeshKey` ссылаются только на сохранённый каталог.
+Все 244 новые визуальные части имеют выключенные collide/touch/query.
+A сохраняет прежние растения/сараи/землю; B добавляет четыре формы кукурузы
+с Near/Mid/Far и тёмные покрытия. Точные исключения для исходного мира —
+три Transparency домашнего чучела, девять barn Transparency только B
+и атрибут варианта. Серверный Root/коллизия/LOS/радиусы 48/96 не меняются.
+
+EditableMesh восстанавливается из сохранённых Source-чанков на каждом peer,
+а не из сериализованного Content.Object. Серверный HarvestArtService имеет
+Order17 после Farm15; клиентский HarvestGeometryController — Order45 после
+Farm40. Клиентские части движущегося чучела вложены под прежний Root,
+две красные лампы Range24/Brightness3 принадлежат его глазам. Полный
+[контракт владения](2026-10-16_harvest-art.md) и
+[приёмка/сохранения](2026-10-16_harvest-art-acceptance.md) описывают текущий
+статус: оба отдельных engine Save A/B приняты строгим аудитом, 4526 экземпляров,
+153 точных Sources, исходный мир/Lighting/идентичности/родители/raw Terrain
+сохранены за исключением явно перечисленных art-изменений.
+
+Source workflow: check.ps1 → build-harvest-installer.py → guarded
+install-harvest.luau только в проверенном Corn stopped Edit. Старые
+multiplayer/solo installers не накладываются на новые 153 Sources.
+Мир меняет только guarded HarvestWorld.Ensure('A'|'B'); engine-файлы
+проверяет verify-harvest-copy.py относительно неизменяемого
+before-harvest-art-20261016.rbxl и независимо рассмотренного pinned manifest.
+Публичная публикация, persistence, покупки и lobby остаются вне задачи.
+
 ## Сохранённый baseline: появление подкрепления — 2026-10-15
 
 После восстановления принятого solo checkpoint автор подтвердил крики при

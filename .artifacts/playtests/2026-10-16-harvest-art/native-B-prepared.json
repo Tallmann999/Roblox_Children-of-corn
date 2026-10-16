@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"runtime\":false,\"repeatResult\":{\"created\":0,\"variant\":\"B\",\"changed\":0,\"commonModels\":39,\"parts\":244},\"variant\":\"B\",\"camera\":\"Enum.CameraType.Fixed\",\"switched\":{\"created\":0,\"variant\":\"B\",\"changed\":64,\"commonModels\":39,\"parts\":244},\"http\":false}"
+    }
+  ],
+  "isError": false
+}

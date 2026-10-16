@@ -119,4 +119,72 @@ function MonsterPose.Get(state: string, time: number, moving: boolean): { [strin
 	return pose
 end
 
+-- The Blender sections are authored in Y-up asset space with feet at Y=0
+-- and their front along +Z. These are deformation deltas around the exact
+-- neutral export pivots; the authoritative Root and legacy rig stay unchanged.
+MonsterPose.WardenPivots = table.freeze({
+	Coat = v3(0, 3.7, 0),
+	LeftArm = v3(-0.9, 6.38, 0),
+	RightArm = v3(0.9, 6.38, 0),
+	LeftLeg = v3(-0.37, 3.75, 0),
+	RightLeg = v3(0.37, 3.75, 0),
+	Head = v3(0, 6.85, 0),
+})
+local wardenRest = {}
+for _, definition in MonsterPose.Parts do
+	wardenRest[definition.Name] = cf()
+end
+MonsterPose.WardenRest = table.freeze(wardenRest)
+MonsterPose.WardenScale = 1.3
+MonsterPose.WardenAssetFrame = CFrame.Angles(0, math.pi, 0) * cf(0, -3, 0)
+function MonsterPose.ScaleWardenFrame(frame: CFrame): CFrame
+	-- Scale the posed asset uniformly after evaluating its raw anatomical pivots.
+	-- Eyes are about 10 studs above the floor, above the 8-stud corn canopy.
+	return cf(frame.Position * MonsterPose.WardenScale) * frame.Rotation
+end
+
+function MonsterPose.GetWarden(state: string, time: number, moving: boolean): { [string]: CFrame }
+	if time ~= time or math.abs(time) == math.huge then
+		return MonsterPose.WardenRest
+	end
+	if state ~= "patrol" and state ~= "chase" and state ~= "trapped" and state ~= "capturing" then
+		return MonsterPose.WardenRest
+	end
+	local pose = table.clone(MonsterPose.WardenRest)
+	local step, reach, spread, sway = 0, 0, 0.07, 0
+	if state == "patrol" then
+		step = if moving then math.sin(time * 4.7) * 0.24 else 0
+		sway = math.sin(time * 1.4) * 0.018
+	elseif state == "chase" then
+		step = if moving then math.sin(time * 6.85) * 0.4 else 0
+		reach, spread = -0.24, 0.21
+		sway = math.sin(time * 2.1) * 0.024
+	elseif state == "trapped" then
+		step = math.sin(time * 7) * 0.1
+		reach = -0.2 + math.sin(time * 5) * 0.08
+		spread = 0.14 + math.sin(time * 8) * 0.045
+		sway = math.sin(time * 6) * 0.035
+	else
+		local progress = math.clamp(time / 0.3, 0, 1)
+		reach = -0.9 * progress * progress * (3 - 2 * progress)
+		spread = 0.07
+	end
+	local function joint(name: string, x: number, y: number, z: number): CFrame
+		local pivot = MonsterPose.WardenPivots[name]
+		return cf(pivot) * CFrame.Angles(x, y, z) * cf(-pivot)
+	end
+	pose.Coat = joint("Coat", 0, 0, sway)
+	for _, side in { -1, 1 } do
+		local arm = if side < 0 then "LeftArm" else "RightArm"
+		local leg = if side < 0 then "LeftLeg" else "RightLeg"
+		pose[arm] = joint(arm, reach - step * side * 0.55, 0, spread * side)
+		pose[leg] = joint(leg, step * side, 0, 0)
+	end
+	local headDelta = joint("Head", 0, 0.07 + math.sin(time * 1.8) * 0.035, sway)
+	for _, name in { "Head", "Hat", "LeftEye", "RightEye" } do
+		pose[name] = headDelta
+	end
+	return pose
+end
+
 return table.freeze(MonsterPose)

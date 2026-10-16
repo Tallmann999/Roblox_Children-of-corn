@@ -1,0 +1,97 @@
+{
+  "format": "ChildrenOfCorn_HarvestComparison_v1",
+  "date": "2026-10-16",
+  "seed": 20261016,
+  "blender": "5.2.2 LTS",
+  "status": "offline Blender asset preview; NOT game integration or Studio acceptance",
+  "layout": "illustrative night scene; not the authored map, corn placement or Lighting",
+  "units": "1 Blender unit = 1 intended Roblox stud",
+  "scenes": [
+    {
+      "scene": "Variant_A_Current_Field",
+      "variant": "A",
+      "plant_instances": 150,
+      "plant_mesh_datablocks": 1,
+      "barn": "original red barn/atlas",
+      "corn": [
+        "Original_SM_Prop_Plant_Corn_01_L"
+      ],
+      "warden": "Warden_Classic",
+      "image": "previews/variant-a.png",
+      "objects": 208,
+      "mesh_objects": 200,
+      "camera": {
+        "location": [
+          6.0,
+          -24.0,
+          9.300000190734863
+        ],
+        "lens_mm": 34.0
+      }
+    },
+    {
+      "scene": "Variant_B_Detailed_Field",
+      "variant": "B",
+      "plant_instances": 150,
+      "plant_mesh_datablocks": 4,
+      "barn": "weathered dark derivative",
+      "corn": [
+        "Corn_A_Near",
+        "Corn_B_Near",
+        "Corn_C_Near",
+        "Corn_D_Near"
+      ],
+      "warden": "Warden_Detailed",
+      "image": "previews/variant-b.png",
+      "objects": 208,
+      "mesh_objects": 200,
+      "camera": {
+        "location": [
+          6.0,
+          -24.0,
+          9.300000190734863
+        ],
+        "lens_mm": 34.0
+      }
+    }
+  ],
+  "original_corn_source_triangles": 510,
+  "original_corn_height_normalized_to": 8,
+  "original_corn_uv_retained": true,
+  "active_scene": "Variant_B_Detailed_Field",
+  "all_textures_packed": true,
+  "protected_inputs_unchanged": {
+    "assets/corn/SM_Prop_Plant_Corn_01_L_textured.fbx": "30dfe4f3261089e6d8475373d57db2e124679f8a47ca3a1dfb615cbf03df1708",
+    "assets/corn/01_roblax_style_dry_corn.png": "69408d26e1580f1ae58e3a80a2abe10ee9e7161284f849647fa424034690d14e",
+    "assets/farm/SM_Bld_Barn_03_textured.fbx": "5003d1d7fe44b8082197cb22ba2a4292b735ed06df71fd7c49889e9b91fb7796",
+    "assets/farm/PolygonFarm_Texture_01_A.png": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd",
+    "assets/harvest-warden/corn.blend": "e842169947318779537036909f00d89206abd894e0fc7a1859f6b3ceb88d9060",
+    "assets/harvest-warden/environment.blend": "ee4fb6570c893a7d19fbf93abbe46bd3ce950c4799457f0462ccec4803c9eca4",
+    "assets/harvest-warden/warden.blend": "70e2c14e02b18217aaec1cef79e65c3ecde8d694d44c9de09793261bdc171071",
+    "place/Children_of_corn.rbxl": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646"
+  },
+  "outputs": [
+    {
+      "path": "comparison.blend",
+      "bytes": 24043470,
+      "sha256": "cc96e563d5481bc72f5f4f1dca39dfd7cd8944e068fa704cadede2b5ca3bb791"
+    },
+    {
+      "path": "previews/variant-a.png",
+      "bytes": 1440337,
+      "sha256": "2d692d469d24fcd8898cb46b0795a9bc4070ea22f95eed030dfc23f886175942"
+    },
+    {
+      "path": "previews/variant-b.png",
+      "bytes": 1672937,
+      "sha256": "14309971f8c759aced5357570c1fba5d24d036393205f3fb52d174f1010217e6"
+    }
+  ],
+  "remaining": [
+    "actual Roblox asset import and IDs",
+    "rig/animation runtime adapter",
+    "PointLight tuning",
+    "two game copies and guarded installation",
+    "gameplay and FPS acceptance"
+  ]
+}

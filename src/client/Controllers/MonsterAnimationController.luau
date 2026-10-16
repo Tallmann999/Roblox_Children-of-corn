@@ -39,17 +39,32 @@ function Controller:_restore()
 	for name, part in self._parts do
 		pcall(function()
 			part.CFrame = root.CFrame * Pose.Rest[name]
+			if self._wardenFallback then
+				part.Transparency = 1
+			end
 		end)
+	end
+	if self._warden then
+		self._warden:Step(root.CFrame, Pose.WardenRest, false, self._parts)
 	end
 	self._restored = true
 end
 
 function Controller:_unbindMonster()
+	self._wardenGeneration += 1
+	if self._warden then
+		self._warden:Destroy()
+		self._warden = nil
+	end
 	self:_restore()
 	disconnect(self._monsterConnections)
 	self._model, self._root, self._parts = nil, nil, {}
+	self._harvestVariant = nil
+	self._wardenBuildPending, self._wardenFallback = false, false
+	self._wardenRetryAt, self._wardenError = 0, nil
 	self._previousPosition, self._movingUntil = nil, 0
 	self._state, self._stateAt, self._lastWrites = nil, self._time, 0
+	self._lastArtWrites = 0
 end
 
 function Controller:_valid(): boolean
@@ -86,13 +101,94 @@ function Controller:_valid(): boolean
 			return false
 		end
 	end
+	local variant = model:GetAttribute("HarvestArtVariant")
+	local expectedVariant = if model:GetAttribute("HarvestWardenVersion") == 1
+			and (variant == "A" or variant == "B")
+		then variant
+		else nil
+	if expectedVariant ~= self._harvestVariant then
+		return false
+	end
+	if self._warden and not self._warden:Valid() then
+		return false
+	end
 	return true
+end
+
+function Controller:_createWarden(model: Model, root: BasePart)
+	local variant = model:GetAttribute("HarvestArtVariant")
+	if model:GetAttribute("HarvestWardenVersion") ~= 1 or (variant ~= "A" and variant ~= "B") then
+		return
+	end
+	local generation = self._wardenGeneration
+	self._wardenBuildPending = true
+	task.spawn(function()
+		local visual = nil
+		local ok, problem = pcall(function()
+			local shared = ReplicatedStorage:WaitForChild("GameShared"):WaitForChild("Game")
+			local builder = require(shared:WaitForChild("HarvestArtGeometry"))
+			local template =
+				builder.Template(if variant == "B" then "WardenDetailed" else "WardenClassic")
+			-- Mesh construction may yield. Never attach to a replaced round/streamed rig.
+			if
+				self._wardenGeneration ~= generation
+				or self._model ~= model
+				or not self:_valid()
+			then
+				return
+			end
+			local presentation = require(shared:WaitForChild("HarvestWardenVisual"))
+			visual = presentation.new(template, root)
+			if
+				self._wardenGeneration ~= generation
+				or self._model ~= model
+				or not self:_valid()
+			then
+				visual:Destroy()
+				return
+			end
+			self._warden = visual
+			if self._wardenFallback then
+				for _, part in self._parts do
+					part.Transparency = 1
+				end
+			end
+			self._wardenFallback, self._wardenError = false, nil
+			self._restored = false
+			self._updateElapsed = UPDATE_SEC
+		end)
+		if self._wardenGeneration ~= generation then
+			return
+		end
+		self._wardenBuildPending = false
+		if not ok then
+			if visual then
+				visual:Destroy()
+			end
+			self._wardenRetryAt = self._time + 5
+			self._wardenFallback = true
+			local message = "[MonsterAnimationController] Harvest Warden rendering failed; using legacy visual until retry: "
+				.. tostring(problem)
+			if self._wardenError ~= message then
+				warn(message)
+				self._wardenError = message
+			end
+		end
+	end)
 end
 
 function Controller:_resolveMonster()
 	local name = if self._monsterIndex == 1 then "Monster" else "Monster" .. self._monsterIndex
 	local model = self._runtime and self._runtime:FindFirstChild(name)
 	if model == self._model and self:_valid() then
+		if
+			self._harvestVariant
+			and not self._warden
+			and not self._wardenBuildPending
+			and self._time >= self._wardenRetryAt
+		then
+			self:_createWarden(model, self._root)
+		end
 		return
 	end
 	self:_unbindMonster()
@@ -128,9 +224,15 @@ function Controller:_resolveMonster()
 		return
 	end
 	self._model, self._root, self._parts = model, root, parts
+	local variant = model:GetAttribute("HarvestArtVariant")
+	self._harvestVariant = if model:GetAttribute("HarvestWardenVersion") == 1
+			and (variant == "A" or variant == "B")
+		then variant
+		else nil
 	self._previousPosition = root.Position
 	self._state, self._stateAt = model:GetAttribute("HuntState"), self._time
 	self._restored = false
+	self:_createWarden(model, root)
 	local function topologyChanged()
 		self:_unbindMonster()
 	end
@@ -145,7 +247,14 @@ function Controller:_resolveMonster()
 		end)
 	)
 	for _, attribute in
-		{ "CornMonsterOwned", "corn_project_id", "MonsterRigVersion", "MonsterIndex" }
+		{
+			"CornMonsterOwned",
+			"corn_project_id",
+			"MonsterRigVersion",
+			"MonsterIndex",
+			"HarvestWardenVersion",
+			"HarvestArtVariant",
+		}
 	do
 		table.insert(
 			self._monsterConnections,
@@ -305,6 +414,7 @@ function Controller:_step(delta: number)
 	end
 	self._updateElapsed %= UPDATE_SEC
 	self._lastWrites = 0
+	self._lastArtWrites = 0
 	if not self:_valid() then
 		self:_unbindMonster()
 		return
@@ -315,13 +425,28 @@ function Controller:_step(delta: number)
 	end
 	self._previousPosition = position
 	local pose = Pose.Get(self._state, self._time - self._stateAt, self._movingUntil > self._time)
-	if pose == Pose.Rest and self._restored then
+	if pose == Pose.Rest and self._restored and not self._warden then
 		return
 	end
 	local frame = self._root.CFrame
+	local visible = self._state == "patrol"
+		or self._state == "chase"
+		or self._state == "trapped"
+		or self._state == "capturing"
 	for name, part in self._parts do
 		part.CFrame = frame * pose[name]
+		if self._wardenFallback then
+			part.Transparency = if visible then 0 else 1
+		end
 		self._lastWrites += 1
+	end
+	if self._warden then
+		self._lastArtWrites = self._warden:Step(
+			frame,
+			Pose.GetWarden(self._state, self._time - self._stateAt, self._movingUntil > self._time),
+			visible,
+			self._parts
+		)
 	end
 	self._restored = pose == Pose.Rest
 end
@@ -337,9 +462,13 @@ function Controller:Init(context: any, monsterIndex: number?)
 		)
 	self._map, self._runtime, self._model, self._root = nil, nil, nil, nil
 	self._parts = {}
+	self._warden, self._wardenGeneration = nil, 0
+	self._wardenBuildPending, self._wardenFallback = false, false
+	self._wardenRetryAt, self._wardenError = 0, nil
 	self._topConnections, self._mapConnections, self._runtimeConnections, self._monsterConnections =
 		{}, {}, {}, {}
 	self._time, self._stateAt, self._movingUntil, self._lastWrites = 0, 0, 0, 0
+	self._lastArtWrites = 0
 	self._updateElapsed, self._resolveElapsed = UPDATE_SEC, RESOLVE_SEC
 	self._state, self._previousPosition, self._restored = nil, nil, true
 	self._connection = nil

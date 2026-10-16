@@ -1,0 +1,24 @@
+{
+  "capture": {
+    "id": 0,
+    "remaining": 0
+  },
+  "has_key": false,
+  "diamonds": 20,
+  "phase": "escaped",
+  "team": {
+    "can_start": true,
+    "key_state": "opened",
+    "capacity": 4,
+    "state": "finished",
+    "round_id": 1,
+    "count": 1,
+    "remaining": 0,
+    "carrier_name": "",
+    "ready_count": 0,
+    "ready": false
+  },
+  "gate_open": true,
+  "catches_remaining": 2,
+  "reward": 20
+}

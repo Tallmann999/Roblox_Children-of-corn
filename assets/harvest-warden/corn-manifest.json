@@ -1,0 +1,681 @@
+{
+  "schema": "harvest-corn-pack-v1",
+  "seed": 20261016,
+  "generator": "scripts/blender/harvest_corn.py",
+  "blender_version": "5.2.2 LTS",
+  "status": "offline authored and rendered; NOT imported or Studio tested",
+  "units": {
+    "blender_unit": "one Roblox stud",
+    "height": 8,
+    "axes": "Y-up exports; Blender Z-up source"
+  },
+  "materials": {
+    "shared_texture": "textures/corn_leaf_dry.png",
+    "texture_sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790",
+    "texture_is_real_bitmap": true,
+    "opacity": 1,
+    "roblox_double_sided_required": true
+  },
+  "variants": {
+    "A": {
+      "label": "Upright / alternating long leaves",
+      "count": 9,
+      "lean": [
+        0.12,
+        -0.14
+      ],
+      "width": 3.16,
+      "twist": 0.38,
+      "droop": 0.57,
+      "angle": 0.2
+    },
+    "B": {
+      "label": "Crooked / broad hanging leaves",
+      "count": 10,
+      "lean": [
+        0.38,
+        0.1
+      ],
+      "width": 3.35,
+      "twist": -0.74,
+      "droop": 0.7,
+      "angle": 1.0
+    },
+    "C": {
+      "label": "Wind-bent / narrow curled leaves",
+      "count": 9,
+      "lean": [
+        -0.34,
+        0.3
+      ],
+      "width": 3.08,
+      "twist": 0.98,
+      "droop": 0.63,
+      "angle": 2.25
+    },
+    "D": {
+      "label": "Forked silhouette / splayed leaves",
+      "count": 10,
+      "lean": [
+        -0.12,
+        -0.38
+      ],
+      "width": 3.35,
+      "twist": -0.54,
+      "droop": 0.52,
+      "angle": -0.6
+    }
+  },
+  "assets": [
+    {
+      "name": "Corn_A_Near",
+      "lod": "Near",
+      "vertices": 926,
+      "triangles": 1378,
+      "bounds_y_up": {
+        "min": [
+          -1.1421281099319458,
+          0.0,
+          -1.61849844455719
+        ],
+        "max": [
+          1.6830430030822754,
+          8.0,
+          1.541501522064209
+        ]
+      },
+      "size_studs": [
+        2.825171113014221,
+        8.0,
+        3.159999966621399
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_A_Near/Corn_A_Near.fbx",
+          "bytes": 3008700,
+          "sha256": "d879ec0042a37b18a1306de2253fadbabff02df03dc2eab433a09856e7c6cffd"
+        },
+        {
+          "path": "exports/corn/Corn_A_Near/Corn_A_Near.glb",
+          "bytes": 2990816,
+          "sha256": "7a05a80358f723b7ff17ad12fe13dd3371a38ad5260800ea55b73649bfe44fe7"
+        },
+        {
+          "path": "exports/corn/Corn_A_Near/Corn_A_Near.neutral.json",
+          "bytes": 594954,
+          "sha256": "5c8153308f3f34eed72cb41f5bde8a9044ee87fa5cfb1dd400aede3162abfbfd"
+        }
+      ]
+    },
+    {
+      "name": "Corn_A_Mid",
+      "lod": "Mid",
+      "vertices": 201,
+      "triangles": 276,
+      "bounds_y_up": {
+        "min": [
+          -1.0634559392929077,
+          0.0,
+          -1.3979212045669556
+        ],
+        "max": [
+          1.6431143283843994,
+          8.0,
+          1.7620787620544434
+        ]
+      },
+      "size_studs": [
+        2.706570267677307,
+        8.0,
+        3.159999966621399
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_A_Mid/Corn_A_Mid.fbx",
+          "bytes": 2973788,
+          "sha256": "c0308a4dc5215a8d8511282d324f709b757b12a8700cdb622196320eb05f3166"
+        },
+        {
+          "path": "exports/corn/Corn_A_Mid/Corn_A_Mid.glb",
+          "bytes": 2957060,
+          "sha256": "104e986c960e33d46148d62aaff029a03f6234876f4c7ee8344e35b7a9391de9"
+        },
+        {
+          "path": "exports/corn/Corn_A_Mid/Corn_A_Mid.neutral.json",
+          "bytes": 117436,
+          "sha256": "22f65fb2ec07f886ab8279670b50a6a554acfba08b5fb54c5fd34c6cb9d0fa5d"
+        }
+      ]
+    },
+    {
+      "name": "Corn_A_Far",
+      "lod": "Far",
+      "vertices": 80,
+      "triangles": 100,
+      "bounds_y_up": {
+        "min": [
+          -1.2414361238479614,
+          0.0,
+          -0.35971391201019287
+        ],
+        "max": [
+          1.9185638427734375,
+          8.0,
+          1.912546157836914
+        ]
+      },
+      "size_studs": [
+        3.159999966621399,
+        8.0,
+        2.272260069847107
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_A_Far/Corn_A_Far.fbx",
+          "bytes": 2967964,
+          "sha256": "19bc03064309564ddad175f4090f7815fb2b1e266ccc46f3845e14e0aa801428"
+        },
+        {
+          "path": "exports/corn/Corn_A_Far/Corn_A_Far.glb",
+          "bytes": 2951200,
+          "sha256": "7141f92e2b6308ee92087dbead8cf223810c4823857decc9df2132c99a7dd86f"
+        },
+        {
+          "path": "exports/corn/Corn_A_Far/Corn_A_Far.neutral.json",
+          "bytes": 42743,
+          "sha256": "0ca0bb1b8ec5cb3ff3f930a1bc768884c573b4da5aa0adc8901d3d76984c60f5"
+        }
+      ]
+    },
+    {
+      "name": "Corn_B_Near",
+      "lod": "Near",
+      "vertices": 989,
+      "triangles": 1470,
+      "bounds_y_up": {
+        "min": [
+          -1.3739689588546753,
+          0.0,
+          -1.811842918395996
+        ],
+        "max": [
+          1.5398385524749756,
+          8.0,
+          1.5381569862365723
+        ]
+      },
+      "size_studs": [
+        2.913807511329651,
+        8.0,
+        3.3499999046325684
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_B_Near/Corn_B_Near.fbx",
+          "bytes": 3011676,
+          "sha256": "a2975d239d9d051e81d1a4ebf5d4084b16b2f28e3af3c5440b8be5ea44631742"
+        },
+        {
+          "path": "exports/corn/Corn_B_Near/Corn_B_Near.glb",
+          "bytes": 2993640,
+          "sha256": "0e625723628ac4495f5b19581e4f9fe5687a49a0b8dfcfcf715358b937188d39"
+        },
+        {
+          "path": "exports/corn/Corn_B_Near/Corn_B_Near.neutral.json",
+          "bytes": 635746,
+          "sha256": "c03968054e45a7c4f11b30326fc47ba9449057335e701abf04977303223cf890"
+        }
+      ]
+    },
+    {
+      "name": "Corn_B_Mid",
+      "lod": "Mid",
+      "vertices": 201,
+      "triangles": 276,
+      "bounds_y_up": {
+        "min": [
+          -1.4901189804077148,
+          0.0,
+          -1.5611649751663208
+        ],
+        "max": [
+          1.5418840646743774,
+          8.0,
+          1.788835048675537
+        ]
+      },
+      "size_studs": [
+        3.0320030450820923,
+        8.0,
+        3.350000023841858
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_B_Mid/Corn_B_Mid.fbx",
+          "bytes": 2973804,
+          "sha256": "17e3c8ef66f7d7cb63ca49dc4e7e2baf07af109b438a7ac538be6844c7732be9"
+        },
+        {
+          "path": "exports/corn/Corn_B_Mid/Corn_B_Mid.glb",
+          "bytes": 2957056,
+          "sha256": "4864c0f85d761fd2e565237936d690705a1a367869b9abb749a3fb896c6f523e"
+        },
+        {
+          "path": "exports/corn/Corn_B_Mid/Corn_B_Mid.neutral.json",
+          "bytes": 117594,
+          "sha256": "166ad616e3afae2c363c8f7c80d29b059408f68fb236a9e5b1b02861706959ab"
+        }
+      ]
+    },
+    {
+      "name": "Corn_B_Far",
+      "lod": "Far",
+      "vertices": 80,
+      "triangles": 100,
+      "bounds_y_up": {
+        "min": [
+          -0.16942423582077026,
+          0.0,
+          -2.7727437019348145
+        ],
+        "max": [
+          3.1805758476257324,
+          8.0,
+          0.14677630364894867
+        ]
+      },
+      "size_studs": [
+        3.3500000834465027,
+        8.0,
+        2.919520005583763
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_B_Far/Corn_B_Far.fbx",
+          "bytes": 2967948,
+          "sha256": "a878153121b6f1d9725e9a30e1834cd5aa5ff06e1d96dc221faa8c1d4f74fb6e"
+        },
+        {
+          "path": "exports/corn/Corn_B_Far/Corn_B_Far.glb",
+          "bytes": 2951200,
+          "sha256": "1ea59ea00d21a6ece9992b92d08a64fd23a3f2d61d39eaf374c44f95fc11f8c9"
+        },
+        {
+          "path": "exports/corn/Corn_B_Far/Corn_B_Far.neutral.json",
+          "bytes": 42649,
+          "sha256": "dfbdb6bc3a0bcf878433d46d7b5ff31885e5b19f23a536805d7fb9c79a2d72e3"
+        }
+      ]
+    },
+    {
+      "name": "Corn_C_Near",
+      "lod": "Near",
+      "vertices": 926,
+      "triangles": 1378,
+      "bounds_y_up": {
+        "min": [
+          -1.5669194459915161,
+          0.0,
+          -1.3815232515335083
+        ],
+        "max": [
+          1.5130804777145386,
+          8.0,
+          1.354448914527893
+        ]
+      },
+      "size_studs": [
+        3.0799999237060547,
+        8.0,
+        2.7359721660614014
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_C_Near/Corn_C_Near.fbx",
+          "bytes": 3008700,
+          "sha256": "86822afb8d00c4653085b00d845498d9fcf07170ab86aeb26a7d87f91326101b"
+        },
+        {
+          "path": "exports/corn/Corn_C_Near/Corn_C_Near.glb",
+          "bytes": 2990816,
+          "sha256": "96b01c226b3f7614bedcb735eeba38bdd5fcc13ef3befd95f5ec754f4a895fc7"
+        },
+        {
+          "path": "exports/corn/Corn_C_Near/Corn_C_Near.neutral.json",
+          "bytes": 595094,
+          "sha256": "06b605c21ac4a8fa770c7457f6c56faed6340b3d634164bb510f3b1411ccd464"
+        }
+      ]
+    },
+    {
+      "name": "Corn_C_Mid",
+      "lod": "Mid",
+      "vertices": 201,
+      "triangles": 276,
+      "bounds_y_up": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -1.4674408435821533
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          1.4010677337646484
+        ]
+      },
+      "size_studs": [
+        3.0799999237060547,
+        8.0,
+        2.8685085773468018
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_C_Mid/Corn_C_Mid.fbx",
+          "bytes": 2973756,
+          "sha256": "cd8c19dfc22a52f4189436116b6ded06c89159d94447ecbb05b35d3aabbf94d8"
+        },
+        {
+          "path": "exports/corn/Corn_C_Mid/Corn_C_Mid.glb",
+          "bytes": 2957056,
+          "sha256": "b5fe787770390b99fbefb13f6cdd7116a7939a91f09049936637139e2d033477"
+        },
+        {
+          "path": "exports/corn/Corn_C_Mid/Corn_C_Mid.neutral.json",
+          "bytes": 117767,
+          "sha256": "0fa43622add381ccd9e31058dbf924c2edee9c5c4c67f26f755f0985a495dcad"
+        }
+      ]
+    },
+    {
+      "name": "Corn_C_Far",
+      "lod": "Far",
+      "vertices": 80,
+      "triangles": 100,
+      "bounds_y_up": {
+        "min": [
+          -1.3879342079162598,
+          0.0,
+          -0.8556624054908752
+        ],
+        "max": [
+          1.692065715789795,
+          8.0,
+          0.7340206503868103
+        ]
+      },
+      "size_studs": [
+        3.0799999237060547,
+        8.0,
+        1.5896830558776855
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_C_Far/Corn_C_Far.fbx",
+          "bytes": 2967964,
+          "sha256": "c23d3e7e8829f66654a09964e29ef9444f7df6da3f7f623bcc8f67c3653d0ee3"
+        },
+        {
+          "path": "exports/corn/Corn_C_Far/Corn_C_Far.glb",
+          "bytes": 2951200,
+          "sha256": "ba1b55af6c6690e13ae2dd08d4b6ed7a0c4fe73d9f9769ed03fe0b855fa4dd19"
+        },
+        {
+          "path": "exports/corn/Corn_C_Far/Corn_C_Far.neutral.json",
+          "bytes": 42702,
+          "sha256": "d1b402b39947be342815e6af29cea6d03087bccf8e6b21f512fd0aa2532d6f72"
+        }
+      ]
+    },
+    {
+      "name": "Corn_D_Near",
+      "lod": "Near",
+      "vertices": 989,
+      "triangles": 1470,
+      "bounds_y_up": {
+        "min": [
+          -1.4744672775268555,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          1.7260266542434692,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "size_studs": [
+        3.2004939317703247,
+        8.0,
+        3.350000023841858
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_D_Near/Corn_D_Near.fbx",
+          "bytes": 3011484,
+          "sha256": "c4d25b27b53c24f287a2c28dc2d118c4303bb8ee19f681be4a4d673141a9f482"
+        },
+        {
+          "path": "exports/corn/Corn_D_Near/Corn_D_Near.glb",
+          "bytes": 2993644,
+          "sha256": "8d5a9e95d4ae7983d809adb30cd6d514843ab7695cf031e6ec8f55e42bed9c1d"
+        },
+        {
+          "path": "exports/corn/Corn_D_Near/Corn_D_Near.neutral.json",
+          "bytes": 635365,
+          "sha256": "770a8aa39d699f588a4882f15d5b2edf1069714b582681f0c1ee5f99a64f8f14"
+        }
+      ]
+    },
+    {
+      "name": "Corn_D_Mid",
+      "lod": "Mid",
+      "vertices": 201,
+      "triangles": 276,
+      "bounds_y_up": {
+        "min": [
+          -1.3683652877807617,
+          0.0,
+          -1.609679102897644
+        ],
+        "max": [
+          0.9765235185623169,
+          8.0,
+          1.7403209209442139
+        ]
+      },
+      "size_studs": [
+        2.3448888063430786,
+        8.0,
+        3.350000023841858
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_D_Mid/Corn_D_Mid.fbx",
+          "bytes": 2973724,
+          "sha256": "47cb690870288d340bd29fc0b897e787ae555373e8a56769a80f0c8df6593701"
+        },
+        {
+          "path": "exports/corn/Corn_D_Mid/Corn_D_Mid.glb",
+          "bytes": 2957060,
+          "sha256": "0e6605707498ccf26fc5c445cf1aeb20ff78488bee11938d514e9ca680e65abe"
+        },
+        {
+          "path": "exports/corn/Corn_D_Mid/Corn_D_Mid.neutral.json",
+          "bytes": 117312,
+          "sha256": "eb32196684f66b38a89605fe0705f9ccfce48c8502fe9f83e018c8bf639bf426"
+        }
+      ]
+    },
+    {
+      "name": "Corn_D_Far",
+      "lod": "Far",
+      "vertices": 80,
+      "triangles": 100,
+      "bounds_y_up": {
+        "min": [
+          -0.5180471539497375,
+          0.0,
+          -0.1365276426076889
+        ],
+        "max": [
+          2.8319528102874756,
+          8.0,
+          3.189363479614258
+        ]
+      },
+      "size_studs": [
+        3.349999964237213,
+        8.0,
+        3.3258911222219467
+      ],
+      "validation": {
+        "finite_positions_uv_normals": true,
+        "unit_normals": true,
+        "degenerate_triangles": 0,
+        "uv_in_unit_square": true,
+        "root_ground_y": 0.0,
+        "open_leaf_surfaces_intentional": true,
+        "render_double_sided": true
+      },
+      "files": [
+        {
+          "path": "exports/corn/Corn_D_Far/Corn_D_Far.fbx",
+          "bytes": 2967932,
+          "sha256": "063de6a58c3c293792c2008dfac354207875ee9a8e7ba1c7dcade7edcde501b7"
+        },
+        {
+          "path": "exports/corn/Corn_D_Far/Corn_D_Far.glb",
+          "bytes": 2951200,
+          "sha256": "f57b94bf088c63defb7f5460195e8f78bee2229b24989ad5493bd7bdb09a28e3"
+        },
+        {
+          "path": "exports/corn/Corn_D_Far/Corn_D_Far.neutral.json",
+          "bytes": 42711,
+          "sha256": "7373bd2c237b3c792d50172067da6041ea2d83fcfc7a87c8eb8a68059378a35a"
+        }
+      ]
+    }
+  ],
+  "blend": {
+    "path": "corn.blend",
+    "bytes": 3076133,
+    "sha256": "e842169947318779537036909f00d89206abd894e0fc7a1859f6b3ceb88d9060"
+  },
+  "previews": [
+    {
+      "path": "previews/corn-gallery.png",
+      "sha256": "37b96757b3c31b593da8933a85acc1b9b2056a850e37d4471cb67ec78035ac71"
+    },
+    {
+      "path": "previews/corn-detail.png",
+      "sha256": "ccc32d4975549ce887b7fceaa0620cb023c338e54e37bd2264c46ecc0176f1cf"
+    }
+  ],
+  "integration_notes": [
+    "Requires explicit versioned corn template catalog; existing game accepts only original mesh ID.",
+    "Use Near locally and simplified LODs at distance. Triangle budgets are not a Roblox FPS result.",
+    "Leaves are opaque folded 3D surfaces; set DoubleSided=true. No transparency maps are required.",
+    "Do not replace existing green source or overwrite existing corn atlas.",
+    "Single joined mesh per plant, with UVs and shared real leaf texture embedded in FBX and GLB."
+  ]
+}

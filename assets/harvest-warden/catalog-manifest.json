@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "owner": "harvest_warden_v1",
+  "registry_sha256": "b65be241f1a4c069b0ad5b379831d7199d72d1dd07adcef98d7ae483abdbb4f3",
+  "assets": {
+    "BarnDark_Open": {
+      "source": "assets/harvest-warden/exports/environment/BarnDark_Open/BarnDark_Open.glb",
+      "source_sha256": "f0766637d5f5232f8f738e6d194f9839e4fab81958799db1e25d6341bd8f9e48",
+      "mesh_count": 4,
+      "triangles": 6600,
+      "raw_bytes": 1225810,
+      "raw_sha256": "e49ad161e70c59004bca9bc1200919f3e72d7ddff585554654d054652532ee64",
+      "chunks": 10
+    },
+    "Corn_A_Far": {
+      "source": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.glb",
+      "source_sha256": "7141f92e2b6308ee92087dbead8cf223810c4823857decc9df2132c99a7dd86f",
+      "mesh_count": 1,
+      "triangles": 100,
+      "raw_bytes": 10096,
+      "raw_sha256": "93169dd830fe02bbb3a105747ff44a9fa40e3e5657ac2aa10bc7d77794679e17",
+      "chunks": 1
+    },
+    "Corn_A_Mid": {
+      "source": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.glb",
+      "source_sha256": "104e986c960e33d46148d62aaff029a03f6234876f4c7ee8344e35b7a9391de9",
+      "mesh_count": 1,
+      "triangles": 276,
+      "raw_bytes": 23080,
+      "raw_sha256": "18915f7bba7b756c906eb89f450b0c016c7154de4b3560afd3fe7380f7d90557",
+      "chunks": 1
+    },
+    "Corn_A_Near": {
+      "source": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.glb",
+      "source_sha256": "7a05a80358f723b7ff17ad12fe13dd3371a38ad5260800ea55b73649bfe44fe7",
+      "mesh_count": 1,
+      "triangles": 1378,
+      "raw_bytes": 101190,
+      "raw_sha256": "5237f682c75fc2d07060e0bf5b00489ca3cc1b33ebc5b15efe08dd994549e0ed",
+      "chunks": 1
+    },
+    "Corn_B_Far": {
+      "source": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.glb",
+      "source_sha256": "1ea59ea00d21a6ece9992b92d08a64fd23a3f2d61d39eaf374c44f95fc11f8c9",
+      "mesh_count": 1,
+      "triangles": 100,
+      "raw_bytes": 10144,
+      "raw_sha256": "bf79b25b6af258c71abd124ccfffe5a3598e8e2c30bcbd289b65957baca94433",
+      "chunks": 1
+    },
+    "Corn_B_Mid": {
+      "source": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.glb",
+      "source_sha256": "4864c0f85d761fd2e565237936d690705a1a367869b9abb749a3fb896c6f523e",
+      "mesh_count": 1,
+      "triangles": 276,
+      "raw_bytes": 23281,
+      "raw_sha256": "c394cc7a8f1aee3d38e49866329a3758c91155077a449b4b6fecb516bc37aff7",
+      "chunks": 1
+    },
+    "Corn_B_Near": {
+      "source": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.glb",
+      "source_sha256": "0e625723628ac4495f5b19581e4f9fe5687a49a0b8dfcfcf715358b937188d39",
+      "mesh_count": 1,
+      "triangles": 1470,
+      "raw_bytes": 108282,
+      "raw_sha256": "67a6d14e6ddbd42ced38bba15b74609c088e24b1ba5b14c0b4649e20020ea8bc",
+      "chunks": 1
+    },
+    "Corn_C_Far": {
+      "source": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.glb",
+      "source_sha256": "ba1b55af6c6690e13ae2dd08d4b6ed7a0c4fe73d9f9769ed03fe0b855fa4dd19",
+      "mesh_count": 1,
+      "triangles": 100,
+      "raw_bytes": 10229,
+      "raw_sha256": "02fe9bee416cc6482444f9fc70b43eedbd0da96d47cad4008990ad2af02706ef",
+      "chunks": 1
+    },
+    "Corn_C_Mid": {
+      "source": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.glb",
+      "source_sha256": "b5fe787770390b99fbefb13f6cdd7116a7939a91f09049936637139e2d033477",
+      "mesh_count": 1,
+      "triangles": 276,
+      "raw_bytes": 23498,
+      "raw_sha256": "52a5eae953c127068d18acab9faa861479e2dfe483bcff02909e18541a35ceda",
+      "chunks": 1
+    },
+    "Corn_C_Near": {
+      "source": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.glb",
+      "source_sha256": "96b01c226b3f7614bedcb735eeba38bdd5fcc13ef3befd95f5ec754f4a895fc7",
+      "mesh_count": 1,
+      "triangles": 1378,
+      "raw_bytes": 102116,
+      "raw_sha256": "6ef23a7b6dba1627bc06ec690ab22c541762957e5e86703c3d2b3188da730291",
+      "chunks": 1
+    },
+    "Corn_D_Far": {
+      "source": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.glb",
+      "source_sha256": "f57b94bf088c63defb7f5460195e8f78bee2229b24989ad5493bd7bdb09a28e3",
+      "mesh_count": 1,
+      "triangles": 100,
+      "raw_bytes": 10022,
+      "raw_sha256": "e1bbe832b8f3ed35264e7a3ef320130ab08fe53838338a2c8db5490276fc06af",
+      "chunks": 1
+    },
+    "Corn_D_Mid": {
+      "source": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.glb",
+      "source_sha256": "0e6605707498ccf26fc5c445cf1aeb20ff78488bee11938d514e9ca680e65abe",
+      "mesh_count": 1,
+      "triangles": 276,
+      "raw_bytes": 23131,
+      "raw_sha256": "211c4c1e8ceacdd116bd8851d28e9db1b5121ef491b13dd2f1a193565fe2f27b",
+      "chunks": 1
+    },
+    "Corn_D_Near": {
+      "source": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.glb",
+      "source_sha256": "8d5a9e95d4ae7983d809adb30cd6d514843ab7695cf031e6ec8f55e42bed9c1d",
+      "mesh_count": 1,
+      "triangles": 1470,
+      "raw_bytes": 108195,
+      "raw_sha256": "3360e6f3dcfc942c11c9298cab22971fba9c27ff8d9103a0f3574caf731f423b",
+      "chunks": 1
+    },
+    "Fence_01": {
+      "source": "assets/harvest-warden/exports/environment/Fence_01/Fence_01.glb",
+      "source_sha256": "115399acf26508ee7abab3ed42b86a50093aa47c579f07d6a31cb9b79b0acc4b",
+      "mesh_count": 7,
+      "triangles": 252,
+      "raw_bytes": 42839,
+      "raw_sha256": "853e053481ac32046395b55de54afeecc37e6c7a261e13259979aca95dc43f50",
+      "chunks": 1
+    },
+    "Fence_02": {
+      "source": "assets/harvest-warden/exports/environment/Fence_02/Fence_02.glb",
+      "source_sha256": "3b50896f77e74be6ab22869feaffb909affdbf5d294b8fedce535ca78fd18baf",
+      "mesh_count": 8,
+      "triangles": 288,
+      "raw_bytes": 50428,
+      "raw_sha256": "6e61e786224eaff24616cfe24f09927fda13e1b859ba4eb9f2f18c209df57e1d",
+      "chunks": 1
+    },
+    "Fence_03": {
+      "source": "assets/harvest-warden/exports/environment/Fence_03/Fence_03.glb",
+      "source_sha256": "19d7836a302df8ea3d36747f6caa4fcf4a973981f10651667e568696c6b0df2e",
+      "mesh_count": 7,
+      "triangles": 252,
+      "raw_bytes": 43816,
+      "raw_sha256": "3a4d6032c9ad1e3a87195bf0ba2c02231ab677abaea1160425af3f9d2d3922db",
+      "chunks": 1
+    },
+    "Ground_Tile_8": {
+      "source": "assets/harvest-warden/exports/environment/Ground_Tile_8/Ground_Tile_8.glb",
+      "source_sha256": "3042126d8d5187443d1ba2fd94b52f60f0c7fe63708d144c29c48c1e5817c2cc",
+      "mesh_count": 1,
+      "triangles": 2,
+      "raw_bytes": 544,
+      "raw_sha256": "ad3a9a6b462c4a9a161331318b5ec5e63544e290c814212461a4c1b133d482d3",
+      "chunks": 1
+    },
+    "Path_Tile_8": {
+      "source": "assets/harvest-warden/exports/environment/Path_Tile_8/Path_Tile_8.glb",
+      "source_sha256": "02598dca90f94bbee96a65d55b9ee8524b6d766e6d4f1a5f6c4324e3b693b2d5",
+      "mesh_count": 3,
+      "triangles": 10,
+      "raw_bytes": 2705,
+      "raw_sha256": "d22a8ce4de4b544c4c2a4f8786e671cd99037bfd770d9e67ae3fa467bd6e1116",
+      "chunks": 1
+    },
+    "Rock_01": {
+      "source": "assets/harvest-warden/exports/environment/Rock_01/Rock_01.glb",
+      "source_sha256": "86315d7dc17bdc467220782d14417cff1ed9d3cd5079baf0cb0bbf6309f3b212",
+      "mesh_count": 1,
+      "triangles": 80,
+      "raw_bytes": 18355,
+      "raw_sha256": "ca5c2fd526e34fa107428ee10b6c5a116f9de685ef070b7c4a3a98e065efb52b",
+      "chunks": 1
+    },
+    "Rock_02": {
+      "source": "assets/harvest-warden/exports/environment/Rock_02/Rock_02.glb",
+      "source_sha256": "03a6efd146d46c4eb5935844d05431323800e5eb74ab1feaef6df42558bd410f",
+      "mesh_count": 1,
+      "triangles": 80,
+      "raw_bytes": 18359,
+      "raw_sha256": "13ad4de8bf31237c9cd1057b6d02053c1802d965080c8798747b0095909228d8",
+      "chunks": 1
+    },
+    "Rock_03": {
+      "source": "assets/harvest-warden/exports/environment/Rock_03/Rock_03.glb",
+      "source_sha256": "06113d4f48ffd6d046a6b3fa7cfb290dc34d0a1ef11850f60295020172d56658",
+      "mesh_count": 1,
+      "triangles": 80,
+      "raw_bytes": 18481,
+      "raw_sha256": "c38db3e106170a16c2aa3f95bb42f6440a75c916016af5944a520f88a3e24e25",
+      "chunks": 1
+    },
+    "Rock_04": {
+      "source": "assets/harvest-warden/exports/environment/Rock_04/Rock_04.glb",
+      "source_sha256": "e434858153977e8523021f5faeac1b3eb38a23b76245760cc11e0c0607fc1965",
+      "mesh_count": 1,
+      "triangles": 80,
+      "raw_bytes": 18118,
+      "raw_sha256": "e4505e1496cde6fa48ad85115ad37ec15d244109677f888b31879d7600ace98f",
+      "chunks": 1
+    },
+    "Rock_05": {
+      "source": "assets/harvest-warden/exports/environment/Rock_05/Rock_05.glb",
+      "source_sha256": "5030e8849af377f9030b2238cf98972d52359b7ef164af7fa4e31b550e41cb88",
+      "mesh_count": 1,
+      "triangles": 80,
+      "raw_bytes": 18815,
+      "raw_sha256": "993d1c86b64bce5615d2ec162d2385a4d65be7262ffadc14bb5a884ba12bb4f0",
+      "chunks": 1
+    },
+    "WardenClassic": {
+      "source": "assets/harvest-warden/exports/warden/classic/HarvestWarden.glb",
+      "source_sha256": "eb0d9ca09ce763db3da7d75fc852d5131e90a0eed736ef05b08432b014517e54",
+      "mesh_count": 19,
+      "triangles": 2414,
+      "raw_bytes": 380293,
+      "raw_sha256": "9dabb645d75cede738b968fad99e5603957369fa1c2861aa5ed3ba23ae032555",
+      "chunks": 3
+    },
+    "WardenDetailed": {
+      "source": "assets/harvest-warden/exports/warden/detailed/HarvestWarden.glb",
+      "source_sha256": "534d2f1f67cab3bd4cabd98132930f12599a4955f55663ed7a8e3aa2338f3306",
+      "mesh_count": 20,
+      "triangles": 5190,
+      "raw_bytes": 799833,
+      "raw_sha256": "91d55be8f9d4be45d5a7a4af2ca8cdcfb60e0a0dfa14253822e2c6d504daab93",
+      "chunks": 6
+    }
+  },
+  "sources": {
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk01.luau": {
+      "bytes": 135000,
+      "sha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk02.luau": {
+      "bytes": 135000,
+      "sha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk03.luau": {
+      "bytes": 135000,
+      "sha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk04.luau": {
+      "bytes": 135000,
+      "sha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk05.luau": {
+      "bytes": 135000,
+      "sha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk06.luau": {
+      "bytes": 135000,
+      "sha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk07.luau": {
+      "bytes": 135000,
+      "sha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk08.luau": {
+      "bytes": 135000,
+      "sha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk09.luau": {
+      "bytes": 135000,
+      "sha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk10.luau": {
+      "bytes": 11620,
+      "sha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb"
+    },
+    "src/shared/Game/HarvestGeometryData/BarnDark_Open/init.luau": {
+      "bytes": 370,
+      "sha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Far/Chunk01.luau": {
+      "bytes": 10177,
+      "sha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Far/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Mid/Chunk01.luau": {
+      "bytes": 23161,
+      "sha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Mid/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Near/Chunk01.luau": {
+      "bytes": 101271,
+      "sha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_A_Near/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Far/Chunk01.luau": {
+      "bytes": 10225,
+      "sha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Far/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Mid/Chunk01.luau": {
+      "bytes": 23362,
+      "sha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Mid/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Near/Chunk01.luau": {
+      "bytes": 108363,
+      "sha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_B_Near/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Far/Chunk01.luau": {
+      "bytes": 10310,
+      "sha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Far/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Mid/Chunk01.luau": {
+      "bytes": 23579,
+      "sha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Mid/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Near/Chunk01.luau": {
+      "bytes": 102197,
+      "sha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_C_Near/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Far/Chunk01.luau": {
+      "bytes": 10103,
+      "sha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Far/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Mid/Chunk01.luau": {
+      "bytes": 23212,
+      "sha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Mid/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Near/Chunk01.luau": {
+      "bytes": 108276,
+      "sha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33"
+    },
+    "src/shared/Game/HarvestGeometryData/Corn_D_Near/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_01/Chunk01.luau": {
+      "bytes": 42920,
+      "sha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_01/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_02/Chunk01.luau": {
+      "bytes": 50509,
+      "sha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_02/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_03/Chunk01.luau": {
+      "bytes": 43897,
+      "sha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119"
+    },
+    "src/shared/Game/HarvestGeometryData/Fence_03/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Ground_Tile_8/Chunk01.luau": {
+      "bytes": 625,
+      "sha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685"
+    },
+    "src/shared/Game/HarvestGeometryData/Ground_Tile_8/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Path_Tile_8/Chunk01.luau": {
+      "bytes": 2786,
+      "sha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048"
+    },
+    "src/shared/Game/HarvestGeometryData/Path_Tile_8/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_01/Chunk01.luau": {
+      "bytes": 18436,
+      "sha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_01/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_02/Chunk01.luau": {
+      "bytes": 18440,
+      "sha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_02/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_03/Chunk01.luau": {
+      "bytes": 18562,
+      "sha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_03/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_04/Chunk01.luau": {
+      "bytes": 18199,
+      "sha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_04/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_05/Chunk01.luau": {
+      "bytes": 18896,
+      "sha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6"
+    },
+    "src/shared/Game/HarvestGeometryData/Rock_05/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk01.luau": {
+      "bytes": 135000,
+      "sha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk02.luau": {
+      "bytes": 135000,
+      "sha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk03.luau": {
+      "bytes": 110536,
+      "sha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenClassic/init.luau": {
+      "bytes": 270,
+      "sha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk01.luau": {
+      "bytes": 135000,
+      "sha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk02.luau": {
+      "bytes": 135000,
+      "sha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk03.luau": {
+      "bytes": 135000,
+      "sha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk04.luau": {
+      "bytes": 135000,
+      "sha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk05.luau": {
+      "bytes": 135000,
+      "sha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk06.luau": {
+      "bytes": 125319,
+      "sha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7"
+    },
+    "src/shared/Game/HarvestGeometryData/WardenDetailed/init.luau": {
+      "bytes": 303,
+      "sha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a"
+    },
+    "src/shared/Game/HarvestGeometryData/Chunk01.luau": {
+      "bytes": 4183,
+      "sha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e"
+    },
+    "src/shared/Game/HarvestGeometryData/init.luau": {
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    }
+  },
+  "catalog": {
+    "bytes": 3195474,
+    "sha256": "b9448ca01dd10b4579d44ba4efad427edd7e4f7ced466fb68144d5f22651dbd0",
+    "assets": 25,
+    "meshes": 86,
+    "triangles": 22608
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "seconds": 1.6268458999984432,
+  "farm": {
+    "applied": 40,
+    "built": 10,
+    "scope": "server",
+    "pending": 0,
+    "targets": 40
+  },
+  "variant": "A",
+  "geometry": {
+    "meshes": 75
+  },
+  "harvest": {
+    "created": 1,
+    "variant": "A",
+    "changed": 39,
+    "commonModels": 39,
+    "parts": 244
+  }
+}

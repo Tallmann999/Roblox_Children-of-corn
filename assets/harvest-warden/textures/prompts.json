@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "tool": "built-in image_gen.imagegen",
+  "createdUTC": "2026-10-16",
+  "intendedUse": "Offline Blender and Roblox asset pack basecolor textures; no external upload performed.",
+  "pixelPolicy": "Original generated PNGs copied byte-for-byte; no pixel edits or resizing.",
+  "tileability": "Prompted for seamless opposite borders; exact border continuity is not guaranteed by generative output.",
+  "textures": [
+    {
+      "file": "corn_leaf_dry.png",
+      "prompt": "Use case: stylized-concept\nAsset type: square seamless tileable diffuse/base-color material texture for an offline Blender and Roblox 3D horror game asset.\nPrimary request: A flat close-up surface texture of dry golden maize corn leaf, longitudinal fine parallel veins, subtle folded creases, aged straw yellow and muted tan, restrained weathered brown streaks along the veins. The texture completely fills the square canvas edge to edge. It will be UV mapped on long curved corn leaf meshes.\nComposition: perfectly orthographic top-down material scan, all veins run vertically, uniform detail density; seamless repeat across all opposite borders.\nLighting: completely even neutral flat diffuse lighting, no baked directional light, no gradients, no shadows, no ambient occlusion.\nConstraints: Only the material surface, no whole leaf outline, no cutout, no holes, no plant, no stalk, no scene, no perspective, no text, no labels, no grid, no watermark. Moderate contrast natural realistic texture with readable fine veins, appropriate for a Roblox game, not overly noisy. Opaque square image.",
+      "transparent_background": false,
+      "sourcePath": "C:\\Users\\User\\.codex\\generated_images\\01a1442d-3c1a-73d0-96c1-227efe54fc22\\exec-13947c65-f7b8-4e6d-bba3-ad8df3bb325d.png",
+      "rawSHA256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2944826,
+      "sourceCopyVerified": true
+    },
+    {
+      "file": "burlap.png",
+      "prompt": "Use case: stylized-concept\nAsset type: square seamless tileable diffuse/base-color material texture for Blender and Roblox 3D game assets.\nPrimary request: Flat close-up texture of coarse natural aged tan burlap sack cloth with thick irregular woven jute fibers, subtle weathered discoloration and a few tiny frayed fibers. Natural dry flax and muted ochre tan, tactile dense weave. Surface fills the square edge to edge.\nComposition: orthographic straight-on macro material scan, weave axes horizontal and vertical, uniform small-scale detail. Seamless opposite borders.\nLighting: completely even neutral diffuse lighting, no directional lighting, no scene shadow, no shading gradient, no ambient occlusion.\nConstraints: Material surface only, no sack or object shape, no face, no stitching pattern or embroidered marks, no large tears, no holes through the cloth, no folds with dark shadows, no blood, no perspective, no text, no label, no border, no watermark. Opaque square image. Readable realistic basecolor with restrained contrast for a weathered scarecrow head in a Roblox horror game.",
+      "transparent_background": false,
+      "sourcePath": "C:\\Users\\User\\.codex\\generated_images\\01a1442d-3c1a-73d0-96c1-227efe54fc22\\exec-fd894009-f09f-46d0-ae4c-5acbe6d7ed7e.png",
+      "rawSHA256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3908912,
+      "sourceCopyVerified": true
+    },
+    {
+      "file": "coat_canvas.png",
+      "prompt": "Use case: stylized-concept\nAsset type: square seamless tileable diffuse/base-color texture material for Blender and Roblox scarecrow jacket mesh.\nPrimary request: A flat orthographic close-up material scan of old near-charcoal farm canvas cloth, dense coarse cotton weave, muted dark warm gray with subtle brown dirt wear, lightly abraded pale fibers, very restrained natural irregular tonal variation. Fills entire square canvas edge to edge.\nComposition: fabric weave aligned horizontally and vertically, uniform small-scale details, seamless repeat across opposite edges, no prominent unique motif.\nLighting: neutral completely uniform diffuse lighting, no directional highlights, no shadows, no folds, no shading gradient, no ambient occlusion. This is basecolor albedo only.\nConstraints: Only cloth material surface. No jacket or clothing silhouette, no seams, no buttons, no holes, no zippers, no decorative marks, no face, no gore, no perspective, no scene, no text, no watermark, no border. Preserve dark charcoal appearance while weave remains discernible, opaque square image.",
+      "transparent_background": false,
+      "sourcePath": "C:\\Users\\User\\.codex\\generated_images\\01a1442d-3c1a-73d0-96c1-227efe54fc22\\exec-b7003f70-0246-40e2-870c-7260d2fc9571.png",
+      "rawSHA256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3975658,
+      "sourceCopyVerified": true
+    },
+    {
+      "file": "barn_wood_dark.png",
+      "prompt": "Use case: stylized-concept\nAsset type: square seamless tileable diffuse/base-color texture material for Blender and Roblox old barn and wooden fence meshes.\nPrimary request: A flat straight-on material scan of very dark weathered gray-brown unpainted barn timber surface. Long vertical wood grain, fine dry splits, worn ridges, subtle silvery gray weathering over brown charcoal wood, muted natural tones. The old rough wood material completely fills entire square edge to edge.\nComposition: all grain running vertically, uniform scale, seamless opposite edges. A continuous wood material surface suitable for UV mapping individual planks, not a wall of many boards.\nLighting: completely even neutral diffuse light, basecolor only, no directional light, no highlights, no vignette, no cast shadow, no shading gradient, no ambient occlusion.\nConstraints: No physical object, no barn shape, no plank borders or deep gaps, no nails, no lettering, no sign, no logo, no watermark, no border, no perspective, no scene, no blood, no large holes. Opaque square natural realistic wood texture with readable grain and restrained dark contrast suitable for a Roblox horror farm.",
+      "transparent_background": false,
+      "sourcePath": "C:\\Users\\User\\.codex\\generated_images\\01a1442d-3c1a-73d0-96c1-227efe54fc22\\exec-a5c71f30-cdab-4b27-8b20-775b0a99905c.png",
+      "rawSHA256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3543575,
+      "sourceCopyVerified": true
+    },
+    {
+      "file": "soil_gravel.png",
+      "prompt": "Use case: stylized-concept\nAsset type: square seamless tileable diffuse/base-color ground material texture for Blender and Roblox farm field and dirt path.\nPrimary request: Perfectly top-down flat surface scan of dry compacted muted brown earth with tiny irregular gray-brown gravel grains and a very sparse scattering of short dry straw fragments. Most of the image is fine textured medium-dark natural brown soil. Small gravel is evenly scattered without major clusters or large stones. Ground texture fills the square edge to edge.\nComposition: orthographic, consistent scale and detail density across entire image, seamless repeating opposite edges, no dominant object or unique motif.\nLighting: completely even neutral diffuse light, no directional sunlight, no shadows, no ambient occlusion, no highlights, no vignette or tonal gradient, albedo/basecolor only.\nConstraints: No path shape, no road borders, no tire track, no footprints, no perspective, no vegetation tufts, no whole corn leaves, no fence, no objects, no blood, no text, no labels, no watermark, no grid, no border. Opaque square realistic understated farm dirt material suited for Roblox horror environment.",
+      "transparent_background": false,
+      "sourcePath": "C:\\Users\\User\\.codex\\generated_images\\01a1442d-3c1a-73d0-96c1-227efe54fc22\\exec-cfe01006-f43d-4128-8ac7-ea2fa6442eb6.png",
+      "rawSHA256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 4197463,
+      "sourceCopyVerified": true
+    }
+  ]
+}

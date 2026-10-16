@@ -1,0 +1,30 @@
+{
+  "transport_chunks": 28,
+  "version": 1,
+  "baseline_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+  "native_before_sha256": "2861eec123c067cd569d81683027054b5584643317d31ad37ec38248610a1609",
+  "payload_bytes": 3441621,
+  "payload_sha256": "0ab19ed60dd76e3440e1b08489092bc19b3bdb5e239de17723cdd0a743d491ec",
+  "baseline_sources": 80,
+  "final_sources": 153,
+  "project_sources": 150,
+  "new_nodes": 73,
+  "new_sources": 73,
+  "changed_existing": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/MonsterPose",
+    "ServerScriptService/GameServer/Game/MonsterHunt",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CaptureController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController"
+  ],
+  "source_only": true,
+  "scene_written": false,
+  "installers": {
+    "install-harvest.luau": "70034a3c554729a5c9caeb55db182d936e424bafc0568d3204fbf82df4967d1b",
+    "install-harvest-direct.luau": "d688ef53cc8126bd234154cf4f15e0548e8a8924a1d3ad4425a64a2d3a9062e9",
+    "install-harvest-staged.luau": "9b341f2ea705f4eb98edb751ea6eb14361842dcff5f438c195aa1b400da96441"
+  }
+}

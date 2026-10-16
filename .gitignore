@@ -18,3 +18,9 @@ __pycache__/
 .artifacts/resize-probe.luau
 .artifacts/resize-ref-probe.luau
 .artifacts/resize-rollback-only.luau
+
+# Reproducible Harvest transport chunks and incomplete first-save drafts; keep local.
+.artifacts/harvest-install/payload-*.txt
+.artifacts/harvest-install/stage-*.luau
+.artifacts/playtests/2026-10-16-harvest-art/A-draft.json
+.artifacts/playtests/2026-10-16-harvest-art/B-draft.json

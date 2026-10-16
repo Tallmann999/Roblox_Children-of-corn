@@ -1,0 +1,136 @@
+{
+  "passed": false,
+  "complete": false,
+  "requires_independent_world_review": true,
+  "variant": "A",
+  "matching_sources": 150,
+  "matching_asset_sources": 3,
+  "total_sources": 153,
+  "new_code_instances": 73,
+  "new_art_instances": 291,
+  "new_instances": 364,
+  "original_instances": 4162,
+  "candidate_instances": 4526,
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/MonsterPose",
+    "ServerScriptService/GameServer/Game/MonsterHunt",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CaptureController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController"
+  ],
+  "allowed_changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "editor"
+    },
+    {
+      "path": "Workspace/CornMap",
+      "property": "AttributesSerialize",
+      "reason": "owned_art_appearance"
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/Body",
+      "property": "Transparency",
+      "reason": "owned_art_appearance"
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/Arms",
+      "property": "Transparency",
+      "reason": "owned_art_appearance"
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/Head",
+      "property": "Transparency",
+      "reason": "owned_art_appearance"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CaptureController",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornAppearance",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/MonsterPose",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "ServerScriptService/GameServer/Game/MonsterHunt",
+      "property": "Source",
+      "reason": "declared_source"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor"
+    }
+  ],
+  "reindexed_exporter_paths": 0,
+  "original_identities_classes_names_parents_exact": true,
+  "original_world_preserved_except_exact_art_transparency": true,
+  "original_sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+  "candidate_sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11",
+  "bytes": 1485712,
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.092066700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.105668200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "world_manifest_sha256": null,
+  "scope": "Exact engine bytes; retained world/Lighting/art/identities/parents/raw Terrain, 153 exact Sources, 291 closed-contract art nodes and narrow explicit transparency/variant/editor changes. First-save audit is incomplete until independent full new-node manifest review."
+}

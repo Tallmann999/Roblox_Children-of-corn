@@ -1,0 +1,1654 @@
+{
+  "passed": true,
+  "scope": "Read-only Git index bytes versus working files before commit; author scene bytes and frozen evidence preserved",
+  "staged_files_at_audit": 253,
+  "working_bytes": 320924312,
+  "exact_files": [
+    {
+      "path": ".artifacts/harvest-art-native-before.json",
+      "bytes": 14860,
+      "sha256": "2861eec123c067cd569d81683027054b5584643317d31ad37ec38248610a1609",
+      "index_blob": "7186e97322cdceac683fdb88dec71018e313e3ab",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/baseline-code.json",
+      "bytes": 21048,
+      "sha256": "8eac8b871883883d43428a00e4a76b3aab09a6b0e266e565e3979b6f524b388d",
+      "index_blob": "b6e505b39a0a5ebb49e7b0171a425efad8541202",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/fixture-report.json",
+      "bytes": 890,
+      "sha256": "98c564ed437a7cdfb272370362fc87d153df07a1872a1c24e5babb2ea5ae53d0",
+      "index_blob": "7f488efa32e504eb25a9d505d277f37b5eb4419d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/manifest.json",
+      "bytes": 1458,
+      "sha256": "89b1537197d2ef9d81f4c1e6f49c00442b6af7e5d8ef5c9a3a9fba54a8e2b338",
+      "index_blob": "c95b19da042b849149d586da1be45fb1c12be781",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/payload.json",
+      "bytes": 3441621,
+      "sha256": "0ab19ed60dd76e3440e1b08489092bc19b3bdb5e239de17723cdd0a743d491ec",
+      "index_blob": "dc08398af754f14baeff71e48f3b9fabce40633a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/read-baseline.luau",
+      "bytes": 1057,
+      "sha256": "ad2b584b4b88f2e05985656f96c6bff92bb3dcdfca37f4a0bf29aafe2b464401",
+      "index_blob": "e56340a841d6b061c10bb546de816d914aadc3af",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/harvest-install/transport-manifest.json",
+      "bytes": 3204,
+      "sha256": "c9c77241d0d4b08cfd05cf9be6a5b40b27f79d1fe1458f88c4826eda492633cd",
+      "index_blob": "7344d96d314ac54b85d7774a0a777684b6d3cff3",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/A-independent-world-review.json",
+      "bytes": 14718,
+      "sha256": "f114c82cebc7672cc28406caa80a4327ac1ad9e2129b976097c80304191d88ea",
+      "index_blob": "6ad62ad8468fe0ce7c147b97c42bf70b3815a6db",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/A-preservation.json",
+      "bytes": 4846,
+      "sha256": "84f0e441b855ed605ae42ebac40fa58ccd3b94c75d500797f76674794eacac93",
+      "index_blob": "146a33516d7ecb4122088f17725e11f71b72eefb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/A-world-manifest.json",
+      "bytes": 4163685,
+      "sha256": "226fe9428f9485030f009ad90cea68e43d560880f88d294acdfddb1f18c9818c",
+      "index_blob": "f19e2755ab6582465dbc3553423832f6cdeaab80",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/B-independent-world-review.json",
+      "bytes": 11272,
+      "sha256": "b0674351b364477eb8a68053f61471bdc49a41d0c1c7231f217f4bca4603f99e",
+      "index_blob": "e9498e90c70100c042e7e946ce87b749ffdbc30a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/B-preservation.json",
+      "bytes": 6295,
+      "sha256": "ded6941732e40fdedd10c7619cb6909f9994743c4d79ded006625ad4524b49cd",
+      "index_blob": "13d051967f71ada9f7015808ef16bfe86e2eaca4",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/B-review.json",
+      "bytes": 6234,
+      "sha256": "60ac4612dc125978319b6459eaba1680fd25a60cfdae1cd3dee1df8c22acd61d",
+      "index_blob": "c399bc1ff30fe0b59518bb7e6b23d2f4740be98a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/B-world-manifest.json",
+      "bytes": 4163685,
+      "sha256": "690eeb26c312b0e37bad87f220acb8a48cdeae58b6d48f5324c79be75fc5047f",
+      "index_blob": "318d9a8bb968304216f412085e2235bdc1449408",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-A-escape.json",
+      "bytes": 409,
+      "sha256": "e6336256ce137187249cf68c86f853066981a5f4d31822ee1b23ae543dd1ea0e",
+      "index_blob": "c042229635dbf17c7fd377e2485104c233254ddf",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-A-three.json",
+      "bytes": 993,
+      "sha256": "c3a8dc692dcb05be66b993381e306c63057658e6e6412f63bbbd804351a054a4",
+      "index_blob": "d4f2c7971a73a43618a5b906a4cdfb2cc6a2106f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-A-world-snapshot.json",
+      "bytes": 1327417,
+      "sha256": "52e63ff778bdcff4c6a08b656c15e57644858e07dd30453cbef65de7b8a4749e",
+      "index_blob": "32bf4136eb8efcb2756fd67ce054d2de961a4e57",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-capture.json",
+      "bytes": 833,
+      "sha256": "b77382b6f88affc420828677a108e7e86ddcd4866c24d22e3fad794365bd4a00",
+      "index_blob": "c6c6cf012b291b4bb4aa09a0720218f8c49b881c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-escape.json",
+      "bytes": 517,
+      "sha256": "35c2c3f84725fb3a721213675403f171279ea16403f367b95b11b3cb88c2b46b",
+      "index_blob": "70eca1d3dacde4078078108954485ab52ff32c54",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-one.json",
+      "bytes": 529,
+      "sha256": "930c83f81c8d93ed188e518cfad788b1c6e3cade7b32580d19a18936041e4337",
+      "index_blob": "ed78fa92e8707f42eba919ea0611268449aa2264",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-prepared.json",
+      "bytes": 378,
+      "sha256": "ea0331aea642d6fa8cfd0b81a0dca91ae2e12c3c59b85e6d8782da228e9803fb",
+      "index_blob": "b7dc39ec3d7b0740b471edb922cd7aa35774aa74",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-three.json",
+      "bytes": 992,
+      "sha256": "d7db626473d1fd17600c40e7791ef1ed1aaa66ca9b9985ee8d2107be4cff1114",
+      "index_blob": "c1baf7cbd5e28b4e657a415b6f438259f8344585",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-B-world-snapshot.json",
+      "bytes": 1327500,
+      "sha256": "6129867238b05a744865faacdf53b7131db01f0d1305c5607d4b6bdf1f2a34cf",
+      "index_blob": "fc51e1f71bdf31f6e61c54e958745e8ec25e11eb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-final-Edit.json",
+      "bytes": 413,
+      "sha256": "7042772bd075f786ba99d15632fd33172f09c8cf75dee361d5dfe2572c1318f7",
+      "index_blob": "2217c00d2b6769f97306f421f0ea5ef41989e8a4",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-geometry.json",
+      "bytes": 795,
+      "sha256": "4ceb05769c71b3f0c3922d68ec4871fb1a5195b153a300cd9f701d858726cf1a",
+      "index_blob": "74b9fc5967263aeb115cd4167965a549b58b5b07",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-source-install.json",
+      "bytes": 80,
+      "sha256": "4ced0c02c5287266a154565cc5269e0546517fdddf0e01bfbf0d92b9d68541be",
+      "index_blob": "6d6d8916b6c8981ae287844269aded426f0bccec",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/native-world-install-A.json",
+      "bytes": 322,
+      "sha256": "9b0833d5903384ac62b19b029076c37193b9e4698a748ba67085543412fb5936",
+      "index_blob": "cd89fbb684ce96b41ec7af79cf7254470610abff",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/saved-scenes.json",
+      "bytes": 1222,
+      "sha256": "620b1f83a07149561864a074a002e843a37b25ac44b8ec816837b90e3237fd59",
+      "index_blob": "2c2cdb9d14e14f8b17e675b2ba7321c170da5424",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-16-harvest-art/verifier-fixtures.json",
+      "bytes": 2656,
+      "sha256": "89a52f5566385bfe8f7e3df37998805eb908d038de2e98b2784932029f7ad127",
+      "index_blob": "b11fb4f0e37c33e54ddce77ff78282fc752cf233",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/catalog-manifest.json",
+      "bytes": 22072,
+      "sha256": "e0892014d78ba630401771102efc957de66fe5f7c1750130d651acad566defc9",
+      "index_blob": "17ee101a5da535f095f0f2b227b355c725ff4884",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/comparison.blend",
+      "bytes": 24043470,
+      "sha256": "cc96e563d5481bc72f5f4f1dca39dfd7cd8944e068fa704cadede2b5ca3bb791",
+      "index_blob": "7e8ff01af7f04a918a2c7397e0e712505e437571",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/corn-manifest.json",
+      "bytes": 19423,
+      "sha256": "5c7a32f88d61f5f2a13e2de3bd7e272a2071eca2e569222fd4d0f530c9fdff8a",
+      "index_blob": "6cf93f85b28e87802110dfbbef01a701a5d0a43c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/corn.blend",
+      "bytes": 3076133,
+      "sha256": "e842169947318779537036909f00d89206abd894e0fc7a1859f6b3ceb88d9060",
+      "index_blob": "f81acc198f1ddd8742b2893f39fa179bcea1237d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/environment-manifest.json",
+      "bytes": 28071,
+      "sha256": "d33cfe1122b1614da7d96402d7f29134f36696acd59edad0695ee2fe26b2e019",
+      "index_blob": "0051f14dcb496a8955f786677c245e098b8e74d0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/environment.blend",
+      "bytes": 7802496,
+      "sha256": "ee4fb6570c893a7d19fbf93abbe46bd3ce950c4799457f0462ccec4803c9eca4",
+      "index_blob": "f25942e62c84ddd7b8a91b3f427806ecfd28a042",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.fbx",
+      "bytes": 2967964,
+      "sha256": "19bc03064309564ddad175f4090f7815fb2b1e266ccc46f3845e14e0aa801428",
+      "index_blob": "3b270eb8e8a4fd5d32274c8b549a70152e4fb13f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.glb",
+      "bytes": 2951200,
+      "sha256": "7141f92e2b6308ee92087dbead8cf223810c4823857decc9df2132c99a7dd86f",
+      "index_blob": "4d4953ced7cfa8fe35e2fc43e6f2f1da921cf3cb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Far/Corn_A_Far.neutral.json",
+      "bytes": 42743,
+      "sha256": "0ca0bb1b8ec5cb3ff3f930a1bc768884c573b4da5aa0adc8901d3d76984c60f5",
+      "index_blob": "339696672af849b42ec1babccf5adb35839ffe0e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.fbx",
+      "bytes": 2973788,
+      "sha256": "c0308a4dc5215a8d8511282d324f709b757b12a8700cdb622196320eb05f3166",
+      "index_blob": "71121f950cfa623033013ffaae93a9cd0bf17ade",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.glb",
+      "bytes": 2957060,
+      "sha256": "104e986c960e33d46148d62aaff029a03f6234876f4c7ee8344e35b7a9391de9",
+      "index_blob": "3eaba9f412adc1061a3307f8bd56ec02d49aca7d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Mid/Corn_A_Mid.neutral.json",
+      "bytes": 117436,
+      "sha256": "22f65fb2ec07f886ab8279670b50a6a554acfba08b5fb54c5fd34c6cb9d0fa5d",
+      "index_blob": "242ddd536fb4edc86cfc4d1ab1b2c599eaa8a307",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.fbx",
+      "bytes": 3008700,
+      "sha256": "d879ec0042a37b18a1306de2253fadbabff02df03dc2eab433a09856e7c6cffd",
+      "index_blob": "430e63aed4d9b6b3c10a7b154f395c3064f8567b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.glb",
+      "bytes": 2990816,
+      "sha256": "7a05a80358f723b7ff17ad12fe13dd3371a38ad5260800ea55b73649bfe44fe7",
+      "index_blob": "63ff1628ebcfa5eef980ca085358db55a504fad2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_A_Near/Corn_A_Near.neutral.json",
+      "bytes": 594954,
+      "sha256": "5c8153308f3f34eed72cb41f5bde8a9044ee87fa5cfb1dd400aede3162abfbfd",
+      "index_blob": "a02dfe968f1bd8a81e55bfa6285b78f47638c0af",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.fbx",
+      "bytes": 2967948,
+      "sha256": "a878153121b6f1d9725e9a30e1834cd5aa5ff06e1d96dc221faa8c1d4f74fb6e",
+      "index_blob": "7d84cdc5a407a8d43e69f43d48a8aabff035a23b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.glb",
+      "bytes": 2951200,
+      "sha256": "1ea59ea00d21a6ece9992b92d08a64fd23a3f2d61d39eaf374c44f95fc11f8c9",
+      "index_blob": "6268b7f3baa322d391d67572a312f17551e1c0d1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Far/Corn_B_Far.neutral.json",
+      "bytes": 42649,
+      "sha256": "dfbdb6bc3a0bcf878433d46d7b5ff31885e5b19f23a536805d7fb9c79a2d72e3",
+      "index_blob": "4fd8bb58331a83d82d9f25387b52e094e695b4a1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.fbx",
+      "bytes": 2973804,
+      "sha256": "17e3c8ef66f7d7cb63ca49dc4e7e2baf07af109b438a7ac538be6844c7732be9",
+      "index_blob": "f5bd52ae39a9b0e3436bb6fb10f0b4c2eff443b7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.glb",
+      "bytes": 2957056,
+      "sha256": "4864c0f85d761fd2e565237936d690705a1a367869b9abb749a3fb896c6f523e",
+      "index_blob": "66c885b0da81854cc6809a9da4df7c2110f42aaa",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Mid/Corn_B_Mid.neutral.json",
+      "bytes": 117594,
+      "sha256": "166ad616e3afae2c363c8f7c80d29b059408f68fb236a9e5b1b02861706959ab",
+      "index_blob": "33add385c284a236df683ef92d44eb572f28a46b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.fbx",
+      "bytes": 3011676,
+      "sha256": "a2975d239d9d051e81d1a4ebf5d4084b16b2f28e3af3c5440b8be5ea44631742",
+      "index_blob": "dd6b5ebfa1e2c0f5bcea42f3127bd360ecc7b4db",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.glb",
+      "bytes": 2993640,
+      "sha256": "0e625723628ac4495f5b19581e4f9fe5687a49a0b8dfcfcf715358b937188d39",
+      "index_blob": "7d790551cc6a77b17f80bf4897b4023674352f1f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_B_Near/Corn_B_Near.neutral.json",
+      "bytes": 635746,
+      "sha256": "c03968054e45a7c4f11b30326fc47ba9449057335e701abf04977303223cf890",
+      "index_blob": "d00ffc9164d28f8856fbfd13ee8179423d5cc8bf",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.fbx",
+      "bytes": 2967964,
+      "sha256": "c23d3e7e8829f66654a09964e29ef9444f7df6da3f7f623bcc8f67c3653d0ee3",
+      "index_blob": "3ea9e99a83f5d96a561c2eef6fc9d8224957c626",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.glb",
+      "bytes": 2951200,
+      "sha256": "ba1b55af6c6690e13ae2dd08d4b6ed7a0c4fe73d9f9769ed03fe0b855fa4dd19",
+      "index_blob": "f8d1839b84a174c933b4b6fbf878af73018df303",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Far/Corn_C_Far.neutral.json",
+      "bytes": 42702,
+      "sha256": "d1b402b39947be342815e6af29cea6d03087bccf8e6b21f512fd0aa2532d6f72",
+      "index_blob": "97bc54d36652f0cf0d79064bdd75a3e41815b28b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.fbx",
+      "bytes": 2973756,
+      "sha256": "cd8c19dfc22a52f4189436116b6ded06c89159d94447ecbb05b35d3aabbf94d8",
+      "index_blob": "b7263efcdf551e94ef50cd6733d781b354a7a67a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.glb",
+      "bytes": 2957056,
+      "sha256": "b5fe787770390b99fbefb13f6cdd7116a7939a91f09049936637139e2d033477",
+      "index_blob": "9366f90cfb0d0eb92da2cb9bd62c8bf4e07e9b3f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Mid/Corn_C_Mid.neutral.json",
+      "bytes": 117767,
+      "sha256": "0fa43622add381ccd9e31058dbf924c2edee9c5c4c67f26f755f0985a495dcad",
+      "index_blob": "32c343ed1001453dbc88ba4351af95fa74837370",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.fbx",
+      "bytes": 3008700,
+      "sha256": "86822afb8d00c4653085b00d845498d9fcf07170ab86aeb26a7d87f91326101b",
+      "index_blob": "fe131e1c790e02d33a1dd18ac3e6f539f43e6908",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.glb",
+      "bytes": 2990816,
+      "sha256": "96b01c226b3f7614bedcb735eeba38bdd5fcc13ef3befd95f5ec754f4a895fc7",
+      "index_blob": "3e75f5f1f8d262b8d1df86ee6b2fc312ca3b980e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_C_Near/Corn_C_Near.neutral.json",
+      "bytes": 595094,
+      "sha256": "06b605c21ac4a8fa770c7457f6c56faed6340b3d634164bb510f3b1411ccd464",
+      "index_blob": "b8b67b215dbd626b45768955e2cc66e81a4eb6a1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.fbx",
+      "bytes": 2967932,
+      "sha256": "063de6a58c3c293792c2008dfac354207875ee9a8e7ba1c7dcade7edcde501b7",
+      "index_blob": "12d77e395656c5df1f4d11c259ad7b11dcd3b9fc",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.glb",
+      "bytes": 2951200,
+      "sha256": "f57b94bf088c63defb7f5460195e8f78bee2229b24989ad5493bd7bdb09a28e3",
+      "index_blob": "ac4129fe64e0153066b87eb4b4f1cb4523082026",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Far/Corn_D_Far.neutral.json",
+      "bytes": 42711,
+      "sha256": "7373bd2c237b3c792d50172067da6041ea2d83fcfc7a87c8eb8a68059378a35a",
+      "index_blob": "f41df89031dcf494bf45d702831b0f787dc18315",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.fbx",
+      "bytes": 2973724,
+      "sha256": "47cb690870288d340bd29fc0b897e787ae555373e8a56769a80f0c8df6593701",
+      "index_blob": "b4b8d4991a9b8354b7493ab675a03a65981ccc70",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.glb",
+      "bytes": 2957060,
+      "sha256": "0e6605707498ccf26fc5c445cf1aeb20ff78488bee11938d514e9ca680e65abe",
+      "index_blob": "d96375f52d983c12105cc2ce3fbdce0cd5823f2f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Mid/Corn_D_Mid.neutral.json",
+      "bytes": 117312,
+      "sha256": "eb32196684f66b38a89605fe0705f9ccfce48c8502fe9f83e018c8bf639bf426",
+      "index_blob": "fa1584db18a7ce82d2871676d031293e01e116e3",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.fbx",
+      "bytes": 3011484,
+      "sha256": "c4d25b27b53c24f287a2c28dc2d118c4303bb8ee19f681be4a4d673141a9f482",
+      "index_blob": "4421fec39b15ac120a1779e07bde4c75f6a8550c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.glb",
+      "bytes": 2993644,
+      "sha256": "8d5a9e95d4ae7983d809adb30cd6d514843ab7695cf031e6ec8f55e42bed9c1d",
+      "index_blob": "2ff56aee5d2f636052789ae858d72901e07c422e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/corn/Corn_D_Near/Corn_D_Near.neutral.json",
+      "bytes": 635365,
+      "sha256": "770a8aa39d699f588a4882f15d5b2edf1069714b582681f0c1ee5f99a64f8f14",
+      "index_blob": "924e8905d77e4c51068df49d7a80adba7a258f1d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.fbx",
+      "bytes": 3620732,
+      "sha256": "b10e9e2dab3b1553f6ea8f0ad8721daf133416ebd8c801f1a9271dccd0b19d78",
+      "index_blob": "a45fa9547d50cfb8eacddf89943f0e117cf374c7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_DoorLeaves_Optional/BarnDark_DoorLeaves_Optional.glb",
+      "bytes": 3662500,
+      "sha256": "7306b1494195c4ca8bd2b206c3fc3487a5a8fb02fd9837b52d897054987da69f",
+      "index_blob": "46cb1387beb628476ced33828159f2b140cc645b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_Open/BarnDark_Open.fbx",
+      "bytes": 3771132,
+      "sha256": "063b43aa04557b942ec8a16a06f23eebcb3e44747de9900e186e7f0ea8f8b811",
+      "index_blob": "266df30452605dc7d18d102aa79217eb925df46c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/BarnDark_Open/BarnDark_Open.glb",
+      "bytes": 4067960,
+      "sha256": "f0766637d5f5232f8f738e6d194f9839e4fab81958799db1e25d6341bd8f9e48",
+      "index_blob": "865733c4b77364446fac808412dcde7cebe2508a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_01/Fence_01.fbx",
+      "bytes": 3590268,
+      "sha256": "02084c5968c2996b1c666ac8fe224f73c0ab9954d4ffe82362e0708ae9c99137",
+      "index_blob": "b8abf9e90da41a11766dc4ae9387dc7ad86c43c1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_01/Fence_01.glb",
+      "bytes": 3569480,
+      "sha256": "115399acf26508ee7abab3ed42b86a50093aa47c579f07d6a31cb9b79b0acc4b",
+      "index_blob": "1cb8359caf6aec3bcf8f04ddc41eed11b64e8164",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_02/Fence_02.fbx",
+      "bytes": 3595356,
+      "sha256": "e15bc2a8a66d1f08b2896c994e60f328d00745d9812c499f3fa5de5078bc9195",
+      "index_blob": "7762d0867f74ccdf538acab5da7ad304ae200a80",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_02/Fence_02.glb",
+      "bytes": 3573148,
+      "sha256": "3b50896f77e74be6ab22869feaffb909affdbf5d294b8fedce535ca78fd18baf",
+      "index_blob": "99bd5a109a691ce0297cbd613e56e2abb1b3026f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_03/Fence_03.fbx",
+      "bytes": 3590668,
+      "sha256": "f56ec2592c7ca8b1dd5f19709fa3c12854b138e171c4aafe1afb6609720ee492",
+      "index_blob": "bf60dc27709ccadec7deda051ac7059750bf48a7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Fence_03/Fence_03.glb",
+      "bytes": 3569488,
+      "sha256": "19d7836a302df8ea3d36747f6caa4fcf4a973981f10651667e568696c6b0df2e",
+      "index_blob": "7e7bed09994a6eb4532e00e9548071822e9bede0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Ground_Tile_8/Ground_Tile_8.fbx",
+      "bytes": 4216892,
+      "sha256": "1faca052ac957c93f6d6b6a7bd2909aa21151450320083c611875f8b712ecbc2",
+      "index_blob": "ece49abda93e8fa4cfe9d13c403a2bf6c6924fd9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Ground_Tile_8/Ground_Tile_8.glb",
+      "bytes": 4199276,
+      "sha256": "3042126d8d5187443d1ba2fd94b52f60f0c7fe63708d144c29c48c1e5817c2cc",
+      "index_blob": "be41a9fb0ef8ad7aa3dfe13acc5fcb3d2c88e9b2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Path_Tile_8/Path_Tile_8.fbx",
+      "bytes": 4224860,
+      "sha256": "919cb1599f94d8e344748b4e2af9a46ab7a5c44ca23aae303882f1cd1848f5d5",
+      "index_blob": "79f80faad7106a6eca895226a0a8bb11cd96f454",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Path_Tile_8/Path_Tile_8.glb",
+      "bytes": 4201992,
+      "sha256": "02598dca90f94bbee96a65d55b9ee8524b6d766e6d4f1a5f6c4324e3b693b2d5",
+      "index_blob": "df673acbfdf64423ed1b0f018d8b481b23b566e4",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_01/Rock_01.fbx",
+      "bytes": 4219708,
+      "sha256": "22101f137ee4ac0ae84a6e5ad04cac7ca7a619ebfe3e917d8d7d772d43845658",
+      "index_blob": "7f7bcea09942f8deaaae1298d084666af5fdb90b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_01/Rock_01.glb",
+      "bytes": 4206820,
+      "sha256": "86315d7dc17bdc467220782d14417cff1ed9d3cd5079baf0cb0bbf6309f3b212",
+      "index_blob": "29682f276ff3673beecc5f81fb20ca3673061cb3",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_02/Rock_02.fbx",
+      "bytes": 4219724,
+      "sha256": "0e54b52873a812c843dfdc5e0d6185567594866cf60f49608be5c8f5999a84dc",
+      "index_blob": "1c95f865cf2cf692f6fcaf6125fcdcdf2298b375",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_02/Rock_02.glb",
+      "bytes": 4206820,
+      "sha256": "03a6efd146d46c4eb5935844d05431323800e5eb74ab1feaef6df42558bd410f",
+      "index_blob": "faf969adb643e7bf2f4f51cb4f149bd84f607ee8",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_03/Rock_03.fbx",
+      "bytes": 4219740,
+      "sha256": "5bb7d25b3b40c5013a9faac30b948990cc8cfc04572f1196e56284ae0b30fc62",
+      "index_blob": "3581bfcdc85a807a67ac369ffe5d3e52c6cec78d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_03/Rock_03.glb",
+      "bytes": 4206884,
+      "sha256": "06113d4f48ffd6d046a6b3fa7cfb290dc34d0a1ef11850f60295020172d56658",
+      "index_blob": "a092715ec0acae5ef2af051713d92e0fce1a657f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_04/Rock_04.fbx",
+      "bytes": 4219708,
+      "sha256": "29027de5c31328ec6744a9be48268a7a8da16c86e1634792652392142d83e979",
+      "index_blob": "ed928d5c13bbe3c996121a327a40c1f7dddde2c4",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_04/Rock_04.glb",
+      "bytes": 4206756,
+      "sha256": "e434858153977e8523021f5faeac1b3eb38a23b76245760cc11e0c0607fc1965",
+      "index_blob": "6daf7889c2571b2db9c902f7c12279b9fff0a3a9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_05/Rock_05.fbx",
+      "bytes": 4219772,
+      "sha256": "9a4a7a6c44a51cbbd74f024f8c683e5499e60a4e92b928f4c5707a032389ff9a",
+      "index_blob": "c2dbcf67edc6ea020ea828bdb69ea5c7568288d3",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/environment/Rock_05/Rock_05.glb",
+      "bytes": 4206948,
+      "sha256": "5030e8849af377f9030b2238cf98972d52359b7ef164af7fa4e31b550e41cb88",
+      "index_blob": "e0d15b200183bff5794e1219007f7781c67ed0ee",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/HarvestWarden.fbx",
+      "bytes": 11036204,
+      "sha256": "006f83c1eb2f15e757c45a0afa8dec4125f20bae0514f40d19f5987bf0d00657",
+      "index_blob": "44d4978bf060f961da90aaa47a8108f02ab1d19b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/HarvestWarden.glb",
+      "bytes": 11166616,
+      "sha256": "eb0d9ca09ce763db3da7d75fc852d5131e90a0eed736ef05b08432b014517e54",
+      "index_blob": "2a49faeba04fa348cc963d5c0f67b41c2cc9f8d1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Capture.fbx",
+      "bytes": 92476,
+      "sha256": "954c9fc835a044efd786d021c733f923b9eef3fe1b302d488b7ea13c76e53acc",
+      "index_blob": "116d8304f7edcd7c1b38e2c749a200e421c526f7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Chase.fbx",
+      "bytes": 96540,
+      "sha256": "5d52559fe55d9884423311466b4e27a8d9cfacdb638a1a2d9c7a524f3735bf81",
+      "index_blob": "bd6aedbd6569a1c6982fa0183a54253bef7d362e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Idle.fbx",
+      "bytes": 123276,
+      "sha256": "05422c9623ce492c1dfd2bc0f5d70b19eb3ed621b7819d2e102874aee0831d0b",
+      "index_blob": "7bd6b26db646d6216bde9dd53ed0b7272a6558b6",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Trapped.fbx",
+      "bytes": 104652,
+      "sha256": "8beb009dcf1ff874efbdfdd52153c3005f13f6d218d486af4b6a8cbfa4cb8b03",
+      "index_blob": "74c0c924c6dce7d73b9cdc01bbb0b469fbea3658",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/animations/Walk.fbx",
+      "bytes": 97628,
+      "sha256": "37e5e29d9216a20f5dfef6155f4badb0c1a50eb33add0f2aefc4e52b89f7f745",
+      "index_blob": "e6270b8099f386dc5b509f83d6612625ac7baac7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/classic/mesh-data.json",
+      "bytes": 185962,
+      "sha256": "1e96c093baa0ac9be67f28361f6aaec5e36954456ec7c30d782e06e2660a0024",
+      "index_blob": "766344f30ca9b7a0ebce04480bdafa323177a5bf",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/HarvestWarden.fbx",
+      "bytes": 11097868,
+      "sha256": "b845ba35ca0774a84ed3bce71cd4ee3bce6769f7510af61150f4d4d6a0111d3c",
+      "index_blob": "e9c494fee03c054195939c9432ee405016a96bbb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/HarvestWarden.glb",
+      "bytes": 11463792,
+      "sha256": "534d2f1f67cab3bd4cabd98132930f12599a4955f55663ed7a8e3aa2338f3306",
+      "index_blob": "04dbbf52064c6021139ae25bb73f485df1018fe6",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Capture.fbx",
+      "bytes": 92476,
+      "sha256": "0abecc1d1628d627dd8e06d29f8653ff6d31a78a5c4a39f6ba8296ad2680f702",
+      "index_blob": "a36faffcfbef4a704e8d58a35e3516f7765d686a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Chase.fbx",
+      "bytes": 96540,
+      "sha256": "8d873380f9b42a0e469a6dc3b9e9f0b20f1e0183588de96ec948a11326c1d068",
+      "index_blob": "d6b8e047722b2b9adaffbc7e0cb94415a638dc10",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Idle.fbx",
+      "bytes": 123276,
+      "sha256": "bfbbdff677c7b32c3063f0c0f2c11d9afab54a7ad8912234de84ae41a3cbe3dd",
+      "index_blob": "7b3353bf37d8e9c487f06cc295e98cb32f6b21bf",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Trapped.fbx",
+      "bytes": 104652,
+      "sha256": "a131b362a6e705a418b573bc9d331080fea41122151065efa14f5735e6ad204d",
+      "index_blob": "83edbbdafedf0d3ad3bc918692cdf8ae07381ab7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/animations/Walk.fbx",
+      "bytes": 97628,
+      "sha256": "053d52c57fe76c561fb2698162174338bc4f60a1662c130619c84bb62da4e4b9",
+      "index_blob": "400c9a7ed65ca34e256b13086f909129d871b406",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/exports/warden/detailed/mesh-data.json",
+      "bytes": 395676,
+      "sha256": "09024cc70d89c0d371b34eaac533ee7188b1489dcc22ca1e6903f872b957ef24",
+      "index_blob": "50f1bbe373650c1e2204d5ab53ca8cf20ae5ed6f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/corn-detail.png",
+      "bytes": 1911062,
+      "sha256": "ccc32d4975549ce887b7fceaa0620cb023c338e54e37bd2264c46ecc0176f1cf",
+      "index_blob": "6a71322a4b8033d75db00b6f36a042cfd907746b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/corn-gallery.png",
+      "bytes": 2390627,
+      "sha256": "37b96757b3c31b593da8933a85acc1b9b2056a850e37d4471cb67ec78035ac71",
+      "index_blob": "c3b7aadda003db934dcb7f6dbb2ac3dd909fefb7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/environment-barn-dark.png",
+      "bytes": 1378002,
+      "sha256": "aef58aed2d41d4d0c5a8492259dca4042350dc6e9fba616cbef0e1c06c38cd62",
+      "index_blob": "04125a494311f12f8147f65ce8f19fecf0927d9c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/environment-overview.png",
+      "bytes": 1451395,
+      "sha256": "71edf2e64296bf39daac77d943536fc521d76004c0a71e637f0555355d4cf20f",
+      "index_blob": "5ccf9516ccd46a8406cb5221595dedff178e991f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/variant-a.png",
+      "bytes": 1440337,
+      "sha256": "2d692d469d24fcd8898cb46b0795a9bc4070ea22f95eed030dfc23f886175942",
+      "index_blob": "d10bdb19ebfe0cc030005509b2c03913a64b21ec",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/variant-b.png",
+      "bytes": 1672937,
+      "sha256": "14309971f8c759aced5357570c1fba5d24d036393205f3fb52d174f1010217e6",
+      "index_blob": "ff77b6c428cd00a79e2236b991fa8985f6a8c886",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/warden_classic.png",
+      "bytes": 2030955,
+      "sha256": "8c9f0a19024974ff4544075b2784c810d1e8ecc6d6a5c1029bd59fc59e315886",
+      "index_blob": "f2245f2b18f1a8198883cc9ea72616988042dc16",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/previews/warden_detailed.png",
+      "bytes": 2053067,
+      "sha256": "1883b30f315e14f2c362de1debd463ef75ebd394278eca600e01a0501f56afc8",
+      "index_blob": "e8cbdf222d785ae42ce5f3b0baf8494a3f4ddb29",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/roblox-catalog.json",
+      "bytes": 3195474,
+      "sha256": "b9448ca01dd10b4579d44ba4efad427edd7e4f7ced466fb68144d5f22651dbd0",
+      "index_blob": "1cfe32bcc4925f49f54afb274df5e83f53d26eeb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/roblox-textures.json",
+      "bytes": 471,
+      "sha256": "b65be241f1a4c069b0ad5b379831d7199d72d1dd07adcef98d7ae483abdbb4f3",
+      "index_blob": "420b21e13c562e1340943e5f18308407a30b6858",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/showcase-manifest.json",
+      "bytes": 3402,
+      "sha256": "ec07ac0c92ceabb6a36f063526f8c0a79b3bdf69bba37721425e16fa5a1e88cc",
+      "index_blob": "4ce88fb08517ba70c934b21b7819704b7e49b23a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/barn_wood_dark.png",
+      "bytes": 3543575,
+      "sha256": "21f3386e6d83d3368238eaf679c669d4e6581bc8a86efb6310a3f1c2683d0e63",
+      "index_blob": "bf82b0bf9abb49b3510dff98f07bfceb67f9b87a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/burlap.png",
+      "bytes": 3908912,
+      "sha256": "16585e27234fba7911498404127638319c33317ac1f0c9a3d661a1989617f4ab",
+      "index_blob": "4c39a95b0aed3c835fcf22ac8b6a36c1d241651f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/coat_canvas.png",
+      "bytes": 3975658,
+      "sha256": "55ff793d0bd9419d893ff7cca122e11719da11bb6fe9e0f083c76cdf3981062a",
+      "index_blob": "7d380d53576c0e4800dbf38a0109595962d02ace",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/corn_leaf_dry.png",
+      "bytes": 2944826,
+      "sha256": "a1091f12ac1e726bc77e0fdfde8a7946c03b49e90f4a2667f099386906934790",
+      "index_blob": "d82607b7cdcfa6e2fae085806bf8296adbccb695",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/prompts.json",
+      "bytes": 8361,
+      "sha256": "3b1e055aa2fe2564b8c2fe260e8c7d938b305d44262df91b08e91de59be608bb",
+      "index_blob": "cef104b20bf28e1ededf3e971087929aa3c052e8",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/textures/soil_gravel.png",
+      "bytes": 4197463,
+      "sha256": "7c45bbf71a223643e461e2d2c132621d49c8f6479f54d249527db5424eaaa479",
+      "index_blob": "d79e8733d0083d87c220dc7b56b9c0775e16445c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/validation.json",
+      "bytes": 125219,
+      "sha256": "0a0abf7a77f687f14584f60465a1743c1e22488fe928294b72f22d88719a6ac8",
+      "index_blob": "46a25541431205d2b36698b2809c2b5e207f2439",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/warden-manifest.json",
+      "bytes": 9633,
+      "sha256": "1a06e6aa69db7c4129d7d440367da22c1351182aa824b43931051766cd32c9aa",
+      "index_blob": "43ec33f66d5a448bcfeeace77cff2a04a511e4e1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "assets/harvest-warden/warden.blend",
+      "bytes": 10753615,
+      "sha256": "70e2c14e02b18217aaec1cef79e65c3ecde8d694d44c9de09793261bdc171071",
+      "index_blob": "41869916bdd6ad1c518de4cbf26803d639604ed6",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "place/Children_of_corn.before-harvest-art-20261016.rbxl",
+      "bytes": 1003371,
+      "sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646",
+      "index_blob": "3caf7a84676cdbfc37192c72b85b5ace0b45aba8",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 1485712,
+      "sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11",
+      "index_blob": "b15272a1d3c11daab518a28a15e6735de90b910e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "place/Children_of_corn_B.rbxl",
+      "bytes": 1485700,
+      "sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+      "index_blob": "8ecfcf78f0759fbffe8eb29c3eb2fd3c70ffbd86",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "scripts/install-harvest-direct.luau",
+      "bytes": 6890,
+      "sha256": "d688ef53cc8126bd234154cf4f15e0548e8a8924a1d3ad4425a64a2d3a9062e9",
+      "index_blob": "1dd906edcdd97291c4b2e6091101487d888987a2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "scripts/install-harvest-staged.luau",
+      "bytes": 8101,
+      "sha256": "9b341f2ea705f4eb98edb751ea6eb14361842dcff5f438c195aa1b400da96441",
+      "index_blob": "a93d465ff2e54e5b1d769b20271730d8157cbdc8",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "scripts/install-harvest.luau",
+      "bytes": 7590,
+      "sha256": "70034a3c554729a5c9caeb55db182d936e424bafc0568d3204fbf82df4967d1b",
+      "index_blob": "ab592666b871f38e9f90d676c8d1376b8fc6f9db",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "scripts/read-harvest-world-layout.luau",
+      "bytes": 956,
+      "sha256": "519126bf4779c845b06e17d731421e4ebf7e0e06408a42ff2825cb8c9cdbf4fa",
+      "index_blob": "bed4d6e1b04339d27b7a7c5855fd6fdb28ed5cdd",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "scripts/verify-harvest-copy.py",
+      "bytes": 32998,
+      "sha256": "436034c6ac62e20373f56207828713c3154c54515aaa72d8e2b7913b47ee294f",
+      "index_blob": "6c45222a689bc44c0be4d59caec2b95569c2c5e7",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/CaptureController.luau",
+      "bytes": 18831,
+      "sha256": "b69af0dd7203fda8dd990a369be2f6ec70cf6f59318fbf39fd8314b816e6fb02",
+      "index_blob": "07b1784c8da2577b9e362d0ac3aa785c344996c9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/CornAppearanceController.luau",
+      "bytes": 6800,
+      "sha256": "dba66998d988c11abfca55772e9f001a144f8fbae5e9ad92636f6ed7085776a6",
+      "index_blob": "e80f1bb0f3b6883e2db4abe6b6372354b69e2bfb",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/CornBackdropController.luau",
+      "bytes": 13095,
+      "sha256": "eb7b799fb5fd49f298dfa00f733679640c7612c3c09672eab83077ce608a1e07",
+      "index_blob": "355b3781ca706778dbb52e6102c973cc7b172a1a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/CornController.luau",
+      "bytes": 24753,
+      "sha256": "b7080a9e84a282eef6852a7e33f63784ec0729bfb410583093c92cfc549885cd",
+      "index_blob": "f5ea1525823dab31426c6ce2c94fc7480b9996e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/HarvestGeometryController.luau",
+      "bytes": 5153,
+      "sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592",
+      "index_blob": "93e5d59c360072f6e5e0edcbbd71a28f35c4cba9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/client/Controllers/MonsterAnimationController.luau",
+      "bytes": 14080,
+      "sha256": "e5f0684f8d0340c1fae3ca46ef2605c7a4f7f1fc326ac994caeffc28863fe071",
+      "index_blob": "e0173bd2636ec940d27c09d09929083f883ced5f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/server/Game/HarvestWorld.luau",
+      "bytes": 24139,
+      "sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04",
+      "index_blob": "6eb8260a854830704042f7d21715701d0e101c8a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/server/Game/MonsterHunt.luau",
+      "bytes": 17501,
+      "sha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db",
+      "index_blob": "3957ead9407b6c93a787a26093a3b2f6d6a9fb29",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/server/Services/HarvestArtService.luau",
+      "bytes": 625,
+      "sha256": "378a25d4372ad78099c26627447d60a32f6767e98367ae02533651c32221126b",
+      "index_blob": "dbebfcab17086bfa742faf81e69c7a10a1fdb26f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/CornAppearance.luau",
+      "bytes": 3608,
+      "sha256": "86f80a376b3aae34c910156e5c0d192cb708b7c6c2540c049587c304226d7a5f",
+      "index_blob": "15ee4755688c66cb710fd35f2e298e5ad5bff0c9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestArtGeometry.luau",
+      "bytes": 11483,
+      "sha256": "f357f2f6229c1d7e560e25eae68014298a1a3c18649b494df021e4e46df5feb2",
+      "index_blob": "f156dcf74b4d52eacd48edc1dd274626803c3495",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e",
+      "index_blob": "3fd4c50d5e59117bbdf44917f57b06d1f2def74d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670",
+      "index_blob": "3f540b76ad41f43206d1309ec9270f8cff6d7f54",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk03.luau",
+      "bytes": 135000,
+      "sha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1",
+      "index_blob": "50201042ae9171f7682a5d3e9808ac9d14b2b5ef",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk04.luau",
+      "bytes": 135000,
+      "sha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19",
+      "index_blob": "b381a33cb952267bf18dfd184880a4b3e8887053",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk05.luau",
+      "bytes": 135000,
+      "sha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0",
+      "index_blob": "ad81a9e77cc4aedea57510574986bc5014eea979",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk06.luau",
+      "bytes": 135000,
+      "sha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111",
+      "index_blob": "4d682140141c559dda836640ba0a9924cb97ccf8",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk07.luau",
+      "bytes": 135000,
+      "sha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8",
+      "index_blob": "bdc8f814a8f0fd7f7c539081eec5b71e29136a85",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk08.luau",
+      "bytes": 135000,
+      "sha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6",
+      "index_blob": "4c626f07d9b0f5515e11226ce40fc09955f5b1c3",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk09.luau",
+      "bytes": 135000,
+      "sha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b",
+      "index_blob": "be36caf6caed5b7ff9633d31074efd8aa379200f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk10.luau",
+      "bytes": 11620,
+      "sha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb",
+      "index_blob": "65e4c5a9f90b59753eb161ac0ebd6645605c2eb2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/init.luau",
+      "bytes": 370,
+      "sha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b",
+      "index_blob": "16911035786bffb8f9a360f72592774f584e7270",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Chunk01.luau",
+      "bytes": 4183,
+      "sha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e",
+      "index_blob": "326b006a8d469d87912b3a8a327dd31438537b85",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Far/Chunk01.luau",
+      "bytes": 10177,
+      "sha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76",
+      "index_blob": "ba29728769af17e7297665355f4a7a92eafd7c9b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Mid/Chunk01.luau",
+      "bytes": 23161,
+      "sha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd",
+      "index_blob": "8a646ef224b6403e67f5a56f1742abc288edc3ec",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Near/Chunk01.luau",
+      "bytes": 101271,
+      "sha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800",
+      "index_blob": "b664ca4975eb215d010727482e74db3917604832",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Far/Chunk01.luau",
+      "bytes": 10225,
+      "sha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492",
+      "index_blob": "c1dda340e5f166cc12fa988d4b8fb7c86b906ca2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Mid/Chunk01.luau",
+      "bytes": 23362,
+      "sha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640",
+      "index_blob": "ad83ebdd8a60c399337755397a989ffd9cc29685",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Near/Chunk01.luau",
+      "bytes": 108363,
+      "sha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c",
+      "index_blob": "264c8551b233b8d23c9bef09d2d06faeb2c8f380",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Far/Chunk01.luau",
+      "bytes": 10310,
+      "sha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf",
+      "index_blob": "588e66559325521efcf06566db2c702e73d8f6d6",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Mid/Chunk01.luau",
+      "bytes": 23579,
+      "sha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c",
+      "index_blob": "6940350d8bdb9289acb6037b983b6813ef6854ae",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Near/Chunk01.luau",
+      "bytes": 102197,
+      "sha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581",
+      "index_blob": "86c662510e8ca3babfc9cd1b9ea4f67e429531e4",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Far/Chunk01.luau",
+      "bytes": 10103,
+      "sha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736",
+      "index_blob": "c24f0ca85e925daef76f7590709b7d639a741932",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Mid/Chunk01.luau",
+      "bytes": 23212,
+      "sha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75",
+      "index_blob": "a67e1d6a40c19e2650dc762f5d75dc7b42928974",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Near/Chunk01.luau",
+      "bytes": 108276,
+      "sha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33",
+      "index_blob": "89ff1c5f0f3bf4ff8310c1e4f7a482a86f03b4c5",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_01/Chunk01.luau",
+      "bytes": 42920,
+      "sha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee",
+      "index_blob": "c3941b742471ccfd5012f654cbe9449b84c8035a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_01/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_02/Chunk01.luau",
+      "bytes": 50509,
+      "sha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f",
+      "index_blob": "8f3534905349f1ae4804625b6ed41c0da2d5c578",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_02/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_03/Chunk01.luau",
+      "bytes": 43897,
+      "sha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119",
+      "index_blob": "fab63ecff858a6ccc697782c3700e04883203bfc",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_03/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Ground_Tile_8/Chunk01.luau",
+      "bytes": 625,
+      "sha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685",
+      "index_blob": "7d4ea5a600d7781288ad6c4dddf7edb0d0abd734",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Ground_Tile_8/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Path_Tile_8/Chunk01.luau",
+      "bytes": 2786,
+      "sha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048",
+      "index_blob": "3d8e1be90b1bea1390091abceff9485def2103b5",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Path_Tile_8/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_01/Chunk01.luau",
+      "bytes": 18436,
+      "sha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e",
+      "index_blob": "07ca09ebfd433ac78619116f52f1d37de5effaa1",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_01/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_02/Chunk01.luau",
+      "bytes": 18440,
+      "sha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13",
+      "index_blob": "9d4bd1b1b9ff49f350b64b4852b4dc52613032f9",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_02/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_03/Chunk01.luau",
+      "bytes": 18562,
+      "sha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a",
+      "index_blob": "052de8519204b1e360d3b2e6573bcf6221fd5595",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_03/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_04/Chunk01.luau",
+      "bytes": 18199,
+      "sha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c",
+      "index_blob": "0960a75d1fd14b20a85daabb84364f4276cd8f09",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_04/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_05/Chunk01.luau",
+      "bytes": 18896,
+      "sha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6",
+      "index_blob": "2eaeeb0186c59f7019604f1b768d216962112c7f",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_05/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a",
+      "index_blob": "d23f02949c50d4c4f06970ffb7399401a479832c",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b",
+      "index_blob": "0d91153ee9f5268fbd5efbf233fcae9151a665e2",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk03.luau",
+      "bytes": 110536,
+      "sha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2",
+      "index_blob": "b88c1c656c3cd5727ea0d748577ba3840c45223b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/init.luau",
+      "bytes": 270,
+      "sha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b",
+      "index_blob": "64b32fcb92baea3710d4c196901fbf25a534455a",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061",
+      "index_blob": "f8e0e91f17ef4fa7d70142a74299a9f3bcf08f38",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf",
+      "index_blob": "1ab74144b9c6bcea0ae8014cf4a944e1b8c9d985",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk03.luau",
+      "bytes": 135000,
+      "sha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c",
+      "index_blob": "43566e16b788da0cac160860eb148a3fd12a3b61",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk04.luau",
+      "bytes": 135000,
+      "sha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf",
+      "index_blob": "44206eb0ca58c3ad8e16de4b74e92fd33d4b8f66",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk05.luau",
+      "bytes": 135000,
+      "sha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d",
+      "index_blob": "877e0ef9bf86a31d3e1af929a22d0cd8bd4ed879",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk06.luau",
+      "bytes": 125319,
+      "sha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7",
+      "index_blob": "e8a4d9af3e73fe9517cc0c6f3f5562bb96b4844e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/init.luau",
+      "bytes": 303,
+      "sha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a",
+      "index_blob": "74db62ae9a6fdcce18f217c8816d9e2cd31fa146",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "index_blob": "839e45019780f8022cf4d9d773333b8bde9483e0",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/HarvestWardenVisual.luau",
+      "bytes": 6264,
+      "sha256": "0f5bd4b23cfabc5ffe4683002404a4a057160ac121399e65641ac8689ef00db1",
+      "index_blob": "7948ce6260f30c3efa825b1821b8046700fb01aa",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "src/shared/Game/MonsterPose.luau",
+      "bytes": 6941,
+      "sha256": "893f91c4a079c65d36aca00b41f65ecd45c1fc43e4c1b150e40fa0dc3176cc9e",
+      "index_blob": "960e1e505580d0032a74ed70ae994a9702b83b6e",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-art-geometry.luau",
+      "bytes": 22159,
+      "sha256": "c9e6361c0fa090f6b360dfd6ceb041e2b417636de5ecd322f5df317a8001f1b8",
+      "index_blob": "29a74b3903f0fc6c1c07262ecd28d8429cdc8407",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-copy-verifier.py",
+      "bytes": 13895,
+      "sha256": "b7999825a0067a5b3b3961278f1f6423f5a3b8e86060b8f4812d566aacba456a",
+      "index_blob": "a42e3d5d30102173dc745a00f815c93a3d78e69d",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-corn.luau",
+      "bytes": 13563,
+      "sha256": "cd23be619e2cd3ad623429ffa3053bf5ff0b0b83b4f0f0b56af1130ef17523e0",
+      "index_blob": "999fc160f12f95329bb30a7f67f408536918b258",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-geometry-controller.luau",
+      "bytes": 5489,
+      "sha256": "6df529be35b144c60453c7847bf026d49a0067db65dc1d4969486de6166dc6e9",
+      "index_blob": "3c36f450731f078344f14a314b58edee20179156",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-installer-http.luau",
+      "bytes": 1688,
+      "sha256": "b63f0f0b7bbc493a444543105dc50293728af989c6e0dde0b13ff13563e1c8b7",
+      "index_blob": "2500d784a5b9609c84345b9fe9435919f6436287",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-installer.luau",
+      "bytes": 9550,
+      "sha256": "04dd8f4fd7088c6f03ad9584e619c2dbc60e6ed246e78d96f5e6b5b250c177a0",
+      "index_blob": "c8ea1cb5ffcee26dbc6d4c53caec9b94c0119b33",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-warden-animation.luau",
+      "bytes": 5620,
+      "sha256": "022bb1f0530043e979b64c0ea57819bff91cacf5233deec64b241f9e0bb5234a",
+      "index_blob": "83b02822cae37384c0ad6c58733fd26161b21b68",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-warden-capture.luau",
+      "bytes": 3864,
+      "sha256": "29e87553e45cee8fae5a57f65e56c9063c71c24db2564becc1850db9e1ca9367",
+      "index_blob": "f66ea132b3bab33004c66c4f929298a85038f430",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-warden-pose.luau",
+      "bytes": 3728,
+      "sha256": "8b212647819f0894076ae5927d65bcbde55c6d10bb1dc045cae9102d374960bf",
+      "index_blob": "e54855f744dcfcefdcd4ccc3c77069e99fda9141",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-warden-server.luau",
+      "bytes": 4534,
+      "sha256": "89473d953aec098489c1d85aee7b9fea4ec2d522cfeba18f5e7efe9ccbe0e866",
+      "index_blob": "a189087fdeace789a0c48eeef7a7ef934a517869",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-warden-visual.luau",
+      "bytes": 6816,
+      "sha256": "a9452a77b263a520bab8ed6338cdf0afccdb5ba1fb75602596ffc04197d1e753",
+      "index_blob": "2b9cb9813f0527d9b3030d1100ff142f80fea3e6",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/harvest-world.luau",
+      "bytes": 11156,
+      "sha256": "acff6edc9edc7c9c5f9f4d9a2070f8a7eb18d7276dd9a6de3d1c660801609c34",
+      "index_blob": "8dca449e7c17a5461efc85a05837aa7466e2592b",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/studio-harvest-prompt.luau",
+      "bytes": 2332,
+      "sha256": "7cadd8bc1bc7aa79d1636b3659e639c2a736c9a648506a8f24a9faa38f1d0352",
+      "index_blob": "c0e472225bf7e50ec110242163764c81361ea9fa",
+      "exact_raw_bytes": true
+    },
+    {
+      "path": "tests/studio-harvest-warden-observer.luau",
+      "bytes": 6169,
+      "sha256": "b1e3b27281473f997cd5c931187c95606abecff337375fb44a33c68fa01c8634",
+      "index_blob": "e2358c9167e7ee0e9404070249696cf46b2055f4",
+      "exact_raw_bytes": true
+    }
+  ],
+  "ordinary_lf_normalized_files": [
+    ".artifacts/playtests/2026-10-16-harvest-art/A-review.json",
+    ".gitignore",
+    "AGENTS.md",
+    "docs/architecture.md",
+    "docs/feature-index.md"
+  ],
+  "all_files_under_github_100MiB": true
+}

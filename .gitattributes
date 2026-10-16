@@ -10,6 +10,8 @@
 *.rbxlx text eol=lf
 *.rbxmx text eol=lf
 *.fbx binary
+*.blend binary
+*.glb binary
 *.png binary
 *.mp3 binary
 
@@ -21,3 +23,15 @@ scripts/install-multiplayer.luau -text whitespace=blank-at-eol,blank-at-eof,spac
 tests/multiplayer-installer.luau -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/multiplayer-foreign-root.luau -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 .artifacts/playtests/2026-10-15-multiplayer-resume/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Harvest evidence pins the exact tested LF bytes of these Python guards.
+scripts/verify-harvest-copy.py text eol=lf
+tests/harvest-copy-verifier.py text eol=lf
+
+# Offline Harvest manifests/evidence retain the tested original CRLF bytes.
+assets/harvest-warden/corn-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/harvest-warden/environment-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/harvest-warden/showcase-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/harvest-warden/warden-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/harvest-warden/validation.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/harvest-warden/textures/prompts.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

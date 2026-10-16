@@ -1,0 +1,13 @@
+{
+  "schema": "harvest-warden-roblox-textures-v1",
+  "uploaded": "2026-10-16",
+  "method": "Roblox Studio upload_image; authenticated author, local source PNGs",
+  "experience_published": false,
+  "textures": {
+    "corn_leaf_dry": "rbxassetid://130010939468822",
+    "burlap": "rbxassetid://116548767974420",
+    "coat_canvas": "rbxassetid://129035890974385",
+    "barn_wood_dark": "rbxassetid://124256175949845",
+    "soil_gravel": "rbxassetid://132154563588735"
+  }
+}
