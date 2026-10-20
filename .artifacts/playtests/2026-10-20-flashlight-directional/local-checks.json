@@ -1,0 +1,49 @@
+{
+  "check_ps1": "PASS: StyLua, Selene cached API 0/0/0, Rojo build/sourcemap, safe mappings, disabled persistence",
+  "focused": [
+    "flashlight-presentation",
+    "flashlight-controller"
+  ],
+  "regressions": [
+    "handheld-presentation",
+    "handheld-controller",
+    "capture-presentation",
+    "minimap-geometry",
+    "lighting-modes",
+    "harvest-warden-visual",
+    "round-intro",
+    "multiplayer-ui",
+    "rustle-continuous-ui",
+    "multiplayer-round"
+  ],
+  "all_passed": true,
+  "not_all_historical_project_tests": true,
+  "engine": {
+    "normal_bootstrap_one_client": true,
+    "initial_default_on": true,
+    "parts": 12,
+    "spotLights": 3,
+    "beams": 0,
+    "pointLights": 0,
+    "render_samples": 100,
+    "input": "Eligible native LMB off, F unchanged, LMB on; blocked free-cursor clicks pass",
+    "diagnostic_staging": "Owned focus and cursor-state fixtures; no production hooks, camera or Root writes from observers"
+  },
+  "visual": {
+    "studio_mcp_captures": "Uniform gray world plus HUD; not valid light-shape acceptance",
+    "computer_use": "FrameArrived timed out, then window capture timed out after refresh/activation",
+    "author_observation": "Author reports field and flashlight visible",
+    "exact_visual_match_accepted": false
+  },
+  "saved": true,
+  "save_audit": {
+    "passed": true,
+    "complete": true,
+    "bytes": 1487942,
+    "sha256": "bddaeb948611267e1b3b4a5091423f860a87c64fe7265cfe80a5997e5941a8bb",
+    "source_changes": 3,
+    "new_instances": 0,
+    "removed_instances": 0,
+    "reference": "preservation.json"
+  }
+}

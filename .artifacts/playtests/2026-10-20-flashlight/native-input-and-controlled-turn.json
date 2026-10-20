@@ -1,0 +1,36 @@
+{
+  "visual": true,
+  "events": [
+    {
+      "lights": {
+        "HandFill": false,
+        "main": false,
+        "fill": false
+      },
+      "key": "F",
+      "on": false
+    },
+    {
+      "lights": {
+        "HandFill": true,
+        "main": true,
+        "fill": true
+      },
+      "key": "F",
+      "on": true
+    },
+    {
+      "lights": {
+        "HandFill": false,
+        "main": false,
+        "fill": false
+      },
+      "key": "F",
+      "on": false
+    }
+  ],
+  "maxLag": 0.03490658503988659,
+  "owned": true,
+  "on": false,
+  "elapsed": 2.8690098999995826
+}

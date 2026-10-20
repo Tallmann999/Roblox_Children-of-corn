@@ -1,0 +1,10 @@
+{
+  "source": "Procedural constant RGB(0,0,0), no external image",
+  "width": 64,
+  "height": 64,
+  "sha256": "655f21b89642ff9fae00a94c3cffbc47fdec7c236ea1ac92b31dbfdb109e69a1",
+  "purpose": "Six identical black skybox faces; no fog parameter changes",
+  "robloxImageUri": "rbxassetid://127362238475901",
+  "nativePreload": "Success on all six Sky faces",
+  "nativeVisual": "Black sky with unchanged Atmosphere Density0.27/Haze1.8; empty faces had produced a blue horizon"
+}

@@ -659,17 +659,35 @@ local stubControllers = setmetatable({}, {
 		return value
 	end,
 })
+local flashlightSnapshots, flashlightClears = {}, 0
+stubControllers.FlashlightController = {
+	SetSnapshot = function(_, payload)
+		table.insert(flashlightSnapshots, payload)
+	end,
+	Clear = function()
+		flashlightClears += 1
+	end,
+}
 controller:Init({})
 controller:Start({ Controllers = stubControllers })
 assert(#networkCalls == 1 and networkCalls[1][1] == "sync")
 snapshots.OnClientEvent:Fire(state)
+assert(
+	flashlightSnapshots[#flashlightSnapshots] == state,
+	"Validated snapshot did not reach flashlight"
+)
 for _, mode in { "easy", "medium" } do
 	controller:_request("start", mode)
 	assert(#networkCalls == 1, "Client forwarded a removed mode from ready")
 	local invalid = table.clone(state)
 	invalid.lighting_mode = mode
+	local beforeFlashlight, beforeClears = #flashlightSnapshots, flashlightClears
 	snapshots.OnClientEvent:Fire(invalid)
 	assert(controller._snapshot == nil, "Client accepted a removed-mode snapshot")
+	assert(
+		#flashlightSnapshots == beforeFlashlight and flashlightClears == beforeClears + 1,
+		"Malformed snapshot must clear flashlight without forwarding untrusted data"
+	)
 	snapshots.OnClientEvent:Fire(state)
 end
 for _, evacuation in

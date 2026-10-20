@@ -1,0 +1,13 @@
+{
+  "edit": true,
+  "field": "630, 10, 630",
+  "diagnostics": [],
+  "runtime": [],
+  "running": false,
+  "lightingChildren": 0,
+  "variant": "A",
+  "sources": 155,
+  "camera": "Fixed",
+  "ground": "630, 2, 630",
+  "http": false
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 1487543,
+      "sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6"
+    },
+    {
+      "path": "place/Children_of_corn_B.rbxl",
+      "bytes": 1485700,
+      "sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7"
+    },
+    {
+      "path": "place/Children_of_corn.before-flashlight-20261020.rbxl",
+      "bytes": 1483077,
+      "sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498"
+    },
+    {
+      "path": "place/Children_of_corn.before-black-night-20261020.rbxl",
+      "bytes": 1485712,
+      "sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11"
+    }
+  ]
+}

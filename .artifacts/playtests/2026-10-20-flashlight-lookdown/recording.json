@@ -1,0 +1,21 @@
+{
+  "path": "D:\\Desktop\\2026-10-20 13-23-46.mp4",
+  "bytes": 21143871,
+  "sha256": "546de57968c0aeac33b3eb793e67ade83d563b93cf8f84a72f90aa0513a051dd",
+  "duration": 27.4,
+  "frames_at": [
+    0.5479999999999999,
+    3.014,
+    5.48,
+    7.945999999999999,
+    10.411999999999999,
+    12.877999999999998,
+    15.344000000000001,
+    17.81,
+    20.276,
+    22.741999999999997,
+    25.208,
+    26.851999999999997
+  ],
+  "ffmpeg_metadata": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\\Desktop\\2026-10-20 13-23-46.mp4':\r\n  Metadata:\r\n    major_brand     : iso4\r\n    minor_version   : 0\r\n    compatible_brands: iso4isomobs1iso2avc1mp41\r\n    creation_time   : 2026-10-20T10:23:46.000000Z\r\n    encoder         : OBS Studio (32.2.2)\r\n  Duration: 00:00:27.40, start: 0.000000, bitrate: 6173 kb/s\r\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 6004 kb/s, 30 fps, 30 tbr, 30 tbn (default)\r\n      Metadata:\r\n        creation_time   : 2026-10-20T10:23:46.000000Z\r\n        handler_name    : OBS Video Handler\r\n        vendor_id       : [0][0][0][0]\r\n        encoder         : obs_nvenc_h264_tex\r\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 160 kb/s (default)\r\n      Metadata:\r\n        creation_time   : 2026-10-20T10:23:46.000000Z\r\n        handler_name    : OBS Audio Handler\r\n        vendor_id       : [0][0][0][0]\r\nAt least one output file must be specified\r\n"
+}

@@ -1,0 +1,1705 @@
+{
+  "passed": true,
+  "candidate_sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498",
+  "catalog_sha256": "b9448ca01dd10b4579d44ba4efad427edd7e4f7ced466fb68144d5f22651dbd0",
+  "native_snapshot_sha256": "50913d915bd96cc4d30923b5f0259e6d02a09a55b12efee0bef3459b8b658d2a",
+  "original_native_snapshot_sha256": "52e63ff778bdcff4c6a08b656c15e57644858e07dd30453cbef65de7b8a4749e",
+  "count": 242,
+  "scope": "Independent comparison: exact unchanged 16-Oct mesh key, pinned catalog vertex/face arrays, current live fixed EditableMesh counts, saved hidden VertexCount0->exactcount. No other geometry or world changes allowed. Native-A dot-path capture adapter used only for original snapshot.",
+  "rows": [
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_1/HW_Rock_01_Export_Material1",
+      "meshKey": "Rock_01/HW_Rock_01_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_2/HW_Rock_02_Export_Material1",
+      "meshKey": "Rock_02/HW_Rock_02_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_3/HW_Rock_03_Export_Material1",
+      "meshKey": "Rock_03/HW_Rock_03_Export/1",
+      "before": 0,
+      "after": 229,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_4/HW_Rock_04_Export_Material1",
+      "meshKey": "Rock_04/HW_Rock_04_Export/1",
+      "before": 0,
+      "after": 225,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_5/HW_Rock_05_Export_Material1",
+      "meshKey": "Rock_05/HW_Rock_05_Export/1",
+      "before": 0,
+      "after": 231,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_1/HW_Rock_01_Export_Material1",
+      "meshKey": "Rock_01/HW_Rock_01_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_2/HW_Rock_02_Export_Material1",
+      "meshKey": "Rock_02/HW_Rock_02_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_3/HW_Rock_03_Export_Material1",
+      "meshKey": "Rock_03/HW_Rock_03_Export/1",
+      "before": 0,
+      "after": 229,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_4/HW_Rock_04_Export_Material1",
+      "meshKey": "Rock_04/HW_Rock_04_Export/1",
+      "before": 0,
+      "after": 225,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_5/HW_Rock_05_Export_Material1",
+      "meshKey": "Rock_05/HW_Rock_05_Export/1",
+      "before": 0,
+      "after": 231,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_1/HW_Rock_01_Export_Material1",
+      "meshKey": "Rock_01/HW_Rock_01_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_2/HW_Rock_02_Export_Material1",
+      "meshKey": "Rock_02/HW_Rock_02_Export/1",
+      "before": 0,
+      "after": 227,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_3/HW_Rock_03_Export_Material1",
+      "meshKey": "Rock_03/HW_Rock_03_Export/1",
+      "before": 0,
+      "after": 229,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_4/HW_Rock_04_Export_Material1",
+      "meshKey": "Rock_04/HW_Rock_04_Export/1",
+      "before": 0,
+      "after": 225,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_5/HW_Rock_05_Export_Material1",
+      "meshKey": "Rock_05/HW_Rock_05_Export/1",
+      "before": 0,
+      "after": 231,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_BrokenRailA_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailA_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_BrokenRailB_Export_Material1",
+      "meshKey": "Fence_02/Fence02_BrokenRailB_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post2_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post3_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Post3_Export/1",
+      "before": 0,
+      "after": 76,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail0_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail0_1_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail1_0_Export_Material1",
+      "meshKey": "Fence_02/Fence02_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_DroppedRail_Export_Material1",
+      "meshKey": "Fence_03/Fence03_DroppedRail_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post2_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post3_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail0_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail1_0_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail1_1_Export_Material1",
+      "meshKey": "Fence_03/Fence03_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post2_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post2_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post3_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Post3_Export/1",
+      "before": 0,
+      "after": 74,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail0_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail0_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail0_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail1_0_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_0_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail1_1_Export_Material1",
+      "meshKey": "Fence_01/Fence01_Rail1_1_Export/1",
+      "before": 0,
+      "after": 72,
+      "nativeFaces": 36
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/1",
+      "before": 0,
+      "after": 12881,
+      "nativeFaces": 5408
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_2",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/2",
+      "before": 0,
+      "after": 1201,
+      "nativeFaces": 696
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_01_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_01_Export/1",
+      "before": 0,
+      "after": 452,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_02_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_02_Export/1",
+      "before": 0,
+      "after": 454,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/1",
+      "before": 0,
+      "after": 12881,
+      "nativeFaces": 5408
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_2",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/2",
+      "before": 0,
+      "after": 1201,
+      "nativeFaces": 696
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_01_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_01_Export/1",
+      "before": 0,
+      "after": 452,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_02_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_02_Export/1",
+      "before": 0,
+      "after": 454,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/1",
+      "before": 0,
+      "after": 12881,
+      "nativeFaces": 5408
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_2",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Export/2",
+      "before": 0,
+      "after": 1201,
+      "nativeFaces": 696
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_01_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_01_Export/1",
+      "before": 0,
+      "after": 452,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_02_1",
+      "meshKey": "BarnDark_Open/HW_Dark_SM_Bld_Barn_03_Shutter_02_Export/1",
+      "before": 0,
+      "after": 454,
+      "nativeFaces": 248
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material1",
+      "meshKey": "WardenClassic/Coat/1",
+      "before": 0,
+      "after": 170,
+      "nativeFaces": 82
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material2",
+      "meshKey": "WardenClassic/Coat/2",
+      "before": 0,
+      "after": 224,
+      "nativeFaces": 112
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Hat_Material1",
+      "meshKey": "WardenClassic/Hat/1",
+      "before": 0,
+      "after": 160,
+      "nativeFaces": 80
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material1",
+      "meshKey": "WardenClassic/Head/1",
+      "before": 0,
+      "after": 252,
+      "nativeFaces": 132
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material2",
+      "meshKey": "WardenClassic/Head/2",
+      "before": 0,
+      "after": 294,
+      "nativeFaces": 140
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material1",
+      "meshKey": "WardenClassic/LeftArm/1",
+      "before": 0,
+      "after": 310,
+      "nativeFaces": 150
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material2",
+      "meshKey": "WardenClassic/LeftArm/2",
+      "before": 0,
+      "after": 98,
+      "nativeFaces": 52
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material3",
+      "meshKey": "WardenClassic/LeftArm/3",
+      "before": 0,
+      "after": 272,
+      "nativeFaces": 136
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material1",
+      "meshKey": "WardenClassic/LeftEye/1",
+      "before": 0,
+      "after": 144,
+      "nativeFaces": 64
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material2",
+      "meshKey": "WardenClassic/LeftEye/2",
+      "before": 0,
+      "after": 246,
+      "nativeFaces": 122
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material1",
+      "meshKey": "WardenClassic/LeftLeg/1",
+      "before": 0,
+      "after": 430,
+      "nativeFaces": 206
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material2",
+      "meshKey": "WardenClassic/LeftLeg/2",
+      "before": 0,
+      "after": 408,
+      "nativeFaces": 204
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material1",
+      "meshKey": "WardenClassic/RightArm/1",
+      "before": 0,
+      "after": 310,
+      "nativeFaces": 150
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material2",
+      "meshKey": "WardenClassic/RightArm/2",
+      "before": 0,
+      "after": 98,
+      "nativeFaces": 52
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material3",
+      "meshKey": "WardenClassic/RightArm/3",
+      "before": 0,
+      "after": 272,
+      "nativeFaces": 136
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material1",
+      "meshKey": "WardenClassic/RightEye/1",
+      "before": 0,
+      "after": 144,
+      "nativeFaces": 64
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material2",
+      "meshKey": "WardenClassic/RightEye/2",
+      "before": 0,
+      "after": 246,
+      "nativeFaces": 122
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material1",
+      "meshKey": "WardenClassic/RightLeg/1",
+      "before": 0,
+      "after": 430,
+      "nativeFaces": 206
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material2",
+      "meshKey": "WardenClassic/RightLeg/2",
+      "before": 0,
+      "after": 408,
+      "nativeFaces": 204
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material1",
+      "meshKey": "WardenDetailed/Coat.001/1",
+      "before": 0,
+      "after": 544,
+      "nativeFaces": 276
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material2",
+      "meshKey": "WardenDetailed/Coat.001/2",
+      "before": 0,
+      "after": 444,
+      "nativeFaces": 222
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material3",
+      "meshKey": "WardenDetailed/Coat.001/3",
+      "before": 0,
+      "after": 180,
+      "nativeFaces": 72
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Hat.001_Material1",
+      "meshKey": "WardenDetailed/Hat.001/1",
+      "before": 0,
+      "after": 352,
+      "nativeFaces": 176
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material1",
+      "meshKey": "WardenDetailed/Head.001/1",
+      "before": 0,
+      "after": 472,
+      "nativeFaces": 252
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material2",
+      "meshKey": "WardenDetailed/Head.001/2",
+      "before": 0,
+      "after": 576,
+      "nativeFaces": 288
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material1",
+      "meshKey": "WardenDetailed/LeftArm.001/1",
+      "before": 0,
+      "after": 738,
+      "nativeFaces": 378
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material2",
+      "meshKey": "WardenDetailed/LeftArm.001/2",
+      "before": 0,
+      "after": 168,
+      "nativeFaces": 92
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material3",
+      "meshKey": "WardenDetailed/LeftArm.001/3",
+      "before": 0,
+      "after": 400,
+      "nativeFaces": 200
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material1",
+      "meshKey": "WardenDetailed/LeftEye.001/1",
+      "before": 0,
+      "after": 420,
+      "nativeFaces": 196
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material2",
+      "meshKey": "WardenDetailed/LeftEye.001/2",
+      "before": 0,
+      "after": 410,
+      "nativeFaces": 206
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material1",
+      "meshKey": "WardenDetailed/LeftLeg.001/1",
+      "before": 0,
+      "after": 1136,
+      "nativeFaces": 580
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material2",
+      "meshKey": "WardenDetailed/LeftLeg.001/2",
+      "before": 0,
+      "after": 600,
+      "nativeFaces": 300
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material1",
+      "meshKey": "WardenDetailed/RightArm.001/1",
+      "before": 0,
+      "after": 738,
+      "nativeFaces": 378
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material2",
+      "meshKey": "WardenDetailed/RightArm.001/2",
+      "before": 0,
+      "after": 168,
+      "nativeFaces": 92
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material3",
+      "meshKey": "WardenDetailed/RightArm.001/3",
+      "before": 0,
+      "after": 400,
+      "nativeFaces": 200
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material1",
+      "meshKey": "WardenDetailed/RightEye.001/1",
+      "before": 0,
+      "after": 420,
+      "nativeFaces": 196
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material2",
+      "meshKey": "WardenDetailed/RightEye.001/2",
+      "before": 0,
+      "after": 410,
+      "nativeFaces": 206
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material1",
+      "meshKey": "WardenDetailed/RightLeg.001/1",
+      "before": 0,
+      "after": 1136,
+      "nativeFaces": 580
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material2",
+      "meshKey": "WardenDetailed/RightLeg.001/2",
+      "before": 0,
+      "after": 600,
+      "nativeFaces": 300
+    }
+  ]
+}

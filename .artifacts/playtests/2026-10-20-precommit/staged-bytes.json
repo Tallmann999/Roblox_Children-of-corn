@@ -1,0 +1,1976 @@
+{
+  "passed": true,
+  "exact_files": [
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/final-files.json",
+      "bytes": 739,
+      "sha256": "bbb8dd63b717f3d3c1c8eb415d6a371bc96d56a9f200f8264df9fb6b66f8e12c",
+      "git_blob": "c501d115e9e0089cc01e32b80bc63924a3ce768a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/native-acceptance.json",
+      "bytes": 4927,
+      "sha256": "543c6e16b09f496c72213130ca9a6a049e29ee9cda8d207e8f1b78a62bf66f4e",
+      "git_blob": "9b8070b47346681c2455c4e92bb7f5c08a5e929e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/native-quality-menu-restarts.json",
+      "bytes": 6740,
+      "sha256": "46821a1746ffaad7db581c05ec871216ce293be203bd37e8ee6506960a7c8f78",
+      "git_blob": "a39e91c6ba9dadd3cdbe2930089a03b52466c294"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/persist-studio-play-quality.py",
+      "bytes": 1940,
+      "sha256": "ead0848b679d1c697ce82a7a67b6de70c9fbae5efcb65b098539749640d90e76",
+      "git_blob": "752a6c5c82696e0ad289616f8437c023d82854c9"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/persist-studio-quality.py",
+      "bytes": 1766,
+      "sha256": "bf2ae3432239175b8e4180ae48ca23148c9be8cef43dd486501ca8d94140e961",
+      "git_blob": "cc703517bdd91b62a18fcca4ac5cfa4b366401ff"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/precommit-preservation.json",
+      "bytes": 1661,
+      "sha256": "7c5cc19f34e9c66f8bfafe9471ed9e00503b9f0351b5ae795f09c8f02cb7d6fd",
+      "git_blob": "78456901168b2bce50dacde6502a2c1bb96e4420"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/preservation.json",
+      "bytes": 1661,
+      "sha256": "954abccf7fc51b029dd3c98d3f09e2ee5826a8254702bc094dcddd244dccdac1",
+      "git_blob": "d697879ffec531ce542c84187f2d062ca5bf2a15"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/recovery-preservation.json",
+      "bytes": 1661,
+      "sha256": "a39f9b75aa0614338aa169f8c9939f71d59205749a29d907b0d947b67f03f836",
+      "git_blob": "83a553166473c5ff79a4bf8fcaa69af3b9fde85f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/saved-scenes.json",
+      "bytes": 581,
+      "sha256": "9a4120fc8a65f85018f93366e778146ce155a6df6c569d0e289e015ec4acf959",
+      "git_blob": "36ffbd8919fc4dc1da0381809a7d6ff8ebe61a42"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/settings.json",
+      "bytes": 386,
+      "sha256": "8f474a85b835c16c427522ff148f37227892c89bd77b4611128e11ac3a0de117",
+      "git_blob": "0b6f660b3dad5580e359ec9be18b3b32d211eab0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/studio-play-quality-file.json",
+      "bytes": 538,
+      "sha256": "7540613be56e498a9b74315422a624b0217559bdd5f2161d686f2a003115e558",
+      "git_blob": "7dab5c48b807b7b0b05e604cfb6906144f98ad5d"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-A-flashlight-preset/studio-quality-file.json",
+      "bytes": 387,
+      "sha256": "6911353892b24e485f7699e72930c6b56e61fc355105166ba469173c7551276d",
+      "git_blob": "3f646da3373880542d60ad9a0e3fe0f2f5ffe9f2"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/baseline.json",
+      "bytes": 297,
+      "sha256": "6168b692dee33ca40d2fcdeb187c3deaaf7438f3728355faf3120fe23d9f7679",
+      "git_blob": "793330d5ec31679bcafbe1464d333ccc83ec5a9a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/before-preset.zip",
+      "bytes": 1425442,
+      "sha256": "81eef324002c87ce769538f444e288db55c238ed067bfa48b8dad6006afa967b",
+      "git_blob": "7758021155831277ccaf76115c4d6c6b271b4271"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/native-acceptance.json",
+      "bytes": 5774,
+      "sha256": "477136f833fdb8e18d2cb52186235ce109c8ed8af1d092c2f7c434fa87cb15c9",
+      "git_blob": "43b18dc8b3f843ed37ae90a0f22d066ed579df8b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/native-final.json",
+      "bytes": 363,
+      "sha256": "c4365733dd4ac3484e69e74e949ade323a6390b621217a153add51d56cc627cc",
+      "git_blob": "7c67100a997edf44ab02364cb347c4e38381156e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/native-install.json",
+      "bytes": 1479,
+      "sha256": "ea5600b774184ddb7b983fa6ec4b13e50229aea18b1ed0f6edb635fa3cd60258",
+      "git_blob": "fe4c61465b3de58c7a7826202dab1bcd7fe76766"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/precommit-preservation.json",
+      "bytes": 1993,
+      "sha256": "05b070f137ae4109f3ad03de70d16d267f3ac6ea87775e630108182b5cfd5f0c",
+      "git_blob": "fa74dc41f422537d61ccb50dc3e4d652514e2ac5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/preservation.json",
+      "bytes": 1993,
+      "sha256": "34f5fd3e829b8a84d2b3ae3dd462024a367074bebbedb2d31d57b8b87b5a8b56",
+      "git_blob": "29f76c68c12d969daf5567e5f8cae36b616f3a77"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/recovery-preservation.json",
+      "bytes": 1993,
+      "sha256": "d304ee3eb92e3a9b49e09fe94cfbdaa7a8e1829294e8f74d1ecd3c8738f02de8",
+      "git_blob": "9e42029a236237e78689793fb8016e061e189d03"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-preset/saved-scenes.json",
+      "bytes": 621,
+      "sha256": "62c6cc9813950846e3d6a793a3c2444b2298c60b773bff9130429af1345e14ae",
+      "git_blob": "78268b3e1ee41cc222133f0a6b70c4fd713f6193"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/installer-fixtures.json",
+      "bytes": 1093,
+      "sha256": "b8f9a96c50a34fbf2360fa40daec7d8761039d6ca4871f01d35e0a549892a454",
+      "git_blob": "04af0cd2862393b31313eca1f57d0395e3d404f4"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/native-acceptance.json",
+      "bytes": 29340,
+      "sha256": "f47f821c1af0bdf2daaa5113676438ca93a3b109fa2ddaa7a8239025f90221b0",
+      "git_blob": "80a9ac9839487568937b328f93ed0c06d84fe790"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/native-before.json",
+      "bytes": 22398,
+      "sha256": "1083afa99ff2d7d872e45dbc157c1cb259d1f7df7f962146b0dabac0013d5c87",
+      "git_blob": "1c2a6f855e24741cb2da8c264cdc7184609fe0f7"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/native-field.jpg",
+      "bytes": 292936,
+      "sha256": "aef05e19510c030f33bbbc47b39bf302d7ae83d7ce6aac2613c1f9c34952256a",
+      "git_blob": "0feb41b4f33c6e3bf16acbf2d0a4f578d2744031"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/payload.json",
+      "bytes": 128088,
+      "sha256": "a45b9432f308bf0ff8c08d2a114475c004dde13aa5d1ecf4bed45a7062b8a182",
+      "git_blob": "608004664338c51a9c61610f2feaba5e23297901"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/pipeline-manifest.json",
+      "bytes": 1003,
+      "sha256": "2fce14a96bfcd58e682a9a033a7b23ecaa9bda8f5a00077dea0aa64597cce918",
+      "git_blob": "cfadbf8ebb5307ebf12c845e26f7482eaeb7a1f0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/preservation.json",
+      "bytes": 2711,
+      "sha256": "dae441e517bd1dc05cfbd6220141683f4dbb92e874330f2b13feafbd42c1a9f7",
+      "git_blob": "89976c9046ba639f83533c8954d5486a5001f234"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/protected-files.json",
+      "bytes": 485,
+      "sha256": "b92f842e0d301e7ca2f994d81c414d67d81e941e5c6779f1a5f5158ac6a5831f",
+      "git_blob": "8592d53b5a2faafe1ff790f4b37a961d2d2b05bc"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/save-fixtures.json",
+      "bytes": 17399,
+      "sha256": "a4bc0430832f9f14e9b0807a14befded44058bd59e7bfbb3d3d30796c357a922",
+      "git_blob": "5fa95a6f26e0d0a13c9323ce195b63d08ed6133e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-B-flashlight-tall/saved-scenes.json",
+      "bytes": 599,
+      "sha256": "9967cfa761c1e0fdb160b01b852f2029a7d203a94acb2011ac14572d236cda30",
+      "git_blob": "19a516413f331ed73ecc92a2d1e7433df7b2eae8"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/catalog-vertex-count-contract.json",
+      "bytes": 48980,
+      "sha256": "bc33d817089f243aaa8894a24c9b4e654036cc88c974ca59b1753f4496d56d54",
+      "git_blob": "8ffe2e6bc2c7747745dc417e9bc48c4e06ecc63f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/installer-fixtures.json",
+      "bytes": 1074,
+      "sha256": "61f9a8696c7d157b64e6eebf288a7da20436bef92f00226b6c95195e9aea0e21",
+      "git_blob": "5d2a7051dcd310a2f77d669d34eb41a66294d2a5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/mesh-counter-fixtures.json",
+      "bytes": 754,
+      "sha256": "c14372db605a0cbded84775a259c9c9e0f9a33505f639856a72bda4e8451d8e7",
+      "git_blob": "d9f26e18acad85f9c89b04ddbb768c277d082fdd"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/mesh-vertex-cache-review.json",
+      "bytes": 57129,
+      "sha256": "a03d0322f509bc9a693456b07e45f4e107656931dceb2c1b5b78a4aa2d0040fb",
+      "git_blob": "d0458beaa3f6b940a4d66be45a2c195eafb6076d"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-before-sources.json",
+      "bytes": 32159,
+      "sha256": "6eaf3285e307fa73d52b8c1995514445c06ceda8f7bb18cbfe581e63fd77ace0",
+      "git_blob": "243bf1a31eeabe38b8a4d30b525b4993ebb9f6a2"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-black-sky-probe.json",
+      "bytes": 638,
+      "sha256": "15a36c5789fb4ed36ee2762b2afd8e145e0797c2ee2ee074ff93ec0447ba4b76",
+      "git_blob": "1ce4c19ef08503dd55cc4960b21824f03fbb857c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-cleanup.json",
+      "bytes": 393,
+      "sha256": "9a0eda186cc78eac42e4f4e8a272bb45e300153f98268c1d8efeb12b830e6fe1",
+      "git_blob": "4f34e531aa093ed93eea1ab97f78fd459161484c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-edit-restore.json",
+      "bytes": 463,
+      "sha256": "e35cf8212864029462a9cc76f70fcc3e1ed2fcf929bf4d3a4734df72e7a527b7",
+      "git_blob": "4b809851ebc46216f4f53039c06ba44dd5e2cb02"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-install-repeat.json",
+      "bytes": 162,
+      "sha256": "c9ff3d176113b770452d89316ba9ba1ac553bd4c5e4d1c4db9db9b983695aefe",
+      "git_blob": "e2817ead110de75d8c63c3d71306c31c7a70512c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-install.json",
+      "bytes": 163,
+      "sha256": "ab384924033bf07915b58d6fc602d242f01fd39d57e4df83102219953cb46614",
+      "git_blob": "d06d2d797e8c4d7278a4fb44fe0101be14207866"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-saved-mesh-counts.json",
+      "bytes": 55193,
+      "sha256": "50913d915bd96cc4d30923b5f0259e6d02a09a55b12efee0bef3459b8b658d2a",
+      "git_blob": "062c0ce50a82c4b8190b6041fab99f676565fadd"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/native-three-wardens.json",
+      "bytes": 2553,
+      "sha256": "66f1c755210be13c0803fcd7e176d6f75801f131b86c7ee32524774cf02ccc08",
+      "git_blob": "bfc83491acb557291e8b065f3e5f3796da54af1e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/payload.json",
+      "bytes": 82373,
+      "sha256": "cd0163a72a29624178561569a9e1d332aebf6a80086285b22510ed22160b2376",
+      "git_blob": "2cbcc1e4b5b42a3f557da07eed1a83dce745c39c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/pipeline-fixtures.json",
+      "bytes": 16918,
+      "sha256": "f7427cd3b570df17d0d869e31e499400bf39365826a91eed192bcb8d10ccef7e",
+      "git_blob": "37b70ca5c159fb84c0bcdec6d6c1c8825997fab9"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/pipeline-manifest.json",
+      "bytes": 713,
+      "sha256": "f7074eefbed583670075b0394fe320fbcfc815e7591d3d87d56c266bdc3fea4f",
+      "git_blob": "2484b6dafce48c32e10bd7112e6f01bd04182b92"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/preservation.json",
+      "bytes": 52373,
+      "sha256": "2d25211d3f64b3f6a410ddf1eb695fb06c41144e827f4e0bd888a23c758b93ea",
+      "git_blob": "f7ded0341c8f2d202adf58c57f9b81dd0e4d21da"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/saved-dom-differences.json",
+      "bytes": 70832,
+      "sha256": "eb684f408d231c7f3a7b2bd08bf61791377ec2cfdcd999316f6771d3fb76f95d",
+      "git_blob": "35fa4b08846fd5aa7a9d708b03fe704ed56bb32a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-black-night/saved-scene.json",
+      "bytes": 1044,
+      "sha256": "5c62c2916c6a6d16a4586c4ea33a1f007a7981d00667e569cf1536c479e077e8",
+      "git_blob": "20b5bda7247bb3a90ce1bf30a7004a062d88ce4c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/initial-cross-payload.json",
+      "bytes": 96101,
+      "sha256": "8808770ca7e1943679c2da3aea7c8115f2a3c81ff7c438e71d26651178c171fa",
+      "git_blob": "18c51d773170b2b64bad8a4c9dd297e74fd1292f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/initial-cross-pipeline-fixtures.json",
+      "bytes": 17322,
+      "sha256": "70859afb80206c2166a270cab9682219f79ade634b68e5c103b6ee37a3a33a45",
+      "git_blob": "6130b140da01c9c00fee4358759993a4667c0a5f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/initial-cross-pipeline-manifest.json",
+      "bytes": 755,
+      "sha256": "b2b51e9729edc2aae2f909c6cc84cf07d663c9a0b584d07e15a8b9ab02a4e03a",
+      "git_blob": "ff918c3766dccfe735ecc57e07479afaf2aae18b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/layer-upgrade.json",
+      "bytes": 31031,
+      "sha256": "9050aa194447924b087ac57a0ec074fe8138c2ed6df3a9af426b65190069d218",
+      "git_blob": "a1ca725a9f365588d938070b5bda720d204797df"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-acceptance.json",
+      "bytes": 87153,
+      "sha256": "c5f26ef2a2c0994bb72c60aa7f21dbdcbe199dd747f4d5b143b822885c2bb0e7",
+      "git_blob": "b191555f7778dec01f3dcbb012c9bd2721a87d83"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-before-repeat.json",
+      "bytes": 162,
+      "sha256": "5217118546a0b3907f6a65f1ebf9c96cb4475c862e6b26449e951e9e16bafa4d",
+      "git_blob": "e487bddab461c84a5ef118a3eaf519813d45bcd5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-harness.luau",
+      "bytes": 5222,
+      "sha256": "f4302e60e51cea39d394db414ff6d7b8314809855bb94a7c4e64f280c933c1ee",
+      "git_blob": "7acf40ccd26d9fb3834e911b98df464f2da6e308"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-install-repeat.json",
+      "bytes": 162,
+      "sha256": "5217118546a0b3907f6a65f1ebf9c96cb4475c862e6b26449e951e9e16bafa4d",
+      "git_blob": "e487bddab461c84a5ef118a3eaf519813d45bcd5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-install.json",
+      "bytes": 163,
+      "sha256": "b1eb7d18e0e9099b647517217f329d1fc26ebaa69c0bb0ab77a5861ce500010e",
+      "git_blob": "0662ed7732b6bd3f01bbaceb3faaffc23e035b03"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/native-layer-upgrade.json",
+      "bytes": 242,
+      "sha256": "7b82914b207b495661876773f04bf0c411749e9ff85883a3365d8c64119e7dfa",
+      "git_blob": "b1663a55f0f2149c7cd50a99d7d80e66aee7e4d5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/payload.json",
+      "bytes": 96187,
+      "sha256": "ed0b774f5f5d85e86d2b3e0351fcb3fd8bd881a45930d61d199b196d83f1839f",
+      "git_blob": "85448408dddd1304d6c90fde29b903626a3a88aa"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/pipeline-fixtures.json",
+      "bytes": 17322,
+      "sha256": "0b42e71143189c060d7fcf37a6b4e0422b52272ded99d870c9ad92871a209196",
+      "git_blob": "8d99598376b591c0571f65e2812d73257ca18b5a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-cone/pipeline-manifest.json",
+      "bytes": 755,
+      "sha256": "d02b05192b0c37b9bffc7ceda6991d01baa7b4383a376638648d1d0e127fe76c",
+      "git_blob": "9e8eb5d3e2c702d622d7a0807cbd73f8a14f7561"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/analyze-video.py",
+      "bytes": 1614,
+      "sha256": "50a554bcb859d1476a479c037a9d5eb379d06f567e5f10f08fd9e358d5dc5828",
+      "git_blob": "b109e0665ac56e280b1e7e8f553aa6e6f5516d60"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/before-src/FlashlightController.luau",
+      "bytes": 19117,
+      "sha256": "b274b2c66bc0da41ffe890b4a60ba0d0ab3783c6a5542d710742e168061807be",
+      "git_blob": "081d3b7592f49e2f0741085b9321ad096319cf2a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/before-src/FlashlightPresentation.luau",
+      "bytes": 8698,
+      "sha256": "688430fbba9cb2353db01759af46331eb050f363652e6838b39009b20998f768",
+      "git_blob": "7f84f3ad3cca37485f7bb9a3092b7fb775a8a373"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/local-checks.json",
+      "bytes": 1629,
+      "sha256": "e9e18630b0b8974ce432e8631037b5e10829016706fe8795fea3ffc56cb03b4b",
+      "git_blob": "bf413b533dc63f184036ae3e0952a195a7073149"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/native-final-edit.json",
+      "bytes": 196,
+      "sha256": "0112c63a9b4fce890453b5e8a0ecc916285eaf25c5e43f38f3bb0b4c78e058a6",
+      "git_blob": "6d0e5e591893cb93ce78609788d87ffee59df264"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/native-input.json",
+      "bytes": 1721,
+      "sha256": "b515f28af0e1015f11ab3f6890afd4c4e7ac475bcfc1499629f07de19fb59b71",
+      "git_blob": "3210d53b1c5dffbcc138de20a97cdf2c2dd828e0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/native-render-samples.json",
+      "bytes": 19484,
+      "sha256": "952d1f54c675f41f56c6683ddcfd7e89bb9f161f28003e2d94b2f272f1451c79",
+      "git_blob": "b2089bfba06dcd51e295cdb7f4193d06439eb66a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/payload.json",
+      "bytes": 108168,
+      "sha256": "99d43476f868559dc6c45b99e3007e7bd93b550e44bafbbd451466bcdafad0b3",
+      "git_blob": "eaec02b86a12531f6c62226d611905d78e6ebcab"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/pipeline-fixtures.json",
+      "bytes": 18259,
+      "sha256": "270a096e271c02b51b5d5a19691c18c324b00d25bad5850d77dfbdf8e00d3d06",
+      "git_blob": "9b5a2b68106d2f281c6ff129f911eb97fa6e876c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/pipeline-manifest.json",
+      "bytes": 809,
+      "sha256": "5ab4c13f7fbbc10d0b3f27f30cfee149846b2dcf62d885e7f1cf8a84448fd427",
+      "git_blob": "4f498a0842393c06fdd95d77fe16166b97a19418"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/prepare-directional.py",
+      "bytes": 8213,
+      "sha256": "bc4896a7620156ca34e579bbd2d82a159121b2ad820eb3084ff078fb7f4669c1",
+      "git_blob": "6d8eac34e9a17f4fb823ffef07d2dba989b4b092"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/prepare-pipeline.py",
+      "bytes": 4711,
+      "sha256": "50355044bbbc29bc9aa94a77a04862bb05ead1d1e7788a269679328b2d586f40",
+      "git_blob": "e562940f0d0f20683cfc62dca9c973e6bc656041"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/preservation.json",
+      "bytes": 2592,
+      "sha256": "b92ac1c11a17fb2aed7050ef3c015aaaae7722f86f6cecf0d6cffbf514b4e9ac",
+      "git_blob": "703a7f8ad1c2ed53eee47b164233c95dd82c35f8"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-00.jpg",
+      "bytes": 7092,
+      "sha256": "2c5a16e8bd7babb4224a6592b50ba7842674bcd6a7ca0e51b7ce851fac41f56f",
+      "git_blob": "3374f018b46dd1829983fb33908ca5ac1cf40f50"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-01.jpg",
+      "bytes": 26189,
+      "sha256": "3ed313cc78cda234072860234bf47184bbd025435fd233014e8308ef12ff9f6b",
+      "git_blob": "8c4adedea7e5de0b39aba8a29cc513a25d306517"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-02.jpg",
+      "bytes": 16908,
+      "sha256": "7ba929200294c8a3d62d512a19847ee278bdc97f05b121a3503049a32443f721",
+      "git_blob": "597d23364c45e0b752e8bb8557f1ee8b2cb618ca"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-03.jpg",
+      "bytes": 16597,
+      "sha256": "cf3ade3b94fbcd82dc63acbe545c197d8cd123203016323a92b3984416203ecd",
+      "git_blob": "6549a99a6a714b43a7f4317b2cede15009ffe3cc"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-04.jpg",
+      "bytes": 16736,
+      "sha256": "a1d4e54f3433d7407aa86dab6ccb80af4b57d168b82829d1e7f73d7ba09fb36c",
+      "git_blob": "9da2d17032e34ba4dd339e4c9e7ca44d2a41168f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-05.jpg",
+      "bytes": 14708,
+      "sha256": "4cfce4e75e7dd12338be07bf3ffc39bbe7f140d5a5699d772ca88e99e8772fac",
+      "git_blob": "d5c708505002a830b86ffef8426887ce5f60b5a3"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-06.jpg",
+      "bytes": 15232,
+      "sha256": "c9c66b1b8220790f9225013b789ed9bfcafdfb9843552bb410747c3b778d4785",
+      "git_blob": "c818d44c9553b482a56f6531c4177089c244c3e6"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-07.jpg",
+      "bytes": 16657,
+      "sha256": "aa2dd0e14c003fec7071e9b89755f63f992e4f1cd04e45e089564af1511695c3",
+      "git_blob": "444545c896c306d0ffdcb2ac267cc18e573a896a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-contact-sheet.jpg",
+      "bytes": 259416,
+      "sha256": "75df9a8c830ce5c584a794f1898b78b0e82f1e06dcbeb33534a725777c52780d",
+      "git_blob": "50603e72e3aef65e80ab6a96b93d2924817e7945"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/reference-video.json",
+      "bytes": 1479,
+      "sha256": "1ed49e461c439d2dd84fa08ed85208b910a8d4cffffdf3b583016af4f2367865",
+      "git_blob": "195d767cf35745b29c6948d54839c772ef8fdf05"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-directional/saved-scene.json",
+      "bytes": 979,
+      "sha256": "251512cd9009619669fc3ecac303e68065772392cbd967c6f4c111bd09605cfa",
+      "git_blob": "65bbfc19cdf6f63f366097e8970a5c4fa0199727"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/analyze-recording.py",
+      "bytes": 1693,
+      "sha256": "3bd6ccf453d0d787908d59f04942799e38e8d49de28350db26b94d51260f3238",
+      "git_blob": "8b92114079ad18c80302737e690bb00647d33913"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/author-part-before-save.json",
+      "bytes": 2508,
+      "sha256": "e76c1b34bec0d307f4e0d80a93915a2edd1f8d7762ebcbca41b49bf2cedba385",
+      "git_blob": "ab940d8a27387dc530497faa7ec7eba4d2417928"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/installer-fixtures.json",
+      "bytes": 411,
+      "sha256": "cc44c46af876298710f18cd378e80d3d5d270185d774c5684d77053803520dbe",
+      "git_blob": "cba21445bb339be2fb8af844688b7072cda85566"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/native-grounded-realistic.jpg",
+      "bytes": 214899,
+      "sha256": "d5046c617b6641963450c1a835199b0e16bb9545a1852947ee8f2a8b5acb063e",
+      "git_blob": "1dc61a836023462405c6eb39d0921719349ce0fa"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/native-initial-observations.json",
+      "bytes": 8812,
+      "sha256": "0eba88fa97f55e2533c0c3740ad065ba4a797287075b0a99dc8e1c1300d409ba",
+      "git_blob": "8a53d594a7bcd82814cda1fe15f94683c2a95fa0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/native-install-and-edit.json",
+      "bytes": 1146,
+      "sha256": "97654348f716e27c706e77805ee255849c58fe57e00a29ab760bc8014a882b8d",
+      "git_blob": "977f8be0fb8bbe0fe47f030735ba9586e3b70938"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/native-realistic-lookdown.json",
+      "bytes": 43701,
+      "sha256": "764d4eb93dc41d98a44cab23375284cd3691bd190ffab2b5698ee7246de74b2b",
+      "git_blob": "a108d2f1d943a39a68ddcb6cbc85d218d626aa20"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/payload.json",
+      "bytes": 66046,
+      "sha256": "9835851437343029066ca5354ff39d116e5d6eadf94d6b574ff8343b3c8e1fa5",
+      "git_blob": "689a941cd011fd14edc7b8ecde899d571eaf7e6c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/pipeline-manifest.json",
+      "bytes": 544,
+      "sha256": "a4e233842b3b39f0e90e3a7adfce969d06402522a9c4e46b5eefac055fd41512",
+      "git_blob": "967156198200921c625e56143b6930826fea2bfb"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/preservation.json",
+      "bytes": 2347,
+      "sha256": "0daf5747e9f960c87126fd5517f251d52cb75063ef2442f5054b6f82057c62c8",
+      "git_blob": "f756a9bfa45777b3b589001a4480805eabfa0d15"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-00.jpg",
+      "bytes": 40346,
+      "sha256": "ef5056cc73b83eef5b55cb02beb25904e441e62f64cf019ec62ff90936b73fa4",
+      "git_blob": "ee85f2bc87d1c9e8b114b3c5e01648525915df40"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-01.jpg",
+      "bytes": 24705,
+      "sha256": "2c8b634b2c9a9b0301db8a764badf4d5885a9d9588ec67eedc59f5feaeaeab20",
+      "git_blob": "321c7c435733f097def41be3c2b53e6a11fa2192"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-02.jpg",
+      "bytes": 19790,
+      "sha256": "a334098a75cbf46910e00d8fc04c7765d97cfdcfc9ca79099de12fcc8b6b1342",
+      "git_blob": "f489e1c39e4e4829d7533a01aae64d674c395c09"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-03.jpg",
+      "bytes": 43272,
+      "sha256": "9c74b3184487194ee09e9842148cbced9f1153850de64fb1bdcab82d6810e44e",
+      "git_blob": "5737c4a4c6fb59fd2a7215f7f89ca1ecfe2e201a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-04.jpg",
+      "bytes": 47799,
+      "sha256": "a456bac5fb277b1e644e2a578afe29fe1c3c81e643395ce68a99a46a17b69739",
+      "git_blob": "4bdb1bddbf525f3fae360b4646eedc967f32cad4"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-05.jpg",
+      "bytes": 39508,
+      "sha256": "a798b473edfedb1726a301731048c3634ad86243eb48c7e4c1132904f01d3a5f",
+      "git_blob": "e73495caeebab8c6323599300c7ad043d60076b8"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-06.jpg",
+      "bytes": 24861,
+      "sha256": "3b482407c71a8f336a4796d46036a5af92e6eaa996dbc964bbfe772b4e22c6f3",
+      "git_blob": "caff66131081b2d3ec652d0408d1fe3adc5573c5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-07.jpg",
+      "bytes": 32947,
+      "sha256": "a5d5acc8b7e075ba6b3601867621b13c7266609811809f832aece409613f2956",
+      "git_blob": "913abd3bf88a1a9dfa58f16e68acb49b5eda4a38"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-08.jpg",
+      "bytes": 33078,
+      "sha256": "a5dead996e195b8b2e5024d21ae39acdbae23d9a7de4eadb8b961503ad954da4",
+      "git_blob": "7a7ac9530ea775081c2de99f40c4cd82c30b0bd7"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-09.jpg",
+      "bytes": 34008,
+      "sha256": "2ef5dafe7f1ecb75c9667f37e148e027bc3e0ed978746546875464477a5a3428",
+      "git_blob": "2dfaaa7a016180a006add729c8ae223ea2720baf"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-10.jpg",
+      "bytes": 40878,
+      "sha256": "d054f52e80d69ce6f90ef4571f8dd6257eefde70e98bdea4d23789eff8c49c3f",
+      "git_blob": "53eb661807072b9ef9d84d6e4a197e7f349521b4"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-11.jpg",
+      "bytes": 40056,
+      "sha256": "ac5d71e23741bffe9af79797ed2ca86acbe39180fdd69085b2d926ad85bc8ecb",
+      "git_blob": "ebdc63e6fb7157b636e6c3195ceea528b6273632"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording-contact-sheet.jpg",
+      "bytes": 910267,
+      "sha256": "60415b7d694773c426c5496528212c1ac62b2f249382f5a96c21ab6581f38a77",
+      "git_blob": "e451b48cd79dae03225f11484b94a070f7b3d04e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/recording.json",
+      "bytes": 1538,
+      "sha256": "8ee6719ae9a5cf040acd387ef456a11d10898de58d433f6101a52a78aba4f8c3",
+      "git_blob": "75eb24fad501aee797dead2ae0d9408604d29575"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/restored-user-tuning.json",
+      "bytes": 433,
+      "sha256": "ea24b986d065661b6a91f752c4b4760eb125463acd74c7283d315931de1863f4",
+      "git_blob": "07b118dd859389d693c47375fd3b1664579d8503"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/save-fixtures.json",
+      "bytes": 19467,
+      "sha256": "2dc64805ac2306f09fc6cb3ee977c2c4de1193569ee62db01503aeafb457af9e",
+      "git_blob": "5480184120cc434e396c3e46ebe6bcf511aadbcc"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/saved-scenes.json",
+      "bytes": 735,
+      "sha256": "27b3ff2413a06e22691ddf23116dbebd40efb11fe00bdaf75fe075d9fb29079c",
+      "git_blob": "823d2de410948ef4a7825b63552f050e61e42344"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-lookdown/user-tuning-before-stop.json",
+      "bytes": 447,
+      "sha256": "34fe0da24f1b8400bfd20f4106d5d4f51fdc8aa244ef629aa3d1773baa01198c",
+      "git_blob": "9860c4be0655d7c8541a8043e889e60b2e7f892e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/analyze-recording.py",
+      "bytes": 1693,
+      "sha256": "51b348017966e2cae89a673879ffa6499e58d20667870abad5322901934a4c82",
+      "git_blob": "6e1fbdaf3c2b597e9df307ed0e3752429a31db8c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/author-spotlight-before.json",
+      "bytes": 24190,
+      "sha256": "b1ae60d925b6b3e44566031425ee1a18539398b8a9b096cb3a45ef3e787f4f87",
+      "git_blob": "e4849f0f4da826adfa8aa0a7dfcb77d28ce0ae30"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/installer-fixtures.json",
+      "bytes": 820,
+      "sha256": "1f6d1031abe2dc5dcab34c2030b9975162580e0c52ce9deb2d0195f3d26eee82",
+      "git_blob": "a6a2faf6226cbdd95a7f617168a316899ffeb81a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/native-panel-and-lens.json",
+      "bytes": 3817,
+      "sha256": "440f8e8f9407081b9fe87148ec139d199ccddf57593572645ceb46878d312e34",
+      "git_blob": "e20f156dceb0f239095453d6715ee7a2a73777a9"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/payload.json",
+      "bytes": 103207,
+      "sha256": "9332af431aa98ba829e6406acda6ca3ba25681092b501ca21d9b87f4830574f0",
+      "git_blob": "2fdc96faa2a7ddf325259a2d127f44309fa6354a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/pipeline-manifest.json",
+      "bytes": 660,
+      "sha256": "6be9b49444182fd32009173e5e38bfd8c49774b96abe0ba18a8ac58af1aa1ea6",
+      "git_blob": "3470c8c858a6e672c89cb1f37c66dfca7b51ffe9"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/preservation.json",
+      "bytes": 1681,
+      "sha256": "847f261d52f6eec2c76ceaf2cedc6fbd8db0f03025a60f27f9f7252309d46b95",
+      "git_blob": "81411ac0bcff336349c3bb8fe48e5b8747ce7ce3"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-00.jpg",
+      "bytes": 36340,
+      "sha256": "3ab78a8b85e97205683cd1722865e36c51da098c6f949a9a692173259cf2d3cf",
+      "git_blob": "c238575aab37e1b7bb19251ec727c1eab196ed8a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-01.jpg",
+      "bytes": 27067,
+      "sha256": "3f3159d9a5b2d9cfe6219dcccd867ad275b807f8744273d5423b1597a8263cd1",
+      "git_blob": "838b6ae474d7735933895c77ccbf1d8584979f95"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-02.jpg",
+      "bytes": 33587,
+      "sha256": "538125193e58c3a272a922ed080a444b3d9d0a952688e67460217391791f58b0",
+      "git_blob": "13963ada44da6b5da38fefb23b4e90ba02a097b3"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-03.jpg",
+      "bytes": 33405,
+      "sha256": "6040628a964b350d610139698fceec801b7d50715025e4b233002c2eb25921d3",
+      "git_blob": "74b1cbeb41e7ff27050b415274a78cd19f190fbb"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-04.jpg",
+      "bytes": 35973,
+      "sha256": "b10ffe43b67890ba7339fc1e1009ca29fd5d2d9d409fbe876555dd2da830ce5b",
+      "git_blob": "338f9c94acdbd6b0a05a64867b94bac6478b2851"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-05.jpg",
+      "bytes": 31004,
+      "sha256": "8bf15553092f30ce46f82532e069f88bf8db9524371a8fdee8cf394864cbc15c",
+      "git_blob": "1ecb7c415fb030de0b23c778953020ec57a0c099"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-06.jpg",
+      "bytes": 22920,
+      "sha256": "049b1cbeccc8b57a7b11959acfe7d8be3a6edef450046f4e9ee9262abef3d3db",
+      "git_blob": "1b9280207274499ec21a62e174e265ec45bf7a8c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-07.jpg",
+      "bytes": 37138,
+      "sha256": "4a9ccc8b9423f3cf7229937ab1881c6407da2f6465bd14896e8aa635e813ae14",
+      "git_blob": "2c01b6688ed1d7f6b5b87e1012539387442e9b1f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-08.jpg",
+      "bytes": 17733,
+      "sha256": "172993da6099c4c68e3f6cadc903516ea6f457810642902d6f12d05377ed56bb",
+      "git_blob": "dd6ecd419df143629967d6ad697a3a3ab3f0b018"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-09.jpg",
+      "bytes": 27786,
+      "sha256": "837ce6b697d0a0847fca5a58c5ef94637f395531453eceb6d0a50796c9c2f3e8",
+      "git_blob": "51ce1fefad75625dba185c7e50e9f41e88755e58"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-10.jpg",
+      "bytes": 18944,
+      "sha256": "0b63dadccdec054b7fbd8acbbfd0639db62e52eabcbfdfb403968e71bcb9b269",
+      "git_blob": "90ecb9dd5ed5d2442f0c1af7a3e7cabb72a06e2b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-11.jpg",
+      "bytes": 21431,
+      "sha256": "22bfec3fe081d1cd6a327aa9eb539c3560294f12b519ca2cd93797ddb0a0a4bc",
+      "git_blob": "c3775d9a12c1e29693393a022875b5fbe1404d6e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording-contact-sheet.jpg",
+      "bytes": 705155,
+      "sha256": "8ce0bd59f7b7d0060ad4a5762ffb6f2ff80f35fbb7babe080bb790c939fd1852",
+      "git_blob": "a085c305b2aa0043e14d32918ab989608ba62946"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/recording.json",
+      "bytes": 1533,
+      "sha256": "4111cc682b2034c7d8a33778fbf16e03feb183a72410e33dffc18e7481120a28",
+      "git_blob": "481114de0cef884cdae918357be0e7ff1780638a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/save-fixtures.json",
+      "bytes": 15987,
+      "sha256": "0d50979d611b8fda104deee4a1d8ed673009920e1b7f31aef7c4417ae8b25ce8",
+      "git_blob": "4d64e524151c8f092bd9e118cb62614689e2724f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/saved-scenes.json",
+      "bytes": 674,
+      "sha256": "25e5aa74628d0b7fc63f730b45000510f555aa7a694e5aa80ad601f6541d3c74",
+      "git_blob": "0218628b103a2916b989612b1712da96eed529f3"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight-optics/update-fixtures.py",
+      "bytes": 3654,
+      "sha256": "fe7f69f7589b8912d842fbf3d4659921d018a181a2f9e4cac2740f4114ba765a",
+      "git_blob": "7b90bfcf34e74740136fc69f22f2e383ffb1912b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/analyze-video.cjs",
+      "bytes": 1543,
+      "sha256": "563df49a968cfff3f945447a4935b2a11c450b0d77ac445741b19a5d1716da61",
+      "git_blob": "06a8fbbb275ecfd1df8ee6d36432cb90a88406b8"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/initial-payload.json",
+      "bytes": 104247,
+      "sha256": "4b26dc15f021e9bb3fb503f67dd81377de9849aabf5e67af504633f72cf2f169",
+      "git_blob": "f91fbf094bc7b446e1d0b4988bce434e001e467a"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/local-checks.json",
+      "bytes": 1320,
+      "sha256": "0bec43234f635980028d2a22dc7538780179d9cdd4e342ed6137e5f8b27d8cec",
+      "git_blob": "21aba9a110c5aaba1ce23f36a607f1ae59976718"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-abort-after-alt.json",
+      "bytes": 653,
+      "sha256": "1161cc195267f8b9bad6a0e44d712664b80d18d6a24274a4f0b0e4ed21faae2c",
+      "git_blob": "850d56347fb21a637e783086a43b5317d675e471"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-abort.json",
+      "bytes": 512,
+      "sha256": "0fbcb6eb3aeb4783256580b6580f0fce38289d5c384bc0d0c1d49cc27dfc7e58",
+      "git_blob": "ced5670e8cc2d1cfcce555614999615e1f6d45fd"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-before-sources.json",
+      "bytes": 28684,
+      "sha256": "c7f09db6bc80cea18f482fa7651961773e798577441ed5072160663a18d5b446",
+      "git_blob": "64e1abe08178c8f05d1f61b6a76d7f1f3024ce9f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-edit-restore.json",
+      "bytes": 469,
+      "sha256": "2246dc69de75d2e68762b712e0a4be633d1ec21e94c5f6f769129ae7b966fca4",
+      "git_blob": "97b61655065f4aeab755710a05536470a8ee09fe"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-final-edit.json",
+      "bytes": 230,
+      "sha256": "6bb9ec413ae169a62e8f23b6b64ced3703dcd6fcac11ef4b8fa9cb00efd25d4f",
+      "git_blob": "7f31c44fa59bdf92f199b0e2e62f7794a4d75795"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-final-install-repeat.json",
+      "bytes": 162,
+      "sha256": "5217118546a0b3907f6a65f1ebf9c96cb4475c862e6b26449e951e9e16bafa4d",
+      "git_blob": "e487bddab461c84a5ef118a3eaf519813d45bcd5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-final-view.jpg",
+      "bytes": 360690,
+      "sha256": "14783731601e9cabd76c715db74959021487ebf8d420171c113e5e6bb97ef2ed",
+      "git_blob": "d72f3489d1fce22002a549b16c51e82d3cb8f3c2"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-hand-fill-upgrade.json",
+      "bytes": 305,
+      "sha256": "eea853bc95ba9d3cc2d1ea0b5ee65944fccc5c2afa06199bccd9e388dff027a5",
+      "git_blob": "791e9df27fe2abf91a1df60f2281ee68525a921e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-input-and-controlled-turn.json",
+      "bytes": 577,
+      "sha256": "48ced8fe080536b8db8f40174c544db0beb546cf0f6dc9d820f07a72f8f887e6",
+      "git_blob": "a0905330c42b1b0bd5e4acded7ccf9af2765e57b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-install-repeat.json",
+      "bytes": 162,
+      "sha256": "5217118546a0b3907f6a65f1ebf9c96cb4475c862e6b26449e951e9e16bafa4d",
+      "git_blob": "e487bddab461c84a5ef118a3eaf519813d45bcd5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-install.json",
+      "bytes": 163,
+      "sha256": "68b6756d2e8a1b9bc4031b2892853780a0c63ce4c7282265d2bd6932702746f1",
+      "git_blob": "d11abff35b47575857e86371f902c3885e8f4c3b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-retry-default-on.json",
+      "bytes": 88,
+      "sha256": "8ca1d6e3f6874e295dbb7ae4b72ffadbf8567a0777c1ba67ad698eed41861f99",
+      "git_blob": "7a506e05d79d66ed70a834a2d3d8d712b2512b50"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-turn.json",
+      "bytes": 78985,
+      "sha256": "6c0d2bec6e75b457f4dcf5fb11d1a58cdddd16f26986cd7987cbc6c3cb4fdb53",
+      "git_blob": "c247dd61480c0c3a1b0511cc2e67a1c30e635460"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/native-walk.json",
+      "bytes": 68967,
+      "sha256": "63cfcfebcd9065a86aa5dce0d7583ef4e0b92b892a59b4126fc2c01a4725b232",
+      "git_blob": "0b9aeee093eccd4f954b171561573ec75cc9f67f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/payload.json",
+      "bytes": 104733,
+      "sha256": "de2f8be0cd7c78d6076011714e54063c647c1311335a8ad00d53bcdc141e9c96",
+      "git_blob": "5ab7e29f12970261fea032eb21ce79865a613e88"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/pipeline-fixtures.json",
+      "bytes": 19004,
+      "sha256": "8affdb42011eb8386cc77df1157787a97c27b213e507432e4bf609573ec3d660",
+      "git_blob": "79985f17b875061421d2b3e0b7c2e729d323fff7"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/pipeline-manifest.json",
+      "bytes": 892,
+      "sha256": "15eb250d7c3669d3b1997a4f6eedde7f024760cd86600cb0faa492fe470ec3db",
+      "git_blob": "d9d6506b4a18bdb1666bd57e7eeaeec9093db7b0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/preservation.json",
+      "bytes": 2388,
+      "sha256": "53eb7f5ba34da538cdfe859005072b3b07f1bfb08c9fb7eb565abbf586672f5c",
+      "git_blob": "45ddcfe864dbb4bb711de5ee2b8e7908b67aefb1"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-0_5.png",
+      "bytes": 410706,
+      "sha256": "2781041c342d8dd364c65c33909cb544c8ac2eb34579d5605d38d2d1b9f68156",
+      "git_blob": "e580dac966e60c5ba7c6477fde9b333cb6e4d894"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-10.png",
+      "bytes": 571347,
+      "sha256": "141c0588cfb98347fefddab73309429bd494b38adcc524c8fbbdb7d024e66925",
+      "git_blob": "eb4e4a70cbcc7712573533fd1a3d0ffcd3f5df1c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-12.png",
+      "bytes": 519597,
+      "sha256": "1e5ef14160a25500ae1387c32dc421e34861dc17a314f100413c4f635ee6a73a",
+      "git_blob": "7b9fc7f669050b7df937c9c2145e624da40fa2bd"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-14.png",
+      "bytes": 436425,
+      "sha256": "af7bdc668d65baeafb9ffd89383cd50663eb34369488a177edea29c434454038",
+      "git_blob": "edde3e50ac7dc93014a8daefa19114d18ac68d31"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-16.png",
+      "bytes": 461729,
+      "sha256": "556527d2b0651a3d5b7a9e08f64e1c6c3c21e425447d734246dc2b387045c782",
+      "git_blob": "bfe527fde77b5c648eb56eb1458f72337930e94c"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-18.png",
+      "bytes": 465586,
+      "sha256": "3287ee230825ddf064211651dac18bd16ae6839edae8a127b93662b0ca67b99b",
+      "git_blob": "59bb3a9d8641469b71eed69ae3af21fe031dcc18"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-2.png",
+      "bytes": 502123,
+      "sha256": "9ac7f486b4b70820cdf5e57383e00e849c63c0cb668879c7570eef661126a5ce",
+      "git_blob": "ef9b1f8ee7dea8d68240c70ce3f87cfda6f4fae0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-4.png",
+      "bytes": 522698,
+      "sha256": "ae060fb5b0f56383cc9657450961ee9efb1b8eeb94f18031ef89276b39ec9fc5",
+      "git_blob": "2cc968679140ecbbba75b28fe133b9684acfb5a3"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-6.png",
+      "bytes": 510011,
+      "sha256": "7e94f04f42c00314d900816dc470ef562325a1888e9fc5fabdfe54edd51ba8c1",
+      "git_blob": "f386052658067b4f7cf27cf56acd9a22709c355f"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-8.png",
+      "bytes": 520699,
+      "sha256": "6888960ff9775aa839e7bfa824b3d8dd50069903ca163810f86b306df0e22a87",
+      "git_blob": "734973fe936bcffc0da205987dc70b0f46af7071"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/reference-contact.png",
+      "bytes": 582654,
+      "sha256": "4ef765a673d43f4c52e39319ab3bdfaca44f03d342ef768c57d00f4310f20bea",
+      "git_blob": "14ddb599ff8ba705dc7d4b1c6c961f318a4c8312"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/saved-scene.json",
+      "bytes": 780,
+      "sha256": "b0ee187ac1aa5c6839a2231c7e32e48e4189d910f0b263df09cc0a8cc194d3f7",
+      "git_blob": "81f4c9d8cabd5bcb9ff0c7d77e75ff124ae0ec10"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/video-analysis.json",
+      "bytes": 1043,
+      "sha256": "529dd6f6feac573f324b464ef9251359762567ebec35f56223df9bdcce282325",
+      "git_blob": "bd36edaa0fe1477c2fdf46ae88af5e8d4f68ca5d"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-flashlight/video-metadata.json",
+      "bytes": 56,
+      "sha256": "d77cade4d75d4f520ffa19a6196990e2722ee66fd86081ae233a2d74597b17d9",
+      "git_blob": "fc9df5a63f5b4ffcf371deccab0fc5d27ce11ca2"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-precommit/archive-verification.json",
+      "bytes": 5526,
+      "sha256": "bc8f9c090254e6c62ab611b84728b795ad81d5659165ff2d4f4832e863fd30a7",
+      "git_blob": "9a7acc0fcb6b41d70739830d7dcfbb0c678d8d50"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-precommit/luau-tests.json",
+      "bytes": 8315,
+      "sha256": "f97cf51241f4d638d31686895c5704028ce725ea8f463fa591d8b73c282e0d50",
+      "git_blob": "ee5b8e3ab6906643f15bef7a942304c71274277b"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-precommit/summary.json",
+      "bytes": 815,
+      "sha256": "b5b615ded8fdb107da4aecfa25f6f20318935115311b24bf1bb36ea43340191e",
+      "git_blob": "8e9234ec3f20ff02ee6aaa8aeae1f7c03a41afa0"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-realistic-B/payload.json",
+      "bytes": 64769,
+      "sha256": "cb96fedd50bed4e962e16c498bb280ed080508c368af1ed5b795ee08d1823990",
+      "git_blob": "cabb14767f46ac40390a3fd00cfb9ec52f642d64"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-realistic-B/pipeline-manifest.json",
+      "bytes": 517,
+      "sha256": "e3244ca3f9959a48cd470601bf003c0a14785f2bdf583809bfd4d1b23ab91fd9",
+      "git_blob": "cb4fd004b9675d2675fbaf713e6d2bb465ceb52e"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-studio-quality-lock/after-reopen-files.json",
+      "bytes": 609,
+      "sha256": "70fdf2e70ee7aabaf78d9ae8a8a15d2f73276153cfa414883f701100af8c8481",
+      "git_blob": "3e59f38b00867974ea1e738decf03a67a4cfc3a5"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-studio-quality-lock/full-reopen.json",
+      "bytes": 4906,
+      "sha256": "c69553c77280ad806ff9ff7cb3248111ef07d94d741ab99878514fed9a8d9c09",
+      "git_blob": "4e60ad299257fbd8a63f15af61a37bad0fa48855"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-studio-quality-lock/install.json",
+      "bytes": 313,
+      "sha256": "5b9ec0f4ad37f833fd575281d5a866c3bf58b4bc8efb17f2b9b6d40ebb29ae76",
+      "git_blob": "f4699f6da5647976af687d0cfa503ba9e1590b25"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-studio-quality-lock/native-recovery.json",
+      "bytes": 1296,
+      "sha256": "108d4a18fab5cb5d0285c88931bef59960918c6cce9090a380074bd3ecc7bc4c",
+      "git_blob": "fabacd417aed1da7285e65b77568e89c230d3aa4"
+    },
+    {
+      "path": ".artifacts/playtests/2026-10-20-studio-quality-lock/saved-scenes.json",
+      "bytes": 527,
+      "sha256": "992cf659744a14877ddc27419007a72558d95a6de1eac99916c1eae356a0083e",
+      "git_blob": "f3d11391e914508931a3203647f2f0f9049339fc"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/after-files.json",
+      "bytes": 51539,
+      "sha256": "4e2baf5a6204e66b1d7e7f6721f315fa5d19554e64687c818d1e0180792d363a",
+      "git_blob": "3edf5cd996a362f6dc7d70269421af6a734c7bd6"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/before-files.json",
+      "bytes": 54100,
+      "sha256": "92337b9d2b15a587c175cec39b8d450172a7ec9266cf7f121e6ee6ef39e86f87",
+      "git_blob": "3e77139fc80b30cf3bf5cbbfe7e202174e1d36a4"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/build-gifs.py",
+      "bytes": 10382,
+      "sha256": "d24901a750de7e052bddc94a67abd50da6e11813271df8487f746285d96d779b",
+      "git_blob": "27efe38682549002d8d365386a653008bd0e83a3"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/first-frame-1.png",
+      "bytes": 100021,
+      "sha256": "1aef64ebe5a98b85f3c4e3c7e65981a6568f24ce48d39bd199cb86a85e4a18c3",
+      "git_blob": "045aa26c719af39360a2415a8cedd249dee6edcc"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/first-frame-2.png",
+      "bytes": 137189,
+      "sha256": "258481d5c3c6eebccf8663f997bf66520a204a5fd3c280cea39d94ce21649889",
+      "git_blob": "28c2e3789b68f4822ccf8b3de0b036b9007204e6"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/first-frame-3.png",
+      "bytes": 139473,
+      "sha256": "ea88fa71a306ff145b9bd363b76e5e9677b5d84850357717a86a03f3cb15e68c",
+      "git_blob": "a22cf68b23bc93da94a50921ea22f73e650492b9"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-00.png",
+      "bytes": 100021,
+      "sha256": "1aef64ebe5a98b85f3c4e3c7e65981a6568f24ce48d39bd199cb86a85e4a18c3",
+      "git_blob": "045aa26c719af39360a2415a8cedd249dee6edcc"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-01.png",
+      "bytes": 97588,
+      "sha256": "547078bc5b9a918be59dc0b714bfa38c21ec5c5dc618f04f05b03d5b260d2980",
+      "git_blob": "59e2cafe68ab098b3eab7c96e38f5f8f9fca0e6a"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-02.png",
+      "bytes": 97768,
+      "sha256": "2606af6f30e4922213b8910c3e3d69bdbe93456fe3e899e50e974d51f0e3eaf0",
+      "git_blob": "fd2b21e750b349473569c5130f08de8d1faf6119"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-03.png",
+      "bytes": 97625,
+      "sha256": "c23ead6a33984cd5212873e4e94897b688bb06a8fb92729aa1438d2e8bbd3226",
+      "git_blob": "c6db139a708db0f2b13137793faa9a01bed71994"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-04.png",
+      "bytes": 97730,
+      "sha256": "4380f5cd25b6dd9c49bffbd5b43c2e0f98bc727bc60334bd16f7a85df06e797e",
+      "git_blob": "a7ec94848db531691e9c9dea3b8d87c32e8d33f3"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-05.png",
+      "bytes": 98412,
+      "sha256": "23ea6758e9a82edd9e28a23e8e2cac76f733cb1d649b129dae9876b259270833",
+      "git_blob": "bece353c4fe95de2a0d4fbc4c9c1daca4ce0bee2"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-06.png",
+      "bytes": 98869,
+      "sha256": "90b2c8e9ed4bdae6eac43f258d13fea1959fce59c7b0345a2296ee41f0f77994",
+      "git_blob": "2c08e81d0e5bf0cecbac9cd0050cbb01a9a41d0a"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-07.png",
+      "bytes": 96657,
+      "sha256": "2f36c5b71d58743eb3145f9c788e6d4b21d2860ff51da20d6cf7e5802c9f8618",
+      "git_blob": "9bbd7acbebcb1a64d8e3aec02cfc4737f6fe59a9"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-08.png",
+      "bytes": 97334,
+      "sha256": "d3081effa1f096a16c488372cef8dcde536f1858af0cdf1d9cbbf1b3abfe3a36",
+      "git_blob": "e93640ffb847133eb8863e2b3c2159b0acfdbdf4"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-09.png",
+      "bytes": 96968,
+      "sha256": "a48070fbbdfda40529f654603726861449c33d4b551a9bbefd0bbe7e31a052e2",
+      "git_blob": "64a756fc5b7f00efc724d4e0ef577bda74851793"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-10.png",
+      "bytes": 95842,
+      "sha256": "29468606064d941c7b2ba55cdb4824967b2e65b29d91be8860ef1965e98cb4f7",
+      "git_blob": "3b6ddf9a2daec26d39a11da247c926e83bd8f8b1"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-11.png",
+      "bytes": 96276,
+      "sha256": "2f74cd723d0e25030ce43ff7b4bd6693f39ebe0e05cf1567963c69723d39c3e8",
+      "git_blob": "567efc77a08a9226ec9d9ba68486903a7f73ba39"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-12.png",
+      "bytes": 96346,
+      "sha256": "a395946dda6514b52f5137cfc2eb5c7a9a15dff32370f9a40a06754b2f848413",
+      "git_blob": "8764bccf0d60e700edef206138cfc45cd2e9ecec"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-13.png",
+      "bytes": 96308,
+      "sha256": "eb66538d1b7a69ecf4b42bee5cc18fb4bcb98084ec9d571d2dadf3a741d62cdf",
+      "git_blob": "64fdc584a5c560c94babeeeb3a3ee3c52ee0a26e"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-1/frame-14.png",
+      "bytes": 96437,
+      "sha256": "ff6e04a1dd8b75310f9da0488002061595ec8e3c1e6f3c61eacfa622bea980ae",
+      "git_blob": "81bedbe728c9ab0d54576c3d19cb9afa6a799c57"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-00.png",
+      "bytes": 137189,
+      "sha256": "258481d5c3c6eebccf8663f997bf66520a204a5fd3c280cea39d94ce21649889",
+      "git_blob": "28c2e3789b68f4822ccf8b3de0b036b9007204e6"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-01.png",
+      "bytes": 135684,
+      "sha256": "775cd076a0addbf70c7c565fe06234fd303a6c41488bb85f82fa3d8e0256277f",
+      "git_blob": "287310e299b884352986a30f1d992116af96306f"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-02.png",
+      "bytes": 136097,
+      "sha256": "a6813fc1dfa1c34a2b37676c4e79a32d13d50dbbe1bd421a04b0f5bfb90af10b",
+      "git_blob": "84677001fdce3500541fc8f82e07a8479b97dcb8"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-03.png",
+      "bytes": 136280,
+      "sha256": "40a570db360bd4b05242f8bd120a96ec561fbb2637c07c126053be79895f46dd",
+      "git_blob": "b65636062cfda69e65325312c82e4a3acf692152"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-04.png",
+      "bytes": 137014,
+      "sha256": "b9c36ed413f27be2c5e1a0aedec3af7c87ec87bfcf83d3c02cea2373bc593450",
+      "git_blob": "901baa6084a1609ac0640e2172385ef97159df88"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-05.png",
+      "bytes": 137104,
+      "sha256": "d6e070a94ffbfb1f86c2e913497d734c1e95d2c7e3cf3a024fb91523a16b5127",
+      "git_blob": "39417cb5eb104c053f9e5bde114129b725a54318"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-06.png",
+      "bytes": 138293,
+      "sha256": "6cc949d93ad7407d4670ecf153450d9d0383265feef28024b263ccbebd41e3a2",
+      "git_blob": "f454f0dc15ff3352e71b3679f31aa06be81f2063"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-07.png",
+      "bytes": 142603,
+      "sha256": "f4173ad9abe67053711f1c96312c7920ec51869276d08de272239506c707a828",
+      "git_blob": "fd3bcb7af29a0d9b6d0ce52074440a8b9f02e983"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-08.png",
+      "bytes": 142910,
+      "sha256": "e8c2420ec4de6eb89c9e466fc75d8a4644cb47462dce1a2aabd38cd80ac0e27e",
+      "git_blob": "9f2707fb65d44f03c36363dbceb2a12d5c610a7e"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-09.png",
+      "bytes": 141992,
+      "sha256": "c3bcccf332cd205fe5251c2eb564c9e193918a4dd85ea1a08a03759a1ee7c9b3",
+      "git_blob": "4b11b972de94271fbbb5c206f5e3275645adac7b"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-10.png",
+      "bytes": 140602,
+      "sha256": "712de5b077da4d25fb23845bfb4f0cc36dca7a7c2d75a5945b57491bcbded6c0",
+      "git_blob": "379dffd9cae82735c18d8995522e37ac4ad8a4c2"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-11.png",
+      "bytes": 140300,
+      "sha256": "f71169a3a8596b6c665a5c59af914e53afddfaac79fc0de725d70cc37276a64d",
+      "git_blob": "984fedf44a25a03c4bb742bcf4e8381ea06e1974"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-12.png",
+      "bytes": 139606,
+      "sha256": "770185d3558057509821e2423dd939a10544a751e06ee3f56f03f1ef3c378e44",
+      "git_blob": "ca6a80cc1fa5c055c64d5e12144954e730889661"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-13.png",
+      "bytes": 139024,
+      "sha256": "de21b64becf542b744b5f03b2f54aec9f0b96df352f088dcc3580435daa38c3b",
+      "git_blob": "9a2a853ae219aae139dd6d6c6f9d889c5313d593"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-2/frame-14.png",
+      "bytes": 139497,
+      "sha256": "8d5dd427e83cb0aa90d9c566e565a78e44eed9815732ddee8b33db6120c69461",
+      "git_blob": "baaf375c06b23848188311a9a3b79585a090f808"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-00.png",
+      "bytes": 139473,
+      "sha256": "ea88fa71a306ff145b9bd363b76e5e9677b5d84850357717a86a03f3cb15e68c",
+      "git_blob": "a22cf68b23bc93da94a50921ea22f73e650492b9"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-01.png",
+      "bytes": 138461,
+      "sha256": "010b60d884233c60e54c8c60d8cd977b454d5461bf396cd6b167d4dbf81553f8",
+      "git_blob": "908f25eafd1a6428293cb196ec6b0729ae1ae606"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-02.png",
+      "bytes": 138889,
+      "sha256": "62304f8b1c31a48809cb2cc4a53972ccd324fa0ea96b4b6b266516a1b39786c9",
+      "git_blob": "d1e3049825ec3a35354f0a54569b607361bf48a0"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-03.png",
+      "bytes": 139041,
+      "sha256": "7f4006279c415dcac80978a81c6585b1afd7e5b0e83b2470fd27cc6cfa4c15cd",
+      "git_blob": "dd31b38af51e2c768116b61de6f3e9314f3e4cf9"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-04.png",
+      "bytes": 139638,
+      "sha256": "2492a4dfe6ab6022f7933d7c5eec909d15ffadd8baae7167a03b306c28b63cdc",
+      "git_blob": "64c0d8531d2452064cd6624ef76842089a4228b8"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-05.png",
+      "bytes": 139679,
+      "sha256": "79ece51e7ffb63c488e51be5ce22d70f660c9cab6a56d377db499d916ef5eaf6",
+      "git_blob": "0d6aa8be3ddb0e9c6481be0025237b5037b24072"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-06.png",
+      "bytes": 140634,
+      "sha256": "f4184587a0f450d5ba9cbf0799223a92ab812ad04b3ad7a8a602420226558192",
+      "git_blob": "1b37f10a77b594684b31a6f1993dc325e5861716"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-07.png",
+      "bytes": 144483,
+      "sha256": "475da9670fae110a7935ab571455f22c21f843d828d1d8893b6d678e5021b56f",
+      "git_blob": "01c7ae8eec202e966f936a19c46b9afdcf75cb06"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-08.png",
+      "bytes": 145160,
+      "sha256": "3ab210449d94af35697a84754b17baeb9873ca5e72b1a52ac44efddea9f0a40f",
+      "git_blob": "e72603140cbac55b31ba19514ed6f56d124cbf90"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-09.png",
+      "bytes": 144361,
+      "sha256": "b9a6f9d58106e51cd6d03c849f6713a808b5f3a1aef01df4ee142662c735dc4d",
+      "git_blob": "ba8ab3a157ead98d12331e1052590589b8a38b00"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-10.png",
+      "bytes": 142945,
+      "sha256": "a02c7ec7112a8ce9b1d01efbe24c227763c65be65707be9a3f7d3752746d3cff",
+      "git_blob": "62b47c5687b533d75371ec11174a31612d8da133"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-11.png",
+      "bytes": 142601,
+      "sha256": "e3a4adfa9e81a710142d6f713c2cbbd084eb73415f950254390c89234336d9c9",
+      "git_blob": "2fbb01b4e4c58f9cd352eec3bae973961b09e652"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-12.png",
+      "bytes": 141663,
+      "sha256": "03ebc376a3f98ce93e57acc2d9e31dd77d0afc5c4ac6e0f5cb110d84f8c636fe",
+      "git_blob": "ec461b6b7478233a68fe37e33bbccf282b0565f8"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-13.png",
+      "bytes": 141139,
+      "sha256": "b0d9da53807e5f3b9437eafd65073c48c38b1e6a9eadd11fdb3eaf25973beb82",
+      "git_blob": "a42a9800281bab5e38c032be47322c2666421470"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/mode-3/frame-14.png",
+      "bytes": 141519,
+      "sha256": "58cbf777c647e24eaa57a5b4d16507e959196d62d4325175b0919d55e9231337",
+      "git_blob": "148e1699dcc656a43dde00613030c8f6564d5214"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/native-capture-rig.luau",
+      "bytes": 5033,
+      "sha256": "c8d20d936c70f96ab0a65ef5a27ebb237a1c99b2ba151f2f3c4c2f965143633a",
+      "git_blob": "213e3777bf54540ec6cf18411cbc5da5cce6b584"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/native-comparison-only.luau",
+      "bytes": 4835,
+      "sha256": "c291a0148c42d82d9ff2f89e3692ab4ffd8d04fb4ddcde8a3e7b14003e61e3bc",
+      "git_blob": "a2c200656ba7ef2ac36f34167629d5b37ae34966"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/native-isolated-preview-rig.luau",
+      "bytes": 7078,
+      "sha256": "26f9149e98d2bbdf33a0652cbdd32f48a33c20fa2700a5d441b048dcbcbf0af3",
+      "git_blob": "45c041a14e48b62bf37f66b60462b4af6c408f43"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/native-preview-only.luau",
+      "bytes": 3407,
+      "sha256": "b42da79cb5f421f340ed6ba2d257ae1276be9c87f159fa440527891ef4f4ec18",
+      "git_blob": "2d2e70279c65129dc0fb99beb20dad274da51009"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/render-illustrative-previews.py",
+      "bytes": 11652,
+      "sha256": "4c52762086dbd17e38879468a7032446d3fecad7a9b343e87104d30b66e4d5f0",
+      "git_blob": "9c3d1205b5a2574ff3dc09a346c87279b011dd78"
+    },
+    {
+      "path": ".artifacts/previews/2026-10-20-flashlight-choices/studio-after.json",
+      "bytes": 67,
+      "sha256": "00410f0d3dfbd09a355166480725c6e49009d5e2a3b5a8c62e5c23660fbfb7de",
+      "git_blob": "dfb3ba332cf2b3bd7113f91559e4a7a4193ee2a6"
+    },
+    {
+      "path": ".artifacts/scene-archive/2026-10-20-scenes.zip",
+      "bytes": 37064436,
+      "sha256": "499c06f1f5bfbda032da03a09f7afadf9d548cc186a5c3c4b3807ce3aea4b034",
+      "git_blob": "8e689fb677f1b8939f9394281627de473600933b"
+    },
+    {
+      "path": ".artifacts/scene-archive/cleanup.json",
+      "bytes": 577,
+      "sha256": "b7a5280028c5f552e1a9cdf5ce9dd4a4687d59bfa22e80817e5d959405d447e1",
+      "git_blob": "0cbf9d084cd350854dcb1f68f3e0d006c2b17f09"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 3782,
+      "sha256": "02d93f9bc61ad7b85bb333f26fcb0f5c872bcdb9fc1050151d4abd4a71e9d716",
+      "git_blob": "da309095f9c5b84ed309e2a5a451315f18b59025"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 921,
+      "sha256": "450be0f71bc941e9e971d0b602e4fb65a51c839278c9c3615c9b520874604790",
+      "git_blob": "756d35bc86a9efc37343b31e6ff835227236a76a"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 94238,
+      "sha256": "e4ffe3d9e105779eb56875541bb113666a21fba20d2066dea9fe32b3e7e74273",
+      "git_blob": "38b1a7b1a13c48d3b3d601dbad5e52b0ad444171"
+    },
+    {
+      "path": "assets/black-night/black-sky.png",
+      "bytes": 92,
+      "sha256": "655f21b89642ff9fae00a94c3cffbc47fdec7c236ea1ac92b31dbfdb109e69a1",
+      "git_blob": "c3936cac2782e63ba004e0104af6bee1c03d8466"
+    },
+    {
+      "path": "assets/black-night/provenance.json",
+      "bytes": 475,
+      "sha256": "cc89cf2dcc17f0c9c8cdb5fa88eaf9d3d72439f37d1ffe6c77c586e29ac3fd7e",
+      "git_blob": "210a52b77dab6752291b3714efb6bec6f7d476ff"
+    },
+    {
+      "path": "assets/harvest-warden/README.md",
+      "bytes": 15456,
+      "sha256": "6f28f5bacaae81787fa5fe7df18d85839b2561fb66cb92052108aa81ca27c500",
+      "git_blob": "7c340ebb49e08063ed00967f3c03e5c4089678d2"
+    },
+    {
+      "path": "docs/2026-10-20_A-flashlight-preset.md",
+      "bytes": 9040,
+      "sha256": "b8d9497d2b14c4db5c014435e53cea6f27dc283386e0b4f3569d597897c9de9a",
+      "git_blob": "5361bddf177a75cceff234a56b7456800f037215"
+    },
+    {
+      "path": "docs/2026-10-20_B-flashlight-preset.md",
+      "bytes": 4962,
+      "sha256": "c1b404c169268cd20f74150f7fdd342bb401c47b23690fb5ee242a70c758707d",
+      "git_blob": "957ce2fa6b76d10735a2297466f292a8cfe38074"
+    },
+    {
+      "path": "docs/2026-10-20_B-flashlight-tall.md",
+      "bytes": 8655,
+      "sha256": "2b80508c0ef310d64f2b2002ed6f36dfcdedde1df807b81b45d00793b3da39e4",
+      "git_blob": "537ce5fef6963f2814da881a0ffb416116a2571c"
+    },
+    {
+      "path": "docs/2026-10-20_black-night.md",
+      "bytes": 9994,
+      "sha256": "1e210ff988c3a3a44fcc0f397f9a0f8b078d9981cdeb4d7135ff434d30025472",
+      "git_blob": "03bd85848d9f03eba60189c4fade66c4b76a9dd7"
+    },
+    {
+      "path": "docs/2026-10-20_flashlight-author-tuning.md",
+      "bytes": 9073,
+      "sha256": "ad1eab850bcaca1fe80406bbb4ca141783442ead21e7593fd0d00faebd58293d",
+      "git_blob": "1cc4461b79c9484ed419c3c6124c425971dd7324"
+    },
+    {
+      "path": "docs/2026-10-20_flashlight-cone.md",
+      "bytes": 4481,
+      "sha256": "6e59378408225f3a8c6b990e3eff27e2c2a5172e66f296989b6d3d498babfa37",
+      "git_blob": "f199b34baa309f61d54e8df51450521978e14c7f"
+    },
+    {
+      "path": "docs/2026-10-20_flashlight-directional.md",
+      "bytes": 8905,
+      "sha256": "895524527b2fa234308156c9d56b4a04c40b406704b4d30a4d7ed444efdccd9d",
+      "git_blob": "3f0638a9ef13e25913d081950f65bdd773590b72"
+    },
+    {
+      "path": "docs/2026-10-20_flashlight-lookdown.md",
+      "bytes": 7580,
+      "sha256": "97d48c2eedf40442ca7b89dba80fdf14c858e1479266db452c6f6deedf326433",
+      "git_blob": "b4514289fdf018e21c20544a486d7ead458ef578"
+    },
+    {
+      "path": "docs/2026-10-20_flashlight.md",
+      "bytes": 11741,
+      "sha256": "93befa0e731b8e2c8a95bcb373de7fd31ae214fbf47a5c70cbe368b2a121a0bf",
+      "git_blob": "0bf08a44745f9e31edceead765ad9f577cf399ba"
+    },
+    {
+      "path": "docs/2026-10-20_studio-quality-lock.md",
+      "bytes": 10083,
+      "sha256": "36ea947cb0227ea5da10cfe1381fea76dcb16e9b316cd7745dba8c7fd311eb29",
+      "git_blob": "406d404bcca3e5babeaa8d4d19de78d677f8fe49"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 127714,
+      "sha256": "bc2f0e19c747bc604df3502e41fa966e1e53f2ea353d429364b3b5117cf5f9df",
+      "git_blob": "1738f8b27994f3d9f27194c308257311dc4cb348"
+    },
+    {
+      "path": "docs/feature-index.md",
+      "bytes": 44695,
+      "sha256": "0d18f9798ed867116e8d1eeb2ca3c1828687c4485bcd6811de262574269385e1",
+      "git_blob": "c0d00895b8e60a4eb757111f1c82cb0d11d700d3"
+    },
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 1491827,
+      "sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+      "git_blob": "d4d78f0d1c5a9391cdbb658dbdad98fa095b8113"
+    },
+    {
+      "path": "place/Children_of_corn_B.rbxl",
+      "bytes": 1494878,
+      "sha256": "f33571e819fb605130b05489789c93f11c0ef92a3e9762c77691130a60c3d9c0",
+      "git_blob": "a0bb932186231f8b7f89790c624d3f4a718936c9"
+    },
+    {
+      "path": "scripts/B-flashlight-settings.luau",
+      "bytes": 2371,
+      "sha256": "767966af16f1a2b21387c87404479164e0454db07c77efdad3855a8ebb2ea977",
+      "git_blob": "121168151b69b68ac21a429e8c2763d7be33205e"
+    },
+    {
+      "path": "scripts/build-B-flashlight-tall-installer.py",
+      "bytes": 5402,
+      "sha256": "1372dae13e93affe49b76b86bee0da4769dfff786ad50da4a7318986bb04c125",
+      "git_blob": "1b60d4d36ac76d18cd29c945db072fbb45ce858d"
+    },
+    {
+      "path": "scripts/build-black-night-installer.py",
+      "bytes": 6851,
+      "sha256": "f776c7c5574231e7c2911ef9aed545cce913be31cfec4a8212593f6f2aedf330",
+      "git_blob": "88745fa34914405a21ea2215ee9345a1f30f5d17"
+    },
+    {
+      "path": "scripts/build-corn-quality-plugin.py",
+      "bytes": 2018,
+      "sha256": "a494daaa3b78ab510e57ab31727d5c18467792630fec543df6b0055484d7d8cd",
+      "git_blob": "dfa1908112c1bc25ed0f56a8cc98db64570836ce"
+    },
+    {
+      "path": "scripts/build-flashlight-author-installer.py",
+      "bytes": 4964,
+      "sha256": "c5a7e00feac5bb22cbb648fdeb03c2bc15dffbdea3f2baff756126b4fc068f77",
+      "git_blob": "47734a4f840b5b218a4fd413451c51229fb27a57"
+    },
+    {
+      "path": "scripts/build-flashlight-cone-installer.py",
+      "bytes": 6459,
+      "sha256": "c8157ffa6188a7a86664fddab69a23ee1c1e913f9d4fd6c7ee82c44484abf188",
+      "git_blob": "62155bc1ae7efc15b4f95e086ae902559377a777"
+    },
+    {
+      "path": "scripts/build-flashlight-directional-installer.py",
+      "bytes": 7640,
+      "sha256": "3adae2b1120d9bc6e6dda66ee58bcac4cc9c50a102ad7b6359fb9d3876f45a74",
+      "git_blob": "a16a531dbe7c320a0218ed3a9d0420facb9b13bf"
+    },
+    {
+      "path": "scripts/build-flashlight-installer.py",
+      "bytes": 7389,
+      "sha256": "699b9063460e30fe6afd6555f4819b57d91f28e8c3329602bd77b20dea213255",
+      "git_blob": "1772ac16442481dd706fbdd20b4b68e62a8dc16e"
+    },
+    {
+      "path": "scripts/build-flashlight-lookdown-installer.py",
+      "bytes": 6037,
+      "sha256": "0082661a7940c0b8bb7cc03f96b7afd073b376fcdddf93f079eca273af36a81b",
+      "git_blob": "47640f1e5d029395ca9358811f9e57c2eb880bdd"
+    },
+    {
+      "path": "scripts/install-A-flashlight-preset.luau",
+      "bytes": 24204,
+      "sha256": "ac35db7774e464c9d97cae3a3656d7d40615a4d850f3ecfa873d2072d9183bd9",
+      "git_blob": "1725695733905f24fae6032f7a8d2c1f9b19bc69"
+    },
+    {
+      "path": "scripts/install-B-flashlight-preset.luau",
+      "bytes": 24545,
+      "sha256": "b68d3c04f543463bc6de87037289583230b0c9595864a9b6b3bcf2ed4b6f71a1",
+      "git_blob": "5eca733fa00b774c3d0d88af322f7286f205296b"
+    },
+    {
+      "path": "scripts/install-B-flashlight-tall.luau",
+      "bytes": 138190,
+      "sha256": "25d86b717f4ce642d8082ed6b157c89db8cb8a9b0002ab86f9be9ce4e1c12057",
+      "git_blob": "5f8d25fdf645391f3a8aeefa68aa6306b99d553a"
+    },
+    {
+      "path": "scripts/install-black-night.luau",
+      "bytes": 89382,
+      "sha256": "cb788fee394ad165c0a223bad57dad905b2017437d2f67317bb00847a6d34dbb",
+      "git_blob": "f7fa2bc8da6d61d011b22ae3d45aeb22337f6ff1"
+    },
+    {
+      "path": "scripts/install-flashlight-author-settings.luau",
+      "bytes": 2601,
+      "sha256": "eee87f6d4e74c8cbf0644548fc6b45c4da598d13135714fc0029b0ff6f6ccae2",
+      "git_blob": "7801d7d420d0af6fb05f83b0a013501a990e7ad1"
+    },
+    {
+      "path": "scripts/install-flashlight-author.luau",
+      "bytes": 110228,
+      "sha256": "0b5ea4cbd61b3cb8e9c45b5890b247c7497f25d4156794e8bfdfe5bef6751e81",
+      "git_blob": "a9ca7acc348481984ae99429c722cdb55b53aa70"
+    },
+    {
+      "path": "scripts/install-flashlight-cone.luau",
+      "bytes": 103205,
+      "sha256": "7aa8b07368beb1899561d7ddff9202138899a28bd3d0f096a0b9924314e18d50",
+      "git_blob": "e471ace49d0fb4bb2ef89dfb1c67b50f08fd15d6"
+    },
+    {
+      "path": "scripts/install-flashlight-directional.luau",
+      "bytes": 115322,
+      "sha256": "408559c616e619f92a12af1a5e3db311b55ce15bd632fb8212264c09ecaf770c",
+      "git_blob": "7590020954c2c1957218387382b331850ee18f59"
+    },
+    {
+      "path": "scripts/install-flashlight-lookdown.luau",
+      "bytes": 74195,
+      "sha256": "f223abb61c3b36ada60ecfad17fc054d68daf24e3cab89e6772c1386f4bfcf5f",
+      "git_blob": "0f6e66cf82e37893d5121016769bd1045d057798"
+    },
+    {
+      "path": "scripts/install-flashlight.luau",
+      "bytes": 111730,
+      "sha256": "67644be259381ad0a5c4521924a9d42074b3c274cc04c64b79b90829ba67534d",
+      "git_blob": "797fcb6dc93c70d598b8bea3a00ded40de6ccbb9"
+    },
+    {
+      "path": "scripts/install-local-corn-quality-plugin.py",
+      "bytes": 1409,
+      "sha256": "56b4b8f144bacf196185f099bb99a51a9cab29d841cf5006d5d490503745c3a4",
+      "git_blob": "f6cee159b5c42ee123edb5c05dd9e2e4ddee6da5"
+    },
+    {
+      "path": "scripts/install-realistic-B.luau",
+      "bytes": 72817,
+      "sha256": "1573aba4792d1279747db6ec85c671d5a91803f489e4e14a43f3c13fcb8b50b4",
+      "git_blob": "f8778cb123ff75453d4642a71a508b850fac7a4c"
+    },
+    {
+      "path": "scripts/verify-A-flashlight-preset.py",
+      "bytes": 5209,
+      "sha256": "6f3f0e8fd6fc7e1484baa4f37ed8e33126fc1d555f581a2c2507ba662da6f4f8",
+      "git_blob": "dd0e9b53906986052a078ba09aa0346e93f46c52"
+    },
+    {
+      "path": "scripts/verify-B-flashlight-preset.py",
+      "bytes": 6033,
+      "sha256": "ba3c25e9de0d8b677df22677b833692380160fbf6de9a6212f88924ed241deb7",
+      "git_blob": "fbe6eaefe6dfa5b9de6f933a1cac592de0725735"
+    },
+    {
+      "path": "scripts/verify-B-flashlight-tall-copy.py",
+      "bytes": 6204,
+      "sha256": "815041dc85298953c80f021ef6571c4791e10189276bf38a1224331b3d539b3c",
+      "git_blob": "a8241f8f857a5f5cb53499d1aa0db2605dba10f6"
+    },
+    {
+      "path": "scripts/verify-black-night-copy.py",
+      "bytes": 12926,
+      "sha256": "e2a5aa33991c17862390ba2911c5ad332a1e5b431228600dc0adda692fefa6c6",
+      "git_blob": "a936c727d721457e75108dc46fa6f946cd1793dd"
+    },
+    {
+      "path": "scripts/verify-flashlight-author-copy.py",
+      "bytes": 9118,
+      "sha256": "52d7ca35b57ad82ce2434464b3837a56de9cd5a91e606246effde8d7885d3a4b",
+      "git_blob": "5cce26fc49e663340df6c9f84efc828a182e58bd"
+    },
+    {
+      "path": "scripts/verify-flashlight-cone-copy.py",
+      "bytes": 9003,
+      "sha256": "a59235bebeb7ba1650ff2a739cd54dc84b37a35228353aa2291e3fc6a4f58eb4",
+      "git_blob": "9a0fef4066d9dab1028b2ec971c9953b2dcf3d45"
+    },
+    {
+      "path": "scripts/verify-flashlight-copy.py",
+      "bytes": 11015,
+      "sha256": "de0c7eb9a567255bbd007cdee02888df0d94bf2080dd42a852b096d427435599",
+      "git_blob": "279bb0a91872ce479e97e01b53a18f99c6a62ab5"
+    },
+    {
+      "path": "scripts/verify-flashlight-directional-copy.py",
+      "bytes": 9061,
+      "sha256": "9242dfce006842763fdda956bd1a2184f4426ad66b9ca19d6aa6a865df4edbcf",
+      "git_blob": "b9519a732100d3f15e36dd2a279b2add188a1aec"
+    },
+    {
+      "path": "scripts/verify-flashlight-lookdown-copy.py",
+      "bytes": 13103,
+      "sha256": "77fa49ddc702b014be01e666621c95ce361a6185202a9144c109a2f51e195925",
+      "git_blob": "2a2e0e4b1d1d201bd362ba4986d4df4775242128"
+    },
+    {
+      "path": "scripts/verify-realistic-B-copy.py",
+      "bytes": 5301,
+      "sha256": "89531f68c719cb126587a9b6e147f079939aca1405f92d9f8b149ef4928a81d4",
+      "git_blob": "b41ae83f019670ff2446f296714c3452b6e6195d"
+    },
+    {
+      "path": "src/client/Controllers/FlashlightController.luau",
+      "bytes": 19491,
+      "sha256": "fa8fbc6f4193e406c9ed1c9e28a219fd12388f0a7e87acc543eb71ce0f63c9fa",
+      "git_blob": "fc3919036800df4ebbfebab6cd10493005ba0b2a"
+    },
+    {
+      "path": "src/client/Controllers/RoundController.luau",
+      "bytes": 9355,
+      "sha256": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a",
+      "git_blob": "f578f693f69a43b5288be2fd3694f0ab35578254"
+    },
+    {
+      "path": "src/client/Game/FlashlightTuning.luau",
+      "bytes": 6153,
+      "sha256": "5929d239dbf92ae7581ea36966574dc24a0fe90bf6f776a3c2a874aea7167c3b",
+      "git_blob": "38c8c6fa6a017c127550ffb7539fe2c55192008d"
+    },
+    {
+      "path": "src/shared/Game/CornAppearance.luau",
+      "bytes": 4025,
+      "sha256": "031132c8ac2408f7e7ba2b40479ad90f0e78cde61a4feecec2b661ad536bfdf1",
+      "git_blob": "1815545b9b80e7b8aef2a49dec9e5233764cb142"
+    },
+    {
+      "path": "src/shared/Game/FlashlightPresentation.luau",
+      "bytes": 8175,
+      "sha256": "98cebd8fe2ae1d7c16ab252e34a4f681e4700bee26699b8257bcb2bed68c77a8",
+      "git_blob": "a3d14abdf6fe23752fb1ef2a67ae2ae64804827d"
+    },
+    {
+      "path": "src/shared/Game/HarvestWardenVisual.luau",
+      "bytes": 10569,
+      "sha256": "6f5935046c7ebd3925d4145f2dfc415ce069bc5c568079b90d797341543da4ec",
+      "git_blob": "7fcc4bd943f8424f6648518ffa65e7bbe19a4198"
+    },
+    {
+      "path": "src/shared/Game/LightingModes.luau",
+      "bytes": 5192,
+      "sha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2",
+      "git_blob": "73adeafc45f9be620f7ea9590cd77e83ba39bfb2"
+    },
+    {
+      "path": "src/shared/Game/RoundText.luau",
+      "bytes": 4362,
+      "sha256": "b4f251c9bd19408e6c0dea79533f151a26e73398f74697688cc7c762e75ccff7",
+      "git_blob": "d8d6e1e0f1f47b7a4035afbd1a64fe23ae30480a"
+    },
+    {
+      "path": "studio-plugins/CornStudioQuality21.plugin.luau",
+      "bytes": 4504,
+      "sha256": "c96e25ec909ac95ffe70d164b42ecde725216aeab934e0138635b0bb94297061",
+      "git_blob": "c18fcca1f69a60072a9f1f96541984c5d50e76dc"
+    },
+    {
+      "path": "studio-plugins/CornStudioQuality21.rbxmx",
+      "bytes": 4793,
+      "sha256": "5b25f94bd58ee116c65f345e7a7f931407fe016560d952ece41effb288babf43",
+      "git_blob": "58aab431c395f30d49dc0dfc55d04b5b5c9079f5"
+    },
+    {
+      "path": "studio-plugins/CornStudioQualityGuard.luau",
+      "bytes": 3958,
+      "sha256": "162a700bd08ed91ed04bf59bb466c5a6ef909d311fcbd826d2dcfb48f656f9d2",
+      "git_blob": "28c032f9adff2ab7638deeb3372c57ba05c67397"
+    },
+    {
+      "path": "tests/B-flashlight-tall-copy.py",
+      "bytes": 5131,
+      "sha256": "c33d98ff644f4733118ca743f4376ebdb163ea65e6f04a9fcee8d8c5a24f4e4e",
+      "git_blob": "3baa686d624b5c75ed311fd3ff98a41055079e7b"
+    },
+    {
+      "path": "tests/B-flashlight-tall-installer.luau",
+      "bytes": 5042,
+      "sha256": "912a88ca12a32321bfff1096f179d47e2b8477d8bca557b2807d8bcd4aa65026",
+      "git_blob": "a9c170c05cd613e9df98ba05bf436d90d5213f10"
+    },
+    {
+      "path": "tests/black-night-pipeline.py",
+      "bytes": 17624,
+      "sha256": "f466daa06ef88143c54b12f0c8162339eaaea25b8a46c1741ee7c46e86906310",
+      "git_blob": "5136a8170e953ee9aa65bfe2580bcc17f1566772"
+    },
+    {
+      "path": "tests/flashlight-author-copy.py",
+      "bytes": 5241,
+      "sha256": "90f67d70af6e39c3e0beeca8094a28d8fc5498d0600ebb82e24e6d1ba0739313",
+      "git_blob": "c1f68162a7a1054852a79108b7f2bc3bd64f6c31"
+    },
+    {
+      "path": "tests/flashlight-author-installer.luau",
+      "bytes": 6240,
+      "sha256": "09b03d087733cc3ab3f3773807fa6e1d6252003b47ad87bfe01841890f4221cc",
+      "git_blob": "f367dd1b697f78d3cb04b1e91a741a379a23f303"
+    },
+    {
+      "path": "tests/flashlight-cone-pipeline.py",
+      "bytes": 13378,
+      "sha256": "b5a3070fe3388cf0b99e46a3119133283a38a07e2fcba84e0e303286ea5fcc6f",
+      "git_blob": "68693dd2dc64a66df9f4de9e9730cf697904bd8b"
+    },
+    {
+      "path": "tests/flashlight-controller.luau",
+      "bytes": 14759,
+      "sha256": "dfed30b48c211d1497edf59da21544e59f3c437684fea0cb5a9cd0b3d1b276f0",
+      "git_blob": "026a777216c140a4c80b5f4f07a806b8dac37036"
+    },
+    {
+      "path": "tests/flashlight-directional-pipeline.py",
+      "bytes": 14002,
+      "sha256": "68e90bd36e9e16c1910b2b465e424d0e0e378de6b790a121cf1d347f3fddecf7",
+      "git_blob": "0947f26fa20e513d76d4d0aa036981e13620f4b6"
+    },
+    {
+      "path": "tests/flashlight-lookdown-installer.luau",
+      "bytes": 4628,
+      "sha256": "bc4bc679e7ca24f326e30fa276ac2ffd26154d64861405a0431b580d0bae142d",
+      "git_blob": "86f226e4c3f9399cbba567f5bd8c1cf6648219fd"
+    },
+    {
+      "path": "tests/flashlight-lookdown-pipeline.py",
+      "bytes": 6507,
+      "sha256": "fd48306fd6f066cdef028d30b87fb993d396b1020b70a63209843521d5fecb86",
+      "git_blob": "777d6dea1c99516f2543392d6361c3bd605765fc"
+    },
+    {
+      "path": "tests/flashlight-pipeline.py",
+      "bytes": 15828,
+      "sha256": "cf2f84e44450e7572020d567476ec1b9d3a5475c859e9269ea82d69e808a0a94",
+      "git_blob": "369a27c44e7cf4a1ff4e282e2b96dc9c447d7360"
+    },
+    {
+      "path": "tests/flashlight-presentation.luau",
+      "bytes": 11098,
+      "sha256": "8f51d3feb04bdcdc3f39328320882d6d4dafe1d138920bbe8d5f6041169bff8c",
+      "git_blob": "ea3aca21881c146b8d03ecccf99460aef1ce444b"
+    },
+    {
+      "path": "tests/harvest-corn.luau",
+      "bytes": 13762,
+      "sha256": "3abc15ea74fa7f632293f43c8fc4d950e2a1cc014ca9d449d78ef713f789e6a2",
+      "git_blob": "3fccb4a72048a8eaacbafc96f6436d7e69b8783c"
+    },
+    {
+      "path": "tests/harvest-warden-visual.luau",
+      "bytes": 10122,
+      "sha256": "375d97afa98568e98c0cfd7ee3724de2e718aa6713ea3fce13735da9e76e5134",
+      "git_blob": "d701ed702b2da539c89d72b4eee0a41cf869e191"
+    },
+    {
+      "path": "tests/lighting-modes.luau",
+      "bytes": 15787,
+      "sha256": "63a28068da1276aa3bc57028e04b7fa40099e2f8b6be0386bb184e1e38102593",
+      "git_blob": "03af67b43306ac31bf9b79ddc7178521a4a310f3"
+    },
+    {
+      "path": "tests/multiplayer-round.luau",
+      "bytes": 40882,
+      "sha256": "54a380ad641a924d0b5e58afd2cd1a968aa563cd22d98902cc1262f94967e83d",
+      "git_blob": "ca0c102c747c8295569b464f0ee17b771b80425d"
+    },
+    {
+      "path": "tests/realistic-B-installer.luau",
+      "bytes": 4594,
+      "sha256": "840f86501560cc4b0ca971ff27705d1009dc06bb3b0757666c2909e9f47284cf",
+      "git_blob": "d7b11919bc10cb99eecfd83d5353d2e680540ced"
+    },
+    {
+      "path": "tests/round-intro.luau",
+      "bytes": 26837,
+      "sha256": "9a13fa1591855a3566912a9d1bda522d56fadfab489b3d685a9d05c5d2b643d1",
+      "git_blob": "ba5fdf106d0086715ceacbf22be9764aba566e98"
+    },
+    {
+      "path": "tests/studio-flashlight-cone-observer.luau",
+      "bytes": 2509,
+      "sha256": "7e917145ace95737ca0a2e2dba5b16100e2396174597f35ddb810e724648b97c",
+      "git_blob": "32cc454c139f720dde80bfb687b5074e847edb0e"
+    },
+    {
+      "path": "tests/studio-flashlight-directional-observer.luau",
+      "bytes": 2844,
+      "sha256": "a2149f02c3250ecbf22206d7a2d19c60a657cbf1149ff50f18fda40fd6f3d785",
+      "git_blob": "89deaae1a172fba6b130862a9026c674dd720477"
+    },
+    {
+      "path": "tests/studio-flashlight-observer.luau",
+      "bytes": 3490,
+      "sha256": "99c01ddc10b03412a5748c41a4c10a6dc004a7a329fedca72b557b81b1a78e0b",
+      "git_blob": "5aa0f756e2eabffcd05cb1b41a1c28a93a28d117"
+    },
+    {
+      "path": "tests/studio-quality-guard.luau",
+      "bytes": 5060,
+      "sha256": "99593ddee78ea2aa706c7ca43031403597a7dcb218835409ecc95628a7de3193",
+      "git_blob": "5c9d53ae676c1e67bee88b3a16b3a90a4e804280"
+    },
+    {
+      "path": "tests/studio-white-eye-observer.luau",
+      "bytes": 12288,
+      "sha256": "3bc79f0555c78f0b9d28db065290d1b29cacb79b43df1d655fe6995cb3e86fa9",
+      "git_blob": "bf9b8085993ddd3a77cee4f3d3872408b3745117"
+    }
+  ],
+  "permitted_json_line_normalization": [
+    "studio-plugins/manifest.json"
+  ],
+  "indexed_scenes": [
+    "place/Children_of_corn.rbxl",
+    "place/Children_of_corn_B.rbxl"
+  ],
+  "total_changed_files": 328,
+  "excludes_self": true
+}

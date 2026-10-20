@@ -1,0 +1,3505 @@
+{
+  "baseline_sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11",
+  "candidate_sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498",
+  "original_instances": 4526,
+  "candidate_instances": 4521,
+  "removed": [
+    "Lighting/Atmosphere",
+    "Lighting/Bloom",
+    "Lighting/DepthOfField",
+    "Lighting/Sky",
+    "Lighting/SunRays"
+  ],
+  "added": [],
+  "reindexed": 0,
+  "counts": {
+    "VertexCount": 242,
+    "Source": 2,
+    "Brightness": 1,
+    "UniqueId": 4
+  },
+  "changes": [
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "170",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Coat_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "224",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Hat_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "160",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "252",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/Head_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "294",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "310",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "98",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftArm_Material3",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "272",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "144",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftEye_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "246",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "430",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/LeftLeg_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "408",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "310",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "98",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightArm_Material3",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "272",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "144",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightEye_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "246",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "430",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Classic/RightLeg_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "408",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "544",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "444",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Coat.001_Material3",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "180",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Hat.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "352",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "472",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/Head.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "576",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "738",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "168",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftArm.001_Material3",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "400",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "420",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "410",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "1136",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftLeg.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "600",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "738",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "168",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightArm.001_Material3",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "400",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "420",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "410",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "1136",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightLeg.001_Material2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "600",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_1/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_-1_2/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_1/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Fence_1_2/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_1/HW_Rock_01_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_2/HW_Rock_02_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_3/HW_Rock_03_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "229",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_4/HW_Rock_04_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "225",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseWest_Rock_5/HW_Rock_05_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "231",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_1/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_-1_2/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_1/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Fence_1_2/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_1/HW_Rock_01_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_2/HW_Rock_02_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_3/HW_Rock_03_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "229",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_4/HW_Rock_04_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "225",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseEast_Rock_5/HW_Rock_05_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "231",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_1/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_-1_2/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_1/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Fence_1_2/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_1/HW_Rock_01_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_2/HW_Rock_02_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "227",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_3/HW_Rock_03_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "229",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_4/HW_Rock_04_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "225",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/HouseNorthWest_Rock_5/HW_Rock_05_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "231",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_1/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_2/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_3/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_4/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_5/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_-1_6/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_1/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_2/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_3/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_BrokenRailA_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_BrokenRailB_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "76",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_4/Fence02_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_DroppedRail_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_5/Fence03_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post2_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Post3_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "74",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail0_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail0_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail1_0_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/Common/RoadFence_1_6/Fence01_Rail1_1_Export_Material1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "72",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "12881",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "1201",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "452",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseWest_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "454",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "12881",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "1201",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "452",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseEast_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "454",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "12881",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_2",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "1201",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_01_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "452",
+        []
+      ]
+    },
+    {
+      "path": "Workspace/CornMap/HarvestDecor/VariantB/HouseNorthWest_SM_Bld_Barn_03_Shutter_02_1",
+      "property": "VertexCount",
+      "before": [
+        "int",
+        "0",
+        []
+      ],
+      "after": [
+        "int",
+        "454",
+        []
+      ]
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/LightingModes",
+      "property": "Source",
+      "before": {
+        "sha256": "8e90fb793c88701f43089e0148f75d479e116303411bcc38619942f6080ff6db",
+        "bytes": 2259
+      },
+      "after": {
+        "sha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2",
+        "bytes": 5192
+      }
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/HarvestWardenVisual",
+      "property": "Source",
+      "before": {
+        "sha256": "0f5bd4b23cfabc5ffe4683002404a4a057160ac121399e65641ac8689ef00db1",
+        "bytes": 6264
+      },
+      "after": {
+        "sha256": "6f5935046c7ebd3925d4145f2dfc415ce069bc5c568079b90d797341543da4ec",
+        "bytes": 10569
+      }
+    },
+    {
+      "path": "Lighting",
+      "property": "Brightness",
+      "before": [
+        "float",
+        "1",
+        []
+      ],
+      "after": [
+        "float",
+        "0",
+        []
+      ]
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "before": [
+        "UniqueId",
+        "01b2d9d6cde7222e0ae3a33e0000048c",
+        []
+      ],
+      "after": [
+        "UniqueId",
+        "42f159d6c65591c90ae8a38b000004c1",
+        []
+      ]
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "before": [
+        "UniqueId",
+        "01b2d9d6cde7222e0ae3a33e0000048d",
+        []
+      ],
+      "after": [
+        "UniqueId",
+        "42f159d6c65591c90ae8a38b000004c2",
+        []
+      ]
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "before": [
+        "UniqueId",
+        "01b2d9d6cde7222e0ae3a33e0000048e",
+        []
+      ],
+      "after": [
+        "UniqueId",
+        "42f159d6c65591c90ae8a38b000004c3",
+        []
+      ]
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "before": [
+        "UniqueId",
+        "01b2d9d6cde7222e0ae3a33e0000048f",
+        []
+      ],
+      "after": [
+        "UniqueId",
+        "42f159d6c65591c90ae8a38b000004c4",
+        []
+      ]
+    }
+  ]
+}

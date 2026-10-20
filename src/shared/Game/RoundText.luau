@@ -56,8 +56,8 @@ return table.freeze({
 	corn_loop_setup_error = "Не удалось подготовить раунд. Попробуй снова",
 	corn_loop_connection_error = "Не удалось подключить интерфейс. Перезапусти тест Studio",
 	corn_movement_stamina = "Выносливость {percent}%",
-	corn_movement_controls = "Shift — спринт · Space — прыжок · Alt — курсор",
-	corn_movement_exhausted = "Отпусти Shift, чтобы снова бежать",
+	corn_movement_controls = "Shift — бег · ЛКМ — фонарик · Alt — курсор",
+	corn_movement_exhausted = "Отпусти Shift · ЛКМ — фонарик",
 	corn_movement_cursor = "Alt — вернуться к игре",
 	corn_minimap_controls = "M — закрыть карту · охота продолжается",
 })

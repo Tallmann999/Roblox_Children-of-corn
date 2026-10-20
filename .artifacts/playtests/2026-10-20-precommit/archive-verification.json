@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "archive_sha256": "499c06f1f5bfbda032da03a09f7afadf9d548cc186a5c3c4b3807ce3aea4b034",
+  "removed_tracked_scenes": [
+    {
+      "path": "place/Children_of_corn.before-audio-20261013.rbxl",
+      "bytes": 999458,
+      "sha256": "bdebd256fb5d2ad74a9ed5dc51b93f254e592b0d510a0d2b8b797d63847811e6"
+    },
+    {
+      "path": "place/Children_of_corn.before-autumn-20261012.rbxl",
+      "bytes": 239719,
+      "sha256": "0e8a382fcd5b3e61f696e5e40ffa7a33a45436058aa9544ec2b409e4de89e410"
+    },
+    {
+      "path": "place/Children_of_corn.before-editable.rbxl",
+      "bytes": 105095,
+      "sha256": "065eeeebf998cf396ef98486c80b7b8d084c956378997482c2345ea00af6e61d"
+    },
+    {
+      "path": "place/Children_of_corn.before-entity-arrival-20261015.rbxl",
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68"
+    },
+    {
+      "path": "place/Children_of_corn.before-finale-20261015.rbxl",
+      "bytes": 1015691,
+      "sha256": "9082169a7da5fed15cd962611777285213fce99f23de82f83e0f361a683ecf16"
+    },
+    {
+      "path": "place/Children_of_corn.before-foreign-cleanup-20261015.rbxl",
+      "bytes": 359914,
+      "sha256": "50d8d341bcffc34148151ff7ea2e3e7dad7dbe513be1f8cedc82573333f30aca"
+    },
+    {
+      "path": "place/Children_of_corn.before-handheld-20261012.rbxl",
+      "bytes": 995413,
+      "sha256": "66997087e67a05e0095448c8c1fb91b51d61f6acf1de865a78df3b376fb87d93"
+    },
+    {
+      "path": "place/Children_of_corn.before-harvest-art-20261016.rbxl",
+      "bytes": 1003371,
+      "sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646"
+    },
+    {
+      "path": "place/Children_of_corn.before-haze-clusters-20261015.rbxl",
+      "bytes": 1019419,
+      "sha256": "a897bb52fa85505090f973e910139915e6ebb2995e44915c31ecbc2b5c511dca"
+    },
+    {
+      "path": "place/Children_of_corn.before-inventory-20261012.rbxl",
+      "bytes": 981060,
+      "sha256": "6f9a95e624a96ab6c318a4a1912db0c5aae7b6d6e1dfa0d92f70dcc97638e03a"
+    },
+    {
+      "path": "place/Children_of_corn.before-lighting-modes-20261010.rbxl",
+      "bytes": 228018,
+      "sha256": "c2a58d56a1adf964dd617e5eca81fb6e83707b79a9244adae4f45739aa27e5e1"
+    },
+    {
+      "path": "place/Children_of_corn.before-live-proportion-fix-20261010.rbxl",
+      "bytes": 138822,
+      "sha256": "e11accd30c6be71aa0c01ca753a05e15b3c60ed44860b069bb135cb9674aa804"
+    },
+    {
+      "path": "place/Children_of_corn.before-map-tuning-20261010.rbxl",
+      "bytes": 141703,
+      "sha256": "c4d027d34540118cb1c037f00bb4efd0dbb3d673a0a4194c03968ea28d577cb8"
+    },
+    {
+      "path": "place/Children_of_corn.before-map-tuning-author-save-20261010.rbxl",
+      "bytes": 141703,
+      "sha256": "bfb43cbf826d567f5376ff06dd5eaa590b49062fd98c40b4a538c7707c9d06b2"
+    },
+    {
+      "path": "place/Children_of_corn.before-minimap-20261010.rbxl",
+      "bytes": 231503,
+      "sha256": "ccf9eabe433f68f4d4a3f9455da2c759de44003c179f25ac4234241b574c0679"
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-20261015.rbxl",
+      "bytes": 995988,
+      "sha256": "493bc1f9b512d618d0a815b2197e3af854f775cd711b363db2906d8fbaf1fb68"
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-network-20261015.rbxl",
+      "bytes": 1003371,
+      "sha256": "b5084774be98e97a045c6b90a819bdd061b8d4f61b259c3a6e4eb77233ff2646"
+    },
+    {
+      "path": "place/Children_of_corn.before-multiplayer-resume-20261015.rbxl",
+      "bytes": 997184,
+      "sha256": "b5ef0471325bbe5c9ab7178575753453cbf59afb15ed905eb12dfc70a4bbf6c8"
+    },
+    {
+      "path": "place/Children_of_corn.before-proportion-fix.rbxl",
+      "bytes": 138811,
+      "sha256": "58c708359df037c85a7dc777dc46dbcad88af86ac8ede588472fc294b0759105"
+    },
+    {
+      "path": "place/Children_of_corn.before-quality-20261010.rbxl",
+      "bytes": 236519,
+      "sha256": "38714df503f02abce02d5555533d7f4949f384690a1a75d9135cfe655015e1fa"
+    },
+    {
+      "path": "place/Children_of_corn.before-readability-20261013.rbxl",
+      "bytes": 1007172,
+      "sha256": "4ee103b95110e2a2a1a691d58a7bb5cdc34d0dc466d3c5265b47eb5823986546"
+    },
+    {
+      "path": "place/Children_of_corn.before-resize-yellow-20261015.rbxl",
+      "bytes": 1028519,
+      "sha256": "c7015e55a7cf4a020fe0ae1e3d40d4c69c17faf10a8f01d8ce4379066c955fed"
+    },
+    {
+      "path": "place/Children_of_corn.before-rustle-20261014.rbxl",
+      "bytes": 1009332,
+      "sha256": "ef0731f3235a26e4aa76dd26a7853be4d67e9ccc934f4f054428e5cbd6d146f0"
+    },
+    {
+      "path": "place/Children_of_corn.before-rustle-comparison-20261015.rbxl",
+      "bytes": 996617,
+      "sha256": "489af64fb7f36bdfd7756f1e1d701324c6f202cf931422cf91c72be476a9965d"
+    },
+    {
+      "path": "place/Children_of_corn.before-scarecrow-20261012.rbxl",
+      "bytes": 989746,
+      "sha256": "95d87061a83808a139da4c98c7552b65b3c8e86137dff5f472c362c7fd984d5d"
+    },
+    {
+      "path": "place/Children_of_corn.before-spawn-fix.rbxl",
+      "bytes": 152819,
+      "sha256": "df831a6af024f9d8b4667ff3b67974b8a3c0c541afb3a54e2bb4a0da7831274b"
+    },
+    {
+      "path": "place/Children_of_corn.forensic-b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d.rbxl",
+      "bytes": 1010853,
+      "sha256": "b0881f9f38700fa8010c369a9288df49a700b9fc682632d74ac8613b43938e0d"
+    }
+  ],
+  "count": 27
+}

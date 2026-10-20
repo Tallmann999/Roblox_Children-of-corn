@@ -1,0 +1,23 @@
+{
+  "scenes": [
+    "place/Children_of_corn.rbxl",
+    "place/Children_of_corn_B.rbxl"
+  ],
+  "settings": [
+    {
+      "file": "GlobalSettings_13.xml",
+      "property": "QualityLevel",
+      "value": "21",
+      "sha256": "eafd0620aa24063652ff940090b6eb9cd8494c7c95fdf7eaa5da353e616bfc51"
+    },
+    {
+      "file": "GlobalBasicSettings_13_Studio.xml",
+      "property": "SavedQualityLevel",
+      "value": "10",
+      "sha256": "020775bbc38419e09930ed7bafce37555ad692297c83df75e467d67da3b77e17"
+    }
+  ],
+  "Studio_restart_acceptance": "pending",
+  "A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "B_sha256": "8160b71046a7c56a8a0c536ecfd3b9b9ca51a4e183c8f42cfb0b2458b81c837c"
+}

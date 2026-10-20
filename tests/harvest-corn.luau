@@ -77,6 +77,12 @@ end
 local Appearance, originals, buildCalls = appearance()
 local localTemplates = Appearance.DetailedTemplates()
 assert(Appearance.DetailedTemplates() == localTemplates and buildCalls() == 12)
+assert(Appearance.DetailedHeight == 10)
+for _, list in localTemplates do
+	for _, template in list do
+		assert(template.Size.Y == 10, "Every B variety/LOD must use taller render templates")
+	end
+end
 for _, stride in { 1, 2, 3 } do
 	local found = {}
 	for col = -12, 12, stride do
@@ -245,7 +251,7 @@ local function validateNear()
 					and not plant.CanTouch
 					and not plant.CanQuery
 			)
-			assert(plant.Size.Y > 6.7 and plant.Size.Y < 9.3)
+			assert(plant.Size.Y > 8.4 and plant.Size.Y < 11.6)
 		end
 	end
 	assert(total == near._plantCount and total <= 4032 and total > 600)

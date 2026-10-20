@@ -1,0 +1,245 @@
+{
+  "restarts": [
+    {
+      "detailedHeight": 10,
+      "style": "Enum.LightingStyle.Realistic",
+      "variant": "B",
+      "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+      "run": 1,
+      "passed": true,
+      "quality": "Enum.QualityLevel.Level21"
+    },
+    {
+      "style": "Enum.LightingStyle.Realistic",
+      "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+      "run": 2,
+      "passed": true,
+      "quality": "Enum.QualityLevel.Level21"
+    }
+  ],
+  "lamp": {
+    "observer": {
+      "samples": [
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945219159126282,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945219159126282,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9975640177726746,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9970324039459229,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.996626615524292,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9963115453720093,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9959384799003601,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.995621383190155,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9953568577766418,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9951795935630798,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9950354695320129,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9949362874031067,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9948433637619019,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9947794079780579,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9947190880775452,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9946795701980591,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9946193695068359,
+          "on": true,
+          "owned": true
+        }
+      ],
+      "scope": "One fresh normal-bootstrap Play. Programmatic production Start request; temporary camera/focus/cursor staging; no mouse, keyboard or Root writes.",
+      "initialSettings": {
+        "core": {
+          "shadows": false,
+          "angle": 12,
+          "range": 24,
+          "brightness": 22.6200008392334
+        },
+        "wide": {
+          "shadows": false,
+          "angle": 78,
+          "range": 18,
+          "brightness": 2.0799999237060547
+        },
+        "pose": {
+          "pitch": -6
+        }
+      },
+      "passed": true,
+      "finalSettings": {
+        "core": {
+          "shadows": false,
+          "angle": 12,
+          "range": 24,
+          "brightness": 22.6200008392334
+        },
+        "wide": {
+          "shadows": false,
+          "angle": 78,
+          "range": 18,
+          "brightness": 2.0799999237060547
+        },
+        "pose": {
+          "pitch": -6
+        }
+      }
+    },
+    "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+    "quality": "Enum.QualityLevel.Level21"
+  },
+  "scope": "Two fresh normal-bootstrap Stop/Play runs; Manual10/Level21 already loaded, no quality setter. Existing B corn height10 preserved. Programmatic production Start, staged camera/focus/cursor; no physical or virtual input, no Root writes."
+}

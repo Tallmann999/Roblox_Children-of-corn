@@ -1,0 +1,13 @@
+{
+  "baseline": "place\\Children_of_corn_B.before-realistic-20261020.rbxl",
+  "baseline_sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+  "sources": 153,
+  "source_changes": 0,
+  "new_nodes": 0,
+  "property": "LightingStyle",
+  "before": "Soft",
+  "after": "Realistic",
+  "installer_sha256": "1573aba4792d1279747db6ec85c671d5a91803f489e4e14a43f3c13fcb8b50b4",
+  "payload_sha256": "cb96fedd50bed4e962e16c498bb280ed080508c368af1ed5b795ee08d1823990",
+  "scene_written": false
+}

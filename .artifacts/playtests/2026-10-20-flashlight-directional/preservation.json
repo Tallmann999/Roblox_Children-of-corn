@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "A",
+  "matching_sources": 152,
+  "matching_asset_sources": 3,
+  "total_sources": 155,
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/FlashlightPresentation",
+    "ReplicatedStorage/GameShared/Game/RoundText",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController"
+  ],
+  "source_change_count": 3,
+  "new_instances": 0,
+  "removed_instances": 0,
+  "reindexed_exporter_paths": 0,
+  "retained_identities_classes_names_parents_exact": true,
+  "world_art_lighting_mesh_metadata_exact": true,
+  "allowed_changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController",
+      "property": "Source",
+      "reason": "declared_flashlight_directional_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/RoundText",
+      "property": "Source",
+      "reason": "declared_flashlight_directional_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/FlashlightPresentation",
+      "property": "Source",
+      "reason": "declared_flashlight_directional_source"
+    }
+  ],
+  "original_sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6",
+  "candidate_sha256": "bddaeb948611267e1b3b4a5091423f860a87c64fe7265cfe80a5997e5941a8bb",
+  "original_instances": 4523,
+  "candidate_instances": 4523,
+  "bytes": 1487942,
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.191000800s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.156748200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Exact engine bytes: FlashlightController, FlashlightPresentation and RoundText contents only. All 4523 original world/art/Lighting/mesh properties, identities/classes/names/parents/raw Terrain exact; narrow finite editor Camera/selection metadata only. No scene serialization, additions or publishing."
+}

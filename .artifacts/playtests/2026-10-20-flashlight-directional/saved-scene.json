@@ -1,0 +1,24 @@
+{
+  "author_confirmed_save": true,
+  "read_only_scene_audit": true,
+  "files": [
+    {
+      "Path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+      "Bytes": 1487942,
+      "Sha256": "bddaeb948611267e1b3b4a5091423f860a87c64fe7265cfe80a5997e5941a8bb",
+      "LastWriteTime": "2026-10-20T12:18:40.8893722+03:00"
+    },
+    {
+      "Path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn_B.rbxl",
+      "Bytes": 1485700,
+      "Sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+      "LastWriteTime": "2026-10-16T15:56:08.5099804+03:00"
+    },
+    {
+      "Path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-flashlight-directional-20261020.rbxl",
+      "Bytes": 1487543,
+      "Sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6",
+      "LastWriteTime": "2026-10-20T11:57:35.6060416+03:00"
+    }
+  ]
+}

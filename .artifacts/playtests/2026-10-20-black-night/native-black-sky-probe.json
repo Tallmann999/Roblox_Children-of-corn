@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"density\":0.27000001072883608,\"status\":[{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"},{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"},{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"},{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"},{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"},{\"uri\":\"rbxassetid://127362238475901\",\"status\":\"Success\"}],\"err\":\"nil\",\"skyfaces\":\"rbxassetid://127362238475901\",\"haze\":1.7999999523162842}"
+    }
+  ],
+  "isError": false
+}

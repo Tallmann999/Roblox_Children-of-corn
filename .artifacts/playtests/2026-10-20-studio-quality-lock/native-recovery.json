@@ -1,0 +1,41 @@
+{
+  "scope": "Bounded native test of plugin core through Studio MCP in B Client; not local plugin automatic load or full Studio reopening acceptance",
+  "studio_id": "5833a5f3-9553-4fdc-908a-ff9c03ac8522",
+  "result": {
+    "before": {
+      "editor": "Enum.QualityLevel.Automatic",
+      "quality": "Enum.QualityLevel.Automatic"
+    },
+    "samples": [
+      {
+        "editor": "Enum.QualityLevel.Level21",
+        "active": true,
+        "writes": 3,
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      {
+        "editor": "Enum.QualityLevel.Level21",
+        "active": true,
+        "writes": 4,
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      {
+        "editor": "Enum.QualityLevel.Level21",
+        "active": true,
+        "writes": 5,
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      }
+    ],
+    "passed": true,
+    "restored": {
+      "editor": "Enum.QualityLevel.Automatic",
+      "quality": "Enum.QualityLevel.Automatic"
+    }
+  },
+  "offline_checks": 17,
+  "installed_plugin_sha256": "5b25f94bd58ee116c65f345e7a7f931407fe016560d952ece41effb288babf43",
+  "full_process_reopen_accepted": false
+}

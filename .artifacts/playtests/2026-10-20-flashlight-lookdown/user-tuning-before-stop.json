@@ -1,0 +1,24 @@
+{
+  "panel": false,
+  "settings": {
+    "core": {
+      "shadows": false,
+      "angle": 30,
+      "range": 4,
+      "brightness": 13
+    },
+    "wide": {
+      "shadows": false,
+      "angle": 100,
+      "range": 32,
+      "brightness": 2
+    },
+    "pose": {
+      "pitch": -4
+    }
+  },
+  "owned": false,
+  "root": "-288.7501525878906, 17.398006439208984, -288.7499694824219",
+  "on": false,
+  "lightingStyle": "Enum.LightingStyle.Realistic"
+}

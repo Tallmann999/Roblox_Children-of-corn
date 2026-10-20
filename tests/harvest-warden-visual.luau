@@ -6,7 +6,16 @@ local serde = require("@lune/serde")
 local CF, V3 = r.CFrame, r.Vector3
 local function load(path, extra)
 	local fn = assert(loadstring(fs.readFile(path)))
-	local env = { CFrame = CF, Vector3 = V3, Color3 = r.Color3, Enum = r.Enum, Instance = I }
+	local env = {
+		CFrame = CF,
+		Vector3 = V3,
+		Color3 = r.Color3,
+		ColorSequence = r.ColorSequence,
+		NumberSequence = r.NumberSequence,
+		NumberSequenceKeypoint = r.NumberSequenceKeypoint,
+		Enum = r.Enum,
+		Instance = I,
+	}
 	for name, value in extra or {} do
 		env[name] = value
 	end
@@ -94,6 +103,9 @@ for _, variant in { "classic", "detailed" } do
 	local rootFrame, rootSize = root.CFrame, root.Size
 	local visual = Visual.new(source, root)
 	assert(visual:Valid() and #visual.parts > 9 and #visual.parts <= 64)
+	local classic = variant == "classic"
+	assert(#visual.beams == (if classic then 2 else 0))
+	assert(#visual.attachments == (if classic then 4 else 0))
 	for _, entry in visual.parts do
 		local original = assert(source:FindFirstChild(entry.part.Name))
 		assert(
@@ -126,6 +138,16 @@ for _, variant in { "classic", "detailed" } do
 	for _, entry in visual.lights do
 		assert(not entry.light.Enabled)
 	end
+	for _, entry in visual.beams do
+		local a, b = entry.first, entry.last
+		local direction = a.CFrame.LookVector
+		assert(not entry.beam.Enabled and a.Parent == b.Parent)
+		assert(direction.Z > 0.98 and direction.Y < 0)
+		assert((direction.X < 0) == (entry.section == "LeftEye"), "Eye beams do not diverge")
+		assert(math.abs(b.CFrame.Position.Magnitude - 60) < 0.0001)
+		assert((b.CFrame.Position.Unit - direction).Magnitude < 0.0001)
+		assert(entry.beam.Attachment0 == a and entry.beam.Attachment1 == b)
+	end
 	for sample = 0, 120 do
 		frame = CF.new(20 + sample / 10, 9, -10) * CF.Angles(0, 0.45 + sample / 100, 0)
 		local pose = Pose.GetWarden("chase", sample / 30, true)
@@ -142,7 +164,25 @@ for _, variant in { "classic", "detailed" } do
 	end
 	for _, entry in visual.lights do
 		local light = entry.light
-		assert(light.Enabled and light.Range == 24 and light.Brightness == 3 and not light.Shadows)
+		assert(light.Enabled and not light.Shadows)
+		assert(light:IsA(if classic then "SpotLight" else "PointLight"))
+		assert(light.Range == (if classic then 60 else 24))
+		assert(light.Brightness == (if classic then 2.5 else 3))
+		assert(
+			light.Color
+				== (if classic then r.Color3.new(1, 1, 1) else r.Color3.fromRGB(255, 16, 14))
+		)
+		if classic then
+			assert(light.Angle == 14 and light.Parent:IsA("Attachment"))
+		end
+	end
+	for _, entry in visual.beams do
+		assert(entry.beam.Enabled and entry.beam.Texture == "" and entry.beam.FaceCamera)
+		assert(entry.beam.Width0 == 0.125 and entry.beam.Width1 == 5.5)
+		local eye = entry.first.Parent
+		local worldDirection = eye.CFrame:VectorToWorldSpace(entry.first.CFrame.LookVector)
+		local localDirection = eye.CFrame:VectorToObjectSpace(worldDirection)
+		assert((localDirection - entry.first.CFrame.LookVector).Magnitude < 0.0001)
 	end
 	-- Capture hides the existing nine carriers; decorative art follows that local mask.
 	for _, carrier in carriers do
@@ -154,6 +194,9 @@ for _, variant in { "classic", "detailed" } do
 	end
 	for _, entry in visual.lights do
 		assert(not entry.light.Enabled)
+	end
+	for _, entry in visual.beams do
+		assert(not entry.beam.Enabled, "Capture mask left a visible eye beam")
 	end
 	for _, carrier in carriers do
 		carrier.LocalTransparencyModifier = 0.25
@@ -168,22 +211,58 @@ for _, variant in { "classic", "detailed" } do
 	assert(not visual:Valid() and visual:Step(frame, Pose.WardenRest, true) == 0)
 	edited.CanQuery = false
 	assert(visual:Valid())
+	if classic then
+		local beam, attachment, light =
+			visual.beams[1].beam, visual.attachments[1].item, visual.lights[1].light
+		local function refuses(item, name, value)
+			local previous = item[name]
+			item[name] = value
+			assert(not visual:Valid() and visual:Step(frame, Pose.WardenRest, true) == 0, name)
+			item[name] = previous
+			assert(visual:Valid(), "Guard did not recover after " .. name)
+		end
+		refuses(beam, "Attachment1", visual.beams[2].first)
+		refuses(beam, "Texture", "rbxassetid://1")
+		refuses(beam, "Width1", 100)
+		refuses(beam, "Transparency", r.NumberSequence.new(0))
+		refuses(beam, "Color", r.ColorSequence.new(r.Color3.new(1, 0, 0)))
+		refuses(attachment, "CFrame", CF.new(0, 100, 0))
+		refuses(attachment, "Visible", true)
+		refuses(light, "Range", 200)
+		refuses(light, "Angle", 180)
+		refuses(light, "Parent", visual.model)
+	end
 	local foreign = I.new("Folder")
 	foreign.Name = "ManualDecoration"
 	foreign.Parent = visual.model
+	assert(not visual:Valid(), "Unexpected foreign art insertion accepted")
+	local spoof = I.new("Attachment")
+	spoof.Name = "HarvestEyeBeamStart"
+	spoof:SetAttribute("HarvestGeometryOwner", "harvest_warden_v1")
+	spoof:SetAttribute("corn_project_id", "children_of_corn")
+	spoof.Parent = visual.parts[1].part
 	visual:Destroy()
 	assert(
-		foreign.Parent == root and not root:FindFirstChild("HarvestWardenVisual"),
+		foreign.Parent == root
+			and spoof.Parent == root
+			and not root:FindFirstChild("HarvestWardenVisual"),
 		"Foreign insertion lost"
 	)
 	local bad = source:Clone()
 	bad:GetChildren()[1]:SetAttribute("HarvestSection", "Unknown")
 	assert(not pcall(Visual.new, bad, root), "Unknown bone accepted")
 	assert(not root:FindFirstChild("HarvestWardenVisual"), "Failed build leaked visual")
+	for _, class in { "Attachment", "Beam", "SpotLight" } do
+		local unsupported = source:Clone()
+		local injected = I.new(class)
+		injected.Parent = unsupported:GetChildren()[1]
+		assert(not pcall(Visual.new, unsupported, root), "Template " .. class .. " accepted")
+		assert(not root:FindFirstChild("HarvestWardenVisual"), "Failed build leaked visual")
+	end
 	local scriptNode = I.new("Script")
 	scriptNode.Parent = source
 	assert(not pcall(Visual.new, source, root), "Source accepted in art")
 end
 print(
-	"PASS: both actual neutral Warden material groups, Root-relative anatomy/feet/turns, bounded decorative nonquery geometry, dormant visibility, two bounded red Neon lights, capture LTM masking, unchanged Root, foreign/bone/code guards and cleanup"
+	"PASS: both actual neutral Warden groups, unchanged Root/anatomy/animation, A white Neon eyes/two diverging 60-stud SpotLights and faded asset-free Beams, B red PointLights unchanged, dormant/capture mask, 10 edited-light/beam guards, forbidden template inserts, foreign/spoof preservation and cleanup"
 )

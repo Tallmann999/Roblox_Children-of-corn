@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "author_engine_save_confirmed": true,
+  "files": {
+    "A": {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+      "bytes": 1483077,
+      "sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498"
+    },
+    "B": {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn_B.rbxl",
+      "bytes": 1485700,
+      "sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7"
+    },
+    "before_black_night": {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.before-black-night-20261020.rbxl",
+      "bytes": 1485712,
+      "sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11"
+    }
+  },
+  "strict_report": "preservation.json",
+  "B_unchanged": true,
+  "immutable_backup_preserved": true,
+  "geometry_vertex_cache_independently_verified": 242,
+  "new_scene_serialization_or_promotion": false,
+  "new_reopen_or_four_client_or_FPS_claim": false
+}

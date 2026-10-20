@@ -1,0 +1,9 @@
+{
+  "path": "C:\\Users\\User\\AppData\\Local\\Roblox\\GlobalSettings_13.xml",
+  "before_sha256": "833625510fee1924e37893f66bb9115a78edfd3b620db7a0ad7ee96efcf3e2d3",
+  "after_sha256": "eafd0620aa24063652ff940090b6eb9cd8494c7c95fdf7eaa5da353e616bfc51",
+  "only_changed_property": "RenderSettings.QualityLevel",
+  "before": 0,
+  "after": 21,
+  "other_settings_bytes_exact": true
+}

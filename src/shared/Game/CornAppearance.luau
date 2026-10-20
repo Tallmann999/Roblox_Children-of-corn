@@ -9,6 +9,7 @@ local CornAppearance = {
 	DryTextureId = "rbxassetid://103653296385119",
 	DetailedNearChunkLimit = 4,
 	DetailedNearPlantLimit = 576,
+	DetailedHeight = 10,
 }
 
 function CornAppearance.Variety(column: number, row: number): number
@@ -59,6 +60,7 @@ function CornAppearance.DetailedTemplates(): any
 	-- EditableMesh Content is reconstructed separately on each peer, as with farm art.
 	-- Replicated dynamic mesh objects are never assumed to carry visible geometry.
 	detailedBuilding = true
+	local created = {}
 	local ok, result = pcall(function()
 		local geometry = require(script.Parent:WaitForChild("HarvestArtGeometry"))
 		local templates = {}
@@ -77,12 +79,22 @@ function CornAppearance.DetailedTemplates(): any
 					"Unknown detailed corn template binding"
 				)
 				seen[part] = true
-				templates[lod][variety] = part
+				-- Keep immutable catalog geometry at eight studs. Only the personal
+				-- B render template grows vertically; rooted placement scales its Y.
+				local taller = part:Clone()
+				table.insert(created, taller)
+				taller.Size = Vector3.new(part.Size.X, CornAppearance.DetailedHeight, part.Size.Z)
+				templates[lod][variety] = taller
 			end
 		end
 		return templates
 	end)
 	detailedBuilding = false
+	if not ok then
+		for _, part in created do
+			part:Destroy()
+		end
+	end
 	assert(ok, tostring(result))
 	detailedTemplates = result
 	return result

@@ -1,0 +1,36 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[3]
+p=root/'tests/flashlight-controller.luau';s=p.read_text(encoding='utf-8')
+s=s.replace('require = function(node) assert(node.Name == "FlashlightPresentation"); return Flashlight end,','''script = {Parent={Parent={WaitForChild=function(_,name) assert(name=="Game");return {WaitForChild=function(_,n)assert(n=="FlashlightTuning");return {Name=n}end}end}}},
+ require = function(node) if node.Name=="FlashlightPresentation" then return Flashlight end;assert(node.Name=="FlashlightTuning");return {new=function()error("Unexpected Studio UI in adapter")end}end,''')
+s=s.replace('#Flashlight.Definitions()+1','#Flashlight.Definitions()').replace('<= 12','<= 11').replace('~= .45','~= 15.08')
+s=s.replace('Angle == 28 and controller._lights[2].item.Angle == 56','Angle == 26 and controller._lights[2].item.Angle == 54')
+s=s.replace('assert(main.Parent.CFrame == r.CFrame.identity)','assert(main.Parent.Parent.Name == "Lens")')
+s=s.replace('assert(main.Range == 64 and main.Brightness == 4 and main.Shadows)','assert(main.Range == 24 and math.abs(main.Brightness-22.62)<1e-5 and not main.Shadows)')
+s=s.replace('assert(fill.Range == 32 and math.abs(fill.Brightness-.45)<1e-7 and fill.Shadows)','assert(fill.Range == 24 and math.abs(fill.Brightness-15.08)<1e-5 and not fill.Shadows)')
+s=s.replace('assert(axis.LookVector:Dot(camera.CFrame.LookVector) > .9999)','assert(axis.LookVector:Dot(emitter.CFrame.RightVector) > .9999)')
+s=s.replace('assert((axis.Position-(emitter.CFrame.Position)).Magnitude < 1e-6)','assert((axis.Position-emitter.CFrame:PointToWorldSpace(r.Vector3.new(emitter.Size.X/2,0,0))).Magnitude < 1e-5)')
+s=s.replace('#Flashlight.Definitions()+6','#Flashlight.Definitions()+5')
+s=s.replace('12 parts/three lens-directed','11 parts/three lens-directed')
+p.write_text(s,encoding='utf-8',newline='\n')
+p=root/'tests/flashlight-presentation.luau';s=p.read_text(encoding='utf-8')
+s=s.replace('#definitions + 1','#definitions')
+s=s.replace('main.range == 64 and Flash.Settings.Lights.main.angle == 28','main.range == 24 and Flash.Settings.Lights.main.angle == 26')
+s=s.replace('main.brightness == 4 and Flash.Settings.Lights.main.shadows','main.brightness == 22.62 and not Flash.Settings.Lights.main.shadows')
+s=s.replace('fill.range == 32 and Flash.Settings.Lights.fill.angle == 56','fill.range == 24 and Flash.Settings.Lights.fill.angle == 54')
+s=s.replace('fill.brightness == 0.45 and Flash.Settings.Lights.fill.shadows','fill.brightness == 15.08 and not Flash.Settings.Lights.fill.shadows')
+needle='local hands = 0'
+s=s.replace(needle,'''local defaults=Flash.Tuning(nil)
+assert(defaults.wide.brightness==15.08 and defaults.wide.range==24 and defaults.wide.angle==54 and not defaults.wide.shadows)
+assert(defaults.core.brightness>defaults.wide.brightness and defaults.core.angle<defaults.wide.angle)
+assert(defaults.pose.pitch==-6)
+local clamped=Flash.Tuning({wide={brightness=math.huge,range=-10,angle=1e9,shadows=true},core={brightness=100,range=999,angle=-10},pose={pitch=-100}})
+assert(clamped.wide.brightness==15.08 and clamped.wide.range==4 and clamped.wide.angle==100 and clamped.wide.shadows)
+assert(clamped.core.brightness==40 and clamped.core.range==64 and clamped.core.angle==6 and clamped.pose.pitch==-30)
+for _,bad in {false,42,"bad",{wide=false,core=42,pose={pitch=0/0}}}do
+ local v=Flash.Tuning(bad);assert(v.pose.pitch==-6 and v.core.range==24)
+end
+local copy=Flash.Tuning(defaults);copy.wide.angle=99;assert(defaults.wide.angle==54)
+local hands = 0''')
+p.write_text(s,encoding='utf-8',newline='\n')
+print('Updated physical lens-aperture and author tuning fixtures.')

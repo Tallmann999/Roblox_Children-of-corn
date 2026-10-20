@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"roundRuntime\":true,\"diffuse\":1,\"ownedSky\":false,\"effects\":[{\"name\":\"CornfieldFogAtmosphere\",\"class\":\"Atmosphere\"}],\"beams\":0,\"ambient\":\"0.0705882, 0.0862745, 0.117647\",\"outdoor\":\"0.14902, 0.164706, 0.207843\",\"anchored\":false,\"brightness\":0,\"specular\":1,\"spots\":0}"
+    }
+  ],
+  "isError": false
+}

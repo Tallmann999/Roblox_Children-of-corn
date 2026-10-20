@@ -1,0 +1,245 @@
+{
+  "samples": [
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945219159126282,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": 0,
+      "axisDot": 0.9945218563079834,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9975640177726746,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9972372651100159,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9967427849769592,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9963808059692383,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9959778785705566,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9957120418548584,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9954791069030762,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9952717423439026,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9951186776161194,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9950038194656372,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9949041604995728,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9948359727859497,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9947623014450073,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9947131276130676,
+      "on": true,
+      "owned": true
+    },
+    {
+      "pitch": -75,
+      "axisDot": 0.9946783781051636,
+      "on": true,
+      "owned": true
+    }
+  ],
+  "scope": "One fresh normal-bootstrap Play. Programmatic production Start request; temporary camera/focus/cursor staging; no mouse, keyboard or Root writes.",
+  "initialSettings": {
+    "core": {
+      "shadows": false,
+      "angle": 12,
+      "range": 24,
+      "brightness": 22.6200008392334
+    },
+    "wide": {
+      "shadows": false,
+      "angle": 78,
+      "range": 18,
+      "brightness": 2.0799999237060547
+    },
+    "pose": {
+      "pitch": -6
+    }
+  },
+  "passed": true,
+  "finalSettings": {
+    "core": {
+      "shadows": false,
+      "angle": 12,
+      "range": 24,
+      "brightness": 22.6200008392334
+    },
+    "wide": {
+      "shadows": false,
+      "angle": 78,
+      "range": 18,
+      "brightness": 2.0799999237060547
+    },
+    "pose": {
+      "pitch": -6
+    }
+  },
+  "qualityFinding": {
+    "freshPlay": "Automatic (overrides prior runtime Level21)",
+    "savedStudioRenderQuality": 21,
+    "savedStudioPlayQuality": 10,
+    "liveUserSettingsSetter": "Denied: lacking capability RobloxScript; no game-code override installed",
+    "StudioRestartAcceptance": "Pending user restart; no UI automation"
+  },
+  "installer": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"pitch\":-6,\"style\":\"Enum.LightingStyle.Realistic\",\"totalSources\":156,\"core\":{\"brightness\":22.6200008392334,\"range\":24,\"angle\":12},\"wide\":{\"brightness\":2.0799999237060549,\"range\":18,\"angle\":78},\"changedProperties\":4}"
+      }
+    ],
+    "isError": false
+  },
+  "installerRepeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"totalSources\":156,\"repeated\":true,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  }
+}

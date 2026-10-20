@@ -1,0 +1,1172 @@
+{
+  "bFeatureInstalled": {
+    "created": 3,
+    "repeated": false,
+    "totalSources": 156,
+    "changed": 4,
+    "changedLightingProperties": 1
+  },
+  "bFeatureRepeated": {
+    "created": 0,
+    "repeated": true,
+    "totalSources": 156,
+    "changed": 0,
+    "changedLightingProperties": 0
+  },
+  "bFeatureBankInstalled": {
+    "created": 0,
+    "repeated": true,
+    "totalSources": 156,
+    "changed": 0,
+    "changedLightingProperties": 0,
+    "addedSettings": 3
+  },
+  "bFeatureFinalRepeat": {
+    "created": 0,
+    "repeated": true,
+    "totalSources": 156,
+    "changed": 0,
+    "changedLightingProperties": 0,
+    "addedSettings": 0
+  },
+  "bNativePanelPlus": {
+    "panel": true,
+    "fog": {
+      "density": 0.27000001072883606,
+      "haze": 1.7999999523162842
+    },
+    "axisDot": 1.0000001192092896,
+    "tipError": 0,
+    "phase": "active",
+    "owned": true,
+    "on": false,
+    "settings": {
+      "core": {
+        "shadows": false,
+        "angle": 26,
+        "range": 24,
+        "brightness": 22.62
+      },
+      "wide": {
+        "shadows": false,
+        "angle": 54,
+        "range": 24,
+        "brightness": 16.08
+      },
+      "pose": {
+        "pitch": -6
+      }
+    },
+    "plants": {
+      "CornClientPlants": {
+        "maxY": 11.499536514282227,
+        "count": 1362,
+        "minY": 8.679878234863281,
+        "shapes": {
+          "Corn_C_Mid": true,
+          "Corn_C_Near": true,
+          "Corn_D_Mid": true,
+          "Corn_A_Near": true,
+          "Corn_D_Near": true,
+          "Corn_A_Mid": true,
+          "Corn_B_Mid": true,
+          "Corn_B_Near": true
+        },
+        "near": 405
+      },
+      "CornClientBackdrop": {
+        "maxY": 11.499942779541016,
+        "count": 10578,
+        "minY": 8.679902076721191,
+        "shapes": {
+          "Corn_D_Far": true,
+          "Corn_C_Far": true,
+          "Corn_A_Far": true,
+          "Corn_B_Far": true
+        },
+        "near": 0
+      }
+    },
+    "camera": "Enum.CameraType.Custom",
+    "style": "Enum.LightingStyle.Realistic",
+    "model": true,
+    "templates": [
+      {
+        "size": "2.7065699100494385, 10, 3.1600000858306885",
+        "lod": "Mid",
+        "variety": 1
+      },
+      {
+        "size": "3.0320029258728027, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 2.86850905418396",
+        "lod": "Mid",
+        "variety": 3
+      },
+      {
+        "size": "2.344888925552368, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 4
+      },
+      {
+        "size": "3.1600000858306885, 10, 2.2722599506378174",
+        "lod": "Far",
+        "variety": 1
+      },
+      {
+        "size": "3.3499999046325684, 10, 2.9195199012756348",
+        "lod": "Far",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 1.5896830558776855",
+        "lod": "Far",
+        "variety": 3
+      },
+      {
+        "size": "3.3499999046325684, 10, 3.3258910179138184",
+        "lod": "Far",
+        "variety": 4
+      },
+      {
+        "size": "2.8251709938049316, 10, 3.1600000858306885",
+        "lod": "Near",
+        "variety": 1
+      },
+      {
+        "size": "2.9138081073760986, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 2
+      },
+      {
+        "size": "3.0799989700317383, 10, 2.7359719276428223",
+        "lod": "Near",
+        "variety": 3
+      },
+      {
+        "size": "3.2004940509796143, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 4
+      }
+    ],
+    "brightness": 0,
+    "ambient": "0, 0, 0",
+    "parts": 11
+  },
+  "bNativeOff": {
+    "panel": false,
+    "fog": {
+      "density": 0.27000001072883606,
+      "haze": 1.7999999523162842
+    },
+    "axisDot": 1.000000238418579,
+    "tipError": 0,
+    "phase": "active",
+    "owned": true,
+    "on": false,
+    "settings": {
+      "core": {
+        "shadows": false,
+        "angle": 30,
+        "range": 4,
+        "brightness": 13
+      },
+      "wide": {
+        "shadows": false,
+        "angle": 100,
+        "range": 32,
+        "brightness": 2
+      },
+      "pose": {
+        "pitch": -4
+      }
+    },
+    "plants": {
+      "CornClientPlants": {
+        "maxY": 11.499536514282227,
+        "count": 1362,
+        "minY": 8.679878234863281,
+        "shapes": {
+          "Corn_C_Mid": true,
+          "Corn_C_Near": true,
+          "Corn_D_Mid": true,
+          "Corn_A_Near": true,
+          "Corn_D_Near": true,
+          "Corn_A_Mid": true,
+          "Corn_B_Mid": true,
+          "Corn_B_Near": true
+        },
+        "near": 405
+      },
+      "CornClientBackdrop": {
+        "maxY": 11.499942779541016,
+        "count": 10578,
+        "minY": 8.679902076721191,
+        "shapes": {
+          "Corn_D_Far": true,
+          "Corn_C_Far": true,
+          "Corn_A_Far": true,
+          "Corn_B_Far": true
+        },
+        "near": 0
+      }
+    },
+    "camera": "Enum.CameraType.Custom",
+    "style": "Enum.LightingStyle.Realistic",
+    "model": true,
+    "templates": [
+      {
+        "size": "2.7065699100494385, 10, 3.1600000858306885",
+        "lod": "Mid",
+        "variety": 1
+      },
+      {
+        "size": "3.0320029258728027, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 2.86850905418396",
+        "lod": "Mid",
+        "variety": 3
+      },
+      {
+        "size": "2.344888925552368, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 4
+      },
+      {
+        "size": "3.1600000858306885, 10, 2.2722599506378174",
+        "lod": "Far",
+        "variety": 1
+      },
+      {
+        "size": "3.3499999046325684, 10, 2.9195199012756348",
+        "lod": "Far",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 1.5896830558776855",
+        "lod": "Far",
+        "variety": 3
+      },
+      {
+        "size": "3.3499999046325684, 10, 3.3258910179138184",
+        "lod": "Far",
+        "variety": 4
+      },
+      {
+        "size": "2.8251709938049316, 10, 3.1600000858306885",
+        "lod": "Near",
+        "variety": 1
+      },
+      {
+        "size": "2.9138081073760986, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 2
+      },
+      {
+        "size": "3.0799989700317383, 10, 2.7359719276428223",
+        "lod": "Near",
+        "variety": 3
+      },
+      {
+        "size": "3.2004940509796143, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 4
+      }
+    ],
+    "brightness": 0,
+    "ambient": "0, 0, 0",
+    "parts": 11
+  },
+  "bNativeFUnchanged": {
+    "panel": false,
+    "fog": {
+      "density": 0.27000001072883606,
+      "haze": 1.7999999523162842
+    },
+    "axisDot": 1.000000238418579,
+    "tipError": 0,
+    "phase": "active",
+    "owned": true,
+    "on": false,
+    "settings": {
+      "core": {
+        "shadows": false,
+        "angle": 30,
+        "range": 4,
+        "brightness": 13
+      },
+      "wide": {
+        "shadows": false,
+        "angle": 100,
+        "range": 32,
+        "brightness": 2
+      },
+      "pose": {
+        "pitch": -4
+      }
+    },
+    "plants": {
+      "CornClientPlants": {
+        "maxY": 11.499536514282227,
+        "count": 1362,
+        "minY": 8.679878234863281,
+        "shapes": {
+          "Corn_C_Mid": true,
+          "Corn_C_Near": true,
+          "Corn_D_Mid": true,
+          "Corn_A_Near": true,
+          "Corn_D_Near": true,
+          "Corn_A_Mid": true,
+          "Corn_B_Mid": true,
+          "Corn_B_Near": true
+        },
+        "near": 405
+      },
+      "CornClientBackdrop": {
+        "maxY": 11.499942779541016,
+        "count": 10578,
+        "minY": 8.679902076721191,
+        "shapes": {
+          "Corn_D_Far": true,
+          "Corn_C_Far": true,
+          "Corn_A_Far": true,
+          "Corn_B_Far": true
+        },
+        "near": 0
+      }
+    },
+    "camera": "Enum.CameraType.Custom",
+    "style": "Enum.LightingStyle.Realistic",
+    "model": true,
+    "templates": [
+      {
+        "size": "2.7065699100494385, 10, 3.1600000858306885",
+        "lod": "Mid",
+        "variety": 1
+      },
+      {
+        "size": "3.0320029258728027, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 2.86850905418396",
+        "lod": "Mid",
+        "variety": 3
+      },
+      {
+        "size": "2.344888925552368, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 4
+      },
+      {
+        "size": "3.1600000858306885, 10, 2.2722599506378174",
+        "lod": "Far",
+        "variety": 1
+      },
+      {
+        "size": "3.3499999046325684, 10, 2.9195199012756348",
+        "lod": "Far",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 1.5896830558776855",
+        "lod": "Far",
+        "variety": 3
+      },
+      {
+        "size": "3.3499999046325684, 10, 3.3258910179138184",
+        "lod": "Far",
+        "variety": 4
+      },
+      {
+        "size": "2.8251709938049316, 10, 3.1600000858306885",
+        "lod": "Near",
+        "variety": 1
+      },
+      {
+        "size": "2.9138081073760986, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 2
+      },
+      {
+        "size": "3.0799989700317383, 10, 2.7359719276428223",
+        "lod": "Near",
+        "variety": 3
+      },
+      {
+        "size": "3.2004940509796143, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 4
+      }
+    ],
+    "brightness": 0,
+    "ambient": "0, 0, 0",
+    "parts": 11
+  },
+  "bNativeOnAfterF": {
+    "panel": false,
+    "fog": {
+      "density": 0.27000001072883606,
+      "haze": 1.7999999523162842
+    },
+    "axisDot": 1.000000238418579,
+    "tipError": 0,
+    "phase": "active",
+    "owned": true,
+    "on": true,
+    "settings": {
+      "core": {
+        "shadows": false,
+        "angle": 30,
+        "range": 4,
+        "brightness": 13
+      },
+      "wide": {
+        "shadows": false,
+        "angle": 100,
+        "range": 32,
+        "brightness": 2
+      },
+      "pose": {
+        "pitch": -4
+      }
+    },
+    "plants": {
+      "CornClientPlants": {
+        "maxY": 11.499536514282227,
+        "count": 1362,
+        "minY": 8.679878234863281,
+        "shapes": {
+          "Corn_C_Mid": true,
+          "Corn_C_Near": true,
+          "Corn_D_Mid": true,
+          "Corn_A_Near": true,
+          "Corn_D_Near": true,
+          "Corn_A_Mid": true,
+          "Corn_B_Mid": true,
+          "Corn_B_Near": true
+        },
+        "near": 405
+      },
+      "CornClientBackdrop": {
+        "maxY": 11.499942779541016,
+        "count": 10578,
+        "minY": 8.679902076721191,
+        "shapes": {
+          "Corn_D_Far": true,
+          "Corn_C_Far": true,
+          "Corn_A_Far": true,
+          "Corn_B_Far": true
+        },
+        "near": 0
+      }
+    },
+    "camera": "Enum.CameraType.Custom",
+    "style": "Enum.LightingStyle.Realistic",
+    "model": true,
+    "templates": [
+      {
+        "size": "2.7065699100494385, 10, 3.1600000858306885",
+        "lod": "Mid",
+        "variety": 1
+      },
+      {
+        "size": "3.0320029258728027, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 2.86850905418396",
+        "lod": "Mid",
+        "variety": 3
+      },
+      {
+        "size": "2.344888925552368, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 4
+      },
+      {
+        "size": "3.1600000858306885, 10, 2.2722599506378174",
+        "lod": "Far",
+        "variety": 1
+      },
+      {
+        "size": "3.3499999046325684, 10, 2.9195199012756348",
+        "lod": "Far",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 1.5896830558776855",
+        "lod": "Far",
+        "variety": 3
+      },
+      {
+        "size": "3.3499999046325684, 10, 3.3258910179138184",
+        "lod": "Far",
+        "variety": 4
+      },
+      {
+        "size": "2.8251709938049316, 10, 3.1600000858306885",
+        "lod": "Near",
+        "variety": 1
+      },
+      {
+        "size": "2.9138081073760986, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 2
+      },
+      {
+        "size": "3.0799989700317383, 10, 2.7359719276428223",
+        "lod": "Near",
+        "variety": 3
+      },
+      {
+        "size": "3.2004940509796143, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 4
+      }
+    ],
+    "brightness": 0,
+    "ambient": "0, 0, 0",
+    "parts": 11
+  },
+  "bNativeFreshPreset": {
+    "panel": false,
+    "fog": {
+      "density": 0.27000001072883606,
+      "haze": 1.7999999523162842
+    },
+    "axisDot": 1.000000238418579,
+    "tipError": 0,
+    "phase": "active",
+    "owned": true,
+    "on": true,
+    "settings": {
+      "core": {
+        "shadows": false,
+        "angle": 30,
+        "range": 4,
+        "brightness": 13
+      },
+      "wide": {
+        "shadows": false,
+        "angle": 100,
+        "range": 32,
+        "brightness": 2
+      },
+      "pose": {
+        "pitch": -4
+      }
+    },
+    "plants": {
+      "CornClientPlants": {
+        "maxY": 11.499536514282227,
+        "count": 1043,
+        "minY": 8.679878234863281,
+        "shapes": {
+          "Corn_C_Mid": true,
+          "Corn_C_Near": true,
+          "Corn_D_Mid": true,
+          "Corn_A_Near": true,
+          "Corn_D_Near": true,
+          "Corn_A_Mid": true,
+          "Corn_B_Mid": true,
+          "Corn_B_Near": true
+        },
+        "near": 405
+      },
+      "CornClientBackdrop": {
+        "maxY": 11.499942779541016,
+        "count": 10578,
+        "minY": 8.679902076721191,
+        "shapes": {
+          "Corn_D_Far": true,
+          "Corn_C_Far": true,
+          "Corn_A_Far": true,
+          "Corn_B_Far": true
+        },
+        "near": 0
+      }
+    },
+    "camera": "Enum.CameraType.Custom",
+    "style": "Enum.LightingStyle.Realistic",
+    "model": true,
+    "templates": [
+      {
+        "size": "2.7065699100494385, 10, 3.1600000858306885",
+        "lod": "Mid",
+        "variety": 1
+      },
+      {
+        "size": "3.0320029258728027, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 2.86850905418396",
+        "lod": "Mid",
+        "variety": 3
+      },
+      {
+        "size": "2.344888925552368, 10, 3.3499999046325684",
+        "lod": "Mid",
+        "variety": 4
+      },
+      {
+        "size": "3.1600000858306885, 10, 2.2722599506378174",
+        "lod": "Far",
+        "variety": 1
+      },
+      {
+        "size": "3.3499999046325684, 10, 2.9195199012756348",
+        "lod": "Far",
+        "variety": 2
+      },
+      {
+        "size": "3.0799999237060547, 10, 1.5896830558776855",
+        "lod": "Far",
+        "variety": 3
+      },
+      {
+        "size": "3.3499999046325684, 10, 3.3258910179138184",
+        "lod": "Far",
+        "variety": 4
+      },
+      {
+        "size": "2.8251709938049316, 10, 3.1600000858306885",
+        "lod": "Near",
+        "variety": 1
+      },
+      {
+        "size": "2.9138081073760986, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 2
+      },
+      {
+        "size": "3.0799989700317383, 10, 2.7359719276428223",
+        "lod": "Near",
+        "variety": 3
+      },
+      {
+        "size": "3.2004940509796143, 10, 3.3499999046325684",
+        "lod": "Near",
+        "variety": 4
+      }
+    ],
+    "brightness": 0,
+    "ambient": "0, 0, 0",
+    "parts": 11
+  },
+  "bNativeLookdown": {
+    "scope": "Staged pitch/focus/cursor, native Space, no Root writes",
+    "samples": [
+      {
+        "centerInsideWide": true,
+        "angle": 12.353854668085908,
+        "distance": 3.3030385971069336,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 9.574193820636317,
+        "distance": 5.231642246246338,
+        "rootY": 19.868330001831055,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 8.197284735493705,
+        "distance": 7.212902545928955,
+        "rootY": 21.851558685302734,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 7.50213445887076,
+        "distance": 8.89652156829834,
+        "rootY": 23.344289779663086,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 7.154067628754857,
+        "distance": 10.08146858215332,
+        "rootY": 24.346519470214844,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 6.988590487467877,
+        "distance": 10.767810821533203,
+        "rootY": 24.878751754760742,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 6.96091694578634,
+        "distance": 10.955109596252441,
+        "rootY": 24.87947654724121,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 7.065941306876166,
+        "distance": 10.643172264099121,
+        "rootY": 24.410205841064453,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 7.373391529291376,
+        "distance": 9.74162483215332,
+        "rootY": 23.450437545776367,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 7.887248562952797,
+        "distance": 8.520833969116211,
+        "rootY": 21.8571720123291,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 8.991648720326564,
+        "distance": 6.710268497467041,
+        "rootY": 19.875526428222656,
+        "owned": true,
+        "grounded": false,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 11.70307482638077,
+        "distance": 4.400058269500732,
+        "rootY": 17.403383255004883,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 15.238093724246188,
+        "distance": 3.010862112045288,
+        "rootY": 17.242111206054688,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.445341724314739,
+        "distance": 3.243177890777588,
+        "rootY": 17.372224807739258,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.341189144534912,
+        "distance": 3.275548219680786,
+        "rootY": 17.393844604492188,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.313118538017948,
+        "distance": 3.2834134101867676,
+        "rootY": 17.397336959838867,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.305560358322369,
+        "distance": 3.284519672393799,
+        "rootY": 17.397903442382812,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.300984862038234,
+        "distance": 3.2847418785095215,
+        "rootY": 17.397994995117188,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.29571642802653,
+        "distance": 3.284837245941162,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.29113784580953,
+        "distance": 3.2848992347717285,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.285962733921894,
+        "distance": 3.2849690914154053,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.279899706668209,
+        "distance": 3.285043954849243,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.27681185432351,
+        "distance": 3.2850892543792725,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.268666756514342,
+        "distance": 3.2851924896240234,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.263123270527831,
+        "distance": 3.285263776779175,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.256080000628137,
+        "distance": 3.2853541374206543,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.251447331972354,
+        "distance": 3.28542160987854,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.244856414726422,
+        "distance": 3.2855043411254883,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.239220546797734,
+        "distance": 3.2855794429779053,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.233082461986273,
+        "distance": 3.285656213760376,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.226594382679496,
+        "distance": 3.2857351303100586,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.220478764672562,
+        "distance": 3.2858121395111084,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.214889061054317,
+        "distance": 3.2858834266662598,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.209770230435918,
+        "distance": 3.285956859588623,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.204120728724531,
+        "distance": 3.2860283851623535,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.198580410256616,
+        "distance": 3.286101818084717,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.194012927615017,
+        "distance": 3.2861580848693848,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.189444004942965,
+        "distance": 3.286220073699951,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.185319593520799,
+        "distance": 3.2862744331359863,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.181291585298682,
+        "distance": 3.286325454711914,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.177722586416866,
+        "distance": 3.286370277404785,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.174626882580705,
+        "distance": 3.2864136695861816,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.172032674815716,
+        "distance": 3.286447525024414,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.1695496102353,
+        "distance": 3.2864773273468018,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.167931203903166,
+        "distance": 3.2864999771118164,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.166438203005338,
+        "distance": 3.286522626876831,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.165447435093675,
+        "distance": 3.2865357398986816,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.164945047963755,
+        "distance": 3.28654146194458,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.164945047963755,
+        "distance": 3.286543369293213,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      },
+      {
+        "centerInsideWide": true,
+        "angle": 14.164986914224544,
+        "distance": 3.2865376472473145,
+        "rootY": 17.398006439208984,
+        "owned": true,
+        "grounded": true,
+        "on": true,
+        "hit": "Workspace.CornMap.Ground"
+      }
+    ]
+  }
+}

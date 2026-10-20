@@ -1,5 +1,80 @@
 # Дети кукурузы — архитектура
 
+## Фонарик и более высокая кукуруза B — 2026-10-20
+
+В B переносятся FlashlightController/FlashlightPresentation/FlashlightTuning,
+прежние интеграция RoundController и подсказки ЛКМ, чёрная ночь LightingModes.
+Контроллер допускает owned A/B, все игровые запросы/серверные правила прежние.
+LightingStyle.Realistic задаётся на самой B-сцене. Банк двух SpotLight (Wide2/100/32,Core13/30/4,Pitch−4)
+создаётся отдельно в B; исходные объекты A не перемещаются. Локальные B render
+templates всех четырёх форм Near/Mid/Far растут с8до10stud только по Y, сохраняя
+каталог, основание, вариацию, LOD/число растений и exclusions. Старые Editor preview
+и исходные меши сохраняются; увеличенная подробная кукуруза отображается в Play.
+Установка/сохранение — отдельный B-only guarded pipeline против immutable
+Children_of_corn_B.before-flashlight-tall-20261020.rbxl.
+
+## Освещение Realistic варианта A — 2026-10-20
+
+[Сохранённый контракт](2026-10-20_flashlight-lookdown.md): LightingStyle.Realistic
+закреплён непосредственно в A-сцене для Edit и всех участников Play. Код фонаря,
+положение линзы и параметры Wide/Core прежние;156Sources без изменений.
+Клиентский временный override не устанавливался. Прежние world/Lighting/Terrain
+сохранены; отдельно зафиксированы два новых авторских объекта Part/SpotLight,
+существовавшие до Save. Engine-save audit/build/install — flashlight-lookdown.
+
+## Авторский SpotLight и панель настройки A — 2026-10-20
+
+Текущий [контракт](2026-10-20_flashlight-author-tuning.md): сохранённый авторский SpotLight
+в банке ReplicatedStorage.CornFlashlightSettings.Wide и более яркий Core.
+Личный runtime помещает оба источника непосредственно в Lens/LensAim, на переднюю
+плоскость линзы;11Parts/3SpotLight/0Point/0Beam. Studio-only панель справа управляет
+двумя brightness/angle/range и общим pitch; Alt-cursor не скрывает свет при настройке,
+клики панели проходят без toggle. ЛКМ, плавная походка, server/network/economy прежние.
+156Sources: две правки и один новый client Game/FlashlightTuning Module; банк3узла
+вне code roots. Только явно указанный авторский unsaved Part удалён после переноса.
+Новый workflow build/install/verify-flashlight-author; прежние155Source installers устарели.
+
+## Фонарик A: свет поверхностей и ЛКМ — 2026-10-20
+
+Актуальный [контракт](2026-10-20_flashlight-directional.md) заменяет прежний воздушный туннель:
+два SpotLight из LensAim в линзе дают яркий круг и слабую широкую подсветку;
+отдельный слабый направленный свет освещает хват.12Parts/3SpotLight/0Beam.
+ЛКМ переключает свет, новый раунд включает; F не привязана. RoundText содержит ЛКМ.
+Motion, ownership, camera/lifecycle guards прежние. Ровно три Source-правки,
+без world/Lighting/fog/B/server/economy/remotes изменений. Установка и строгая проверка
+сохранения — по новому directional workflow.
+
+## Направленный туннель фонарика A — 2026-10-20
+
+[Уточнение света](2026-10-20_flashlight-cone.md): только две прежние flashlight Sources,
+без новых Modules и изменений мира. Узкий SpotLight + локальные затухающие Beam-плоскости
+показывают расширяющийся конус от линзы. Направленный hand fill заменяет PointLight.
+Один Raycast ограничивает конец у стены; F и прежние lifecycle/ownership guards управляют
+светом и Beam вместе. B, глобальный fog, серверные правила и camera motion сохраняются.
+
+## Ручной фонарик A — 2026-10-20
+
+[Контракт и проверки](2026-10-20_flashlight.md): два новых ModuleScript
+FlashlightController/FlashlightPresentation, две Source-правки RoundController/RoundText.
+Только личная camera-local presentation для A: CornPersonalFlashlight с точными ownership/project/version,
+двумя SpotLight, ближним PointLight2 для хвата и коротким viewmodel в левой руке. F включает/выключает, новый round_id
+начинается со светом. Серверный инвентарь, multiplayer/economy/NPC detection и remotes прежние.
+Мягкий camera offset выполняется после штатного CameraModule; снимается только собственная
+точная последняя добавка. Capture/menu/Alt/map/death/terminal/чужая камера блокируют presentation.
+Новые persistent world/Lighting nodes не добавляются; отдельный B-файл сохраняется.
+
+## Вариант A: чёрная ночь и белые лучи — 2026-10-20
+
+Текущий разрешённый scope — [контракт ночи и глаз](2026-10-20_black-night.md).
+Classic/A меняет только вложенную peer-local внешность: два белых SpotLight
+и Beam с owned Attachments, без изменения Root, физики и gameplay remotes.
+В hard-раунде убирается фоновое освещение, луна и звёзды; факелы сохраняются.
+Runtime-only Sky CornBlackNightSky использует CornBlackNightSkyOwned=true,
+corn_project_id=children_of_corn и точный guard удаления. Существующие Sky
+временно перенастраиваются и восстанавливаются без замены экземпляра.
+Новые fog/VFX не добавляются; текущие Atmosphere/Fog параметры сохранены.
+Отдельный сохранённый B и immutable backups остаются неизменными.
+
 ## Два оформления Harvest Warden — 2026-10-16
 
 Текущая визуальная интеграция сохраняет принятые правила multiplayer 1–4:

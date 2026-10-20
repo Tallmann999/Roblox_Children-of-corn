@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "complete": true,
+  "candidate_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "candidate_bytes": 1491827,
+  "baseline_sha256": "bc85bd9b294a992b0fdff8979b5f56885f0292e12402f51573d613f7acc0ad3f",
+  "instances": 4529,
+  "unchanged_sources": 156,
+  "settings_changes": 4,
+  "world_art_identities_parents_lighting_exact": true,
+  "raw_terrain_exact": true,
+  "B_unchanged_sha256": "8160b71046a7c56a8a0c536ecfd3b9b9ca51a4e183c8f42cfb0b2458b81c837c",
+  "changes": [
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Core",
+      "property": "Angle"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Angle"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Brightness"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Range"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId"
+    }
+  ],
+  "warnings": [
+    "0.131341600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "0.153193600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  ]
+}

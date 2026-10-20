@@ -1,0 +1,18 @@
+{
+  "wide": {
+    "brightness": 2.08,
+    "angle": 78,
+    "range": 18,
+    "shadows": false
+  },
+  "core": {
+    "brightness": 22.6200008392334,
+    "angle": 12,
+    "range": 24,
+    "shadows": false
+  },
+  "pitch": -6,
+  "quality": "Level21",
+  "lightingStyle": "Realistic",
+  "installer_sha256": "ac35db7774e464c9d97cae3a3656d7d40615a4d850f3ecfa873d2072d9183bd9"
+}

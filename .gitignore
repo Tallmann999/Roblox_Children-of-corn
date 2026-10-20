@@ -24,3 +24,8 @@ __pycache__/
 .artifacts/harvest-install/stage-*.luau
 .artifacts/playtests/2026-10-16-harvest-art/A-draft.json
 .artifacts/playtests/2026-10-16-harvest-art/B-draft.json
+
+# Read-only local scene inspection cache; reports and exact scenes remain versioned.
+.artifacts/playtests/2026-10-20-black-night/saved-dom-cache.pkl.gz
+
+/.artifacts/playtests/2026-10-20-flashlight-lookdown/uninstalled-source-proposal.json

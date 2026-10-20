@@ -1,0 +1,23 @@
+{
+  "restored": {
+    "core": {
+      "shadows": false,
+      "angle": 30,
+      "range": 4,
+      "brightness": 13
+    },
+    "wide": {
+      "shadows": false,
+      "angle": 100,
+      "range": 32,
+      "brightness": 2
+    },
+    "pose": {
+      "pitch": -4
+    }
+  },
+  "style": "Enum.LightingStyle.Realistic",
+  "scope": "Restoring captured temporary author tuning only; editor bank unchanged",
+  "on": true,
+  "panel": false
+}

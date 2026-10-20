@@ -1,0 +1,1135 @@
+{
+  "schema": "corn-flashlight-choice-preview-file-audit-v1",
+  "phase": "after-previews",
+  "captured_utc": "2026-10-20T08:48:06.218961+00:00",
+  "scope": "Read-only file verification after native preview cleanup; only this audit JSON is written. No scene, Source, Studio or Git mutation is performed. Existing unsaved cone work remains unsaved.",
+  "repository": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn",
+  "scene_and_baseline_files": [
+    {
+      "path": "place/Children_of_corn.rbxl",
+      "bytes": 1487543,
+      "sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6"
+    },
+    {
+      "path": "place/Children_of_corn_B.rbxl",
+      "bytes": 1485700,
+      "sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7"
+    },
+    {
+      "path": "place/Children_of_corn.before-flashlight-20261020.rbxl",
+      "bytes": 1483077,
+      "sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498"
+    },
+    {
+      "path": "place/Children_of_corn.before-flashlight-cone-20261020.rbxl",
+      "bytes": 1487543,
+      "sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6"
+    },
+    {
+      "path": "place/Children_of_corn.before-black-night-20261020.rbxl",
+      "bytes": 1485712,
+      "sha256": "2672483f1313180152856e82b971a98f6f2b784639778a7ee6cff9d546050a11"
+    }
+  ],
+  "all_src_files": [
+    {
+      "path": "src/client/Bootstrap.client.luau",
+      "bytes": 7494,
+      "sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f",
+      "lf_normalized_bytes": 7494,
+      "lf_normalized_sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f"
+    },
+    {
+      "path": "src/client/Controllers/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/client/Controllers/AudioController.luau",
+      "bytes": 27449,
+      "sha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c",
+      "lf_normalized_bytes": 27449,
+      "lf_normalized_sha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c"
+    },
+    {
+      "path": "src/client/Controllers/CaptureController.luau",
+      "bytes": 18831,
+      "sha256": "b69af0dd7203fda8dd990a369be2f6ec70cf6f59318fbf39fd8314b816e6fb02",
+      "lf_normalized_bytes": 18831,
+      "lf_normalized_sha256": "b69af0dd7203fda8dd990a369be2f6ec70cf6f59318fbf39fd8314b816e6fb02"
+    },
+    {
+      "path": "src/client/Controllers/CornAppearanceController.luau",
+      "bytes": 6800,
+      "sha256": "dba66998d988c11abfca55772e9f001a144f8fbae5e9ad92636f6ed7085776a6",
+      "lf_normalized_bytes": 6800,
+      "lf_normalized_sha256": "dba66998d988c11abfca55772e9f001a144f8fbae5e9ad92636f6ed7085776a6"
+    },
+    {
+      "path": "src/client/Controllers/CornBackdropController.luau",
+      "bytes": 13095,
+      "sha256": "eb7b799fb5fd49f298dfa00f733679640c7612c3c09672eab83077ce608a1e07",
+      "lf_normalized_bytes": 13095,
+      "lf_normalized_sha256": "eb7b799fb5fd49f298dfa00f733679640c7612c3c09672eab83077ce608a1e07"
+    },
+    {
+      "path": "src/client/Controllers/CornController.luau",
+      "bytes": 24753,
+      "sha256": "b7080a9e84a282eef6852a7e33f63784ec0729bfb410583093c92cfc549885cd",
+      "lf_normalized_bytes": 24753,
+      "lf_normalized_sha256": "b7080a9e84a282eef6852a7e33f63784ec0729bfb410583093c92cfc549885cd"
+    },
+    {
+      "path": "src/client/Controllers/CornWindController.luau",
+      "bytes": 20381,
+      "sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515",
+      "lf_normalized_bytes": 20381,
+      "lf_normalized_sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515"
+    },
+    {
+      "path": "src/client/Controllers/FarmGeometryController.luau",
+      "bytes": 5103,
+      "sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed",
+      "lf_normalized_bytes": 5103,
+      "lf_normalized_sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed"
+    },
+    {
+      "path": "src/client/Controllers/FlashlightController.luau",
+      "bytes": 19117,
+      "sha256": "b274b2c66bc0da41ffe890b4a60ba0d0ab3783c6a5542d710742e168061807be",
+      "lf_normalized_bytes": 19117,
+      "lf_normalized_sha256": "b274b2c66bc0da41ffe890b4a60ba0d0ab3783c6a5542d710742e168061807be"
+    },
+    {
+      "path": "src/client/Controllers/GateHintController.luau",
+      "bytes": 11661,
+      "sha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed",
+      "lf_normalized_bytes": 11661,
+      "lf_normalized_sha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed"
+    },
+    {
+      "path": "src/client/Controllers/HandheldController.luau",
+      "bytes": 10984,
+      "sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e",
+      "lf_normalized_bytes": 10984,
+      "lf_normalized_sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e"
+    },
+    {
+      "path": "src/client/Controllers/HarvestGeometryController.luau",
+      "bytes": 5153,
+      "sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592",
+      "lf_normalized_bytes": 5153,
+      "lf_normalized_sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592"
+    },
+    {
+      "path": "src/client/Controllers/InventoryController.luau",
+      "bytes": 4814,
+      "sha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850",
+      "lf_normalized_bytes": 4814,
+      "lf_normalized_sha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850"
+    },
+    {
+      "path": "src/client/Controllers/MinimapController.luau",
+      "bytes": 5141,
+      "sha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715",
+      "lf_normalized_bytes": 5141,
+      "lf_normalized_sha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715"
+    },
+    {
+      "path": "src/client/Controllers/MonsterAnimationController.luau",
+      "bytes": 14080,
+      "sha256": "e5f0684f8d0340c1fae3ca46ef2605c7a4f7f1fc326ac994caeffc28863fe071",
+      "lf_normalized_bytes": 14080,
+      "lf_normalized_sha256": "e5f0684f8d0340c1fae3ca46ef2605c7a4f7f1fc326ac994caeffc28863fe071"
+    },
+    {
+      "path": "src/client/Controllers/MovementController.luau",
+      "bytes": 8143,
+      "sha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3",
+      "lf_normalized_bytes": 8143,
+      "lf_normalized_sha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3"
+    },
+    {
+      "path": "src/client/Controllers/RoundController.luau",
+      "bytes": 9355,
+      "sha256": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a",
+      "lf_normalized_bytes": 9355,
+      "lf_normalized_sha256": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a"
+    },
+    {
+      "path": "src/client/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/client/Game/InventoryHud.luau",
+      "bytes": 10750,
+      "sha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26",
+      "lf_normalized_bytes": 10750,
+      "lf_normalized_sha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26"
+    },
+    {
+      "path": "src/client/Game/MinimapHud.luau",
+      "bytes": 12008,
+      "sha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93",
+      "lf_normalized_bytes": 12008,
+      "lf_normalized_sha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93"
+    },
+    {
+      "path": "src/client/Game/RoundHud.luau",
+      "bytes": 28961,
+      "sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5",
+      "lf_normalized_bytes": 28961,
+      "lf_normalized_sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5"
+    },
+    {
+      "path": "src/server/Bootstrap.server.luau",
+      "bytes": 2094,
+      "sha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956",
+      "lf_normalized_bytes": 2094,
+      "lf_normalized_sha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956"
+    },
+    {
+      "path": "src/server/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/server/Game/AuthoredWorld.luau",
+      "bytes": 12418,
+      "sha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80",
+      "lf_normalized_bytes": 12418,
+      "lf_normalized_sha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80"
+    },
+    {
+      "path": "src/server/Game/CornField.luau",
+      "bytes": 3487,
+      "sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187",
+      "lf_normalized_bytes": 3487,
+      "lf_normalized_sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187"
+    },
+    {
+      "path": "src/server/Game/FarmGeometry.luau",
+      "bytes": 470,
+      "sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a",
+      "lf_normalized_bytes": 470,
+      "lf_normalized_sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a"
+    },
+    {
+      "path": "src/server/Game/HarvestWorld.luau",
+      "bytes": 24139,
+      "sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04",
+      "lf_normalized_bytes": 24139,
+      "lf_normalized_sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04"
+    },
+    {
+      "path": "src/server/Game/InventoryWorld.luau",
+      "bytes": 5785,
+      "sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7",
+      "lf_normalized_bytes": 5785,
+      "lf_normalized_sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
+    },
+    {
+      "path": "src/server/Game/ItemModels.luau",
+      "bytes": 4604,
+      "sha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d",
+      "lf_normalized_bytes": 4604,
+      "lf_normalized_sha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d"
+    },
+    {
+      "path": "src/server/Game/MapAuthoring.luau",
+      "bytes": 19226,
+      "sha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc",
+      "lf_normalized_bytes": 19226,
+      "lf_normalized_sha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc"
+    },
+    {
+      "path": "src/server/Game/MapTuning.luau",
+      "bytes": 8631,
+      "sha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869",
+      "lf_normalized_bytes": 8631,
+      "lf_normalized_sha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869"
+    },
+    {
+      "path": "src/server/Game/MinimapState.luau",
+      "bytes": 4249,
+      "sha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60",
+      "lf_normalized_bytes": 4249,
+      "lf_normalized_sha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60"
+    },
+    {
+      "path": "src/server/Game/MonsterHunt.luau",
+      "bytes": 17501,
+      "sha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db",
+      "lf_normalized_bytes": 17501,
+      "lf_normalized_sha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db"
+    },
+    {
+      "path": "src/server/Game/RoundAudio.luau",
+      "bytes": 25606,
+      "sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb",
+      "lf_normalized_bytes": 25606,
+      "lf_normalized_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb"
+    },
+    {
+      "path": "src/server/Game/RoundParticipant.luau",
+      "bytes": 9347,
+      "sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5",
+      "lf_normalized_bytes": 9347,
+      "lf_normalized_sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5"
+    },
+    {
+      "path": "src/server/Game/SoloRound.luau",
+      "bytes": 32972,
+      "sha256": "ff9fd678c9f121d32e09b327105e345a498ff715b0c6a98027578aebcf979a0e",
+      "lf_normalized_bytes": 32972,
+      "lf_normalized_sha256": "ff9fd678c9f121d32e09b327105e345a498ff715b0c6a98027578aebcf979a0e"
+    },
+    {
+      "path": "src/server/Game/TeamRound.luau",
+      "bytes": 20233,
+      "sha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba",
+      "lf_normalized_bytes": 20233,
+      "lf_normalized_sha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba"
+    },
+    {
+      "path": "src/server/Services/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/server/Services/FarmGeometryService.luau",
+      "bytes": 675,
+      "sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533",
+      "lf_normalized_bytes": 675,
+      "lf_normalized_sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533"
+    },
+    {
+      "path": "src/server/Services/HarvestArtService.luau",
+      "bytes": 625,
+      "sha256": "378a25d4372ad78099c26627447d60a32f6767e98367ae02533651c32221126b",
+      "lf_normalized_bytes": 625,
+      "lf_normalized_sha256": "378a25d4372ad78099c26627447d60a32f6767e98367ae02533651c32221126b"
+    },
+    {
+      "path": "src/server/Services/NetworkService.luau",
+      "bytes": 1231,
+      "sha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea",
+      "lf_normalized_bytes": 1231,
+      "lf_normalized_sha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea"
+    },
+    {
+      "path": "src/server/Services/RoundService.luau",
+      "bytes": 642,
+      "sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1",
+      "lf_normalized_bytes": 642,
+      "lf_normalized_sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1"
+    },
+    {
+      "path": "src/server/Services/TagService.luau",
+      "bytes": 747,
+      "sha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4",
+      "lf_normalized_bytes": 747,
+      "lf_normalized_sha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4"
+    },
+    {
+      "path": "src/shared/Config/GameConfig.luau",
+      "bytes": 438,
+      "sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063",
+      "lf_normalized_bytes": 438,
+      "lf_normalized_sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063"
+    },
+    {
+      "path": "src/shared/Core/Logger.luau",
+      "bytes": 504,
+      "sha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c",
+      "lf_normalized_bytes": 504,
+      "lf_normalized_sha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c"
+    },
+    {
+      "path": "src/shared/Game/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/shared/Game/AudioAssets.luau",
+      "bytes": 2417,
+      "sha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5",
+      "lf_normalized_bytes": 2417,
+      "lf_normalized_sha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5"
+    },
+    {
+      "path": "src/shared/Game/AudioRules.luau",
+      "bytes": 2696,
+      "sha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d",
+      "lf_normalized_bytes": 2696,
+      "lf_normalized_sha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d"
+    },
+    {
+      "path": "src/shared/Game/Balance.luau",
+      "bytes": 963,
+      "sha256": "007478deb9135e49d5e87acdecb74439ab4861f0849856847a0fd5c1bb6b0f71",
+      "lf_normalized_bytes": 963,
+      "lf_normalized_sha256": "007478deb9135e49d5e87acdecb74439ab4861f0849856847a0fd5c1bb6b0f71"
+    },
+    {
+      "path": "src/shared/Game/CapturePresentation.luau",
+      "bytes": 6215,
+      "sha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91",
+      "lf_normalized_bytes": 6215,
+      "lf_normalized_sha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91"
+    },
+    {
+      "path": "src/shared/Game/CornAppearance.luau",
+      "bytes": 3608,
+      "sha256": "86f80a376b3aae34c910156e5c0d192cb708b7c6c2540c049587c304226d7a5f",
+      "lf_normalized_bytes": 3608,
+      "lf_normalized_sha256": "86f80a376b3aae34c910156e5c0d192cb708b7c6c2540c049587c304226d7a5f"
+    },
+    {
+      "path": "src/shared/Game/CornLayout.luau",
+      "bytes": 10341,
+      "sha256": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1",
+      "lf_normalized_bytes": 10341,
+      "lf_normalized_sha256": "a2b9c16abf461d8b984cf562cc36aa77130acc485a5156c02d415b988849a1a1"
+    },
+    {
+      "path": "src/shared/Game/FarmEditableMeshBuilder.luau",
+      "bytes": 19891,
+      "sha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2",
+      "lf_normalized_bytes": 19891,
+      "lf_normalized_sha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk06.luau",
+      "bytes": 140000,
+      "sha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk07.luau",
+      "bytes": 140000,
+      "sha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk08.luau",
+      "bytes": 140000,
+      "sha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk09.luau",
+      "bytes": 140000,
+      "sha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk10.luau",
+      "bytes": 96536,
+      "sha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e",
+      "lf_normalized_bytes": 96536,
+      "lf_normalized_sha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03/init.luau",
+      "bytes": 372,
+      "sha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c",
+      "lf_normalized_bytes": 372,
+      "lf_normalized_sha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/Chunk01.luau",
+      "bytes": 103484,
+      "sha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4",
+      "lf_normalized_bytes": 103484,
+      "lf_normalized_sha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/init.luau",
+      "bytes": 250,
+      "sha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d",
+      "lf_normalized_bytes": 250,
+      "lf_normalized_sha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk02.luau",
+      "bytes": 140000,
+      "sha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk03.luau",
+      "bytes": 140000,
+      "sha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk04.luau",
+      "bytes": 140000,
+      "sha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk05.luau",
+      "bytes": 140000,
+      "sha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk06.luau",
+      "bytes": 65407,
+      "sha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0",
+      "lf_normalized_bytes": 65407,
+      "lf_normalized_sha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/init.luau",
+      "bytes": 305,
+      "sha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab",
+      "lf_normalized_bytes": 305,
+      "lf_normalized_sha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk01.luau",
+      "bytes": 140000,
+      "sha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d",
+      "lf_normalized_bytes": 140000,
+      "lf_normalized_sha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk02.luau",
+      "bytes": 111487,
+      "sha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b",
+      "lf_normalized_bytes": 111487,
+      "lf_normalized_sha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b"
+    },
+    {
+      "path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01/init.luau",
+      "bytes": 261,
+      "sha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3",
+      "lf_normalized_bytes": 261,
+      "lf_normalized_sha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3"
+    },
+    {
+      "path": "src/shared/Game/FlashlightPresentation.luau",
+      "bytes": 8698,
+      "sha256": "688430fbba9cb2353db01759af46331eb050f363652e6838b39009b20998f768",
+      "lf_normalized_bytes": 8698,
+      "lf_normalized_sha256": "688430fbba9cb2353db01759af46331eb050f363652e6838b39009b20998f768"
+    },
+    {
+      "path": "src/shared/Game/HandheldPresentation.luau",
+      "bytes": 5067,
+      "sha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c",
+      "lf_normalized_bytes": 5067,
+      "lf_normalized_sha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c"
+    },
+    {
+      "path": "src/shared/Game/HarvestArtGeometry.luau",
+      "bytes": 11483,
+      "sha256": "f357f2f6229c1d7e560e25eae68014298a1a3c18649b494df021e4e46df5feb2",
+      "lf_normalized_bytes": 11483,
+      "lf_normalized_sha256": "f357f2f6229c1d7e560e25eae68014298a1a3c18649b494df021e4e46df5feb2"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk03.luau",
+      "bytes": 135000,
+      "sha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk04.luau",
+      "bytes": 135000,
+      "sha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk05.luau",
+      "bytes": 135000,
+      "sha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk06.luau",
+      "bytes": 135000,
+      "sha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk07.luau",
+      "bytes": 135000,
+      "sha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk08.luau",
+      "bytes": 135000,
+      "sha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk09.luau",
+      "bytes": 135000,
+      "sha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/Chunk10.luau",
+      "bytes": 11620,
+      "sha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb",
+      "lf_normalized_bytes": 11620,
+      "lf_normalized_sha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/BarnDark_Open/init.luau",
+      "bytes": 370,
+      "sha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b",
+      "lf_normalized_bytes": 370,
+      "lf_normalized_sha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Chunk01.luau",
+      "bytes": 4183,
+      "sha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e",
+      "lf_normalized_bytes": 4183,
+      "lf_normalized_sha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Far/Chunk01.luau",
+      "bytes": 10177,
+      "sha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76",
+      "lf_normalized_bytes": 10177,
+      "lf_normalized_sha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Mid/Chunk01.luau",
+      "bytes": 23161,
+      "sha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd",
+      "lf_normalized_bytes": 23161,
+      "lf_normalized_sha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Near/Chunk01.luau",
+      "bytes": 101271,
+      "sha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800",
+      "lf_normalized_bytes": 101271,
+      "lf_normalized_sha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_A_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Far/Chunk01.luau",
+      "bytes": 10225,
+      "sha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492",
+      "lf_normalized_bytes": 10225,
+      "lf_normalized_sha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Mid/Chunk01.luau",
+      "bytes": 23362,
+      "sha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640",
+      "lf_normalized_bytes": 23362,
+      "lf_normalized_sha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Near/Chunk01.luau",
+      "bytes": 108363,
+      "sha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c",
+      "lf_normalized_bytes": 108363,
+      "lf_normalized_sha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_B_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Far/Chunk01.luau",
+      "bytes": 10310,
+      "sha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf",
+      "lf_normalized_bytes": 10310,
+      "lf_normalized_sha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Mid/Chunk01.luau",
+      "bytes": 23579,
+      "sha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c",
+      "lf_normalized_bytes": 23579,
+      "lf_normalized_sha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Near/Chunk01.luau",
+      "bytes": 102197,
+      "sha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581",
+      "lf_normalized_bytes": 102197,
+      "lf_normalized_sha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_C_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Far/Chunk01.luau",
+      "bytes": 10103,
+      "sha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736",
+      "lf_normalized_bytes": 10103,
+      "lf_normalized_sha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Far/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Mid/Chunk01.luau",
+      "bytes": 23212,
+      "sha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75",
+      "lf_normalized_bytes": 23212,
+      "lf_normalized_sha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Mid/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Near/Chunk01.luau",
+      "bytes": 108276,
+      "sha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33",
+      "lf_normalized_bytes": 108276,
+      "lf_normalized_sha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Corn_D_Near/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_01/Chunk01.luau",
+      "bytes": 42920,
+      "sha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee",
+      "lf_normalized_bytes": 42920,
+      "lf_normalized_sha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_01/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_02/Chunk01.luau",
+      "bytes": 50509,
+      "sha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f",
+      "lf_normalized_bytes": 50509,
+      "lf_normalized_sha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_02/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_03/Chunk01.luau",
+      "bytes": 43897,
+      "sha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119",
+      "lf_normalized_bytes": 43897,
+      "lf_normalized_sha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Fence_03/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Ground_Tile_8/Chunk01.luau",
+      "bytes": 625,
+      "sha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685",
+      "lf_normalized_bytes": 625,
+      "lf_normalized_sha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Ground_Tile_8/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Path_Tile_8/Chunk01.luau",
+      "bytes": 2786,
+      "sha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048",
+      "lf_normalized_bytes": 2786,
+      "lf_normalized_sha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Path_Tile_8/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_01/Chunk01.luau",
+      "bytes": 18436,
+      "sha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e",
+      "lf_normalized_bytes": 18436,
+      "lf_normalized_sha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_01/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_02/Chunk01.luau",
+      "bytes": 18440,
+      "sha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13",
+      "lf_normalized_bytes": 18440,
+      "lf_normalized_sha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_02/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_03/Chunk01.luau",
+      "bytes": 18562,
+      "sha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a",
+      "lf_normalized_bytes": 18562,
+      "lf_normalized_sha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_03/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_04/Chunk01.luau",
+      "bytes": 18199,
+      "sha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c",
+      "lf_normalized_bytes": 18199,
+      "lf_normalized_sha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_04/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_05/Chunk01.luau",
+      "bytes": 18896,
+      "sha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6",
+      "lf_normalized_bytes": 18896,
+      "lf_normalized_sha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/Rock_05/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/Chunk03.luau",
+      "bytes": 110536,
+      "sha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2",
+      "lf_normalized_bytes": 110536,
+      "lf_normalized_sha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenClassic/init.luau",
+      "bytes": 270,
+      "sha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b",
+      "lf_normalized_bytes": 270,
+      "lf_normalized_sha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk01.luau",
+      "bytes": 135000,
+      "sha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk02.luau",
+      "bytes": 135000,
+      "sha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk03.luau",
+      "bytes": 135000,
+      "sha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk04.luau",
+      "bytes": 135000,
+      "sha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk05.luau",
+      "bytes": 135000,
+      "sha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d",
+      "lf_normalized_bytes": 135000,
+      "lf_normalized_sha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/Chunk06.luau",
+      "bytes": 125319,
+      "sha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7",
+      "lf_normalized_bytes": 125319,
+      "lf_normalized_sha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/WardenDetailed/init.luau",
+      "bytes": 303,
+      "sha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a",
+      "lf_normalized_bytes": 303,
+      "lf_normalized_sha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a"
+    },
+    {
+      "path": "src/shared/Game/HarvestGeometryData/init.luau",
+      "bytes": 248,
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "lf_normalized_bytes": 248,
+      "lf_normalized_sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    {
+      "path": "src/shared/Game/HarvestWardenVisual.luau",
+      "bytes": 10569,
+      "sha256": "6f5935046c7ebd3925d4145f2dfc415ce069bc5c568079b90d797341543da4ec",
+      "lf_normalized_bytes": 10569,
+      "lf_normalized_sha256": "6f5935046c7ebd3925d4145f2dfc415ce069bc5c568079b90d797341543da4ec"
+    },
+    {
+      "path": "src/shared/Game/Inventory.luau",
+      "bytes": 2860,
+      "sha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad",
+      "lf_normalized_bytes": 2860,
+      "lf_normalized_sha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad"
+    },
+    {
+      "path": "src/shared/Game/LightingModes.luau",
+      "bytes": 5192,
+      "sha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2",
+      "lf_normalized_bytes": 5192,
+      "lf_normalized_sha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2"
+    },
+    {
+      "path": "src/shared/Game/MinimapGeometry.luau",
+      "bytes": 2546,
+      "sha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda",
+      "lf_normalized_bytes": 2546,
+      "lf_normalized_sha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda"
+    },
+    {
+      "path": "src/shared/Game/ModePreviewImages.luau",
+      "bytes": 239,
+      "sha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86",
+      "lf_normalized_bytes": 239,
+      "lf_normalized_sha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86"
+    },
+    {
+      "path": "src/shared/Game/MonsterPose.luau",
+      "bytes": 6941,
+      "sha256": "893f91c4a079c65d36aca00b41f65ecd45c1fc43e4c1b150e40fa0dc3176cc9e",
+      "lf_normalized_bytes": 6941,
+      "lf_normalized_sha256": "893f91c4a079c65d36aca00b41f65ecd45c1fc43e4c1b150e40fa0dc3176cc9e"
+    },
+    {
+      "path": "src/shared/Game/RoundText.luau",
+      "bytes": 4352,
+      "sha256": "1047ca3a83a678eec81814356dd900bf22b7a01f2d8f49c292ae1c4aab43ad7a",
+      "lf_normalized_bytes": 4352,
+      "lf_normalized_sha256": "1047ca3a83a678eec81814356dd900bf22b7a01f2d8f49c292ae1c4aab43ad7a"
+    },
+    {
+      "path": "src/shared/Game/Stamina.luau",
+      "bytes": 1731,
+      "sha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783",
+      "lf_normalized_bytes": 1731,
+      "lf_normalized_sha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783"
+    },
+    {
+      "path": "src/shared/Network/EndpointNames.luau",
+      "bytes": 205,
+      "sha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca",
+      "lf_normalized_bytes": 205,
+      "lf_normalized_sha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca"
+    }
+  ],
+  "source_count": 152,
+  "inventory_digest_scheme": "UTF-8 sorted path + NUL + decimal byte length + NUL + lowercase SHA256 + LF for each file; normalized digest substitutes universal-LF bytes for Lua/Luau only.",
+  "raw_src_inventory_sha256": "ef36445c449045e8da3888bfa1000e479bf6305874d0588dead319f3ad6f17aa",
+  "lf_normalized_src_inventory_sha256": "ef36445c449045e8da3888bfa1000e479bf6305874d0588dead319f3ad6f17aa",
+  "before_raw_src_inventory_sha256": "ef36445c449045e8da3888bfa1000e479bf6305874d0588dead319f3ad6f17aa",
+  "before_lf_normalized_src_inventory_sha256": "ef36445c449045e8da3888bfa1000e479bf6305874d0588dead319f3ad6f17aa",
+  "scene_and_baseline_deltas": [],
+  "source_deltas": [],
+  "pass": true,
+  "all_scenes_and_sources_byte_exact": true
+}

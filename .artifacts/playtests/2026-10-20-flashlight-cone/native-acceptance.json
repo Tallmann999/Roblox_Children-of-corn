@@ -1,0 +1,3072 @@
+{
+  "observerOk": true,
+  "current": {
+    "lights": {
+      "HandFill": true,
+      "main": true,
+      "fill": true
+    },
+    "on": true,
+    "beams": {
+      "ConePlane1": true,
+      "ConePlane2": true,
+      "ConePlane4": true,
+      "ConePlane3": true
+    }
+  },
+  "elapsed": 2.582919500000571,
+  "wallOk": true,
+  "observer": {
+    "lights": {
+      "HandFill": {
+        "angle": 75,
+        "range": 1.5,
+        "brightness": 0.07999999821186066
+      },
+      "main": {
+        "angle": 36,
+        "range": 64,
+        "brightness": 3
+      },
+      "fill": {
+        "angle": 50,
+        "range": 18,
+        "brightness": 0.3499999940395355
+      }
+    },
+    "limits": "One normal-bootstrap client. Read-only render sampling, not full-round fear/FPS/four-client acceptance.",
+    "beams": 4,
+    "duration": 1.3321663999995508,
+    "samples": [
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999351501465,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999351501465,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999351501465,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999351501465,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.008765099999436643
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.799997329711914,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.799997329711914,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.799997329711914,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.799997329711914,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.0215091999998549
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.80000877380371,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.80000877380371,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.80000877380371,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.80000877380371,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.04134329999942565
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.05581709999933082
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.0640635999989172
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.08341039999868372
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997019767761,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997019767761,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997019767761,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997019767761,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.0973997999990388
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.11567869999998948
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane1",
+            "length": 29.800010681152344,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane2",
+            "length": 29.800010681152344,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane3",
+            "length": 29.800010681152344,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane4",
+            "length": 29.800010681152344,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.13085399999908987
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.80000877380371,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.80000877380371,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.80000877380371,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.80000877380371,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.1568835999987641
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.16980009999861068
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.799991607666016,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.799991607666016,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.799991607666016,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.799991607666016,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.18079129999932775
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.20061799999893992
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.21351949999916542
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.800003051757812,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.800003051757812,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.800003051757812,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.800003051757812,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.2386936999992031
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.24810769999930926
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999351501465,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999351501465,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999351501465,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999351501465,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.26265129999956116
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.2802014999997482
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.2963979999985895
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.31290009999975155
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.79998779296875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.79998779296875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.79998779296875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.79998779296875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.33189169999968726
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999994039535522,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999994039535522,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999994039535522,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999994039535522,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.35364429999935965
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.36467999999877065
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.3789746999991621
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane1",
+            "length": 29.799999237060547,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane2",
+            "length": 29.799999237060547,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane3",
+            "length": 29.799999237060547,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane4",
+            "length": 29.799999237060547,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.39649009999993723
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.4142727999987983
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane1",
+            "length": 29.799997329711914,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane2",
+            "length": 29.799997329711914,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane3",
+            "length": 29.799997329711914,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane4",
+            "length": 29.799997329711914,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.43598719999863533
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.45031329999983427
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane1",
+            "length": 29.800016403198242,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane2",
+            "length": 29.800016403198242,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane3",
+            "length": 29.800016403198242,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane4",
+            "length": 29.800016403198242,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.468527199998789
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991059303284,
+            "name": "ConePlane1",
+            "length": 29.80000877380371,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991059303284,
+            "name": "ConePlane2",
+            "length": 29.80000877380371,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991059303284,
+            "name": "ConePlane3",
+            "length": 29.80000877380371,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991059303284,
+            "name": "ConePlane4",
+            "length": 29.80000877380371,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.48354119999930845
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.49781289999918954
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.5157578999987891
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.799999237060547,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.799999237060547,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.799999237060547,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.799999237060547,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.5298919999986538
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.5464615000000776
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.800016403198242,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.800016403198242,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.800016403198242,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.800016403198242,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.562999599998875
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.800016403198242,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.800016403198242,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.800016403198242,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.800016403198242,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.5808794999993552
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane1",
+            "length": 29.800010681152344,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane2",
+            "length": 29.800010681152344,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane3",
+            "length": 29.800010681152344,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane4",
+            "length": 29.800010681152344,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.5978459999987535
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.6140567999991617
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.800010681152344,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.800010681152344,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.800010681152344,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.800010681152344,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.629641300000003
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane1",
+            "length": 29.799989700317383,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane2",
+            "length": 29.799989700317383,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane3",
+            "length": 29.799989700317383,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane4",
+            "length": 29.799989700317383,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.654047799998807
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane1",
+            "length": 29.80001449584961,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane2",
+            "length": 29.80001449584961,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane3",
+            "length": 29.80001449584961,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane4",
+            "length": 29.80001449584961,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.6628830999998172
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane1",
+            "length": 29.799989700317383,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane2",
+            "length": 29.799989700317383,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane3",
+            "length": 29.799989700317383,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane4",
+            "length": 29.799989700317383,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.6800707999991573
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.7125624999989668
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985098838806,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.7293764999994892
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.7571726999995008
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.7679140000000189
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane1",
+            "length": 29.80001449584961,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane2",
+            "length": 29.80001449584961,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane3",
+            "length": 29.80001449584961,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999991655349731,
+            "name": "ConePlane4",
+            "length": 29.80001449584961,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.7788937999994232
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane1",
+            "length": 29.800024032592773,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane2",
+            "length": 29.800024032592773,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane3",
+            "length": 29.800024032592773,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane4",
+            "length": 29.800024032592773,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8076652999989165
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.799989700317383,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.799989700317383,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.799989700317383,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.799989700317383,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8301104000001942
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8428640000001906
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8533410000000003
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8642196999990119
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane1",
+            "length": 29.800018310546875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane2",
+            "length": 29.800018310546875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane3",
+            "length": 29.800018310546875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1.0000001192092896,
+            "name": "ConePlane4",
+            "length": 29.800018310546875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8798882999999478
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane1",
+            "length": 29.799997329711914,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane2",
+            "length": 29.799997329711914,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane3",
+            "length": 29.799997329711914,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane4",
+            "length": 29.799997329711914,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.8981203999992431
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.800006866455078,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.800006866455078,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.800006866455078,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.800006866455078,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.9143521999994846
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999995231628418,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.9301993999997649
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999990463256836,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999990463256836,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999990463256836,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999990463256836,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.9560370999988663
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane1",
+            "length": 29.800003051757812,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane2",
+            "length": 29.800003051757812,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane3",
+            "length": 29.800003051757812,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988675117493,
+            "name": "ConePlane4",
+            "length": 29.800003051757812,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.9695609999998851
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999988079071045,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.9818993999997474
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane1",
+            "length": 29.79998779296875,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane2",
+            "length": 29.79998779296875,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane3",
+            "length": 29.79998779296875,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999985694885254,
+            "name": "ConePlane4",
+            "length": 29.79998779296875,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 0.999852799999644
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999986886978149,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.0175469999994675
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane1",
+            "length": 29.80000877380371,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane2",
+            "length": 29.80000877380371,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane3",
+            "length": 29.80000877380371,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999998927116394,
+            "name": "ConePlane4",
+            "length": 29.80000877380371,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.0332158999990497
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999992847442627,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.0506590999993932
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane1",
+            "length": 29.800012588500977,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane2",
+            "length": 29.800012588500977,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane3",
+            "length": 29.800012588500977,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.999999463558197,
+            "name": "ConePlane4",
+            "length": 29.800012588500977,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.0629075999986526
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane1",
+            "length": 29.800020217895508,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane2",
+            "length": 29.800020217895508,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane3",
+            "length": 29.800020217895508,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999996423721313,
+            "name": "ConePlane4",
+            "length": 29.800020217895508,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.0815339999990101
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane1",
+            "length": 29.800010681152344,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane2",
+            "length": 29.800010681152344,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane3",
+            "length": 29.800010681152344,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998211860657,
+            "name": "ConePlane4",
+            "length": 29.800010681152344,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1054592000000412
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane1",
+            "length": 29.799999237060547,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane2",
+            "length": 29.799999237060547,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane3",
+            "length": 29.799999237060547,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999997615814209,
+            "name": "ConePlane4",
+            "length": 29.799999237060547,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1184218999987934
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane1",
+            "length": 29.800010681152344,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane2",
+            "length": 29.800010681152344,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane3",
+            "length": 29.800010681152344,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999999403953552,
+            "name": "ConePlane4",
+            "length": 29.800010681152344,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1362726999996084
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.800004959106445,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.800004959106445,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.800004959106445,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.800004959106445,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1561308999989706
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.80000114440918,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.80000114440918,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.80000114440918,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.80000114440918,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1672915999988618
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane1",
+            "length": 29.799999237060547,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane2",
+            "length": 29.799999237060547,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane3",
+            "length": 29.799999237060547,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 0.9999998807907104,
+            "name": "ConePlane4",
+            "length": 29.799999237060547,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1824904999994033
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.799997329711914,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.799997329711914,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.799997329711914,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.799997329711914,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.1961295999990398
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.799997329711914,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.799997329711914,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.799997329711914,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.799997329711914,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.212691699998686
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.2319170999999187
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.2462734999990062
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.2688306999989436
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.2797955999994883
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999542236328,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999542236328,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999542236328,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999542236328,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.2982590999999957
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999351501465,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999351501465,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999351501465,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999351501465,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.3130851999994775
+      },
+      {
+        "beams": [
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane1",
+            "length": 29.79999351501465,
+            "startWidth": 0.11999999731779099,
+            "endWidth": 18
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane2",
+            "length": 29.79999351501465,
+            "startWidth": 0.09000000357627869,
+            "endWidth": 13.5
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane3",
+            "length": 29.79999351501465,
+            "startWidth": 0.05999999865889549,
+            "endWidth": 9
+          },
+          {
+            "enabled": true,
+            "forwardDot": 1,
+            "name": "ConePlane4",
+            "length": 29.79999351501465,
+            "startWidth": 0.029999999329447746,
+            "endWidth": 4.5
+          }
+        ],
+        "t": 1.3321651999995083
+      }
+    ],
+    "passed": true,
+    "parts": 13
+  },
+  "events": [
+    {
+      "lights": {
+        "HandFill": false,
+        "main": false,
+        "fill": false
+      },
+      "on": false,
+      "beams": {
+        "ConePlane1": false,
+        "ConePlane2": false,
+        "ConePlane4": false,
+        "ConePlane3": false
+      }
+    },
+    {
+      "lights": {
+        "HandFill": true,
+        "main": true,
+        "fill": true
+      },
+      "on": true,
+      "beams": {
+        "ConePlane1": true,
+        "ConePlane2": true,
+        "ConePlane4": true,
+        "ConePlane3": true
+      }
+    }
+  ],
+  "wall": {
+    "restoredLength": 30,
+    "near": {
+      "enabled": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "distance": 0.2000822126865387,
+      "widths": [
+        0.30000001192092896,
+        0.22499999403953552,
+        0.15000000596046448,
+        0.07500000298023224
+      ],
+      "expected": 0.2
+    },
+    "far": {
+      "enabled": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "distance": 7.500191688537598,
+      "widths": [
+        4.500114917755127,
+        3.3750863075256348,
+        2.2500574588775635,
+        1.1250287294387817
+      ],
+      "expected": 7.5
+    }
+  },
+  "roundId": 1,
+  "initialOn": true
+}

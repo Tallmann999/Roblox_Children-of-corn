@@ -1,0 +1,22 @@
+{
+  "source": "D:\\Downloads\\368132.mp4",
+  "source_bytes": 244978007,
+  "source_sha256": "2cea20696122fc5602c9dff89c502aa07908985046c2781c1edfe06c6bc9b6f3",
+  "duration_seconds": 25,
+  "width": 3840,
+  "height": 2160,
+  "decoded_in": "Local Edge HTMLVideoElement, paused seek frames; no upload",
+  "reviewed_frame_seconds": [0.5, 2, 4, 6, 8, 10, 12, 14, 16, 18],
+  "observations": [
+    "First-person close corn leaves and stalks, almost black distant background",
+    "White local illumination moves between side stalks as viewpoint changes",
+    "Closest leaves can be much brighter than the rest of the frame",
+    "No visible hand or flashlight body in sampled frames"
+  ],
+  "adaptation": [
+    "Short visible handheld lamp is requested explicitly by author",
+    "Keep black night; illuminate a limited cone with weak near spill",
+    "Subtle smooth walking sway and delayed lamp aim, no random jitter"
+  ],
+  "limits": "Sparse visual review, not measured camera tracking, physical lux, exact cadence, or a frame-matched recreation"
+}

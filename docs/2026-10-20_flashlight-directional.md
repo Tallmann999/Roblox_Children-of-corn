@@ -1,0 +1,31 @@
+# Фонарик A: круг света из линзы и ЛКМ
+
+Автор выбрал приложенный эскиз кукурузного коридора и новое видео `D:/Desktop/2026-10-20 11-49-35.mp4`. Видео длится33.83с; восемь декодированных кадров показывают яркий круг на дальней кирпичной поверхности, слабую широкую подсветку близких стен, почти чёрную область вне света и небольшой ручной фонарь. [Кадры и исходный SHA256](../.artifacts/playtests/2026-10-20-flashlight-directional/reference-video.json) фиксируют просмотр, а не измеренную физическую оптику или точную траекторию движения.
+
+## Контракт перед установкой
+
+Только A. Два настоящих белых SpotLight выходят из одного `LensAim` Attachment в линзе: центральный пучок64studs/28°/4 и слабый широкий32studs/56°/.45. Оба используют Shadows; слабый directed HandFill1.5/75°/.08 освещает хват. Нет круглой картинки поверх экрана, PointLight перед камерой или прежних billboard Beam-полос.12Parts,3SpotLight,0Beam; декоративный Raycast больше не нужен. Короткий фонарь в левой руке сохраняет свободным правый viewmodel инвентаря.
+
+`MouseButton1` (ЛКМ) включает/выключает при Begin; F больше не привязана. Подсказки HUD обновляются. Открытые Alt-cursor/карта/меню, textbox, blur, capture, чужая камера, смерть и terminal не перехватывают ЛКМ для фонаря. В новом round_id свет ON, revive сохраняет выбор. Прежние плавные походка/aim lag/camera rollback и точное владение runtime nodes сохраняются.
+
+Меняются ровно три существующих Source: FlashlightController, FlashlightPresentation, RoundText.155Sources/4523экземпляра сохраняются. Нет изменений B, серверных правил, remotes, экономики, аудио, кукурузы, Lighting/fog, мира и Terrain. Графическое качество не переключается пользовательскими настройками из production-кода.
+
+Immutable `place/Children_of_corn.before-flashlight-directional-20261020.rbxl` — точные принятые engine bytes A:1487543/SHA256 `001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6`. Guarded installer принимает только весь этот155-Source baseline, весь известный несохранённый cone stage с pinned payload SHA256 `ed0b774f…`, либо весь новый final. Смешанные/неизвестные правки отказываются до записи. Частичный сбой откатывает точные исходные Source bytes.
+
+Workflow: check.ps1 → build-flashlight-directional-installer.py → install-flashlight-directional.luau только в проверенной stopped Corn A. Сохранение через Roblox Studio; затем verify-flashlight-directional-copy.py против immutable before-flashlight-directional. Старые flashlight/cone installers не повторять поверх нового кода. Нет liveRojo, сторонней сериализации сцены или публикации.
+
+## Приёмка
+
+[Локальные проверки](../.artifacts/playtests/2026-10-20-flashlight-directional/local-checks.json) PASS: check.ps1, два focused flashlight fixtures и десять текущих регрессий. Pure motion проверяет5824позы и30/48/60/90/144/240FPS; максимумcamera translation.0297stud/roll.3375°. Контроллер проверяет shared lens axis/core-spill,12Parts/3Spots/0Beam/0Point, ЛКМ Begin, round/lifecycle, no decorative rays, native float32 readback, все прежние camera/foreign ownership/rollback guards. Это не заявление о прохождении всех исторических тестов проекта.
+
+[Pipeline fixtures](../.artifacts/playtests/2026-10-20-flashlight-directional/pipeline-fixtures.json) PASS:31installer отказ,195unsafeDOM и3rawTerrain отказа, два корректных конечных Camera frame. Реальный generated installer принимает исходный155Source save и весь known cone stage; смешанные stages отказываются. Три точки injected write failure откатывают исходные bytes. Installer115322/SHA256 `408559c616e619f92a12af1a5e3db311b55ce15bd632fb8212264c09ecaf770c`. В правильной stopped Corn A первая установка changed3/created0, repeat0/0; повтор после теста также0/0.
+
+Настоящий normal-bootstrap1client прошёл UI Start/Confirm, начальный ON, штатный W и [native input trace](../.artifacts/playtests/2026-10-20-flashlight-directional/native-input.json): активная ЛКМ off, F оставляет off, ЛКМ on. Actual ContextActionService binding содержит только `Enum.UserInputType.MouseButton1`. Ранние клики при открытом Alt-cursor не переключали свет и сохранены в trace. Для устойчивого измерения вне активного окна использовались временные owned focus/cursor-state fixtures; это диагностическая постановка. Производственные input/camera Sources для неё не менялись.
+
+[100RenderStepped samples](../.artifacts/playtests/2026-10-20-flashlight-directional/native-render-samples.json),6.643с:12Parts/3SpotLight/0PointLight/0Beam, без churn и native ownership drift; общий LensAim направлен вместе со взглядом, motion в заданных bounds. Black ambient/Brightness0 и прежний Atmosphere.27/1.8 сохранены. Первый observer ошибочно искал `LensEmitter` вместо существующего `Emitter`; исправлен только observer, production не менялся.
+
+**Точное визуальное совпадение пока не принято.** Studio MCP screenshot возвращал серый мир с HUD даже при контрольном Neon cube; автор подтвердил, что у него поле и фонарик видны. Альтернативный computer-use capture после восстановления выбора окна дважды завершился `FrameArrived timed out` / `window capture timed out`. Эти снимки не выдаются за GPU-приёмку формы круга. Долгий FPS,4client, физический mouse-look и человеческий страх не заявляются.
+
+[Финальный Edit](../.artifacts/playtests/2026-10-20-flashlight-directional/native-final-edit.json): A/155Sources/CameraFixed/Httpfalse/0Lighting children,630Ground/Field, no runtime/diagnostics. Все7owned диагностических LocalScript удалены до Stop; временный cube удалён отдельно. Соседняя игра не изменялась.
+
+Автор подтвердил Ctrl+S. [Строгий read-only аудит сохранения](../.artifacts/playtests/2026-10-20-flashlight-directional/preservation.json) **PASS/complete:true**:1487942байта, SHA256 `bddaeb948611267e1b3b4a5091423f860a87c64fe7265cfe80a5997e5941a8bb`.155Sources=152проектных+3Fog,4523экземпляра; ровно3Source-правки, без добавлений/удалений/reindex. Все retained identities/classes/names/parents, мир/Lighting/арт/mesh metadata и rawTerrain точны. [Независимый байтовый аудит](../.artifacts/playtests/2026-10-20-flashlight-directional/saved-scene.json) подтвердил неизменные B1485700/`e34fe75f…` и immutable before-flashlight-directional1487543/`001a0e52…`. После авторского сохранения production Sources и сцена не редактировались; обновлены только записи проверки. Сохранение не добавляет новой визуальной/GPU-приёмки.

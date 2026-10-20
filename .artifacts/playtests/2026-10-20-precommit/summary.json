@@ -1,0 +1,15 @@
+{
+  "check_ps1": "PASS; Selene used cached API dump; 0 errors, 0 warnings, 0 parse errors",
+  "luau_current_fixtures": 17,
+  "luau_passed": true,
+  "strict_A_save_audit": "PASS",
+  "strict_B_save_audit": "PASS",
+  "deleted_tracked_scenes_archived_exactly": 27,
+  "total_removed_loose_scenes": 50,
+  "remaining_loose_scenes": 2,
+  "B_full_Studio_reopen_quality_and_author_circle": "PASS",
+  "current_A_full_process_reopen": "Not separately tested",
+  "guard_metadata_change": "A verifier now pins accepted current B f33571e8 instead of prior B 8160b710; no world or Source allowance changed",
+  "frozen_bytes": "ZIP binary and dated playtest report -text rules preserve raw hashes",
+  "source_test_scope": "Current fixtures only; historical short-cue and obsolete pipelines are not claimed to pass"
+}

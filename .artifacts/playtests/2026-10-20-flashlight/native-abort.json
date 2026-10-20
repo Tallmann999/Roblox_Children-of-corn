@@ -1,0 +1,19 @@
+{
+  "lamp": true,
+  "camera": "Custom",
+  "sky": true,
+  "buttons": {
+    "1": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.CaptureChoices.Revive",
+      "text": "Возрождение"
+    },
+    "2": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.CaptureChoices.Exit",
+      "text": "Выход из игры"
+    },
+    "3": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.LeaveRound",
+      "text": "Завершить раунд"
+    }
+  }
+}

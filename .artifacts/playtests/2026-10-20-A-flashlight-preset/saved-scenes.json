@@ -1,0 +1,12 @@
+{
+  "engine_source": "C:\\Users\\User\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Children_of_corn_AutoRecovery_0.rbxl",
+  "A_bytes": 1491827,
+  "A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "B_sha256": "8160b71046a7c56a8a0c536ecfd3b9b9ca51a4e183c8f42cfb0b2458b81c837c",
+  "preservation_report": "recovery-preservation.json",
+  "method": "Exact engine AutoRecovery bytes; hash-guarded atomic promotion; no serialization",
+  "only_two_scene_files": [
+    "place/Children_of_corn.rbxl",
+    "place/Children_of_corn_B.rbxl"
+  ]
+}

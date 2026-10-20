@@ -1,0 +1,27 @@
+{
+  "check_ps1": "PASS: StyLua; Selene cached API 0/0/0; Rojo build/sourcemap; safe code mappings; persistence disabled",
+  "current_luau_fixtures": {
+    "flashlight-presentation": "PASS",
+    "flashlight-controller": "PASS",
+    "handheld-presentation": "PASS",
+    "handheld-controller": "PASS",
+    "capture-presentation": "PASS",
+    "minimap-geometry": "PASS",
+    "lighting-modes": "PASS",
+    "harvest-warden-visual": "PASS",
+    "round-intro": "PASS",
+    "multiplayer-ui": "PASS",
+    "rustle-continuous-ui": "PASS",
+    "multiplayer-round": "PASS"
+  },
+  "historical_fixture_failures": {
+    "minimap-state": "FAIL at outdated SoloRound adapter: missing RoundAudio dependency. Unmodified fixture, not current TeamRound or new flashlight acceptance."
+  },
+  "source_sha256": {
+    "src/client/Controllers/FlashlightController.luau": "1bf46d8efae381d75d27be6eb2b5b8634f2571d46f8217ae53b4b282276a437e",
+    "src/shared/Game/FlashlightPresentation.luau": "115403207b5110f790ab8f15e2b0a510daa65d7b99a6d1a1fa633beb7b1c76d0",
+    "src/client/Controllers/RoundController.luau": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a",
+    "src/shared/Game/RoundText.luau": "1047ca3a83a678eec81814356dd900bf22b7a01f2d8f49c292ae1c4aab43ad7a"
+  },
+  "not_all_project_tests": true
+}

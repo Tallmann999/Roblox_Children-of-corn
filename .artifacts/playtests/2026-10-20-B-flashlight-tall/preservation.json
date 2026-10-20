@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "B",
+  "sources": 156,
+  "changed_sources": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/LightingModes",
+    "ReplicatedStorage/GameShared/Game/RoundText",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController"
+  ],
+  "new_modules": [
+    "ReplicatedStorage/GameShared/Game/FlashlightPresentation",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/FlashlightTuning"
+  ],
+  "original_instances": 4526,
+  "candidate_instances": 4532,
+  "new_settings_nodes": 3,
+  "removed_instances": 0,
+  "reindexed_exporter_paths": 0,
+  "world_art_other_lighting_mesh_identities_parents_exact": true,
+  "changes": [
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "property": "Source",
+      "reason": "declared_B_feature_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/RoundText",
+      "property": "Source",
+      "reason": "declared_B_feature_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/LightingModes",
+      "property": "Source",
+      "reason": "declared_B_feature_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornAppearance",
+      "property": "Source",
+      "reason": "declared_B_feature_source"
+    },
+    {
+      "path": "Lighting",
+      "property": "LightingStyle",
+      "reason": "realistic_style"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor_selection"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor_selection"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor_selection"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor_selection"
+    }
+  ],
+  "baseline_sha256": "e34fe75f598aa99c121c0e271a1b3b2ed071b5f090a9dfdb6245c116da0565d7",
+  "candidate_sha256": "8160b71046a7c56a8a0c536ecfd3b9b9ca51a4e183c8f42cfb0b2458b81c837c",
+  "bytes": 1494881,
+  "raw_terrain_exact": true,
+  "warnings": {
+    "baseline": "0.101726400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.100537700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  }
+}

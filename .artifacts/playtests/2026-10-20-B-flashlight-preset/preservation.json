@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "complete": true,
+  "candidate_sha256": "f33571e819fb605130b05489789c93f11c0ef92a3e9762c77691130a60c3d9c0",
+  "candidate_bytes": 1494878,
+  "baseline_sha256": "8160b71046a7c56a8a0c536ecfd3b9b9ca51a4e183c8f42cfb0b2458b81c837c",
+  "instances": 4532,
+  "unchanged_sources": 156,
+  "settings_changes": 7,
+  "world_art_identities_parents_lighting_exact": true,
+  "raw_terrain_exact": true,
+  "A_unchanged_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "changes": [
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings",
+      "property": "AttributesSerialize"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Angle"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Brightness"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Wide",
+      "property": "Range"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Core",
+      "property": "Angle"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Core",
+      "property": "Brightness"
+    },
+    {
+      "path": "ReplicatedStorage/CornFlashlightSettings/Core",
+      "property": "Range"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId"
+    }
+  ],
+  "warnings": [
+    "0.219070000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "0.200582100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  ]
+}

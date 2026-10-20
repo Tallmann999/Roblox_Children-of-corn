@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "count": 17,
+  "results": [
+    {
+      "test": "flashlight-controller",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: real FlashlightController A/B LMB toggle/default-on/lifecycle, 11 parts/three lens-directed spots/no sphere or air Beams, shared core/spill lens and forward axis, no decorative raycasts, camera rollback/no accumulation, cursor/map/menu/capture/death/respawn cleanup, foreign subtree edits preserved, light allocation rollback, no Root writes\n"
+    },
+    {
+      "test": "flashlight-presentation",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: 11 frozen primitive flashlight/hand parts, bright circular core/soft wider spill at lens, directed hand fill, no billboard cone, pure immutable motion, 30/48/60/90/144/240 FPS equality, 1.7 Hz walk/2.1 Hz sprint cap, smooth idle/stop and directional mouse lag, teleport/NaN/stall guards, 5824 bounded rigid poses; camera max translation=0.029699746519327164 roll=0.3374992836841938 pitch=0.18899724404871046 velocity=0.3917902149260044; near clearance=0.7873974442481995\n"
+    },
+    {
+      "test": "studio-quality-guard",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: Studio quality guard 17 meaningful lifecycle/ownership checks; no renderer claim\n"
+    },
+    {
+      "test": "harvest-corn",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: B four stable varieties, rooted curved meshes, exact gameplay exclusions/height/density, streaming18/batch and Near576 cap\nPASS: B Far-only whole field, inherited four-variety placements, Ready handoff/reuse, B-to-A restoration and cleanup\nPASS: failed detailed startup preserves authored preview/overview; interrupted streaming cancels before publication\nPASS: late async template completion cannot recreate a destroyed renderer or remove saved fallback\n"
+    },
+    {
+      "test": "harvest-warden-visual",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: both actual neutral Warden groups, unchanged Root/anatomy/animation, A white Neon eyes/two diverging 60-stud SpotLights and faded asset-free Beams, B red PointLights unchanged, dormant/capture mask, 10 edited-light/beam guards, forbidden template inserts, foreign/spoof preservation and cleanup\n"
+    },
+    {
+      "test": "harvest-warden-pose",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: Warden exact offline pivots, finite nine-section deltas, opposite gait, stationary legs, grouped head/hat/eyes, capture reach and Root-relative feet/front; legacy pose API retained\n"
+    },
+    {
+      "test": "harvest-warden-animation",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: actual MonsterAnimationController cached A/B build, Root-nested compatibility, raw asset pose, dormant/stopped visibility, carrier masking,30Hz throttle, variant replacement, Root preservation, streamed-out generation guard and allocation-failure visible fallback/bounded5second retry/recovery\n"
+    },
+    {
+      "test": "harvest-warden-capture",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: capture identity/deadline plus bounded rapid head shake, mild camera motion, opening mouth and timed paint\nPASS: actual CaptureController A/B template choice, nine hidden compatibility carriers, actual Warden face camera, grouped shaking head/eyes, capture arms, no old block mouth, three-rig masking/Root preservation, cleanup and stale mesh-build reset guard\n"
+    },
+    {
+      "test": "harvest-geometry-controller",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS harvest-geometry-controller: both owned roots, property preservation, late part/root metadata, burst coalescing, foreign refusal and cleanup\n"
+    },
+    {
+      "test": "harvest-art-geometry",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS harvest-art-geometry: actual 86 meshes/39153 vertices/22608 faces, all material/UV/normal channels, fixed canonical, serialized allocator, lazy caches, corn LOD/warden sections/Neon, guarded property-preserving Apply/rollback, 6 invalid catalogs, 5 allocation failure retries and concurrent failure recovery\n"
+    },
+    {
+      "test": "lighting-modes",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: frozen hard-only black-night contract, torches enabled, unchanged fog profile, 10 invalid payloads refused before Lighting access\nPASS: Capture/Apply/Restore preserves original effects, unrelated properties and metadata\nPASS: restore skips removed/reparented effects and preserves later foreign Atmospheres; only missing Sky gets bounded runtime fallback\nPASS: eight black-sky properties captured/restored exactly across repeated apply; unrelated textures/angles/metadata and moved/removed/later Skies preserved; no effects created\nPASS: absent-Sky fallback reused across Apply, exact original/observer/repeated Restore, new round; nine foreign edits refuse deletion\n"
+    },
+    {
+      "test": "cornfield-fog",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: CornfieldFog actual source adapters: author day/dusk/night ClockTime edits/latest baseline; validated density/tint UI and modal panel lifecycle; <=10Hz transitions/zero settled writes; field edge/reentry; foreign/ambiguous/transient/character/model cleanup; admin/malformed/nonfinite/whitelist/clamp/rate/reset/duplicate server guards. No Studio/rendering claim.\n"
+    },
+    {
+      "test": "round-intro",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: actual RoundHud first capture scene/timer gating, small revive/menu choices, second-capture fixed-mode retry objective/back, duplicate/busy/unavailable/phase cleanup; actual RoundController early/second/mode/debounce/malformed revival guards and menu/retry routing; original full-screen start/retry confirmation, selection/capture/destroy lifecycle, server-elapsed-only 5→1 warning and desktop/phone GUI bounds. Adapter only; no engine pixels or gameplay acceptance.\n"
+    },
+    {
+      "test": "multiplayer-round",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS production shared-key TeamRound/RoundParticipant: supported1-4 participants, two-player readiness, key/item contention, shared gate/120-second deadline/three NPCs at96, one post-commit reinforcement notification/no replay, failed second spawn silent and throwing audio keeps gameplay active; first/second capture/personal revival/shared audio continuity, Health-zero death/character removal/disconnect/abort/fallback key recovery, one escape +20 once while teammate continues, terminal retry/menu isolation, per-player round/inventory/sprint limits, late-join/capacity/four distinct starts and all-terminal/empty cleanup. Deterministic engine/world/hunt/audio adapters; no Studio network, NPC decision or visual/FPS acceptance claim.\n"
+    },
+    {
+      "test": "handheld-controller",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: authoritative selected geometry/initial-sync skip, avatar skin/safe flags/<=24parts, no rebuild and onePivot/frame, acceptedenergy/trap consumption/deadlines, duplicate/out-of-order IDs, selection/terminal/retry/death/capture/menu/map/foreigncamera/replacement/reset guards, foreign model preservation,0camera/Rootwrites and cleanup\n"
+    },
+    {
+      "test": "handheld-presentation",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: server-matching immutable15/3/14part geometry, <=18total with2hands+anchor, exact0.9/0.55duration/largeframe completion/passivekey, 3630 finite rigid poses with camera near-clearance 0.9135428667068481, raise/tilt/lowerforward/narrowviewport and deterministic no-drift time curves\n"
+    },
+    {
+      "test": "corn-controller-quality",
+      "passed": true,
+      "exit_code": 0,
+      "output": "PASS: LOD hysteresis/no threshold churn; root/camera elevation+2s; overview cache/event invalidation/ownership restore/disconnect; Ready fallback+visibility handoff; runtime immutable cache/dirty guard; far6 no sparse9 hole/fine-only loaded counts;18stud retention;100groups/4032plants; inherited fidelity/aspect/source preservation\n"
+    }
+  ]
+}

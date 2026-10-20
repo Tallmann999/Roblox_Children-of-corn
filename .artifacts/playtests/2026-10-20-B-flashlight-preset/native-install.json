@@ -1,0 +1,62 @@
+{
+  "before": {
+    "lights": [
+      {
+        "shadows": false,
+        "name": "Wide",
+        "brightness": 2,
+        "range": 32,
+        "angle": 100
+      },
+      {
+        "shadows": false,
+        "name": "Core",
+        "brightness": 13,
+        "range": 4,
+        "angle": 30
+      }
+    ],
+    "panel": {
+      "corerange": "4.00",
+      "corebrightness": "13.00",
+      "Values": "",
+      "widerange": "32.00",
+      "posepitch": "-4.00",
+      "coreangle": "30.00",
+      "wideangle": "100.00",
+      "widebrightness": "2.00"
+    },
+    "name": "Children_of_corn_B.rbxl",
+    "variant": "B",
+    "bank": {
+      "Pitch": -4,
+      "CornFlashlightSettingsVersion": 1,
+      "corn_project_id": "children_of_corn"
+    },
+    "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+    "style": "Enum.LightingStyle.Realistic",
+    "quality": "Enum.QualityLevel.Level21"
+  },
+  "installed": {
+    "pitch": -6,
+    "style": "Enum.LightingStyle.Realistic",
+    "totalSources": 156,
+    "core": {
+      "brightness": 22.6200008392334,
+      "range": 24,
+      "angle": 12
+    },
+    "wide": {
+      "brightness": 2.0799999237060547,
+      "range": 18,
+      "angle": 78
+    },
+    "changedProperties": 7
+  },
+  "repeated": {
+    "totalSources": 156,
+    "repeated": true,
+    "changedProperties": 0
+  },
+  "scope": "Only seven existing settings values changed.156B Source hashes matched pinned accepted payload. Taller corn and all B appearance Sources unchanged."
+}

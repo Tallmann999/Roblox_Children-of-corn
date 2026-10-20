@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "loose_scenes": [
+    {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn.rbxl",
+      "bytes": 1491827,
+      "sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7"
+    },
+    {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn_B.rbxl",
+      "bytes": 1494878,
+      "sha256": "f33571e819fb605130b05489789c93f11c0ef92a3e9762c77691130a60c3d9c0"
+    }
+  ],
+  "scene_changes_this_task": 0
+}

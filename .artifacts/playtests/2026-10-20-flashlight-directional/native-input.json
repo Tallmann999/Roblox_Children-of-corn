@@ -1,0 +1,81 @@
+{
+  "notes": "Normal bootstrap, actual native input. Last three eligible events: LMB off, F unchanged, LMB on. Earlier blocked events are retained; temporary focus/cursor fixtures were active for eligible samples.",
+  "inputs": [
+    "Enum.UserInputType.MouseButton1"
+  ],
+  "trace": [
+    {
+      "before": true,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": false,
+      "after": true,
+      "eligible": false,
+      "processed": true
+    },
+    {
+      "before": true,
+      "type": "Keyboard",
+      "key": "F",
+      "model": false,
+      "after": true,
+      "eligible": false,
+      "processed": false
+    },
+    {
+      "before": true,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": false,
+      "after": true,
+      "eligible": false,
+      "processed": false
+    },
+    {
+      "before": true,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": false,
+      "after": true,
+      "eligible": false,
+      "processed": true
+    },
+    {
+      "before": true,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": false,
+      "after": true,
+      "eligible": false,
+      "processed": true
+    },
+    {
+      "before": false,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": true,
+      "after": false,
+      "eligible": true,
+      "processed": true
+    },
+    {
+      "before": false,
+      "type": "Keyboard",
+      "key": "F",
+      "model": true,
+      "after": false,
+      "eligible": true,
+      "processed": false
+    },
+    {
+      "before": true,
+      "type": "MouseButton1",
+      "key": "None",
+      "model": true,
+      "after": true,
+      "eligible": true,
+      "processed": true
+    }
+  ],
+  "priority": 3000
+}

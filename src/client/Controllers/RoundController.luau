@@ -230,6 +230,7 @@ function RoundController:Start(context: any)
 			hud:ShowUnavailable()
 			context.Controllers.CaptureController:Cancel("malformed snapshot")
 			context.Controllers.HandheldController:Clear("malformed snapshot")
+			context.Controllers.FlashlightController:Clear("malformed snapshot")
 			context.Controllers.AudioController:Clear("malformed snapshot")
 			warn("[RoundController] Ignored a malformed round_snapshot")
 			return
@@ -241,6 +242,7 @@ function RoundController:Start(context: any)
 		context.Controllers.MinimapController:SetSnapshot(payload)
 		context.Controllers.InventoryController:SetSnapshot(payload)
 		context.Controllers.HandheldController:SetSnapshot(payload)
+		context.Controllers.FlashlightController:SetSnapshot(payload)
 		context.Controllers.AudioController:SetSnapshot(payload)
 		context.Controllers.CornController:SetLightingMode(
 			if payload.phase == "ready" then nil else payload.lighting_mode

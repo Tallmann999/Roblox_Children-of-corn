@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "A",
+  "total_sources": 156,
+  "matching_sources": 153,
+  "matching_asset_sources": 3,
+  "original_instances": 4523,
+  "candidate_instances": 4527,
+  "new_instances": 4,
+  "removed_instances": 0,
+  "changed_sources": [
+    "ReplicatedStorage/GameShared/Game/FlashlightPresentation",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController"
+  ],
+  "approved_additions": {
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/FlashlightTuning": "ModuleScript",
+    "ReplicatedStorage/CornFlashlightSettings": "Folder",
+    "ReplicatedStorage/CornFlashlightSettings/Wide": "SpotLight",
+    "ReplicatedStorage/CornFlashlightSettings/Core": "SpotLight"
+  },
+  "reindexed_exporter_paths": 0,
+  "retained_world_lighting_art_mesh_identities_parents_exact": true,
+  "allowed_editor_metadata": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame"
+    },
+    {
+      "path": "Workspace/Camera",
+      "property": "Focus"
+    }
+  ],
+  "candidate_sha256": "4c8d831bb38440e95889eab9f4680a78c83191c73b9138f458ff9870e139f3c1",
+  "original_sha256": "bddaeb948611267e1b3b4a5091423f860a87c64fe7265cfe80a5997e5941a8bb",
+  "bytes": 1491650,
+  "raw_terrain_exact": true,
+  "warnings": {
+    "baseline": "0.185197000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.183515000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  }
+}

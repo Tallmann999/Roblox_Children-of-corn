@@ -1,0 +1,20 @@
+{
+  "pitch": -6,
+  "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+  "core": [
+    22.6200008392334,
+    12,
+    24
+  ],
+  "camera": "Enum.CameraType.Fixed",
+  "style": "Enum.LightingStyle.Realistic",
+  "variant": "B",
+  "http": false,
+  "mode": "Edit",
+  "wide": [
+    2.0799999237060547,
+    78,
+    18
+  ],
+  "quality": "Enum.QualityLevel.Level21"
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "owned_positive_counters": 242,
+  "per_counter_negative_shapes": 8,
+  "unsafe_counter_refusals": 1939,
+  "full_dom_refusals": [
+    "wrong count",
+    "missing count",
+    "nonowned count",
+    "changed mesh-key attributes"
+  ],
+  "review_sha256": "a03d0322f509bc9a693456b07e45f4e107656931dceb2c1b5b78a4aa2d0040fb",
+  "catalog_sha256": "b9448ca01dd10b4579d44ba4efad427edd7e4f7ced466fb68144d5f22651dbd0",
+  "cached_actual_dom_pass": true,
+  "candidate_sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498",
+  "scene_written": false,
+  "verifier_sha256": "e2a5aa33991c17862390ba2911c5ad332a1e5b431228600dc0adda692fefa6c6",
+  "fixture_sha256": "f466daa06ef88143c54b12f0c8162339eaaea25b8a46c1741ee7c46e86906310"
+}

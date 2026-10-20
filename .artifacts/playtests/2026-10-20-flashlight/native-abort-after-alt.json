@@ -1,0 +1,23 @@
+{
+  "lamp": false,
+  "camera": "Custom",
+  "sky": false,
+  "buttons": {
+    "1": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.RoundCard.Retry",
+      "text": "Готов к следующему"
+    },
+    "2": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.RoundCard.Menu",
+      "text": "В меню"
+    },
+    "3": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.CaptureChoices.Revive",
+      "text": "Возрождение"
+    },
+    "4": {
+      "path": "Players.Tallmann_Niderlands.PlayerGui.CornRoundHud.CaptureChoices.Exit",
+      "text": "Выход из игры"
+    }
+  }
+}

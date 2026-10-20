@@ -145,11 +145,21 @@ local function fixture(count)
 	function methods:GetAttribute(name)
 		return self.attributes[name]
 	end
+	function methods:GetAttributes()
+		return table.clone(self.attributes)
+	end
 	function methods:AddTag(tag)
 		self.tags[tag] = true
 	end
 	function methods:HasTag(tag)
 		return self.tags[tag] == true
+	end
+	function methods:GetTags()
+		local tags = {}
+		for tag in self.tags do
+			table.insert(tags, tag)
+		end
+		return tags
 	end
 	function methods:PivotTo(frame)
 		self.pivots = (self.pivots or 0) + 1
@@ -272,7 +282,7 @@ local function fixture(count)
 	register("Stamina", load("src/shared/Game/Stamina.luau", {}), gameShared)
 	register(
 		"LightingModes",
-		load("src/shared/Game/LightingModes.luau", { Color3 = r.Color3 }),
+		load("src/shared/Game/LightingModes.luau", { Color3 = r.Color3, Instance = { new = make } }),
 		gameShared
 	)
 	register(

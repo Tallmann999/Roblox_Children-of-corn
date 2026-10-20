@@ -1,0 +1,164 @@
+{
+  "studio_id": "ab6571a4-d231-4506-9c9b-90ae60d6b695",
+  "user_reported_full_studio_restart": true,
+  "plugin_messages": [
+    "[CornStudioQuality21] Corn A/B: fixed Studio render quality21",
+    "[CornStudioQuality21] Corn A/B: fixed Studio render quality21"
+  ],
+  "edit_before_any_setter": {
+    "pitch": -6,
+    "http": false,
+    "samples": {
+      "1": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "2": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "3": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "4": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      }
+    },
+    "wide": {
+      "1": 2.0799999237060547,
+      "2": 78,
+      "3": 18
+    },
+    "camera": "Enum.CameraType.Fixed",
+    "core": {
+      "1": 22.6200008392334,
+      "2": 12,
+      "3": 24
+    },
+    "sources": 156,
+    "name": "Children_of_corn_B.rbxl",
+    "project": "children_of_corn",
+    "style": "Enum.LightingStyle.Realistic",
+    "variant": "B",
+    "ground": "630, 2, 630",
+    "field": "630, 10, 630"
+  },
+  "play_before_any_setter": {
+    "samples": {
+      "1": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "2": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "3": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "4": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "5": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "6": {
+        "editor": "Enum.QualityLevel.Level21",
+        "user": "Enum.SavedQualitySetting.Automatic",
+        "quality": "Enum.QualityLevel.Level21"
+      }
+    },
+    "style": "Enum.LightingStyle.Realistic"
+  },
+  "production_ui_start": {
+    "lamp": true,
+    "style": "Enum.LightingStyle.Realistic",
+    "user": "Enum.SavedQualitySetting.Automatic",
+    "quality": "Enum.QualityLevel.Level21",
+    "editor": "Enum.QualityLevel.Level21",
+    "lights": {
+      "1": {
+        "enabled": true,
+        "name": "main",
+        "class": "SpotLight",
+        "angle": 12,
+        "range": 24,
+        "brightness": 22.6200008392334
+      },
+      "2": {
+        "enabled": true,
+        "name": "fill",
+        "class": "SpotLight",
+        "angle": 78,
+        "range": 18,
+        "brightness": 2.0799999237060547
+      },
+      "3": {
+        "enabled": true,
+        "name": "HandFill",
+        "class": "SpotLight",
+        "angle": 75,
+        "range": 1.5,
+        "brightness": 0.07999999821186066
+      }
+    },
+    "objectiveVisible": true
+  },
+  "installed_plugin_reset_recovery": {
+    "before": {
+      "editor": "Enum.QualityLevel.Level21",
+      "quality": "Enum.QualityLevel.Level21"
+    },
+    "intentionalReset": {
+      "editor": "Enum.QualityLevel.Automatic",
+      "quality": "Enum.QualityLevel.Automatic"
+    },
+    "user": "Enum.SavedQualitySetting.Automatic",
+    "samples": {
+      "1": {
+        "editor": "Enum.QualityLevel.Level21",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "2": {
+        "editor": "Enum.QualityLevel.Level21",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "3": {
+        "editor": "Enum.QualityLevel.Level21",
+        "quality": "Enum.QualityLevel.Level21"
+      },
+      "4": {
+        "editor": "Enum.QualityLevel.Level21",
+        "quality": "Enum.QualityLevel.Level21"
+      }
+    },
+    "recovered": true,
+    "directLevel21SetterUsed": false
+  },
+  "windows_ui_input": false,
+  "game_source_changes": 0,
+  "scene_changes": 0,
+  "full_process_reopen_quality_passed": true,
+  "human_circle_acceptance": {
+    "passed": true,
+    "source": "Direct user answer after full Studio restart and native Play validation",
+    "quote": "Да, круг и фокус света правильные",
+    "date": "2026-10-20",
+    "variant": "B"
+  },
+  "final_mode": "Play for user visual inspection"
+}

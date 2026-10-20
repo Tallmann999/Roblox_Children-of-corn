@@ -1,0 +1,278 @@
+{
+  "scope": "Native Roblox game menu operated through Studio MCP virtual input only. No Windows UI automation or physical input. No game Source or scene changes.",
+  "method": "Escape > Settings > Graphics Mode Manual > Graphics Quality Step10 > Escape",
+  "fixedMenu": {
+    "auto": 4,
+    "frm": true,
+    "menu": true,
+    "quality": "Enum.QualityLevel.Level21",
+    "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+  },
+  "restarts": [
+    {
+      "bankAngle": 12,
+      "samples": [
+        {
+          "quality": "Enum.QualityLevel.Level21",
+          "t": 1,
+          "auto": 1,
+          "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+        },
+        {
+          "quality": "Enum.QualityLevel.Level21",
+          "t": 2,
+          "auto": 1,
+          "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+        },
+        {
+          "quality": "Enum.QualityLevel.Level21",
+          "t": 3,
+          "auto": 1,
+          "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+        },
+        {
+          "quality": "Enum.QualityLevel.Level21",
+          "t": 4,
+          "auto": 1,
+          "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+        }
+      ],
+      "passed": true,
+      "run": 1
+    },
+    {
+      "style": "Enum.LightingStyle.Realistic",
+      "menu": false,
+      "quality": "Enum.QualityLevel.Level21",
+      "run": 2,
+      "passed": true,
+      "userQuality": "Enum.SavedQualitySetting.QualityLevel10"
+    }
+  ],
+  "lamp": {
+    "observer": {
+      "samples": [
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945219159126282,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": 0,
+          "axisDot": 0.9945218563079834,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9975640773773193,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9968301057815552,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9962824583053589,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9958531260490417,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9956014752388,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9954227805137634,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.995258092880249,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9951430559158325,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9950470328330994,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9949348568916321,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9948661923408508,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9947863817214966,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9947364926338196,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.9946854114532471,
+          "on": true,
+          "owned": true
+        },
+        {
+          "pitch": -75,
+          "axisDot": 0.994660496711731,
+          "on": true,
+          "owned": true
+        }
+      ],
+      "scope": "One fresh normal-bootstrap Play. Programmatic production Start request; temporary camera/focus/cursor staging; no mouse, keyboard or Root writes.",
+      "initialSettings": {
+        "core": {
+          "shadows": false,
+          "angle": 12,
+          "range": 24,
+          "brightness": 22.6200008392334
+        },
+        "wide": {
+          "shadows": false,
+          "angle": 78,
+          "range": 18,
+          "brightness": 2.0799999237060547
+        },
+        "pose": {
+          "pitch": -6
+        }
+      },
+      "passed": true,
+      "finalSettings": {
+        "core": {
+          "shadows": false,
+          "angle": 12,
+          "range": 24,
+          "brightness": 22.6200008392334
+        },
+        "wide": {
+          "shadows": false,
+          "angle": 78,
+          "range": 18,
+          "brightness": 2.0799999237060547
+        },
+        "pose": {
+          "pitch": -6
+        }
+      }
+    },
+    "userQuality": "Enum.SavedQualitySetting.QualityLevel10",
+    "quality": "Enum.QualityLevel.Level21"
+  },
+  "fullStudioApplicationRestart": "not performed; two Stop/Play restarts passed",
+  "supersedes": "Earlier XML-only patch left already-running UserGameSettings.Automatic; previous persistence claim was incomplete."
+}

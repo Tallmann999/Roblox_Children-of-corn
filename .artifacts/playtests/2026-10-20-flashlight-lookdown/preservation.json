@@ -1,0 +1,61 @@
+{
+  "lighting_style": "Realistic",
+  "passed": true,
+  "complete": true,
+  "variant": "A",
+  "matching_sources": 153,
+  "matching_asset_sources": 3,
+  "total_sources": 156,
+  "source_changes": [],
+  "source_change_count": 0,
+  "new_instances": 2,
+  "preexisting_author_additions": [
+    "Workspace/Part",
+    "Workspace/Part/SpotLight"
+  ],
+  "removed_instances": 0,
+  "reindexed_exporter_paths": 0,
+  "retained_identities_classes_names_parents_exact": true,
+  "world_art_mesh_metadata_exact": true,
+  "lighting_exact_except_approved_style": true,
+  "allowed_changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "Workspace/Camera",
+      "property": "Focus",
+      "reason": "editor_metadata"
+    },
+    {
+      "path": "Lighting",
+      "property": "LightingStyle",
+      "reason": "author_approved_realistic_lighting"
+    }
+  ],
+  "original_sha256": "4c8d831bb38440e95889eab9f4680a78c83191c73b9138f458ff9870e139f3c1",
+  "candidate_sha256": "bc85bd9b294a992b0fdff8979b5f56885f0292e12402f51573d613f7acc0ad3f",
+  "original_instances": 4527,
+  "candidate_instances": 4529,
+  "bytes": 1491821,
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.123894200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.137145400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Exact engine bytes: LightingStyle Soft to Realistic only; all 156 Sources unchanged. All other 4527 original world/art/Lighting/mesh properties, identities/classes/names/parents/raw Terrain exact; narrow finite editor Camera/selection metadata only. Two preexisting author nodes preserved against independent pre-save snapshot/default templates. No scene serialization or publishing."
+}

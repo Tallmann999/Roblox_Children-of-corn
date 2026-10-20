@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "A",
+  "matching_sources": 152,
+  "matching_asset_sources": 3,
+  "total_sources": 155,
+  "new_instances": 2,
+  "removed_instances": 0,
+  "added_module_paths": [
+    "ReplicatedStorage/GameShared/Game/FlashlightPresentation",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController"
+  ],
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/RoundText",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController"
+  ],
+  "source_change_count": 2,
+  "allowed_changes": [
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController",
+      "property": "Source",
+      "reason": "declared_flashlight_source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/RoundText",
+      "property": "Source",
+      "reason": "declared_flashlight_source"
+    }
+  ],
+  "reindexed_exporter_paths": 0,
+  "retained_identities_classes_names_parents_exact": true,
+  "world_art_lighting_and_mesh_metadata_exact": true,
+  "original_sha256": "34c266ba847bd112fc552c720e06e0b4dd01b0378e840f15dea7f97917545498",
+  "candidate_sha256": "001a0e52bf8b76b8f40c2a8ef31509e287b720d043a42dd2888890b56b3a50d6",
+  "original_instances": 4521,
+  "candidate_instances": 4523,
+  "bytes": 1487543,
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "original": "0.110815400s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.117276600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Exact engine bytes: declared RoundController/RoundText Sources and two default ModuleScript additions only. All 4521 retained world/art/Lighting/mesh metadata/identities/classes/names/parents/raw Terrain exact; narrow finite editor Camera/selection only. No scene serialization or publishing."
+}

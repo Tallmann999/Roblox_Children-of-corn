@@ -14,6 +14,7 @@
 *.glb binary
 *.png binary
 *.mp3 binary
+*.zip binary
 
 # Frozen resize manifest: its SHA-256 covers the original CRLF bytes.
 scripts/resize-layout.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
@@ -27,6 +28,24 @@ tests/multiplayer-foreign-root.luau -text whitespace=blank-at-eol,blank-at-eof,s
 # Harvest evidence pins the exact tested LF bytes of these Python guards.
 scripts/verify-harvest-copy.py text eol=lf
 tests/harvest-copy-verifier.py text eol=lf
+scripts/build-black-night-installer.py text eol=lf
+scripts/verify-black-night-copy.py text eol=lf
+tests/black-night-pipeline.py text eol=lf
+scripts/build-flashlight-installer.py text eol=lf
+scripts/verify-flashlight-copy.py text eol=lf
+tests/flashlight-pipeline.py text eol=lf
+scripts/build-flashlight-cone-installer.py text eol=lf
+scripts/verify-flashlight-cone-copy.py text eol=lf
+tests/flashlight-cone-pipeline.py text eol=lf
+scripts/build-flashlight-directional-installer.py text eol=lf
+scripts/verify-flashlight-directional-copy.py text eol=lf
+tests/flashlight-directional-pipeline.py text eol=lf
+scripts/build-flashlight-author-installer.py text eol=lf
+scripts/verify-flashlight-author-copy.py text eol=lf
+tests/flashlight-author-copy.py text eol=lf
+scripts/build-flashlight-lookdown-installer.py text eol=lf
+scripts/verify-flashlight-lookdown-copy.py text eol=lf
+tests/flashlight-lookdown-pipeline.py text eol=lf
 
 # Offline Harvest manifests/evidence retain the tested original CRLF bytes.
 assets/harvest-warden/corn-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
@@ -35,3 +54,19 @@ assets/harvest-warden/showcase-manifest.json -text whitespace=blank-at-eol,blank
 assets/harvest-warden/warden-manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 assets/harvest-warden/validation.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 assets/harvest-warden/textures/prompts.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+scripts/build-B-flashlight-tall-installer.py text eol=lf
+scripts/verify-B-flashlight-tall-copy.py text eol=lf
+tests/B-flashlight-tall-copy.py text eol=lf
+
+# Frozen engine/playtest reports keep their tested original bytes.
+.artifacts/playtests/2026-10-20-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/scene-archive/cleanup.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/verify-A-flashlight-preset.py text eol=lf
+scripts/verify-B-flashlight-preset.py text eol=lf
+scripts/build-corn-quality-plugin.py text eol=lf
+scripts/install-local-corn-quality-plugin.py text eol=lf
+
+# Frozen native diagnostic snapshots retain their original final blank line.
+.artifacts/playtests/2026-10-20-flashlight-cone/native-harness.luau whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/previews/2026-10-20-flashlight-choices/native-*.luau whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

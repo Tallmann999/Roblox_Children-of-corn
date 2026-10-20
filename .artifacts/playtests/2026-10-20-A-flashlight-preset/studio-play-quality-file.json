@@ -1,0 +1,11 @@
+{
+  "path": "C:\\Users\\User\\AppData\\Local\\Roblox\\GlobalBasicSettings_13_Studio.xml",
+  "before_sha256": "440f7707b8aa1941d76983635634029efbc0299fab6ae2c530ce053b3173b63d",
+  "after_sha256": "020775bbc38419e09930ed7bafce37555ad692297c83df75e467d67da3b77e17",
+  "only_changed_property": "UserGameSettings.SavedQualityLevel",
+  "before": 0,
+  "after": 10,
+  "other_settings_bytes_exact": true,
+  "Studio_restart_required": true,
+  "scope": "Studio-specific settings file only; standalone Roblox player settings untouched."
+}

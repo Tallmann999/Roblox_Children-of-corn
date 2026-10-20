@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"harvest\":{\"created\":0,\"variant\":\"A\",\"changed\":0,\"commonModels\":39,\"parts\":244},\"harvestRepeat\":{\"created\":0,\"variant\":\"A\",\"changed\":0,\"commonModels\":39,\"parts\":244},\"farmRepeat\":{\"applied\":0,\"built\":0,\"scope\":\"server\",\"pending\":0,\"targets\":40},\"farm\":{\"applied\":0,\"built\":0,\"scope\":\"server\",\"pending\":0,\"targets\":40}}"
+    }
+  ],
+  "isError": false
+}

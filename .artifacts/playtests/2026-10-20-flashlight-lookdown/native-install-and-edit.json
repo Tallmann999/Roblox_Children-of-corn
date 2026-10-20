@@ -1,0 +1,38 @@
+{
+  "installed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":false,\"after\":\"Enum.LightingStyle.Realistic\",\"totalSources\":156,\"changed\":0,\"before\":\"Enum.LightingStyle.Soft\",\"changedProperties\":1}"
+      }
+    ],
+    "isError": false
+  },
+  "repeated": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":true,\"totalSources\":156,\"changed\":0,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  },
+  "afterPlay": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":true,\"totalSources\":156,\"changed\":0,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  },
+  "savedEdit": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sources\":156,\"style\":\"Enum.LightingStyle.Realistic\",\"diagnostics\":[],\"authorPart\":true,\"bank\":{\"pitch\":-6,\"wide\":{\"1\":15.079999923706055,\"3\":24,\"2\":54},\"core\":{\"1\":22.6200008392334,\"3\":24,\"2\":26}},\"camera\":\"Enum.CameraType.Fixed\",\"http\":false}"
+      }
+    ],
+    "isError": false
+  }
+}

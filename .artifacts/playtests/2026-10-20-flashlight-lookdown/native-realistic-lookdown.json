@@ -1,0 +1,1605 @@
+{
+  "scope": "Normal bootstrap, staged look-down pitch/focus; no Root writes; native Space sent separately",
+  "samples": [
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 0.050866100002167514,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474971294403076
+      },
+      "lensY": 17.83908462524414,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 18.66570281982422,
+      "owned": true,
+      "t": 0.10969200000181445,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Jumping",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474339485168457
+      },
+      "lensY": 17.839021682739258,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 21.374662399291992,
+      "owned": true,
+      "t": 0.16752360000100452,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 6.589833736419678
+      },
+      "lensY": 20.97376823425293,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 23.41946792602539,
+      "owned": true,
+      "t": 0.2336780000005092,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 8.858115196228027
+      },
+      "lensY": 23.236522674560547,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 24.592273712158203,
+      "owned": true,
+      "t": 0.3022034000023268,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 8.858115196228027
+      },
+      "lensY": 23.236522674560547,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 24.903099060058594,
+      "owned": true,
+      "t": 0.35420539999904577,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 10.46419620513916
+      },
+      "lensY": 24.83869171142578,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 24.546432495117188,
+      "owned": true,
+      "t": 0.4181054000000586,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 10.58867073059082
+      },
+      "lensY": 24.96286392211914,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 23.617385864257812,
+      "owned": true,
+      "t": 0.469092899998941,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 10.58867073059082
+      },
+      "lensY": 24.96286392211914,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 21.830097198486328,
+      "owned": true,
+      "t": 0.5346212000004016,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 9.486854553222656
+      },
+      "lensY": 23.863731384277344,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 18.878002166748047,
+      "owned": true,
+      "t": 0.6021385999993072,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Freefall",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 7.695175647735596
+      },
+      "lensY": 22.076416015625,
+      "grounded": false,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.360828399658203,
+      "owned": true,
+      "t": 0.6667473000015889,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Landed",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 4.735846519470215
+      },
+      "lensY": 19.124296188354492,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.552593231201172,
+      "owned": true,
+      "t": 0.7184606000009808,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.2149553298950195
+      },
+      "lensY": 17.60710906982422,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.588905334472656,
+      "owned": true,
+      "t": 0.7844924000019091,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4284002780914307
+      },
+      "lensY": 17.820035934448242,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.59210205078125,
+      "owned": true,
+      "t": 0.8517725999990944,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4451780319213867
+      },
+      "lensY": 17.836772918701172,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.59231948852539,
+      "owned": true,
+      "t": 0.9530465999996522,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4469316005706787
+      },
+      "lensY": 17.83852195739746,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.0036285000023781,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4469316005706787
+      },
+      "lensY": 17.83852195739746,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.0674901000020327,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447129726409912
+      },
+      "lensY": 17.83871841430664,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.122276400001283,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447152853012085
+      },
+      "lensY": 17.838741302490234,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.1842844000020705,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4471852779388428
+      },
+      "lensY": 17.838773727416992,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.2361578999989433,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447225570678711
+      },
+      "lensY": 17.83881378173828,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.3011177000007592,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4472713470458984
+      },
+      "lensY": 17.83885955810547,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.370106599999417,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447317361831665
+      },
+      "lensY": 17.838905334472656,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.4357701000008092,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4473729133605957
+      },
+      "lensY": 17.838960647583008,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.504497199999605,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474453926086426
+      },
+      "lensY": 17.839033126831055,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.568287500002043,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4475066661834717
+      },
+      "lensY": 17.839094161987305,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.6341804000003322,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.44757342338562
+      },
+      "lensY": 17.839160919189453,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.7003437000021222,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4476404190063477
+      },
+      "lensY": 17.8392276763916,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.7683101000002353,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447709321975708
+      },
+      "lensY": 17.839296340942383,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.8230815999995684,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447709321975708
+      },
+      "lensY": 17.839296340942383,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.8878360999988217,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4477875232696533
+      },
+      "lensY": 17.839374542236328,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 1.9537540999990597,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447854518890381
+      },
+      "lensY": 17.839441299438477,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.022972700000537,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447925567626953
+      },
+      "lensY": 17.83951187133789,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.083607500000653,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447998046875
+      },
+      "lensY": 17.839584350585938,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.1393625999990036,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4480535984039307
+      },
+      "lensY": 17.83963966369629,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.2021286000017426,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4481184482574463
+      },
+      "lensY": 17.839704513549805,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.253129500000796,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4481778144836426
+      },
+      "lensY": 17.839763641357422,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.3170896000010544,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4482312202453613
+      },
+      "lensY": 17.83981704711914,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.367557100002159,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448284864425659
+      },
+      "lensY": 17.83987045288086,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.4188902000023518,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448284864425659
+      },
+      "lensY": 17.83987045288086,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.4847497000009753,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448330879211426
+      },
+      "lensY": 17.839916229248047,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.551107999999658,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4483706951141357
+      },
+      "lensY": 17.839956283569336,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.6190456000003906,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484052658081055
+      },
+      "lensY": 17.839990615844727,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.6843673000003037,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484341144561768
+      },
+      "lensY": 17.84001922607422,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.750761400002375,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484550952911377
+      },
+      "lensY": 17.84004020690918,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.817043499999272,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448470115661621
+      },
+      "lensY": 17.840055465698242,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.8839862999993784,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484777450561523
+      },
+      "lensY": 17.840063095092773,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 2.949897599999531,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484777450561523
+      },
+      "lensY": 17.840063095092773,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.001511300000857,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448472261428833
+      },
+      "lensY": 17.840057373046875,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.067650600001798,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448460578918457
+      },
+      "lensY": 17.840045928955078,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.134450500001549,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448441743850708
+      },
+      "lensY": 17.84002685546875,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.2008032000012463,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4484128952026367
+      },
+      "lensY": 17.839998245239258,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.268665700001293,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4483823776245117
+      },
+      "lensY": 17.839967727661133,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.33447950000118,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4483439922332764
+      },
+      "lensY": 17.839929580688477,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.40177820000099,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448298215866089
+      },
+      "lensY": 17.83988380432129,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.467582900000707,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4482483863830566
+      },
+      "lensY": 17.839834213256836,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.533922900001926,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448194980621338
+      },
+      "lensY": 17.839780807495117,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.5999685999995563,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4481356143951416
+      },
+      "lensY": 17.8397216796875,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.6672543000022415,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4480743408203125
+      },
+      "lensY": 17.83966064453125,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.7332176999989315,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448009490966797
+      },
+      "lensY": 17.839595794677734,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.78519850000157,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447936773300171
+      },
+      "lensY": 17.839523315429688,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.850048100001004,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447873830795288
+      },
+      "lensY": 17.839460372924805,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.9183438000000024,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4478046894073486
+      },
+      "lensY": 17.839391708374023,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 3.9834288000020024,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4477341175079346
+      },
+      "lensY": 17.83932113647461,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.050502800000686,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4476633071899414
+      },
+      "lensY": 17.839250564575195,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.10245919999943,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447596549987793
+      },
+      "lensY": 17.839183807373047,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.167066900001373,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4475257396698
+      },
+      "lensY": 17.839113235473633,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.232762300001923,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474663734436035
+      },
+      "lensY": 17.839054107666016,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.283406200000172,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474663734436035
+      },
+      "lensY": 17.839054107666016,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.349523100001534,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4474050998687744
+      },
+      "lensY": 17.838993072509766,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.402087500002381,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447349786758423
+      },
+      "lensY": 17.838937759399414,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.467150700002094,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447296142578125
+      },
+      "lensY": 17.838884353637695,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.533505300001707,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4472482204437256
+      },
+      "lensY": 17.838836669921875,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.600048299998889,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447206497192383
+      },
+      "lensY": 17.838794708251953,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.666537400000379,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4471700191497803
+      },
+      "lensY": 17.83875846862793,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.718957900000532,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447139263153076
+      },
+      "lensY": 17.838727951049805,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.783667100000457,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4471166133880615
+      },
+      "lensY": 17.83870506286621,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.8355274999994435,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447099447250366
+      },
+      "lensY": 17.838687896728516,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.903716000000713,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447089910507202
+      },
+      "lensY": 17.83867835998535,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 4.967277399999148,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4470858573913574
+      },
+      "lensY": 17.838674545288086,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.033561100000952,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447091817855835
+      },
+      "lensY": 17.838680267333984,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.10032130000036,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447101354598999
+      },
+      "lensY": 17.83868980407715,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.167357500002254,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447120189666748
+      },
+      "lensY": 17.838708877563477,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.2374153999990085,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447143316268921
+      },
+      "lensY": 17.83873176574707,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.301908100002038,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4471757411956787
+      },
+      "lensY": 17.838764190673828,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.3688239000002795,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4472122192382812
+      },
+      "lensY": 17.83880043029785,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.4392296000005445,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447256326675415
+      },
+      "lensY": 17.838844299316406,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.502584800000477,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4473037719726562
+      },
+      "lensY": 17.838891983032227,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.59486570000081,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4473037719726562
+      },
+      "lensY": 17.838891983032227,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.656805400001758,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447418451309204
+      },
+      "lensY": 17.839006423950195,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.720318100000441,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447460651397705
+      },
+      "lensY": 17.839048385620117,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 0.9999999403953552,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.771556100000453,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4475257396698
+      },
+      "lensY": 17.839113235473633,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.832931000000826,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4476003646850586
+      },
+      "lensY": 17.839187622070312,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.884734999999637,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447657823562622
+      },
+      "lensY": 17.839244842529297,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 5.950253999999404,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4477264881134033
+      },
+      "lensY": 17.839313507080078,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.020910600000207,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4477970600128174
+      },
+      "lensY": 17.839384078979492,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.0728401000014856,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4477970600128174
+      },
+      "lensY": 17.839384078979492,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.135681200001272,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.447875738143921
+      },
+      "lensY": 17.839462280273438,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.201929400001973,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4479386806488037
+      },
+      "lensY": 17.83952522277832,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.275072600001295,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.4480056762695312
+      },
+      "lensY": 17.83959197998047,
+      "grounded": true,
+      "cursor": false
+    },
+    {
+      "axisDot": 1.000000238418579,
+      "rootY": 17.592403411865234,
+      "owned": true,
+      "t": 6.333249100000103,
+      "on": true,
+      "state": "Enum.HumanoidStateType.Running",
+      "style": "Enum.LightingStyle.Realistic",
+      "hit": {
+        "name": "Workspace.CornMap.Ground",
+        "distance": 3.448099374771118
+      },
+      "lensY": 17.839685440063477,
+      "grounded": true,
+      "cursor": false
+    }
+  ]
+}
