@@ -70,3 +70,28 @@ scripts/install-local-corn-quality-plugin.py text eol=lf
 # Frozen native diagnostic snapshots retain their original final blank line.
 .artifacts/playtests/2026-10-20-flashlight-cone/native-harness.luau whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 .artifacts/previews/2026-10-20-flashlight-choices/native-*.luau whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+
+# Reviewed 21 October snapshots and design inputs have byte-pinned manifests.
+.artifacts/playtests/2026-10-21-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/design/2026-10-21-corn-maze-layouts/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/reference-analysis/2026-10-21-haunted-harvest/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/build-corn-shadows-installer.py text eol=lf
+scripts/verify-corn-shadows-copy.py text eol=lf
+scripts/build-maze02-layout.py text eol=lf
+scripts/plan-maze02-world.py text eol=lf
+scripts/build-maze02-payload.py text eol=lf
+scripts/verify-maze02-copy.py text eol=lf
+scripts/promote-maze02-copy.py text eol=lf
+scripts/build-maze02-refine-payload.py text eol=lf
+scripts/plan-maze02-narrow.py text eol=lf
+scripts/verify-maze02-refine-copy.py text eol=lf
+scripts/promote-maze02-refine-copy.py text eol=lf
+tests/maze02-narrow.py text eol=lf
+tests/maze02-refine-save.py text eol=lf
+tests/corn-shadows-save-pipeline.py text eol=lf
+tests/maze02-layout.py text eol=lf
+tests/maze02-save-pipeline.py text eol=lf
+scripts/build-corn-edge-shadows-payload.py text eol=lf
+scripts/verify-corn-edge-shadows-copy.py text eol=lf
+scripts/promote-corn-edge-shadows-copy.py text eol=lf
+tests/corn-edge-shadows-save.py text eol=lf

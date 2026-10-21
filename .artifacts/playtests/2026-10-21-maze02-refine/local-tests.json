@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "check_ps1": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0
+  },
+  "source_fixture_assertions": 5578,
+  "classic_backdrop_fixture": "PASS",
+  "path_tests": 6,
+  "installer": {
+    "assertions": 106,
+    "refusals": 34,
+    "rollback_points": 10,
+    "full_payload": {
+      "world_changes": 4054,
+      "source_changes": 4,
+      "guards": 4315
+    }
+  },
+  "save": {
+    "dom_refusals": 29,
+    "manifest_refusals": 15,
+    "terrain_refusals": 3,
+    "frozen_partial_refusals": 10
+  },
+  "native": {
+    "far": 11180,
+    "near": 1532,
+    "far_ready": true,
+    "near_cast_off": 0,
+    "far_cast_off": 0,
+    "visible_world_cast_off": 0,
+    "edit_world_cast_off": 0,
+    "walk_pass": true
+  },
+  "saved_B": {
+    "bytes": 1497688,
+    "sha256": "b113d584f1a60e16f34ba4ec40ce051b0338cab712467f07d762d9fc8528b1d2"
+  },
+  "A_unchanged": true,
+  "all_historical_tests_claimed": false,
+  "long_FPS": false
+}

@@ -10,7 +10,7 @@ local CornLayout = require(
 local CornBackdropController = { Name = "CornBackdropController", Order = 45 }
 local PROJECT_ID = "children_of_corn"
 local FOLDER_NAME = "CornClientBackdrop"
-local STRIDE = 2 -- CornLayout.Spacing * 2 = 6 studs; tune only after foreground engine QA.
+local STRIDE = 2
 local MAX_PLANTS = 20000
 local CLONE_BUDGET = 18
 local TIME_BUDGET = 0.002
@@ -279,7 +279,7 @@ function CornBackdropController:_resolveInputs(): boolean
 	folder:SetAttribute("corn_project_id", PROJECT_ID)
 	folder:SetAttribute("Ready", false)
 	folder:SetAttribute("Stride", STRIDE)
-	folder:SetAttribute("DetailStride", STRIDE * CornLayout.Spacing)
+	folder:SetAttribute("DetailStride", STRIDE * CornLayout.SpacingFor(field))
 	folder:SetAttribute("MaxPlants", MAX_PLANTS)
 	folder:SetAttribute("LoadedPlants", 0)
 	if detailed then
@@ -332,6 +332,7 @@ function CornBackdropController:_buildStep()
 		if CornLayout.IsExcluded(position, exclusions) then
 			continue
 		end
+		position = CornLayout.TrailEdgePosition(position, exclusions)
 		local source = if self._detailed
 			then self._detailedTemplates.Far[self._appearance.Variety(column, row)]
 			else template
@@ -352,7 +353,7 @@ function CornBackdropController:_buildStep()
 				item.CanCollide = false
 				item.CanTouch = false
 				item.CanQuery = false
-				item.CastShadow = false
+				item.CastShadow = self._detailed == true
 			end
 		end
 		CornLayout.ApplyVariation(plant, column, row)

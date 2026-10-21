@@ -1,0 +1,19 @@
+{
+  "studio_id": "8382bdc2-d369-4b51-97ec-08cd99cdad84",
+  "installed": {
+    "created": 1,
+    "changedProperties": 2,
+    "sources": 157,
+    "wide": true,
+    "core": true
+  },
+  "repeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":true,\"sourceHash\":\"1a2a933017b2b0b4680bbafef5323ee3a67e44c8caa1ce1014f159b0861334be\",\"totalSources\":157,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  }
+}

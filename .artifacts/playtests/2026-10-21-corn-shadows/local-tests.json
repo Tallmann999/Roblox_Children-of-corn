@@ -1,0 +1,11 @@
+{
+  "check_ps1": "PASS: cached Selene API; 0 errors, 0 warnings, 0 parse errors",
+  "corn_shadow_controller": {"passed": true, "assertions": 668},
+  "corn_shadows_installer": {"passed": true, "assertions": 49, "refusals": 19, "rollback_points": 4},
+  "flashlight_controller_regression": "PASS",
+  "save_pipeline_fixture": {"passed": true, "refusals_dom": 228, "refusals_terrain": 3, "scene_written": false},
+  "studio_install": "not performed: original B disconnected before execute_luau",
+  "native_visual_acceptance": false,
+  "scene_saved": false,
+  "scope": "Current focused fixtures only; not all historical tests or FPS"
+}

@@ -14,10 +14,26 @@ local CornLayout = {
 export type Plant = Model | BasePart
 export type Box = { Frame: CFrame, HalfSize: Vector2 }
 export type Circle = { Center: Vector3, Radius: number }
-export type Exclusions = { Boxes: { Box }, Circles: { Circle }, Signature: string }
+export type TrailEdge = {
+	CenterX: number,
+	CenterZ: number,
+	HalfWidth: number,
+	HalfLength: number,
+	AlongX: boolean,
+	Key: string,
+}
+export type Exclusions = {
+	Boxes: { Box },
+	Circles: { Circle },
+	Signature: string,
+	TrailEdges: { TrailEdge }?,
+	TrailEdgeMaxShift: number?,
+}
 
 local SLOT_RADIUS = 6
 local BOX_PADDING = 1.5
+local DETAILED_SPACING_SCALE = 1 / math.sqrt(1.3)
+local TRAIL_EDGE_OUTSET = 0.05
 
 local function finite(value: number): boolean
 	return value == value and value > -math.huge and value < math.huge
@@ -141,23 +157,38 @@ function CornLayout.PivotForPlant(plant: Plant, groundPosition: Vector3, yaw: nu
 		* boundsFromPivot:Inverse()
 end
 
+function CornLayout.SpacingFor(field: BasePart): number
+	local map = field.Parent
+	if
+		field.Name == "FieldZone"
+		and map
+		and map:IsA("Model")
+		and map.Name == "CornMap"
+		and map:GetAttribute("corn_project_id") == "children_of_corn"
+		and map:GetAttribute("HarvestArtVariant") == "B"
+	then
+		return CornLayout.Spacing * DETAILED_SPACING_SCALE
+	end
+	return CornLayout.Spacing
+end
+
 function CornLayout.GetCellBounds(field: BasePart): (number, number, number, number)
 	local half = field.Size / 2
-	return math.ceil(-half.X / CornLayout.Spacing),
-		math.floor(half.X / CornLayout.Spacing),
-		math.ceil(-half.Z / CornLayout.Spacing),
-		math.floor(half.Z / CornLayout.Spacing)
+	local spacing = CornLayout.SpacingFor(field)
+	return math.ceil(-half.X / spacing),
+		math.floor(half.X / spacing),
+		math.ceil(-half.Z / spacing),
+		math.floor(half.Z / spacing)
 end
 
 function CornLayout.BaseCellPosition(field: BasePart, column: number, row: number): Vector3
 	local half = field.Size / 2
+	local spacing = CornLayout.SpacingFor(field)
 	local hashX = (column * 92837111 + row * 689287499 + CornLayout.Seed) % 104729
 	local hashZ = (column * 19349663 + row * 83492791 + CornLayout.Seed) % 104729
-	local stagger = if row % 2 == 0 then -CornLayout.Spacing * 0.15 else CornLayout.Spacing * 0.15
-	local x = column * CornLayout.Spacing
-		+ stagger
-		+ (hashX / 104729 - 0.5) * CornLayout.Spacing * 0.12
-	local z = row * CornLayout.Spacing + (hashZ / 104729 - 0.5) * CornLayout.Spacing * 0.12
+	local stagger = if row % 2 == 0 then -spacing * 0.15 else spacing * 0.15
+	local x = column * spacing + stagger + (hashX / 104729 - 0.5) * spacing * 0.12
+	local z = row * spacing + (hashZ / 104729 - 0.5) * spacing * 0.12
 	return field.CFrame:PointToWorldSpace(
 		Vector3.new(math.clamp(x, -half.X, half.X), -half.Y, math.clamp(z, -half.Z, half.Z))
 	)
@@ -170,19 +201,12 @@ end
 function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
 	local point = field.CFrame:PointToObjectSpace(CornLayout.BaseCellPosition(field, column, row))
 	local half = field.Size / 2
+	local spacing = CornLayout.SpacingFor(field)
 	return field.CFrame:PointToWorldSpace(
 		Vector3.new(
-			math.clamp(
-				point.X + (hash(column, row, 17) * 2 - 1) * CornLayout.Spacing * 0.1,
-				-half.X,
-				half.X
-			),
+			math.clamp(point.X + (hash(column, row, 17) * 2 - 1) * spacing * 0.1, -half.X, half.X),
 			point.Y,
-			math.clamp(
-				point.Z + (hash(column, row, 31) * 2 - 1) * CornLayout.Spacing * 0.1,
-				-half.Z,
-				half.Z
-			)
+			math.clamp(point.Z + (hash(column, row, 31) * 2 - 1) * spacing * 0.1, -half.Z, half.Z)
 		)
 	)
 end
@@ -251,14 +275,55 @@ end
 function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
 	local boxes: { Box } = {}
 	local circles: { Circle } = {}
+	local trailEdges: { TrailEdge } = {}
 	local signatures: { string } = { tostring(field.CFrame) .. "/" .. tostring(field.Size) }
 	local included: { [Instance]: boolean } = {}
+	local detailed = CornLayout.SpacingFor(field) ~= CornLayout.Spacing
+	local noCorn = map:FindFirstChild("NoCornZones")
+	local maze = if noCorn then noCorn:FindFirstChild("Maze02Masks") else nil
+	local function ownedTrail(part: BasePart): boolean
+		local index = tonumber(part.Name:match("^trail_(%d%d%d)$"))
+		return detailed
+			and map == field.Parent
+			and maze ~= nil
+			and maze:IsA("Folder")
+			and maze:GetAttribute("corn_project_id") == "children_of_corn"
+			and maze:GetAttribute("CornMazeOwner") == "corn_maze02_v1"
+			and part.Parent == maze
+			and part:GetAttribute("corn_project_id") == "children_of_corn"
+			and part:GetAttribute("CornMazeOwner") == "corn_maze02_v1"
+			and index ~= nil
+			and index >= 1
+			and index <= 100
+			and math.abs(part.Size.Y - 0.08) < 0.001
+			and math.min(part.Size.X, part.Size.Z) == 4
+			and math.max(part.Size.X, part.Size.Z) >= 30
+			and part.CFrame.Rotation == CFrame.identity
+	end
 	local function addBox(part: BasePart, padding: number)
 		if included[part] then
 			return
 		end
 		included[part] = true
-		table.insert(boxes, footprint(part.CFrame, part.Size, padding))
+		local trail = ownedTrail(part)
+		if trail then
+			-- The visible four-stud path is the root clearance. Fixed props keep
+			-- their existing safety margin; leaves may reach over the path edge.
+			padding = 0
+		end
+		local box = footprint(part.CFrame, part.Size, padding)
+		table.insert(boxes, box)
+		if trail then
+			local center = part.CFrame.Position
+			table.insert(trailEdges, {
+				CenterX = center.X,
+				CenterZ = center.Z,
+				HalfWidth = math.min(part.Size.X, part.Size.Z) / 2,
+				HalfLength = math.max(part.Size.X, part.Size.Z) / 2,
+				AlongX = part.Size.X > part.Size.Z,
+				Key = part.Name,
+			})
+		end
 		table.insert(
 			signatures,
 			part:GetFullName()
@@ -303,7 +368,16 @@ function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
 		end
 	end
 	table.sort(signatures)
-	return { Boxes = boxes, Circles = circles, Signature = table.concat(signatures, "|") }
+	table.sort(trailEdges, function(a, b)
+		return a.Key < b.Key
+	end)
+	return {
+		Boxes = boxes,
+		Circles = circles,
+		Signature = table.concat(signatures, "|"),
+		TrailEdges = trailEdges,
+		TrailEdgeMaxShift = CornLayout.SpacingFor(field),
+	}
 end
 
 function CornLayout.IsExcluded(position: Vector3, exclusions: Exclusions): boolean
@@ -323,6 +397,47 @@ function CornLayout.IsExcluded(position: Vector3, exclusions: Exclusions): boole
 		end
 	end
 	return false
+end
+
+function CornLayout.TrailEdgePosition(position: Vector3, exclusions: Exclusions): Vector3
+	local edges = exclusions.TrailEdges
+	local reach = exclusions.TrailEdgeMaxShift
+	if not edges or #edges == 0 or not reach then
+		return position
+	end
+	local bestGap = math.huge
+	local x, z = position.X, position.Z
+	local candidateX, candidateZ = x, z
+	local found = false
+	for _, edge in edges do
+		local dx, dz = x - edge.CenterX, z - edge.CenterZ
+		local across = if edge.AlongX then dz else dx
+		local along = if edge.AlongX then dx else dz
+		local gap = math.abs(across) - edge.HalfWidth
+		if
+			gap >= 0
+			and gap <= reach
+			and gap < bestGap
+			and math.abs(along) <= edge.HalfLength - 1
+		then
+			bestGap = gap
+			local target = (if across < 0 then -1 else 1) * (edge.HalfWidth + TRAIL_EDGE_OUTSET)
+			candidateX = if edge.AlongX then x else edge.CenterX + target
+			candidateZ = if edge.AlongX then edge.CenterZ + target else z
+			found = true
+		end
+	end
+	-- Reuse existing cells, variants and render budgets. Both the original and
+	-- projected root must pass every clearance, including crossing paths.
+	local candidate = if found then Vector3.new(candidateX, position.Y, candidateZ) else nil
+	if
+		candidate
+		and not CornLayout.IsExcluded(position, exclusions)
+		and not CornLayout.IsExcluded(candidate, exclusions)
+	then
+		return candidate
+	end
+	return position
 end
 
 return CornLayout

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "owner": "corn_edge_shadows_v1",
+  "payload_sha256": "b3217aa53f2b907b335f9288e72c7060dc8e9fd0d9c124ddbb6c5c94936cada6",
+  "sourceChanges": {
+    "ReplicatedStorage/GameShared/Game/CornLayout": {
+      "before_sha256": "fd0e2b058c03f071c33714b9814e9046b003758bb78491d9e1adfa51a2843364",
+      "after_sha256": "c4e4140d5b46d9b5cf261925421cedb65f235991baa353d331ccb3ae383b3fee"
+    },
+    "ReplicatedStorage/GameShared/Game/CornAppearance": {
+      "before_sha256": "031132c8ac2408f7e7ba2b40479ad90f0e78cde61a4feecec2b661ad536bfdf1",
+      "after_sha256": "e034155892b89e25af42a4055399348693566aebc6236d636526ef4a6dc62c96"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestWardenVisual": {
+      "before_sha256": "0f5bd4b23cfabc5ffe4683002404a4a057160ac121399e65641ac8689ef00db1",
+      "after_sha256": "3021b9a48580541fcd0f6a3e45ec78e125970bcd9551322870e92b418c628ee3"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController": {
+      "before_sha256": "00bc057895dd19100de055c8cc231d962873c04a4683a9ede99cac68a0bc6e97",
+      "after_sha256": "c2178adcc797881870b814cb3bfe696b17a166ff08c9dba2ab6b73a325a4ee3d"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController": {
+      "before_sha256": "cd82e0b64c134fb6e2e74b410edde572adcbb2429492fe71df4ddb5029f08bfe",
+      "after_sha256": "38d1f7c95536d485e4d2af68ffe9eff814cd9ab8f29fa323b788aa9e953cf09f"
+    }
+  }
+}

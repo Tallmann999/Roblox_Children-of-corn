@@ -1,0 +1,83 @@
+{
+  "studio_id": "8382bdc2-d369-4b51-97ec-08cd99cdad84",
+  "payload_sha256": "26bca1b53c6b1d5e8007aac52502062f37ad5c273c333d66b1f8a9b0700b31f2",
+  "dry": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"dryRun\":true,\"plannedNodes\":101,\"plannedChanges\":1795,\"guardedInstances\":2161,\"retainedSources\":156,\"state\":\"baseline\"}"
+      }
+    ],
+    "isError": false
+  },
+  "installed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":101,\"repeated\":false,\"retainedSources\":156,\"changedProperties\":1795}"
+      }
+    ],
+    "isError": false
+  },
+  "repeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":true,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  },
+  "barns": {
+    "diagnostic_start_x": -18,
+    "target_x": 18,
+    "actual_end_x": [
+      17.24997901916504,
+      17.23230743408203,
+      17.12725067138672
+    ],
+    "grounded_y": 17.398006439208984,
+    "order": [
+      "HouseNorthWest",
+      "HouseWest",
+      "HouseEast"
+    ],
+    "center_rays_heights": [
+      1,
+      3,
+      5
+    ],
+    "all_center_rays_clear": true
+  },
+  "corn": {
+    "trail_parts": 100,
+    "excluded_trail_centers": 100,
+    "exclusion_boxes": 188,
+    "circles": 19,
+    "far_parts": 7561
+  },
+  "shadow_samples": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.007184300106018782},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.012724500149488449},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.018922800198197366},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01618250086903572},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01543010026216507},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.018766699358820916},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.015487900003790856},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01742050051689148},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01487869955599308},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.02311209961771965},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.010087000206112862},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.018358100205659868},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.014774300158023835},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01733360067009926},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.016879500821232797},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.017546800896525384},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.018375299870967866},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.014508799649775029},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.01763490028679371},{\"enabled\":true,\"maxDistance\":27.69647979736328,\"casters\":115,\"writes\":0,\"scanned\":593,\"farShadow\":0,\"nearParts\":1469,\"dt\":0.018605800345540048}]"
+      }
+    ],
+    "isError": false
+  },
+  "finale": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ui\":{\"Message\":\"+20 алмазов\",\"Balance\":\"Алмазы в этом тесте: 20\",\"Title\":\"Ты сбежал\",\"Elapsed\":\"Время раунда: 0:31\",\"Notice\":\"Готовы: 0 / 1\"},\"position\":\"-93.98401641845703, 17.39801025390625, 323.443359375\"}"
+      }
+    ],
+    "isError": false
+  },
+  "limits": [
+    "Diagnostic player/root and camera/focus staging; actual MCP native UI/E and Humanoid navigation.",
+    "Earlier caught outcomes and inactive-ready E attempts excluded from successful finale; final active retry passed.",
+    "No ordinary blind full maze round, four-client repeat, long FPS or fear/mix acceptance.",
+    "Runtime audio preload reported 10 unavailable IDs; external asset/network/account issue not changed in this geometry task."
+  ]
+}

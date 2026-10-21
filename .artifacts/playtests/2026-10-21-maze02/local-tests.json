@@ -1,0 +1,42 @@
+{
+  "check_ps1": "PASS; cached Selene API; 0 errors/0 warnings/0 parse errors",
+  "layout": {
+    "tests": 7,
+    "passed": true
+  },
+  "installer": {
+    "assertions": 87,
+    "refusals": 29,
+    "rollback_points": 8,
+    "full_payload": {
+      "nodes": 101,
+      "changes": 1795,
+      "guards": 2161,
+      "passed": true
+    }
+  },
+  "save": {
+    "dom_refusals": 33,
+    "terrain_refusals": 3,
+    "passed": true
+  },
+  "native": {
+    "install": true,
+    "repeat_zero": true,
+    "three_barn_crossings": true,
+    "staged_active_key_gate_escape_plus20": true,
+    "shadow_bounded_smoke": true
+  },
+  "disk": {
+    "passed": true,
+    "B_bytes": 1497748,
+    "B_sha256": "108066bc0cf2a55f3c90d8db0ba7bef2eccb4a21351d5e9d53983fbcce8c50f3",
+    "A_unchanged": true,
+    "two_loose_scenes": true
+  },
+  "historical_tests_all_claimed": false,
+  "ordinary_blind_full_round": false,
+  "long_fps": false,
+  "new_four_client_run": false,
+  "AI_concealment_implemented": false
+}

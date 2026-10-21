@@ -1,0 +1,43 @@
+{
+  "source_path": "ReplicatedStorage/GameShared/Game/HarvestWardenVisual",
+  "before_sha256": "0f5bd4b23cfabc5ffe4683002404a4a057160ac121399e65641ac8689ef00db1",
+  "after_sha256": "3021b9a48580541fcd0f6a3e45ec78e125970bcd9551322870e92b418c628ee3",
+  "proposal_file": ".artifacts\\playtests\\2026-10-21-corn-edge-shadows\\eyes-proposed-HarvestWardenVisual.luau",
+  "changes": [
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye/001_Material1",
+      "property": "Transparency",
+      "attribute": false,
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/RightEye/001_Material1",
+      "property": "HarvestVisibleTransparency",
+      "attribute": true,
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye/001_Material1",
+      "property": "Transparency",
+      "attribute": false,
+      "before": 0,
+      "after": 1
+    },
+    {
+      "path": "Workspace/CornMap/Props/ScarecrowMarker/HarvestWardenHome/Detailed/LeftEye/001_Material1",
+      "property": "HarvestVisibleTransparency",
+      "attribute": true,
+      "before": 0,
+      "after": 1
+    }
+  ],
+  "untouched_sources": [
+    "HarvestWorld",
+    "HarvestArtGeometry",
+    "CaptureController",
+    "MonsterAnimationController"
+  ],
+  "reason": "Runtime hunting and capture both use this presentation. Detailed red emissive eye surfaces hidden; Detailed eye PointLights not created. Static B home red surfaces hidden with matching Harvest metadata; dark sockets and face geometry retained. No A scene/source update."
+}

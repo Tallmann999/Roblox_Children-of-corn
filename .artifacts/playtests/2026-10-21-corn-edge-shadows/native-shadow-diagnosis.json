@@ -1,0 +1,25 @@
+{
+  "studio_id": "8382bdc2-d369-4b51-97ec-08cd99cdad84",
+  "scene": "Children_of_corn_B.rbxl",
+  "variant": "B",
+  "lighting": {"style":"Realistic","globalShadows":true,"quality":21,"editQuality":21},
+  "source_corn": {"key":"Corn_A_Near","meshContent":"Object","castShadow":true},
+  "controlled_probe": {
+    "context":"Client Play only; temporary isolated receiver/light at Y800; final-render camera binding",
+    "same_geometry_size_pose":true,
+    "light":{"kind":"SpotLight","brightness":2,"range":45,"angle":90,"shadows":true},
+    "original_object_castShadow_true":"No projected silhouette on white wall or floor",
+    "baked_opaque_castShadow_true":"Visible leaf/stalk silhouette on wall and floor",
+    "baked_opaque_castShadow_false":"Silhouette disappears",
+    "ordinary_cube_castShadow_true":"Strong rectangular positive control shadow",
+    "bake_result":"Enum.CreateContentResult.Success",
+    "bake_content_source_type":"Enum.ContentSourceType.Opaque",
+    "applyMesh_texture_reset":"Observed empty TextureID; restored exact original TextureContent/atlas before final comparison",
+    "original_texture":"rbxassetid://130010939468822",
+    "gpu_captures":["edge-object-same-light2.jpg","edge-opaque-textured.jpg","edge-opaque-off.jpg","edge-cube-positive.jpg"]
+  },
+  "cleanup":{"temporary_folder_destroyed":true,"both_probe_clones_destroyed":true,"camera_binding_removed":true,"temporary_localScript_removed":true,"probe_global_cleared":true,"production_sources_changed":0,"stopped_to_Edit_after_probe":true},
+  "captured_temporary_flashlight_settings":{"wideBrightness":2.08,"wideAngle":78,"wideRange":18,"coreBrightness":22.62,"coreAngle":12,"coreRange":24,"pitch":-6},
+  "primary_sources":["https://devforum.roblox.com/t/client-beta-in-experience-mesh-image-apis-now-available-in-published-experiences/3267293/178/","https://devforum.roblox.com/t/full-release-introducing-createdatamodelcontent-convert-editable-mesh-and-image-data-into-static-content/4541898/1"],
+  "limits":"Controlled rendering proof; ordinary player-view quality and sustained FPS need separate acceptance. Earlier flag-only checks did not establish actual corn shadows."
+}

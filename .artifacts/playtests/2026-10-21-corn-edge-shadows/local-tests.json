@@ -1,0 +1,20 @@
+{
+  "check": "PASS cachedSelene0errors/0warnings/0parse",
+  "corn_static_shadows_assertions": 19708,
+  "edge_assertions": 5078,
+  "eyes_proposal_assertions": 3560,
+  "installer": {
+    "assertions": 109,
+    "refusals": 34,
+    "rollback_points": 11
+  },
+  "save_fixture": {
+    "DOM_refusals": 29,
+    "payload_refusals": 19,
+    "manifest_reader_refusals": 14,
+    "terrain_refusals": 3,
+    "frozen_partial_refusals": 8
+  },
+  "historical_fixtures": "Not all historical fixtures were run or claimed current",
+  "generated_code_scene_removed": true
+}

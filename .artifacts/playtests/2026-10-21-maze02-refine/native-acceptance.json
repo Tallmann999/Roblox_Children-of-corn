@@ -1,0 +1,76 @@
+{
+  "studio_id": "8382bdc2-d369-4b51-97ec-08cd99cdad84",
+  "payload_sha256": "2b4c993ff531bb96fe5f7e8099327f437f60d2b7d8871810a45134fd294c4217",
+  "dry": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"dryRun\":true,\"guardedInstances\":4315,\"plannedChanges\":4054,\"plannedSourceChanges\":4,\"created\":0,\"retainedSources\":157,\"state\":\"baseline\"}"
+      }
+    ],
+    "isError": false
+  },
+  "install": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":false,\"changedSources\":4,\"retainedSources\":157,\"changedProperties\":4054}"
+      }
+    ],
+    "isError": false
+  },
+  "repeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"changedSources\":0,\"repeated\":true,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  },
+  "smoke": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"farLoaded\":11180,\"visibleOff\":[],\"boundedControllerEnabled\":false,\"near\":{\"off\":0,\"total\":1532},\"times\":[0.019828900694847108,0.01507280021905899,0.01841459982097149,0.017530299723148347,0.007988099940121174,0.014424599707126618,0.021758899092674257,0.015303400345146656,0.01626249961555004,0.013834499754011631,0.01824289932847023,0.016735799610614778,0.017909500747919084,0.013770299963653088,0.023255299776792527,0.011692400090396405,0.026215199381113054,0.011644699610769749,0.015188399702310562,0.015745600685477258,0.016456199809908868,0.016018200665712358,0.016445400193333627,0.016274800524115564,0.0174087006598711,0.0173163004219532,0.016352100297808648,0.009762600064277649,0.01732959970831871,0.016221199184656144,0.017319900915026666,0.015475500375032425,0.017504699528217317,0.016434000805020334,0.018437299877405168,0.02245979942381382,0.010269899852573872,0.02265789918601513,0.010003600269556046,0.017036400735378267,0.017841799184679986,0.01537260040640831,0.01675499975681305,0.016852300614118577,0.01637919992208481,0.016206100583076478,0.018262799829244615,0.015486899763345719,0.01791040040552616,0.015887100249528886,0.021859800443053247,0.01628509908914566,0.016604900360107423,0.01797490008175373,0.009897800162434578,0.016228200867772104,0.016708599403500558,0.016052400693297387,0.017547599971294404,0.018060799688100816],\"position\":\"-288.74993896484375, 17.398006439208984, -246.78887939453125\",\"far\":{\"off\":0,\"total\":11180},\"farReady\":true,\"world\":{\"off\":6,\"total\":15864}}"
+      }
+    ],
+    "isError": false
+  },
+  "walk": {
+    "start": [
+      -288.75,
+      17.4,
+      -270
+    ],
+    "target": [
+      -288.75,
+      17.4,
+      -246
+    ],
+    "actual": [
+      -288.74993896484375,
+      17.398006439208984,
+      -246.78887939453125
+    ],
+    "navigation": "actual MCP character_navigation after diagnostic Root staging"
+  },
+  "gpu": {
+    "corn_inspected": true,
+    "owned_cube_on_off_inspected": true,
+    "probe_removed": true,
+    "camera_focus_staged": true,
+    "unambiguous_human_shadow_acceptance": false
+  },
+  "runtime_exceptions": {
+    "invisible_audio_anchors": 6,
+    "camera_viewmodels_preserved": true,
+    "HandFillShadows": false,
+    "mainFillShadows": true
+  },
+  "limits": [
+    "Density is +30% per area; shrinking trails separately adds more plants; actual Far count11180 vs7561 +47.864%.",
+    "Editor overview remains sparse approximation; runtime B corn uses new grid.",
+    "60frames is short smoke, not longFPS/fear/fullblindround/4client acceptance."
+  ]
+}

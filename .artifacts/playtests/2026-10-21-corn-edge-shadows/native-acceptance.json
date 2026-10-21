@@ -1,0 +1,122 @@
+{
+  "dryRun": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"dryRun\":true,\"guardedInstances\":4315,\"plannedChanges\":4,\"plannedSourceChanges\":5,\"created\":0,\"retainedSources\":157,\"state\":\"baseline\"}"
+      }
+    ],
+    "isError": false
+  },
+  "install": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"repeated\":false,\"changedSources\":5,\"retainedSources\":157,\"changedProperties\":4}"
+      }
+    ],
+    "isError": false
+  },
+  "repeat": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"created\":0,\"changedSources\":0,\"repeated\":true,\"changedProperties\":0}"
+      }
+    ],
+    "isError": false
+  },
+  "fieldMetrics": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"count\":148,\"windNear\":0,\"root\":[150.53448486328126,17.398006439208986,289.6493225097656],\"first\":{\"type\":\"Enum.ContentSourceType.Opaque\",\"name\":\"Corn_B_Near\",\"position\":[131.35215759277345,18.814603805541993,286.5496520996094],\"casting\":true,\"sizeY\":8.829235076904297,\"texture\":\"rbxassetid://130010939468822\"},\"sample\":{\"CornDiagnosticOwner\":\"edge-shadow-20261021\",\"Seconds\":2.0859481021761896,\"Frames\":120,\"MaxDt\":0.10709620267152786},\"quality\":\"Enum.QualityLevel.Level21\"}"
+      }
+    ],
+    "isError": false
+  },
+  "limits": "120-frame focus/camera-staged sample; diagnostic Root staging; character_navigation returned Success but final measured root did not prove24stud travel. User stopped Play during ongoing verification, runtime removed by engine. No blind-round/longFPS/4client/fear/audio acceptance.",
+  "normal_bootstrap": {
+    "serverFarm": 40,
+    "serverHarvestVariant": "B",
+    "serverHarvestParts": 244,
+    "controllers": 17,
+    "actualStartAndConfirm": true
+  },
+  "render_readback": {
+    "near": {
+      "count": 2066,
+      "opaque": 2066,
+      "castShadowFalse": 0,
+      "NearLOD": 500,
+      "MidLOD": 1566
+    },
+    "far": {
+      "count": 12433,
+      "opaque": 12433,
+      "castShadowFalse": 0,
+      "ready": true
+    },
+    "warden": {
+      "visuals": 1,
+      "redNeonTransparency": [
+        1,
+        1
+      ],
+      "lights": 0
+    },
+    "staticEyes": {
+      "redNeonTransparency": [
+        1,
+        1
+      ],
+      "HarvestVisibleTransparency": [
+        1,
+        1
+      ]
+    },
+    "flashlight": {
+      "main": [
+        12,
+        24,
+        22.6200008392334,
+        true
+      ],
+      "fill": [
+        78,
+        18,
+        2.079999923706055,
+        true
+      ],
+      "HandFill": [
+        75,
+        1.5,
+        0.07999999821186066,
+        false
+      ]
+    },
+    "frames": 120,
+    "frameSeconds": 2.0859481021761894,
+    "maxDt": 0.10709620267152786
+  },
+  "final_Edit": {
+    "name": "Children_of_corn_B.rbxl",
+    "variant": "B",
+    "sourceCount": 157,
+    "runtime": false,
+    "camera": "Fixed",
+    "http": false,
+    "quality": "Level21",
+    "ownedDiagnostics": 0,
+    "postPlayRepeatChangedSources": 0,
+    "postPlayRepeatChangedProperties": 0,
+    "ownedTransportCleared": true
+  },
+  "saved": {
+    "strictAudit": "author-save-preservation.json",
+    "passed": true,
+    "complete": true,
+    "B_bytes": 1499095,
+    "B_sha256": "94c55e17bed0dc2f4b2e7c6020f60c031d80bc636be16166fe0effb6df146d5f"
+  }
+}

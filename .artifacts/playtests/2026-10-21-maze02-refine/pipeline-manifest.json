@@ -1,0 +1,11 @@
+{
+  "payload_sha256": "2b4c993ff531bb96fe5f7e8099327f437f60d2b7d8871810a45134fd294c4217",
+  "payload_bytes": 6595004,
+  "changes": 4054,
+  "sourceChanges": 4,
+  "guards": 4315,
+  "world_shadow_flags": 3653,
+  "harvest_shadow_flags": 2,
+  "path_and_editor_changes": 399,
+  "density_per_area_multiplier": 1.3
+}

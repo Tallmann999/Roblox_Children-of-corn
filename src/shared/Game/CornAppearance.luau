@@ -3,6 +3,27 @@
 -- Both atlases use the original mesh UVs; the imported green art stays intact.
 local detailedTemplates = nil
 local detailedBuilding = false
+local TEMPLATE_PROPERTIES = {
+	"CFrame",
+	"Size",
+	"PivotOffset",
+	"TextureID",
+	"TextureContent",
+	"Color",
+	"Material",
+	"MaterialVariant",
+	"Transparency",
+	"Reflectance",
+	"Anchored",
+	"CanCollide",
+	"CanTouch",
+	"CanQuery",
+	"CastShadow",
+	"DoubleSided",
+	"CollisionGroup",
+	"Massless",
+	"CustomPhysicalProperties",
+}
 local CornAppearance = {
 	MeshId = "rbxassetid://104111861186519",
 	GreenTextureId = "rbxassetid://137803536172445",
@@ -57,11 +78,13 @@ function CornAppearance.DetailedTemplates(): any
 	if detailedTemplates then
 		return detailedTemplates
 	end
-	-- EditableMesh Content is reconstructed separately on each peer, as with farm art.
-	-- Replicated dynamic mesh objects are never assumed to carry visible geometry.
+	-- EditableMesh content cannot cast shadows. Bake only the private B render
+	-- templates into session-scoped static content; catalog/world art stays intact.
 	detailedBuilding = true
-	local created = {}
+	local created: { MeshPart } = {}
+	local carriers: { MeshPart } = {}
 	local ok, result = pcall(function()
+		local assetService = game:GetService("AssetService")
 		local geometry = require(script.Parent:WaitForChild("HarvestArtGeometry"))
 		local templates = {}
 		local seen: { [Instance]: boolean } = {}
@@ -79,16 +102,50 @@ function CornAppearance.DetailedTemplates(): any
 					"Unknown detailed corn template binding"
 				)
 				seen[part] = true
+				local preserved = {}
+				for _, name in TEMPLATE_PROPERTIES do
+					preserved[name] = (part :: any)[name]
+				end
+				local contentResult, content =
+					assetService:CreateDataModelContentAsync(part.MeshContent)
+				assert(
+					contentResult == Enum.CreateContentResult.Success
+						and content.SourceType == Enum.ContentSourceType.Opaque,
+					"Static corn geometry unavailable: " .. tostring(contentResult)
+				)
+				local carrier = assert(
+					assetService:CreateMeshPartAsync(content, {
+						CollisionFidelity = part.CollisionFidelity,
+						RenderFidelity = part.RenderFidelity,
+					}),
+					"Static corn MeshPart unavailable"
+				)
+				table.insert(carriers, carrier)
 				-- Keep immutable catalog geometry at eight studs. Only the personal
 				-- B render template grows vertically; rooted placement scales its Y.
-				local taller = part:Clone()
+				local taller = assert(part:Clone(), "Private corn template unavailable")
 				table.insert(created, taller)
+				taller:ApplyMesh(carrier)
+				-- ApplyMesh also replaces texture/pose-related properties. Restore the
+				-- exact original atlas Content after TextureID, including empty values.
+				for _, name in TEMPLATE_PROPERTIES do
+					(taller :: any)[name] = preserved[name]
+				end
+				assert(
+					taller.MeshContent == content
+						and taller.CollisionFidelity == part.CollisionFidelity
+						and taller.RenderFidelity == part.RenderFidelity,
+					"Static corn geometry binding changed"
+				)
 				taller.Size = Vector3.new(part.Size.X, CornAppearance.DetailedHeight, part.Size.Z)
 				templates[lod][variety] = taller
 			end
 		end
 		return templates
 	end)
+	for _, carrier in carriers do
+		carrier:Destroy()
+	end
 	detailedBuilding = false
 	if not ok then
 		for _, part in created do

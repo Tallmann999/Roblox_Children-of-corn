@@ -1,0 +1,71 @@
+{
+  "baseline_sha256": "b113d584f1a60e16f34ba4ec40ce051b0338cab712467f07d762d9fc8528b1d2",
+  "spacing": 2.6311740579210876,
+  "eligible_trail_samples": 3447,
+  "current_1_5padding": {
+    "root_side_distance_from_center": {
+      "min": 3.5002288818359375,
+      "p10": 3.7741851806640625,
+      "median": 4.7653045654296875,
+      "p90": 5.851982116699219,
+      "max": 7.893089294433594
+    },
+    "face_leaf_side_distance_from_center": {
+      "min": 1.7702494940170936,
+      "p10": 2.4311877611989985,
+      "median": 3.34250929275521,
+      "p90": 4.346714809792957,
+      "max": 8.15750907842039
+    },
+    "side_samples_with_leaf_within_1stud_percent": 0.0,
+    "side_samples_with_leaf_within_2stud_percent": 0.7018569966369352,
+    "sample_both_sides_with_leaf_within_2stud_percent": 0.0
+  },
+  "zero_owned_trail_padding": {
+    "root_side_distance_from_center": {
+      "min": 2.0002288818359375,
+      "p10": 2.1848526000976562,
+      "median": 3.1568679809570312,
+      "p90": 4.3174285888671875,
+      "max": 7.418174743652344
+    },
+    "face_leaf_side_distance_from_center": {
+      "min": 0.31049764013459935,
+      "p10": 0.8548348213668575,
+      "median": 1.7610765589717925,
+      "p90": 2.830468080014157,
+      "max": 6.5216537426938
+    },
+    "side_samples_with_leaf_within_1stud_percent": 15.130813953488373,
+    "side_samples_with_leaf_within_2stud_percent": 61.68604651162791,
+    "sample_both_sides_with_leaf_within_2stud_percent": 45.08268059181897
+  },
+  "owned_border_projection": {
+    "root_side_distance_from_center": {
+      "min": 2.04998779296875,
+      "p10": 2.04998779296875,
+      "median": 2.0500030517578125,
+      "p90": 2.0500030517578125,
+      "max": 7.418174743652344
+    },
+    "face_leaf_side_distance_from_center": {
+      "min": 0.2935610095550203,
+      "p10": 0.4405533514197941,
+      "median": 0.701444414163559,
+      "p90": 1.1636541369594227,
+      "max": 6.179210536091574
+    },
+    "side_samples_with_leaf_within_1stud_percent": 79.67798085291558,
+    "side_samples_with_leaf_within_2stud_percent": 97.44705541050189,
+    "sample_both_sides_with_leaf_within_2stud_percent": 94.98114302291847
+  },
+  "projected_count": 7985,
+  "max_root_shift": 2.580322265625,
+  "projected_overlap": {
+    "distinct_cells": 50187,
+    "exact_duplicate_roots": 0,
+    "pairs_with_root_distance_under_.75stud": 310,
+    "min_pair_distance_in_neighbor_bins": 0.0352783203125
+  },
+  "note": "Read-only exact production grid and exclusions. Face-band leaf distances approximate Near mesh vertices at world height4..6.6 and longitudinal window2stud; they are not GPU/physics proof. Excluded samples cover hard props/spawn/key/gate/barn clearances."
+}

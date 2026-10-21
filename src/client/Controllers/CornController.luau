@@ -83,9 +83,10 @@ end
 local function overviewKeys(field: BasePart, part: BasePart): { string }
 	local relative = field.CFrame:ToObjectSpace(part.CFrame)
 	local half = part.Size / 2
+	local spacing = CornLayout.SpacingFor(field)
 	-- Require completed fine groups across the entire rotated coarse footprint.
 	-- The margin also covers the small deterministic cell stagger.
-	local padding = CornLayout.Spacing * 0.75
+	local padding = spacing * 0.75
 	local halfX = math.abs(relative.RightVector.X) * half.X
 		+ math.abs(relative.UpVector.X) * half.Y
 		+ math.abs(relative.LookVector.X) * half.Z
@@ -103,8 +104,8 @@ local function overviewKeys(field: BasePart, part: BasePart): { string }
 	if minX > maxX or minZ > maxZ then
 		return keys
 	end
-	local width = CornLayout.Spacing * CornLayout.ChunkCells
-	local offset = CornLayout.Spacing / 2
+	local width = spacing * CornLayout.ChunkCells
+	local offset = spacing / 2
 	for column = math.floor((minX + offset) / width), math.floor((maxX + offset) / width) do
 		for row = math.floor((minZ + offset) / width), math.floor((maxZ + offset) / width) do
 			table.insert(keys, column .. ":" .. row)
@@ -527,7 +528,8 @@ function CornController:_reconcile(root: BasePart)
 	self._exclusions = exclusions
 	local minColumn, maxColumn, minRow, maxRow = CornLayout.GetCellBounds(field)
 	local localRoot = field.CFrame:PointToObjectSpace(root.Position)
-	local width = CornLayout.Spacing * CornLayout.ChunkCells
+	local spacing = CornLayout.SpacingFor(field)
+	local width = spacing * CornLayout.ChunkCells
 	local elevated = self:_elevatedView(root, os.clock())
 	local radius = if elevated then CornLayout.ElevatedRadius else CornLayout.RenderRadius
 	local mediumRadius = if elevated then ELEVATED_MEDIUM_RADIUS else CornLayout.MediumRadius
@@ -537,7 +539,7 @@ function CornController:_reconcile(root: BasePart)
 		then backdrop:GetAttribute("DetailStride")
 		else nil
 	local backdropCoversSparse = typeof(backdropStride) == "number"
-		and backdropStride <= CornLayout.Spacing * 2
+		and backdropStride <= spacing * 2
 	folder:SetAttribute("ViewRadius", radius)
 	folder:SetAttribute("ElevatedDetail", elevated)
 	local desired: { any } = {}
@@ -550,8 +552,8 @@ function CornController:_reconcile(root: BasePart)
 			if firstColumn > lastColumn or firstRow > lastRow then
 				continue
 			end
-			local centerX = (firstColumn + lastColumn) * CornLayout.Spacing / 2
-			local centerZ = (firstRow + lastRow) * CornLayout.Spacing / 2
+			local centerX = (firstColumn + lastColumn) * spacing / 2
+			local centerZ = (firstRow + lastRow) * spacing / 2
 			local distance = (centerX - localRoot.X) ^ 2 + (centerZ - localRoot.Z) ^ 2
 			local key = chunkColumn .. ":" .. chunkRow
 			local previous = self._chunks[key]
@@ -616,7 +618,7 @@ function CornController:_reconcile(root: BasePart)
 		else
 			local chunkFolder = Instance.new("Folder")
 			chunkFolder.Name = "Chunk_" .. candidate.Key
-			chunkFolder:SetAttribute("DetailStride", candidate.Lod * CornLayout.Spacing)
+			chunkFolder:SetAttribute("DetailStride", candidate.Lod * spacing)
 			if self._detailed then
 				chunkFolder:SetAttribute("HarvestCornLod", ({ "Near", "Mid", "Far" })[artLod])
 			end
@@ -704,6 +706,7 @@ function CornController:_createBatch()
 		if CornLayout.IsExcluded(position, exclusions) then
 			continue
 		end
+		position = CornLayout.TrailEdgePosition(position, exclusions)
 		local source = template
 		if self._detailed then
 			local lod = ({ "Near", "Mid", "Far" })[chunk.ArtLod or 3]
@@ -718,11 +721,13 @@ function CornController:_createBatch()
 		end
 		local plant = clone :: CornLayout.Plant
 		plant.Name = "Corn"
-		if chunk.Lod == 3 then
+		if self._detailed or chunk.Lod == 3 then
 			local items = plant:GetDescendants()
 			table.insert(items, plant)
 			for _, item in items do
-				if item:IsA("MeshPart") then
+				if self._detailed and item:IsA("BasePart") then
+					item.CastShadow = true
+				elseif item:IsA("MeshPart") then
 					item.CastShadow = false
 				end
 			end
