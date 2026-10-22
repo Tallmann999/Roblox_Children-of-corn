@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "intake": ".artifacts/scene-C/2026-10-22-intake/mesh-arrays.json",
+  "intake_sha256": "44a0a7fed5ba87ce8c4a7c891b8208c180553b4902ed3ca81dabbbdc02a683b6",
+  "axes": "Roblox [x,z,-y] from right-handed Blender world metres",
+  "uniform_studs_per_metre": 3.659208344123181,
+  "corn_height_metres": 2.1862652376294136,
+  "corn_height_studs": 8,
+  "notes": "Exact float channel deduplication; unchanged triangle winding and corner assignments. No welding, normal recalculation, UV unwrap, source edits, or publication.",
+  "geometry_module": "scene-c/geometry/Geometry.luau",
+  "geometry_module_sha256": "19b865ba0e402411eb012dae578cf63d7cd47079d8f190488bfb51cf46c924e1",
+  "assets": [
+    {
+      "name": "SM_Generic_Grass_Patch_01",
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\трава\\SM_Generic_Grass_Patch_01.fbx",
+      "source_sha256": "72e76ced16844dab4b24895521f2bc3701e156f99918e0181ebfc8337ef40179",
+      "vertices": 27,
+      "triangles": 42,
+      "size_studs": [
+        1.0502885449603307,
+        2.2696017888466296,
+        1.1313089658225566
+      ],
+      "source_center_studs": [
+        -0.1572695044216404,
+        0.7083025007538879,
+        0.04683048069502338
+      ],
+      "key": "Grass",
+      "module": "scene-c/data/Grass.luau",
+      "module_bytes": 9849,
+      "module_sha256": "ab072db25895c648a40b5f750df349ada489ebaf395120f61295cc38d97dc06b",
+      "json_sha256": "38c0dac5a3b5f37d14fdd09106027fce4ce004430ba287f0380e602da91aebff",
+      "unique_uvs": 1,
+      "unique_normals": 104
+    },
+    {
+      "name": "SM_Env_Dirt_Rows_Center_01",
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Rows_Center_01.fbx",
+      "source_sha256": "d74a40009c77e5aad34fff8449e96ef25cf292b419a75355aa3adb50c9914527",
+      "vertices": 217,
+      "triangles": 364,
+      "size_studs": [
+        18.296041720615904,
+        0.7117668934956944,
+        18.296041774249794
+      ],
+      "source_center_studs": [
+        9.148020860307952,
+        0.3558834467478431,
+        9.148020833491007
+      ],
+      "key": "Center",
+      "module": "scene-c/data/Center.luau",
+      "module_bytes": 50240,
+      "module_sha256": "6cf750c664f4d6891626a50f1079dc0f4a71b0a55f334146f399da10ceebffec",
+      "json_sha256": "94e14833cbe37dfaf42534adb09dfea2ced9f6d5f968f72bbc86af4e6244510a",
+      "unique_uvs": 6,
+      "unique_normals": 389
+    },
+    {
+      "name": "SM_Env_Dirt_Rows_End_Top_01",
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Rows_End_Top_01.fbx",
+      "source_sha256": "f635796ba1c7ff2f129e77404704444e112ac864a39b64d02636b4932bf9b586",
+      "vertices": 265,
+      "triangles": 469,
+      "size_studs": [
+        18.296041720615904,
+        0.7117668934956903,
+        18.296041720615904
+      ],
+      "source_center_studs": [
+        9.148020860307952,
+        0.35588344674784517,
+        9.148020860307952
+      ],
+      "key": "End",
+      "module": "scene-c/data/End.luau",
+      "module_bytes": 62914,
+      "module_sha256": "0ff268c6b818c63f17d555121a91266a585f1f1b7cf58a210e2005615cc741c3",
+      "json_sha256": "f5ed1d5b31053dca47c24f96ef712d43f2a59c090d17fb40edfd0a04454aa92d",
+      "unique_uvs": 16,
+      "unique_normals": 480
+    },
+    {
+      "name": "SM_Env_Dirt_Skirt_01",
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Skirt_01.fbx",
+      "source_sha256": "b944eb93ac814ff19320a24409f496a983e5c84faaa5ba7bbb07c555f1bb59b8",
+      "vertices": 190,
+      "triangles": 352,
+      "size_studs": [
+        21.65385258547726,
+        1.3001554177724333,
+        21.318965503815413
+      ],
+      "source_center_studs": [
+        9.283945984554911,
+        -0.16705228626471172,
+        9.320536506358518
+      ],
+      "key": "Skirt",
+      "module": "scene-c/data/Skirt.luau",
+      "module_bytes": 47620,
+      "module_sha256": "3f4df332f176ea8b03d89e8cabcd2a8f656f9934dc5cceb1d3d3c7563bb2453e",
+      "json_sha256": "a18ec163dacf86893c4c3f0670d081fce4b6ffd713741a31257cb1fa3fcd23e2",
+      "unique_uvs": 4,
+      "unique_normals": 380
+    },
+    {
+      "name": "SM_Prop_Plant_Corn_01_L",
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\растения\\SM_Prop_Plant_Corn_01_L.fbx",
+      "source_sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+      "vertices": 377,
+      "triangles": 510,
+      "size_studs": [
+        3.0026558642674086,
+        7.999999999999999,
+        3.1309012101883917
+      ],
+      "source_center_studs": [
+        5.4526453352465865e-08,
+        3.644063499013018,
+        -3.8168517368930566e-07
+      ],
+      "key": "Corn",
+      "mesh_uri": "rbxassetid://104111861186519",
+      "texture_uri": "rbxassetid://137803536172445"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "profile": "game",
+  "scope": "exact original supplied FBX geometry, no source repair or normalization",
+  "all_raw_qa_pass": false,
+  "assets": [
+    {
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\трава\\SM_Generic_Grass_Patch_01.fbx",
+      "source_sha256": "72e76ced16844dab4b24895521f2bc3701e156f99918e0181ebfc8337ef40179",
+      "raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_Generic_Grass_Patch_01: unapplied scale [0.01, 0.01, 0.01]",
+          "SM_Generic_Grass_Patch_01: 42 zero-area UV faces",
+          "z-fighting: SM_Generic_Grass_Patch_01 (4 overlapping coplanar tri pairs)"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.1166 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.1166,
+        "zfighting": [
+          {
+            "where": "SM_Generic_Grass_Patch_01",
+            "tri_pairs": 4
+          }
+        ],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_Generic_Grass_Patch_01": {
+            "verts": 27,
+            "faces": 42,
+            "tris": 42,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 3,
+            "inside_out_islands": 0,
+            "scale": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 42,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "classifications": [
+        {
+          "finding": "SM_Generic_Grass_Patch_01: unapplied scale [0.01, 0.01, 0.01]",
+          "disposition": "source-preservation exception for imported FBX only",
+          "reason": "FBX centimetre-to-metre scale .01; read-only mesh arrays already contain transformed world points. Reconstructed native mesh uses these points and unit instance transform. Source FBX not rewritten."
+        },
+        {
+          "finding": "SM_Generic_Grass_Patch_01: 42 zero-area UV faces",
+          "disposition": "intentional palette lookup preserved",
+          "reason": "Source uses collapsed/line UVs to sample flat atlas colors. Retain exact UV values; unwrap would change source look. RGB8 atlas has no alpha."
+        },
+        {
+          "finding": "z-fighting: SM_Generic_Grass_Patch_01 (4 overlapping coplanar tri pairs)",
+          "disposition": "original source overlap retained for this test",
+          "reason": "Four coplanar triangle pairs in 3-blade grass patch, no duplicate vertices or faces/zero-area geometry, solid+wire preview inspected. Keep exact supplied mesh; native GPU appearance remains a separate check."
+        }
+      ],
+      "source_unchanged": true
+    },
+    {
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Rows_Center_01.fbx",
+      "source_sha256": "d74a40009c77e5aad34fff8449e96ef25cf292b419a75355aa3adb50c9914527",
+      "raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_Env_Dirt_Rows_Center_01: unapplied scale [0.01, 0.01, 0.01]",
+          "SM_Env_Dirt_Rows_Center_01: 341 zero-area UV faces"
+        ],
+        "warnings": [],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_Env_Dirt_Rows_Center_01": {
+            "verts": 217,
+            "faces": 341,
+            "tris": 364,
+            "ngons": 0,
+            "boundary_edges": 68,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 341,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "classifications": [
+        {
+          "finding": "SM_Env_Dirt_Rows_Center_01: unapplied scale [0.01, 0.01, 0.01]",
+          "disposition": "source-preservation exception for imported FBX only",
+          "reason": "FBX centimetre-to-metre scale .01; read-only mesh arrays already contain transformed world points. Reconstructed native mesh uses these points and unit instance transform. Source FBX not rewritten."
+        },
+        {
+          "finding": "SM_Env_Dirt_Rows_Center_01: 341 zero-area UV faces",
+          "disposition": "intentional palette lookup preserved",
+          "reason": "Source uses collapsed/line UVs to sample flat atlas colors. Retain exact UV values; unwrap would change source look. RGB8 atlas has no alpha."
+        },
+        {
+          "finding": "SM_Env_Dirt_Rows_Center_01: 68 open boundary edges",
+          "disposition": "original foliage/soil surface boundary retained",
+          "reason": "Decorative source surface; no collision mesh, capping or welding. Use separate smooth ground collision; preserve source silhouette and UV."
+        }
+      ],
+      "source_unchanged": true
+    },
+    {
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Rows_End_Top_01.fbx",
+      "source_sha256": "f635796ba1c7ff2f129e77404704444e112ac864a39b64d02636b4932bf9b586",
+      "raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_Env_Dirt_Rows_End_Top_01: unapplied scale [0.01, 0.01, 0.01]",
+          "SM_Env_Dirt_Rows_End_Top_01: 427 zero-area UV faces"
+        ],
+        "warnings": [],
+        "ground_z": -0.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_Env_Dirt_Rows_End_Top_01": {
+            "verts": 265,
+            "faces": 427,
+            "tris": 469,
+            "ngons": 0,
+            "boundary_edges": 61,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 427,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "classifications": [
+        {
+          "finding": "SM_Env_Dirt_Rows_End_Top_01: unapplied scale [0.01, 0.01, 0.01]",
+          "disposition": "source-preservation exception for imported FBX only",
+          "reason": "FBX centimetre-to-metre scale .01; read-only mesh arrays already contain transformed world points. Reconstructed native mesh uses these points and unit instance transform. Source FBX not rewritten."
+        },
+        {
+          "finding": "SM_Env_Dirt_Rows_End_Top_01: 427 zero-area UV faces",
+          "disposition": "intentional palette lookup preserved",
+          "reason": "Source uses collapsed/line UVs to sample flat atlas colors. Retain exact UV values; unwrap would change source look. RGB8 atlas has no alpha."
+        },
+        {
+          "finding": "SM_Env_Dirt_Rows_End_Top_01: 61 open boundary edges",
+          "disposition": "original foliage/soil surface boundary retained",
+          "reason": "Decorative source surface; no collision mesh, capping or welding. Use separate smooth ground collision; preserve source silhouette and UV."
+        }
+      ],
+      "source_unchanged": true
+    },
+    {
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\грядка\\SM_Env_Dirt_Skirt_01.fbx",
+      "source_sha256": "b944eb93ac814ff19320a24409f496a983e5c84faaa5ba7bbb07c555f1bb59b8",
+      "raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_Env_Dirt_Skirt_01: unapplied scale [0.01, 0.01, 0.01]",
+          "SM_Env_Dirt_Skirt_01: 316 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.2233 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.2233,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_Env_Dirt_Skirt_01": {
+            "verts": 190,
+            "faces": 316,
+            "tris": 352,
+            "ngons": 0,
+            "boundary_edges": 26,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 316,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "classifications": [
+        {
+          "finding": "SM_Env_Dirt_Skirt_01: unapplied scale [0.01, 0.01, 0.01]",
+          "disposition": "source-preservation exception for imported FBX only",
+          "reason": "FBX centimetre-to-metre scale .01; read-only mesh arrays already contain transformed world points. Reconstructed native mesh uses these points and unit instance transform. Source FBX not rewritten."
+        },
+        {
+          "finding": "SM_Env_Dirt_Skirt_01: 316 zero-area UV faces",
+          "disposition": "intentional palette lookup preserved",
+          "reason": "Source uses collapsed/line UVs to sample flat atlas colors. Retain exact UV values; unwrap would change source look. RGB8 atlas has no alpha."
+        },
+        {
+          "finding": "SM_Env_Dirt_Skirt_01: 26 open boundary edges",
+          "disposition": "original foliage/soil surface boundary retained",
+          "reason": "Decorative source surface; no collision mesh, capping or welding. Use separate smooth ground collision; preserve source silhouette and UV."
+        }
+      ],
+      "source_unchanged": true
+    },
+    {
+      "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\растения\\SM_Prop_Plant_Corn_01_L.fbx",
+      "source_sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+      "raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "SM_Prop_Plant_Corn_01_L: unapplied scale [0.01, 0.01, 0.01]",
+          "SM_Prop_Plant_Corn_01_L: 302 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.0973 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.0973,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "SM_Prop_Plant_Corn_01_L": {
+            "verts": 377,
+            "faces": 302,
+            "tris": 510,
+            "ngons": 0,
+            "boundary_edges": 218,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 12,
+            "inside_out_islands": 0,
+            "scale": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 302,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "classifications": [
+        {
+          "finding": "SM_Prop_Plant_Corn_01_L: unapplied scale [0.01, 0.01, 0.01]",
+          "disposition": "source-preservation exception for imported FBX only",
+          "reason": "FBX centimetre-to-metre scale .01; read-only mesh arrays already contain transformed world points. Reconstructed native mesh uses these points and unit instance transform. Source FBX not rewritten."
+        },
+        {
+          "finding": "SM_Prop_Plant_Corn_01_L: 302 zero-area UV faces",
+          "disposition": "intentional palette lookup preserved",
+          "reason": "Source uses collapsed/line UVs to sample flat atlas colors. Retain exact UV values; unwrap would change source look. RGB8 atlas has no alpha."
+        },
+        {
+          "finding": "SM_Prop_Plant_Corn_01_L: 218 open boundary edges",
+          "disposition": "original foliage/soil surface boundary retained",
+          "reason": "Decorative source surface; no collision mesh, capping or welding. Use separate smooth ground collision; preserve source silhouette and UV."
+        }
+      ],
+      "source_unchanged": true
+    }
+  ],
+  "unclassified_failures": [],
+  "all_sources_unchanged": true
+}

@@ -1,0 +1,342 @@
+{
+  "name": "Children_of_corn.rbxl",
+  "serveAddress": "127.0.0.1",
+  "servePort": 34873,
+  "emitLegacyScripts": true,
+  "tree": {
+    "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
+    "ReplicatedStorage": {
+      "$ignoreUnknownInstances": true,
+      "$className": "ReplicatedStorage",
+      "GameShared": {
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "Config": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "GameConfig": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Config/GameConfig.luau"
+          }
+        },
+        "Core": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "Logger": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Core/Logger.luau"
+          }
+        },
+        "Game": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "AudioAssets": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/AudioAssets.luau"
+          },
+          "AudioRules": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/AudioRules.luau"
+          },
+          "Balance": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/Balance.luau"
+          },
+          "CapturePresentation": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/CapturePresentation.luau"
+          },
+          "CornAppearance": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/A/shared/Game/CornAppearance.luau"
+          },
+          "CornLayout": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/A/shared/Game/CornLayout.luau"
+          },
+          "FarmEditableMeshBuilder": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/FarmEditableMeshBuilder.luau"
+          },
+          "FarmGeometryData": {
+            "$ignoreUnknownInstances": true,
+            "$className": "Folder",
+            "SM_Bld_Barn_03": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/shared/Game/FarmGeometryData/SM_Bld_Barn_03"
+            },
+            "SM_Prop_Rubbish_Pile_05": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/shared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05"
+            },
+            "SM_Prop_Truck_Rusted_01": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/shared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01"
+            },
+            "SM_Prop_Tyre_01": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/shared/Game/FarmGeometryData/SM_Prop_Tyre_01"
+            }
+          },
+          "FlashlightPresentation": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/FlashlightPresentation.luau"
+          },
+          "HandheldPresentation": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/HandheldPresentation.luau"
+          },
+          "HarvestArtGeometry": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/HarvestArtGeometry.luau"
+          },
+          "HarvestGeometryData": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/HarvestGeometryData"
+          },
+          "HarvestWardenVisual": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/A/shared/Game/HarvestWardenVisual.luau"
+          },
+          "Inventory": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/Inventory.luau"
+          },
+          "LightingModes": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/LightingModes.luau"
+          },
+          "MinimapGeometry": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/MinimapGeometry.luau"
+          },
+          "ModePreviewImages": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/ModePreviewImages.luau"
+          },
+          "MonsterPose": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/MonsterPose.luau"
+          },
+          "RoundText": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/RoundText.luau"
+          },
+          "Stamina": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Game/Stamina.luau"
+          }
+        },
+        "Network": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "EndpointNames": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/shared/Network/EndpointNames.luau"
+          }
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$ignoreUnknownInstances": true,
+      "$className": "ServerScriptService",
+      "GameServer": {
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "Bootstrap": {
+          "$ignoreUnknownInstances": true,
+          "$path": "src/server/Bootstrap.server.luau"
+        },
+        "Game": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "AuthoredWorld": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/AuthoredWorld.luau"
+          },
+          "CornField": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/CornField.luau"
+          },
+          "FarmGeometry": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/FarmGeometry.luau"
+          },
+          "HarvestWorld": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/HarvestWorld.luau"
+          },
+          "InventoryWorld": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/InventoryWorld.luau"
+          },
+          "ItemModels": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/ItemModels.luau"
+          },
+          "MapAuthoring": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/MapAuthoring.luau"
+          },
+          "MapTuning": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/MapTuning.luau"
+          },
+          "MinimapState": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/MinimapState.luau"
+          },
+          "MonsterHunt": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/MonsterHunt.luau"
+          },
+          "RoundAudio": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/RoundAudio.luau"
+          },
+          "RoundParticipant": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/RoundParticipant.luau"
+          },
+          "SoloRound": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/SoloRound.luau"
+          },
+          "TeamRound": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Game/TeamRound.luau"
+          }
+        },
+        "Services": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "FarmGeometryService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Services/FarmGeometryService.luau"
+          },
+          "HarvestArtService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Services/HarvestArtService.luau"
+          },
+          "NetworkService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Services/NetworkService.luau"
+          },
+          "RoundService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Services/RoundService.luau"
+          },
+          "TagService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/server/Services/TagService.luau"
+          }
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$ignoreUnknownInstances": true,
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$ignoreUnknownInstances": true,
+        "$className": "StarterPlayerScripts",
+        "GameClient": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "Bootstrap": {
+            "$ignoreUnknownInstances": true,
+            "$path": "src/client/Bootstrap.client.luau"
+          },
+          "Controllers": {
+            "$ignoreUnknownInstances": true,
+            "$className": "Folder",
+            "AudioController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/AudioController.luau"
+            },
+            "CaptureController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/CaptureController.luau"
+            },
+            "CornAppearanceController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/CornAppearanceController.luau"
+            },
+            "CornBackdropController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/A/client/Controllers/CornBackdropController.luau"
+            },
+            "CornController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/A/client/Controllers/CornController.luau"
+            },
+            "CornWindController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/A/client/Controllers/CornWindController.luau"
+            },
+            "FarmGeometryController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/FarmGeometryController.luau"
+            },
+            "FlashlightController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/A/client/Controllers/FlashlightController.luau"
+            },
+            "GateHintController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/GateHintController.luau"
+            },
+            "HandheldController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/HandheldController.luau"
+            },
+            "HarvestGeometryController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/HarvestGeometryController.luau"
+            },
+            "InventoryController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/InventoryController.luau"
+            },
+            "MinimapController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/MinimapController.luau"
+            },
+            "MonsterAnimationController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/MonsterAnimationController.luau"
+            },
+            "MovementController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/MovementController.luau"
+            },
+            "RoundController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Controllers/RoundController.luau"
+            }
+          },
+          "Game": {
+            "$ignoreUnknownInstances": true,
+            "$className": "Folder",
+            "FlashlightTuning": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Game/FlashlightTuning.luau"
+            },
+            "InventoryHud": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Game/InventoryHud.luau"
+            },
+            "MinimapHud": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Game/MinimapHud.luau"
+            },
+            "RoundHud": {
+              "$ignoreUnknownInstances": true,
+              "$path": "src/client/Game/RoundHud.luau"
+            }
+          }
+        }
+      }
+    }
+  }
+}

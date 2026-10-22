@@ -1,0 +1,8 @@
+{
+  "path": "ReplicatedStorage/GameShared/Game/CornLayout",
+  "file": "variants/B/shared/Game/CornLayout.luau",
+  "before_sha256": "d1430353eb3b3141ef1209163648b371528f13795c8e13fd9b5c5a5d7c34c604",
+  "probe_sha256": "d920821849661638a4bf9d74e92a59aa62dfb818237c6b92fbde257084c66498",
+  "backup": ".artifacts/playtests/2026-10-22-rojo-B-live/probe-original-CornLayout.luau",
+  "marker": "CornRojoBLiveProbe_20261022_b5825061"
+}

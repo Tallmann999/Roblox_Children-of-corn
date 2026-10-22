@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "GET-only local Rojo API; no Studio client, POST, sync or RBXL writes.",
+  "variants": {
+    "A": {
+      "sources": 153,
+      "instances_including_DataModel": 170,
+      "all_nested_ignore_unknown_instances": true,
+      "code_sources_and_classes_exact": true,
+      "only_Source_and_Legacy_RunContext_properties": true,
+      "source_graph_sha256": "16ca9e987c8390104b2e844e10a31b34876132d0649890d2a0f8b314ea05f87b",
+      "passed": true,
+      "port": 34873,
+      "server_version": "7.7.0",
+      "project_name": "Children_of_corn.rbxl",
+      "GET_only": true,
+      "own_server_stopped": true
+    },
+    "B": {
+      "sources": 154,
+      "instances_including_DataModel": 171,
+      "all_nested_ignore_unknown_instances": true,
+      "code_sources_and_classes_exact": true,
+      "only_Source_and_Legacy_RunContext_properties": true,
+      "source_graph_sha256": "15e8c3644a7ba508e286c4da521f8650b0f11a6dce6895beb163961eaca66edb",
+      "passed": true,
+      "port": 34874,
+      "server_version": "7.7.0",
+      "project_name": "Children_of_corn_B.rbxl",
+      "GET_only": true,
+      "own_server_stopped": true
+    }
+  },
+  "default": {
+    "expected_place_ids": [],
+    "default_live_connection_allowlist_empty": true,
+    "passed": true,
+    "port": 34872,
+    "server_version": "7.7.0",
+    "project_name": "ChildrenOfCorn_CodeCheckOnly",
+    "GET_only": true,
+    "own_server_stopped": true
+  },
+  "scene_bytes_unchanged": {
+    "A": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+    "B": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113"
+  }
+}

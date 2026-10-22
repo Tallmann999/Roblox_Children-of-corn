@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "check_ps1": "PASS; cached Roblox API dump; Selene 0 errors/0 warnings/0 parse errors",
+  "variant_refusal_tests": 16,
+  "serve_wrapper_check_only": "B PASS",
+  "serve_wrapper_missing_variant": "REFUSED before start",
+  "shared_sources": 146,
+  "split_paths": 7,
+  "variant_source_files": 15,
+  "metadata_only_files": 91,
+  "variants": {
+    "A": {
+      "project": "A.project.json",
+      "name": "Children_of_corn.rbxl",
+      "port": 34873,
+      "owned_sources": 153,
+      "code_instances": 165,
+      "total_scene_sources": 156,
+      "saved_build_sources_classes_exact": true,
+      "scene_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7"
+    },
+    "B": {
+      "project": "B.project.json",
+      "name": "Children_of_corn_B.rbxl",
+      "port": 34874,
+      "owned_sources": 154,
+      "code_instances": 166,
+      "total_scene_sources": 157,
+      "saved_build_sources_classes_exact": true,
+      "scene_sha256": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113"
+    }
+  },
+  "no_studio_mutation_or_connection": true,
+  "no_scene_write_or_serialization": true,
+  "source_map_sha256": "221804970b824240999130c7626aa49c9d9ba4a748244095180e376c8765861a",
+  "http_serve_smoke": "PASS; A170/B171 nodes, all preserve unknown children; default allowlist empty; all own servers stopped"
+}

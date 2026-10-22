@@ -1,0 +1,39 @@
+{
+  "counts": {
+    "Center": 2,
+    "Corn": 288,
+    "End": 4,
+    "Grass": 68,
+    "Skirt": 6
+  },
+  "instances": 471,
+  "mesh_content": {
+    "persistent_corn_uri": 288,
+    "regenerated_from_saved_data_on_Play": 80
+  },
+  "passed": true,
+  "placements": 368,
+  "scene_bytes": 187672,
+  "source_sha256": {
+    "ReplicatedStorage/CornCTestSystem/Data/Center": "6cf750c664f4d6891626a50f1079dc0f4a71b0a55f334146f399da10ceebffec",
+    "ReplicatedStorage/CornCTestSystem/Data/End": "0ff268c6b818c63f17d555121a91266a585f1f1b7cf58a210e2005615cc741c3",
+    "ReplicatedStorage/CornCTestSystem/Data/Grass": "ab072db25895c648a40b5f750df349ada489ebaf395120f61295cc38d97dc06b",
+    "ReplicatedStorage/CornCTestSystem/Data/Skirt": "3f4df332f176ea8b03d89e8cabcd2a8f656f9934dc5cceb1d3d3c7563bb2453e",
+    "ReplicatedStorage/CornCTestSystem/Geometry": "19b865ba0e402411eb012dae578cf63d7cd47079d8f190488bfb51cf46c924e1",
+    "ReplicatedStorage/CornCTestSystem/Layout": "060e50cdbb56bc468843f3c7e5d144a2b2e64922cffba7d7960e33699f683cb6",
+    "ReplicatedStorage/CornCTestSystem/Scene": "7b62322cbb4cdde0a4b8440b6b402d11bb42f87f81d9eb9c980e225c357c0808",
+    "ServerScriptService/CornCTestBootstrap": "e3830d2bb42b2424a252c9055aab026af73b538cc6bf59a2795c42aec7da239f",
+    "StarterPlayer/StarterPlayerScripts/CornCTestBootstrap": "7706cc029584e37d4767b07092173e7fdf637dc46d7cf6aee308fa56918c1075"
+  },
+  "sources": 9,
+  "author_confirmed_saved": true,
+  "scene_sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+  "scene_path": "place/Children_of_corn_TestScene.rbxl",
+  "read_only": true,
+  "scene_bytes_unchanged_during_audit": true,
+  "warning": "0.066682600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+  "scope": "Exact9Sources/classes/enabledbootstraps;368placements/CFrames/sizes/InitialSize/atlasbindings/physics/shadowflags;288persistentcornUri+80sessionmeshplaceholdersregeneratedonPlay fromsaveddata. Nohiddenmesh/rawTerrain/fullprocessreopenacceptance.",
+  "decoder_warnings": [
+    "   0.066571200s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "refusals": {
+    "descendant": {
+      "rejected": true,
+      "reason": "ReplicatedStorage.CornCTestSystem.Scene:122: Manual decoration child or descendant preserved",
+      "positive": true
+    },
+    "missing": {
+      "rejected": true,
+      "reason": "ReplicatedStorage.CornCTestSystem.Scene:116: Missing or additional C decoration preserved",
+      "positive": true
+    },
+    "material": {
+      "rejected": true,
+      "reason": "ReplicatedStorage.CornCTestSystem.Scene:153: Manually changed C property preserved: Material",
+      "positive": true
+    },
+    "rename": {
+      "rejected": true,
+      "reason": "ReplicatedStorage.CornCTestSystem.Scene:139: Renamed or replaced C mesh preserved",
+      "positive": true
+    },
+    "attribute": {
+      "rejected": true,
+      "reason": "ReplicatedStorage.CornCTestSystem.Scene:150: Manual mesh attribute preserved: AuthorEdit",
+      "positive": true
+    }
+  },
+  "badShadow": 0,
+  "worldChildren": 5,
+  "cornMaxHeight": 8,
+  "cornMinHeight": 8,
+  "name": "Children_of_corn_C.rbxl",
+  "sourceExact": true,
+  "sourceCount": 9,
+  "content": {
+    "Enum.ContentSourceType.Uri": 288,
+    "Enum.ContentSourceType.Opaque": 80
+  },
+  "counts": {
+    "Grass": 68,
+    "Corn": 288,
+    "Skirt": 6,
+    "End": 4,
+    "Center": 2
+  },
+  "badPhysics": 0
+}

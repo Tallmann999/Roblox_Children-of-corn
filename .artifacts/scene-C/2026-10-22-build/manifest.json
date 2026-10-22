@@ -1,0 +1,68 @@
+{
+  "owner": "children_of_corn_C_test",
+  "payload_sha256": "a981a74263b8df00d9e2f33a1918ab2149fa6b6701839db0d683953972ad737c",
+  "sources": {
+    "ReplicatedStorage/CornCTestSystem/Data/Grass": {
+      "class": "ModuleScript",
+      "file": "scene-c/data/Grass.luau",
+      "sha256": "ab072db25895c648a40b5f750df349ada489ebaf395120f61295cc38d97dc06b"
+    },
+    "ReplicatedStorage/CornCTestSystem/Data/Center": {
+      "class": "ModuleScript",
+      "file": "scene-c/data/Center.luau",
+      "sha256": "6cf750c664f4d6891626a50f1079dc0f4a71b0a55f334146f399da10ceebffec"
+    },
+    "ReplicatedStorage/CornCTestSystem/Data/End": {
+      "class": "ModuleScript",
+      "file": "scene-c/data/End.luau",
+      "sha256": "0ff268c6b818c63f17d555121a91266a585f1f1b7cf58a210e2005615cc741c3"
+    },
+    "ReplicatedStorage/CornCTestSystem/Data/Skirt": {
+      "class": "ModuleScript",
+      "file": "scene-c/data/Skirt.luau",
+      "sha256": "3f4df332f176ea8b03d89e8cabcd2a8f656f9934dc5cceb1d3d3c7563bb2453e"
+    },
+    "ReplicatedStorage/CornCTestSystem/Geometry": {
+      "class": "ModuleScript",
+      "file": "scene-c/geometry/Geometry.luau",
+      "sha256": "19b865ba0e402411eb012dae578cf63d7cd47079d8f190488bfb51cf46c924e1"
+    },
+    "ReplicatedStorage/CornCTestSystem/Layout": {
+      "class": "ModuleScript",
+      "file": "scene-c/runtime/Layout.luau",
+      "sha256": "060e50cdbb56bc468843f3c7e5d144a2b2e64922cffba7d7960e33699f683cb6"
+    },
+    "ReplicatedStorage/CornCTestSystem/Scene": {
+      "class": "ModuleScript",
+      "file": "scene-c/runtime/Scene.luau",
+      "sha256": "7b62322cbb4cdde0a4b8440b6b402d11bb42f87f81d9eb9c980e225c357c0808"
+    },
+    "ServerScriptService/CornCTestBootstrap": {
+      "class": "Script",
+      "file": "scene-c/runtime/Bootstrap.server.luau",
+      "sha256": "e3830d2bb42b2424a252c9055aab026af73b538cc6bf59a2795c42aec7da239f"
+    },
+    "StarterPlayer/StarterPlayerScripts/CornCTestBootstrap": {
+      "class": "LocalScript",
+      "file": "scene-c/runtime/Bootstrap.client.luau",
+      "sha256": "7706cc029584e37d4767b07092173e7fdf637dc46d7cf6aee308fa56918c1075"
+    }
+  },
+  "layout_counts": {
+    "Corn": 288,
+    "Center": 2,
+    "End": 4,
+    "Skirt": 6,
+    "Grass": 68
+  },
+  "native_installation": "PASS: separate C, see native-acceptance.json",
+  "scene_file_written": false,
+  "AB_mappings_or_sources_written": false,
+  "author_save": {
+    "passed": true,
+    "path": "place/Children_of_corn_TestScene.rbxl",
+    "sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+    "bytes": 187672,
+    "report": "author-save.json"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "ChildrenOfCorn_C_CodeOnly",
+  "servePlaceIds": [],
+  "serveAddress": "127.0.0.1",
+  "servePort": 34875,
+  "emitLegacyScripts": true,
+  "tree": {
+    "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
+    "ReplicatedStorage": {
+      "$ignoreUnknownInstances": true,
+      "$className": "ReplicatedStorage",
+      "CornCTestSystem": {
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "Data": {
+          "$ignoreUnknownInstances": true,
+          "$className": "Folder",
+          "Center": {
+            "$ignoreUnknownInstances": true,
+            "$path": "scene-c/data/Center.luau"
+          },
+          "End": {
+            "$ignoreUnknownInstances": true,
+            "$path": "scene-c/data/End.luau"
+          },
+          "Grass": {
+            "$ignoreUnknownInstances": true,
+            "$path": "scene-c/data/Grass.luau"
+          },
+          "Skirt": {
+            "$ignoreUnknownInstances": true,
+            "$path": "scene-c/data/Skirt.luau"
+          }
+        },
+        "Geometry": {
+          "$ignoreUnknownInstances": true,
+          "$path": "scene-c/geometry/Geometry.luau"
+        },
+        "Layout": {
+          "$ignoreUnknownInstances": true,
+          "$path": "scene-c/runtime/Layout.luau"
+        },
+        "Scene": {
+          "$ignoreUnknownInstances": true,
+          "$path": "scene-c/runtime/Scene.luau"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$ignoreUnknownInstances": true,
+      "$className": "ServerScriptService",
+      "CornCTestBootstrap": {
+        "$ignoreUnknownInstances": true,
+        "$path": "scene-c/runtime/Bootstrap.server.luau"
+      }
+    },
+    "StarterPlayer": {
+      "$ignoreUnknownInstances": true,
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$ignoreUnknownInstances": true,
+        "$className": "StarterPlayerScripts",
+        "CornCTestBootstrap": {
+          "$ignoreUnknownInstances": true,
+          "$path": "scene-c/runtime/Bootstrap.client.luau"
+        }
+      }
+    }
+  }
+}

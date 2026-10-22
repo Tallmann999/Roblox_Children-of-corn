@@ -1,5 +1,5 @@
 {
-  "name": "ChildrenOfCorn",
+  "name": "ChildrenOfCorn_CodeCheckOnly",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
@@ -33,5 +33,6 @@
     "$ignoreUnknownInstances": true
   },
   "serveAddress": "127.0.0.1",
-  "servePort": 34872
+  "servePort": 34872,
+  "servePlaceIds": []
 }

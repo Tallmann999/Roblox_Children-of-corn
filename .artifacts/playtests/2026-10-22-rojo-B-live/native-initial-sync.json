@@ -1,0 +1,1553 @@
+{
+  "unreadable": {
+    "MeshPart": [
+      "AeroMeshData",
+      "FluidFidelityInternal",
+      "InertiaMigrated",
+      "InitialSize",
+      "PhysicsData",
+      "SourceAssetId",
+      "UnscaledCofm",
+      "UnscaledVolInertiaDiags",
+      "UnscaledVolInertiaOffDiags",
+      "UnscaledVolume",
+      "VertexCount"
+    ],
+    "Folder": [
+      "SourceAssetId"
+    ],
+    "StarterGui": [
+      "ClipsDescendantsSupportsRotation",
+      "RtlTextSupport",
+      "SourceAssetId",
+      "StudioDefaultStyleSheet",
+      "StudioInsertWidgetLayerCollectorAutoLinkStyleSheet",
+      "VirtualCursorMode"
+    ],
+    "BloomEffect": [
+      "SourceAssetId"
+    ],
+    "AssetService": [
+      "AllowInsertFreeAssets",
+      "SourceAssetId"
+    ],
+    "TextLabel": [
+      "LocalizationMatchIdentifier",
+      "LocalizationMatchedSourceText",
+      "Sink",
+      "SourceAssetId"
+    ],
+    "Debris": [
+      "SourceAssetId"
+    ],
+    "Decal": [
+      "SourceAssetId",
+      "TexturePack",
+      "TexturePackMetadata"
+    ],
+    "ModuleScript": [
+      "SourceAssetId"
+    ],
+    "CollectionService": [
+      "SourceAssetId"
+    ],
+    "SurfaceGui": [
+      "SourceAssetId"
+    ],
+    "StringValue": [
+      "SourceAssetId"
+    ],
+    "ObjectValue": [
+      "SourceAssetId"
+    ],
+    "GamePassService": [
+      "SourceAssetId"
+    ],
+    "CFrameValue": [
+      "SourceAssetId"
+    ],
+    "VRService": [
+      "SourceAssetId"
+    ],
+    "ImageLabel": [
+      "Sink",
+      "SourceAssetId"
+    ],
+    "StarterPlayerScripts": [
+      "SourceAssetId"
+    ],
+    "SoundService": [
+      "AudioApiByDefault",
+      "IsNewExpForAudioApiByDefault",
+      "SourceAssetId",
+      "VolumetricAudio"
+    ],
+    "LuaWebService": [
+      "SourceAssetId"
+    ],
+    "PointLight": [
+      "SourceAssetId"
+    ],
+    "Sky": [
+      "SourceAssetId"
+    ],
+    "Model": [
+      "ModelMeshCFrame",
+      "ModelMeshSize",
+      "NeedsPivotMigration",
+      "ScaleFactor",
+      "SlimHash",
+      "SourceAssetId"
+    ],
+    "Atmosphere": [
+      "SourceAssetId"
+    ],
+    "CookiesService": [
+      "SourceAssetId"
+    ],
+    "ReplicatedStorage": [
+      "SourceAssetId"
+    ],
+    "VideoService": [
+      "SourceAssetId"
+    ],
+    "TextChatService": [
+      "ChatTranslationFTUXShown",
+      "ChatTranslationToggleEnabled",
+      "HasSeenDeprecationDialog",
+      "IsLegacyChatDisabled",
+      "PlatformIntegratedChat",
+      "SourceAssetId"
+    ],
+    "SpotLight": [
+      "SourceAssetId"
+    ],
+    "Chat": [
+      "IsAutoMigrated",
+      "SourceAssetId"
+    ],
+    "ServerStorage": [
+      "SourceAssetId"
+    ],
+    "Workspace": [
+      "AuthorityMode",
+      "AutoSimulate",
+      "AvatarUnificationMode",
+      "EnableSLIMAvatars",
+      "ExpandedTerrain",
+      "ExplicitAutoJoints",
+      "FluidForces",
+      "GravityDirection",
+      "IKControlConstraintSupport",
+      "ImprovedAnimationConstraint",
+      "ImprovedPhysicsReplication",
+      "LayeredClothingCacheOptimizations",
+      "MapTVRemoteToGamepadKeycodes",
+      "MeshPartHeadsAndAccessories",
+      "MeshStreamingAndImprovedLods",
+      "ModelMeshCFrame",
+      "ModelMeshSize",
+      "ModelStreamingBehavior",
+      "NeedsPivotMigration",
+      "NextGenerationReplication",
+      "PathfindingUseImprovedSearch",
+      "PhysicsSteppingMethod",
+      "PlayerCharacterDestroyBehavior",
+      "PlayerScriptsUseInputActionSystem",
+      "PredictiveStreamingMode",
+      "PrimalPhysicsSolver",
+      "RejectCharacterDeletions",
+      "RenderingCacheOptimizations",
+      "ReplicateInstanceDestroySetting",
+      "SandboxedInstanceMode",
+      "ScaleFactor",
+      "SignalBehavior",
+      "SimulationRate",
+      "SlimHash",
+      "SourceAssetId",
+      "StreamOutBehavior",
+      "StreamingIntegrityMode",
+      "StreamingMinRadius",
+      "StreamingTargetRadius",
+      "TerrainWeldsFixed",
+      "TouchEventsUseCollisionGroups",
+      "TouchesUseCollisionGroups",
+      "UseFixedSimulation",
+      "UseInputSink",
+      "UseNewLuauTypeSolver",
+      "ValidateEnabledProximityPrompt",
+      "Wind",
+      "WindDirection"
+    ],
+    "TouchInputService": [
+      "SourceAssetId"
+    ],
+    "Texture": [
+      "SourceAssetId",
+      "TexturePack",
+      "TexturePackMetadata"
+    ],
+    "Players": [
+      "BanningEnabled",
+      "SourceAssetId",
+      "UseStrafingAnimations"
+    ],
+    "ChannelTabsConfiguration": [
+      "SourceAssetId"
+    ],
+    "Script": [
+      "SourceAssetId"
+    ],
+    "BubbleChatConfiguration": [
+      "SourceAssetId"
+    ],
+    "ChatWindowConfiguration": [
+      "SourceAssetId"
+    ],
+    "Camera": [
+      "SourceAssetId"
+    ],
+    "DepthOfFieldEffect": [
+      "SourceAssetId"
+    ],
+    "Fire": [
+      "SourceAssetId"
+    ],
+    "TestService": [
+      "SourceAssetId"
+    ],
+    "ChatInputBarConfiguration": [
+      "SourceAssetId"
+    ],
+    "UIPadding": [
+      "SourceAssetId"
+    ],
+    "ServerScriptService": [
+      "LoadStringEnabled",
+      "SourceAssetId"
+    ],
+    "VoiceChatService": [
+      "EnableVoiceVolumeControls",
+      "SourceAssetId"
+    ],
+    "Teams": [
+      "SourceAssetId"
+    ],
+    "SunRaysEffect": [
+      "SourceAssetId"
+    ],
+    "DataStoreService": [
+      "SourceAssetId"
+    ],
+    "ProximityPromptService": [
+      "SourceAssetId"
+    ],
+    "Lighting": [
+      "ExtendLightRangeTo120",
+      "SourceAssetId",
+      "Technology"
+    ],
+    "HttpService": [
+      "SourceAssetId"
+    ],
+    "Part": [
+      "SourceAssetId",
+      "formFactorRaw"
+    ],
+    "ReplicatedFirst": [
+      "SourceAssetId"
+    ],
+    "StarterPack": [
+      "SourceAssetId"
+    ],
+    "AnimationController": [
+      "SourceAssetId"
+    ],
+    "LocalizationService": [
+      "SourceAssetId"
+    ],
+    "PhysicsService": [
+      "SourceAssetId"
+    ],
+    "TeleportService": [
+      "SourceAssetId"
+    ],
+    "UICorner": [
+      "SourceAssetId"
+    ],
+    "Terrain": [
+      "AcquisitionMethod",
+      "Decoration",
+      "GrassLength",
+      "Materials",
+      "SmoothVoxelsUpgraded",
+      "SourceAssetId"
+    ],
+    "SpawnLocation": [
+      "SourceAssetId",
+      "formFactorRaw"
+    ],
+    "StarterCharacterScripts": [
+      "SourceAssetId"
+    ],
+    "TweenService": [
+      "SourceAssetId"
+    ],
+    "ContextActionService": [
+      "SourceAssetId"
+    ],
+    "VideoCaptureService": [
+      "SourceAssetId"
+    ],
+    "MaterialService": [
+      "AsphaltName",
+      "BasaltName",
+      "BrickName",
+      "CardboardName",
+      "CarpetName",
+      "CeramicTilesName",
+      "ClayRoofTilesName",
+      "CobblestoneName",
+      "ConcreteName",
+      "CorrodedMetalName",
+      "CrackedLavaName",
+      "DiamondPlateName",
+      "FabricName",
+      "FoilName",
+      "GlacierName",
+      "GraniteName",
+      "GrassName",
+      "GroundName",
+      "IceName",
+      "LeafyGrassName",
+      "LeatherName",
+      "LimestoneName",
+      "MarbleName",
+      "MetalName",
+      "MudName",
+      "PavementName",
+      "PebbleName",
+      "PlasterName",
+      "PlasticName",
+      "RockName",
+      "RoofShinglesName",
+      "RubberName",
+      "SaltName",
+      "SandName",
+      "SandstoneName",
+      "SlateName",
+      "SmoothPlasticName",
+      "SnowName",
+      "SourceAssetId",
+      "Use2022MaterialsXml",
+      "WoodName",
+      "WoodPlanksName"
+    ],
+    "LocalScript": [
+      "SourceAssetId"
+    ],
+    "InsertService": [
+      "SourceAssetId"
+    ],
+    "StarterPlayer": [
+      "AvatarJointUpgrade_SerializedRollout",
+      "CreateDefaultPlayerModule",
+      "EnableDynamicHeads",
+      "GameSettingsAvatar",
+      "GameSettingsR15Collision",
+      "LoadCharacterLayeredClothing",
+      "PlayerModuleStatus",
+      "SourceAssetId",
+      "UseImprovedCharacterEvents"
+    ],
+    "UIGradient": [
+      "SourceAssetId"
+    ]
+  },
+  "instances": 4615,
+  "sources": {
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk04": {
+      "id": "206010",
+      "class": "ModuleScript",
+      "sha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19",
+      "rawSha256": "3100fc6f573f75dbc622e3fb9c5e2fbb21fc3150dd18cabb03b4634502ecbe19"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk09": {
+      "id": "206015",
+      "class": "ModuleScript",
+      "sha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b",
+      "rawSha256": "a35dc001af88cc05c17d26791435bc971941c07a469c7ad9133f1b7ae945e01b"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornAppearanceController": {
+      "id": "205948",
+      "class": "ModuleScript",
+      "sha256": "dba66998d988c11abfca55772e9f001a144f8fbae5e9ad92636f6ed7085776a6",
+      "rawSha256": "dba66998d988c11abfca55772e9f001a144f8fbae5e9ad92636f6ed7085776a6"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData": {
+      "id": "206005",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk04": {
+      "id": "205977",
+      "class": "ModuleScript",
+      "sha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f",
+      "rawSha256": "fc435ffc68ff9dcb7497b53cbe93c8635fd8cad91358a0e5e3d08a600db4323f"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk06": {
+      "id": "206012",
+      "class": "ModuleScript",
+      "sha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111",
+      "rawSha256": "e827ab829868de72cbcf078cf4aae4d87b0029a917104eca2868e88e43ce4111"
+    },
+    "ServerScriptService/GameServer/Game/MapAuthoring": {
+      "id": "206081",
+      "class": "ModuleScript",
+      "sha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc",
+      "rawSha256": "1cca4cd3fd1653f00dffd663b34d1eaf8543767e01dbada3812ebf532e5b21fc"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Near/Chunk01": {
+      "id": "206035",
+      "class": "ModuleScript",
+      "sha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581",
+      "rawSha256": "c18591883d70957eecf19741e1aac775ed151649199bb909f6a96993ca7ff581"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Near/Chunk01": {
+      "id": "206041",
+      "class": "ModuleScript",
+      "sha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33",
+      "rawSha256": "9620cb37cf79d822bc29b776bcfadc0147d91772fc08da1248f1bb5d34b26c33"
+    },
+    "ReplicatedStorage/GameShared/Game/Balance": {
+      "id": "205966",
+      "class": "ModuleScript",
+      "sha256": "007478deb9135e49d5e87acdecb74439ab4861f0849856847a0fd5c1bb6b0f71",
+      "rawSha256": "007478deb9135e49d5e87acdecb74439ab4861f0849856847a0fd5c1bb6b0f71"
+    },
+    "ReplicatedStorage/GameShared/Game/HandheldPresentation": {
+      "id": "206001",
+      "class": "ModuleScript",
+      "sha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c",
+      "rawSha256": "7029be88d05b2a9c73586e45ac18acfe9e25f5ccb04462d224076e01f74b964c"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk02": {
+      "id": "205995",
+      "class": "ModuleScript",
+      "sha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b",
+      "rawSha256": "c5dcb82eb685857c47f352e6ebb2203f506cad2f0cd3ef828f7a17e6270e058b"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/FlashlightTuning": {
+      "id": "205963",
+      "class": "ModuleScript",
+      "sha256": "5929d239dbf92ae7581ea36966574dc24a0fe90bf6f776a3c2a874aea7167c3b",
+      "rawSha256": "5929d239dbf92ae7581ea36966574dc24a0fe90bf6f776a3c2a874aea7167c3b"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmEditableMeshBuilder": {
+      "id": "205996",
+      "class": "ModuleScript",
+      "sha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2",
+      "rawSha256": "ec407baace6b9eb0042fbe5a160970d08cba5bed97a2760a546c788d4db727a2"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Far/Chunk01": {
+      "id": "206019",
+      "class": "ModuleScript",
+      "sha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76",
+      "rawSha256": "39ae2a54fce8e57c2c2fda9f81f427e52cc1a7da74e3f1762598b3ae7428ea76"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Ground_Tile_8/Chunk01": {
+      "id": "206049",
+      "class": "ModuleScript",
+      "sha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685",
+      "rawSha256": "0f5148b98ace76a381d9a49f8a9fcb0eb0376f963a05930c78504c9136af2685"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk04": {
+      "id": "206070",
+      "class": "ModuleScript",
+      "sha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf",
+      "rawSha256": "8bc4074c408382ae99367b570cc060c964334fd93adcbcfe0baa16bdc762d5cf"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Mid/Chunk01": {
+      "id": "206033",
+      "class": "ModuleScript",
+      "sha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c",
+      "rawSha256": "a41fdd7931203cdf00dc2dbae4cd3ecec078aa8958f3d7dd59a2d8a8eb5fcf2c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_03/Chunk01": {
+      "id": "206047",
+      "class": "ModuleScript",
+      "sha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119",
+      "rawSha256": "8821f1324d7ebd4792b368d51930df21bd7b315c24286664c42337664e172119"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_01": {
+      "id": "206042",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk01": {
+      "id": "206007",
+      "class": "ModuleScript",
+      "sha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e",
+      "rawSha256": "d62d4cf2c2fdb602d7717d05c97b49cafddd1b26f9ef9cd8820ddf466682ad5e"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk10": {
+      "id": "206016",
+      "class": "ModuleScript",
+      "sha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb",
+      "rawSha256": "d2d8b15bf49165d8c849ee70fc1fe27f217f522c3635499dcf39af4d3c86cbfb"
+    },
+    "Workspace/CornfieldFog/RuntimeServer": {
+      "id": "206557",
+      "class": "Script",
+      "sha256": "179c915d63ecd4a9b0a17acfd3604460a7a349890dd4063f164b6d953bd52e73",
+      "rawSha256": "179c915d63ecd4a9b0a17acfd3604460a7a349890dd4063f164b6d953bd52e73"
+    },
+    "ReplicatedStorage/GameShared/Game/CapturePresentation": {
+      "id": "205999",
+      "class": "ModuleScript",
+      "sha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91",
+      "rawSha256": "6a5b23b19924dcddb99633958e62c4b8cfa1584b62c58db518d0ad51efcb3f91"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk07": {
+      "id": "205980",
+      "class": "ModuleScript",
+      "sha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da",
+      "rawSha256": "c6373c541b684b59b6cfe783e3ef9ffb6fca0520642d7244c33298185529d8da"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Mid": {
+      "id": "206032",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Near/Chunk01": {
+      "id": "206029",
+      "class": "ModuleScript",
+      "sha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c",
+      "rawSha256": "f34541fd5b719118058605c18967dadbf9dcefe05dd9b47798ff1651db58933c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Far": {
+      "id": "206036",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HandheldController": {
+      "id": "205955",
+      "class": "ModuleScript",
+      "sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e",
+      "rawSha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk05": {
+      "id": "205978",
+      "class": "ModuleScript",
+      "sha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834",
+      "rawSha256": "99a30322375987dd9073cb4875b449c09f9e8305a3ece17300115997c1519834"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk10": {
+      "id": "205983",
+      "class": "ModuleScript",
+      "sha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e",
+      "rawSha256": "534f70326e8e8b9edd0c53c829e015cab7ebe39c5aeac8d66ebd47e08abba18e"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController": {
+      "id": "205949",
+      "class": "ModuleScript",
+      "sha256": "cf092cfa68c91eefb49b3d8f0afaebefa7ec88704d5d5c6a1fd2185b36ede665",
+      "rawSha256": "cf092cfa68c91eefb49b3d8f0afaebefa7ec88704d5d5c6a1fd2185b36ede665"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk04": {
+      "id": "205990",
+      "class": "ModuleScript",
+      "sha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314",
+      "rawSha256": "4b044cb729975f8fd3a9aececd513a366a67b0c0db7924be54973f37db7af314"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenClassic/Chunk01": {
+      "id": "206063",
+      "class": "ModuleScript",
+      "sha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a",
+      "rawSha256": "bb295eb927e0395a125156f0ff7558e00e835fed92439a099de05f6b7269b40a"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk06": {
+      "id": "205979",
+      "class": "ModuleScript",
+      "sha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924",
+      "rawSha256": "2a0bad80a16a65cb7df0256eb34bb6e7436b6a6f0af6d4efbddd0bca5748a924"
+    },
+    "Workspace/CornfieldFog/Config": {
+      "id": "205942",
+      "class": "ModuleScript",
+      "sha256": "f091fcaf13c3056c66c2053b195e7f0157338050a02b6efdb140de8e7e9bd064",
+      "rawSha256": "f091fcaf13c3056c66c2053b195e7f0157338050a02b6efdb140de8e7e9bd064"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MinimapController": {
+      "id": "205946",
+      "class": "ModuleScript",
+      "sha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715",
+      "rawSha256": "8a86c7884d224f7af7575c65c4aee57105cba684993aa35c72be27c626698715"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_04/Chunk01": {
+      "id": "206059",
+      "class": "ModuleScript",
+      "sha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c",
+      "rawSha256": "4bd70c912420ca14c29400d82140023ab3e88d72b5cb8cf7f642fe54ec95cf5c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk08": {
+      "id": "206014",
+      "class": "ModuleScript",
+      "sha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6",
+      "rawSha256": "b3751e9c5006cad97e103f34ae7276f05731d9b24d172971ac6ed85e4c643cb6"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController": {
+      "id": "205944",
+      "class": "ModuleScript",
+      "sha256": "357329cb7dd9256b04e6e337b7ea4f3328d7fb6b0f1f3622df51cb878d36086e",
+      "rawSha256": "357329cb7dd9256b04e6e337b7ea4f3328d7fb6b0f1f3622df51cb878d36086e"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Far/Chunk01": {
+      "id": "206025",
+      "class": "ModuleScript",
+      "sha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492",
+      "rawSha256": "48e288332fc9f161aacf73e39cc0e8e1eec0d986046a124374858fbe3bbb2492"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Path_Tile_8": {
+      "id": "206050",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_01/Chunk01": {
+      "id": "206043",
+      "class": "ModuleScript",
+      "sha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee",
+      "rawSha256": "05e912b4fbf837290400c28682aeb53f974fa9b19b21a87e98a79822d2c115ee"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk02": {
+      "id": "205975",
+      "class": "ModuleScript",
+      "sha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17",
+      "rawSha256": "5b007e86ef99b4ceed8b7f9397ee12b201c0e314d470aefc1c30745a6aa26e17"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk03": {
+      "id": "206009",
+      "class": "ModuleScript",
+      "sha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1",
+      "rawSha256": "431076626dec2bd6e5f0b95237abf4f84fdf92049c99331d5e6ad508155f3dd1"
+    },
+    "ServerScriptService/GameServer/Services/RoundService": {
+      "id": "206092",
+      "class": "ModuleScript",
+      "sha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1",
+      "rawSha256": "454e5b14a44d290216b860a08ddc85838978bc1787f64ec17ede3307b2c58de1"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_04": {
+      "id": "206058",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/Inventory": {
+      "id": "205998",
+      "class": "ModuleScript",
+      "sha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad",
+      "rawSha256": "a4fdb46578dc144ccd8d6ab4f4ba101f5414f16aecafb026deb042870f6409ad"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AudioController": {
+      "id": "205956",
+      "class": "ModuleScript",
+      "sha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c",
+      "rawSha256": "c6ef8ce10e445663014edb0b4a501bbdbc30b3b7cd989ed4d7eeb1b67b72094c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenClassic/Chunk02": {
+      "id": "206064",
+      "class": "ModuleScript",
+      "sha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b",
+      "rawSha256": "cff9c821416fc66c33be4990b0b83f1d7f058b488c912c071a38c22f8cc11a1b"
+    },
+    "ServerScriptService/GameServer/Game/CornField": {
+      "id": "206077",
+      "class": "ModuleScript",
+      "sha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187",
+      "rawSha256": "69a0610927931b2dd0bb87a342372a03b6286c6a6a5b4017deb74acdf4dce187"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FarmGeometryController": {
+      "id": "205950",
+      "class": "ModuleScript",
+      "sha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed",
+      "rawSha256": "ffe9f8d43129bad93021861bbca6afcb468157d235711367d58922cdb18a86ed"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/MinimapHud": {
+      "id": "205961",
+      "class": "ModuleScript",
+      "sha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93",
+      "rawSha256": "05159da68d89b8902c9c3bed9aba6bedf3e65a1438a257ba306024b616494d93"
+    },
+    "ServerScriptService/GameServer/Game/MonsterHunt": {
+      "id": "206080",
+      "class": "ModuleScript",
+      "sha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db",
+      "rawSha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk03": {
+      "id": "205989",
+      "class": "ModuleScript",
+      "sha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d",
+      "rawSha256": "d8176e2baec795c9e81b4a8d98b5fc3d4130ca424cbc4b0ea15d3ca4cbab1c9d"
+    },
+    "ServerScriptService/GameServer/Services/TagService": {
+      "id": "206091",
+      "class": "ModuleScript",
+      "sha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4",
+      "rawSha256": "43221c3fa6d9810085782b430b2a5240196788aba6eeaf17bbe0857ba03338f4"
+    },
+    "ServerScriptService/GameServer/Game/SoloRound": {
+      "id": "206076",
+      "class": "ModuleScript",
+      "sha256": "ff9fd678c9f121d32e09b327105e345a498ff715b0c6a98027578aebcf979a0e",
+      "rawSha256": "ff9fd678c9f121d32e09b327105e345a498ff715b0c6a98027578aebcf979a0e"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenClassic/Chunk03": {
+      "id": "206065",
+      "class": "ModuleScript",
+      "sha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2",
+      "rawSha256": "cbd42eba1a657f319e7a0219280154f1842b61acb9dce392172959ee3e78b7f2"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk09": {
+      "id": "205982",
+      "class": "ModuleScript",
+      "sha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5",
+      "rawSha256": "c768c7c74e23203ffbca50eb72cae44316ff8d83753cb5dbb8f83716bd6881b5"
+    },
+    "ServerScriptService/GameServer/Game/FarmGeometry": {
+      "id": "206083",
+      "class": "ModuleScript",
+      "sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a",
+      "rawSha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a"
+    },
+    "ReplicatedStorage/GameShared/Game/CornAppearance": {
+      "id": "205972",
+      "class": "ModuleScript",
+      "sha256": "f9bc4be1d9f28f55c6139cdcdd79714a4a86083f132eabc91d7dac1a00e41451",
+      "rawSha256": "f9bc4be1d9f28f55c6139cdcdd79714a4a86083f132eabc91d7dac1a00e41451"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenClassic": {
+      "id": "206062",
+      "class": "ModuleScript",
+      "sha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b",
+      "rawSha256": "436d4dcd098e0822edec798d539ded01db41a56a2968dc3c163af109d4df669b"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk03": {
+      "id": "205976",
+      "class": "ModuleScript",
+      "sha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490",
+      "rawSha256": "82da8246a4a4542ffce9a35e89bda521dbfa4c29c1c654c6523e268cd012b490"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Near": {
+      "id": "206040",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ServerScriptService/GameServer/Bootstrap": {
+      "id": "206558",
+      "class": "Script",
+      "sha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956",
+      "rawSha256": "5b9d3ad0309f00d54acae531ef2662e747d70bcd86d643fec2790fa939b98956"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_02/Chunk01": {
+      "id": "206045",
+      "class": "ModuleScript",
+      "sha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f",
+      "rawSha256": "0f9bc4f591e83073a70ca9b500ab0bbe05a0e744ae1e066917801fba7c56d09f"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Mid": {
+      "id": "206038",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Far": {
+      "id": "206024",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestArtGeometry": {
+      "id": "206004",
+      "class": "ModuleScript",
+      "sha256": "f357f2f6229c1d7e560e25eae68014298a1a3c18649b494df021e4e46df5feb2",
+      "rawSha256": "f357f2f6229c1d7e560e25eae68014298a1a3c18649b494df021e4e46df5feb2"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MovementController": {
+      "id": "205945",
+      "class": "ModuleScript",
+      "sha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3",
+      "rawSha256": "1e16feb0e0702c6d58ef50ad4b5ee1a3dce914f3fbaee6d7d7baf2a5a0e14fa3"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk02": {
+      "id": "206008",
+      "class": "ModuleScript",
+      "sha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670",
+      "rawSha256": "ea3b64983d2d10029f92eb6a9d94637c58f24fa052611e3d1dbaf1c00f8b1670"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk06": {
+      "id": "205992",
+      "class": "ModuleScript",
+      "sha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0",
+      "rawSha256": "607faa45c986adbad946582d27636450e02e9630f1e25cea6895d3764383abf0"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Near": {
+      "id": "206028",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01": {
+      "id": "205993",
+      "class": "ModuleScript",
+      "sha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3",
+      "rawSha256": "5542b0ad7bebe21da9e2a400a70b0c3df213f612ff4411df54302d2c94cab0d3"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GateHintController": {
+      "id": "205951",
+      "class": "ModuleScript",
+      "sha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed",
+      "rawSha256": "9a713d9d917d5591542a84e8925e43b308bdbdc3f892934916c17f750ce4c4ed"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Far/Chunk01": {
+      "id": "206037",
+      "class": "ModuleScript",
+      "sha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736",
+      "rawSha256": "0a2026fe7508325d03ec5f359d406a285fa1a358afd2b3584ebcd3cf23eab736"
+    },
+    "ServerScriptService/GameServer/Game/RoundAudio": {
+      "id": "206086",
+      "class": "ModuleScript",
+      "sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb",
+      "rawSha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk02": {
+      "id": "205988",
+      "class": "ModuleScript",
+      "sha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a",
+      "rawSha256": "404f12578ac5233491a510c7a49cc82fc79984dd5de125044f60bf0503c9667a"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/MonsterAnimationController": {
+      "id": "205954",
+      "class": "ModuleScript",
+      "sha256": "e5f0684f8d0340c1fae3ca46ef2605c7a4f7f1fc326ac994caeffc28863fe071",
+      "rawSha256": "e5f0684f8d0340c1fae3ca46ef2605c7a4f7f1fc326ac994caeffc28863fe071"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Mid/Chunk01": {
+      "id": "206021",
+      "class": "ModuleScript",
+      "sha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd",
+      "rawSha256": "e16d5e54266b86e8ca7b3499a3b316dc0624bf90c99837c4fb5fa8337b6d0edd"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Far/Chunk01": {
+      "id": "206031",
+      "class": "ModuleScript",
+      "sha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf",
+      "rawSha256": "a8da88631684ed4da9aa349301af6cba953e8090cb7cdc218a3c84044cc39aaf"
+    },
+    "ReplicatedStorage/GameShared/Game/LightingModes": {
+      "id": "205970",
+      "class": "ModuleScript",
+      "sha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2",
+      "rawSha256": "6a25c8c9f513a918b5b85f936d2c9aeafbad2bb62cb773312536d141e3397ea2"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk01": {
+      "id": "205974",
+      "class": "ModuleScript",
+      "sha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659",
+      "rawSha256": "f828c2ab857275b687484c15aebb67f36d11394b3ae85d9a999bedb72e6de659"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk05": {
+      "id": "206071",
+      "class": "ModuleScript",
+      "sha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d",
+      "rawSha256": "17101d3393235e1d475746d576a7d0345173091371ce3a4b49259674dbb3913d"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk07": {
+      "id": "206013",
+      "class": "ModuleScript",
+      "sha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8",
+      "rawSha256": "78ec04ea22de85ec3e474fffb6242fe2ced67a3b3ebbb0ef49881329e6a436a8"
+    },
+    "ReplicatedStorage/GameShared/Game/AudioAssets": {
+      "id": "206002",
+      "class": "ModuleScript",
+      "sha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5",
+      "rawSha256": "5b0dbd05620c1d59318c47c904c21eb9f641d5fe97c82bd2d07b902409315ed5"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03/Chunk08": {
+      "id": "205981",
+      "class": "ModuleScript",
+      "sha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919",
+      "rawSha256": "ab8794dcace1ec629d012d9195d2ba242eef9dcf032bd229a3cb25af99c00919"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CaptureController": {
+      "id": "205953",
+      "class": "ModuleScript",
+      "sha256": "b69af0dd7203fda8dd990a369be2f6ec70cf6f59318fbf39fd8314b816e6fb02",
+      "rawSha256": "b69af0dd7203fda8dd990a369be2f6ec70cf6f59318fbf39fd8314b816e6fb02"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed": {
+      "id": "206066",
+      "class": "ModuleScript",
+      "sha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a",
+      "rawSha256": "c56e673d907636457bda91576bd9ea24cd9e25edc4e881950d642bd26520fc9a"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Bootstrap": {
+      "id": "202080",
+      "class": "LocalScript",
+      "sha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f",
+      "rawSha256": "7bcb2b90a9bb422c59b0a3f270590aa71886260ed2b02d9b8963a16f84e9541f"
+    },
+    "ServerScriptService/GameServer/Game/TeamRound": {
+      "id": "206088",
+      "class": "ModuleScript",
+      "sha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba",
+      "rawSha256": "f8f32eac3b12eed5b4443844d29d4c278cfd11762b2cac5315b11e15152d33ba"
+    },
+    "ServerScriptService/GameServer/Services/FarmGeometryService": {
+      "id": "206093",
+      "class": "ModuleScript",
+      "sha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533",
+      "rawSha256": "46a1d63a07ceedcac14262376eb2f6ed7cec57b4db1cc09917022e6463ede533"
+    },
+    "ServerScriptService/GameServer/Services/NetworkService": {
+      "id": "206090",
+      "class": "ModuleScript",
+      "sha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea",
+      "rawSha256": "86a18a1f8035bc1f913ce4d0ad453cd9d821ce9bb9235bd9beac75e9da9bf3ea"
+    },
+    "ServerScriptService/GameServer/Game/HarvestWorld": {
+      "id": "206089",
+      "class": "ModuleScript",
+      "sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04",
+      "rawSha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04"
+    },
+    "ServerScriptService/GameServer/Services/HarvestArtService": {
+      "id": "206094",
+      "class": "ModuleScript",
+      "sha256": "378a25d4372ad78099c26627447d60a32f6767e98367ae02533651c32221126b",
+      "rawSha256": "378a25d4372ad78099c26627447d60a32f6767e98367ae02533651c32221126b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Near/Chunk01": {
+      "id": "206023",
+      "class": "ModuleScript",
+      "sha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800",
+      "rawSha256": "c1c9a7fbdf10082acd8e6ce25a15fc7f98b0e1172fa38882c9342887dc3e7800"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestWardenVisual": {
+      "id": "206073",
+      "class": "ModuleScript",
+      "sha256": "3021b9a48580541fcd0f6a3e45ec78e125970bcd9551322870e92b418c628ee3",
+      "rawSha256": "3021b9a48580541fcd0f6a3e45ec78e125970bcd9551322870e92b418c628ee3"
+    },
+    "ServerScriptService/GameServer/Game/RoundParticipant": {
+      "id": "206087",
+      "class": "ModuleScript",
+      "sha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5",
+      "rawSha256": "8467f74393bd104bc6755167b918a3ba1fdc999170c6051c43045c437d195be5"
+    },
+    "ServerScriptService/GameServer/Game/ItemModels": {
+      "id": "206085",
+      "class": "ModuleScript",
+      "sha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d",
+      "rawSha256": "7a842078fe3551aea7f063deea0527d5aad9de7e31f3359eff0d68c068e0685d"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": {
+      "id": "205957",
+      "class": "ModuleScript",
+      "sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592",
+      "rawSha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592"
+    },
+    "ServerScriptService/GameServer/Game/InventoryWorld": {
+      "id": "206084",
+      "class": "ModuleScript",
+      "sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7",
+      "rawSha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Mid": {
+      "id": "206026",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ServerScriptService/GameServer/Game/MinimapState": {
+      "id": "206082",
+      "class": "ModuleScript",
+      "sha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60",
+      "rawSha256": "50a477edf362fec84e9fc4273039078c2572c9b205047451c8aa1083e31adc60"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_02/Chunk01": {
+      "id": "206055",
+      "class": "ModuleScript",
+      "sha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13",
+      "rawSha256": "a5dc1b9a655943f2fca3dd8aea36fd7f01ba9dd59277140657ed53a2743b1e13"
+    },
+    "ReplicatedStorage/GameShared/Config/GameConfig": {
+      "id": "205964",
+      "class": "ModuleScript",
+      "sha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063",
+      "rawSha256": "4008ac075352192bb40ba7e1532c1db1f07d12a2f515dbc4396771e5074e0063"
+    },
+    "ServerScriptService/GameServer/Game/AuthoredWorld": {
+      "id": "206078",
+      "class": "ModuleScript",
+      "sha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80",
+      "rawSha256": "3336eeccd589a8126de7ae11fbfeff68c88f5b406a0ae7533e750d9e571e7f80"
+    },
+    "ReplicatedStorage/GameShared/Network/EndpointNames": {
+      "id": "206075",
+      "class": "ModuleScript",
+      "sha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca",
+      "rawSha256": "a19bd8f0e0db45ca4f8d2de5bb282765211fc30e99a8de7f0efe285caa4adaca"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Far": {
+      "id": "206030",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/AudioRules": {
+      "id": "206003",
+      "class": "ModuleScript",
+      "sha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d",
+      "rawSha256": "4804a832bf01ab6f8c249df60cb4f11026ec73ce24d2b0685e24d38168bf728d"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk01": {
+      "id": "205987",
+      "class": "ModuleScript",
+      "sha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb",
+      "rawSha256": "be1f6298d16ba71ee347c24086f2c079eca7f50b0ed82519411fd800d4e7d9bb"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud": {
+      "id": "205960",
+      "class": "ModuleScript",
+      "sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5",
+      "rawSha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_01": {
+      "id": "206052",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/MinimapGeometry": {
+      "id": "205971",
+      "class": "ModuleScript",
+      "sha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda",
+      "rawSha256": "cf681e9248c779897060cc91cfbcbaf8e869c48377a19571ffb17014b124abda"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk03": {
+      "id": "206069",
+      "class": "ModuleScript",
+      "sha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c",
+      "rawSha256": "424e0cd11f9b2eb459436c01c1f6ccadfb1083e2e4522bac17537848d843f20c"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05": {
+      "id": "205984",
+      "class": "ModuleScript",
+      "sha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d",
+      "rawSha256": "e27cfd2e62955f697dfc51fe2013bbd1f3682b438655c5f4e0480415473f582d"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Path_Tile_8/Chunk01": {
+      "id": "206051",
+      "class": "ModuleScript",
+      "sha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048",
+      "rawSha256": "c99c9382d95ee938c21e39065ed98e5da80863756cb2a943375a691afc263048"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk01": {
+      "id": "206067",
+      "class": "ModuleScript",
+      "sha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061",
+      "rawSha256": "8cac2cb99151acc7d65c9e9d965580c61feb5d9910b3ff6cd0c12c7bb9a9c061"
+    },
+    "Workspace/CornfieldFog/RuntimeServer/ClientTemplate": {
+      "id": "202079",
+      "class": "LocalScript",
+      "sha256": "6b87c4f04bf0675c808cd549cbca6cf5f067930ca85ac877badfa5899e6c46c2",
+      "rawSha256": "6b87c4f04bf0675c808cd549cbca6cf5f067930ca85ac877badfa5899e6c46c2"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_03": {
+      "id": "206056",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/Stamina": {
+      "id": "205968",
+      "class": "ModuleScript",
+      "sha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783",
+      "rawSha256": "9c752e617afdfa04f9b706a0ae4cf8aefa88badca694a71876efe13029737783"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_D_Mid/Chunk01": {
+      "id": "206039",
+      "class": "ModuleScript",
+      "sha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75",
+      "rawSha256": "28014a768b4c0d3b2a810348dbfdc33dfc07aeede035e4e92e6b7ee6b5fb4f75"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open/Chunk05": {
+      "id": "206011",
+      "class": "ModuleScript",
+      "sha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0",
+      "rawSha256": "970a270b98631a6ee1d576f88f5096abb6f02086b3b946e6061846139dba18c0"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Bld_Barn_03": {
+      "id": "205973",
+      "class": "ModuleScript",
+      "sha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c",
+      "rawSha256": "ec85f81f7c7e899c76f04a81f6e5feeaaf94e4238db35a6d2a926a60081f3d9c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_05/Chunk01": {
+      "id": "206061",
+      "class": "ModuleScript",
+      "sha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6",
+      "rawSha256": "3287b4108a0e1e70320cd8f2aa1818a31a0e8cda9692312052b00eaf97839af6"
+    },
+    "ReplicatedStorage/GameShared/Game/MonsterPose": {
+      "id": "206000",
+      "class": "ModuleScript",
+      "sha256": "893f91c4a079c65d36aca00b41f65ecd45c1fc43e4c1b150e40fa0dc3176cc9e",
+      "rawSha256": "893f91c4a079c65d36aca00b41f65ecd45c1fc43e4c1b150e40fa0dc3176cc9e"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Tyre_01/Chunk01": {
+      "id": "205994",
+      "class": "ModuleScript",
+      "sha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d",
+      "rawSha256": "def2eaeadacd7eb7366b95213f158954ae01b244429cc18dc71193f6cf947d4d"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornShadowController": {
+      "id": "205959",
+      "class": "ModuleScript",
+      "sha256": "e5356cf6806438d0a981324fbf8f0abfc03f50e0964b223874e9472c35ffe25b",
+      "rawSha256": "e5356cf6806438d0a981324fbf8f0abfc03f50e0964b223874e9472c35ffe25b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Chunk01": {
+      "id": "206017",
+      "class": "ModuleScript",
+      "sha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e",
+      "rawSha256": "b9405809871f22355a8e728a026927c484d34c28b34f1441cc3f3251e9dfeb3e"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_05": {
+      "id": "206060",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/RoundText": {
+      "id": "205967",
+      "class": "ModuleScript",
+      "sha256": "b4f251c9bd19408e6c0dea79533f151a26e73398f74697688cc7c762e75ccff7",
+      "rawSha256": "b4f251c9bd19408e6c0dea79533f151a26e73398f74697688cc7c762e75ccff7"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/InventoryController": {
+      "id": "205952",
+      "class": "ModuleScript",
+      "sha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850",
+      "rawSha256": "b0a3a267051ca1b960e715adeacb95fd57bd9a93b35572285caa959673a96850"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_03/Chunk01": {
+      "id": "206057",
+      "class": "ModuleScript",
+      "sha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a",
+      "rawSha256": "67cefff11569dd1b054019d1854b3e0998c55dcdbe6cead7ba6f9f22236aea6a"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_C_Near": {
+      "id": "206034",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_B_Mid/Chunk01": {
+      "id": "206027",
+      "class": "ModuleScript",
+      "sha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640",
+      "rawSha256": "15e909df98e5fdc6e5d4f96f037dba2809de0d8ece1b3098968c7f80b841f640"
+    },
+    "ServerScriptService/GameServer/Game/MapTuning": {
+      "id": "206079",
+      "class": "ModuleScript",
+      "sha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869",
+      "rawSha256": "68fc0acf02cf1eb3d5dedf2ab8e67b979843dcdd5bbee09dd0af3cd30779d869"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_02": {
+      "id": "206054",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController": {
+      "id": "205958",
+      "class": "ModuleScript",
+      "sha256": "fa8fbc6f4193e406c9ed1c9e28a219fd12388f0a7e87acc543eb71ce0f63c9fa",
+      "rawSha256": "fa8fbc6f4193e406c9ed1c9e28a219fd12388f0a7e87acc543eb71ce0f63c9fa"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController": {
+      "id": "205947",
+      "class": "ModuleScript",
+      "sha256": "eb6d21ac21f8e3fbb492066e89239b06f046f10fec07c357450698d82567e528",
+      "rawSha256": "eb6d21ac21f8e3fbb492066e89239b06f046f10fec07c357450698d82567e528"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01/Chunk05": {
+      "id": "205991",
+      "class": "ModuleScript",
+      "sha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0",
+      "rawSha256": "c67638fa86770e32592bc0a4c02f12ec489eedc90c7c9ee342187138d8efffe0"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Rock_01/Chunk01": {
+      "id": "206053",
+      "class": "ModuleScript",
+      "sha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e",
+      "rawSha256": "cf31a7fd2db963fb68914cf15a33e1b36eda04b3b7673c96cd835f2885ee4f0e"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk02": {
+      "id": "206068",
+      "class": "ModuleScript",
+      "sha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf",
+      "rawSha256": "7647d4174db5602b8b1445e56ab86e05f6de13874fb4accd96875610649af6bf"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Near": {
+      "id": "206022",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Ground_Tile_8": {
+      "id": "206048",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_02": {
+      "id": "206044",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Truck_Rusted_01": {
+      "id": "205986",
+      "class": "ModuleScript",
+      "sha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab",
+      "rawSha256": "0b5e40be3f5e5990cac79b24f4c33cb5f810b237cc9f523af840570b669d16ab"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/RoundController": {
+      "id": "205943",
+      "class": "ModuleScript",
+      "sha256": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a",
+      "rawSha256": "dca2b283d596cb230fb910fabcf63fd7a10ae072db4986177ad511defd87099a"
+    },
+    "ReplicatedStorage/GameShared/Game/CornLayout": {
+      "id": "205969",
+      "class": "ModuleScript",
+      "sha256": "d1430353eb3b3141ef1209163648b371528f13795c8e13fd9b5c5a5d7c34c604",
+      "rawSha256": "d1430353eb3b3141ef1209163648b371528f13795c8e13fd9b5c5a5d7c34c604"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Fence_03": {
+      "id": "206046",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Far": {
+      "id": "206018",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/ModePreviewImages": {
+      "id": "205997",
+      "class": "ModuleScript",
+      "sha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86",
+      "rawSha256": "a8cb14fa2f4318f5374eb13f4b718e9558f3aaecc09171ecbea8450b0b8e5e86"
+    },
+    "ReplicatedStorage/GameShared/Core/Logger": {
+      "id": "205965",
+      "class": "ModuleScript",
+      "sha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c",
+      "rawSha256": "53ad83eff889d7a4a08cd8db675cdc4fa463c2577deae3fbe93db7f640805d7c"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/Corn_A_Mid": {
+      "id": "206020",
+      "class": "ModuleScript",
+      "sha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b",
+      "rawSha256": "c9ee05b4ffb106acbd32d899a6cdfd3f0c4f01630df662afe30050bc9a9bc52b"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/BarnDark_Open": {
+      "id": "206006",
+      "class": "ModuleScript",
+      "sha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b",
+      "rawSha256": "ad77ccc323194bebc5f2dd7391dc83050d96ae609099c7b278c9d02bd6b7299b"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Game/InventoryHud": {
+      "id": "205962",
+      "class": "ModuleScript",
+      "sha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26",
+      "rawSha256": "344c0ec1f3cb93f56b1312651f02b2eb17b7b85a1c2b0fb02b8fe18a95d07b26"
+    },
+    "ReplicatedStorage/GameShared/Game/FarmGeometryData/SM_Prop_Rubbish_Pile_05/Chunk01": {
+      "id": "205985",
+      "class": "ModuleScript",
+      "sha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4",
+      "rawSha256": "e587c26652a6977dcbcf7dcb97c474abd3d64390fba9c7fdea73b92bfefe75b4"
+    },
+    "ReplicatedStorage/GameShared/Game/FlashlightPresentation": {
+      "id": "206074",
+      "class": "ModuleScript",
+      "sha256": "98cebd8fe2ae1d7c16ab252e34a4f681e4700bee26699b8257bcb2bed68c77a8",
+      "rawSha256": "98cebd8fe2ae1d7c16ab252e34a4f681e4700bee26699b8257bcb2bed68c77a8"
+    },
+    "ReplicatedStorage/GameShared/Game/HarvestGeometryData/WardenDetailed/Chunk06": {
+      "id": "206072",
+      "class": "ModuleScript",
+      "sha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7",
+      "rawSha256": "50faf903ea052530b15cc1d439f16c292f0cefb79743b303c4772036bdc990c7"
+    }
+  },
+  "gameName": "Children_of_corn_B.rbxl",
+  "differences": [],
+  "includedRoots": [
+    "AssetService:AssetService",
+    "Chat:Chat",
+    "CollectionService:CollectionService",
+    "ContextActionService:ContextActionService",
+    "CookiesService:CookiesService",
+    "DataStoreService:DataStoreService",
+    "Debris:Debris",
+    "GamePassService:GamePassService",
+    "HttpService:HttpService",
+    "InsertService:InsertService",
+    "Lighting:Lighting",
+    "LocalizationService:LocalizationService",
+    "LuaWebService:LuaWebService",
+    "MaterialService:MaterialService",
+    "PhysicsService:PhysicsService",
+    "Players:Players",
+    "ProximityPromptService:ProximityPromptService",
+    "ReplicatedFirst:ReplicatedFirst",
+    "ReplicatedStorage:ReplicatedStorage",
+    "ServerScriptService:ServerScriptService",
+    "ServerStorage:ServerStorage",
+    "SoundService:SoundService",
+    "StarterGui:StarterGui",
+    "StarterPack:StarterPack",
+    "StarterPlayer:StarterPlayer",
+    "Teams:Teams",
+    "TeleportService:Teleport Service",
+    "TestService:TestService",
+    "TextChatService:TextChatService",
+    "TouchInputService:TouchInputService",
+    "TweenService:TweenService",
+    "VRService:VRService",
+    "VideoCaptureService:VideoCaptureService",
+    "VideoService:VideoService",
+    "VoiceChatService:VoiceChatService",
+    "Workspace:Workspace"
+  ],
+  "totalReadableProperties": 236115,
+  "sourceCount": 157,
+  "unknownClasses": [],
+  "additions": [],
+  "propertyInventorySha256": "5553f27ceba8168f6b9cf8a1dd73e37b6b5af6af9f2bb5a1df1b27f6dd12ac44",
+  "owner": "corn_rojo_B_readonly_snapshot_v1",
+  "allSha256": "099a8ce64c5e2235db68462127cca9830115384af04f0ad46100d56568afd930",
+  "sourceSha256": "ffaa3a3ba05a8cc80b3ac8dbc6708471b4aa4596a6de54ddaf565f83672d58fd",
+  "classes": {
+    "MeshPart": 3763,
+    "Folder": 34,
+    "StarterGui": 1,
+    "BloomEffect": 1,
+    "AssetService": 1,
+    "TextLabel": 1,
+    "Debris": 1,
+    "Decal": 1,
+    "ModuleScript": 153,
+    "CollectionService": 1,
+    "SurfaceGui": 1,
+    "StringValue": 2,
+    "ObjectValue": 193,
+    "GamePassService": 1,
+    "CFrameValue": 3,
+    "VRService": 1,
+    "ImageLabel": 1,
+    "StarterPlayerScripts": 1,
+    "SoundService": 1,
+    "LuaWebService": 1,
+    "PointLight": 31,
+    "Sky": 1,
+    "Model": 97,
+    "Atmosphere": 1,
+    "CookiesService": 1,
+    "ReplicatedStorage": 1,
+    "VideoService": 1,
+    "TextChatService": 1,
+    "SpotLight": 2,
+    "Chat": 1,
+    "ServerStorage": 1,
+    "Workspace": 1,
+    "TouchInputService": 1,
+    "Texture": 3,
+    "Players": 1,
+    "ChannelTabsConfiguration": 1,
+    "Script": 2,
+    "BubbleChatConfiguration": 1,
+    "ChatWindowConfiguration": 1,
+    "Camera": 1,
+    "DepthOfFieldEffect": 1,
+    "Fire": 31,
+    "TestService": 1,
+    "ChatInputBarConfiguration": 1,
+    "UIPadding": 1,
+    "ServerScriptService": 1,
+    "VoiceChatService": 1,
+    "Teams": 1,
+    "SunRaysEffect": 1,
+    "DataStoreService": 1,
+    "ProximityPromptService": 1,
+    "Lighting": 1,
+    "HttpService": 1,
+    "Part": 237,
+    "ReplicatedFirst": 1,
+    "StarterPack": 1,
+    "AnimationController": 1,
+    "LocalizationService": 1,
+    "PhysicsService": 1,
+    "TeleportService": 1,
+    "UICorner": 1,
+    "Terrain": 1,
+    "SpawnLocation": 5,
+    "StarterCharacterScripts": 1,
+    "TweenService": 1,
+    "ContextActionService": 1,
+    "VideoCaptureService": 1,
+    "MaterialService": 1,
+    "LocalScript": 2,
+    "InsertService": 1,
+    "StarterPlayer": 1,
+    "UIGradient": 1
+  },
+  "editorDocuments": [],
+  "nonSourceSha256": "591a8349cf8292c069ffab63a56c992c6f348d22ce2d326c765b8b0a941fcc5b",
+  "worldLightingSha256": "d67da656df7b481a7bdac2a9ee862cb6fb2a1779ee3d9389bfd7666d9b65e6dd",
+  "matchesBefore": true,
+  "terrain": {
+    "rawGridRuntimeAudited": false,
+    "paletteSha256": "3f38957381b6ad9355b768ef1d20e5e15453699bcf5db2957f2e099c94f64171",
+    "materialPalette": {
+      "LeafyGrass": "Color3:0.41568627953529358,0.52549022436141968,0.25098040699958801",
+      "Rock": "Color3:0.38823530077934265,0.39215686917304993,0.40000000596046448",
+      "Basalt": "Color3:0.29411765933036804,0.29019609093666077,0.29019609093666077",
+      "Sand": "Color3:0.81176471710205078,0.79607844352722168,0.65490198135375977",
+      "Sandstone": "Color3:0.58039218187332153,0.48627451062202454,0.37254902720451355",
+      "Brick": "Color3:0.54117649793624878,0.3803921639919281,0.28627452254295349",
+      "Cobblestone": "Color3:0.52549022436141968,0.52549022436141968,0.46274510025978088",
+      "Glacier": "Color3:0.86666667461395264,0.89411765336990356,0.89803922176361084",
+      "Slate": "Color3:0.34509804844856262,0.3490196168422699,0.33725491166114807",
+      "Snow": "Color3:0.92156863212585449,0.99215686321258545,1",
+      "WoodPlanks": "Color3:0.67450982332229614,0.58039218187332153,0.42352941632270813",
+      "Limestone": "Color3:1,0.9529411792755127,0.75294119119644165",
+      "Mud": "Color3:0.47450980544090271,0.43921568989753723,0.38431373238563538",
+      "Salt": "Color3:1,1,0.99607843160629272",
+      "Asphalt": "Color3:0.31372550129890442,0.32941177487373352,0.32941177487373352",
+      "CrackedLava": "Color3:1,0.094117648899555206,0.26274511218070984",
+      "Ground": "Color3:0.54901963472366333,0.50980395078659058,0.40784314274787903",
+      "Concrete": "Color3:0.59607845544815063,0.59607845544815063,0.59607845544815063",
+      "Grass": "Color3:0.43529412150382996,0.49411764740943909,0.24313725531101227",
+      "Pavement": "Color3:0.56078433990478516,0.56470590829849243,0.52941179275512695",
+      "Ice": "Color3:0.80000001192092896,0.82352942228317261,0.87450981140136719"
+    },
+    "explanation": "Hidden raw voxel and mesh binary data cannot be read through normal public properties; disk-byte SHA and Rojo patch scope are independent evidence."
+  },
+  "scope": "Persistent saved-service classes; all current descendants",
+  "skippedRoots": [
+    ":FilteredSelection",
+    ":FilteredSelection",
+    ":FilteredSelection",
+    ":FilteredSelection",
+    "AnalyticsService:AnalyticsService",
+    "AnimationClipProvider:AnimationClipProvider",
+    "AvatarCreationService:AvatarCreationService",
+    "BadgeService:BadgeService",
+    "BrowserService:BrowserService",
+    "CaptureService:CaptureService",
+    "ChangeHistoryService:ChangeHistoryService",
+    "ContentProvider:ContentProvider",
+    "ControllerService:ControllerService",
+    "CoreGui:CoreGui",
+    "DebuggerManager:DebuggerManager",
+    "DraftsService:DraftsService",
+    "DraggerService:DraggerService",
+    "EncodingService:EncodingService",
+    "FriendService:FriendService",
+    "GamepadService:GamepadService",
+    "GenerationService:GenerationService",
+    "GeometryService:GeometryService",
+    "GuiService:GuiService",
+    "GuidRegistryService:GuidRegistryService",
+    "HSRDataContentProvider:HSRDataContentProvider",
+    "HapticService:HapticService",
+    "HttpRbxApiService:HttpRbxApiService",
+    "InstanceExtensionsService:InstanceExtensionsService",
+    "InstanceFileSyncService:InstanceFileSyncService",
+    "JointsService:JointsService",
+    "KeyboardService:KeyboardService",
+    "KeyframeSequenceProvider:KeyframeSequenceProvider",
+    "LogService:LogService",
+    "MarketplaceService:MarketplaceService",
+    "MemStorageService:MemStorageService",
+    "MeshContentProvider:MeshContentProvider",
+    "MicroProfilerService:MicroProfilerService",
+    "MouseService:MouseService",
+    "NotificationService:NotificationService",
+    "PackageService:PackageService",
+    "Packages:Packages",
+    "PathfindingService:PathfindingService",
+    "PermissionsService:PermissionsService",
+    "PlacesService:PlacesService",
+    "PluginConnectionService:PluginConnectionService",
+    "PluginDebugService:PluginDebugService",
+    "PluginGuiService:PluginGuiService",
+    "PluginManagementService:PluginManagementService",
+    "PointsService:PointsService",
+    "PolicyService:PolicyService",
+    "ProcessInstancePhysicsService:ProcessInstancePhysicsService",
+    "PublishService:PublishService",
+    "ReflectionService:ReflectionService",
+    "RemoteCommandService:RemoteCommandService",
+    "RemoteDebuggerServer:RemoteDebuggerServer",
+    "RunService:Run Service",
+    "ScriptContext:Script Context",
+    "ScriptDebuggerService:ScriptDebuggerService",
+    "ScriptEditorService:ScriptEditorService",
+    "ScriptService:Instance",
+    "Selection:Selection",
+    "SelectionHighlightManager:SelectionHighlightManager",
+    "SerializationService:SerializationService",
+    "ServiceVisibilityService:ServiceVisibilityService",
+    "SharedTableRegistry:SharedTableRegistry",
+    "SlimContentProvider:SlimContentProvider",
+    "SolidModelContentProvider:SolidModelContentProvider",
+    "SpawnerService:SpawnerService",
+    "Stats:Stats",
+    "StudioCaptureService:StudioCaptureService",
+    "StudioDeviceSimulatorService:StudioDeviceSimulatorService",
+    "StudioService:StudioService",
+    "StudioTestService:StudioTestService",
+    "StylingService:StylingService",
+    "TextBoxService:TextBoxService",
+    "TextService:TextService",
+    "TimerService:Instance",
+    "UGCValidationService:UGCValidationService",
+    "UIDragDetectorService:UIDragDetectorService",
+    "UniqueIdLookupService:UniqueIdLookupService",
+    "UserInputService:UserInputService",
+    "UserService:UserService",
+    "VirtualInputManager:VirtualInputManager",
+    "VisualizationModeService:VisualizationModeService"
+  ]
+}

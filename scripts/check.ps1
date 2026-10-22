@@ -11,6 +11,9 @@ try {
     if ($project.tree.'$ignoreUnknownInstances' -ne $true) {
         throw 'DataModel must preserve unknown Studio content.'
     }
+    if ($null -eq $project.servePlaceIds -or @($project.servePlaceIds).Count -ne 0) {
+        throw 'The default mixed-source project must reject every live Studio connection.'
+    }
     $expectedMappings = @{
         'src/shared' = $project.tree.ReplicatedStorage.GameShared.'$path'
         'src/server' = $project.tree.ServerScriptService.GameServer.'$path'
@@ -25,10 +28,12 @@ try {
         throw 'Persistence must remain disabled for this local MVP.'
     }
 
-    stylua --check src
+    stylua --check src variants scene-c scripts/read-rojo-sources.luau
     if ($LASTEXITCODE -ne 0) { throw 'StyLua check failed.' }
-    selene src
+    selene src variants scene-c
     if ($LASTEXITCODE -ne 0) { throw 'Selene check failed.' }
+    python scripts/rojo-ab.py --check
+    if ($LASTEXITCODE -ne 0) { throw 'A/B Rojo ownership/build check failed.' }
 
     New-Item -ItemType Directory -Path 'build' -Force | Out-Null
     rojo build default.project.json --output build/code-foundation.rbxlx
@@ -42,7 +47,7 @@ try {
         if ($matchingContainers.Count -ne 1) { throw "Missing or duplicate code container: $containerName" }
     }
 
-    Write-Output 'PASS: formatting, lint, code-only build, sourcemap, safe mappings and disabled persistence.'
+    Write-Output 'PASS: formatting, lint, code-only builds, A/B source isolation, safe mappings and disabled persistence.'
     Write-Output 'Studio connection, Output and Play Test still require a live Studio session.'
 } finally {
     Pop-Location

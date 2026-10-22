@@ -100,3 +100,7 @@ scripts/build-corn-double-density-payload.py text eol=lf
 scripts/verify-B-double-density-copy.py text eol=lf
 scripts/promote-B-double-density-copy.py text eol=lf
 tests/B-double-density-save.py text eol=lf
+
+# Dated C intake, payloads and native evidence contain byte-pinned input hashes.
+.artifacts/scene-C/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scene-c/data/manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

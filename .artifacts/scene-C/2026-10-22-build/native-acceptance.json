@@ -1,0 +1,97 @@
+{
+  "CNativePlayReady": {
+    "hud": true,
+    "reason": "table: 0x46e55ed63f15808b",
+    "walkSpeed": 12,
+    "clientDecor": 368,
+    "root": [
+      0,
+      3.0480246543884277,
+      39
+    ],
+    "serverHidden": 368,
+    "serverDecorValid": true
+  },
+  "CNativeFinalPlayReady": {
+    "cameraMode": "Enum.CameraMode.LockFirstPerson",
+    "clientDecor": 368,
+    "hidden": 368,
+    "hud": true,
+    "cameraType": "Enum.CameraType.Fixed",
+    "root": [
+      19.216176986694336,
+      3.242422342300415,
+      -38.540382385253906
+    ],
+    "subject": "Humanoid",
+    "camera": [
+      0.008538209833204746,
+      4.8482584953308105,
+      39.488441467285156
+    ],
+    "walkSpeed": 12,
+    "ready": true
+  },
+  "CPathPosition": {
+    "point": "central-path",
+    "root": [
+      0,
+      3.242422342300415,
+      15.867011070251465
+    ]
+  },
+  "CCornWalkStart": {
+    "point": "inside-corn-start",
+    "root": [
+      11.262152671813965,
+      3.6524224281311035,
+      14.24249267578125
+    ]
+  },
+  "CCornWalkEnd": {
+    "root": [
+      11.151700973510742,
+      3.6524224281311035,
+      -8.246330261230469
+    ],
+    "point": "inside-corn-end",
+    "health": 100
+  },
+  "CWInput": {
+    "root": [
+      -1.4623605012893677,
+      3.242422342300415,
+      14.61827564239502
+    ],
+    "health": 100,
+    "point": "after-normal-W-input",
+    "cameraType": "Enum.CameraType.Fixed"
+  },
+  "CNativeFinalEdit": {
+    "transportClean": true,
+    "decorValid": true,
+    "noOldPadInWorkspace": true,
+    "worldChildren": 5,
+    "reason": "nil",
+    "classes": [],
+    "oldPadInServerStorage": true,
+    "sourceExact": true,
+    "sourceCount": 9,
+    "content": {
+      "Enum.ContentSourceType.Uri": 288,
+      "Enum.ContentSourceType.Opaque": 80
+    },
+    "counts": {
+      "Grass": 68,
+      "Corn": 288,
+      "Skirt": 6,
+      "End": 4,
+      "Center": 2
+    },
+    "parts": 368
+  },
+  "keyboardInputLimitation": "Root/camera changed during author inspection; no isolated ordinary-W distance acceptance claimed. Native navigation endpoints prove 22.489 studs inside corn.",
+  "initialClientFailure": "Exact CFrame guard refused normal network rotation compression; final C source accepts bounded client-only float error. Edit/Server remain exact.",
+  "finalPayloadSha256": "a981a74263b8df00d9e2f33a1918ab2149fa6b6701839db0d683953972ad737c",
+  "save": "pending author Ctrl+S"
+}

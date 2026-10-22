@@ -1,0 +1,6 @@
+local system = game:GetService("ReplicatedStorage"):WaitForChild("CornCTestSystem")
+local Scene = require(system.Scene)
+local world = Scene.AuthorWorld()
+world:SetAttribute("SceneCServerReady", false)
+local result = Scene.Ensure("Server")
+print("Corn C geometry ready:", result.parts, "parts /", result.corn, "native corn MeshParts")

@@ -1,0 +1,347 @@
+{
+  "kind": "offline preparation render; not native Studio acceptance",
+  "blender": "5.2.2 LTS",
+  "layout_sha256": "4bd3d880e54b19f78e1a8c59163077aa661f921dc73dce53107197a1310a913e",
+  "manifest_sha256": "f9fc63c7254c16c584ecbb171f511e3446c9bcdbc7d27669994d59b652894069",
+  "arrays_sha256": "44a0a7fed5ba87ce8c4a7c891b8208c180553b4902ed3ca81dabbbdc02a683b6",
+  "counts": {
+    "End": 4,
+    "Skirt": 6,
+    "Center": 2,
+    "Corn": 288,
+    "Grass": 68
+  },
+  "scale": 3.659208344123181,
+  "coordinates": "Render world (x,-Roblox z,Roblox y); +Z up; units = Roblox studs.",
+  "exact_uv_preserved": true,
+  "corner_normals_preserved": true,
+  "triangle_winding_preserved": true,
+  "source_files_unchanged": true,
+  "outputs": [
+    {
+      "name": "overview",
+      "position": [
+        52,
+        -65,
+        38
+      ],
+      "target": [
+        0,
+        0,
+        2.8
+      ],
+      "lens": 32,
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\scene-C\\2026-10-22-preview\\overview.png",
+      "bytes": 329094,
+      "sha256": "5597c3b4e9c36efbc597ca8552022e8a2d8aa195606d39402ba7f54671d5317d"
+    },
+    {
+      "name": "eye-through-path",
+      "position": [
+        0,
+        -35,
+        5.3
+      ],
+      "target": [
+        0,
+        0,
+        4.8
+      ],
+      "lens": 16.1,
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\scene-C\\2026-10-22-preview\\eye-through-path.png",
+      "bytes": 350977,
+      "sha256": "4c526b95519fb7f17354756ed09bb32a516c686a9c33babadba24786bd44cfd6"
+    },
+    {
+      "name": "inside-corn",
+      "position": [
+        10.7,
+        -15,
+        5.5
+      ],
+      "target": [
+        10.7,
+        0,
+        5
+      ],
+      "lens": 16.1,
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\scene-C\\2026-10-22-preview\\inside-corn.png",
+      "bytes": 359302,
+      "sha256": "c7f58beeff57233a76d6f4d50ced424fb817ec45fa7e668484d20fe5df565fd1"
+    }
+  ],
+  "templates": [
+    {
+      "key": "Grass",
+      "source_sha256": "72e76ced16844dab4b24895521f2bc3701e156f99918e0181ebfc8337ef40179",
+      "vertices": 27,
+      "triangles": 42,
+      "qa_raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "QA_Grass: 42 zero-area UV faces",
+          "z-fighting: QA_Grass (4 overlapping coplanar tri pairs)"
+        ],
+        "warnings": [
+          "asset lowest point z=-1.1348 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -1.1348,
+        "zfighting": [
+          {
+            "where": "QA_Grass",
+            "tri_pairs": 4
+          }
+        ],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "QA_Grass": {
+            "verts": 27,
+            "faces": 42,
+            "tris": 42,
+            "ngons": 0,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 3,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 42,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "qa_interpretation": "Unit scale now applied in read-only mesh-array representation. Palette-point/line UVs and original Grass intersections are retained intentionally; see intake qa-game-preserving-source.json. No source repair."
+    },
+    {
+      "key": "Center",
+      "source_sha256": "d74a40009c77e5aad34fff8449e96ef25cf292b419a75355aa3adb50c9914527",
+      "vertices": 217,
+      "triangles": 364,
+      "qa_raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "QA_Center: 364 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.3559 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.3559,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "QA_Center": {
+            "verts": 217,
+            "faces": 364,
+            "tris": 364,
+            "ngons": 0,
+            "boundary_edges": 68,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 364,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "qa_interpretation": "Unit scale now applied in read-only mesh-array representation. Palette-point/line UVs and original Grass intersections are retained intentionally; see intake qa-game-preserving-source.json. No source repair."
+    },
+    {
+      "key": "End",
+      "source_sha256": "f635796ba1c7ff2f129e77404704444e112ac864a39b64d02636b4932bf9b586",
+      "vertices": 265,
+      "triangles": 469,
+      "qa_raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "QA_End: 469 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.3559 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.3559,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "QA_End": {
+            "verts": 265,
+            "faces": 469,
+            "tris": 469,
+            "ngons": 0,
+            "boundary_edges": 61,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 469,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "qa_interpretation": "Unit scale now applied in read-only mesh-array representation. Palette-point/line UVs and original Grass intersections are retained intentionally; see intake qa-game-preserving-source.json. No source repair."
+    },
+    {
+      "key": "Skirt",
+      "source_sha256": "b944eb93ac814ff19320a24409f496a983e5c84faaa5ba7bbb07c555f1bb59b8",
+      "vertices": 190,
+      "triangles": 352,
+      "qa_raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "QA_Skirt: 352 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-0.6501 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -0.6501,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "QA_Skirt": {
+            "verts": 190,
+            "faces": 352,
+            "tris": 352,
+            "ngons": 0,
+            "boundary_edges": 26,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 1,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 352,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "qa_interpretation": "Unit scale now applied in read-only mesh-array representation. Palette-point/line UVs and original Grass intersections are retained intentionally; see intake qa-game-preserving-source.json. No source repair."
+    },
+    {
+      "key": "Corn",
+      "source_sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+      "vertices": 377,
+      "triangles": 510,
+      "qa_raw": {
+        "ok": true,
+        "pass": false,
+        "errors": [
+          "QA_Corn: 510 zero-area UV faces"
+        ],
+        "warnings": [
+          "asset lowest point z=-4.0 (not resting on ground plane z=0)"
+        ],
+        "ground_z": -4.0,
+        "zfighting": [],
+        "floating": [],
+        "back_to_back": [],
+        "enclosed": [],
+        "objects": {
+          "QA_Corn": {
+            "verts": 377,
+            "faces": 510,
+            "tris": 510,
+            "ngons": 0,
+            "boundary_edges": 218,
+            "nonmanifold_edges": 0,
+            "wire_edges": 0,
+            "loose_verts": 0,
+            "degenerate_faces": 0,
+            "zero_length_edges": 0,
+            "inconsistent_normals_edges": 0,
+            "duplicate_verts": 0,
+            "islands": 12,
+            "inside_out_islands": 0,
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "materials": 1,
+            "uv_maps": 1,
+            "uv_oob_pct": 0.0,
+            "uv_zero_area_faces": 510,
+            "uv_overlap_pct": 0.0,
+            "uv_coverage_pct": 0.0
+          }
+        }
+      },
+      "qa_interpretation": "Unit scale now applied in read-only mesh-array representation. Palette-point/line UVs and original Grass intersections are retained intentionally; see intake qa-game-preserving-source.json. No source repair."
+    }
+  ],
+  "atlases": [
+    {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\assets\\corn\\01_roblax_style.png",
+      "sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4"
+    },
+    {
+      "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\assets\\farm\\PolygonFarm_Texture_01_A.png",
+      "sha256": "ae59540efad76de089c17059762d627caff3a74bc30b64dc497f0a5d855322dd"
+    }
+  ],
+  "all_source_files_unchanged": true
+}

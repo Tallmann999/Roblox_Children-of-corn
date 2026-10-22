@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "sources": 9,
+  "temporary_code_build_removed": true,
+  "new_scene_written": false,
+  "actual_native_installation": "PASS, see native-acceptance.json",
+  "final_payload_sha256": "a981a74263b8df00d9e2f33a1918ab2149fa6b6701839db0d683953972ad737c",
+  "lint": "cachedAPI Selene0/0/0",
+  "format": "StyLua PASS",
+  "exact_geometry_channel_checks": 21766,
+  "AB_saved_source_class_checks": "PASS; B editor metadata checkpoint independently audited",
+  "AB_isolation_tests": 16
+}

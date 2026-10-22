@@ -1,0 +1,36 @@
+{
+  "pid": 19324,
+  "port": 34874,
+  "address": "127.0.0.1",
+  "project": "B.project.json",
+  "project_name": "Children_of_corn_B.rbxl",
+  "server_version": "7.7.0",
+  "session_id": "d5825061-8249-493d-96ef-e05487e614a4",
+  "root_instance_id": "c3c1d36b6e1e7f192bae117ae784c45d",
+  "graph": {
+    "sources": 154,
+    "instances_including_DataModel": 171,
+    "all_nested_ignore_unknown_instances": true,
+    "code_sources_and_classes_exact": true,
+    "only_Source_and_Legacy_RunContext_properties": true,
+    "source_graph_sha256": "15e8c3644a7ba508e286c4da521f8650b0f11a6dce6895beb163961eaca66edb"
+  },
+  "studio_connected": true,
+  "scene_hashes": {
+    "A": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+    "B": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113"
+  },
+  "studio_id": "2833e3b5-393b-426e-8775-fb5755a1f9b0",
+  "initial_sync_exact_before": true,
+  "reversible_B_only_probe_passed": true,
+  "restored_final_exact_before": true,
+  "snapshot_instances": 4615,
+  "source_count": 157,
+  "readable_properties": 236115,
+  "owned_snapshot_memory_cleared": true,
+  "server_left_running": true,
+  "scene_hashes_after": {
+    "A": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+    "B": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113"
+  }
+}
