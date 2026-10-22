@@ -28,8 +28,8 @@ local CornAppearance = {
 	MeshId = "rbxassetid://104111861186519",
 	GreenTextureId = "rbxassetid://137803536172445",
 	DryTextureId = "rbxassetid://103653296385119",
-	DetailedNearChunkLimit = 4,
-	DetailedNearPlantLimit = 576,
+	DetailedNearChunkLimit = 8,
+	DetailedNearPlantLimit = 1152,
 	DetailedHeight = 10,
 }
 

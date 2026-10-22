@@ -69,6 +69,8 @@ local CELL_BUDGET = 100
 local TIME_BUDGET_SEC = 0.003
 local MAX_CHUNKS = 100
 local MAX_PLANTS = 4032
+local DETAILED_MAX_CHUNKS = 200
+local DETAILED_MAX_PLANTS = 8064
 local LOD_HYSTERESIS = 12
 local RETAIN_MARGIN = 18
 local ELEVATED_MEDIUM_RADIUS = 144
@@ -586,8 +588,9 @@ function CornController:_reconcile(root: BasePart)
 	end)
 	local wanted: { [string]: boolean } = {}
 	local nearChunks = 0
+	local maxChunks = if self._detailed then DETAILED_MAX_CHUNKS else MAX_CHUNKS
 	for index, candidate in desired do
-		if index > MAX_CHUNKS then
+		if index > maxChunks then
 			break
 		end
 		wanted[candidate.Key] = true
@@ -674,11 +677,12 @@ function CornController:_createBatch()
 	local _, fieldYaw = field.CFrame:ToOrientation()
 	local examined = 0
 	local created = 0
+	local maxPlants = if self._detailed then DETAILED_MAX_PLANTS else MAX_PLANTS
 	while
 		#self._queue > 0
 		and examined < CELL_BUDGET
 		and created < CREATE_BUDGET
-		and self._plantCount < MAX_PLANTS
+		and self._plantCount < maxPlants
 		and os.clock() - began < TIME_BUDGET_SEC
 	do
 		local chunk = self._queue[1]

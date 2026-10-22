@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "owner": "corn_double_density_v1",
+  "payload_sha256": "a1955446f4d7b7b7093bd9ce575c08251cc0ee1fe3896cbc0d2b342da8732f90",
+  "sourceChanges": {
+    "ReplicatedStorage/GameShared/Game/CornLayout": {
+      "before_sha256": "c4e4140d5b46d9b5cf261925421cedb65f235991baa353d331ccb3ae383b3fee",
+      "after_sha256": "d1430353eb3b3141ef1209163648b371528f13795c8e13fd9b5c5a5d7c34c604"
+    },
+    "ReplicatedStorage/GameShared/Game/CornAppearance": {
+      "before_sha256": "e034155892b89e25af42a4055399348693566aebc6236d636526ef4a6dc62c96",
+      "after_sha256": "f9bc4be1d9f28f55c6139cdcdd79714a4a86083f132eabc91d7dac1a00e41451"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController": {
+      "before_sha256": "c2178adcc797881870b814cb3bfe696b17a166ff08c9dba2ab6b73a325a4ee3d",
+      "after_sha256": "357329cb7dd9256b04e6e337b7ea4f3328d7fb6b0f1f3622df51cb878d36086e"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController": {
+      "before_sha256": "38d1f7c95536d485e4d2af68ffe9eff814cd9ab8f29fa323b788aa9e953cf09f",
+      "after_sha256": "eb6d21ac21f8e3fbb492066e89239b06f046f10fec07c357450698d82567e528"
+    },
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController": {
+      "before_sha256": "16138f9575f184e1f26606ca4586c897177b6b40210124f87bdd40ae09871515",
+      "after_sha256": "cf092cfa68c91eefb49b3d8f0afaebefa7ec88704d5d5c6a1fd2185b36ede665"
+    }
+  }
+}

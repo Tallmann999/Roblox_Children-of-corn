@@ -32,7 +32,7 @@ export type Exclusions = {
 
 local SLOT_RADIUS = 6
 local BOX_PADDING = 1.5
-local DETAILED_SPACING_SCALE = 1 / math.sqrt(1.3)
+local DETAILED_SPACING_SCALE = 1 / math.sqrt(2.6)
 local TRAIL_EDGE_OUTSET = 0.05
 
 local function finite(value: number): boolean

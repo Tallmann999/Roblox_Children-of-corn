@@ -12,6 +12,7 @@ local PROJECT_ID = "children_of_corn"
 local FOLDER_NAME = "CornClientBackdrop"
 local STRIDE = 2
 local MAX_PLANTS = 20000
+local DETAILED_MAX_PLANTS = 30000
 local CLONE_BUDGET = 18
 local TIME_BUDGET = 0.002
 local POLL_SEC = 1
@@ -259,8 +260,11 @@ function CornBackdropController:_resolveInputs(): boolean
 		math.floor(maxColumn / STRIDE) * STRIDE, math.floor(maxRow / STRIDE) * STRIDE
 	local candidateCount = (math.floor((maxColumn - minColumn) / STRIDE) + 1)
 		* (math.floor((maxRow - minRow) / STRIDE) + 1)
-	if candidateCount > MAX_PLANTS or candidateCount <= 0 then
-		self:_warn("Full-field grid exceeds the 20000 plant cap; saved overview preserved")
+	local maxPlants = if detailed then DETAILED_MAX_PLANTS else MAX_PLANTS
+	if candidateCount > maxPlants or candidateCount <= 0 then
+		self:_warn(
+			"Full-field grid exceeds the " .. maxPlants .. " plant cap; saved overview preserved"
+		)
 		return false
 	end
 	self._map, self._field, self._template = map, field, template
@@ -280,7 +284,7 @@ function CornBackdropController:_resolveInputs(): boolean
 	folder:SetAttribute("Ready", false)
 	folder:SetAttribute("Stride", STRIDE)
 	folder:SetAttribute("DetailStride", STRIDE * CornLayout.SpacingFor(field))
-	folder:SetAttribute("MaxPlants", MAX_PLANTS)
+	folder:SetAttribute("MaxPlants", maxPlants)
 	folder:SetAttribute("LoadedPlants", 0)
 	if detailed then
 		folder:SetAttribute("HarvestArtVariant", "B")
@@ -319,11 +323,12 @@ function CornBackdropController:_buildStep()
 	end
 	local epoch, start = self._epoch, self._clock()
 	local created = 0
+	local maxPlants = if self._detailed then DETAILED_MAX_PLANTS else MAX_PLANTS
 	while
 		self._epoch == epoch
 		and self._row <= self._maxRow
 		and created < CLONE_BUDGET
-		and self._count < MAX_PLANTS
+		and self._count < maxPlants
 		and self._clock() - start < TIME_BUDGET
 	do
 		local column, row = self._column, self._row

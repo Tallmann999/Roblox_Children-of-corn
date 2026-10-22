@@ -1,0 +1,72 @@
+{
+  "frames": {
+    "averageDt": 0.016937449170897404,
+    "maxDt": 0.07614900171756744,
+    "count": 120,
+    "totalSeconds": 2.0324939005076885
+  },
+  "lighting": "Realistic",
+  "far": {
+    "casters": 24954,
+    "sectors": {
+      "2,1": 1590,
+      "3,1": 1560,
+      "0,1": 1529,
+      "1,1": 1559,
+      "3,3": 1555,
+      "2,3": 1591,
+      "1,3": 1549,
+      "0,3": 1541,
+      "3,0": 1546,
+      "2,0": 1561,
+      "1,0": 1577,
+      "0,0": 1516,
+      "3,2": 1552,
+      "2,2": 1600,
+      "1,2": 1599,
+      "0,2": 1529
+    },
+    "opaque": 24954,
+    "collidable": 0,
+    "parts": 24954
+  },
+  "foreground": {
+    "casters": 2769,
+    "sectors": {
+      "2,3": 22,
+      "3,2": 22,
+      "3,3": 2725
+    },
+    "opaque": 2769,
+    "collidable": 0,
+    "parts": 2769
+  },
+  "quality": "Level21",
+  "backdrop": {
+    "HarvestCornLod": "Far",
+    "corn_project_id": "children_of_corn",
+    "CornEditorOverview": true,
+    "MaxPlants": 30000,
+    "CornWindAnimated": 0,
+    "LastFrameSeconds": 0.0012878999987151474,
+    "Stride": 2,
+    "CornClientBackdropOwned": true,
+    "LastFrameClones": 6,
+    "CornWindMode": "hard",
+    "HarvestArtVariant": "B",
+    "LoadedPlants": 24954,
+    "DetailStride": 3.721042037676253,
+    "Ready": true
+  },
+  "near": {
+    "NearPlantCap": 1152,
+    "CornClientRendererOwned": true,
+    "HarvestArtVariant": "B",
+    "CornWindAnimated": 0,
+    "ViewRadius": 150,
+    "CornWindMode": "hard",
+    "ElevatedDetail": false,
+    "corn_project_id": "children_of_corn",
+    "LoadedPlants": 2769
+  }
+}

@@ -156,7 +156,11 @@ function CornWindController:_register(job: any)
 	then
 		return
 	end
-	if layer.Count >= (if layer.Kind == "near" then 4096 else 20000) then
+	local detailed = self._map:GetAttribute("HarvestArtVariant") == "B"
+	local limit = if layer.Kind == "near"
+		then (if detailed then 8192 else 4096)
+		else (if detailed then 30000 else 20000)
+	if layer.Count >= limit then
 		return
 	end
 	local parts, frame, size = {}, nil, nil

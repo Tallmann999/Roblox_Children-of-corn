@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "staged_files_checked": 51,
+  "exact_staged_artifact_scene_files": 33,
+  "B_sha256": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113",
+  "A_unchanged": true,
+  "old_archives_unchanged": true,
+  "loose_scenes": [
+    "place/Children_of_corn.rbxl",
+    "place/Children_of_corn_B.rbxl"
+  ],
+  "exact": {
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-close-actual-corn-off.jpg": {
+      "bytes": 103599,
+      "sha256": "afb5b458495b9cdafc1337ac9fea25b9359af6b5cc40996b33b073f592cf7aef"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-close-actual-corn.jpg": {
+      "bytes": 105089,
+      "sha256": "a8e83d6095d11548df68daab1c372f888683c8231a2b5315296257c728c7489f"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-close-cylinder-015.jpg": {
+      "bytes": 97542,
+      "sha256": "7af54fbfbeea023d8066ef56ede4c7ee135fd094f90a89a9fedd15a3b42b22bb"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-close-cylinder-035.jpg": {
+      "bytes": 98823,
+      "sha256": "96fab8ac0d15b75916e70920ea64cddf3fe9d676d53bc34958683709e5b54382"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-corn-dark.jpg": {
+      "bytes": 75559,
+      "sha256": "88bbbd0416870b8db773abffb5b4f39377b338acb69b7849a987bf029c47e18f"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-cylinder-015.jpg": {
+      "bytes": 65217,
+      "sha256": "381fd049e57cbd59a8ac1e61e8024419a4e87a0ee816f59a72ee3a90b40825fb"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-cylinder-035-off.jpg": {
+      "bytes": 96014,
+      "sha256": "441a1992e06c578ae3d4edea68c56e534b6f5b0c9aa61ad4eddaf6c47cbc89e4"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-cylinder-035.jpg": {
+      "bytes": 96794,
+      "sha256": "94609d13e146c4a0c75861b570e9467ab55387b47411555d7a4ce1d38b819baa"
+    },
+    ".artifacts/playtests/2026-10-21-stalk-shadow-diagnosis/stalk-front-actual-corn.jpg": {
+      "bytes": 122927,
+      "sha256": "2399eb8c745695bf6327101b5c006287e2715f3a00b83f8836eba30bbb729e07"
+    },
+    ".artifacts/playtests/2026-10-22-A-manual-corn-copy/native-created.json": {
+      "bytes": 2179,
+      "sha256": "3d55bcd13142b4c5e4851677518d771147060d8cea9a5d13164c328cfbeaefb2"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/analyze-density.luau": {
+      "bytes": 5768,
+      "sha256": "fa5d8ee6f545dff20569b9210fa65b41f50ae894068ac368ab19f37e38c9a3bc"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/author-save-preservation.json": {
+      "bytes": 3969,
+      "sha256": "acd4af318a2094a41e6475ebe3a61ce22c8aa78654bbd938ba27c7f7bf3b0400"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/baseline.json": {
+      "bytes": 301,
+      "sha256": "4b6a0642c359de56e76f3f014e9be78bceb7764fc4014e47c07c7d0eecc65054"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/before-double-density.zip": {
+      "bytes": 1429584,
+      "sha256": "7c169aa2e045c36ba4d2b0bd6876be899a36fd682a62a202270e4928783741fd"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/check.log": {
+      "bytes": 465,
+      "sha256": "188105b8a2619beb24de466eb724533ee299f1f54bcd5d4935db35804050f914"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/density-analysis.json": {
+      "bytes": 643340,
+      "sha256": "6b67835cb567a0728cd073176ab178cf8a89258ddc6144674c160298535ecce6"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/density-fixture.log": {
+      "bytes": 91,
+      "sha256": "0212be0ce0bf615ba61e541f816ad7e7e77de3b7b61324952e4c8751e8439473"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/design-review.md": {
+      "bytes": 3203,
+      "sha256": "22480e380c68dbcbd7fb71261af258e0826f4eb684d4d6aeba6b05ef353f7515"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/first-play-image.jpg": {
+      "bytes": 229241,
+      "sha256": "ceaffa7e28fb4f1894568a4c3587c270c6ca9a4b7c3781e9ab1664bcd743fdfb"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/installer-fixture.log": {
+      "bytes": 1346,
+      "sha256": "334c69c705793affcef5e442d0eb7a798f7bc670c21d414c710bab0bafd7dff5"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/native-acceptance.json": {
+      "bytes": 3578,
+      "sha256": "89b0b953acd7d350d54b8e7e8b8b3a42de2be4e5202568874b41b1cd2955b00d"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/native-before.json": {
+      "bytes": 26759,
+      "sha256": "47f88eaa901a58be3f67cf6cf4916bed55589bcc64fd3756b42956e799f6e7b7"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/native-play.json": {
+      "bytes": 1538,
+      "sha256": "d717477e487975a330a40ecdf94616965e38daa745583c794f50ef9f1b2a1622"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/payload.json": {
+      "bytes": 114673,
+      "sha256": "a1955446f4d7b7b7093bd9ce575c08251cc0ee1fe3896cbc0d2b342da8732f90"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/pipeline-manifest.json": {
+      "bytes": 1474,
+      "sha256": "35d615863c28da95e9c51ceabdd89a9ce41609b79637418e88df42059ef9322d"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/precommit-preservation.json": {
+      "bytes": 3969,
+      "sha256": "28444419ffe3a452c469543d86471a96f0be47ad5a8b3051e042da64b7b7d296"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/save-fixture.log": {
+      "bytes": 1106,
+      "sha256": "54805f02617d9668fe5adc475799672efbb7ec041fe76c28ab495b60367057a1"
+    },
+    ".artifacts/playtests/2026-10-22-B-double-density/static-shadow-fixture.log": {
+      "bytes": 166,
+      "sha256": "a46d27bc9d9dfa2750273d7f04739131222b84ea1aa7a70681b50862ee6d9c0f"
+    },
+    ".artifacts/playtests/2026-10-22-precommit/check.log": {
+      "bytes": 465,
+      "sha256": "188105b8a2619beb24de466eb724533ee299f1f54bcd5d4935db35804050f914"
+    },
+    ".artifacts/playtests/2026-10-22-precommit/checks.json": {
+      "bytes": 578,
+      "sha256": "b7e6f69f06285a541da1651781266dd1484a48d3e2b73a124435516904a70be1"
+    },
+    ".artifacts/playtests/2026-10-22-precommit/density-fixture.log": {
+      "bytes": 91,
+      "sha256": "0212be0ce0bf615ba61e541f816ad7e7e77de3b7b61324952e4c8751e8439473"
+    },
+    ".artifacts/playtests/2026-10-22-precommit/verify-staged.py": {
+      "bytes": 2831,
+      "sha256": "f5a3aad4e8084a65a39be4b4861924d7de366bc950fddb95b414c53c11ed64ff"
+    },
+    "place/Children_of_corn_B.rbxl": {
+      "bytes": 1499324,
+      "sha256": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113"
+    }
+  }
+}

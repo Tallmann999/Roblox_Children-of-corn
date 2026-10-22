@@ -1,0 +1,1 @@
+PASS: 19708 corn static-content assertions; 12 shapes/LOD, exact appearance, concurrent cache/recovery, 30 failures/cleanup/retry, 10 ownership guards; no GPU claim

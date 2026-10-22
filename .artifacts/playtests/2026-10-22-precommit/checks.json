@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "check_ps1": "PASS: StyLua, Selene 0 errors/0 warnings/0 parse errors, cached API dump, code-only build; generated scene removed",
+  "density_fixture_assertions": 64931,
+  "saved_B_audit": "../2026-10-22-B-double-density/precommit-preservation.json",
+  "source_review": "Five current Sources match frozen payload exactly; independent review found no material blocker or credential patterns",
+  "scope": "Fresh commit checks only. Prior current fixtures retained; historical obsolete tests not claimed to pass. No Studio mutation or scene serialization."
+}

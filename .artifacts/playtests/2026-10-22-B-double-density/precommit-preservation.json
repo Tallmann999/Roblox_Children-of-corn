@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "B",
+  "original_instances": 4634,
+  "candidate_instances": 4634,
+  "new_instances": 0,
+  "removed_instances": 0,
+  "unchanged_sources": 152,
+  "total_sources": 157,
+  "source_changes": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/CornLayout",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController"
+  ],
+  "declared_property_changes": 0,
+  "declared_attribute_changes": 0,
+  "added_world_nodes": 0,
+  "reindexed_exporter_paths": 0,
+  "retained_identities_classes_names_parents_exact": true,
+  "all_world_art_lighting_physics_mesh_metadata_exact": true,
+  "changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "finite_editor_camera"
+    },
+    {
+      "path": "Workspace/Camera",
+      "property": "Focus",
+      "reason": "finite_editor_camera"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
+      "property": "Source",
+      "reason": "exact_payload_Source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
+      "property": "Source",
+      "reason": "exact_payload_Source"
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController",
+      "property": "Source",
+      "reason": "exact_payload_Source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornLayout",
+      "property": "Source",
+      "reason": "exact_payload_Source"
+    },
+    {
+      "path": "ReplicatedStorage/GameShared/Game/CornAppearance",
+      "property": "Source",
+      "reason": "exact_payload_Source"
+    },
+    {
+      "path": "FilteredSelection",
+      "property": "UniqueId",
+      "reason": "editor_filtered_selection_identity"
+    },
+    {
+      "path": "FilteredSelection#2",
+      "property": "UniqueId",
+      "reason": "editor_filtered_selection_identity"
+    },
+    {
+      "path": "FilteredSelection#3",
+      "property": "UniqueId",
+      "reason": "editor_filtered_selection_identity"
+    },
+    {
+      "path": "FilteredSelection#4",
+      "property": "UniqueId",
+      "reason": "editor_filtered_selection_identity"
+    }
+  ],
+  "baseline_sha256": "94c55e17bed0dc2f4b2e7c6020f60c031d80bc636be16166fe0effb6df146d5f",
+  "candidate_sha256": "37ecae9122294a3cf507ff8942c4eef805db89eb7ae126718d623d87a12a2113",
+  "candidate_bytes": 1499324,
+  "payload_sha256": "a1955446f4d7b7b7093bd9ce575c08251cc0ee1fe3896cbc0d2b342da8732f90",
+  "manifest_sha256": "35d615863c28da95e9c51ceabdd89a9ce41609b79637418e88df42059ef9322d",
+  "untouched_A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "baseline": "0.380942500s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.413537000s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "Only frozen B density Source replacements. All retained identities, classes, names, parents, world, art, physics, Lighting, mesh metadata and raw Terrain exact. Finite editor Camera and existing FilteredSelection identities only. No scene serialization or promotion."
+}

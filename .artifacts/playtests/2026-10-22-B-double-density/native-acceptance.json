@@ -1,0 +1,134 @@
+{
+  "studio_id": "2833e3b5-393b-426e-8775-fb5755a1f9b0",
+  "target": "Children_of_corn_B.rbxl",
+  "variant": "B",
+  "project": "children_of_corn",
+  "payload_sha256": "a1955446f4d7b7b7093bd9ce575c08251cc0ee1fe3896cbc0d2b342da8732f90",
+  "manifest_sha256": "35d615863c28da95e9c51ceabdd89a9ce41609b79637418e88df42059ef9322d",
+  "dryRun": {
+    "state": "baseline",
+    "retainedSources": 157,
+    "plannedSourceChanges": 5,
+    "worldChanges": 0,
+    "created": 0
+  },
+  "install": {
+    "changedSources": 5,
+    "retainedSources": 157,
+    "worldChanges": 0,
+    "created": 0
+  },
+  "repeat": {
+    "changedSources": 0,
+    "worldChanges": 0,
+    "created": 0
+  },
+  "play": {
+    "normalBootstrap": true,
+    "controllers": 17,
+    "FarmGeometry": 40,
+    "HarvestArtB": 244,
+    "startAndConfirmViaMCP": true,
+    "rootOrCameraSetters": false,
+    "runtime": {
+      "frames": {
+        "averageDt": 0.016937449170897404,
+        "maxDt": 0.07614900171756744,
+        "count": 120,
+        "totalSeconds": 2.0324939005076885
+      },
+      "lighting": "Realistic",
+      "far": {
+        "casters": 24954,
+        "sectors": {
+          "2,1": 1590,
+          "3,1": 1560,
+          "0,1": 1529,
+          "1,1": 1559,
+          "3,3": 1555,
+          "2,3": 1591,
+          "1,3": 1549,
+          "0,3": 1541,
+          "3,0": 1546,
+          "2,0": 1561,
+          "1,0": 1577,
+          "0,0": 1516,
+          "3,2": 1552,
+          "2,2": 1600,
+          "1,2": 1599,
+          "0,2": 1529
+        },
+        "opaque": 24954,
+        "collidable": 0,
+        "parts": 24954
+      },
+      "foreground": {
+        "casters": 2769,
+        "sectors": {
+          "2,3": 22,
+          "3,2": 22,
+          "3,3": 2725
+        },
+        "opaque": 2769,
+        "collidable": 0,
+        "parts": 2769
+      },
+      "quality": "Level21",
+      "backdrop": {
+        "HarvestCornLod": "Far",
+        "corn_project_id": "children_of_corn",
+        "CornEditorOverview": true,
+        "MaxPlants": 30000,
+        "CornWindAnimated": 0,
+        "LastFrameSeconds": 0.0012878999987151474,
+        "Stride": 2,
+        "CornClientBackdropOwned": true,
+        "LastFrameClones": 6,
+        "CornWindMode": "hard",
+        "HarvestArtVariant": "B",
+        "LoadedPlants": 24954,
+        "DetailStride": 3.721042037676253,
+        "Ready": true
+      },
+      "near": {
+        "NearPlantCap": 1152,
+        "CornClientRendererOwned": true,
+        "HarvestArtVariant": "B",
+        "CornWindAnimated": 0,
+        "ViewRadius": 150,
+        "CornWindMode": "hard",
+        "ElevatedDetail": false,
+        "corn_project_id": "children_of_corn",
+        "LoadedPlants": 2769
+      }
+    },
+    "flashlight": {
+      "main": {
+        "Brightness": 22.6200008392334,
+        "Angle": 12,
+        "Range": 24,
+        "Shadows": true
+      },
+      "fill": {
+        "Brightness": 2.0799999237060547,
+        "Angle": 78,
+        "Range": 18,
+        "Shadows": true
+      },
+      "HandFillShadows": false
+    },
+    "capture": "first-play-image.jpg",
+    "knownExternalAudioUnavailable": 10
+  },
+  "finalEdit": {
+    "postPlayRepeatChanges": 0,
+    "worldNodes": 4314,
+    "camera": "Fixed",
+    "http": false,
+    "quality": "Level21",
+    "roundRuntime": false,
+    "transportClean": true,
+    "temporaryInstancesCreated": 0
+  },
+  "scope": "Only Studio MCP. No Windows input, live Rojo, scene serialization, asset publication or other-game changes. Short stationary frame sample and visual density check; no sustained FPS, blind round, four-client or new stem-shadow acceptance."
+}
