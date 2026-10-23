@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "shared_sources": 146,
+  "variants": {
+    "A": {
+      "sources": 153,
+      "code_instances": 165,
+      "build_and_sourcemap": true
+    },
+    "B": {
+      "sources": 165,
+      "code_instances": 179,
+      "build_and_sourcemap": true
+    }
+  }
+}

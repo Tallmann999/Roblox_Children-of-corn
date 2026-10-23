@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"sources\":163,\"unchanged\":1133,\"nonCornDeltas\":0,\"changedCornAndSourcesOnly\":3482,\"allSha256\":\"ff1f316dba7ddd54069f24b7a191244bc5f3c4dd6028af849103a28fa0991aa0\",\"added\":1414,\"retained\":4615}"
+    }
+  ],
+  "isError": false
+}

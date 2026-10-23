@@ -1,0 +1,44 @@
+{
+  "pass": true,
+  "variants": [
+    {
+      "key": "Var01",
+      "color_channels": {
+        "colorSet1": {
+          "source_corner_count": 1530,
+          "reimport_corner_count": 1530,
+          "equal_multiset_5decimal": true
+        }
+      },
+      "armatures": 0,
+      "actions": 0,
+      "one_mesh": true
+    },
+    {
+      "key": "Var02",
+      "color_channels": {
+        "colorSet1": {
+          "source_corner_count": 1530,
+          "reimport_corner_count": 1530,
+          "equal_multiset_5decimal": true
+        }
+      },
+      "armatures": 0,
+      "actions": 0,
+      "one_mesh": true
+    },
+    {
+      "key": "Var03",
+      "color_channels": {
+        "colorSet1": {
+          "source_corner_count": 1530,
+          "reimport_corner_count": 1530,
+          "equal_multiset_5decimal": true
+        }
+      },
+      "armatures": 0,
+      "actions": 0,
+      "one_mesh": true
+    }
+  ]
+}

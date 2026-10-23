@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"repeatCheck\":{\"installed\":false,\"repeated\":true,\"worldUnchanged\":true,\"oldSourcesRetained\":167},\"baselineWorldLightingSha256\":\"4c2b1a40ee734f21710efb0add30a909625318fc822f3f22a624e1a720931b30\",\"recapturedEditorCamera\":[\"Workspace/Camera\"],\"install\":{\"installed\":true,\"worldUnchanged\":true,\"addedSources\":1,\"oldSourcesRetained\":167}}"
+    }
+  ],
+  "isError": false
+}

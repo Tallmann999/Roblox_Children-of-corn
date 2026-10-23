@@ -1,0 +1,19 @@
+{
+  "name": "Children_of_corn_B.rbxl",
+  "id": "851c5f0d-be44-47ac-aa6d-49a5d94bf907",
+  "sources": 163,
+  "all163Matched": true,
+  "allEditorBuffersMatch": true,
+  "workspaceDescendants": 5721,
+  "beds": 1406,
+  "baselineSha256": "db9398781ec6d68da97bfadb1514e5a589cdf5a293424538e19bc29869f7a371",
+  "snapshot": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sourceCount\":163,\"count\":6029,\"allSha256\":\"e0fddd285fe4f3bdb1031ed0d0f61c1459fb42079394d51d775ac1179b29cd3d\",\"nonSourceSha256\":\"04620015b3ff92746c85429184b3767e1e5e88a3e18e564f8bdc9b9ac5eed2fb\"}"
+      }
+    ],
+    "isError": false
+  }
+}

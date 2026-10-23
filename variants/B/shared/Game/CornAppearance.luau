@@ -1,40 +1,42 @@
 --!strict
 
--- Both atlases use the original mesh UVs; the imported green art stays intact.
+-- B mixes the original imported green plant with three authored FBX shapes.
+-- Both bounded renderers use the same deterministic geometry, size and anchor.
+local Geometry = require(script.Parent.CornGreenGeometry)
 local detailedTemplates = nil
 local detailedBuilding = false
-local TEMPLATE_PROPERTIES = {
-	"CFrame",
-	"Size",
-	"PivotOffset",
-	"TextureID",
-	"TextureContent",
-	"Color",
-	"Material",
-	"MaterialVariant",
-	"Transparency",
-	"Reflectance",
-	"Anchored",
-	"CanCollide",
-	"CanTouch",
-	"CanQuery",
-	"CastShadow",
-	"DoubleSided",
-	"CollisionGroup",
-	"Massless",
-	"CustomPhysicalProperties",
+local templateSizes = nil
+local templateContents = nil
+local SOURCE_SHA256 = "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df"
+local EXPECTED_SIZE = Vector3.new(3.0026558642674086, 8, 3.1309012101883917)
+local OPTIONS = {
+	CollisionFidelity = Enum.CollisionFidelity.Box,
+	RenderFidelity = Enum.RenderFidelity.Precise,
 }
 local CornAppearance = {
 	MeshId = "rbxassetid://104111861186519",
 	GreenTextureId = "rbxassetid://137803536172445",
-	DryTextureId = "rbxassetid://103653296385119",
+	-- CornField.Prepare uses this legacy property before art can replicate.
+	-- Its B value deliberately stays green in every menu and round mode.
+	DryTextureId = "rbxassetid://137803536172445",
 	DetailedNearChunkLimit = 8,
 	DetailedNearPlantLimit = 1152,
-	DetailedHeight = 10,
+	DetailedHeight = 8,
 }
 
+local originalDescription = table.freeze({
+	size = EXPECTED_SIZE,
+	rootOffset = Vector3.new(0, 4, 0),
+	sourceHash = SOURCE_SHA256,
+})
+local function description(variety)
+	if variety == 1 then
+		return originalDescription
+	end
+	return Geometry.Describe(string.format("Var%02d", variety - 1))
+end
+
 function CornAppearance.Variety(column: number, row: number): number
-	-- Keep the same shape at every detail level, including the even backdrop grid.
 	return ((column * 73856093 + row * 19349663 + 817) % 104729) % 4 + 1
 end
 
@@ -52,11 +54,38 @@ function CornAppearance.DetailedKey(variety: number, lod: string): string
 	return "Corn_" .. string.char(64 + variety) .. "_" .. lod
 end
 
+local function attributes(variety: number, lod: string): { [string]: any }
+	local data = description(variety)
+	return {
+		corn_project_id = "children_of_corn",
+		CornPlantTemplateOwned = true,
+		CornGreenOriginal = true,
+		CornGreenTemplateOwned = true,
+		CornGreenTemplateVersion = 2,
+		CornGreenSourceSHA256 = data.sourceHash,
+		CornGreenVariety = variety,
+		CornGreenLod = lod,
+		HarvestRootOffset = data.rootOffset,
+		CornGreenTemplateSize = data.size,
+	}
+end
+
 function CornAppearance.IsDetailedPlant(part: Instance, variety: number, lod: string): boolean
+	CornAppearance.DetailedKey(variety, lod)
+	local data = description(variety)
 	return part:IsA("MeshPart")
 		and part:GetAttribute("corn_project_id") == "children_of_corn"
-		and part:GetAttribute("HarvestGeometryOwner") == "harvest_warden_v1"
-		and part:GetAttribute("HarvestAssetKey") == CornAppearance.DetailedKey(variety, lod)
+		and part:GetAttribute("CornGreenOriginal") == true
+		and part:GetAttribute("CornGreenTemplateOwned") == true
+		and part:GetAttribute("CornGreenTemplateVersion") == 2
+		and part:GetAttribute("CornGreenSourceSHA256") == data.sourceHash
+		and part:GetAttribute("CornGreenVariety") == variety
+		and part:GetAttribute("CornGreenLod") == lod
+		and (if variety == 1
+			then part.MeshId == CornAppearance.MeshId
+				and part.MeshContent.SourceType == Enum.ContentSourceType.Uri
+			else part.MeshContent.SourceType == Enum.ContentSourceType.Opaque)
+		and part.TextureID == CornAppearance.GreenTextureId
 		and part.Anchored
 		and part.Archivable
 		and not part.CanCollide
@@ -65,10 +94,107 @@ function CornAppearance.IsDetailedPlant(part: Instance, variety: number, lod: st
 end
 
 function CornAppearance.DetailedPivot(plant: BasePart, position: Vector3, yaw: number): CFrame
-	local offset = plant:GetAttribute("HarvestRootOffset")
-	assert(typeof(offset) == "Vector3", "Detailed corn root offset required")
-	local varied = Vector3.new(offset.X, offset.Y * plant.Size.Y / 8, offset.Z)
-	return CFrame.new(position) * CFrame.Angles(0, yaw, 0) * CFrame.new(varied)
+	assert(
+		plant:IsA("MeshPart")
+			and plant:GetAttribute("CornGreenOriginal") == true
+			and plant:GetAttribute("corn_project_id") == "children_of_corn",
+		"Original green corn root binding required"
+	)
+	local offset, size =
+		plant:GetAttribute("HarvestRootOffset"), plant:GetAttribute("CornGreenTemplateSize")
+	assert(
+		typeof(offset) == "Vector3"
+			and typeof(size) == "Vector3"
+			and size.X > 0
+			and size.Y > 0
+			and size.Z > 0,
+		"Authored corn anchor required"
+	)
+	local scaled = Vector3.new(
+		offset.X * plant.Size.X / size.X,
+		offset.Y * plant.Size.Y / size.Y,
+		offset.Z * plant.Size.Z / size.Z
+	)
+	return CFrame.new(position) * CFrame.Angles(0, yaw, 0) * CFrame.new(scaled)
+end
+
+local function validateTemplate(
+	part: MeshPart,
+	variety: number,
+	lod: string,
+	size: Vector3,
+	content: Content
+)
+	assert(
+		CornAppearance.IsDetailedPlant(part, variety, lod)
+			and part.Parent == nil
+			and part.Name == CornAppearance.DetailedKey(variety, lod)
+			and part.CFrame == CFrame.identity
+			and part.PivotOffset == CFrame.identity
+			and part.Size == size
+			and part.MeshContent == content
+			and part.CastShadow
+			and part.DoubleSided
+			and part.Transparency == 0
+			and part.Reflectance == 0
+			and part.Color == Color3.new(1, 1, 1)
+			and part.Material == Enum.Material.Plastic
+			and part.MaterialVariant == ""
+			and part.Massless
+			and part.CollisionGroup == "Default"
+			and part.CustomPhysicalProperties == nil
+			and part.CollisionFidelity == OPTIONS.CollisionFidelity
+			and part.RenderFidelity == OPTIONS.RenderFidelity
+			and #part:GetChildren() == 0
+			and #part:GetTags() == 0,
+		"Private B green corn template was changed; author work preserved"
+	)
+	local expected = attributes(variety, lod)
+	local actual = part:GetAttributes()
+	for key, value in expected do
+		assert(actual[key] == value, "Private B green corn attribute changed: " .. key)
+	end
+	for key in actual do
+		assert(expected[key] ~= nil, "Foreign private B green corn attribute: " .. key)
+	end
+end
+
+local function validateCache(cache, sizes, contents)
+	local seen: { [Instance]: boolean } = {}
+	for _, lod in { "Near", "Mid", "Far" } do
+		for variety = 1, 4 do
+			local part = cache[lod][variety]
+			assert(not seen[part], "Duplicate private B green corn template")
+			seen[part] = true
+			validateTemplate(part, variety, lod, sizes[variety], contents[variety])
+		end
+	end
+end
+
+local function decorate(part: MeshPart, variety: number, lod: string, size: Vector3)
+	part.Name = CornAppearance.DetailedKey(variety, lod)
+	part.Archivable = true
+	part.CFrame = CFrame.identity
+	part.PivotOffset = CFrame.identity
+	part.Size = size
+	part.TextureID = CornAppearance.GreenTextureId
+	part.Color = Color3.new(1, 1, 1)
+	part.Material = Enum.Material.Plastic
+	part.MaterialVariant = ""
+	part.Transparency = 0
+	part.Reflectance = 0
+	part.Anchored = true
+	part.CanCollide = false
+	part.CanTouch = false
+	part.CanQuery = false
+	part.CastShadow = true
+	part.DoubleSided = true
+	part.Massless = true
+	part.CollisionGroup = "Default"
+	part.CustomPhysicalProperties = nil
+	for key, value in attributes(variety, lod) do
+		part:SetAttribute(key, value)
+	end
 end
 
 function CornAppearance.DetailedTemplates(): any
@@ -76,90 +202,72 @@ function CornAppearance.DetailedTemplates(): any
 		task.wait()
 	end
 	if detailedTemplates then
+		validateCache(detailedTemplates, templateSizes, templateContents)
 		return detailedTemplates
 	end
-	-- EditableMesh content cannot cast shadows. Bake only the private B render
-	-- templates into session-scoped static content; catalog/world art stays intact.
 	detailedBuilding = true
 	local created: { MeshPart } = {}
-	local carriers: { MeshPart } = {}
 	local ok, result = pcall(function()
 		local assetService = game:GetService("AssetService")
-		local geometry = require(script.Parent:WaitForChild("HarvestArtGeometry"))
-		local templates = {}
-		local seen: { [Instance]: boolean } = {}
-		for _, lod in { "Near", "Mid", "Far" } do
-			templates[lod] = {}
-			for variety = 1, 4 do
-				local part = geometry.CornTemplate(variety, lod)
-				assert(
-					CornAppearance.IsDetailedPlant(part, variety, lod)
-						and part:GetAttribute("CornPlantTemplateOwned") == true
-						and math.abs(part.Size.Y - 8) < 0.001
-						and typeof(part:GetAttribute("HarvestRootOffset")) == "Vector3"
-						and part.PivotOffset == CFrame.identity
-						and not seen[part],
-					"Unknown detailed corn template binding"
-				)
-				seen[part] = true
-				local preserved = {}
-				for _, name in TEMPLATE_PROPERTIES do
-					preserved[name] = (part :: any)[name]
-				end
-				local contentResult, content =
-					assetService:CreateDataModelContentAsync(part.MeshContent)
-				assert(
-					contentResult == Enum.CreateContentResult.Success
-						and content.SourceType == Enum.ContentSourceType.Opaque,
-					"Static corn geometry unavailable: " .. tostring(contentResult)
-				)
-				local carrier = assert(
-					assetService:CreateMeshPartAsync(content, {
-						CollisionFidelity = part.CollisionFidelity,
-						RenderFidelity = part.RenderFidelity,
-					}),
-					"Static corn MeshPart unavailable"
-				)
-				table.insert(carriers, carrier)
-				-- Keep immutable catalog geometry at eight studs. Only the personal
-				-- B render template grows vertically; rooted placement scales its Y.
-				local taller = assert(part:Clone(), "Private corn template unavailable")
-				table.insert(created, taller)
-				taller:ApplyMesh(carrier)
-				-- ApplyMesh also replaces texture/pose-related properties. Restore the
-				-- exact original atlas Content after TextureID, including empty values.
-				for _, name in TEMPLATE_PROPERTIES do
-					(taller :: any)[name] = preserved[name]
-				end
-				assert(
-					taller.MeshContent == content
-						and taller.CollisionFidelity == part.CollisionFidelity
-						and taller.RenderFidelity == part.RenderFidelity,
-					"Static corn geometry binding changed"
-				)
-				taller.Size = Vector3.new(part.Size.X, CornAppearance.DetailedHeight, part.Size.Z)
-				templates[lod][variety] = taller
-			end
+		local original = assert(
+			assetService:CreateMeshPartAsync(Content.fromUri(CornAppearance.MeshId), OPTIONS),
+			"Original green corn mesh unavailable"
+		)
+		table.insert(created, original)
+		assert(
+			original:IsA("MeshPart")
+				and original.Parent == nil
+				and original.MeshContent.SourceType == Enum.ContentSourceType.Uri
+				and original.MeshId == CornAppearance.MeshId
+				and original.MeshSize.Y > 0
+				and #original:GetChildren() == 0
+				and #original:GetTags() == 0
+				and next(original:GetAttributes()) == nil,
+			"Original green corn asset binding changed"
+		)
+		local size = original.MeshSize * (CornAppearance.DetailedHeight / original.MeshSize.Y)
+		assert((size - EXPECTED_SIZE).Magnitude < 0.003, "Original green corn FBX bounds differ")
+		local templates = { Near = {}, Mid = {}, Far = {} }
+		local bases = { original }
+		local sizes = { size }
+		local contents = { original.MeshContent }
+		for variety = 2, 4 do
+			local part, data = Geometry.Bake(string.format("Var%02d", variety - 1))
+			table.insert(created, part)
+			bases[variety] = part
+			sizes[variety] = data.size
+			contents[variety] = part.MeshContent
 		end
-		return templates
+		for _, lod in { "Near", "Mid", "Far" } do
+			for variety = 1, 4 do
+				local part = bases[variety]
+				if lod ~= "Near" then
+					part = assert(bases[variety]:Clone(), "Green corn private clone unavailable")
+					table.insert(created, part)
+				end
+				decorate(part, variety, lod, sizes[variety])
+				templates[lod][variety] = part
+			end
+			table.freeze(templates[lod])
+		end
+		validateCache(templates, sizes, contents)
+		templateSizes = sizes
+		templateContents = contents
+		return table.freeze(templates)
 	end)
-	for _, carrier in carriers do
-		carrier:Destroy()
-	end
 	detailedBuilding = false
 	if not ok then
 		for _, part in created do
 			part:Destroy()
 		end
+		error("B green corn unavailable; a later call can retry: " .. tostring(result), 0)
 	end
-	assert(ok, tostring(result))
 	detailedTemplates = result
 	return result
 end
 
-function CornAppearance.IsDry(mode: string?): boolean
-	-- Ready/menu already show the only playable night field.
-	return mode == nil or mode == "medium" or mode == "hard"
+function CornAppearance.IsDry(_mode: string?): boolean
+	return false
 end
 
 function CornAppearance.IsValidMode(mode: any): boolean

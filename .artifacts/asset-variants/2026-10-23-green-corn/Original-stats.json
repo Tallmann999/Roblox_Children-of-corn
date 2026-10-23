@@ -1,0 +1,44 @@
+{
+  "ok": true,
+  "objects": {
+    "SM_Prop_Plant_Corn_01_L": {
+      "tris": 510,
+      "verts": 377,
+      "materials": 1,
+      "modifiers": [],
+      "uv_maps": 1,
+      "shape_keys": 0
+    }
+  },
+  "total_tris": 510,
+  "total_verts": 377,
+  "draw_calls_est": 1,
+  "unique_materials": 1,
+  "textures": [
+    {
+      "name": "01_roblax_style.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mb": 8.0
+    }
+  ],
+  "texture_vram_mb_uncompressed": 8.0,
+  "bones": 0,
+  "kind": "prop",
+  "budget": {
+    "name": "roblox",
+    "limits": {
+      "char_tris": 10742,
+      "prop_tris": 20000,
+      "materials": 1,
+      "tex": 1024,
+      "bones": null
+    },
+    "over": [
+      "textures > 1024px: ['01_roblax_style.png']"
+    ],
+    "pass": false
+  }
+}

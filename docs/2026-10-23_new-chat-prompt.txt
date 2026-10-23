@@ -1,0 +1,136 @@
+CHILDREN OF CORN — SUMMARY И ПРОМПТ ПРОДОЛЖЕНИЯ
+23 октября 2026, Europe/Moscow (UTC+3)
+
+Проект: D:\ROBLOX\My_Projects\Roblox_Children of Corn
+Репозиторий: https://github.com/Tallmann999/Roblox_Children-of-corn.git
+Ветка: main.
+
+Git-снимок перед финальным коммитом: HEAD dc7f051119f34ab19187ce362c96688676a060ae
+(Separate Rojo A/B sync and add corn test scene C). Свежий git fetch origin
+прошёл; remote-only коммитов нет, main на один коммит впереди origin/main.
+Автор явно поручил закоммитить всю завершённую работу ниже и push в main.
+Этот документ включается в итоговый коммит вместе с кодом, сценой и ассетами;
+его собственный SHA заранее не записывается. Итоговые HEAD/remote сверять
+через git log/status и git ls-remote origin refs/heads/main. Историческое
+поручение commit/push автоматически в новом чате не повторять.
+
+ЧТО ЗАВЕРШЕНО
+
+1. Сцена C ранее собрана из пяти авторских FBX и сохранена как
+   place/Children_of_corn_TestScene.rbxl. Это отдельный небольшой тест:
+   288 зелёных растений, грядки, земля и трава; проход проверен в Play.
+   Предыдущий коммит dc7f051 содержит C и отдельные Rojo A/B configs.
+
+2. В B кукуруза заменена на исходную зелёную, расставлены 1406 частей грядок.
+   Затем по последнему запросу плотность снижена примерно на30%:
+   шаг2.223747949983, dense58942 вместо84191 (-29.9901%),
+   Far14607 вместо20965 (-30.3267%). Прежнюю двойную плотность не возвращать.
+   5249 краевых клеток придвинуты к грунту у троп; листья нависают над проходом.
+   Высоты6.8..9.2stud поY и повороты0..360° детерминированы; Near/Far согласованы.
+
+3. В Blender сделаны3 настоящих геометрических варианта исходной кукурузы:
+   изогнутый стебель, широкие листья, закрученная крона. Они перемешаны с
+   оригиналом. Каждый377vertices/510triangles. Файлы в корне проекта:
+   SM_Prop_Plant_Corn_01_L_Var_01.fbx
+   SM_Prop_Plant_Corn_01_L_Var_02.fbx
+   SM_Prop_Plant_Corn_01_L_Var_03.fbx
+   Blender source, manifest, данные и review:
+   .artifacts/asset-variants/2026-10-23-green-corn/
+   Исходные FBX/PNG автора не изменены. Palette UV и открытые листовые края
+   намеренно сохранены, magenta colorSet1 является маской, а не BaseColor.
+
+4. В B добавлена кнопка сверху существующей панели «Дымка» (F6):
+   «Ночь: абсолютная» ↔ «Ночь: обычная · 00:00».
+   Обычная ночь выключена по умолчанию и включается только нажатием.
+   Профиль тёмный: Clock0/Brightness1/Ambient18,22,30/Outdoor38,42,53,
+   Diffuse1/Specular1/GlobalShadows true. Обратное нажатие восстанавливает
+   исходные/последние серверные значения, включая hard после начала раунда.
+   Это локальный Studio DEV инструмент B; режим gameplay остаётся hard.
+   Fog, Atmosphere, Sky, фонарь, AI и игровая логика не изменены переключателем.
+
+ЧТО СОХРАНЕНО И ПРОВЕРЕНО
+
+Текущий принятый B:
+D:\ROBLOX\My_Projects\Roblox_Children of Corn\place\Children_of_corn_B.rbxl
+1759554 байта, SHA256:
+c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f
+6054 saved objects,168 Sources=165проектных+3unmanaged CornfieldFog.
+Автор подтвердил Ctrl+S. Строгий read-only audit PASS/complete:true:
+.artifacts/playtests/2026-10-23-B-night-toggle/author-save-preservation.json
+167 прежних Sources/world/Lighting/Fog/physics/mesh/rawTerrain точны;
+добавлен только default NightModeController. Единственная редакторская
+дельта — Camera.CFrame. Удалений/reindex нет.
+
+Предыдущий Save кукурузных вариантов1758233/9cdcfd84… тоже отдельно принят;
+его неизменяемая копия находится в before-night-toggle.zip. Старые отчёты
+green-variants и green-beds относятся к своим baseline, не к текущему B.
+
+A не изменена:
+place/Children_of_corn.rbxl —1491827байт,
+c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7
+В A исторически есть авторизованная несохранённая editable corn copy;
+не перезаписывать её при будущем подключении к A.
+C не изменена:
+place/Children_of_corn_TestScene.rbxl —187672байта,
+24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010
+
+Native B Play: обычные Start/Confirm,14607 Far,4 формы,высоты/повороты,
+929 совпадающих Near/Far anchors; проход23.21stud и ограниченный Wind smoke PASS.
+Night toggle: настоящий UI click ready-on→Start/Confirm→offhard→on/off PASS;
+Fog/effects при переключении неизменны,2 GPU кадра просмотрены.
+check.ps1/cached Selene0/0/0,869controller checks,19Rojo isolation/refusal,
+A/B build/sourcemap/GETsmoke,strict engine Save и --check --saved PASS.
+Generated code-only сцена удалена, временные Rojo smoke серверы остановлены.
+
+Последняя свежая Studio-проверка после Save: B851c5f0d-be44-47ac-aa6d-49a5d94bf907,
+Children_of_corn_B.rbxl,Edit/stopped,PlaceId0/GameId0,projectchildren_of_corn,
+variantB,Field630×10×630,168Sources,Httpfalse,Clock20.5.
+ID является только подсказкой: перед новым действием заново list и проверка.
+Другое подключённое Studio a965af21… — «+1 speed monkey (1) (1).rbxl», чужое.
+В текущем поручении никаких Studio mutations после author Save не выполнялось.
+
+КАК ПРОДОЛЖАТЬ
+
+- Сначала AGENTS.md, затем docs/2026-10-23_B-night-toggle.md,
+  docs/2026-10-23_B-green-variants.md, при необходимости green-beds22Oct,
+  docs/feature-index.md и docs/2026-10-22_rojo-variants.md.
+- Rojo владеет только тремя code roots, не Workspace/Lighting/артом/Terrain.
+  Canonical B overrides — variants/B, общие src затрагивают A и B.
+  A153owned/165classes, B165owned/179classes;146общих и7splitSources.
+  Использовать rojo/source-map.json; не wholesale install текущего src.
+  B порт34874 сейчас не запущен/не подключён; A34873, Cотдельный code-only.
+  Не подключать сервер к другой сцене и не запускать старые frozen builders
+  из будущих src. Исторические install/save allowlists несовместимы с новым B.
+- Все действия Studio через MCP. Не использовать Windows input или
+  Lune/другую scene serialization. Обычный Save пока требует автора Ctrl+S.
+- Новые3варианта и грунт — static Opaque session meshes; постоянных опубликованных
+  asset IDs для них не создано. После reopen полное поле восстанавливается F5
+  из сохранённых geometry data/bootstrap. Edit preview разрежен и показывает
+  исходную URI кукурузу; по нему нельзя судить об actual смешанном поле Play.
+- Не заявлять fullprocessreopen/длительныйFPS/4client/fear/blindround по последним
+  smoke tests. Прежние10unavailable audio assets остаются; не чинить их попутно.
+  Кукуруза визуальная и noncollidable; серверное AI-укрытие ещё не реализовано.
+
+НЕЗАВЕРШЁННОЕ И СЛЕДУЮЩИЙ ШАГ
+
+Реализация/сохранение/приёмка текущих задач закончены. Пользователь заметил
+места, где кукурузы не хватает; переключатель ночи добавлен для его скриншотов.
+Дождаться скриншотов или нового точного поручения. По ним сначала read-only
+локализовать участок/реальные Near-Far/грядки; самовольно не менять снова
+общую плотность, layout, проходы, свет, A/C или gameplay.
+
+ГОТОВЫЙ ПРОМПТ ДЛЯ НОВОГО ЧАТА
+
+Продолжаем Roblox Children of Corn в
+D:\ROBLOX\My_Projects\Roblox_Children of Corn.
+Сначала прочитай AGENTS.md и docs/2026-10-23_new-chat-prompt.txt,
+затем docs/2026-10-23_B-night-toggle.md и docs/2026-10-23_B-green-variants.md.
+Сверь git status/log и текущую Studio через свежий MCP list. Принятый B сохранён:
+1759554байта/SHA c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f,
+168Sources. Зелёная кукуруза с3FBXвариантами, плотность−30%, разные высоты/повороты,
+гряды и кнопка обычной ночи00:00 в F6-панели сохранены и проверены.
+Работай с canonical variants/B и актуальным Rojo manifest, не ставь весь src,
+не запускай исторические installers/Save allowlists. A/C и чужие Studio сохраняй.
+Текущие поручения закончены; следующее задание/скриншоты пропусков кукурузы я
+пришлю следующим сообщением. Пока ничего в игре не изменяй и не повторяй push
+из исторических записей.

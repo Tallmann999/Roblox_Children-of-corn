@@ -1,0 +1,28 @@
+{
+  "nativeBoxes": 188,
+  "nativeCircles": 19,
+  "freeRectangles": 305,
+  "freeArea": 344842.780120511,
+  "plots": 143,
+  "plotOuterArea": 311893.45177525707,
+  "clearedSlivers": 162,
+  "clearedSliverArea": 32949.328344256246,
+  "soilTiles": 1406,
+  "tileKeys": {
+    "Center": 413,
+    "End": 290,
+    "Skirt": 703
+  },
+  "scaleRange": [
+    0.5612999353051977,
+    1.2907583910268465
+  ],
+  "allTileFootprintsInsidePlots": true,
+  "allTileFootprintsOutsideConservativeMasks": true,
+  "rootXZAlignment": "Exact original B spacing; no XZ movement. Caller removes stagger/jitter.",
+  "heightSampling": "Exact C Center/End/Skirt triangle barycentrics; maximum overlapping surface +0.01.",
+  "sourceBytes": 141676,
+  "sourceSHA256": "2592faa6aacb071cbd66d578209ba940e83639a6d5bb97433d77ac263f0db18c",
+  "inputSHA256": "46171dcf180096d9aa4bd62ed41e049698c5a22090fff383294d5c0006dcf86b",
+  "nativeMutation": false
+}

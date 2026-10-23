@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"actualRoot\":\"288.75, 17.592403411865234, -265.5381774902344\",\"report\":{\"maxNearIndexed\":1704,\"observerMovesCharacter\":false,\"privateControllerStateObservable\":true,\"frames\":300,\"observedMotion\":true,\"observerChangesCamera\":false,\"playerBefore\":{\"1\":288.75,\"3\":-288.75,\"2\":17.592403411865236},\"maxFarIndexed\":14607,\"observerChangesProduction\":false,\"playerDistance\":23.211822509765626,\"anchorChecks\":203,\"modes\":{\"hard\":true},\"maxAnchorError\":0.00004320049993111752,\"scope\":\"Actual LocalScript VM cached Wind state during ordinary externally supplied movement\",\"done\":true,\"pass\":true,\"invalidAnchorEntries\":0,\"maxAnimatedNear\":2,\"maxActualChangedParts\":2,\"wallSeconds\":5.182545499999833,\"maxAnimatedFar\":0,\"anchorExamples\":[],\"playerAfter\":{\"1\":288.75,\"3\":-265.5381774902344,\"2\":17.592403411865236},\"owner\":\"corn_B_green_motion_audit_20261023\",\"maxWrites\":2}}"
+    }
+  ],
+  "isError": false
+}

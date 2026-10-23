@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "variant": "B",
+  "baseline": {
+    "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\place\\Children_of_corn_B.rbxl",
+    "sha256": "9cdcfd84e9f06a9763097f99bd14a5f6c65bf3650b11a694de349705c3495a19",
+    "bytes": 1758233,
+    "known_instances": 6053,
+    "sources": 167
+  },
+  "archive": {
+    "file": "before-night-toggle.zip",
+    "entry": "B-before-night-toggle.rbxl",
+    "sha256": "b918a800c83baf29f063b72345c173d6abb411ea6106f0654b2c1eb22ef6f576"
+  },
+  "untouched_A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "untouched_C_sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+  "guard_file_sha256": "2a391aaaa5a491003832dc6db46cdb550883649f496ef4aa4a5612f836f79d0d",
+  "allowed_addition": "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController",
+  "persistent_retained_property_changes": 0
+}

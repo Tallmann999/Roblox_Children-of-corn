@@ -1,0 +1,17 @@
+{
+  "payload_sha256": "7cbca53ec644d5de851226dd229a6957457a132ad7e49fa850e08f671707fced",
+  "payload_bytes": 497855,
+  "old_sources": 163,
+  "replacements": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/CornLayout",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController"
+  ],
+  "additions": [
+    "ReplicatedStorage/GameShared/Game/CornGreenGeometry",
+    "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var01",
+    "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var02",
+    "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var03"
+  ],
+  "total_sources": 167
+}

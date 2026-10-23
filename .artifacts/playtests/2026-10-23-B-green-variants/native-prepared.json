@@ -1,0 +1,20 @@
+{
+  "prepare": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"proposalSha256\":\"7d507fd618523fa89b969532f6968ed6d27c033e3b6957dcf2b3723eda060853\",\"corn\":3480,\"afterVisible\":1814,\"sourceChanges\":3,\"prepared\":true,\"beforeVisible\":2591,\"sources\":163,\"proposalBytes\":2197826,\"bedsUntouched\":1406,\"newSources\":4,\"uniqueCandidates\":2638,\"proof\":{\"varieties\":4,\"templates\":12,\"opaque\":9,\"uri\":3,\"lods\":3}}"
+      }
+    ],
+    "isError": false
+  },
+  "preservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"rootHeightCases\":12,\"maxError\":0,\"persistentBeforeExact\":true,\"templatesStable\":true}"
+      }
+    ],
+    "isError": false
+  }
+}

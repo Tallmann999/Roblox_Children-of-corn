@@ -1,0 +1,17 @@
+{
+  "owner": "corn_B_green_variants_v1",
+  "baseline_B_sha256": "db9398781ec6d68da97bfadb1514e5a589cdf5a293424538e19bc29869f7a371",
+  "baseline_B_bytes": 1585269,
+  "baseline_B_known_instances": 6048,
+  "baseline_B_sources": 163,
+  "archive_entry": "B-before-green-variants.rbxl",
+  "archive_sha256": "d61ef19552dadfdb402b87c9482d62b7693824f51ff7f5b35703d3a2b8d279a2",
+  "source_guard_sha256": "8459c059c2edb5244e334fe744c0517555b5b3a40a9792c85f053d95761b8e63",
+  "untouched_A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "untouched_C_sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+  "accepted_previous_payload_sha256": "9b6fd3a45dc5bc5e5db1bf25f315facf3f88ad43e13faa8d9a2d974727987cac",
+  "accepted_previous_world_plan_sha256": "c3fa34356de5a531fe1ce0ea6fee593a2fccee1e600dd78ceb5cedc53342ce66",
+  "accepted_previous_audit_sha256": "3554cf40f38ed23b4662422fa448161fb2788d3ac1de055e21f705cc2ad5a6f5",
+  "baseline_read_warning": "0.132411600s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+  "scope": "Exact-byte archive after independently strict previous Save audit. No scene rewriting, Studio operations, Source installation, commit or push."
+}

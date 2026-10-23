@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "pass": true,
+  "errors": [],
+  "warnings": [
+    "SM_Prop_Plant_Corn_01_L_Var_01: 218 open boundary edges (not watertight)"
+  ],
+  "ground_z": 0.0,
+  "zfighting": [],
+  "floating": [],
+  "back_to_back": [],
+  "enclosed": [],
+  "objects": {
+    "SM_Prop_Plant_Corn_01_L_Var_01": {
+      "verts": 377,
+      "faces": 510,
+      "tris": 510,
+      "ngons": 0,
+      "boundary_edges": 218,
+      "nonmanifold_edges": 0,
+      "wire_edges": 0,
+      "loose_verts": 0,
+      "degenerate_faces": 0,
+      "zero_length_edges": 0,
+      "inconsistent_normals_edges": 0,
+      "duplicate_verts": 0,
+      "islands": 12,
+      "inside_out_islands": 0,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": 1
+    }
+  }
+}

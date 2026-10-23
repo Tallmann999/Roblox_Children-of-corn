@@ -1,0 +1,901 @@
+{
+  "blender": "5.2.2 LTS",
+  "source": "D:\\ROBLOX\\CrazeEfGG\\Assets\\Sort_main_ferm\\растения\\SM_Prop_Plant_Corn_01_L.fbx",
+  "source_sha256": "259fbe167d4c0a24e6813282a5f3026d582b67d7af1f701bad39bed706a193df",
+  "texture_sha256": "843644a11ce1a6325de817c294dac427df43d307488953037dc5ed7fb8bd0ed4",
+  "source_vertices": 377,
+  "source_triangles": 510,
+  "source_height_m": 2.1862652376294136,
+  "source_base_world_m": [
+    0.0,
+    0.0,
+    -0.09727144986391068
+  ],
+  "source_corner_color_ranges": {
+    "colorSet1": {
+      "minimum": [
+        0.00518151605501771,
+        0.0,
+        0.00518151605501771,
+        1.0
+      ],
+      "maximum": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "coordinate_system": "Blender metres +Z up, base (0,0,0); runtime [x,z,-y] scaled to 8 studs and bbox-centred",
+  "runtime_data": [
+    {
+      "key": "Original",
+      "name": "SM_Prop_Plant_Corn_01_L",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        0.8205752372741699,
+        0.8556225299835205,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 0.999603807926178,
+      "max_vertex_displacement_m": 0.0,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-runtime.json",
+      "runtime_sha256": "22654ee8803c5ddeb6fdd238bd9ff1a64bf935fddbbb8c0eb5d7b39fbe11372d",
+      "root_offset_studs": [
+        -5.452645268633205e-08,
+        -4.0,
+        3.8168516880432435e-07
+      ],
+      "bbox_center_from_root_studs": [
+        5.452645268633205e-08,
+        4.0,
+        -3.8168516880432435e-07
+      ],
+      "bounds_studs": [
+        3.0026558745001695,
+        8.0,
+        3.1309012208582003
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -1.5013278722763062,
+          0.0,
+          -1.5654510259628296
+        ],
+        "maximum": [
+          1.5013279914855957,
+          8.0,
+          1.5654501914978027
+        ],
+        "max_horizontal_radius": 1.5894629589988056
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Original-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    },
+    {
+      "key": "Var01",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_01",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        1.0032100677490234,
+        0.8175312876701355,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 0.9023057222366333,
+      "max_vertex_displacement_m": 0.31875231107406915,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_01: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_01: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-runtime.json",
+      "runtime_sha256": "cdb8461c267a8adf0dfc1caed3ac427522643c98a0f9ba828855be3bb8418f1a",
+      "root_offset_studs": [
+        -0.42936572432518005,
+        -4.0,
+        -0.15668721497058868
+      ],
+      "bbox_center_from_root_studs": [
+        0.42936572432518005,
+        4.0,
+        0.15668721497058868
+      ],
+      "bounds_studs": [
+        3.670954663325867,
+        8.0,
+        2.9915173196191303
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -1.4061115980148315,
+          0.0,
+          -1.3390713930130005
+        ],
+        "maximum": [
+          2.264842987060547,
+          8.0,
+          1.6524457931518555
+        ],
+        "max_horizontal_radius": 2.26539910995307
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_01.fbx",
+        "bytes": 2216476,
+        "sha256": "f9fdbe90134919e69f1c0a0611f7557973869208e7ea281d23883578705e422e",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_01.fbx",
+              "ok": true,
+              "kb": 2164.5,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_01"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          1.0032100677490234,
+          0.8175312280654907,
+          2.186265230178833
+        ],
+        "lowest_z_m": -5.828002969110457e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 0.0001919568117093085,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    },
+    {
+      "key": "Var02",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_02",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        1.0718121528625488,
+        1.008353352546692,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 1.3662196397781372,
+      "max_vertex_displacement_m": 0.14687195373809556,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_02: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_02: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-runtime.json",
+      "runtime_sha256": "092a684a4d53f0b2ed1325239ae9fef916d670c68e0881a5574238ce52bb27df",
+      "root_offset_studs": [
+        0.04207272082567215,
+        -4.0,
+        0.05359083414077759
+      ],
+      "bbox_center_from_root_studs": [
+        -0.04207272082567215,
+        4.0,
+        -0.05359083414077759
+      ],
+      "bounds_studs": [
+        3.9219837683471974,
+        8.0,
+        3.689774904984928
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -2.0030646324157715,
+          0.0,
+          -1.8984782695770264
+        ],
+        "maximum": [
+          1.9189190864562988,
+          8.0,
+          1.7912967205047607
+        ],
+        "max_horizontal_radius": 2.0061294428856664
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_02.fbx",
+        "bytes": 2216572,
+        "sha256": "7cb15c7c521d0a5db66467211b56d1d0f29bc69f2cbed6c8a5095103dbedb867",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_02.fbx",
+              "ok": true,
+              "kb": 2164.6,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_02"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          1.0718121528625488,
+          1.0083534717559814,
+          2.186265230178833
+        ],
+        "lowest_z_m": -6.799336649265797e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 0.00033550039843689044,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    },
+    {
+      "key": "Var03",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_03",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        0.9850260019302368,
+        0.8770712614059448,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 0.8875666260719299,
+      "max_vertex_displacement_m": 0.6088763552268333,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_03: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_03: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-runtime.json",
+      "runtime_sha256": "a32cff7bde788bda5ccb621562c49779d40920de488f7d39ab30497fca611c54",
+      "root_offset_studs": [
+        0.40497368574142456,
+        -4.0,
+        0.22510722279548645
+      ],
+      "bbox_center_from_root_studs": [
+        -0.40497368574142456,
+        4.0,
+        -0.22510722279548645
+      ],
+      "bounds_studs": [
+        3.6044152686720112,
+        8.0,
+        3.209386489064556
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -2.207181215286255,
+          0.0,
+          -1.8298004865646362
+        ],
+        "maximum": [
+          1.3972339630126953,
+          8.0,
+          1.3795859813690186
+        ],
+        "max_horizontal_radius": 2.398613952407628
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_03.fbx",
+        "bytes": 2216684,
+        "sha256": "f6b04f2860cd09bb4d8d78897b8e6a74e983221c1b2a67d746bdd887edb798cc",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_03.fbx",
+              "ok": true,
+              "kb": 2164.7,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_03"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          0.9850260019302368,
+          0.8770713806152344,
+          2.186265230178833
+        ],
+        "lowest_z_m": -6.192252932635256e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 6.552060741085979e-05,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    }
+  ],
+  "variants": [
+    {
+      "key": "Var01",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_01",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        1.0032100677490234,
+        0.8175312876701355,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 0.9023057222366333,
+      "max_vertex_displacement_m": 0.31875231107406915,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_01: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_01: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-runtime.json",
+      "runtime_sha256": "bd4439629fd54e59314da3975cc1125828adb716a2a11c22d44784827b6cb55f",
+      "root_offset_studs": [
+        -0.42936572432518005,
+        -4.0,
+        -0.15668721497058868
+      ],
+      "bbox_center_from_root_studs": [
+        0.42936572432518005,
+        4.0,
+        0.15668721497058868
+      ],
+      "bounds_studs": [
+        3.670954663325867,
+        8.0,
+        2.9915173196191303
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -1.4061115980148315,
+          0.0,
+          -1.3390713930130005
+        ],
+        "maximum": [
+          2.264842987060547,
+          8.0,
+          1.6524457931518555
+        ],
+        "max_horizontal_radius": 2.26539910995307
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_01.fbx",
+        "bytes": 2216476,
+        "sha256": "f9fdbe90134919e69f1c0a0611f7557973869208e7ea281d23883578705e422e",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_01.fbx",
+              "ok": true,
+              "kb": 2164.5,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_01"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          1.0032100677490234,
+          0.8175312280654907,
+          2.186265230178833
+        ],
+        "lowest_z_m": -5.828002969110457e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 0.0001919568117093085,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var01-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    },
+    {
+      "key": "Var02",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_02",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        1.0718121528625488,
+        1.008353352546692,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 1.3662196397781372,
+      "max_vertex_displacement_m": 0.14687195373809556,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_02: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_02: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-runtime.json",
+      "runtime_sha256": "75aebf1a08f574f9beb5cd6bccf60f438d5e6bf0b504b9a93f55c97c9da39690",
+      "root_offset_studs": [
+        0.04207272082567215,
+        -4.0,
+        0.05359083414077759
+      ],
+      "bbox_center_from_root_studs": [
+        -0.04207272082567215,
+        4.0,
+        -0.05359083414077759
+      ],
+      "bounds_studs": [
+        3.9219837683471974,
+        8.0,
+        3.689774904984928
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -2.0030646324157715,
+          0.0,
+          -1.8984782695770264
+        ],
+        "maximum": [
+          1.9189190864562988,
+          8.0,
+          1.7912967205047607
+        ],
+        "max_horizontal_radius": 2.0061294428856664
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_02.fbx",
+        "bytes": 2216572,
+        "sha256": "7cb15c7c521d0a5db66467211b56d1d0f29bc69f2cbed6c8a5095103dbedb867",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_02.fbx",
+              "ok": true,
+              "kb": 2164.6,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_02"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          1.0718121528625488,
+          1.0083534717559814,
+          2.186265230178833
+        ],
+        "lowest_z_m": -6.799336649265797e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 0.00033550039843689044,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var02-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    },
+    {
+      "key": "Var03",
+      "name": "SM_Prop_Plant_Corn_01_L_Var_03",
+      "vertices": 377,
+      "triangles": 510,
+      "dimensions_m": [
+        0.9850260019302368,
+        0.8770712614059448,
+        2.186265230178833
+      ],
+      "height_studs": 8,
+      "minimum_jacobian_determinant": 0.8875666260719299,
+      "max_vertex_displacement_m": 0.6088763552268333,
+      "uv_identical_to_original_corners": true,
+      "source_triangle_topology_identical": true,
+      "qa_geometry_pass": true,
+      "raw_qa_errors": [
+        "SM_Prop_Plant_Corn_01_L_Var_03: 510 zero-area UV faces"
+      ],
+      "qa_warnings": [
+        "SM_Prop_Plant_Corn_01_L_Var_03: 218 open boundary edges (not watertight)"
+      ],
+      "runtime_json": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-runtime.json",
+      "runtime_sha256": "15533249aca1131fedc15c4b87a1df68ce9825502b37ca7b6b256de7692b66d7",
+      "root_offset_studs": [
+        0.40497368574142456,
+        -4.0,
+        0.22510722279548645
+      ],
+      "bbox_center_from_root_studs": [
+        -0.40497368574142456,
+        4.0,
+        -0.22510722279548645
+      ],
+      "bounds_studs": [
+        3.6044152686720112,
+        8.0,
+        3.209386489064556
+      ],
+      "envelope_from_root_studs": {
+        "minimum": [
+          -2.207181215286255,
+          0.0,
+          -1.8298004865646362
+        ],
+        "maximum": [
+          1.3972339630126953,
+          8.0,
+          1.3795859813690186
+        ],
+        "max_horizontal_radius": 2.398613952407628
+      },
+      "fbx": {
+        "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_03.fbx",
+        "bytes": 2216684,
+        "sha256": "f6b04f2860cd09bb4d8d78897b8e6a74e983221c1b2a67d746bdd887edb798cc",
+        "settings": {
+          "ok": true,
+          "preset": "roblox",
+          "format": "fbx",
+          "files": [
+            {
+              "file": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\SM_Prop_Plant_Corn_01_L_Var_03.fbx",
+              "ok": true,
+              "kb": 2164.7,
+              "objects": [
+                "SM_Prop_Plant_Corn_01_L_Var_03"
+              ]
+            }
+          ],
+          "warnings": []
+        }
+      },
+      "roundtrip": {
+        "meshes": 1,
+        "triangles": 510,
+        "dimensions_m": [
+          0.9850260019302368,
+          0.8770713806152344,
+          2.186265230178833
+        ],
+        "lowest_z_m": -6.192252932635256e-09,
+        "corner_comparison": {
+          "unique_triangles_matched": 510,
+          "max_position_error_m": 3.5762786865234375e-07,
+          "max_UV_error": 0.0,
+          "max_unit_normal_vector_error": 6.552060741085979e-05,
+          "position_tolerance_m": 1e-05,
+          "UV_tolerance": 2e-06,
+          "normal_tolerance": 0.0005,
+          "pass": true
+        }
+      },
+      "material_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-material_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      },
+      "wire_review": {
+        "ok": true,
+        "sheet": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire.png",
+        "views": [
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_front.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_right.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_top.png",
+          "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Var03-wire_three_quarter.png"
+        ],
+        "layout": "2x2",
+        "order": [
+          "front",
+          "right",
+          "top",
+          "three_quarter"
+        ]
+      }
+    }
+  ],
+  "accepted_warnings": [
+    "Source palette UVs intentionally collapse faces to palette texels/lines; UVs are preserved exactly, not unwrapped.",
+    "Original thin foliage contains 218 open boundary edges. This topology is retained with DoubleSided runtime art and no physical mesh collision.",
+    "Original FBX vertex color channel is preserved in blend/FBX and included as optional corner colors in runtime JSON. Palette material preview uses the green texture, matching C white-tint rendering.",
+    "Existing green atlas is 1254x1254, above the skill's 1024 guidance but below Roblox 4096 maximum. It is intentionally preserved byte-for-byte and shared by every instance."
+  ],
+  "blend": {
+    "path": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\.artifacts\\asset-variants\\2026-10-23-green-corn\\Green_Corn_Variants.blend",
+    "sha256": "29f77a855772270a3f55ebb6b3c0c9d091dd5865e8761a23b9b1d435c328466d"
+  },
+  "source_unchanged": true
+}

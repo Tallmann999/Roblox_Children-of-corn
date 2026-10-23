@@ -1,0 +1,98 @@
+{
+  "pass": true,
+  "scope": "exact static rendered mesh triangles clipped to height band and corresponding finite trail segment",
+  "source_edge_cells_sha256": "7911446622a8a12aee6833e2c0d20e9e265c68d88c7812398963ff4d5e60f075",
+  "root_count": 5249,
+  "shape_mix": {
+    "Original": 1317,
+    "Var01": 1311,
+    "Var02": 1294,
+    "Var03": 1327
+  },
+  "ground_y": 14.399986267089844,
+  "metric": "signed minimum outside-path gap; negative means leaf geometry visually enters trail; halfWidth+gap measures distance from trail centre",
+  "comparison": "same new 4-shape mix/height/yaw before vs after 23-Oct root edge projection, not historical scene appearance",
+  "algorithm": "Sutherland-Hodgman-equivalent linear minimisation: inside vertices, 12 edge/clip-plane intersections, 4 rectangle corners with barycentric membership",
+  "bands": {
+    "face_4_25_to_5_75": {
+      "height_above_ground": [
+        4.25,
+        5.75
+      ],
+      "before": {
+        "count": 5249,
+        "minimum": -1.749074438024313,
+        "median": 0.13568014063236167,
+        "p10": -0.8255307669279317,
+        "p90": 0.8204251006255235,
+        "maximum": 1.6754069804889156,
+        "overhang_roots": 2232,
+        "overhang_percent": 42.52238521623166,
+        "overhang_at_least_0_25_stud_roots": 1558,
+        "overhang_at_least_0_5_stud_roots": 1060,
+        "within_0_5_of_trail_center_roots": 14
+      },
+      "after": {
+        "count": 5249,
+        "minimum": -1.9715918326012063,
+        "median": -0.7214534419373422,
+        "p10": -1.3018321225616538,
+        "p90": -0.09570432514584055,
+        "maximum": 0.8525684826401232,
+        "overhang_roots": 4861,
+        "overhang_percent": 92.60811583158697,
+        "overhang_at_least_0_25_stud_roots": 4366,
+        "overhang_at_least_0_5_stud_roots": 3579,
+        "within_0_5_of_trail_center_roots": 207
+      },
+      "median_improvement_studs": 0.746403694152832,
+      "all_roots_nonworse": true
+    },
+    "shoulder_3_5_to_5": {
+      "height_above_ground": [
+        3.5,
+        5.0
+      ],
+      "before": {
+        "count": 5249,
+        "minimum": -1.554425381671102,
+        "median": 0.1644167194532713,
+        "p10": -0.7472133813575453,
+        "p90": 0.7849886313724482,
+        "maximum": 1.6763940311624879,
+        "overhang_roots": 2125,
+        "overhang_percent": 40.48390169556106,
+        "overhang_at_least_0_25_stud_roots": 1496,
+        "overhang_at_least_0_5_stud_roots": 986,
+        "within_0_5_of_trail_center_roots": 4
+      },
+      "after": {
+        "count": 5249,
+        "minimum": -1.7089728150082522,
+        "median": -0.6885400968092257,
+        "p10": -1.2181079334026859,
+        "p90": -0.152956015661394,
+        "maximum": 0.756620722347877,
+        "overhang_roots": 4971,
+        "overhang_percent": 94.70375309582778,
+        "overhang_at_least_0_25_stud_roots": 4442,
+        "overhang_at_least_0_5_stud_roots": 3510,
+        "within_0_5_of_trail_center_roots": 86
+      },
+      "median_improvement_studs": 0.747344970703125,
+      "all_roots_nonworse": true
+    }
+  },
+  "nativeMutation": false,
+  "humanAcceptance": false,
+  "physicalCollisionAcceptance": false,
+  "GPUAcceptance": false,
+  "elapsed_seconds": 11.666714400000274,
+  "independent_scalar_polygon_reference": {
+    "full_plants_checked": 64,
+    "triangles_each": 510,
+    "max_minimum_gap_error_studs": 0.0,
+    "tolerance_studs": 1e-08,
+    "pass": true
+  }
+}

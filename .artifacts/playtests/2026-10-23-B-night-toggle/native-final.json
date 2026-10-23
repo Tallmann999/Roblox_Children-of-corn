@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"clockTime\":20.5,\"noRuntime\":true,\"ownedTransportCleared\":true,\"totalSources\":168,\"otherWorldLightingExact\":true,\"passed\":true,\"quality\":\"Enum.QualityLevel.Level21\",\"workspaceDescendants\":5721,\"camera\":\"Enum.CameraType.Fixed\",\"changedEditorCamera\":[],\"brightness\":1,\"retained\":6034,\"oldSourcesUnchanged\":167,\"newCodeNodes\":1,\"http\":false}"
+    }
+  ],
+  "isError": false
+}

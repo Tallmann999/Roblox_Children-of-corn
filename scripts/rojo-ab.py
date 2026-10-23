@@ -95,7 +95,7 @@ def validate_projects(root=ROOT, projects=None):
     mapped_files = set()
     for variant, count, port, scene in (
         ("A", 153, 34873, "place/Children_of_corn.rbxl"),
-        ("B", 154, 34874, "place/Children_of_corn_B.rbxl"),
+        ("B", 165, 34874, "place/Children_of_corn_B.rbxl"),
     ):
         row = manifest["variants"][variant]
         require(row["port"] == port and row["scene"] == scene, "Wrong variant scene/port")
@@ -125,7 +125,24 @@ def validate_projects(root=ROOT, projects=None):
         require(actual == make_project(manifest, variant), "Unsafe/stale " + variant + ".project.json")
     a, b = (manifest["variants"][v]["sources"] for v in ("A", "B"))
     shadow = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornShadowController"
-    require(set(a) == set(shared) | split and set(b) == set(a) | {shadow}, "Variant-only topology differs")
+    night = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController"
+    beds = {
+        "ReplicatedStorage/GameShared/Game/GreenBedLayout",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometry",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Center",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/End",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Skirt",
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GreenBedController",
+    }
+    corn_shapes = {"ReplicatedStorage/GameShared/Game/CornGreenGeometry"} | {
+        f"ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var{i:02}" for i in range(1, 4)}
+    require(set(a) == set(shared) | split and set(b) == set(a) | {shadow, night} | beds | corn_shapes,
+            "Variant-only topology differs")
+    require(b[night]["file"] == "variants/B/client/Controllers/NightModeController.luau",
+            "B night controller must use its canonical variant file")
+    require(len(manifest["variants"]["A"]["classes"]) == 165
+            and len(manifest["variants"]["B"]["classes"]) == 179,
+            "Reviewed code class count differs")
     require(all(a[path]["file"] != b[path]["file"] for path in split), "Split Sources must be independent")
     legacy = set(manifest["legacy_unmapped_files"])
     require(len(legacy) == 8 and not mapped_files & legacy, "Legacy mixed src must not be served")

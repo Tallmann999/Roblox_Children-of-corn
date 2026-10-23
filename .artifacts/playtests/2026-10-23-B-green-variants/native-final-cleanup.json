@@ -1,0 +1,20 @@
+{
+  "verify": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"corn\":3480,\"bedsUntouched\":1406,\"verified\":true,\"visibleCorn\":1814,\"sources\":167}"
+      }
+    ],
+    "isError": false
+  },
+  "cleanup": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"workspaceDescendants\":5721,\"runtimePresent\":false,\"ownedGlobalsRemaining\":0,\"cleaned\":{\"cleaned\":true,\"persistentSources\":167,\"privateForeignParentsRetained\":0},\"globalsCleared\":3,\"diagnostics\":[],\"quality\":\"Level21\",\"camera\":\"Fixed\",\"http\":false}"
+      }
+    ],
+    "isError": false
+  }
+}

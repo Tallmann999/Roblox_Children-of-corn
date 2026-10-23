@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import importlib.util
 import json
 from pathlib import Path
@@ -178,38 +179,43 @@ def inspect_server(binary, project, port, check):
         return result
 
 
-def main():
+def main(report_file=REPORT, port_offset=0):
     manifest = rojo.validate_projects(ROOT)
     binary = ROOT / ".tools/rokit-data/tool-storage/rojo-rbx/rojo/7.7.0/rojo.exe"
     rojo.require(binary.is_file(), "Pinned local Rojo binary missing")
     scene_hashes = {variant: rojo.sha((ROOT / row["scene"]).read_bytes())
                     for variant, row in manifest["variants"].items()}
-    ports = [row["port"] for row in manifest["variants"].values()] + [34872]
+    ports = [row["port"] + port_offset for row in manifest["variants"].values()] + [34872 + port_offset]
     for port in ports:
         free_port(port)
     report = {"passed": True, "scope": "GET-only local Rojo API; no Studio client, POST, sync or RBXL writes.",
+              "port_offset": port_offset,
               "variants": {}}
     for variant, row in manifest["variants"].items():
         def check(info, port, selected=variant):
             return graph_check(info, read_api(port, "/api/read/" + info["rootInstanceId"]), manifest, selected)
-        report["variants"][variant] = inspect_server(binary, variant + ".project.json", row["port"], check)
+        report["variants"][variant] = inspect_server(binary, variant + ".project.json", row["port"] + port_offset, check)
     a, b = (report["variants"][variant] for variant in ("A", "B"))
-    rojo.require(a["sources"] == 153 and b["sources"] == 154
+    rojo.require(a["sources"] == 153 and b["sources"] == 165
                  and a["source_graph_sha256"] != b["source_graph_sha256"], "A/B isolation check failed")
 
     def default_check(info, port):
         rojo.require(info.get("expectedPlaceIds") == [], "Default project must reject every live PlaceId")
         return {"expected_place_ids": [], "default_live_connection_allowlist_empty": True}
 
-    report["default"] = inspect_server(binary, "default.project.json", 34872, default_check)
+    report["default"] = inspect_server(binary, "default.project.json", 34872 + port_offset, default_check)
     for variant, row in manifest["variants"].items():
         rojo.require(rojo.sha((ROOT / row["scene"]).read_bytes()) == scene_hashes[variant],
                      "Scene changed during read-only API smoke test")
     report["scene_bytes_unchanged"] = scene_hashes
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
+    report_file.parent.mkdir(parents=True, exist_ok=True)
+    report_file.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--report", type=Path, default=REPORT)
+    parser.add_argument("--port-offset", type=int, default=0)
+    args = parser.parse_args()
+    main(args.report, args.port_offset)

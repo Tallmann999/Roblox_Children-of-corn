@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "scope": "offline Blender visual review only; no Studio/GPU acceptance",
+  "sheets": [
+    "Original-material.png",
+    "Original-wire.png",
+    "Var01-material.png",
+    "Var01-wire.png",
+    "Var02-material.png",
+    "Var02-wire.png",
+    "Var03-material.png",
+    "Var03-wire.png"
+  ],
+  "textured_comparison": "green-variants-textured-comparison.png",
+  "findings": [
+    "All four forms retain coherent connected plant silhouettes.",
+    "Var01 stem bends; Var02 broadens canopy; Var03 changes upper leaf directions by height.",
+    "No detached new pieces, inverted silhouettes or shading corruption observed.",
+    "Source open thin foliage and palette UVs retained; see raw QA and README."
+  ],
+  "vertex_color_policy": "colorSet1 preserved in FBX/JSON; green PNG alone drives BaseColor."
+}

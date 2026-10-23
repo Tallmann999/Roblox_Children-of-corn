@@ -1,0 +1,510 @@
+{
+  "passed": true,
+  "actualMouseUI": true,
+  "defaultOverlayOff": true,
+  "readyBefore": {
+    "camera": "Enum.CameraType.Custom",
+    "buttons": [
+      {
+        "visible": false,
+        "path": "Players.Tallmann_Niderlands.PlayerGui.CornfieldFogControls.Frame.Panel.ScrollingFrame.BNightModeBlock.ToggleNight",
+        "position": [
+          1548,
+          62
+        ],
+        "text": "Ночь: абсолютная",
+        "layout": 0,
+        "size": [
+          326,
+          40
+        ]
+      }
+    ],
+    "lighting": {
+      "ClockTime": 20.5,
+      "Ambient": [
+        0.07058823853731155,
+        0.08627451211214066,
+        0.11764705926179886
+      ],
+      "OutdoorAmbient": [
+        0.14901961386203766,
+        0.16470588743686676,
+        0.2078431397676468
+      ],
+      "GlobalShadows": true,
+      "Brightness": 1,
+      "EnvironmentDiffuseScale": 1,
+      "EnvironmentSpecularScale": 1
+    },
+    "canEdit": true,
+    "fog": {
+      "color": [
+        0.0784313753247261,
+        0.10588235408067703,
+        0.1411764770746231
+      ],
+      "start": 55,
+      "finish": 320
+    },
+    "effects": [
+      {
+        "id": "1833665",
+        "class": "SunRaysEffect",
+        "name": "SunRays"
+      },
+      {
+        "id": "1833653",
+        "class": "Sky",
+        "name": "Sky"
+      },
+      {
+        "id": "1827674",
+        "class": "BloomEffect",
+        "name": "Bloom"
+      },
+      {
+        "density": 0.30000001192092896,
+        "decay": [
+          0.4156862795352936,
+          0.43921568989753723,
+          0.4901960790157318
+        ],
+        "name": "Atmosphere",
+        "color": [
+          0.7803921699523926,
+          0.7803921699523926,
+          0.7803921699523926
+        ],
+        "id": "1827673",
+        "class": "Atmosphere",
+        "offset": 0.25,
+        "haze": 1
+      },
+      {
+        "id": "1827685",
+        "class": "DepthOfFieldEffect",
+        "name": "DepthOfField"
+      }
+    ]
+  },
+  "readyOn": {
+    "camera": "Enum.CameraType.Custom",
+    "buttons": [
+      {
+        "visible": true,
+        "path": "Players.Tallmann_Niderlands.PlayerGui.CornfieldFogControls.Frame.Panel.ScrollingFrame.BNightModeBlock.ToggleNight",
+        "position": [
+          1548,
+          62
+        ],
+        "text": "Ночь: обычная · 00:00",
+        "layout": 0,
+        "size": [
+          326,
+          40
+        ]
+      }
+    ],
+    "lighting": {
+      "ClockTime": 0,
+      "Ambient": [
+        0.07058823853731155,
+        0.08627451211214066,
+        0.11764705926179886
+      ],
+      "OutdoorAmbient": [
+        0.14901961386203766,
+        0.16470588743686676,
+        0.2078431397676468
+      ],
+      "GlobalShadows": true,
+      "Brightness": 1,
+      "EnvironmentDiffuseScale": 1,
+      "EnvironmentSpecularScale": 1
+    },
+    "canEdit": true,
+    "fog": {
+      "color": [
+        0.0784313753247261,
+        0.10588235408067703,
+        0.1411764770746231
+      ],
+      "start": 55,
+      "finish": 320
+    },
+    "effects": [
+      {
+        "id": "1833665",
+        "class": "SunRaysEffect",
+        "name": "SunRays"
+      },
+      {
+        "id": "1833653",
+        "class": "Sky",
+        "name": "Sky"
+      },
+      {
+        "id": "1827674",
+        "class": "BloomEffect",
+        "name": "Bloom"
+      },
+      {
+        "density": 0.30000001192092896,
+        "decay": [
+          0.4156862795352936,
+          0.43921568989753723,
+          0.4901960790157318
+        ],
+        "name": "Atmosphere",
+        "color": [
+          0.7803921699523926,
+          0.7803921699523926,
+          0.7803921699523926
+        ],
+        "id": "1827673",
+        "class": "Atmosphere",
+        "offset": 0.25,
+        "haze": 1
+      },
+      {
+        "id": "1827685",
+        "class": "DepthOfFieldEffect",
+        "name": "DepthOfField"
+      }
+    ]
+  },
+  "ordinaryPersistsAcrossActualStartConfirm": {
+    "client": {
+      "camera": "Enum.CameraType.Custom",
+      "buttons": [
+        {
+          "visible": false,
+          "path": "Players.Tallmann_Niderlands.PlayerGui.CornfieldFogControls.Frame.Panel.ScrollingFrame.BNightModeBlock.ToggleNight",
+          "position": [
+            1548,
+            62
+          ],
+          "text": "Ночь: обычная · 00:00",
+          "layout": 0,
+          "size": [
+            326,
+            40
+          ]
+        }
+      ],
+      "lighting": {
+        "ClockTime": 0,
+        "Ambient": [
+          0.07058823853731155,
+          0.08627451211214066,
+          0.11764705926179886
+        ],
+        "OutdoorAmbient": [
+          0.14901961386203766,
+          0.16470588743686676,
+          0.2078431397676468
+        ],
+        "GlobalShadows": true,
+        "Brightness": 1,
+        "EnvironmentDiffuseScale": 1,
+        "EnvironmentSpecularScale": 1
+      },
+      "canEdit": true,
+      "fog": {
+        "color": [
+          0.0784313753247261,
+          0.10588235408067703,
+          0.1411764770746231
+        ],
+        "start": 55,
+        "finish": 320
+      },
+      "effects": [
+        {
+          "id": "1833665",
+          "class": "SunRaysEffect",
+          "name": "SunRays"
+        },
+        {
+          "id": "1833653",
+          "class": "Sky",
+          "name": "Sky"
+        },
+        {
+          "id": "1827674",
+          "class": "BloomEffect",
+          "name": "Bloom"
+        },
+        {
+          "density": 0.27000001072883606,
+          "decay": [
+            0.125490203499794,
+            0.16078431904315948,
+            0.21960784494876862
+          ],
+          "name": "Atmosphere",
+          "color": [
+            0.37254902720451355,
+            0.4313725531101227,
+            0.5098039507865906
+          ],
+          "id": "1827673",
+          "class": "Atmosphere",
+          "offset": 0.25,
+          "haze": 1.7999999523162842
+        },
+        {
+          "id": "1827685",
+          "class": "DepthOfFieldEffect",
+          "name": "DepthOfField"
+        }
+      ]
+    },
+    "server": {
+      "camera": "Enum.CameraType.Fixed",
+      "buttons": [],
+      "lighting": {
+        "ClockTime": 20.5,
+        "Ambient": [
+          0,
+          0,
+          0
+        ],
+        "OutdoorAmbient": [
+          0,
+          0,
+          0
+        ],
+        "GlobalShadows": true,
+        "Brightness": 0,
+        "EnvironmentDiffuseScale": 0,
+        "EnvironmentSpecularScale": 0
+      },
+      "fog": {
+        "color": [
+          0.0784313753247261,
+          0.10588235408067703,
+          0.1411764770746231
+        ],
+        "start": 55,
+        "finish": 320
+      },
+      "effects": [
+        {
+          "id": "1833653",
+          "class": "Sky",
+          "name": "Sky"
+        },
+        {
+          "id": "1833665",
+          "class": "SunRaysEffect",
+          "name": "SunRays"
+        },
+        {
+          "density": 0.27000001072883606,
+          "decay": [
+            0.125490203499794,
+            0.16078431904315948,
+            0.21960784494876862
+          ],
+          "name": "Atmosphere",
+          "color": [
+            0.37254902720451355,
+            0.4313725531101227,
+            0.5098039507865906
+          ],
+          "id": "1827673",
+          "class": "Atmosphere",
+          "offset": 0.25,
+          "haze": 0.800000011920929
+        },
+        {
+          "id": "1827674",
+          "class": "BloomEffect",
+          "name": "Bloom"
+        },
+        {
+          "id": "1827685",
+          "class": "DepthOfFieldEffect",
+          "name": "DepthOfField"
+        }
+      ]
+    }
+  },
+  "hardRestored": {
+    "camera": "Enum.CameraType.Custom",
+    "buttons": [
+      {
+        "visible": true,
+        "path": "Players.Tallmann_Niderlands.PlayerGui.CornfieldFogControls.Frame.Panel.ScrollingFrame.BNightModeBlock.ToggleNight",
+        "position": [
+          1548,
+          62
+        ],
+        "text": "Ночь: абсолютная",
+        "layout": 0,
+        "size": [
+          326,
+          40
+        ]
+      }
+    ],
+    "lighting": {
+      "ClockTime": 20.5,
+      "Ambient": [
+        0,
+        0,
+        0
+      ],
+      "OutdoorAmbient": [
+        0,
+        0,
+        0
+      ],
+      "GlobalShadows": true,
+      "Brightness": 0,
+      "EnvironmentDiffuseScale": 0,
+      "EnvironmentSpecularScale": 0
+    },
+    "canEdit": true,
+    "fog": {
+      "color": [
+        0.0784313753247261,
+        0.10588235408067703,
+        0.1411764770746231
+      ],
+      "start": 55,
+      "finish": 320
+    },
+    "effects": [
+      {
+        "id": "1833665",
+        "class": "SunRaysEffect",
+        "name": "SunRays"
+      },
+      {
+        "id": "1833653",
+        "class": "Sky",
+        "name": "Sky"
+      },
+      {
+        "id": "1827674",
+        "class": "BloomEffect",
+        "name": "Bloom"
+      },
+      {
+        "density": 0.27000001072883606,
+        "decay": [
+          0.125490203499794,
+          0.16078431904315948,
+          0.21960784494876862
+        ],
+        "name": "Atmosphere",
+        "color": [
+          0.37254902720451355,
+          0.4313725531101227,
+          0.5098039507865906
+        ],
+        "id": "1827673",
+        "class": "Atmosphere",
+        "offset": 0.25,
+        "haze": 1.7999999523162842
+      },
+      {
+        "id": "1827685",
+        "class": "DepthOfFieldEffect",
+        "name": "DepthOfField"
+      }
+    ]
+  },
+  "onAgain": {
+    "camera": "Enum.CameraType.Custom",
+    "buttons": [
+      {
+        "visible": true,
+        "path": "Players.Tallmann_Niderlands.PlayerGui.CornfieldFogControls.Frame.Panel.ScrollingFrame.BNightModeBlock.ToggleNight",
+        "position": [
+          1548,
+          62
+        ],
+        "text": "Ночь: обычная · 00:00",
+        "layout": 0,
+        "size": [
+          326,
+          40
+        ]
+      }
+    ],
+    "lighting": {
+      "ClockTime": 0,
+      "Ambient": [
+        0.07058823853731155,
+        0.08627451211214066,
+        0.11764705926179886
+      ],
+      "OutdoorAmbient": [
+        0.14901961386203766,
+        0.16470588743686676,
+        0.2078431397676468
+      ],
+      "GlobalShadows": true,
+      "Brightness": 1,
+      "EnvironmentDiffuseScale": 1,
+      "EnvironmentSpecularScale": 1
+    },
+    "canEdit": true,
+    "fog": {
+      "color": [
+        0.0784313753247261,
+        0.10588235408067703,
+        0.1411764770746231
+      ],
+      "start": 55,
+      "finish": 320
+    },
+    "effects": [
+      {
+        "id": "1833665",
+        "class": "SunRaysEffect",
+        "name": "SunRays"
+      },
+      {
+        "id": "1833653",
+        "class": "Sky",
+        "name": "Sky"
+      },
+      {
+        "id": "1827674",
+        "class": "BloomEffect",
+        "name": "Bloom"
+      },
+      {
+        "density": 0.27000001072883606,
+        "decay": [
+          0.125490203499794,
+          0.16078431904315948,
+          0.21960784494876862
+        ],
+        "name": "Atmosphere",
+        "color": [
+          0.37254902720451355,
+          0.4313725531101227,
+          0.5098039507865906
+        ],
+        "id": "1827673",
+        "class": "Atmosphere",
+        "offset": 0.25,
+        "haze": 1.7999999523162842
+      },
+      {
+        "id": "1827685",
+        "class": "DepthOfFieldEffect",
+        "name": "DepthOfField"
+      }
+    ]
+  },
+  "fogEffectsUnchangedAcrossToggle": true,
+  "sourceSha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6",
+  "scope": "One Studio client; ordinary actual Start/Confirm UI. No root/camera staging, AI changes or external publication."
+}

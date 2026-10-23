@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "checks": 1586078,
+  "failureInjections": 48,
+  "cacheRefusals": 15,
+  "dataRefusals": 9,
+  "shapes": 4,
+  "rootHeightYawCases": 48,
+  "Studio": false,
+  "GPU": false,
+  "sustainedFPS": false,
+  "source_sha256": {
+    "variants/B/shared/Game/CornGreenGeometry.luau": "77f4db07909b564940a4b2bbe97497b928d6333ef303bd454ba0ba8b1d9622a2",
+    "variants/B/shared/Game/CornAppearance.luau": "256445ce9002c626c6ccbb169da711a2b1ab46a5c1b311614a29e4d1e6e8e532",
+    "variants/B/client/Controllers/CornWindController.luau": "e980d82e71b9ac0e91d12f68466fa5247c4646a2143110822329494aa83764d2",
+    "tests/B-green-corn-variants-provider.luau": "3ea96370518cd86a1837f2866f3bf2c5b776e6371ab3d1df4ae0ab0059c7dbff"
+  }
+}

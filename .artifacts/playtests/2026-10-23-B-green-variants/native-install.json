@@ -1,0 +1,31 @@
+{
+  "installed": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"installed\":true,\"corn\":3480,\"bedsUntouched\":1406,\"newWorldNodes\":0,\"sourceChanges\":3,\"newSources\":4,\"visibleCorn\":1814,\"sources\":167}"
+      }
+    ],
+    "isError": false
+  },
+  "verify": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"corn\":3480,\"bedsUntouched\":1406,\"verified\":true,\"visibleCorn\":1814,\"sources\":167}"
+      }
+    ],
+    "isError": false
+  },
+  "preservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sources\":167,\"unchanged\":2546,\"addedCodeNodes\":5,\"changedCornAndSourcesOnly\":3483,\"retained\":6029,\"allBedsAndOtherWorldDeltas\":0,\"allSha256\":\"b028873ba9bce4973f2c2390a1396ef53abbba3a2513d3163f40c76146e26fe3\"}"
+      }
+    ],
+    "isError": false
+  },
+  "payloadSha256": "7cbca53ec644d5de851226dd229a6957457a132ad7e49fa850e08f671707fced",
+  "worldPlanSha256": "b77af9008606fb7adfa18c7f16c6a496a3fa26edc589087d3096ef7065408bf9"
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "source_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6",
+  "source_bytes": 9250,
+  "fixed_source_file": "variants\\B\\client\\Controllers\\NightModeController.luau",
+  "wrong_pin_refused": true,
+  "A_C_immutable_baseline_unchanged": true,
+  "production_mutations": false
+}

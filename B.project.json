@@ -51,6 +51,26 @@
             "$ignoreUnknownInstances": true,
             "$path": "variants/B/shared/Game/CornAppearance.luau"
           },
+          "CornGreenGeometry": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/B/shared/Game/CornGreenGeometry.luau"
+          },
+          "CornGreenGeometryData": {
+            "$ignoreUnknownInstances": true,
+            "$className": "Folder",
+            "Var01": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/CornGreenGeometryData/Var01.luau"
+            },
+            "Var02": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/CornGreenGeometryData/Var02.luau"
+            },
+            "Var03": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/CornGreenGeometryData/Var03.luau"
+            }
+          },
           "CornLayout": {
             "$ignoreUnknownInstances": true,
             "$path": "variants/B/shared/Game/CornLayout.luau"
@@ -82,6 +102,30 @@
           "FlashlightPresentation": {
             "$ignoreUnknownInstances": true,
             "$path": "src/shared/Game/FlashlightPresentation.luau"
+          },
+          "GreenBedGeometry": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/B/shared/Game/GreenBedGeometry.luau"
+          },
+          "GreenBedGeometryData": {
+            "$ignoreUnknownInstances": true,
+            "$className": "Folder",
+            "Center": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/GreenBedGeometryData/Center.luau"
+            },
+            "End": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/GreenBedGeometryData/End.luau"
+            },
+            "Skirt": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/shared/Game/GreenBedGeometryData/Skirt.luau"
+            }
+          },
+          "GreenBedLayout": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/B/shared/Game/GreenBedLayout.luau"
           },
           "HandheldPresentation": {
             "$ignoreUnknownInstances": true,
@@ -290,6 +334,10 @@
               "$ignoreUnknownInstances": true,
               "$path": "src/client/Controllers/GateHintController.luau"
             },
+            "GreenBedController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/client/Controllers/GreenBedController.luau"
+            },
             "HandheldController": {
               "$ignoreUnknownInstances": true,
               "$path": "src/client/Controllers/HandheldController.luau"
@@ -313,6 +361,10 @@
             "MovementController": {
               "$ignoreUnknownInstances": true,
               "$path": "src/client/Controllers/MovementController.luau"
+            },
+            "NightModeController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/client/Controllers/NightModeController.luau"
             },
             "RoundController": {
               "$ignoreUnknownInstances": true,

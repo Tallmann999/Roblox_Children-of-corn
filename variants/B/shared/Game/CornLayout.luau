@@ -1,5 +1,7 @@
 --!strict
 
+local GreenBedLayout = require(script.Parent.GreenBedLayout)
+
 local CornLayout = {
 	Height = 8,
 	Spacing = 3,
@@ -28,12 +30,27 @@ export type Exclusions = {
 	Signature: string,
 	TrailEdges: { TrailEdge }?,
 	TrailEdgeMaxShift: number?,
+	GreenBeds: boolean?,
 }
 
 local SLOT_RADIUS = 6
 local BOX_PADDING = 1.5
-local DETAILED_SPACING_SCALE = 1 / math.sqrt(2.6)
+-- The B grid keeps regular rows: 30% fewer plants per unit area, rather than
+-- removing hashed individual cells and leaving irregular holes in each row.
+local DETAILED_SPACING_SCALE = 1 / math.sqrt(2.6 * 0.7)
 local TRAIL_EDGE_OUTSET = 0.05
+local GREEN_TRAIL_EDGE_OUTSET = 0.15
+
+local function greenField(field: BasePart): boolean
+	local map = field.Parent
+	return field.Name == "FieldZone"
+		and field.Size == Vector3.new(630, 10, 630)
+		and map ~= nil
+		and map:IsA("Model")
+		and map.Name == "CornMap"
+		and map:GetAttribute("corn_project_id") == "children_of_corn"
+		and map:GetAttribute("HarvestArtVariant") == "B"
+end
 
 local function finite(value: number): boolean
 	return value == value and value > -math.huge and value < math.huge
@@ -137,6 +154,11 @@ function CornLayout.PrepareTemplate(source: Instance, height: number?): (Plant?,
 				item.CastShadow = false
 				if item:IsA("MeshPart") then
 					item.DoubleSided = true
+					if item.MeshId == "rbxassetid://104111861186519" then
+						item.TextureID = "rbxassetid://137803536172445"
+						item.Color = Color3.new(1, 1, 1)
+						item:SetAttribute("CornGreenOriginal", true)
+					end
 				end
 			end
 		end
@@ -184,6 +206,9 @@ end
 function CornLayout.BaseCellPosition(field: BasePart, column: number, row: number): Vector3
 	local half = field.Size / 2
 	local spacing = CornLayout.SpacingFor(field)
+	if greenField(field) then
+		return field.CFrame:PointToWorldSpace(Vector3.new(column * spacing, -half.Y, row * spacing))
+	end
 	local hashX = (column * 92837111 + row * 689287499 + CornLayout.Seed) % 104729
 	local hashZ = (column * 19349663 + row * 83492791 + CornLayout.Seed) % 104729
 	local stagger = if row % 2 == 0 then -spacing * 0.15 else spacing * 0.15
@@ -199,6 +224,9 @@ local function hash(column: number, row: number, salt: number): number
 end
 
 function CornLayout.CellPosition(field: BasePart, column: number, row: number): Vector3
+	if greenField(field) then
+		return GreenBedLayout.Position(CornLayout.BaseCellPosition(field, column, row))
+	end
 	local point = field.CFrame:PointToObjectSpace(CornLayout.BaseCellPosition(field, column, row))
 	local half = field.Size / 2
 	local spacing = CornLayout.SpacingFor(field)
@@ -212,17 +240,25 @@ function CornLayout.CellPosition(field: BasePart, column: number, row: number): 
 end
 
 function CornLayout.CellYaw(column: number, row: number): number
-	local sign = if hash(column, row, 47) < 0.5 then -1 else 1
-	return math.rad(10 + hash(column, row, 61) * 20) * sign
+	return hash(column, row, 61) * math.pi * 2
 end
 
 function CornLayout.HeightFactor(column: number, row: number): number
-	local sign = if hash(column, row, 79) < 0.5 then -1 else 1
-	return 1 + sign * (0.1 + hash(column, row, 97) * 0.05)
+	return 0.85 + hash(column, row, 97) * 0.3
 end
 
 function CornLayout.ApplyVariation(plant: Plant, column: number, row: number)
-	local factor = CornLayout.HeightFactor(column, row)
+	if plant:GetAttribute("CornGreenOriginal") == true then
+		-- All four green geometry templates start at height eight. Scale only Y;
+		-- DetailedPivot subsequently uses their real root anchor and this Size.
+		local factor = CornLayout.HeightFactor(column, row)
+		assert(plant:IsA("BasePart"), "B green height variation requires a single static part")
+		plant.Size = Vector3.new(plant.Size.X, plant.Size.Y * factor, plant.Size.Z)
+		return
+	end
+	-- Preserve the legacy fallback path; A has its own canonical module.
+	local sign = if hash(column, row, 79) < 0.5 then -1 else 1
+	local factor = 1 + sign * (0.1 + hash(column, row, 97) * 0.05)
 	if plant:IsA("BasePart") then
 		plant.Size = Vector3.new(plant.Size.X, plant.Size.Y * factor, plant.Size.Z)
 	else
@@ -261,6 +297,7 @@ local function authorDescendants(map: Model): { Instance }
 					"CornClientBackdropOwned"
 				) == true)
 				or item.Name == "CornRoundRuntime"
+				or item:GetAttribute("BGreenBedsOwner") == "corn_B_green_beds_v1"
 			)
 		if decoration then
 			continue
@@ -371,16 +408,34 @@ function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
 	table.sort(trailEdges, function(a, b)
 		return a.Key < b.Key
 	end)
+	local signature = table.concat(signatures, "|")
+	local green = greenField(field)
+	if green then
+		local matches = signature == GreenBedLayout.Signature
+		if not matches and game:GetService("RunService"):IsClient() then
+			matches = GreenBedLayout.MatchesExclusions({ Boxes = boxes, Circles = circles }, field)
+		end
+		assert(matches, "B clearances changed; regenerate the guarded green-bed plan")
+		-- A stable accepted signature keeps normal network rounding from causing
+		-- repeated renderer rebuilds. Exact Edit/server checks remain above.
+		signature = GreenBedLayout.Signature
+			.. "|green-beds-v2-density70/"
+			.. GreenBedLayout.InputSHA256
+	end
 	return {
 		Boxes = boxes,
 		Circles = circles,
-		Signature = table.concat(signatures, "|"),
+		Signature = signature,
 		TrailEdges = trailEdges,
 		TrailEdgeMaxShift = CornLayout.SpacingFor(field),
+		GreenBeds = green,
 	}
 end
 
 function CornLayout.IsExcluded(position: Vector3, exclusions: Exclusions): boolean
+	if exclusions.GreenBeds and not GreenBedLayout.Contains(position) then
+		return true
+	end
 	for _, circle in exclusions.Circles do
 		local delta = position - circle.Center
 		if delta.X * delta.X + delta.Z * delta.Z <= circle.Radius * circle.Radius then
@@ -409,19 +464,20 @@ function CornLayout.TrailEdgePosition(position: Vector3, exclusions: Exclusions)
 	local x, z = position.X, position.Z
 	local candidateX, candidateZ = x, z
 	local found = false
+	local outset = if exclusions.GreenBeds then GREEN_TRAIL_EDGE_OUTSET else TRAIL_EDGE_OUTSET
 	for _, edge in edges do
 		local dx, dz = x - edge.CenterX, z - edge.CenterZ
 		local across = if edge.AlongX then dz else dx
 		local along = if edge.AlongX then dx else dz
 		local gap = math.abs(across) - edge.HalfWidth
 		if
-			gap >= 0
+			gap >= (if exclusions.GreenBeds then outset else 0)
 			and gap <= reach
 			and gap < bestGap
 			and math.abs(along) <= edge.HalfLength - 1
 		then
 			bestGap = gap
-			local target = (if across < 0 then -1 else 1) * (edge.HalfWidth + TRAIL_EDGE_OUTSET)
+			local target = (if across < 0 then -1 else 1) * (edge.HalfWidth + outset)
 			candidateX = if edge.AlongX then x else edge.CenterX + target
 			candidateZ = if edge.AlongX then edge.CenterZ + target else z
 			found = true
@@ -430,6 +486,33 @@ function CornLayout.TrailEdgePosition(position: Vector3, exclusions: Exclusions)
 	-- Reuse existing cells, variants and render budgets. Both the original and
 	-- projected root must pass every clearance, including crossing paths.
 	local candidate = if found then Vector3.new(candidateX, position.Y, candidateZ) else nil
+	if candidate and exclusions.GreenBeds then
+		local height = GreenBedLayout.GetHeight(candidate)
+		if not height then
+			-- Rounded FBX skirts do not fill their bounding rectangles. Retain
+			-- the closest real bed surface along this bounded, path-safe segment;
+			-- never invent soil heights or add an extra plant at the trail edge.
+			local valid, invalid = 0, 1
+			local base = position
+			local delta = candidate - base
+			for _ = 1, 8 do
+				local amount = (valid + invalid) / 2
+				local sample = base + delta * amount
+				local sampledHeight = GreenBedLayout.GetHeight(sample)
+				if sampledHeight then
+					valid, height = amount, sampledHeight
+				else
+					invalid = amount
+				end
+			end
+			if valid == 0 then
+				return position
+			end
+			candidate = base + delta * valid
+		end
+		assert(height, "Projected B corn root requires a real bed surface")
+		candidate = Vector3.new(candidate.X, height, candidate.Z)
+	end
 	if
 		candidate
 		and not CornLayout.IsExcluded(position, exclusions)

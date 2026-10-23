@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "complete": true,
+  "variant": "B",
+  "original_instances": 6053,
+  "candidate_instances": 6054,
+  "new_instances": 1,
+  "removed_instances": 0,
+  "unchanged_sources": 167,
+  "total_sources": 168,
+  "source_changes": [],
+  "new_sources": [
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController"
+  ],
+  "persistent_world_lighting_fog_changes": 0,
+  "reindexed_exporter_paths": 0,
+  "retained_identities_classes_names_parents_exact": true,
+  "all_retained_world_art_lighting_fog_physics_mesh_metadata_exact": true,
+  "new_engine_generated_metadata": [
+    "fresh nonzero UniqueId",
+    "HistoryId",
+    "fresh nonzero ScriptGuid"
+  ],
+  "changes": [
+    {
+      "path": "Workspace/Camera",
+      "property": "CFrame",
+      "reason": "finite_editor_camera"
+    }
+  ],
+  "baseline_sha256": "9cdcfd84e9f06a9763097f99bd14a5f6c65bf3650b11a694de349705c3495a19",
+  "baseline_bytes": 1758233,
+  "candidate_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
+  "candidate_bytes": 1759554,
+  "new_module_source_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6",
+  "fixed_source_file": "variants\\B\\client\\Controllers\\NightModeController.luau",
+  "untouched_A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "untouched_C_sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+  "raw_terrain_exact": true,
+  "raw_unknown_properties": {
+    "supported": true,
+    "properties": {
+      "Terrain.VoxelGridAssetContentMap": {
+        "type": 35,
+        "instance_count": 1,
+        "payload_bytes": 9,
+        "payload_sha256": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+        "payload_hex": "020000000000000000"
+      }
+    }
+  },
+  "warnings": {
+    "baseline": "0.156641700s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap.",
+    "candidate": "0.211762100s  WARN rbx_binary::deserializer::state: Unknown value type ID 0x23 (35) in Roblox binary model file. Found in property Terrain.VoxelGridAssetContentMap."
+  },
+  "scope": "One childless default NightModeController with fixed-file explicitly pinned Source. All 167 retained Sources and retained identity/parent/world/art/Lighting/Fog/physics/mesh/raw Terrain exact. Existing finite editor Camera/FilteredSelection metadata only. No scene rewriting or promotion."
+}

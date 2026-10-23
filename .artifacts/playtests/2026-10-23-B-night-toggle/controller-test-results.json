@@ -1,0 +1,36 @@
+{
+  "kind": "source-fixture-only",
+  "date": "2026-10-23",
+  "controller": "variants/B/client/Controllers/NightModeController.luau",
+  "controller_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6",
+  "controller_bytes": 9250,
+  "fixture": "tests/B-night-mode-controller.luau",
+  "fixture_sha256": "7364ddc9006a6941ac11dc8e4a041fb8618a632d9075eb73daacd32a4d400a6c",
+  "assertions": 869,
+  "result": "PASS",
+  "checks": [
+    "Default absolute mode writes no Lighting properties",
+    "Toggle enters the exact seven-property ordinary dark midnight profile",
+    "Toggle restores captured and latest replicated server values",
+    "Immediate and deferred property events do not form reassert loops",
+    "Round-start hard profile reapplication preserves the ordinary override",
+    "Off/on epoch race does not drop later external changes or erase new reassert queue",
+    "Foreign author writes before deferred delivery are retained on exit",
+    "Idle UI refresh does not rewrite Lighting",
+    "Permission loss, panel deletion, map removal or variant change restore and disconnect",
+    "Late panel binding remains default-off",
+    "B/Studio/client/DEV/CanEdit guards refuse unauthorized contexts",
+    "Foreign existing UI block is preserved",
+    "Stop disconnects every mock signal and restores only owned properties",
+    "No FogStart, FogEnd, FogColor or ExposureCompensation writes"
+  ],
+  "stylua_check": "PASS",
+  "selene": {
+    "errors": 0,
+    "warnings": 0,
+    "parse_errors": 0,
+    "api_dump": "cached fallback"
+  },
+  "native_calls": false,
+  "limitations": "Deterministic event/UI adapters validate the actual Source. This fixture does not establish native rendering or replication acceptance."
+}

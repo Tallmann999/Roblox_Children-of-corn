@@ -96,6 +96,10 @@ scripts/verify-corn-edge-shadows-copy.py text eol=lf
 scripts/promote-corn-edge-shadows-copy.py text eol=lf
 tests/corn-edge-shadows-save.py text eol=lf
 .artifacts/playtests/2026-10-22-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+.artifacts/playtests/2026-10-23-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve the exact executed snapshot, including its terminal blank line.
+.artifacts/playtests/2026-10-23-B-green-variants/native-snapshot.luau -text whitespace=-blank-at-eof,cr-at-eol
+.artifacts/asset-variants/2026-10-23-green-corn/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/build-corn-double-density-payload.py text eol=lf
 scripts/verify-B-double-density-copy.py text eol=lf
 scripts/promote-B-double-density-copy.py text eol=lf

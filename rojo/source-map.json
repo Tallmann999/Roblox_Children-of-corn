@@ -1713,8 +1713,8 @@
     },
     "B": {
       "scene": "place/Children_of_corn_B.rbxl",
-      "scene_bytes": 1499324,
-      "scene_sha256": "268474cacf629bdf450538e86876a8060363a1f458e253b8368cac8126bbab60",
+      "scene_bytes": 1759554,
+      "scene_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
       "port": 34874,
       "classes": {
         "ReplicatedStorage/GameShared": "Folder",
@@ -1882,7 +1882,20 @@
         "StarterPlayer/StarterPlayerScripts/GameClient/Game/FlashlightTuning": "ModuleScript",
         "StarterPlayer/StarterPlayerScripts/GameClient/Game/InventoryHud": "ModuleScript",
         "StarterPlayer/StarterPlayerScripts/GameClient/Game/MinimapHud": "ModuleScript",
-        "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud": "ModuleScript"
+        "StarterPlayer/StarterPlayerScripts/GameClient/Game/RoundHud": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedLayout": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometry": "ModuleScript",
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GreenBedController": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Center": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/End": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Skirt": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData": "Folder",
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometry": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var01": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var02": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var03": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData": "Folder",
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController": "ModuleScript"
       },
       "sources": {
         "ReplicatedStorage/GameShared/Config/GameConfig": {
@@ -1918,12 +1931,12 @@
         "ReplicatedStorage/GameShared/Game/CornAppearance": {
           "class": "ModuleScript",
           "file": "variants/B/shared/Game/CornAppearance.luau",
-          "baseline_sha256": "f9bc4be1d9f28f55c6139cdcdd79714a4a86083f132eabc91d7dac1a00e41451"
+          "baseline_sha256": "256445ce9002c626c6ccbb169da711a2b1ab46a5c1b311614a29e4d1e6e8e532"
         },
         "ReplicatedStorage/GameShared/Game/CornLayout": {
           "class": "ModuleScript",
           "file": "variants/B/shared/Game/CornLayout.luau",
-          "baseline_sha256": "d1430353eb3b3141ef1209163648b371528f13795c8e13fd9b5c5a5d7c34c604"
+          "baseline_sha256": "04058ece9b29a605fcc701d3689d7bab654d5c84c176379abd6b8bcbfb9bddd6"
         },
         "ReplicatedStorage/GameShared/Game/FarmEditableMeshBuilder": {
           "class": "ModuleScript",
@@ -2583,7 +2596,7 @@
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController": {
           "class": "ModuleScript",
           "file": "variants/B/client/Controllers/CornWindController.luau",
-          "baseline_sha256": "cf092cfa68c91eefb49b3d8f0afaebefa7ec88704d5d5c6a1fd2185b36ede665"
+          "baseline_sha256": "e980d82e71b9ac0e91d12f68466fa5247c4646a2143110822329494aa83764d2"
         },
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FarmGeometryController": {
           "class": "ModuleScript",
@@ -2654,6 +2667,61 @@
           "class": "ModuleScript",
           "file": "src/client/Game/RoundHud.luau",
           "baseline_sha256": "35a42748d0bc399be6522e20a165b322198a751bafb084d75c06b2ff8c0a86f5"
+        },
+        "ReplicatedStorage/GameShared/Game/GreenBedLayout": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/GreenBedLayout.luau",
+          "baseline_sha256": "2592faa6aacb071cbd66d578209ba940e83639a6d5bb97433d77ac263f0db18c"
+        },
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometry": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/GreenBedGeometry.luau",
+          "baseline_sha256": "e90c119abaae4638339902e48959f714faa5694904563a717aebe33a8f70f3c2"
+        },
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GreenBedController": {
+          "class": "ModuleScript",
+          "file": "variants/B/client/Controllers/GreenBedController.luau",
+          "baseline_sha256": "a80b3b05ca32ce60c90d2c401833ac73e3f526bcba1e34c3c43ab59a651a27cb"
+        },
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Center": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/GreenBedGeometryData/Center.luau",
+          "baseline_sha256": "6cf750c664f4d6891626a50f1079dc0f4a71b0a55f334146f399da10ceebffec"
+        },
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/End": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/GreenBedGeometryData/End.luau",
+          "baseline_sha256": "0ff268c6b818c63f17d555121a91266a585f1f1b7cf58a210e2005615cc741c3"
+        },
+        "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Skirt": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/GreenBedGeometryData/Skirt.luau",
+          "baseline_sha256": "3f4df332f176ea8b03d89e8cabcd2a8f656f9934dc5cceb1d3d3c7563bb2453e"
+        },
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometry": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/CornGreenGeometry.luau",
+          "baseline_sha256": "77f4db07909b564940a4b2bbe97497b928d6333ef303bd454ba0ba8b1d9622a2"
+        },
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var01": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/CornGreenGeometryData/Var01.luau",
+          "baseline_sha256": "389a84af07fcf3c1518e0b340fb6cbffecbf381d6ff02336a2ccfbb94d514313"
+        },
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var02": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/CornGreenGeometryData/Var02.luau",
+          "baseline_sha256": "d263fad838b998c3ccf266d23434a59302c57e07f48fffeddc6bdc3cff01adcc"
+        },
+        "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var03": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/CornGreenGeometryData/Var03.luau",
+          "baseline_sha256": "8b8a57f61beb7dba520b7401d5c943a9952fe4e6b9c482e3be3448471ea55b41"
+        },
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController": {
+          "class": "ModuleScript",
+          "file": "variants/B/client/Controllers/NightModeController.luau",
+          "baseline_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6"
         }
       }
     }

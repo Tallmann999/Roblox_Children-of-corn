@@ -189,13 +189,33 @@ function CornWindController:_register(job: any)
 	local position = frame.Position
 	local key =
 		bucketKey(math.floor(position.X / BUCKET_SIZE), math.floor(position.Z / BUCKET_SIZE))
+	local base = position - Vector3.new(0, size.Y / 2, 0)
+	if plant:IsA("BasePart") and plant:GetAttribute("CornGreenOriginal") == true then
+		local offset = plant:GetAttribute("HarvestRootOffset")
+		local templateSize = plant:GetAttribute("CornGreenTemplateSize")
+		if
+			typeof(offset) == "Vector3"
+			and typeof(templateSize) == "Vector3"
+			and templateSize.X > 0
+			and templateSize.Y > 0
+			and templateSize.Z > 0
+		then
+			base = frame:PointToWorldSpace(
+				-Vector3.new(
+					offset.X * size.X / templateSize.X,
+					offset.Y * size.Y / templateSize.Y,
+					offset.Z * size.Z / templateSize.Z
+				)
+			)
+		end
+	end
 	local entry = {
 		Layer = layer,
 		Plant = plant,
 		Parent = parent,
 		Parts = parts,
 		Position = position,
-		Base = position - Vector3.new(0, size.Y / 2, 0),
+		Base = base,
 		Bucket = key,
 		Phase = (position.X * 0.17 + position.Z * 0.11) % (math.pi * 2),
 		Moved = false,

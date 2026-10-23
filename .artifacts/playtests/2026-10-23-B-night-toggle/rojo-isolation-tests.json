@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "command": "python tests/rojo-variants.py",
+  "tests": 19,
+  "elapsed_seconds": 27.44,
+  "scope": "Actual offline variant ownership/refusal fixtures; no Studio or scene writes",
+  "B_owned_sources": 165,
+  "B_code_classes": 179,
+  "B_override_files": 19,
+  "night_source_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6",
+  "night_refusals": [
+    "addition to A",
+    "same-variant Night/CornShadow file swap",
+    "unmapped shared copy"
+  ],
+  "accepted_B_scene_sha256_unchanged": "9cdcfd84e9f06a9763097f99bd14a5f6c65bf3650b11a694de349705c3495a19"
+}

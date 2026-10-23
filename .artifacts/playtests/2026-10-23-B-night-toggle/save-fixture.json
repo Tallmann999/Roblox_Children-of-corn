@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "command": "python tests/B-night-toggle-save.py",
+  "baseline_instances": 6053,
+  "candidate_instances": 6054,
+  "unchanged_sources": 167,
+  "total_sources": 168,
+  "new_code_nodes": 1,
+  "persistent_world_lighting_fog_changes": 0,
+  "DOM_refusals": 18,
+  "raw_terrain_refusals": 3,
+  "positive_camera": true,
+  "positive_sibling_reindex": true,
+  "controller_source_not_yet_frozen": true,
+  "scene_or_controller_writes": false,
+  "files": {
+    "scripts/verify-B-night-toggle-copy.py": "11ed74a86ef216075e1982ecc36eb8565a1054c204f606d15ef0a6bda9b502a9",
+    "tests/B-night-toggle-save.py": "8c307beec0a736a140615903d1690bca7e343e6e4016885e9c0c1a7b57f1a5f4"
+  }
+}

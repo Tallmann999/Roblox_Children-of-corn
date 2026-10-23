@@ -1,0 +1,14 @@
+{
+  "cachedPassSeconds": 0.579097299996647,
+  "checks": 371719,
+  "denseEligible": 84191,
+  "farEligible": 20965,
+  "firstPassSeconds": 7.363606200000504,
+  "maximumRootY": 15.180588774303407,
+  "minimumRootY": 14.409986267089844,
+  "nativeMutation": false,
+  "pass": true,
+  "plotCount": 143,
+  "renderingAcceptance": false,
+  "soilParts": 1406
+}

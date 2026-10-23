@@ -1,0 +1,18 @@
+{
+  "payload_sha256": "9b6fd3a45dc5bc5e5db1bf25f315facf3f88ad43e13faa8d9a2d974727987cac",
+  "payload_bytes": 375683,
+  "old_sources": 157,
+  "replacements": [
+    "ReplicatedStorage/GameShared/Game/CornAppearance",
+    "ReplicatedStorage/GameShared/Game/CornLayout"
+  ],
+  "additions": [
+    "ReplicatedStorage/GameShared/Game/GreenBedLayout",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometry",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GreenBedController",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Center",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/End",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Skirt"
+  ],
+  "total_sources": 163
+}

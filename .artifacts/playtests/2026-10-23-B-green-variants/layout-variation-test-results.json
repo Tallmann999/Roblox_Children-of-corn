@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "checks": 251722,
+  "spacing": 2.223747949983304,
+  "denseEligible": 58942,
+  "denseRatio": 0.7000985853594802,
+  "farEligible": 14607,
+  "farRatio": 0.6967326496541856,
+  "shiftedRoots": 5249,
+  "tightTargetRoots": 173,
+  "originalGapMedian": 1.6773834228515625,
+  "projectedGap": {
+    "min": 0.149993896484375,
+    "median": 0.728515625,
+    "max": 2.046661376953125
+  },
+  "maximumShift": 1.9899368286132812,
+  "heightRange": [6.8, 9.199977083711293],
+  "heightBinCount": 12,
+  "yawDegrees": [0.0068748866121131685, 359.99312511338786],
+  "yawBinCount": 36,
+  "elapsedSeconds": 34.326819500000056,
+  "sourceSHA256": "04058ece9b29a605fcc701d3689d7bab654d5c84c176379abd6b8bcbfb9bddd6",
+  "command": ".tools/lune/lune.exe run tests/B-green-corn-variation.luau .artifacts/playtests/2026-10-23-B-green-variants/edge-cells.json",
+  "nativeMutation": false,
+  "GPUAcceptance": false
+}

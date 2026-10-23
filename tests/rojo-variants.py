@@ -18,6 +18,21 @@ rojo = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(rojo)
 
 SHADOW = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornShadowController"
+NIGHT = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController"
+NIGHT_FILE = "variants/B/client/Controllers/NightModeController.luau"
+GREEN_BEDS = {
+    "ReplicatedStorage/GameShared/Game/GreenBedLayout": "variants/B/shared/Game/GreenBedLayout.luau",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometry": "variants/B/shared/Game/GreenBedGeometry.luau",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Center": "variants/B/shared/Game/GreenBedGeometryData/Center.luau",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/End": "variants/B/shared/Game/GreenBedGeometryData/End.luau",
+    "ReplicatedStorage/GameShared/Game/GreenBedGeometryData/Skirt": "variants/B/shared/Game/GreenBedGeometryData/Skirt.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/GreenBedController": "variants/B/client/Controllers/GreenBedController.luau",
+}
+GREEN_SHAPES = {
+    "ReplicatedStorage/GameShared/Game/CornGreenGeometry": "variants/B/shared/Game/CornGreenGeometry.luau",
+    **{f"ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var{i:02}":
+       f"variants/B/shared/Game/CornGreenGeometryData/Var{i:02}.luau" for i in range(1, 4)},
+}
 
 
 def write_json(path, value):
@@ -76,15 +91,85 @@ class RojoVariants(unittest.TestCase):
         self.assertEqual(len(shared), 146)
         self.assertEqual(len(split), 7)
         self.assertEqual(set(a), set(shared) | split)
-        self.assertEqual(set(b), set(a) | {SHADOW})
+        self.assertEqual(set(b), set(a) | {SHADOW, NIGHT} | set(GREEN_BEDS) | set(GREEN_SHAPES))
         self.assertEqual({path: a[path] for path in shared}, shared)
         self.assertEqual({path: b[path] for path in shared}, shared)
         self.assertEqual(len({row["file"] for path, row in a.items() if path not in shared}), 7)
-        self.assertEqual(len({row["file"] for path, row in b.items() if path not in shared}), 8)
+        self.assertEqual(len({row["file"] for path, row in b.items() if path not in shared}), 19)
         for path in split:
             self.assertNotEqual(a[path]["file"], b[path]["file"])
             self.assertTrue(a[path]["file"].startswith("variants/A/"))
             self.assertTrue(b[path]["file"].startswith("variants/B/"))
+
+    def test_green_beds_are_explicitly_owned_only_by_B(self):
+        a = self.manifest["variants"]["A"]
+        b = self.manifest["variants"]["B"]
+        for path, file in GREEN_BEDS.items():
+            with self.subTest(path=path):
+                self.assertNotIn(path, a["sources"])
+                self.assertNotIn(path, a["classes"])
+                self.assertNotIn(path, self.manifest["shared_sources"])
+                self.assertEqual(b["sources"][path]["file"], file)
+                self.assertEqual(b["sources"][path]["class"], "ModuleScript")
+                self.assertEqual(b["classes"][path], "ModuleScript")
+
+    def test_green_shapes_and_data_folder_are_explicitly_owned_only_by_B(self):
+        a = self.manifest["variants"]["A"]
+        b = self.manifest["variants"]["B"]
+        folder = "ReplicatedStorage/GameShared/Game/CornGreenGeometryData"
+        self.assertNotIn(folder, a["classes"])
+        self.assertNotIn(folder, a["sources"])
+        self.assertNotIn(folder, self.manifest["shared_sources"])
+        self.assertEqual(b["classes"][folder], "Folder")
+        self.assertNotIn(folder, b["sources"])
+        self.assertEqual({path for path in b["classes"] if path.startswith(folder + "/")},
+                         {path for path in GREEN_SHAPES if path.startswith(folder + "/")})
+        for path, file in GREEN_SHAPES.items():
+            with self.subTest(path=path):
+                self.assertNotIn(path, a["sources"])
+                self.assertNotIn(path, a["classes"])
+                self.assertNotIn(path, self.manifest["shared_sources"])
+                self.assertEqual(b["sources"][path]["file"], file)
+                self.assertEqual(b["sources"][path]["class"], "ModuleScript")
+                self.assertEqual(b["classes"][path], "ModuleScript")
+
+    def test_night_mode_is_B_only_and_cross_variant_or_unmapped_injection_is_refused(self):
+        a = self.manifest["variants"]["A"]
+        b = self.manifest["variants"]["B"]
+        self.assertNotIn(NIGHT, a["sources"])
+        self.assertNotIn(NIGHT, a["classes"])
+        self.assertNotIn(NIGHT, self.manifest["shared_sources"])
+        self.assertEqual(b["sources"][NIGHT]["file"], NIGHT_FILE)
+        self.assertEqual(b["sources"][NIGHT]["class"], "ModuleScript")
+        self.assertEqual(b["classes"][NIGHT], "ModuleScript")
+        self.assertEqual(len(b["sources"]), 165)
+        self.assertEqual(len(b["classes"]), 179)
+        node = project_nodes(rojo.make_project(self.manifest, "B"))[NIGHT]
+        self.assertEqual(node, {"$ignoreUnknownInstances": True, "$path": NIGHT_FILE})
+        # A deliberate addition to A must not become valid even with a
+        # regenerated project; the controller belongs exclusively to B.
+        a["sources"][NIGHT] = copy.deepcopy(b["sources"][NIGHT])
+        a["classes"][NIGHT] = "ModuleScript"
+        self.write_manifest(regenerate_projects=True)
+        self.assert_refused()
+        del a["sources"][NIGHT]
+        del a["classes"][NIGHT]
+        self.write_manifest(regenerate_projects=True)
+        # A same-variant file swap preserves counts, unique files and source
+        # inventory, but must still refuse a redirected night controller.
+        night_file = b["sources"][NIGHT]["file"]
+        shadow_file = b["sources"][SHADOW]["file"]
+        b["sources"][NIGHT]["file"] = shadow_file
+        b["sources"][SHADOW]["file"] = night_file
+        self.write_manifest(regenerate_projects=True)
+        self.assert_refused()
+        b["sources"][NIGHT]["file"] = night_file
+        b["sources"][SHADOW]["file"] = shadow_file
+        self.write_manifest(regenerate_projects=True)
+        # A same-name shared copy cannot enter either graph implicitly.
+        shared_copy = self.root / "src/client/Controllers/NightModeController.luau"
+        shared_copy.write_bytes((self.root / NIGHT_FILE).read_bytes())
+        self.assert_refused()
 
     def test_projects_preserve_all_classes_and_nested_unknown_instances(self):
         for variant in ("A", "B"):
