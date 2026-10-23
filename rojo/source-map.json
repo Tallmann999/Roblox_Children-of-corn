@@ -571,16 +571,6 @@
       "file": "src/server/Game/FarmGeometry.luau",
       "baseline_sha256": "fdb508a4ff2aff045937168108f34ed568b68051f302223621829dd605feb54a"
     },
-    "ServerScriptService/GameServer/Game/HarvestWorld": {
-      "class": "ModuleScript",
-      "file": "src/server/Game/HarvestWorld.luau",
-      "baseline_sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04"
-    },
-    "ServerScriptService/GameServer/Game/InventoryWorld": {
-      "class": "ModuleScript",
-      "file": "src/server/Game/InventoryWorld.luau",
-      "baseline_sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
-    },
     "ServerScriptService/GameServer/Game/ItemModels": {
       "class": "ModuleScript",
       "file": "src/server/Game/ItemModels.luau",
@@ -605,11 +595,6 @@
       "class": "ModuleScript",
       "file": "src/server/Game/MonsterHunt.luau",
       "baseline_sha256": "833a61647ffa9b87353e1767a3f014d8b532b0a4dc2f2c900798105841ad47db"
-    },
-    "ServerScriptService/GameServer/Game/RoundAudio": {
-      "class": "ModuleScript",
-      "file": "src/server/Game/RoundAudio.luau",
-      "baseline_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb"
     },
     "ServerScriptService/GameServer/Game/RoundParticipant": {
       "class": "ModuleScript",
@@ -686,11 +671,6 @@
       "file": "src/client/Controllers/HandheldController.luau",
       "baseline_sha256": "7429e3ffa954cb6df04f816a7eb4fcf639f5c0686b0bc7eddedc7f4fc5550e9e"
     },
-    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": {
-      "class": "ModuleScript",
-      "file": "src/client/Controllers/HarvestGeometryController.luau",
-      "baseline_sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592"
-    },
     "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/InventoryController": {
       "class": "ModuleScript",
       "file": "src/client/Controllers/InventoryController.luau",
@@ -744,7 +724,11 @@
     "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController",
     "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController",
     "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController",
-    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController"
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController",
+    "ServerScriptService/GameServer/Game/InventoryWorld",
+    "ServerScriptService/GameServer/Game/HarvestWorld",
+    "ServerScriptService/GameServer/Game/RoundAudio",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController"
   ],
   "legacy_unmapped_files": [
     "src/client/Controllers/CornBackdropController.luau",
@@ -754,7 +738,11 @@
     "src/client/Controllers/FlashlightController.luau",
     "src/shared/Game/CornAppearance.luau",
     "src/shared/Game/CornLayout.luau",
-    "src/shared/Game/HarvestWardenVisual.luau"
+    "src/shared/Game/HarvestWardenVisual.luau",
+    "src/server/Game/InventoryWorld.luau",
+    "src/server/Game/HarvestWorld.luau",
+    "src/server/Game/RoundAudio.luau",
+    "src/client/Controllers/HarvestGeometryController.luau"
   ],
   "unmanaged_sources": {
     "Workspace/CornfieldFog/Config": {
@@ -1526,12 +1514,12 @@
         },
         "ServerScriptService/GameServer/Game/HarvestWorld": {
           "class": "ModuleScript",
-          "file": "src/server/Game/HarvestWorld.luau",
+          "file": "variants/A/server/Game/HarvestWorld.luau",
           "baseline_sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04"
         },
         "ServerScriptService/GameServer/Game/InventoryWorld": {
           "class": "ModuleScript",
-          "file": "src/server/Game/InventoryWorld.luau",
+          "file": "variants/A/server/Game/InventoryWorld.luau",
           "baseline_sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
         },
         "ServerScriptService/GameServer/Game/ItemModels": {
@@ -1561,7 +1549,7 @@
         },
         "ServerScriptService/GameServer/Game/RoundAudio": {
           "class": "ModuleScript",
-          "file": "src/server/Game/RoundAudio.luau",
+          "file": "variants/A/server/Game/RoundAudio.luau",
           "baseline_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb"
         },
         "ServerScriptService/GameServer/Game/RoundParticipant": {
@@ -1661,7 +1649,7 @@
         },
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": {
           "class": "ModuleScript",
-          "file": "src/client/Controllers/HarvestGeometryController.luau",
+          "file": "variants/A/client/Controllers/HarvestGeometryController.luau",
           "baseline_sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592"
         },
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/InventoryController": {
@@ -1713,8 +1701,8 @@
     },
     "B": {
       "scene": "place/Children_of_corn_B.rbxl",
-      "scene_bytes": 1759554,
-      "scene_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
+      "scene_bytes": 3793205,
+      "scene_sha256": "4c5c0c5454da2689996babca4a88b66256240ebb2fb0ac7aa2f787b2ecd8227a",
       "port": 34874,
       "classes": {
         "ReplicatedStorage/GameShared": "Folder",
@@ -1895,7 +1883,10 @@
         "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var02": "ModuleScript",
         "ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var03": "ModuleScript",
         "ReplicatedStorage/GameShared/Game/CornGreenGeometryData": "Folder",
-        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController": "ModuleScript"
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController": "ModuleScript",
+        "ReplicatedStorage/GameShared/Game/ManualScene": "ModuleScript",
+        "ServerScriptService/GameServer/Services/ManualSceneService": "ModuleScript",
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AuthoringCornController": "ModuleScript"
       },
       "sources": {
         "ReplicatedStorage/GameShared/Config/GameConfig": {
@@ -2480,12 +2471,12 @@
         },
         "ServerScriptService/GameServer/Game/HarvestWorld": {
           "class": "ModuleScript",
-          "file": "src/server/Game/HarvestWorld.luau",
+          "file": "variants/B/server/Game/HarvestWorld.luau",
           "baseline_sha256": "c82df8b6eacf58b829cae4bd75a3643a2c534188410a18cd5fd6f5b758b30e04"
         },
         "ServerScriptService/GameServer/Game/InventoryWorld": {
           "class": "ModuleScript",
-          "file": "src/server/Game/InventoryWorld.luau",
+          "file": "variants/B/server/Game/InventoryWorld.luau",
           "baseline_sha256": "59ca89338de198c7c6ed7a296e08d227249d06b57170744681b537eb9cc845b7"
         },
         "ServerScriptService/GameServer/Game/ItemModels": {
@@ -2515,7 +2506,7 @@
         },
         "ServerScriptService/GameServer/Game/RoundAudio": {
           "class": "ModuleScript",
-          "file": "src/server/Game/RoundAudio.luau",
+          "file": "variants/B/server/Game/RoundAudio.luau",
           "baseline_sha256": "41912a9f0f7605b34460716c47c928a483df05c3de77da87a93eb5602ef085eb"
         },
         "ServerScriptService/GameServer/Game/RoundParticipant": {
@@ -2620,7 +2611,7 @@
         },
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": {
           "class": "ModuleScript",
-          "file": "src/client/Controllers/HarvestGeometryController.luau",
+          "file": "variants/B/client/Controllers/HarvestGeometryController.luau",
           "baseline_sha256": "ae0ad395ae0b158c8c4cc50b1279485e403c9886137e2e5fd2d166ed37986592"
         },
         "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/InventoryController": {
@@ -2722,6 +2713,21 @@
           "class": "ModuleScript",
           "file": "variants/B/client/Controllers/NightModeController.luau",
           "baseline_sha256": "03092a195a472c236e547329e732bef47de7216f2d93b300f6d10443005ba1e6"
+        },
+        "ReplicatedStorage/GameShared/Game/ManualScene": {
+          "class": "ModuleScript",
+          "file": "variants/B/shared/Game/ManualScene.luau",
+          "baseline_sha256": "98ef15399424d2069c66cd0b520af8900af7b139d2d3b08c34510640154e2739"
+        },
+        "ServerScriptService/GameServer/Services/ManualSceneService": {
+          "class": "ModuleScript",
+          "file": "variants/B/server/Services/ManualSceneService.luau",
+          "baseline_sha256": "618194ecef94f3d8c9c50ca3cc494ac4ad641221f93a48a7cdbda6dda2bee3a3"
+        },
+        "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AuthoringCornController": {
+          "class": "ModuleScript",
+          "file": "variants/B/client/Controllers/AuthoringCornController.luau",
+          "baseline_sha256": "6054ee321e393c46377d2be53dab315906793b45e6352a6e6b3db636e15b8c17"
         }
       }
     }

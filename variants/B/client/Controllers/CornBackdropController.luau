@@ -149,6 +149,22 @@ function CornBackdropController:_publish(): boolean
 end
 
 function CornBackdropController:_resolveInputs(): boolean
+	local authoredMap = Workspace:FindFirstChild("CornMap")
+	local authored = CornLayout.AuthoringSource(authoredMap)
+	if
+		authoredMap
+		and authoredMap:IsA("Model")
+		and authoredMap:GetAttribute("corn_project_id") == PROJECT_ID
+		and authoredMap:GetAttribute("HarvestArtVariant") == "B"
+		and authoredMap:GetAttribute("BManualAuthoringVersion") == 1
+		and authored
+		and authored:IsA("Folder")
+		and authored:GetAttribute("corn_project_id") == PROJECT_ID
+		and authored:GetAttribute("BManualAuthoringVersion") == 1
+	then
+		self:_clear()
+		return false
+	end
 	if not self._renderer or typeof(self._renderer.UseBackdropReady) ~= "function" then
 		self:_clear()
 		self:_warn("Near-field backdrop bridge unavailable; saved overview preserved")

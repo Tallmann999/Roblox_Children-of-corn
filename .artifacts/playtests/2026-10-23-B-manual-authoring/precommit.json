@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "precommit_head": "2d3ccd7044f832221e616d7a09ec8c8ce36e4e68",
+  "fresh_origin_fetch": true,
+  "ahead": 0,
+  "behind": 0,
+  "check_ps1": "PASS; cached Roblox API; Selene 0 errors / 0 warnings / 0 parse errors; A/B build+sourcemap and safe default build",
+  "generated_code_only_scene_removed": true,
+  "related_paths_reviewed": 110,
+  "unrelated_changes_found": false,
+  "credential_hits_in_101_text_files": 0,
+  "B_bytes": 3793205,
+  "B_sha256": "4c5c0c5454da2689996babca4a88b66256240ebb2fb0ac7aa2f787b2ecd8227a",
+  "A_sha256": "c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7",
+  "C_sha256": "24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010",
+  "accepted_report": "author-save-preservation.json",
+  "strict_saved_scene_report_passed_complete": true,
+  "all_11_payload_sources_exact": true,
+  "all_4_A_override_copies_byte_exact_to_previous_shared_sources": true,
+  "no_Studio_mutation_or_Save_or_scene_rewrite_or_asset_publication": true,
+  "git_publication_status": "Final commit and remote identity are intentionally resolved from actual Git after this before-commit checkpoint."
+}

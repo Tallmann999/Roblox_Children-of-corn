@@ -165,11 +165,11 @@
           },
           "HarvestWorld": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/HarvestWorld.luau"
+            "$path": "variants/A/server/Game/HarvestWorld.luau"
           },
           "InventoryWorld": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/InventoryWorld.luau"
+            "$path": "variants/A/server/Game/InventoryWorld.luau"
           },
           "ItemModels": {
             "$ignoreUnknownInstances": true,
@@ -193,7 +193,7 @@
           },
           "RoundAudio": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/RoundAudio.luau"
+            "$path": "variants/A/server/Game/RoundAudio.luau"
           },
           "RoundParticipant": {
             "$ignoreUnknownInstances": true,
@@ -292,7 +292,7 @@
             },
             "HarvestGeometryController": {
               "$ignoreUnknownInstances": true,
-              "$path": "src/client/Controllers/HarvestGeometryController.luau"
+              "$path": "variants/A/client/Controllers/HarvestGeometryController.luau"
             },
             "InventoryController": {
               "$ignoreUnknownInstances": true,

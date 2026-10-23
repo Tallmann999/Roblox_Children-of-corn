@@ -1,5 +1,16 @@
 # Отдельные Rojo-конфигурации A и B — 22 октября 2026
 
+Актуальное дополнение23октября: [ручная B](2026-10-23_B-manual-authoring.md)
+теперь имеет168ownedSources/182classes (171totalс3Fog), A153/165 прежняя.
+142shared,11split,12legacyunmapped. Четыре новых split-пары:
+InventoryWorld,HarvestWorld,RoundAudio,HarvestGeometryController; A-копии
+побайтно соответствуют прежним shared. Новые B-only ManualScene,
+ManualSceneService,AuthoringCornController.24isolation/refusal tests и
+GET-only smoke PASS; live sync не включён. После авторского Ctrl+S и нового
+строгого аудита PASS manifest принят для B3793205bytes/4c5c0c54…;
+Rojo --check --saved PASS A153/156total,B168/171total,scene bytes unchanged.
+Ниже — исходная настройка.
+
 Автор разрешил настроить отдельные конфигурации Rojo для кода A и B,
 чтобы различия сцен не перезаписывались общим `src`. Конфигурации созданы;
 локальные проверки и сравнение с сохранёнными сценами прошли.

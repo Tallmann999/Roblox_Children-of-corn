@@ -31,6 +31,7 @@ export type Exclusions = {
 	TrailEdges: { TrailEdge }?,
 	TrailEdgeMaxShift: number?,
 	GreenBeds: boolean?,
+	AuthoredCorn: any?,
 }
 
 local SLOT_RADIUS = 6
@@ -40,6 +41,7 @@ local BOX_PADDING = 1.5
 local DETAILED_SPACING_SCALE = 1 / math.sqrt(2.6 * 0.7)
 local TRAIL_EDGE_OUTSET = 0.05
 local GREEN_TRAIL_EDGE_OUTSET = 0.15
+local authoredCache = setmetatable({}, { __mode = "k" })
 
 local function greenField(field: BasePart): boolean
 	local map = field.Parent
@@ -297,6 +299,7 @@ local function authorDescendants(map: Model): { Instance }
 					"CornClientBackdropOwned"
 				) == true)
 				or item.Name == "CornRoundRuntime"
+				or (item.Name == "CornAuthoring" and item:GetAttribute("BManualAuthoringVersion") == 1)
 				or item:GetAttribute("BGreenBedsOwner") == "corn_B_green_beds_v1"
 			)
 		if decoration then
@@ -309,7 +312,150 @@ local function authorDescendants(map: Model): { Instance }
 	end
 	return result
 end
+
+local function refreshAuthored(state)
+	if not state.Dirty then
+		return
+	end
+	local buckets = {}
+	local count = 0
+	for _, part in state.Source:GetDescendants() do
+		if part:IsA("MeshPart") then
+			local opacity = part:GetAttribute("BManualSourceTransparency")
+			if type(opacity) ~= "number" then
+				opacity = part.Transparency
+			end
+			local offset = part:GetAttribute("HarvestRootOffset")
+			local templateSize = part:GetAttribute("CornGreenTemplateSize")
+			if
+				type(opacity) == "number"
+				and finite(opacity)
+				and opacity < 1
+				and typeof(offset) == "Vector3"
+				and typeof(templateSize) == "Vector3"
+				and templateSize.X > 0
+				and templateSize.Y > 0
+				and templateSize.Z > 0
+			then
+				local size = part.Size
+				local root = part.CFrame:PointToWorldSpace(
+					-Vector3.new(
+						offset.X * size.X / templateSize.X,
+						offset.Y * size.Y / templateSize.Y,
+						offset.Z * size.Z / templateSize.Z
+					)
+				)
+				if finite(root.X) and finite(root.Z) then
+					local key = math.floor(root.X / state.Width)
+						.. ":"
+						.. math.floor(root.Z / state.Width)
+					if not buckets[key] then
+						buckets[key] = {}
+					end
+					table.insert(buckets[key], root)
+					count += 1
+				end
+			end
+		end
+	end
+	state.Buckets, state.Count, state.Dirty = buckets, count, false
+end
+
+function CornLayout.AuthoringSource(map: Instance?): Folder?
+	if
+		not (
+			map
+			and map:IsA("Model")
+			and map.Name == "CornMap"
+			and map:GetAttribute("corn_project_id") == "children_of_corn"
+			and map:GetAttribute("HarvestArtVariant") == "B"
+			and map:GetAttribute("BManualAuthoringVersion") == 1
+		)
+	then
+		return nil
+	end
+	local function ownedSource(folder)
+		return folder
+			and folder:IsA("Folder")
+			and folder:GetAttribute("corn_project_id") == "children_of_corn"
+			and folder:GetAttribute("BManualAuthoringVersion") == 1
+	end
+	local storage = game:GetService("ReplicatedStorage")
+	local root = storage:FindFirstChild("BManualEditorSources")
+	if ownedSource(root) then
+		local source = root:FindFirstChild("CornAuthoring")
+		if ownedSource(source) then
+			return source
+		end
+	end
+	local source = map:FindFirstChild("CornAuthoring")
+	return if ownedSource(source) then source else nil
+end
+
+local function authoredExclusions(map, field)
+	local source = CornLayout.AuthoringSource(map)
+	if
+		not (
+			greenField(field)
+			and map:GetAttribute("BManualAuthoringVersion") == 1
+			and source
+			and source:IsA("Folder")
+			and source:GetAttribute("corn_project_id") == "children_of_corn"
+			and source:GetAttribute("BManualAuthoringVersion") == 1
+		)
+	then
+		return nil
+	end
+	local state = authoredCache[map]
+	if
+		not state
+		or state.Source ~= source
+		or state.Frame ~= field.CFrame
+		or state.Size ~= field.Size
+	then
+		if state then
+			for _, connection in state.Connections do
+				connection:Disconnect()
+			end
+		end
+		local radius = CornLayout.SpacingFor(field) * 0.72
+		state = {
+			Map = map,
+			Source = source,
+			Frame = field.CFrame,
+			Size = field.Size,
+			Radius = radius,
+			Width = radius * 2 + 0.01,
+			Buckets = {},
+			Dirty = true,
+			Connections = {},
+		}
+		local function invalidate()
+			state.Dirty = true
+		end
+		state.Connections = {
+			source.DescendantAdded:Connect(invalidate),
+			source.DescendantRemoving:Connect(invalidate),
+		}
+		authoredCache[map] = state
+	end
+	refreshAuthored(state)
+	return {
+		Boxes = {},
+		Circles = {},
+		TrailEdges = {},
+		AuthoredCorn = state,
+		Signature = "B-manual-authoring-v1/" .. tostring(field.CFrame) .. "/" .. tostring(
+			field.Size
+		),
+	}
+end
+
 function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
+	local authored = authoredExclusions(map, field)
+	if authored then
+		return authored
+	end
 	local boxes: { Box } = {}
 	local circles: { Circle } = {}
 	local trailEdges: { TrailEdge } = {}
@@ -433,6 +579,34 @@ function CornLayout.ReadExclusions(map: Model, field: BasePart): Exclusions
 end
 
 function CornLayout.IsExcluded(position: Vector3, exclusions: Exclusions): boolean
+	local authored = exclusions.AuthoredCorn
+	if authored then
+		if
+			CornLayout.AuthoringSource(authored.Map) ~= authored.Source
+			or authored.Source:GetAttribute("BManualAuthoringVersion") ~= 1
+			or authored.Source:GetAttribute("corn_project_id") ~= "children_of_corn"
+		then
+			return true
+		end
+		refreshAuthored(authored)
+		local point = authored.Frame:PointToObjectSpace(position)
+		if math.abs(point.X) > authored.Size.X / 2 or math.abs(point.Z) > authored.Size.Z / 2 then
+			return true
+		end
+		local radius, width = authored.Radius, authored.Width
+		-- Width exceeds the diameter: each query visits at most four buckets.
+		for x = math.floor((position.X - radius) / width), math.floor((position.X + radius) / width) do
+			for z = math.floor((position.Z - radius) / width), math.floor((position.Z + radius) / width) do
+				for _, root in authored.Buckets[x .. ":" .. z] or {} do
+					local dx, dz = position.X - root.X, position.Z - root.Z
+					if dx * dx + dz * dz <= radius * radius then
+						return false
+					end
+				end
+			end
+		end
+		return true
+	end
 	if exclusions.GreenBeds and not GreenBedLayout.Contains(position) then
 		return true
 	end

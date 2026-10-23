@@ -151,6 +151,10 @@
             "$ignoreUnknownInstances": true,
             "$path": "src/shared/Game/LightingModes.luau"
           },
+          "ManualScene": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/B/shared/Game/ManualScene.luau"
+          },
           "MinimapGeometry": {
             "$ignoreUnknownInstances": true,
             "$path": "src/shared/Game/MinimapGeometry.luau"
@@ -209,11 +213,11 @@
           },
           "HarvestWorld": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/HarvestWorld.luau"
+            "$path": "variants/B/server/Game/HarvestWorld.luau"
           },
           "InventoryWorld": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/InventoryWorld.luau"
+            "$path": "variants/B/server/Game/InventoryWorld.luau"
           },
           "ItemModels": {
             "$ignoreUnknownInstances": true,
@@ -237,7 +241,7 @@
           },
           "RoundAudio": {
             "$ignoreUnknownInstances": true,
-            "$path": "src/server/Game/RoundAudio.luau"
+            "$path": "variants/B/server/Game/RoundAudio.luau"
           },
           "RoundParticipant": {
             "$ignoreUnknownInstances": true,
@@ -262,6 +266,10 @@
           "HarvestArtService": {
             "$ignoreUnknownInstances": true,
             "$path": "src/server/Services/HarvestArtService.luau"
+          },
+          "ManualSceneService": {
+            "$ignoreUnknownInstances": true,
+            "$path": "variants/B/server/Services/ManualSceneService.luau"
           },
           "NetworkService": {
             "$ignoreUnknownInstances": true,
@@ -297,6 +305,10 @@
             "AudioController": {
               "$ignoreUnknownInstances": true,
               "$path": "src/client/Controllers/AudioController.luau"
+            },
+            "AuthoringCornController": {
+              "$ignoreUnknownInstances": true,
+              "$path": "variants/B/client/Controllers/AuthoringCornController.luau"
             },
             "CaptureController": {
               "$ignoreUnknownInstances": true,
@@ -344,7 +356,7 @@
             },
             "HarvestGeometryController": {
               "$ignoreUnknownInstances": true,
-              "$path": "src/client/Controllers/HarvestGeometryController.luau"
+              "$path": "variants/B/client/Controllers/HarvestGeometryController.luau"
             },
             "InventoryController": {
               "$ignoreUnknownInstances": true,

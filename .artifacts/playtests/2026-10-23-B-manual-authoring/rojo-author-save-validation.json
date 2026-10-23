@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "variants": {
+    "A": {
+      "owned_sources": 153,
+      "total_sources": 156,
+      "classes": 165,
+      "saved_sources_exact": true
+    },
+    "B": {
+      "owned_sources": 168,
+      "total_sources": 171,
+      "classes": 182,
+      "saved_sources_exact": true
+    }
+  },
+  "shared_sources": 142,
+  "build_and_sourcemap": true,
+  "scene_bytes_unchanged": true
+}

@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "complete": true,
+  "plants": 70664,
+  "chunks": 576,
+  "baseline_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
+  "native_builder_sha256": "b17dfb535f8fb5adc82af7da2706521daf77fb259b755bfb7786e7375cd40ae0",
+  "independent_construction_boxes": 234,
+  "new_cells": 11725,
+  "avoided_obstacles": 3,
+  "all_cell_sets_frames_sizes_varieties_attributes_materials_public_physics_exact": true,
+  "scope": "Complete new corn subtree property inventory. Exact independent construction/poses/size/variety/attributes; all other properties match immutable defaults or explicit construction writes; new form hull mass/inertia independently integrated. Only generated UniqueId/HistoryId values are delegated to the global identity audit.",
+  "all_new_corn_properties_independently_validated": true,
+  "engine_generated_mesh_mass_inertia_independently_regenerated": true,
+  "independent_hull_metadata": [
+    {
+      "InitialSize": [
+        3.670954704284668,
+        8.0,
+        2.9915170669555664
+      ],
+      "UnscaledVolume": 34.40333557128906,
+      "UnscaledCofm": [
+        0.006320273037999868,
+        0.3134552836418152,
+        -0.051619868725538254
+      ],
+      "UnscaledVolInertiaDiags": [
+        124.66595458984375,
+        32.81012725830078,
+        128.4052734375
+      ],
+      "UnscaledVolInertiaOffDiags": [
+        -19.53455352783203,
+        -0.4730783700942993,
+        0.8134424090385437
+      ]
+    },
+    {
+      "InitialSize": [
+        3.9219837188720703,
+        8.0,
+        3.689774990081787
+      ],
+      "UnscaledVolume": 55.11448287963867,
+      "UnscaledCofm": [
+        -0.0021195844747126102,
+        0.30247315764427185,
+        -0.005379435606300831
+      ],
+      "UnscaledVolInertiaDiags": [
+        211.06224060058594,
+        76.44465637207031,
+        215.87164306640625
+      ],
+      "UnscaledVolInertiaOffDiags": [
+        -2.663074254989624,
+        -1.1278704404830933,
+        12.021744728088379
+      ]
+    },
+    {
+      "InitialSize": [
+        3.60441517829895,
+        8.0,
+        3.2093863487243652
+      ],
+      "UnscaledVolume": 38.326988220214844,
+      "UnscaledCofm": [
+        0.052935291081666946,
+        0.31931060552597046,
+        0.01069949846714735
+      ],
+      "UnscaledVolInertiaDiags": [
+        141.773681640625,
+        39.91861343383789,
+        145.47189331054688
+      ],
+      "UnscaledVolInertiaOffDiags": [
+        14.615200996398926,
+        -2.6843576431274414,
+        13.829209327697754
+      ]
+    }
+  ],
+  "candidate_sha256": "4c5c0c5454da2689996babca4a88b66256240ebb2fb0ac7aa2f787b2ecd8227a"
+}

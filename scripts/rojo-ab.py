@@ -10,6 +10,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import socket
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
@@ -25,6 +26,24 @@ SERVICES = {
     "ServerScriptService": "ServerScriptService",
     "StarterPlayer": "StarterPlayer",
     "StarterPlayer/StarterPlayerScripts": "StarterPlayerScripts",
+}
+SPLIT_FILES = {
+    "ReplicatedStorage/GameShared/Game/CornAppearance": "shared/Game/CornAppearance.luau",
+    "ReplicatedStorage/GameShared/Game/CornLayout": "shared/Game/CornLayout.luau",
+    "ReplicatedStorage/GameShared/Game/HarvestWardenVisual": "shared/Game/HarvestWardenVisual.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornBackdropController": "client/Controllers/CornBackdropController.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornController": "client/Controllers/CornController.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornWindController": "client/Controllers/CornWindController.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/FlashlightController": "client/Controllers/FlashlightController.luau",
+    "ServerScriptService/GameServer/Game/InventoryWorld": "server/Game/InventoryWorld.luau",
+    "ServerScriptService/GameServer/Game/HarvestWorld": "server/Game/HarvestWorld.luau",
+    "ServerScriptService/GameServer/Game/RoundAudio": "server/Game/RoundAudio.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": "client/Controllers/HarvestGeometryController.luau",
+}
+MANUAL_B_ONLY = {
+    "ReplicatedStorage/GameShared/Game/ManualScene": "variants/B/shared/Game/ManualScene.luau",
+    "ServerScriptService/GameServer/Services/ManualSceneService": "variants/B/server/Services/ManualSceneService.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AuthoringCornController": "variants/B/client/Controllers/AuthoringCornController.luau",
 }
 
 
@@ -47,6 +66,14 @@ def owned(path):
 
 def load_manifest(root=ROOT):
     return json.loads((root / "rojo/source-map.json").read_text(encoding="utf-8"))
+
+
+def require_project_ports_idle(manifest):
+    for row in manifest["variants"].values():
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as connection:
+            connection.settimeout(0.3)
+            require(connection.connect_ex(("127.0.0.1", row["port"])) != 0,
+                    "Refusing project regeneration while a loopback listener is active: " + str(row["port"]))
 
 
 def safe_file(root, relative):
@@ -90,12 +117,12 @@ def validate_projects(root=ROOT, projects=None):
     require(set(manifest["variants"]) == {"A", "B"}, "Explicit A and B required")
     shared = manifest["shared_sources"]
     split = set(manifest["split_paths"])
-    require(len(shared) == 146 and len(split) == 7, "Reviewed common/split Source set differs")
+    require(len(shared) == 142 and split == set(SPLIT_FILES), "Reviewed common/split Source set differs")
     require(not set(shared) & split, "A split Source cannot be shared")
     mapped_files = set()
     for variant, count, port, scene in (
         ("A", 153, 34873, "place/Children_of_corn.rbxl"),
-        ("B", 165, 34874, "place/Children_of_corn_B.rbxl"),
+        ("B", 168, 34874, "place/Children_of_corn_B.rbxl"),
     ):
         row = manifest["variants"][variant]
         require(row["port"] == port and row["scene"] == scene, "Wrong variant scene/port")
@@ -124,6 +151,15 @@ def validate_projects(root=ROOT, projects=None):
             (root / (variant + ".project.json")).read_text(encoding="utf-8"))
         require(actual == make_project(manifest, variant), "Unsafe/stale " + variant + ".project.json")
     a, b = (manifest["variants"][v]["sources"] for v in ("A", "B"))
+    for path, relative in SPLIT_FILES.items():
+        for variant in ("A", "B"):
+            entry = manifest["variants"][variant]["sources"].get(path, {})
+            require(entry.get("file") == "variants/" + variant + "/" + relative,
+                    "Split Source must use its exact canonical variant file: " + path)
+    for path, relative in MANUAL_B_ONLY.items():
+        entry = b.get(path, {})
+        require(entry.get("file") == relative and entry.get("class") == "ModuleScript",
+                "Manual authoring Source must use its canonical B ModuleScript: " + path)
     shadow = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/CornShadowController"
     night = "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/NightModeController"
     beds = {
@@ -136,16 +172,18 @@ def validate_projects(root=ROOT, projects=None):
     }
     corn_shapes = {"ReplicatedStorage/GameShared/Game/CornGreenGeometry"} | {
         f"ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var{i:02}" for i in range(1, 4)}
-    require(set(a) == set(shared) | split and set(b) == set(a) | {shadow, night} | beds | corn_shapes,
+    require(set(a) == set(shared) | split and set(b) == set(a) | {shadow, night} | beds | corn_shapes | set(MANUAL_B_ONLY),
             "Variant-only topology differs")
     require(b[night]["file"] == "variants/B/client/Controllers/NightModeController.luau",
             "B night controller must use its canonical variant file")
     require(len(manifest["variants"]["A"]["classes"]) == 165
-            and len(manifest["variants"]["B"]["classes"]) == 179,
+            and len(manifest["variants"]["B"]["classes"]) == 182,
             "Reviewed code class count differs")
     require(all(a[path]["file"] != b[path]["file"] for path in split), "Split Sources must be independent")
     legacy = set(manifest["legacy_unmapped_files"])
-    require(len(legacy) == 8 and not mapped_files & legacy, "Legacy mixed src must not be served")
+    require(legacy == {"src/" + relative for relative in SPLIT_FILES.values()}
+            | {"src/client/Controllers/CornShadowController.luau"}
+            and not mapped_files & legacy, "Legacy mixed src must not be served")
     all_src = {p.relative_to(root).as_posix() for p in (root / "src").rglob("*.luau")}
     require(all_src == {entry["file"] for entry in shared.values()} | legacy,
             "Unmapped/new src file: update the explicit ownership manifest deliberately")
@@ -263,6 +301,7 @@ def main():
         manifest = load_manifest()
         projects = {variant: make_project(manifest, variant) for variant in ("A", "B")}
         validate_projects(projects=projects)
+        require_project_ports_idle(manifest)
         for variant in ("A", "B"):
             target = ROOT / (variant + ".project.json")
             temporary = target.with_suffix(".json.tmp")

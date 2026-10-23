@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"scene\":\"Children_of_corn_B.rbxl\",\"edit\":true,\"plants\":70664,\"camera\":\"Fixed map overview\",\"saved\":false,\"testEditsRestored\":true,\"selected\":[\"CornMap.KeySlots\",\"CornMap.CornerSpawns\",\"CornMap.Props.ScarecrowMarker\"],\"ownedTransportCleared\":true,\"sourceCount\":171}"
+    }
+  ],
+  "isError": false
+}

@@ -3,134 +3,180 @@ CHILDREN OF CORN — SUMMARY И ПРОМПТ ПРОДОЛЖЕНИЯ
 
 Проект: D:\ROBLOX\My_Projects\Roblox_Children of Corn
 Репозиторий: https://github.com/Tallmann999/Roblox_Children-of-corn.git
-Ветка: main.
+Ветка main. Git-снимок ПЕРЕД финальным коммитом ручной карты:
+HEAD/origin/main2d3ccd7044f832221e616d7a09ec8c8ce36e4e68;
+свежий git fetch origin прошёл, ahead0/behind0.
+После принятого Save автор явно поручил коммит ручной карты B и всех связанных
+изменений и push в main. Этот документ входит в итоговый коммит; его SHA
+заранее не записывается. Итоговый HEAD/remote проверять через git log/status
+и git ls-remote origin refs/heads/main, не повторяя исторический push.
 
-Git-снимок перед финальным коммитом: HEAD dc7f051119f34ab19187ce362c96688676a060ae
-(Separate Rojo A/B sync and add corn test scene C). Свежий git fetch origin
-прошёл; remote-only коммитов нет, main на один коммит впереди origin/main.
-Автор явно поручил закоммитить всю завершённую работу ниже и push в main.
-Этот документ включается в итоговый коммит вместе с кодом, сценой и ассетами;
-его собственный SHA заранее не записывается. Итоговые HEAD/remote сверять
-через git log/status и git ls-remote origin refs/heads/main. Историческое
-поручение commit/push автоматически в новом чате не повторять.
+ТЕКУЩЕЕ ПОРУЧЕНИЕ И РЕЗУЛЬТАТ
 
-ЧТО ЗАВЕРШЕНО
+После первоначального ожидания автор прислал4скриншота широких просветов у
+факелов, сарая и края поля и попросил полностью собрать карту B в Edit:
+кукуруза, факела, пеньки/точки предметов, дома,4старта и спаун чучела.
+Карту дальше будет двигать/дополнять вручную сам автор.
 
-1. Сцена C ранее собрана из пяти авторских FBX и сохранена как
-   place/Children_of_corn_TestScene.rbxl. Это отдельный небольшой тест:
-   288 зелёных растений, грядки, земля и трава; проход проверен в Play.
-   Предыдущий коммит dc7f051 содержит C и отдельные Rojo A/B configs.
+РЕАЛИЗОВАНО, АВТОРСКИ СОХРАНЕНО И СТРОГО ПРОВЕРЕНО: PASS/complete:true.
+Актуальный отчёт и инструкция: docs/2026-10-23_B-manual-authoring.md.
+Автор подтвердил Ctrl+S; независимый read-only аудит нового RBXL принят.
 
-2. В B кукуруза заменена на исходную зелёную, расставлены 1406 частей грядок.
-   Затем по последнему запросу плотность снижена примерно на30%:
-   шаг2.223747949983, dense58942 вместо84191 (-29.9901%),
-   Far14607 вместо20965 (-30.3267%). Прежнюю двойную плотность не возвращать.
-   5249 краевых клеток придвинуты к грунту у троп; листья нависают над проходом.
-   Высоты6.8..9.2stud поY и повороты0..360° детерминированы; Near/Far согласованы.
+- Workspace.CornMap.CornAuthoring:70664отдельных MeshParts в576chunk Models,
+  четыре зелёные формы, высота6.8..9.2, прежний шаг2.223747949983.
+  Компактные просветы заполнили11725клеток,3исключены под фактические пеньки:
+  58942+11725−3=70664. Четырёхстудовые тропы сохранены.
+-15существующих tagged slots теперь KeySlots.Site_*:
+  исходная плитка/ключ,факел,PreviewStump,EnergyPoint,TrapPoint.
+  Двигать весь Site; отдельный факел/точку тоже можно переместить.
+  PreviewStump — визуальный помощник; реальный пенёк следует EnergyPoint.
+  В раунде прежний случайный выбор1ключа/2энергетиков/2капканов/2пеньков.
+-3существующих House Models содержат B_Visuals и свои факелы; переносить целиком.
+ 4прежних CornerSpawns видны и подписаны. Для чучела двигать ВЕСЬ
+ Props.ScarecrowMarker; WardenSpawn только указатель внутри.
+-Реальные редакторские растения являются источником CFrame/Size/variety/opacity.
+ Move/Rotate/Scale/Duplicate/Delete сохраняются при Play; удалённая кукуруза
+ не возникает снова по прежним cell IDs. Новый проход прореживать растениями;
+ старые exclusion masks сами ручное поле не перестраивают.
+-Кукуруза noncollidable, AI-укрытие не реализовано; night/Fog/hard/таймер/
+ remotes/награды не менялись. A/C и чужие Studio не менялись.
 
-3. В Blender сделаны3 настоящих геометрических варианта исходной кукурузы:
-   изогнутый стебель, широкие листья, закрученная крона. Они перемешаны с
-   оригиналом. Каждый377vertices/510triangles. Файлы в корне проекта:
-   SM_Prop_Plant_Corn_01_L_Var_01.fbx
-   SM_Prop_Plant_Corn_01_L_Var_02.fbx
-   SM_Prop_Plant_Corn_01_L_Var_03.fbx
-   Blender source, manifest, данные и review:
-   .artifacts/asset-variants/2026-10-23-green-corn/
-   Исходные FBX/PNG автора не изменены. Palette UV и открытые листовые края
-   намеренно сохранены, magenta colorSet1 является маской, а не BaseColor.
+РЕАЛИЗАЦИЯ И ПРИЁМКА
 
-4. В B добавлена кнопка сверху существующей панели «Дымка» (F6):
-   «Ночь: абсолютная» ↔ «Ночь: обычная · 00:00».
-   Обычная ночь выключена по умолчанию и включается только нажатием.
-   Профиль тёмный: Clock0/Brightness1/Ambient18,22,30/Outdoor38,42,53,
-   Diffuse1/Specular1/GlobalShadows true. Обратное нажатие восстанавливает
-   исходные/последние серверные значения, включая hard после начала раунда.
-   Это локальный Studio DEV инструмент B; режим gameplay остаётся hard.
-   Fog, Atmosphere, Sky, фонарь, AI и игровая логика не изменены переключателем.
+B-only ManualSceneService при Play переносит576chunks в
+ReplicatedStorage.BManualEditorSources.CornAuthoring и выставляет readiness.
+Нет70kзаписей Transparency/атрибутов. Клиент AuthoringCornController строит
+ограниченные Near/Far из реальной расстановки/корней, legacyгенерация ручнойB
+отключена. Первый вариант per-plant hiding дал timeout; архивchunks исправил
+причину. Принят именно второй Play:6сервисов/20контроллеров/Far17530/Near1651.
 
-ЧТО СОХРАНЕНО И ПРОВЕРЕНО
+Обычные Start/Confirm через UI: перенесённое растение и копия по1,удалённое0,
+ошибкаCF6.05e-6. Все4предмета совпали с повернутыми точками,2пенька,
+горизонтальная ошибка изменённого старта0. Обычный MCP walk20.3217stud/
+health100, GPU внутриcorn просмотрен. No root setter.
+Это не longFPS/4клиента/fullblindround/полныйперезапускStudio.
 
-Текущий принятый B:
-D:\ROBLOX\My_Projects\Roblox_Children of Corn\place\Children_of_corn_B.rbxl
-1759554 байта, SHA256:
-c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f
-6054 saved objects,168 Sources=165проектных+3unmanaged CornfieldFog.
-Автор подтвердил Ctrl+S. Строгий read-only audit PASS/complete:true:
-.artifacts/playtests/2026-10-23-B-night-toggle/author-save-preservation.json
-167 прежних Sources/world/Lighting/Fog/physics/mesh/rawTerrain точны;
-добавлен только default NightModeController. Единственная редакторская
-дельта — Camera.CFrame. Удалений/reindex нет.
+После Stop все временные тестовые перемещения отменены:
+364CFrame/90Modelpivots exact;copyнет/deletedplantвозвращено.
+Финально Edit70664/576/15Sites/4starts/3houses/WardenSpawn/171точныйSource+
+editorbuffers, все6035прежних native объектов retained.
+3579изменённых hashes=1902явныхjournal+1676owned session meshrestores+
+1finiteeditorCamera;unexplained0/missing0/Terrainpaletteexact.
+Сам native API скрытый rawTerrain не читает; последующий savedDOM/rawTerrain
+аудит завершён PASS и описан ниже.
+Clock20.5/Brightness1/Atmosphere.3,Haze0/Httpfalse/Quality21/CameraFixed,
+нет runtime/editorpool. Временный daylight для overview восстановлен.
+Owned _G transport/fixture snapshot удалены после записи доказательств.
 
-Предыдущий Save кукурузных вариантов1758233/9cdcfd84… тоже отдельно принят;
-его неизменяемая копия находится в before-night-toggle.zip. Старые отчёты
-green-variants и green-beds относятся к своим baseline, не к текущему B.
+Native B ID851c5f0d-be44-47ac-aa6d-49a5d94bf907,Children_of_corn_B.rbxl,
+PlaceId0/GameId0/projectchildren_of_corn/variantB/Field630x10x630.
+Это подсказка: перед новым действием свежий MCP list+identity.
+Foreign50ac78fa… Showroom.rbxl не трогали; Play Game target не выбирать вместоB.
+Все Studio действия MCP, безWindowsinput/сериализации/публикации.
 
-A не изменена:
-place/Children_of_corn.rbxl —1491827байт,
+GEOMETRY И ЛОКАЛЬНЫЙ ПЛАГИН
+
+3варианта/гряды/частьдекора — session Opaque, engineSave может дать None.
+ManualScene.RestoreEdit восстанавливает меш существующих объектов из data,
+не меняя их положение/размер/удаления. Нативный RestoreEdit принят.
+CornManualSceneEditor.rbxmx установлен в
+C:\Users\User\AppData\Local\Roblox\Plugins.
+Только точная stoppedB/version1. Toolbar «Corn: карта»:
+«Обновить сцену», «Точки карты». Плагин загрузится со следующим запускомStudio;
+предусмотрен autoRestore, но fullprocessreopen ещё не проверен.
+Новых publishedAssetIDs нет. Плагин не сохраняет сцену.
+
+ИСТОЧНИКИ И ROJO
+
+171totalSources=168owned+3unmanagedFog.8старыхточныхSourceзамен+3newModules,
+затем5Sourcearchivefix без новыхnodes/с заменойровно проверенныхbytes.
+Все168старыхcodeidentities+buffers retained. Общий src не меняли.
+4раньшеsharedпути выделены в exactAкопии/Boverrides:
+InventoryWorld,HarvestWorld,RoundAudio,HarvestGeometryController.
+Итого142shared/11split/12legacyunmapped;A153owned/165classes,
+B168owned/182classes. Читать rojo/source-map.json и canonical variants/B.
+Rojo не владеет Workspace/Lighting/Terrain. Live sync выключен.
+Не запускать старые frozen payload builders/whole-srcinstall.
+
+check.ps1cachedSelene0/0/0/build/sourcemapPASS;24Rojo refusals+GETsmokePASS;
+Sourceinstaller98/upgrade284/payload6/archiveService193checksPASS;
+corn255/world226/beds11/audio16/torches18/plugin85+installer12PASS.
+Generatedcode-onlyscene удалена, временныеRojo smokeсерверы выключены.
+10старых недоступныхaudio/import предупреждений сохранены.
+
+ДИСКОВЫЕ СЦЕНЫ — ТЕКУЩИЕ ПРИНЯТЫЕ ВЕРСИИ
+
+A place/Children_of_corn.rbxl:1491827bytes
 c1f054029ca729f314889ce7874c17c6e5f772cb20541a9c0ceedd796f3446b7
-В A исторически есть авторизованная несохранённая editable corn copy;
-не перезаписывать её при будущем подключении к A.
-C не изменена:
-place/Children_of_corn_TestScene.rbxl —187672байта,
+B place/Children_of_corn_B.rbxl:3793205bytes
+4c5c0c5454da2689996babca4a88b66256240ebb2fb0ac7aa2f787b2ecd8227a
+C place/Children_of_corn_TestScene.rbxl:187672bytes
 24a2d0ff9711d0805d3bcc738a156939574384d859ee3ec8493cc24621712010
 
-Native B Play: обычные Start/Confirm,14607 Far,4 формы,высоты/повороты,
-929 совпадающих Near/Far anchors; проход23.21stud и ограниченный Wind smoke PASS.
-Night toggle: настоящий UI click ready-on→Start/Confirm→offhard→on/off PASS;
-Fog/effects при переключении неизменны,2 GPU кадра просмотрены.
-check.ps1/cached Selene0/0/0,869controller checks,19Rojo isolation/refusal,
-A/B build/sourcemap/GETsmoke,strict engine Save и --check --saved PASS.
-Generated code-only сцена удалена, временные Rojo smoke серверы остановлены.
+B4c5 — принятая ручная карта/171Sources. Прежний Bc91/night-toggle/168Sources
+сохранён в before-manual-authoring.zip как исторический baseline.
+Документы прошлых Save:
+docs/2026-10-23_B-night-toggle.md
+docs/2026-10-23_B-green-variants.md
+docs/2026-10-22_scene-C.md
+AисторическуюunsavedCornPlant_Editable_Aкопию не перезаписывать.
 
-Последняя свежая Studio-проверка после Save: B851c5f0d-be44-47ac-aa6d-49a5d94bf907,
-Children_of_corn_B.rbxl,Edit/stopped,PlaceId0/GameId0,projectchildren_of_corn,
-variantB,Field630×10×630,168Sources,Httpfalse,Clock20.5.
-ID является только подсказкой: перед новым действием заново list и проверка.
-Другое подключённое Studio a965af21… — «+1 speed monkey (1) (1).rbxl», чужое.
-В текущем поручении никаких Studio mutations после author Save не выполнялось.
+АВТОРСКИЙ SAVE ПРОВЕРЕН
 
-КАК ПРОДОЛЖАТЬ
+B3793205bytes/SHA4c5c0c5454da2689996babca4a88b66256240ebb2fb0ac7aa2f787b2ecd8227a.
+Новый scripts/verify-B-manual-authoring-copy.py passed:true,complete:true.
+Полный77554savedDOM=6056retained+71498new:70664растения+576chunkModels+
+1folder+254группы/помощники+3Modules.171Sources=160unchanged+8exact+3new.
+ВсеCF/Size/13plantattrs/виды/материалы/полныеnewpropertyschemas exact.
+Масса/центр/инерция3форм вычислены поconvexhull377sourcevertices,float32exact.
+75parentmoves/1880plannedprops;1572VertexCountrefreshes exactcanonical.
+19ModelMeshCFrame+39WorldPivotData exact independently derived from2recorded
+Stage/Restorecalls;нет широкого metadata exception или candidate-derivedплана.
+Остальные6056старыхUID/имена/классы/мир/Lighting/Fog/physics/mesh/rawTerrain
+сохранены. Readerтеперьучитываетвсе3rootservicesnamedInstanceразныхклассов;
+старыйreaderтерял2служебныхобъекта,поэтому6054исправлено6056безworlddelta.
+A/Cпобайтно прежние.13Source/identity,7parser,22group,13analyticmassfixturesPASS.
+ТолькопослеPASS Bscenehash/bytesвmanifestобновлены;Rojo --check --savedPASS
+A153owned/156total,B168owned/171total,build/sourcemap/scene bytesunchanged.
+ПодтверждениеSaveнеизменялоStudio/сцену/Source/настройки,непроводилоSave,
+commit,push,publishing. Выполнена только чистая native math для независимых
+ожиданий metadata, без Instance/propertywrites. Fullprocessreopenнепроверен.
 
-- Сначала AGENTS.md, затем docs/2026-10-23_B-night-toggle.md,
-  docs/2026-10-23_B-green-variants.md, при необходимости green-beds22Oct,
-  docs/feature-index.md и docs/2026-10-22_rojo-variants.md.
-- Rojo владеет только тремя code roots, не Workspace/Lighting/артом/Terrain.
-  Canonical B overrides — variants/B, общие src затрагивают A и B.
-  A153owned/165classes, B165owned/179classes;146общих и7splitSources.
-  Использовать rojo/source-map.json; не wholesale install текущего src.
-  B порт34874 сейчас не запущен/не подключён; A34873, Cотдельный code-only.
-  Не подключать сервер к другой сцене и не запускать старые frozen builders
-  из будущих src. Исторические install/save allowlists несовместимы с новым B.
-- Все действия Studio через MCP. Не использовать Windows input или
-  Lune/другую scene serialization. Обычный Save пока требует автора Ctrl+S.
-- Новые3варианта и грунт — static Opaque session meshes; постоянных опубликованных
-  asset IDs для них не создано. После reopen полное поле восстанавливается F5
-  из сохранённых geometry data/bootstrap. Edit preview разрежен и показывает
-  исходную URI кукурузу; по нему нельзя судить об actual смешанном поле Play.
-- Не заявлять fullprocessreopen/длительныйFPS/4client/fear/blindround по последним
-  smoke tests. Прежние10unavailable audio assets остаются; не чинить их попутно.
-  Кукуруза визуальная и noncollidable; серверное AI-укрытие ещё не реализовано.
+ДОКАЗАТЕЛЬСТВА ТЕКУЩЕЙ РАБОТЫ
 
-НЕЗАВЕРШЁННОЕ И СЛЕДУЮЩИЙ ШАГ
+.artifacts/playtests/2026-10-23-B-manual-authoring/
+before-manual-authoring.zip SHAcd2b0a34b50b31693aa1911d958805ba0e0ed5d1230940a01477365feda80682
+(внутри точный savedBc91).baseline.json/expected-before-sources.json,
+native-build-evidence.json/native-acceptance.json/final-retained-classification.json,
+native-change-journal.json,editor-overview.jpg/play-inside-corn.jpg,
+check-output.txt/rojo-refusals-output.txt/rojo-serve-smoke.json и fixtureJSON.
+Финальныйpayload-editor-pool.json221966bytes/
+dd8d3492d53f77ba99d39c50e7581f28821acdb3c305f64931e5eb2d74563e6f.
+Старыеpayload.json/before-torch-culling являются промежуточными, не ставить.
+Journal — явная native транзакция с debugIDs, НЕ готовый savedDOM audit.
+audit-design.md описывает требования будущего строгого аудита.
 
-Реализация/сохранение/приёмка текущих задач закончены. Пользователь заметил
-места, где кукурузы не хватает; переключатель ночи добавлен для его скриншотов.
-Дождаться скриншотов или нового точного поручения. По ним сначала read-only
-локализовать участок/реальные Near-Far/грядки; самовольно не менять снова
-общую плотность, layout, проходы, свет, A/C или gameplay.
+СЛЕДУЮЩИЙ ШАГ
+
+Поручение завершено. Автор вручную настраивает карту; ждать его правок или
+следующего задания. Сохранение принято, повторный Ctrl+S не требуется.
+Любые дальнейшие ручные изменения сохранять; не откатывать ради70664/старыхпоз.
+Текущая принятая копия — accepted-manual-authoring.zip (entry
+B-accepted-manual-authoring.rbxl),SHAe7a4c119f3c4c26917d7ae7657444a25801678fdad36f75498471e9c8a90738d.
+Это точные3793205/4c5bytes, без сериализации. При будущем новом Saveаудите
+использовать именно этот baseline и разрешённые автором правки, а не обучать
+allowlist по кандидату. Не повторять историческийcommit/push.
 
 ГОТОВЫЙ ПРОМПТ ДЛЯ НОВОГО ЧАТА
 
-Продолжаем Roblox Children of Corn в
-D:\ROBLOX\My_Projects\Roblox_Children of Corn.
-Сначала прочитай AGENTS.md и docs/2026-10-23_new-chat-prompt.txt,
-затем docs/2026-10-23_B-night-toggle.md и docs/2026-10-23_B-green-variants.md.
-Сверь git status/log и текущую Studio через свежий MCP list. Принятый B сохранён:
-1759554байта/SHA c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f,
-168Sources. Зелёная кукуруза с3FBXвариантами, плотность−30%, разные высоты/повороты,
-гряды и кнопка обычной ночи00:00 в F6-панели сохранены и проверены.
-Работай с canonical variants/B и актуальным Rojo manifest, не ставь весь src,
-не запускай исторические installers/Save allowlists. A/C и чужие Studio сохраняй.
-Текущие поручения закончены; следующее задание/скриншоты пропусков кукурузы я
-пришлю следующим сообщением. Пока ничего в игре не изменяй и не повторяй push
-из исторических записей.
+Продолжаем Children of Corn в D:\ROBLOX\My_Projects\Roblox_Children of Corn.
+Прочитай AGENTS.md,docs/2026-10-23_new-chat-prompt.txt,
+docs/2026-10-23_B-manual-authoring.md,rojo/source-map.json;затем нужные прежние
+night/green Saveотчёты и docs/feature-index.md. Сверь Git/status и свежий MCPB.
+Ручная Bсцена70664/576chunks/15Sites/3дома/4старта/WardenSpawn/171Sources
+авторски сохранена и новым строгим аудитом принята:3793205bytes/4c5c0c54… .
+Все6056прежнихsavedUID/world/Lighting/Fog/physics/mesh/rawTerrain проверены,
+новыеcornmass/inertiaнезависимовыведены;A/C неизменны. Полныйreopenнепринят.
+Автор теперь сам правит карту: сохраняй его изменения,не переустанавливай
+Sources/расстановку/плотность.Задание завершено,жди нового поручения.
+Не повторяй историческиеcommit/push.

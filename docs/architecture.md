@@ -1,5 +1,35 @@
 # Дети кукурузы — архитектура
 
+## Ручная карта B — 2026-10-23, авторский Save принят
+
+Актуальный [контракт ручной B](2026-10-23_B-manual-authoring.md) включён
+`CornMap.BManualAuthoringVersion=1`. Источник —70664 реальных MeshParts в
+`CornAuthoring`, сгруппированных в576 Models. При Play ManualSceneService
+переносит chunks в `ReplicatedStorage.BManualEditorSources.CornAuthoring`,
+сохраняя параметры растений, затем выставляет readiness. AuthoringCornController
+строит ограниченные Near/Far копии из текущих CFrame/Size/variety/opacity;
+пространственные buckets опираются на реальные корни, дубликаты независимы,
+удалённые растения не возникают по старым cell IDs. Legacy renderers
+отключают свою генерацию только для валидной ручной B. Звук и Wind используют
+согласованные реальные растения; режим hard прежний.
+
+15 Site Models связывают прежние tagged slots, факелы и EnergyPoint/TrapPoint;
+InventoryWorld читает их реальные CFrame, сохраняя случайный выбор2+2предметов.
+Домовые overlays/fences/torches вложены в соответствующий исходный Model;
+ручные Harvest и GreenBed ветки восстанавливают геометрию в текущих позах.
+Четыре прежних старта и ScarecrowMarker остаются игровыми источниками.
+
+Локальные ManualScene и CornManualSceneEditor восстанавливают отсутствующий
+session MeshContent в остановленном Edit без перестройки расстановки. Новый
+asset upload не требуется. Native RestoreEdit/Play и новый строгий авторский
+Save приняты: B3793205bytes/4c5c0c54…/77554savednodes/171Sources. Полные схемы
+новых узлов, точные позы, независимые hull mass/inertia и все retained объекты
+проверены; сырой Terrain неизменён. Повторное открытие процесса пока не принято.
+Ранее сохранённый c91/168Sources остаётся историческим baseline в frozenZIP.
+
+Rojo теперь142shared/11split/12legacyunmapped; A153owned/165classes,
+B168owned/182classes. Source map не владеет Workspace/Lighting/Terrain.
+
 ## Текущий B: геометрия с тенями и кукуруза у края — 2026-10-21
 
 В [новом сохранённом уточнении](2026-10-21_corn-edge-shadows-B.md) изменены

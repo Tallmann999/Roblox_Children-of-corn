@@ -1,0 +1,66 @@
+{
+  "nativeCorn": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"maxError\":0.0000060498714447021488,\"far\":{\"corn_project_id\":\"children_of_corn\",\"CornEditorOverview\":true,\"MaxPlants\":30000,\"CornWindAnimated\":0,\"LastFrameSeconds\":0.000005300000339047983,\"BManualCornRuntimeOwner\":\"corn_B_manual_authoring_v1\",\"LastFrameClones\":0,\"CornWindMode\":\"hard\",\"LoadedPlants\":17530,\"DetailStride\":4.447495899966608,\"CornClientBackdropOwned\":true,\"Ready\":true},\"near\":{\"NearPlantCap\":8064,\"corn_project_id\":\"children_of_corn\",\"CornClientRendererOwned\":true,\"CornWindMode\":\"hard\",\"BManualCornRuntimeOwner\":\"corn_B_manual_authoring_v1\",\"AuthoredPlants\":70664,\"CornWindAnimated\":0,\"LoadedPlants\":1651},\"pass\":true,\"hits\":{\"deleted\":0,\"copy\":1,\"moved\":1}}"
+      }
+    ],
+    "isError": false
+  },
+  "nativeWorld": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"matchedItems\":4,\"spawnXZError\":0,\"runtimeMonster\":true,\"siteModels\":15,\"stumps\":2,\"pass\":true,\"counts\":{\"energy\":2,\"trap\":2}}"
+      }
+    ],
+    "isError": false
+  },
+  "authorEditsRestored": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"restored\":true,\"exactPartFrames\":364,\"saved\":false,\"sourceCount\":171,\"actualSourceCount\":70664,\"exactModelPivots\":90}"
+      }
+    ],
+    "isError": false
+  },
+  "navigationBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"root\":{\"1\":289,\"3\":289,\"2\":17.398006439208986},\"health\":100}"
+      }
+    ],
+    "isError": false
+  },
+  "navigationAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"root\":{\"1\":274.6303405761719,\"3\":274.6303405761719,\"2\":17.398006439208986},\"health\":100}"
+      }
+    ],
+    "isError": false
+  },
+  "final": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"retainedMissing\":0,\"chunks\":576,\"retainedChanged\":3579,\"project\":\"children_of_corn\",\"retained\":6035,\"brightness\":1,\"quality\":\"Level21\",\"edit\":true,\"runtimePresent\":false,\"meshContents\":{\"Uri\":17660,\"Opaque\":53004},\"name\":\"Children_of_corn_B.rbxl\",\"gameId\":0,\"atmosphere\":{\"density\":0.30000001192092898,\"haze\":0},\"editorCameraDifference\":true,\"houses\":3,\"placeId\":0,\"plants\":70664,\"wardenMarker\":true,\"expectedRestoredMeshChanges\":1676,\"variant\":\"B\",\"ownedGlobalsToClear\":[\"__CornBManualAuthoringV1\"],\"sourceGuard\":{\"allCodeIdentitiesRetained\":true,\"totalSources\":171,\"newSources\":3,\"retainedSources\":168,\"editorBuffersExact\":true},\"saved\":false,\"fixtureRestored\":{\"restored\":true,\"exactPartFrames\":364,\"saved\":false,\"actualSourceCount\":70664,\"sourceCount\":171,\"exactModelPivots\":90},\"editorPoolPresent\":false,\"http\":false,\"clock\":20.5,\"camera\":\"Fixed\",\"starts\":4,\"sites\":15,\"rawTerrainRuntimeAudited\":false,\"terrainPaletteExact\":true,\"invalidPlants\":0,\"varieties\":[17660,17668,17671,17665]}"
+      }
+    ],
+    "isError": false
+  },
+  "firstPlayFailure": {
+    "content": [
+      {
+        "type": "text",
+        "text": "HO Keyboard 4.1 loaded: Live colors | Fix letters | Palette | Finish keys\nHO Keyboard 4.1 loaded: Live colors | Fix letters | Palette | Finish keys\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\nContentId: rbxassetid://203785492 failed due to: Asset type does not match requested type\n[CornStudioQuality21] Corn A/B: fixed Studio render quality21\nPlayers.Tallmann_Niderlands.PlayerScripts.GameClient.Bootstrap:177: [ChildrenOfCorn] Client startup failed before controllers: Players.Tallmann_Niderlands.PlayerScripts.GameClient.Bootstrap:162: Server map readiness timed out after 60 seconds: request_round_action\nStack Begin\nScript 'Players.Tallmann_Niderlands.PlayerScripts.GameClient.Bootstrap', Line 177\nStack End\n[ManualSceneService] Authored B plants ready: 70664\n[Server] Farm geometry restored before RoundService: 40 10 40\n[Server] Harvest art ready before RoundService: B 244 0\n[CornField] Prepared a corn art clone; ServerStorage source is unchanged\n[ServerBootstrap] Started 6 services"
+      }
+    ],
+    "isError": false
+  },
+  "note": "First slow per-plant hiding failed; replaced by chunk archive. Second normal Start/Confirm succeeded. No Save, full reopen, long FPS or 4 client acceptance."
+}

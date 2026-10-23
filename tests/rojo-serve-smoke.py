@@ -196,7 +196,7 @@ def main(report_file=REPORT, port_offset=0):
             return graph_check(info, read_api(port, "/api/read/" + info["rootInstanceId"]), manifest, selected)
         report["variants"][variant] = inspect_server(binary, variant + ".project.json", row["port"] + port_offset, check)
     a, b = (report["variants"][variant] for variant in ("A", "B"))
-    rojo.require(a["sources"] == 153 and b["sources"] == 165
+    rojo.require(a["sources"] == 153 and b["sources"] == 168
                  and a["source_graph_sha256"] != b["source_graph_sha256"], "A/B isolation check failed")
 
     def default_check(info, port):

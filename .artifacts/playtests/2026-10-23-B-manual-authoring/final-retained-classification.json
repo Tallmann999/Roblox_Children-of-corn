@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"sourceUpgrade\":{\"upgraded\":true,\"payloadSignature\":\"7da3874e9f647fc2dc39e2f705d544412f7453c2d7170559d3f2edda1e0d4e1f\",\"allCodeIdentitiesRetained\":true,\"journalSourceRows\":5,\"totalSources\":171,\"changedSources\":5,\"newNodes\":0,\"previousSignature\":\"5b83b20f302b58d81a1031bffd9fd66618f52804c2582b79642c21ad4949a03c\"},\"classification\":{\"finiteEditorCameraDifferences\":1,\"unexplained\":0,\"expectedRestoredMeshes\":1676,\"old6035retained\":true,\"approvedJournalDeltas\":1902,\"paletteExact\":true,\"missing\":0},\"sourceGuard\":{\"allCodeIdentitiesRetained\":true,\"totalSources\":171,\"newSources\":3,\"retainedSources\":168,\"editorBuffersExact\":true}}"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "owner": "CornBManualAuthoringV1",
+  "baseline_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
+  "payload_file": ".artifacts/playtests/2026-10-23-B-manual-authoring/payload.json",
+  "payload_bytes": 216772,
+  "payload_sha256": "0f9900f94315bf2cefd6e5bc98904eabff7acbef70beafa31d348f4f4fba4767",
+  "before_sources": 168,
+  "unchanged_sources": 160,
+  "changed_sources": 8,
+  "new_sources": 3,
+  "after_sources": 171,
+  "new_source_pins": {
+    "ReplicatedStorage/GameShared/Game/ManualScene": "98ef15399424d2069c66cd0b520af8900af7b139d2d3b08c34510640154e2739",
+    "ServerScriptService/GameServer/Services/ManualSceneService": "b7033f0ee124f844c264a8e4154237d59ab3b5888913ca0f1686938dba5c368d",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AuthoringCornController": "7ef80214ed6f7403762f9a787b29bc0c07ade3c23bc2c2131a60717e8c5caa55"
+  },
+  "scope": "Source files and JSON metadata only; no Studio or scene I/O."
+}

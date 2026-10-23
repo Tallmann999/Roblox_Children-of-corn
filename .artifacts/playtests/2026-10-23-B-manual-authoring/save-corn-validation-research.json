@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "complete": true,
+  "plants": 70664,
+  "chunks": 576,
+  "baseline_sha256": "c91efe74d1750095eac19390800192ad03b264d7a99de46cf21d170fcb4ed31f",
+  "native_builder_sha256": "b17dfb535f8fb5adc82af7da2706521daf77fb259b755bfb7786e7375cd40ae0",
+  "independent_construction_boxes": 234,
+  "new_cells": 11725,
+  "avoided_obstacles": 3,
+  "all_cell_sets_frames_sizes_varieties_attributes_materials_physics_exact": true
+}

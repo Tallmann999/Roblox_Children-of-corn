@@ -1,0 +1,27 @@
+ERROR: There was an error generating a new Roblox standard library: error when getting API dump
+Using the cached one instead.
+Results:
+0 errors
+0 warnings
+0 parse errors
+{
+  "passed": true,
+  "shared_sources": 142,
+  "variants": {
+    "A": {
+      "sources": 153,
+      "code_instances": 165,
+      "build_and_sourcemap": true
+    },
+    "B": {
+      "sources": 168,
+      "code_instances": 182,
+      "build_and_sourcemap": true
+    }
+  }
+}
+Building project 'ChildrenOfCorn_CodeCheckOnly'
+Built project to code-foundation.rbxlx
+Created sourcemap at build/sourcemap.json
+PASS: formatting, lint, code-only builds, A/B source isolation, safe mappings and disabled persistence.
+Studio connection, Output and Play Test still require a live Studio session.

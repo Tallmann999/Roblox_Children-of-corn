@@ -75,6 +75,94 @@ local LOD_HYSTERESIS = 12
 local RETAIN_MARGIN = 18
 local ELEVATED_MEDIUM_RADIUS = 144
 
+local function manualTorchMap(map: Instance?): boolean
+	local authored = CornLayout.AuthoringSource(map)
+	return map ~= nil
+		and map:IsA("Model")
+		and map:GetAttribute("corn_project_id") == PROJECT_ID
+		and map:GetAttribute("HarvestArtVariant") == "B"
+		and map:GetAttribute("BManualAuthoringVersion") == 1
+		and authored ~= nil
+		and authored:IsA("Folder")
+		and authored:GetAttribute("corn_project_id") == PROJECT_ID
+		and authored:GetAttribute("BManualAuthoringVersion") == 1
+end
+
+function CornController:_clearManualTorches()
+	for _, connection in self._manualTorchConnections or {} do
+		connection:Disconnect()
+	end
+	self._manualTorchConnections, self._manualTorchModels = {}, {}
+	self._manualTorchMap, self._manualTorchRoots, self._manualTorches = nil, nil, nil
+	self._manualTorchesDirty = true
+end
+
+function CornController:_manualTorchList(map: Model): { Model }
+	local roots = {
+		map:FindFirstChild("Props"),
+		map:FindFirstChild("KeySlots"),
+		map:FindFirstChild("TorchMarkers"),
+	}
+	local previous = self._manualTorchRoots
+	if
+		self._manualTorchMap ~= map
+		or not previous
+		or previous[1] ~= roots[1]
+		or previous[2] ~= roots[2]
+		or previous[3] ~= roots[3]
+	then
+		self:_clearManualTorches()
+		self._manualTorchMap, self._manualTorchRoots = map, roots
+		local function dirty()
+			self._manualTorchesDirty = true
+		end
+		local function watch(item)
+			if item:IsA("Model") and not self._manualTorchModels[item] then
+				self._manualTorchModels[item] = true
+				for _, name in { "CornTorchOwned", "corn_project_id" } do
+					table.insert(
+						self._manualTorchConnections,
+						item:GetAttributeChangedSignal(name):Connect(dirty)
+					)
+				end
+			end
+		end
+		for _, branch in roots do
+			if branch then
+				for _, item in branch:GetDescendants() do
+					watch(item)
+				end
+				table.insert(
+					self._manualTorchConnections,
+					branch.DescendantAdded:Connect(function(item)
+						watch(item)
+						dirty()
+					end)
+				)
+				table.insert(self._manualTorchConnections, branch.DescendantRemoving:Connect(dirty))
+			end
+		end
+	end
+	if self._manualTorchesDirty then
+		local torches = {}
+		for _, branch in roots do
+			if branch then
+				for _, item in branch:GetDescendants() do
+					if
+						item:IsA("Model")
+						and item:GetAttribute("CornTorchOwned") == true
+						and item:GetAttribute("corn_project_id") == PROJECT_ID
+					then
+						table.insert(torches, item)
+					end
+				end
+			end
+		end
+		self._manualTorches, self._manualTorchesDirty = torches, false
+	end
+	return self._manualTorches
+end
+
 function CornController:_warn(message: string)
 	if self._lastWarning ~= message then
 		self._lastWarning = message
@@ -366,6 +454,24 @@ end
 function CornController:_resolveInputs(): boolean
 	local map = Workspace:FindFirstChild("CornMap")
 	local field = if map then map:FindFirstChild("FieldZone") else nil
+	local authored = CornLayout.AuthoringSource(map)
+	if
+		map
+		and map:IsA("Model")
+		and map:GetAttribute("corn_project_id") == PROJECT_ID
+		and map:GetAttribute("HarvestArtVariant") == "B"
+		and map:GetAttribute("BManualAuthoringVersion") == 1
+		and authored
+		and authored:IsA("Folder")
+		and authored:GetAttribute("corn_project_id") == PROJECT_ID
+		and authored:GetAttribute("BManualAuthoringVersion") == 1
+	then
+		self:_clearInputs()
+		-- Retain the existing torch-distance handling without running the grid.
+		self._map = map
+		self._field = if field and field:IsA("BasePart") then field else nil
+		return false
+	end
 	local art = ReplicatedStorage:FindFirstChild("CornRuntimeArt")
 	local template = if art then art:FindFirstChild("CornPlantTemplate") else nil
 	if not map or not map:IsA("Model") or map:GetAttribute("corn_project_id") ~= PROJECT_ID then
@@ -762,9 +868,18 @@ function CornController:_step(delta: number)
 		local root = if character then character:FindFirstChild("HumanoidRootPart") else nil
 		if root and root:IsA("BasePart") then
 			self:_reconcile(root)
+			local currentMap = Workspace:FindFirstChild("CornMap")
+			local manual = manualTorchMap(currentMap)
+			if not manual and self._manualTorchMap then
+				self:_clearManualTorches()
+			end
 			local torches = self._map and self._map:FindFirstChild("TorchMarkers")
-			if torches then
-				for _, torch in torches:GetChildren() do
+			local torchModels = if manual
+				then self:_manualTorchList(currentMap :: Model)
+				elseif torches then torches:GetChildren()
+				else nil
+			if torchModels then
+				for _, torch in torchModels do
 					if torch:IsA("Model") and torch:GetAttribute("CornTorchOwned") == true then
 						local distance = (torch:GetPivot().Position - root.Position).Magnitude
 						for _, effect in torch:GetDescendants() do
@@ -823,6 +938,7 @@ function CornController:Destroy()
 		self._connection = nil
 	end
 	self:_clearInputs()
+	self:_clearManualTorches()
 end
 
 return CornController

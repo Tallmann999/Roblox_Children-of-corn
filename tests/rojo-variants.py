@@ -9,6 +9,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 
 sys.dont_write_bytecode = True
@@ -32,6 +33,17 @@ GREEN_SHAPES = {
     "ReplicatedStorage/GameShared/Game/CornGreenGeometry": "variants/B/shared/Game/CornGreenGeometry.luau",
     **{f"ReplicatedStorage/GameShared/Game/CornGreenGeometryData/Var{i:02}":
        f"variants/B/shared/Game/CornGreenGeometryData/Var{i:02}.luau" for i in range(1, 4)},
+}
+MANUAL_SPLITS = {
+    "ServerScriptService/GameServer/Game/InventoryWorld": "server/Game/InventoryWorld.luau",
+    "ServerScriptService/GameServer/Game/HarvestWorld": "server/Game/HarvestWorld.luau",
+    "ServerScriptService/GameServer/Game/RoundAudio": "server/Game/RoundAudio.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/HarvestGeometryController": "client/Controllers/HarvestGeometryController.luau",
+}
+MANUAL_B_ONLY = {
+    "ReplicatedStorage/GameShared/Game/ManualScene": "variants/B/shared/Game/ManualScene.luau",
+    "ServerScriptService/GameServer/Services/ManualSceneService": "variants/B/server/Services/ManualSceneService.luau",
+    "StarterPlayer/StarterPlayerScripts/GameClient/Controllers/AuthoringCornController": "variants/B/client/Controllers/AuthoringCornController.luau",
 }
 
 
@@ -88,14 +100,14 @@ class RojoVariants(unittest.TestCase):
         shared = self.manifest["shared_sources"]
         split = set(self.manifest["split_paths"])
         a, b = (self.manifest["variants"][v]["sources"] for v in ("A", "B"))
-        self.assertEqual(len(shared), 146)
-        self.assertEqual(len(split), 7)
+        self.assertEqual(len(shared), 142)
+        self.assertEqual(len(split), 11)
         self.assertEqual(set(a), set(shared) | split)
-        self.assertEqual(set(b), set(a) | {SHADOW, NIGHT} | set(GREEN_BEDS) | set(GREEN_SHAPES))
+        self.assertEqual(set(b), set(a) | {SHADOW, NIGHT} | set(GREEN_BEDS) | set(GREEN_SHAPES) | set(MANUAL_B_ONLY))
         self.assertEqual({path: a[path] for path in shared}, shared)
         self.assertEqual({path: b[path] for path in shared}, shared)
-        self.assertEqual(len({row["file"] for path, row in a.items() if path not in shared}), 7)
-        self.assertEqual(len({row["file"] for path, row in b.items() if path not in shared}), 19)
+        self.assertEqual(len({row["file"] for path, row in a.items() if path not in shared}), 11)
+        self.assertEqual(len({row["file"] for path, row in b.items() if path not in shared}), 26)
         for path in split:
             self.assertNotEqual(a[path]["file"], b[path]["file"])
             self.assertTrue(a[path]["file"].startswith("variants/A/"))
@@ -112,6 +124,89 @@ class RojoVariants(unittest.TestCase):
                 self.assertEqual(b["sources"][path]["file"], file)
                 self.assertEqual(b["sources"][path]["class"], "ModuleScript")
                 self.assertEqual(b["classes"][path], "ModuleScript")
+
+    def test_manual_world_modules_are_independent_and_legacy_copies_stay_unmapped(self):
+        a, b = (self.manifest["variants"][v]["sources"] for v in ("A", "B"))
+        for path, suffix in MANUAL_SPLITS.items():
+            with self.subTest(path=path):
+                self.assertIn(path, self.manifest["split_paths"])
+                self.assertNotIn(path, self.manifest["shared_sources"])
+                self.assertIn("src/" + suffix, self.manifest["legacy_unmapped_files"])
+                for variant, sources in (("A", a), ("B", b)):
+                    self.assertEqual(sources[path]["file"], "variants/" + variant + "/" + suffix)
+                self.assertEqual((self.root / a[path]["file"]).read_bytes(),
+                                 (self.root / ("src/" + suffix)).read_bytes())
+                # Counts and the generated project remain internally consistent;
+                # serving the old src for either variant must still refuse.
+                for variant, sources in (("A", a), ("B", b)):
+                    original = sources[path]["file"]
+                    sources[path]["file"] = "src/" + suffix
+                    self.write_manifest(regenerate_projects=True)
+                    self.assert_refused()
+                    sources[path]["file"] = original
+        self.write_manifest(regenerate_projects=True)
+        self.assertEqual(rojo.validate_projects(self.root), self.manifest)
+
+    def test_manual_split_same_variant_swaps_are_refused_without_count_or_inventory_change(self):
+        paths = list(MANUAL_SPLITS)
+        for variant in ("A", "B"):
+            sources = self.manifest["variants"][variant]["sources"]
+            for path in paths:
+                other = paths[(paths.index(path) + 1) % len(paths)]
+                with self.subTest(variant=variant, path=path):
+                    sources[path]["file"], sources[other]["file"] = sources[other]["file"], sources[path]["file"]
+                    self.write_manifest(regenerate_projects=True)
+                    self.assert_refused()
+                    sources[path]["file"], sources[other]["file"] = sources[other]["file"], sources[path]["file"]
+
+    def test_manual_authoring_modules_are_B_only_with_exact_canonical_files(self):
+        a, b = (self.manifest["variants"][v] for v in ("A", "B"))
+        for path, file in MANUAL_B_ONLY.items():
+            with self.subTest(path=path):
+                self.assertNotIn(path, a["sources"])
+                self.assertNotIn(path, a["classes"])
+                self.assertNotIn(path, self.manifest["shared_sources"])
+                self.assertEqual(b["sources"][path]["file"], file)
+                self.assertEqual(b["sources"][path]["class"], "ModuleScript")
+                self.assertEqual(b["classes"][path], "ModuleScript")
+                self.assertEqual(project_nodes(rojo.make_project(self.manifest, "B"))[path],
+                                 {"$ignoreUnknownInstances": True, "$path": file})
+                a["sources"][path] = copy.deepcopy(b["sources"][path])
+                a["classes"][path] = "ModuleScript"
+                self.write_manifest(regenerate_projects=True)
+                self.assert_refused()
+                del a["sources"][path]
+                del a["classes"][path]
+        self.write_manifest(regenerate_projects=True)
+
+    def test_manual_B_only_modules_cannot_swap_files_or_change_class(self):
+        b = self.manifest["variants"]["B"]
+        for path in MANUAL_B_ONLY:
+            with self.subTest(path=path):
+                original = b["sources"][path]["file"]
+                b["sources"][path]["file"], b["sources"][SHADOW]["file"] = b["sources"][SHADOW]["file"], original
+                self.write_manifest(regenerate_projects=True)
+                self.assert_refused()
+                b["sources"][SHADOW]["file"], b["sources"][path]["file"] = b["sources"][path]["file"], original
+                b["sources"][path]["class"] = b["classes"][path] = "Script"
+                self.write_manifest(regenerate_projects=True)
+                self.assert_refused()
+                b["sources"][path]["class"] = b["classes"][path] = "ModuleScript"
+        self.write_manifest(regenerate_projects=True)
+
+    def test_project_regeneration_refuses_active_loopback_listener(self):
+        with mock.patch.object(rojo.socket, "socket") as socket_factory:
+            connection = socket_factory.return_value.__enter__.return_value
+            connection.connect_ex.return_value = 0
+            with self.assertRaisesRegex(ValueError, "listener is active: 34873"):
+                rojo.require_project_ports_idle(self.manifest)
+            connection.connect_ex.assert_called_once_with(("127.0.0.1", 34873))
+        with mock.patch.object(rojo.socket, "socket") as socket_factory:
+            connection = socket_factory.return_value.__enter__.return_value
+            connection.connect_ex.side_effect = [111, 111]
+            rojo.require_project_ports_idle(self.manifest)
+            self.assertEqual(connection.connect_ex.call_args_list,
+                             [mock.call(("127.0.0.1", 34873)), mock.call(("127.0.0.1", 34874))])
 
     def test_green_shapes_and_data_folder_are_explicitly_owned_only_by_B(self):
         a = self.manifest["variants"]["A"]
@@ -142,8 +237,8 @@ class RojoVariants(unittest.TestCase):
         self.assertEqual(b["sources"][NIGHT]["file"], NIGHT_FILE)
         self.assertEqual(b["sources"][NIGHT]["class"], "ModuleScript")
         self.assertEqual(b["classes"][NIGHT], "ModuleScript")
-        self.assertEqual(len(b["sources"]), 165)
-        self.assertEqual(len(b["classes"]), 179)
+        self.assertEqual(len(b["sources"]), 168)
+        self.assertEqual(len(b["classes"]), 182)
         node = project_nodes(rojo.make_project(self.manifest, "B"))[NIGHT]
         self.assertEqual(node, {"$ignoreUnknownInstances": True, "$path": NIGHT_FILE})
         # A deliberate addition to A must not become valid even with a

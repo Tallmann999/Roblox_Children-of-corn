@@ -1,0 +1,17 @@
+{
+  "artifact": "D:\\ROBLOX\\My_Projects\\Roblox_Children of Corn\\studio-plugins\\CornManualSceneEditor.rbxmx",
+  "sha256": "76e39c523c484c7bcc8ae031172fe4a0546499c591b43f7ec8673c2adf289abe",
+  "bytes": 6883,
+  "source_sha256": "4ea93c8a058645128d4b3ba86d08353bd706f28538f62c5ef48a555582625819",
+  "installed": true,
+  "scope": "Exact Children_of_corn_B.rbxl, stopped Studio, manual B version 1",
+  "network": false,
+  "scene_save": false,
+  "layout_rebuild": false,
+  "other_plugins_changed": false,
+  "installation": {
+    "target": "C:\\Users\\User\\AppData\\Local\\Roblox\\Plugins\\CornManualSceneEditor.rbxmx",
+    "created": true,
+    "sha256": "76e39c523c484c7bcc8ae031172fe4a0546499c591b43f7ec8673c2adf289abe"
+  }
+}

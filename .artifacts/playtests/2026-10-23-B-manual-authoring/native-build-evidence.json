@@ -1,0 +1,39 @@
+{
+  "manualNativeBefore": {
+    "sources": 168,
+    "world": "4c2b1a40ee734f21710efb0add30a909625318fc822f3f22a624e1a720931b30",
+    "documents": 0,
+    "properties": 319097,
+    "sha256": "c4598c75e98a09f3f04123396c4278daad7f7d1db8856c2e6ba5964dcc18c47e",
+    "instances": 6035
+  },
+  "manualPrepared": {
+    "columns": 283,
+    "prepared": true,
+    "boxes": 234
+  },
+  "manualPlanLatest": {
+    "removed": 3,
+    "chunks": 576,
+    "count": 70664,
+    "column": 142,
+    "done": true,
+    "filled": 11725,
+    "previous": 58942
+  },
+  "manualBuildLatest": {
+    "created": 70664,
+    "done": true,
+    "chunks": 576,
+    "totalChunks": 576
+  },
+  "manualAfterBuildAudit": {
+    "sources": 168,
+    "unexpected": [],
+    "world": "7f8db12a7c602e5f972bb2ee443c60a11b58ccac8891805be3339690c15faf24",
+    "missing": [],
+    "changed": 1894,
+    "old6035retained": true,
+    "instances": 77530
+  }
+}
